@@ -1,7 +1,11 @@
-<template></template>
-
-<style lang="scss" scoped>
-</style>
+<template>
+  <v-container>
+    <div class="container text-center">
+      <h1>Getting ready....</h1>
+      <span>We're working on our new look, please check back later.</span>
+    </div>
+  </v-container>
+</template>
 
 <script>
 import Global from "../components/mixins/global";
@@ -9,6 +13,7 @@ import SocialMedia from "../components/SocialMedia";
 
 export default {
   auth: false,
+  layout: "centered",
   mixins: [Global],
   components: {
     SocialMedia

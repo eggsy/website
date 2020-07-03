@@ -3,9 +3,6 @@ import path from "path";
 
 export default {
   mode: "universal",
-  /*
-   ** Headers of the page
-   */
   head: {
     titleTemplate: "%s - " + "eggsy.codes",
     title: "eggsy.codes",
@@ -42,13 +39,7 @@ export default {
   env: {
     apiBase: "https://eggsy.codes/api",
   },
-  /*
-   ** Global CSS
-   */
   css: ["./stylesheets/root.scss"],
-  /*
-   ** Plugins to load before mounting the App
-   */
   plugins: [
     {
       src: "@/plugins/anime.js",
@@ -63,13 +54,8 @@ export default {
       mode: "client",
     },
   ],
-  /*
-   ** Nuxt.js dev-modules
-   */
+
   buildModules: ["@nuxtjs/axios", "@nuxtjs/vuetify"],
-  /*
-   ** Nuxt.js modules
-   */
   modules: ["nuxt-helmet", "@nuxtjs/auth"],
   router: {
     middleware: ["auth"],
@@ -98,10 +84,6 @@ export default {
     },
   },
   loading: { color: "#fff" },
-  /*
-   ** vuetify module configuration
-   ** https://github.com/nuxt-community/vuetify-module
-   */
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
@@ -119,13 +101,16 @@ export default {
       },
     },
   },
-  /*
-   ** Build configuration
-   */
+
   build: {
-    /*
-     ** You can extend webpack config here
-     */
+    postcss: {
+      preset: {
+        features: {
+          customProperties: false,
+        },
+      },
+    },
+
     extend(config, ctx) {},
   },
   serverMiddleware: [path.resolve(__dirname, "api/index.js")],
