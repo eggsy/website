@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Breadcrumbs v-if="!isMobile" />
+    <Breadcrumbs v-if="!$isMobile" />
 
     <v-row style="margin-top:30px;">
       <v-col class="col-12 col-md-8">
@@ -9,9 +9,7 @@
 
           <v-spacer />
 
-          <v-btn to="/blog/gonderi/duzenle/yeni" text class="secondary"
-            >Yeni</v-btn
-          >
+          <v-btn to="/blog/gonderi/duzenle/yeni" text class="secondary">Yeni</v-btn>
         </div>
 
         <v-card style="margin-top:15px;cursor:pointer;">
@@ -35,9 +33,11 @@
             no-results-text="Arama kriterine uygun gönderi bulunamadı."
           >
             <template v-slot:item.views="{ item }">
-              <v-chip :color="getColor(item.views)" dark>{{
+              <v-chip :color="getColor(item.views)" dark>
+                {{
                 item.views
-              }}</v-chip>
+                }}
+              </v-chip>
             </template>
           </v-data-table>
         </v-card>
@@ -61,12 +61,16 @@
               ></v-img>
             </v-list-item-avatar>
             <v-list-item-content>
-              <v-list-item-title class="headline">{{
+              <v-list-item-title class="headline">
+                {{
                 author.name
-              }}</v-list-item-title>
-              <v-list-item-subtitle>{{
+                }}
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{
                 author.discordId
-              }}</v-list-item-subtitle>
+                }}
+              </v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
 
@@ -85,11 +89,13 @@
           ></v-img>
 
           <div v-if="editMode == false">
-            <v-card-text>{{
+            <v-card-text>
+              {{
               author.bio
-                ? author.bio
-                : "Biyografi ayarlanmamış. Ayarlamak için kalem işaretine tıklayabilirsiniz."
-            }}</v-card-text>
+              ? author.bio
+              : "Biyografi ayarlanmamış. Ayarlamak için kalem işaretine tıklayabilirsiniz."
+              }}
+            </v-card-text>
 
             <v-divider />
 
@@ -108,8 +114,7 @@
                     editMode = true;
                     edited = false;
                   "
-                  >mdi-pencil</v-icon
-                >
+                >mdi-pencil</v-icon>
               </v-btn>
             </v-card-actions>
           </div>
@@ -151,25 +156,15 @@
                   clearable
                 />
 
-                <v-alert dismissible v-model="edited" type="success"
-                  >Bilgileriniz başarıyla güncellendi.</v-alert
-                >
+                <v-alert
+                  dismissible
+                  v-model="edited"
+                  type="success"
+                >Bilgileriniz başarıyla güncellendi.</v-alert>
 
                 <v-row justify="space-between" class="mx-auto">
-                  <v-btn
-                    style="margin-top:14px"
-                    @click="save"
-                    text
-                    class="secondary"
-                    >Kaydet</v-btn
-                  >
-                  <v-btn
-                    style="margin-top:14px"
-                    @click="editMode = false"
-                    text
-                    class="error"
-                    >İptal</v-btn
-                  >
+                  <v-btn style="margin-top:14px" @click="save" text class="secondary">Kaydet</v-btn>
+                  <v-btn style="margin-top:14px" @click="editMode = false" text class="error">İptal</v-btn>
                 </v-row>
               </v-form>
             </v-form>
@@ -188,9 +183,7 @@
 
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" text @click="$router.push('/blog')"
-            >Tamam</v-btn
-          >
+          <v-btn color="primary" text @click="$router.push('/blog')">Tamam</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -216,15 +209,13 @@
 
 <script>
 import Breadcrumbs from "../../../components/blog/Breadcrumb";
-import GlobalMixin from "../../../components/mixins/global";
 import axios from "axios";
 import moment from "moment";
 
 export default {
   components: {
-    Breadcrumbs,
+    Breadcrumbs
   },
-  mixins: [GlobalMixin],
   layout: "blog",
   head: {
     title: "Yazar Kontrol Paneli",
@@ -235,11 +226,11 @@ export default {
       {
         name: "og:description",
         content:
-          "Yazarların EGGSY's Blog'da yazı yazabileceği, varolan yazılarını yönetebileceği ve diğer gerekli araçlara ulaşabileceği panel.",
+          "Yazarların EGGSY's Blog'da yazı yazabileceği, varolan yazılarını yönetebileceği ve diğer gerekli araçlara ulaşabileceği panel."
       },
       { name: "premid-details", content: "Viewing a blog page:" },
-      { name: "premid-state", content: "Author Dashboard" },
-    ],
+      { name: "premid-state", content: "Author Dashboard" }
+    ]
   },
   async asyncData({ $auth, redirect, error }) {
     if (!$auth.loggedIn) return redirect("/login");
@@ -283,7 +274,7 @@ export default {
                   ? timeString
                   : "Geçersiz Tarih",
               published: data.data.posts[post].published ? "✅" : "⛔",
-              views: data.data.posts[post].views || 0,
+              views: data.data.posts[post].views || 0
             };
 
             posts.push(object);
@@ -294,11 +285,11 @@ export default {
               { text: "👁", align: "left", value: "views" },
               {
                 text: "Gönderi Adı",
-                value: "title",
+                value: "title"
               },
               { text: "Yazar", value: "author" },
               { text: "Tarih", value: "date" },
-              { text: "Durum", value: "published" },
+              { text: "Durum", value: "published" }
             ],
             author: data.data.author,
             edited: false,
@@ -306,7 +297,7 @@ export default {
             search: "",
             dialogMsg: null,
             editMode: false,
-            posts,
+            posts
           };
         } else {
           redirect("/blog");
@@ -337,9 +328,9 @@ export default {
         axios
           .post("/api/blog/author/update", {
             auth: this.$auth.user,
-            data: object,
+            data: object
           })
-          .then((res) => {
+          .then(res => {
             for (let thing in object) {
               this.author[thing] = object[thing];
             }
@@ -373,7 +364,7 @@ export default {
       else if (number > 50 && number < 100) return "dark-green";
       else if (number > 20 && number < 50) return "secondary";
       else if (number < 20) return "error";
-    },
-  },
+    }
+  }
 };
 </script>

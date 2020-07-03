@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Breadcrumbs v-if="!isMobile" />
+    <Breadcrumbs v-if="!$isMobile" />
 
     <v-row style="margin-top:30px;">
       <v-col class="col-12 col-md-8">
@@ -10,15 +10,12 @@
           <v-spacer />
 
           <div class="mx-auto">
-            <v-btn to="/blog/gonderi/duzenle/yeni" text class="secondary"
-              >Yeni</v-btn
-            >
+            <v-btn to="/blog/gonderi/duzenle/yeni" text class="secondary">Yeni</v-btn>
             <v-btn
               @click="commentSwitch = !commentSwitch"
               text
               class="primary"
-              >{{ commentSwitch ? "Gönderiler" : "Yorumlar" }}</v-btn
-            >
+            >{{ commentSwitch ? "Gönderiler" : "Yorumlar" }}</v-btn>
           </div>
         </div>
 
@@ -44,17 +41,16 @@
             no-results-text="Arama kriterine uygun gönderi bulunamadı."
           >
             <template v-slot:item.views="{ item }">
-              <v-chip :color="getColor(item.views)" dark>{{
+              <v-chip :color="getColor(item.views)" dark>
+                {{
                 item.views
-              }}</v-chip>
+                }}
+              </v-chip>
             </template>
           </v-data-table>
         </v-card>
 
-        <v-card
-          style="margin-top:15px;cursor:pointer;"
-          v-else-if="commentSwitch"
-        >
+        <v-card style="margin-top:15px;cursor:pointer;" v-else-if="commentSwitch">
           <v-card-title>
             <v-text-field
               v-model="search"
@@ -77,9 +73,11 @@
             no-results-text="Arama kriterine uygun yorum bulunamadı."
           >
             <template v-slot:item.views="{ item }">
-              <v-chip :color="getColor(item.views)" dark>{{
+              <v-chip :color="getColor(item.views)" dark>
+                {{
                 item.views
-              }}</v-chip>
+                }}
+              </v-chip>
             </template>
           </v-data-table>
         </v-card>
@@ -91,25 +89,21 @@
         <v-tabs class="elevation-2" dark grow centered>
           <v-tabs-slider></v-tabs-slider>
 
-          <v-tab v-for="i in 3" :key="i" :href="`#tab-${i}`">{{
+          <v-tab v-for="i in 3" :key="i" :href="`#tab-${i}`">
+            {{
             i == 1 ? "Yazarlar" : `${i == 2 ? "Yazar Ekle" : "Yazar Sil"}`
-          }}</v-tab>
+            }}
+          </v-tab>
 
           <v-tab-item value="tab-1">
             <v-card flat tile>
-              <v-treeview
-                :items="items"
-                activatable
-                item-key="discordId"
-                open-on-click
-              >
+              <v-treeview :items="items" activatable item-key="discordId" open-on-click>
                 <template v-slot:prepend="{ item }">
                   <nuxt-link
                     style="text-decoration:none"
                     title="Gönderiyi görüntülemek için tıklayın."
                     :to="`/blog/gonderi/${item.short_url}`"
-                    >{{ item.title }}</nuxt-link
-                  >
+                  >{{ item.title }}</nuxt-link>
                 </template>
               </v-treeview>
             </v-card>
@@ -155,9 +149,7 @@
                   clearable
                 />
 
-                <v-alert dismissible v-model="done" type="success"
-                  >Yazar başarıyla kaydedildi.</v-alert
-                >
+                <v-alert dismissible v-model="done" type="success">Yazar başarıyla kaydedildi.</v-alert>
 
                 <v-row justify="space-between" class="mx-auto">
                   <v-switch
@@ -166,13 +158,7 @@
                     color="primary"
                     label="Diğer Bilgiler"
                   />
-                  <v-btn
-                    style="margin-top:14px"
-                    @click="save"
-                    text
-                    class="secondary"
-                    >Kaydet</v-btn
-                  >
+                  <v-btn style="margin-top:14px" @click="save" text class="secondary">Kaydet</v-btn>
                 </v-row>
               </v-form>
             </v-card>
@@ -193,18 +179,8 @@
               />
 
               <v-row justify="space-between" class="mx-auto">
-                <v-switch
-                  v-model="areYouSure"
-                  color="primary"
-                  label="Emin misiniz?"
-                />
-                <v-btn
-                  style="margin-top:14px"
-                  @click="del"
-                  text
-                  class="secondary"
-                  >Sil</v-btn
-                >
+                <v-switch v-model="areYouSure" color="primary" label="Emin misiniz?" />
+                <v-btn style="margin-top:14px" @click="del" text class="secondary">Sil</v-btn>
               </v-row>
             </v-card>
           </v-tab-item>
@@ -229,9 +205,7 @@
 
     <v-dialog persistent v-model="commentEdit" width="500">
       <v-card>
-        <v-card-title class="headline" primary-title
-          >Yorum Kontrolleri</v-card-title
-        >
+        <v-card-title class="headline" primary-title>Yorum Kontrolleri</v-card-title>
 
         <v-card-text>
           <v-row class="mx-auto" justify="space-between">
@@ -255,18 +229,18 @@
             <div>
               <v-icon title="Yorum tarihi.">mdi-calendar</v-icon>
               {{
-                Object.keys(selectedComment).length > 0
-                  ? selectedComment.comment.date
-                  : "Yanlış bir şeylere mi bulaştın yoksa?"
+              Object.keys(selectedComment).length > 0
+              ? selectedComment.comment.date
+              : "Yanlış bir şeylere mi bulaştın yoksa?"
               }}
             </div>
           </v-row>
           <br />
           <p>
             {{
-              Object.keys(selectedComment).length > 0
-                ? selectedComment.comment.content
-                : "Yanlış bir şeylere mi bulaştın yoksa?"
+            Object.keys(selectedComment).length > 0
+            ? selectedComment.comment.content
+            : "Yanlış bir şeylere mi bulaştın yoksa?"
             }}
           </p>
         </v-card-text>
@@ -274,9 +248,7 @@
         <v-divider></v-divider>
 
         <v-card-actions>
-          <v-btn color="secondary" text @click="handleComment('delete')"
-            >Sil</v-btn
-          >
+          <v-btn color="secondary" text @click="handleComment('delete')">Sil</v-btn>
           <v-spacer />
           <v-btn
             color="primary"
@@ -287,11 +259,8 @@
                 selectedComment.comment.approvedBool !== true
             "
             @click="handleComment('approve')"
-            >Onayla</v-btn
-          >
-          <v-btn color="cyan" text v-else @click="handleComment('unapprove')"
-            >Onayı Kaldır</v-btn
-          >
+          >Onayla</v-btn>
+          <v-btn color="cyan" text v-else @click="handleComment('unapprove')">Onayı Kaldır</v-btn>
           <v-btn color="error" text @click="commentEdit = false">İptal</v-btn>
         </v-card-actions>
       </v-card>
@@ -334,16 +303,14 @@
 <script>
 import Breadcrumbs from "../../components/blog/Breadcrumb";
 import MusicEditor from "../../components/blog/MusicEditor";
-import GlobalMixin from "../../components/mixins/global";
 import axios from "axios";
 import moment from "moment";
 
 export default {
   components: {
     Breadcrumbs,
-    MusicEditor,
+    MusicEditor
   },
-  mixins: [GlobalMixin],
   layout: "blog",
   head: {
     title: "Blog Yönetimi",
@@ -354,11 +321,11 @@ export default {
       {
         name: "og:description",
         content:
-          "Buradan EGGSY's Blog'undaki yazıları yönetebilir, yeni yazılar ekleyebilir ve blog için gerekli diğer ayarlamaları yapabilirsiniz.",
+          "Buradan EGGSY's Blog'undaki yazıları yönetebilir, yeni yazılar ekleyebilir ve blog için gerekli diğer ayarlamaları yapabilirsiniz."
       },
       { name: "premid-details", content: "Viewing a blog page:" },
-      { name: "premid-state", content: "Dashboard" },
-    ],
+      { name: "premid-state", content: "Dashboard" }
+    ]
   },
   async asyncData({ $auth, redirect, error }) {
     if (!$auth.loggedIn) return $auth.login("discord");
@@ -389,11 +356,11 @@ export default {
           {
             text: "Gönderi Adı",
             width: "55%",
-            value: "title",
+            value: "title"
           },
           { text: "Yazar", value: "author" },
           { text: "Tarih", value: "date" },
-          { text: "Durum", value: "published", align: "center" },
+          { text: "Durum", value: "published", align: "center" }
         ],
         commentHeaders = [
           { text: "Yorum İçeriği", width: "75%", value: "comment.content" },
@@ -401,15 +368,15 @@ export default {
           {
             text: "Durum",
             value: "comment.approved",
-            align: "center",
-          },
+            align: "center"
+          }
         ];
 
       try {
         let { data } = await axios.post(
           `${process.env.apiBase}/blog/admin/all`,
           {
-            auth: $auth.user,
+            auth: $auth.user
           }
         );
 
@@ -436,7 +403,7 @@ export default {
               ? getDate(data.posts[post].date)
               : "Geçersiz Tarih",
             published: data.posts[post].published ? "✅" : "❌",
-            views: data.posts[post].views || 0,
+            views: data.posts[post].views || 0
           };
 
           posts.push(object);
@@ -444,10 +411,10 @@ export default {
 
         /* Authors part */
         let items = [];
-        data.authors.forEach((author) => {
+        data.authors.forEach(author => {
           const object = {
             name: author.name,
-            children: posts.filter((post) => post.author == author.name),
+            children: posts.filter(post => post.author == author.name)
           };
 
           items.push(object);
@@ -456,8 +423,8 @@ export default {
 
         /* Comments part */
         let comments = [];
-        data.posts.forEach((post) => {
-          post.comments.forEach((comment) => {
+        data.posts.forEach(post => {
+          post.comments.forEach(comment => {
             if (comment) {
               const object = {
                 postTitle: post.title,
@@ -477,8 +444,8 @@ export default {
                   date:
                     getDate(comment.date) == "Fırından yeni çıktı!"
                       ? "Yeni"
-                      : getDate(comment.date),
-                },
+                      : getDate(comment.date)
+                }
               };
 
               comments.push(object);
@@ -505,7 +472,7 @@ export default {
             avatar: "",
             bio: "",
             name: "",
-            id: "",
+            id: ""
           },
           done: false,
           search: "",
@@ -515,7 +482,7 @@ export default {
           areYouSure: false,
           values: [],
           items,
-          posts,
+          posts
         };
       } catch (err) {
         error({ statusCode: 500 });
@@ -533,7 +500,7 @@ export default {
         try {
           const object = {
             name: this.fields.name,
-            discordId: this.fields.id,
+            discordId: this.fields.id
           };
 
           if (this.extraInformation) {
@@ -551,9 +518,9 @@ export default {
             axios
               .post("/api/blog/author/new", {
                 auth: this.$auth.user,
-                data: object,
+                data: object
               })
-              .then((res) => {
+              .then(res => {
                 if (
                   res &&
                   res.data &&
@@ -595,9 +562,9 @@ export default {
           axios
             .post("/api/blog/authors/delete", {
               auth: this.$auth.user,
-              authors: this.values,
+              authors: this.values
             })
-            .then((res) => {
+            .then(res => {
               if (
                 res &&
                 res.data &&
@@ -639,11 +606,11 @@ export default {
         axios
           .post("/api/blog/comment?type=delete", {
             auth: this.$auth.user,
-            data: this.selectedComment,
+            data: this.selectedComment
           })
-          .then((res) => {
+          .then(res => {
             this.comments = this.comments.filter(
-              (c) => c != this.selectedComment
+              c => c != this.selectedComment
             );
             this.commentEdit = false;
             this.selectedComment = {};
@@ -660,16 +627,16 @@ export default {
         axios
           .post("/api/blog/comment?type=approve", {
             auth: this.$auth.user,
-            data: this.selectedComment,
+            data: this.selectedComment
           })
-          .then((res) => {
+          .then(res => {
             if (
               res &&
               res.data &&
               res.data.success &&
               res.data.success == true
             ) {
-              this.comments.some((comment) => {
+              this.comments.some(comment => {
                 if (
                   comment.comment.content ==
                     this.selectedComment.comment.content &&
@@ -709,16 +676,16 @@ export default {
         axios
           .post("/api/blog/comment?type=unapprove", {
             auth: this.$auth.user,
-            data: this.selectedComment,
+            data: this.selectedComment
           })
-          .then((res) => {
+          .then(res => {
             if (
               res &&
               res.data &&
               res.data.success &&
               res.data.success == true
             ) {
-              this.comments.some((comment) => {
+              this.comments.some(comment => {
                 if (
                   comment.comment.content ==
                     this.selectedComment.comment.content &&
@@ -755,7 +722,7 @@ export default {
             this.dialog = true;
           });
       }
-    },
-  },
+    }
+  }
 };
 </script>

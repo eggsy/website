@@ -1,5 +1,5 @@
 <template>
-  <v-row style="margin-top:20px;" no-gutters>
+  <v-row style="margin-top:1.5em;" no-gutters>
     <v-col cols="3"></v-col>
 
     <v-col cols="6">
@@ -74,17 +74,17 @@
             <div class="details">
               <div class="appName" title="Custom Status">Custom Status</div>
 
-              <div id="details" :title="details ? details.slice(0, 128) : ''">
-                {{ details ? details.slice(0, 128) : "[ENTER SOMETHING]" }}
-              </div>
-              <div id="state" :title="state ? state.slice(0, 128) : ''">
-                {{ state ? state.slice(0, 128) : "" }}
-              </div>
+              <div
+                id="details"
+                :title="details ? details.slice(0, 128) : ''"
+              >{{ details ? details.slice(0, 128) : "[ENTER SOMETHING]" }}</div>
+              <div
+                id="state"
+                :title="state ? state.slice(0, 128) : ''"
+              >{{ state ? state.slice(0, 128) : "" }}</div>
 
               <div v-if="this.time" class="timestamp">{{ timeLeft }}</div>
-              <div v-else-if="elapsedCheck && !this.time" class="timestamp">
-                {{ timeElapsed }}
-              </div>
+              <div v-else-if="elapsedCheck && !this.time" class="timestamp">{{ timeElapsed }}</div>
             </div>
           </div>
         </div>
@@ -146,8 +146,9 @@
 
         <v-row justify="space-around">
           <v-checkbox
-            v-if="!isMobile"
+            v-if="!$isMobile"
             v-model="work"
+            :disabled="!$presenceAdded"
             @change="startedOnce = true"
             color="primary"
             v-tippy="{
@@ -181,9 +182,7 @@
 
             <v-time-picker v-if="modal" v-model="asyncTime" full-width>
               <v-spacer></v-spacer>
-              <v-btn text raised color="secondary" @click="modal = false"
-                >Cancel</v-btn
-              >
+              <v-btn text raised color="secondary" @click="modal = false">Cancel</v-btn>
               <v-btn
                 text
                 raised
@@ -193,8 +192,7 @@
                   $refs.dialog.save(time);
                   clickDate = new Date();
                 "
-                >OK</v-btn
-              >
+              >OK</v-btn>
             </v-time-picker>
           </v-dialog>
         </v-row>
@@ -335,13 +333,10 @@ a {
 
 <script>
 import moment from "moment";
-import axios from "axios";
-import Global from "../../../components/mixins/global";
 
 export default {
   layout: "premid",
   auth: false,
-  mixins: [Global],
   head: {
     title: "Custom Status",
     meta: [
@@ -351,16 +346,16 @@ export default {
       {
         name: "og:description",
         content:
-          "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!",
+          "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!"
       },
       {
         name: "og:image",
         content:
-          "https://the-person-under-this-message.is-inside.me/2POrmy3F.png",
-      },
-    ],
+          "https://the-person-under-this-message.is-inside.me/2POrmy3F.png"
+      }
+    ]
   },
-  async asyncData() {
+  async asyncData({ app }) {
     const object = {
       elapsedCheck: false,
       loading: true,
@@ -434,7 +429,7 @@ export default {
         "Tada",
         "Balance",
         "Bravery",
-        "Brilliance",
+        "Brilliance"
       ].sort(),
       smallImageSrc: "",
       showImageInput: false,
@@ -445,11 +440,11 @@ export default {
       snackbar: false,
       largeImageKey: "",
       smallImageKey: "",
-      errorString: null,
+      errorString: null
     };
 
     try {
-      let { data } = await axios.get("https://api.premid.app/v2/versions");
+      let { data } = await app.$axios.get("https://api.premid.app/v2/versions");
 
       data && data.extension
         ? (object["extVersion"] = data.extension)
@@ -479,7 +474,7 @@ export default {
         );
       }
 
-      return (this.errorString = errors.map((e) => `▶ ${e}`).join("\n\n"));
+      return (this.errorString = errors.map(e => `▶ ${e}`).join("\n\n"));
     },
     clearAll() {
       this.elapsedCheck = false;
@@ -630,7 +625,7 @@ export default {
           brilliance:
             "https://the-person-under-this-message.is-inside.me/BqcsEKro.png",
           tada:
-            "https://the-person-under-this-message.is-inside.me/3Msf3Xmi.png",
+            "https://the-person-under-this-message.is-inside.me/3Msf3Xmi.png"
         };
     },
     imageHandle: function(dat, type) {
@@ -737,7 +732,7 @@ export default {
           this.snackbar = true;
         } else return `${hours}${minutes}${seconds}`;
       }
-    },
+    }
   },
   beforeDestroy() {
     clearInterval(this.interval1);
@@ -836,7 +831,7 @@ export default {
         "THIS IS SO WEIRD!",
         "Discord FTW!",
         "You feel sick?",
-        "Be good...",
+        "Be good..."
       ],
       states = [
         "You're awesome!",
@@ -847,12 +842,12 @@ export default {
         "You're great!",
         "I love you!",
         "You're my world!",
-        "This is cool.",
+        "This is cool."
       ];
 
     this.details = details[Math.floor(Math.random() * details.length)];
     this.state = states[Math.floor(Math.random() * states.length)];
     this.loading = false;
-  },
+  }
 };
 </script>

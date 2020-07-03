@@ -16,10 +16,15 @@ export default {
       },
       {
         name: "theme-color",
-        content: "#272727",
+        content: "#212121",
       },
       {
         hid: "description",
+        name: "description",
+        content: process.env.npm_package_description || "",
+      },
+      {
+        hid: "og:description",
         name: "description",
         content: process.env.npm_package_description || "",
       },
@@ -41,6 +46,7 @@ export default {
   },
   css: ["./stylesheets/root.scss"],
   plugins: [
+    "@/plugins/util.js",
     {
       src: "@/plugins/anime.js",
       mode: "client",

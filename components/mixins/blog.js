@@ -1,7 +1,4 @@
 export default {
-  async mounted() {
-    this.$store.commit("posts/initialize", localStorage);
-  },
   methods: {
     favorite(post) {
       if (!post) return false;
@@ -16,13 +13,13 @@ export default {
         if (array.includes(post)) {
           localStorage.setItem(
             "favorite_posts",
-            array.filter(item => item !== post).join(",")
+            array.filter((item) => item !== post).join(",")
           );
         } else if (!array.includes(post)) {
           array.push(post);
           localStorage.setItem("favorite_posts", array.join(","));
         }
       }
-    }
-  }
+    },
+  },
 };

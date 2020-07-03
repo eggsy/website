@@ -54,7 +54,7 @@
       ></v-text-field>
     </v-navigation-drawer>
 
-    <v-app-bar hide-on-scroll app>
+    <v-app-bar dense hide-on-scroll app>
       <v-app-bar-nav-icon class="drawer" @click.stop="drawer = !drawer" />
       <v-toolbar-title class="title">
         <v-btn @click="$router.push('/blog')" outlined :disabled="btnDisabled"

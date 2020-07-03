@@ -1,13 +1,12 @@
 <template>
   <div>
     <v-btn
-      v-for="account in accounts"
+      v-for="account in accounts.slice(0, $props.slice || accounts.length)"
       :key="account.icon"
       :href="account.url"
-      @click="account.dialog ? (dialog = true) : false"
       v-tippy="{ content: account.name, placement: 'bottom' }"
-      icon
       target="_blank"
+      icon
     >
       <v-icon class="sclIcons" v-text="account.icon" />
     </v-btn>
@@ -16,38 +15,38 @@
 
 <script>
 export default {
+  props: ["slice"],
   data() {
     return {
       accounts: [
         {
           name: "Steam",
           url: "https://steamcommunity.com/id/eggsywashere",
-          icon: "mdi-steam",
+          icon: "mdi-steam"
         },
         {
           name: "Twitter",
           url: "https://twitter.com/eggsywashere",
-          icon: "mdi-twitter",
+          icon: "mdi-twitter"
         },
         {
           name: "Discord",
           url: "https://discordapp.com/users/162969778699501569",
-          dialog: true,
-          icon: "mdi-discord",
+          icon: "mdi-discord"
         },
         {
           name: "Instagram",
           url: "https://instagram.com/eggsywashere",
-          icon: "mdi-instagram",
+          icon: "mdi-instagram"
         },
         {
           name: "GitHub",
           url: "https://github.com/eggsywashere",
-          icon: "mdi-github",
+          icon: "mdi-github"
         },
-        { name: "Email", url: "mailto:apodes@live.com", icon: "mdi-email" },
-      ],
+        { name: "Email", url: "mailto:apodes@live.com", icon: "mdi-email" }
+      ]
     };
-  },
+  }
 };
 </script>

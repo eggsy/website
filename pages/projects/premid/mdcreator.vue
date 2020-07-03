@@ -3,9 +3,7 @@
     <v-col cols="2"></v-col>
 
     <v-col cols="8">
-      <h2 class="text-center font-weight-thin" style="margin-bottom:10px;">
-        Presence Metadata Creator
-      </h2>
+      <h2 class="text-center font-weight-thin" style="margin-bottom:10px;">Presence Metadata Creator</h2>
 
       <div class="flex">
         <v-text-field
@@ -15,13 +13,7 @@
           label="Author's name"
           style="margin-right:10px;"
         ></v-text-field>
-        <v-text-field
-          clearable
-          ref="Id"
-          autocomplete="off"
-          label="Author's ID"
-          maxlength="18"
-        ></v-text-field>
+        <v-text-field clearable ref="Id" autocomplete="off" label="Author's ID" maxlength="18"></v-text-field>
       </div>
 
       <div class="flex" style="margin-bottom:-20px">
@@ -51,12 +43,11 @@
             close
             @click:close="deleteArray('contributor', cont)"
             color="primary"
-            >{{ cont }}</v-chip
-          >
+          >{{ cont }}</v-chip>
         </v-chip-group>
-        <small v-if="contributorsIdArray.length == 0"
-          >No contributers added yet. Write down and hit enter.</small
-        >
+        <small
+          v-if="contributorsIdArray.length == 0"
+        >No contributers added yet. Write down and hit enter.</small>
       </div>
 
       <div class="flex" style="margin-top:8px;">
@@ -67,12 +58,7 @@
           label="Service name"
           style="margin-right:10px;"
         ></v-text-field>
-        <v-text-field
-          autocomplete="off"
-          clearable
-          ref="version"
-          label="Service version"
-        ></v-text-field>
+        <v-text-field autocomplete="off" clearable ref="version" label="Service version"></v-text-field>
       </div>
 
       <div class="flex" style="margin-bottom:20px;">
@@ -83,12 +69,7 @@
           label="Logo"
           style="margin-right:10px;"
         ></v-text-field>
-        <v-text-field
-          autocomplete="off"
-          clearable
-          ref="thumbnail"
-          label="Thumbnail"
-        ></v-text-field>
+        <v-text-field autocomplete="off" clearable ref="thumbnail" label="Thumbnail"></v-text-field>
       </div>
 
       <div>
@@ -120,8 +101,7 @@
             @click:close="deleteArray('url', url)"
             close
             color="primary"
-            >{{ url }}</v-chip
-          >
+          >{{ url }}</v-chip>
         </v-chip-group>
         <small v-if="urls.length == 0">No URL added yet.</small>
       </div>
@@ -152,12 +132,9 @@
             @click:close="deleteArray('language', language)"
             close
             color="primary"
-            >{{ language }}</v-chip
-          >
+          >{{ language }}</v-chip>
         </v-chip-group>
-        <small v-if="languageArray.length == 0"
-          >No language added yet. Write one and hit enter.</small
-        >
+        <small v-if="languageArray.length == 0">No language added yet. Write one and hit enter.</small>
       </div>
 
       <div class="flex" style="margin-top:8px;margin-bottom:-20px">
@@ -169,12 +146,7 @@
           label="Tag(s), hit enter to add."
           style=";margin-right:10px;"
         ></v-text-field>
-        <v-text-field
-          autocomplete="off"
-          ref="regexp"
-          clearable
-          label="RegExp, leave empty if none"
-        ></v-text-field>
+        <v-text-field autocomplete="off" ref="regexp" clearable label="RegExp, leave empty if none"></v-text-field>
       </div>
       <div>
         <v-chip-group>
@@ -185,8 +157,7 @@
             @click:close="deleteArray('tag', tag)"
             close
             color="primary"
-            >{{ tag }}</v-chip
-          >
+          >{{ tag }}</v-chip>
         </v-chip-group>
         <small v-if="tags.length == 0">No tags added yet.</small>
       </div>
@@ -210,11 +181,7 @@
       ></v-text-field>
 
       <div style="display:inline-flex">
-        <v-checkbox
-          v-model="iframe"
-          color="primary"
-          label="Enable iframe?"
-        ></v-checkbox>
+        <v-checkbox v-model="iframe" color="primary" label="Enable iframe?"></v-checkbox>
         <v-checkbox
           v-model="warning"
           v-tippy="{
@@ -243,12 +210,7 @@
             <v-btn @click="clipboardImport">From Clipboard</v-btn>
           </div>
         </v-menu>
-        <input
-          style="display:none"
-          ref="file"
-          @change="fileUpload"
-          type="file"
-        />
+        <input style="display:none" ref="file" @change="fileUpload" type="file" />
       </div>
 
       <div class="text-center">
@@ -261,39 +223,27 @@
 
               <v-menu bottom left offset-y>
                 <template v-slot:activator="{ on }">
-                  <v-btn
-                    title="Download file"
-                    dark
-                    icon
-                    v-on="on"
-                    @click="download(json)"
-                  >
+                  <v-btn title="Download file" dark icon v-on="on" @click="download(json)">
                     <v-icon>mdi-download</v-icon>
                   </v-btn>
                 </template>
               </v-menu>
             </v-card-title>
-            <v-card-title v-else class="headline" primary-title
-              >Warning</v-card-title
-            >
+            <v-card-title v-else class="headline" primary-title>Warning</v-card-title>
 
             <v-card-text>
               <p>{{ message }}</p>
             </v-card-text>
             <center v-if="json">
               <code style="text-align:left;margin-bottom:15px;width:90%;">
-                <p style="padding:14px;margin-bottom:-10px;margin-top:-10px;">
-                  {{ json }}
-                </p>
+                <p style="padding:14px;margin-bottom:-10px;margin-top:-10px;">{{ json }}</p>
               </code>
             </center>
 
             <v-divider></v-divider>
 
             <v-card-actions>
-              <v-card-text v-if="json"
-                >Please make sure to check everything twice!</v-card-text
-              >
+              <v-card-text v-if="json">Please make sure to check everything twice!</v-card-text>
               <v-spacer></v-spacer>
               <v-btn color="primary" raised @click="dialog = false">OK</v-btn>
             </v-card-actions>
@@ -308,7 +258,10 @@
           <v-card-text>
             <small>
               You can only import the ones that's available on the
-              <a href="https://premid.app/store" target="_blank">store</a> (and
+              <a
+                href="https://premid.app/store"
+                target="_blank"
+              >store</a> (and
               it's case sensitive).
             </small>
 
@@ -325,12 +278,8 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" raised @click="storeImportHandle"
-              >Import</v-btn
-            >
-            <v-btn color="secondary" raised @click="storeImportDialog = false"
-              >Cancel</v-btn
-            >
+            <v-btn color="primary" raised @click="storeImportHandle">Import</v-btn>
+            <v-btn color="secondary" raised @click="storeImportDialog = false">Cancel</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -366,12 +315,10 @@
 
 <script>
 import axios from "axios";
-import Global from "../../../components/mixins/global";
 
 export default {
   layout: "premid",
   auth: false,
-  mixins: [Global],
   head: {
     title: "PreMiD",
     meta: [
@@ -923,7 +870,7 @@ export default {
           "You are missing the category option. You have to choose a category to make it show up on the market.";
         this.dialog = true;
       } else {
-        let metadata = { "$schema": "https://schemas.premid.app/metadata/1.0" };
+        let metadata = { $schema: "https://schemas.premid.app/metadata/1.0" };
 
         metadata["author"] = {
           name: authorName.lazyValue,

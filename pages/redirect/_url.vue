@@ -4,7 +4,12 @@
       <v-col cols="12" sm="8" md="4">
         <v-card loading="secondary" class="elevation-12">
           <v-toolbar color="primary" flat>
-            <v-toolbar-title>Redirecting</v-toolbar-title>
+            <v-toolbar-title>
+              <v-btn small icon @click="$router.back()">
+                <v-icon>mdi-chevron-left</v-icon>
+              </v-btn>
+              <span class="bottom">Redirecting</span>
+            </v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             <span v-if="!params || !params.url || !settings[params.url]">
@@ -28,6 +33,12 @@
     </v-row>
   </v-content>
 </template>
+
+<style lang="scss" scoped>
+.bottom {
+  vertical-align: bottom;
+}
+</style>
 
 <script>
 export default {
@@ -99,13 +110,6 @@ export default {
             "This page will get you redirected to the our free file hosting service, is-inside.me!",
           url: "https://is-inside.me/?utm_source=eggsy.codes",
           image: "https://eggsy.codes/images/projects/is-inside-me.png"
-        },
-        "discord-templates": {
-          name: "Discord Server Templates",
-          description:
-            "This page will redirect you to our latest project called Discord Templates: Find a server template easily, build your own community!",
-          url: "https://discordtemplates.com/?utm_source=eggsy.codes",
-          image: "https://discordtemplates.com/assets/images/logo.png"
         }
       }
     };

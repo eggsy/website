@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar elevation="1" color="#212121" fixed app>
+    <v-app-bar dense elevation="1" color="#212121" fixed app>
       <v-app-bar-nav-icon
         @click="drawer = true"
         class="mobileFriendly-reverse"

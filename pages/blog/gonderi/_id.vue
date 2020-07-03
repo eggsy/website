@@ -36,9 +36,7 @@
                 </v-btn>
               </template>
 
-              <span v-if="postInfo.views > 0"
-                >{{ postInfo.views }} görüntülenme</span
-              >
+              <span v-if="postInfo.views > 0">{{ postInfo.views }} görüntülenme</span>
             </v-tooltip>
 
             <v-menu
@@ -90,9 +88,7 @@
 
           <div class="smallInformation">
             <v-card-text>
-              <div
-                style="display:flex;width:100%;justify-content:center;max-width:100%"
-              >
+              <div style="display:flex;width:100%;justify-content:center;max-width:100%">
                 <div>
                   <v-btn
                     icon
@@ -107,11 +103,13 @@
                   >
                     <v-icon>mdi-account</v-icon>
                   </v-btn>
-                  <span style="margin-top:2px;margin-left:4px;">{{
+                  <span style="margin-top:2px;margin-left:4px;">
+                    {{
                     postInfo.author.name
-                      ? postInfo.author.name
-                      : "Bilinmeyen Yazar"
-                  }}</span>
+                    ? postInfo.author.name
+                    : "Bilinmeyen Yazar"
+                    }}
+                  </span>
                 </div>
 
                 <div style="margin-left:20px">
@@ -121,32 +119,31 @@
                         <v-icon v-on="on">mdi-pencil</v-icon>
                       </template>
                       <v-icon>mdi-calendar</v-icon>
-                      <span style="margin-top:2px;margin-left:4px;">{{
+                      <span style="margin-top:2px;margin-left:4px;">
+                        {{
                         getDate(postInfo.date)
-                      }}</span>
+                        }}
+                      </span>
                     </v-tooltip>
                     <v-icon v-else>mdi-calendar</v-icon>
                   </v-btn>
                   <span
                     v-if="postInfo.lastEdit"
                     style="margin-top:2px;margin-left:4px;"
-                    >{{ getDate(postInfo.lastEdit) }}</span
-                  >
-                  <span v-else style="margin-top:2px;margin-left:4px;">{{
+                  >{{ getDate(postInfo.lastEdit) }}</span>
+                  <span v-else style="margin-top:2px;margin-left:4px;">
+                    {{
                     getDate(postInfo.date)
-                  }}</span>
+                    }}
+                  </span>
                 </div>
 
                 <div v-if="postInfo.tags.length > 0" style="margin-left:20px;">
                   <v-menu open-on-hover offset-y bottom>
                     <template v-slot:activator="{ on }">
                       <v-btn icon v-on="on">
-                        <v-icon v-if="postInfo.tags.length == 1"
-                          >mdi-tag</v-icon
-                        >
-                        <v-icon v-else-if="postInfo.tags.length > 1"
-                          >mdi-tag-multiple</v-icon
-                        >
+                        <v-icon v-if="postInfo.tags.length == 1">mdi-tag</v-icon>
+                        <v-icon v-else-if="postInfo.tags.length > 1">mdi-tag-multiple</v-icon>
                       </v-btn>
 
                       <v-btn
@@ -159,8 +156,7 @@
                         small
                         tile
                         :to="'/blog/etiket/' + postInfo.tags[0]"
-                        >{{ postInfo.tags[0] }}</v-btn
-                      >
+                      >{{ postInfo.tags[0] }}</v-btn>
                     </template>
 
                     <div>
@@ -175,8 +171,7 @@
                         small
                         tile
                         :to="'/blog/etiket/' + tag"
-                        >{{ tag }}</v-btn
-                      >
+                      >{{ tag }}</v-btn>
                     </div>
                   </v-menu>
                 </div>
@@ -199,8 +194,7 @@
                         )
                       "
                       style="color:red;"
-                      >mdi-heart</v-icon
-                    >
+                    >mdi-heart</v-icon>
                     <v-icon v-else>mdi-heart-outline</v-icon>
                   </v-btn>
                 </div>
@@ -210,7 +204,7 @@
         </v-img>
       </v-card>
 
-      <v-row justify="space-around" class="authorInformation" v-if="isMobile">
+      <v-row justify="space-around" class="authorInformation" v-if="$isMobile">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-btn :to="'/blog/yazar/' + postInfo.author.discordId" icon>
@@ -236,12 +230,13 @@
               v-on="on"
               v-else-if="postInfo.tags.length > 1"
               style="margin-left:20px;"
-              >mdi-tag-multiple</v-icon
-            >
+            >mdi-tag-multiple</v-icon>
           </template>
-          <span v-for="(tag, index) in postInfo.tags" :key="tag" text>{{
+          <span v-for="(tag, index) in postInfo.tags" :key="tag" text>
+            {{
             `${tag}${index + 1 == postInfo.tags.length ? "" : ", "}`
-          }}</span>
+            }}
+          </span>
           <span v-if="postInfo.tags.length == 0">Etiket Yok</span>
         </v-tooltip>
 
@@ -263,8 +258,7 @@
               )
             "
             style="color:red;"
-            >mdi-heart</v-icon
-          >
+          >mdi-heart</v-icon>
           <v-icon v-else>mdi-heart-outline</v-icon>
         </v-btn>
       </v-row>
@@ -282,10 +276,7 @@
           <div class="contentDiv" v-html="postInfo.content" />
         </v-col>
 
-        <v-col
-          v-if="sidebarEnabled"
-          class="mobileFriendlySidebar postSidebar col-md-4"
-        >
+        <v-col v-if="sidebarEnabled" class="mobileFriendlySidebar postSidebar col-md-4">
           <Sidebar :songs="songs" :mostViewed="mostViewed" />
         </v-col>
       </v-row>
@@ -308,9 +299,7 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="$router.push('/blog')"
-            >Tamam</v-btn
-          >
+          <v-btn color="primary" text @click="$router.push('/blog')">Tamam</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -415,13 +404,12 @@ import moment from "moment";
 import Sidebar from "../../../components/blog/Sidebar";
 import CommentSection from "../../../components/blog/CommentSection";
 import BlogMixin from "../../../components/mixins/blog";
-import GlobalMixin from "../../../components/mixins/global";
 
 export default {
-  mixins: [BlogMixin, GlobalMixin],
+  mixins: [BlogMixin],
   components: {
     Sidebar,
-    CommentSection,
+    CommentSection
   },
   layout: "blog",
   auth: false,
@@ -431,27 +419,27 @@ export default {
         {
           name: "og:url",
           content: `https://eggsy.codes/blog/gonderi/${this.postInfo
-            .short_url || this.postInfo._id}`,
+            .short_url || this.postInfo._id}`
         },
         { name: "og:site_name", content: "eggsy.codes - blog" },
         { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
-          content: this.postInfo.title || "Bilinmeyen Gönderi",
+          content: this.postInfo.title || "Bilinmeyen Gönderi"
         },
         {
           name: "og:description",
           content:
             this.postInfo.shortdesc ||
-            "Böyle bir gönderi bulunamadı; lütfen gönderi bağlantısını kontrol edin ve hata devam ederse iletişime geçin.",
+            "Böyle bir gönderi bulunamadı; lütfen gönderi bağlantısını kontrol edin ve hata devam ederse iletişime geçin."
         },
         {
           name: "premid-details",
-          content: this.postInfo.title || "Bilinmeyen Gönderi",
+          content: this.postInfo.title || "Bilinmeyen Gönderi"
         },
         {
           name: "og:image",
-          content: this.postInfo.images.small || "",
+          content: this.postInfo.images.small || ""
         },
         {
           name: "premid-state",
@@ -460,25 +448,25 @@ export default {
               ? `${this.postInfo.author.name} - ${this.getDate(
                   this.postInfo.date
                 )}`
-              : "Unknown Post",
+              : "Unknown Post"
         },
         {
           name: "article:published-time",
-          content: this.postInfo.date,
-        },
+          content: this.postInfo.date
+        }
       ],
       link = [
         {
           rel: "canonical",
           href: `https://eggsy.codes/blog/gonderi/${this.postInfo.short_url ||
-            this.postInfo._id}`,
-        },
+            this.postInfo._id}`
+        }
       ];
 
     return {
       title,
       meta,
-      link,
+      link
     };
   },
   async asyncData({ params, redirect, store, error }) {
@@ -507,7 +495,7 @@ export default {
         dialog: false,
         dialogMsg: null,
         copied: false,
-        params,
+        params
       };
     } catch (err) {
       error({ statusCode: 404, customMessage: "Gönderi Bulunamadı" });
@@ -530,7 +518,7 @@ export default {
 
     setTimeout(() => {
       const element = document.querySelector(window.location.hash);
-      
+
       if (window.location.hash && element) {
         const { x, y } = element.getBoundingClientRect();
 
@@ -584,7 +572,7 @@ export default {
       else timeString = `${date.format("DD/MM/YY HH:mm:SS")}`;
 
       return timeString;
-    },
-  },
+    }
+  }
 };
 </script>
