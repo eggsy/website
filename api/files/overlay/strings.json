@@ -1,0 +1,82 @@
+{
+  "en": {
+    "title": "Picture Editor with Overlays",
+    "description": "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!",
+    "selectFrame": "Select a frame",
+    "others": "Others",
+    "overlayList": "Overlay List",
+    "imageUrl": "Image URL",
+    "width": "Width",
+    "height": "Height",
+    "checkBox": "Custom Sizes",
+    "button": "Get the image",
+    "clearButton": "Clear",
+    "resultTitle": "Result",
+    "footer": "This page and the API that process images is developed by EGGSY#3388. This page is created for you to access API easiely and with a GUI. If you have enough intelligence abuout APIs, you can check the API endpoint from <a href='/api/overlay/create'>here</a>.",
+    "thanksTo": "<br /><br /><a href='/files/overlay/thanksto.txt'>These people</a> helped me a lot to create this API, thanks for their hard work.",
+    "errors": [
+      "You know what we're going to do here... Why don't you just go and select the frame before I change my mind OK?",
+      "If you don't give me an image, what am I going to put under the selected overlay? Weirdo.",
+      "Well if you're going to add custom sizes, it's the right time, you have to write them down if you check it.",
+      "Sorry we don't support 4K HDR Ultra+ picture quality and neither Discord's CDN, please just make it a little bit smaller so I can process easier.",
+      "What? What are you going to do with the result? Please don't tire me up for a smol picture. Thank you.",
+      "Umm, I think width and height can only be numbers. Amirite?",
+      "Well, the website you entered doesn't really support requests from other countries so I can't let you use it! Use something else!",
+      "An error occured while trying to process the image, please make sure the image you entered is a real image and can get requests from New York located servers."
+    ]
+  },
+  "fr": {
+    "lang": "fr",
+    "title": "Outil de création de photos de profils avec Overlay",
+    "description": "Vous pouvez consulter par le biais de cette page les cadres proposés et les ajouter à votre profil pour pouvoir les utiliser.",
+    "selectFrame": "Sélectionnez un overlay",
+    "others": "Autres",
+    "overlayList": "Liste d'overlays",
+    "imageUrl": "URL de l'image",
+    "width": "Largeur",
+    "height": "Longueur",
+    "checkBox": "Dimensions Personnalisées",
+    "button": "Concocter l'image",
+    "clearButton": "Remettre à zéro",
+    "resultTitle": "Résultat",
+    "footer": "Cette page et l'API qui génère les images ont étés codés par EGGSY#3388. Cette page réalisée vous permet de donner un accès visuel direct à l'API. Si vous avez des connaissances dans ce domaine, vous pouvez <a href='/api/overlay/create'>cliquer ici pour l'API</a>.",
+    "thanksTo": "<br /><br />Un énorme merci à <a href='/files/overlay/thanksto.txt'>ces personnes</a> pour l'aide à la réalisation de cet API ainsi que pour les images proposées et merci à Eri#1000 pour la traduction française.",
+    "errors": [
+      "Vous devez choisir un overlay!",
+      "L'URL de l'image est incorrect!",
+      "Vous avez activé les dimensions personnalisées, vous devez saisir la longueur et la largeur!",
+      "Le lien de l'image est trop long ! Essayez avec quelque chose de plus court.",
+      "Les dimensions personnalisées ne peuvent pas être très grand ou très petit!",
+      "Les valeurs de longueur et de largeur peuvent uniquement être des entiers.",
+      "Le service Hızlıresim ne peut-être utilisé sur ce site, les demandes internationaux sont bloquées par le service.",
+      "Une erreur est survenue lors de la réalisation de votre image. Veuillez verifier que votre lien est valable, qu'il appartient à une image ou veuillez réessayer ulterieurement en actualisant la page."
+    ]
+  },
+  "tr": {
+    "lang": "tr",
+    "title": "Çerçeveli Fotoğraf Oluşturucusu",
+    "description": "Bu sayfa ile istediğiniz herhangi bir resme seçtiğiniz özel çerçeveyi ekleyebilir ve profil fotoğraflarınızda kullanabilirsiniz.",
+    "selectFrame": "Çerçeve seçin",
+    "others": "Diğerleri",
+    "overlayList": "Çerçeve Listesi",
+    "imageUrl": "Resim URL'si",
+    "width": "Genişlik",
+    "height": "Uzunluk",
+    "checkBox": "Özel Boyutlar",
+    "button": "Resmi Hazırla",
+    "clearButton": "Sıfırla",
+    "resultTitle": "Sonuç",
+    "footer": "Bu sayfa ve resimlerin oluşturulduğu API, EGGSY#3388 tarafından kodlanmıştır. Bu sayfa API'ye bir arayüzle erişmenize olanak sağlamak için hazırlanmıştır. Eğer bilginiz varsa <a href='/api/overlay/create'>buradan</a> API'ye gidebilirsiniz.</p>",
+    "thanksTo": "<a href='/files/overlay/thanksto.txt'>Bu kişilere</a> API üzerindeki resimlerin oluşumunda gösterdikleri çabalardan dolayı teşekkürler.",
+    "errors": [
+      "Resimlere çerçeve ekleyeceğiz, değil mi? Ama çerçeve seçmezsen ne ekleyebiliriz ki!",
+      "Boş bir çerçeve yapmaya iznim yok sanırım, lütfen bir resim URL'si gir ki hiç değilse onun üzerine eklemekte sana yardımcı olayım.",
+      "Özel boyut seçeneği seçiliyken maalesef oraları doldurman veya seçeneği kapatman gerekiyor. Hani hatalar için ^-^",
+      "Girdiğiniz URL için çok teşekkürler ancak bu kadar uzun bir URL'yi nereden buldunuz şaşırmadık değil daha doğrusu. Lütfen kısaltın da gelin, iyi günler.",
+      "Bu kadar küçük bir resimle ne yapacaksın ki? İnanılmaz...",
+      "Genişlik ve uzunluk değerlerini sayı olması gerektiğini gerçekten söylediğime inanamıyorum.",
+      "Hızlıresim görüntüleri işlemek sandığınızdan daha zor efendim, lütfen özürlerimi kabul edin ancak başka bir sağlayıcı kullanmanızı istemek zorundayım sizden...",
+      "Resim oluşturulurken bir hata meydana geldi. Lütfen resminizin geçerli bir resim linki olduğundan emin olun veya bir süre sonra sayfayı yenileyip tekrar deneyin."
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "eggsy.codes",
+  "version": "1.0.0",
+  "description": "This is the heart of my projects; the place where I keep and host most of them! Make sure to check this out if you want to know more about me!",
+  "author": "EGGSY",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "axios": "^0.19.2",
+    "babel": "^6.23.0",
+    "canvas": "^2.6.1",
+    "cors": "^2.8.5",
+    "epic-spinners": "^1.1.0",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "helmet": "^3.23.3",
+    "jodit-vue": "^2.2.0",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.20",
+    "net": "^1.0.2",
+    "nuxt": "^2.13.2",
+    "nuxt-helmet": "^1.2.3",
+    "request": "^2.88.2",
+    "vue-animejs": "^2.1.1",
+    "vue-tippy": "^4.4.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.2",
+    "material-design-icons-iconfont": "^5.0.1"
+  }
+}

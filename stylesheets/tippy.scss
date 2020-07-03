@@ -1,0 +1,54 @@
+/* Thanks to the original designer: Voknehzyr */
+
+.tippy-tooltip.discord-theme {
+  background-color: black;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.tippy-tooltip[data-inertia][data-state="visible"] {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tippy-popper[x-placement^="top"] {
+  .tippy-tooltip[data-animation="discord-anim"] {
+    transform-origin: center !important;
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: scale(0.9) translateY(-11px);
+    }
+    &[data-state="visible"] {
+      transform: scale(1) translateY(-11px);
+    }
+  }
+}
+
+.tippy-popper[x-placement^="bottom"] {
+  .tippy-tooltip[data-animation="discord-anim"] {
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: scale(0.9) translateY(11px);
+    }
+    &[data-state="visible"] {
+      transform: scale(1) translateY(11px);
+    }
+  }
+}
+
+.tippy-popper[x-placement^="top"] .tippy-tooltip.discord-theme .tippy-arrow {
+  border-top-color: black;
+  filter: drop-shadow(0 2px 16px 0 rgba(0, 0, 0, 0.5));
+}
+
+.tippy-popper[x-placement^="bottom"] .tippy-tooltip.discord-theme .tippy-arrow {
+  border-bottom-color: black;
+  filter: drop-shadow(0 2px 16px 0 rgba(0, 0, 0, 0.5));
+}
+
+.tippy-tooltip.discord-theme .tippy-content {
+  font-family: "Roboto";
+  padding: 1.5px 4px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  font-size: 0.965em;
+}

@@ -1,0 +1,28 @@
+name: Deploy
+on:
+  push:
+    branches: ["master"]
+    paths:
+      - "public/**/*"
+      - "src/**/*"
+      - "package.json"
+      - "**.js"
+      - "yarn.lock"
+      - "**/*.yml"
+jobs:
+  Deploy:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Deploying...
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /home/eggsydev/eggsy-codes/
+            git reset --hard
+            git pull
+            yarn
+            yarn build
+            pm2 reload Website
