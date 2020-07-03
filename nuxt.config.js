@@ -25,7 +25,7 @@ export default {
       },
       {
         hid: "og:description",
-        name: "description",
+        name: "og:description",
         content: process.env.npm_package_description || "",
       },
     ],
