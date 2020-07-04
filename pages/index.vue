@@ -320,7 +320,10 @@ export default {
           icon: "/images/projects/favicons/dbl.png",
           url: "https://top.gg/"
         }
-      ].map(i => (i.url = `${i.url}?utm_source=eggsy.codes`)),
+      ].map(i => {
+        i.url = `${i.url}?utm_source=eggsy.codes`;
+        return i;
+      }),
       projects: [
         {
           name: "Personal Blog",
