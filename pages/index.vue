@@ -12,7 +12,12 @@
         <div v-for="skill in skills" :key="skill.name">
           <small>{{ skill.name }}</small>
 
-          <v-progress-linear :value="skill.value.increase" :color="skill.color" height="20">
+          <v-progress-linear
+            class="progress"
+            :value="skill.value.increase"
+            :color="skill.color"
+            height="20"
+          >
             <template v-slot="{ value }">
               <small>{{ Math.ceil(value) }}%</small>
             </template>
@@ -25,7 +30,7 @@
       </div>
     </v-col>
 
-    <v-col class="information">
+    <v-col class="information" md="5">
       <h3 class="font-weight-light text-uppercase">Who am I?</h3>
       <p>I am a Turkish guy who plays games, codes stuff, and wants to be an English teacher in the future. I mainly focus on everything about JavaScript because that's the only language I know and I'm pretty happy with it.</p>
 
@@ -67,7 +72,7 @@
       </div>
     </v-col>
 
-    <v-col cols="4" class="projects">
+    <v-col class="projects">
       <h3 class="font-weight-light text-uppercase">My projects</h3>
       <div class="cards">
         <v-card
@@ -107,7 +112,7 @@ h3:not(:first-child) {
 }
 
 .information {
-  margin-left: 1em;
+  margin: 0 1em;
 
   p {
     max-width: 500px;
@@ -119,6 +124,15 @@ h3:not(:first-child) {
 
   div {
     margin-top: 4px;
+  }
+
+  .progress {
+    border-radius: 2px;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
 
@@ -203,8 +217,10 @@ h3:not(:first-child) {
     .cards {
       float: unset;
 
-      div {
-        .v-card:hover {
+      div.v-card {
+        max-width: 100% !important;
+
+        &:hover {
           transform: unset;
         }
       }
@@ -255,7 +271,7 @@ export default {
         },
         {
           name: "TypeScript",
-          value: { actual: 90, increase: 0 },
+          value: { actual: 85, increase: 0 },
           color: "#0074c1"
         },
         {
