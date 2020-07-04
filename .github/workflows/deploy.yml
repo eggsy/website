@@ -3,8 +3,8 @@ on:
   push:
     branches: ["master"]
     paths:
-      - "public/**/*"
-      - "src/**/*"
+      - "*"
+      - "**/*"
       - "package.json"
       - "**.js"
       - "yarn.lock"
