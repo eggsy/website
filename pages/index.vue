@@ -291,14 +291,14 @@ export default {
           service: "Discord Templates",
           role: "Website Developer",
           icon: "/images/projects/favicons/dcst.png",
-          url: "https://discordtemplates.com/?utm_source=eggsy.codes"
+          url: "https://discordtemplates.com/"
         },
         {
           current: true,
           service: "PreMiD",
           role: "Website Developer",
           icon: "/images/projects/favicons/premid.png",
-          url: "https://premid.app/?utm_source=eggsy.codes"
+          url: "https://premid.app/"
         },
         {
           current: true,
@@ -312,13 +312,13 @@ export default {
           service: "MultiMC",
           role: "Translator",
           icon: "/images/projects/favicons/multimc.png",
-          url: "https://multimc.org/?utm_source=eggsy.codes"
+          url: "https://multimc.org/"
         },
         {
           service: "Discord Bot List",
           role: "Website Moderator",
           icon: "/images/projects/favicons/dbl.png",
-          url: "https://top.gg/?utm_source=eggsy.code"
+          url: "https://top.gg/"
         }
       ],
       projects: [
@@ -364,7 +364,7 @@ export default {
   methods: {
     open(url, target) {
       if (!target) this.$router.push(url);
-      else window.open(url, target).focus();
+      else window.open(`${url}?utm_source=eggsy.codes`, target).focus();
     }
   }
 };
