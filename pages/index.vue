@@ -305,7 +305,7 @@ export default {
           service: "TruckersMP",
           role: "Translator",
           icon: "/images/projects/favicons/truckersmp.png",
-          url: "https://truckersmp.com"
+          url: "https://truckersmp.com/"
         },
         {
           current: true,
