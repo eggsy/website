@@ -320,7 +320,7 @@ export default {
           icon: "/images/projects/favicons/dbl.png",
           url: "https://top.gg/"
         }
-      ],
+      ].map(i => (i.url = `${i.url}?utm_source=eggsy.codes`)),
       projects: [
         {
           name: "Personal Blog",
@@ -364,7 +364,7 @@ export default {
   methods: {
     open(url, target) {
       if (!target) this.$router.push(url);
-      else window.open(`${url}?utm_source=eggsy.codes`, target).focus();
+      else window.open(url, target).focus();
     }
   }
 };
