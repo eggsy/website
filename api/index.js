@@ -759,7 +759,7 @@ app.get("/dailySong", async (req, res) => {
         date: today,
       }).exec();
 
-      if (!song) song = "dQw4w9WgXcQ";
+      if (!song) song = { url: "dQw4w9WgXcQ" };
 
       if (req.query.embed)
         res.redirect(`https://youtube.com/watch?v=${song.url}`);
