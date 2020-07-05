@@ -146,9 +146,8 @@
 
         <v-row justify="space-around">
           <v-checkbox
-            v-if="!$isMobile"
             v-model="work"
-            :disabled="!$presenceAdded"
+            :disabled="!$presenceAdded() || $isMobile()"
             @change="startedOnce = true"
             color="primary"
             v-tippy="{
@@ -460,15 +459,15 @@ export default {
     errorChecker() {
       const errors = [];
 
-      if (this.isMobile)
+      if (this.$isMobile())
         errors.push(
           "PreMiD isn't available on mobile, so does this page; you can still test the functions."
         );
-      if (!this.work && !this.isMobile)
+      if (!this.work && this.$presenceAdded() && !this.$isMobile())
         errors.push(
           "Not displaying anything? Better to check that 'Display' checkbox dude."
         );
-      if (!this.presenceAdded && !this.isMobile) {
+      if (!this.$presenceAdded() && !this.$isMobile()) {
         errors.push(
           "To get this page working, you have to go to <a href='https://premid.app/store/presences/Custom%20Status' target='_blank'>PreMiD Store</a> and add 'Custom Status' presence. You have to enable presence/extension."
         );
@@ -744,12 +743,12 @@ export default {
     this.interval1 = setInterval(() => {
       this.errorChecker();
 
-      if (this.isMobile && col && col.classList) {
+      if (this.$isMobile() && col && col.classList) {
         this.work = false;
         col.classList.remove("col");
         col.classList.remove("col-6");
       } else if (
-        !this.isMobile &&
+        !this.$isMobile() &&
         col &&
         col.classList &&
         !col.classList["col"] &&
