@@ -110,6 +110,20 @@ export default {
             "This page will get you redirected to the our free file hosting service, is-inside.me!",
           url: "https://is-inside.me/?utm_source=eggsy.codes",
           image: "https://eggsy.codes/images/projects/is-inside-me.png"
+        },
+        "discord-steam-verification": {
+          name: "Discord Steam Verification",
+          description:
+            "Check your Discord server member's Steam library for a specific game and give them roles if they have it or punish them if they don't!",
+          url: "https://github.com/eggsywashere/discord-steam-verification",
+          image: ""
+        },
+        "epey-bot": {
+          name: "Epey Bot",
+          description:
+            "Access epey.com data directly from your Discord server!",
+          url: "https://github.com/eggsywashere/epey-bot",
+          image: ""
         }
       }
     };

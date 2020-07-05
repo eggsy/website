@@ -31,7 +31,7 @@ export default {
         },
         {
           name: "Discord",
-          url: "https://discordapp.com/users/162969778699501569",
+          url: "https://discord.eggsy.codes",
           icon: "mdi-discord"
         },
         {
