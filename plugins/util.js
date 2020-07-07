@@ -12,7 +12,6 @@ export default (context, inject) => {
       );
 
     const presenceAdded = () =>
-      context.route.path === "/projects/premid/custom-status" &&
       document.querySelector("#__nuxt").classList.contains("presence");
 
     inject("isMobile", isMobile);

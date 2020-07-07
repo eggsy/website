@@ -204,7 +204,7 @@
         </v-img>
       </v-card>
 
-      <v-row justify="space-around" class="authorInformation" v-if="$isMobile">
+      <v-row justify="space-around" class="authorInformation" v-if="$isMobile()">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-btn :to="'/blog/yazar/' + postInfo.author.discordId" icon>
