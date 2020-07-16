@@ -84,7 +84,7 @@ export default {
   auth: false,
   components: {
     Sidebar,
-    PostCard,
+    PostCard
   },
   head() {
     const title = "Etiket: " + this.params.name,
@@ -92,23 +92,25 @@ export default {
         { name: "og:site_name", content: "eggsy.codes - blog" },
         {
           name: "og:title",
-          content: `EGGSY's Blog - "${this.params.name}" Etiketi`,
+          content: `EGGSY's Blog - "${this.params.name}" Etiketi`
         },
         {
+          hid: "og:description",
           name: "og:description",
-          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`,
+          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`
         },
         {
+          hid: "description",
           name: "description",
-          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`,
+          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`
         },
         { name: "premid-details", content: "Viewing a blog page:" },
-        { name: "premid-state", content: "Tag: " + this.params.name },
+        { name: "premid-state", content: "Tag: " + this.params.name }
       ];
 
     return {
       title,
-      meta,
+      meta
     };
   },
   async asyncData({ params }) {
@@ -132,7 +134,7 @@ export default {
         posts: data ? data : [],
         currentCount: data ? data.length : 0,
         btnLoading: false,
-        params,
+        params
       };
     } catch (err) {
       return {
@@ -140,7 +142,7 @@ export default {
         posts: [],
         currentCount: 0,
         btnLoading: false,
-        params,
+        params
       };
     }
   },
@@ -156,7 +158,7 @@ export default {
       this.posts = data ? data : [];
       this.currentCount += 5;
       this.btnLoading = false;
-    },
-  },
+    }
+  }
 };
 </script>

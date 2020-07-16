@@ -9,12 +9,15 @@ export default {
       meta: [
         { name: "og:title", content: "Authorization Required" },
         {
-          name: "og:description",
+          hid: "og:description",
+name: "og:description",
           content:
             "The requested page requires authorization. We use Discord for all of our systems so you'll need to login with Discord to view this page!"
         },
         {
-          name: "description",
+          hid: "description",
+          hid: "description",
+name: "description",
           content:
             "The requested page requires authorization. We use Discord for all of our systems so you'll need to login with Discord to view this page!"
         },

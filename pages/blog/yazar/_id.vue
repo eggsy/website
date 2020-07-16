@@ -148,12 +148,14 @@ export default {
               : "https://eggsy.codes/images/blog/default-avatar.png"
         },
         {
+          hid: "og:description",
           name: "og:description",
           content: this.data.author.name
             ? `EGGSY's Blog'da ${this.data.author.name} adlı yazarın yazdığı yazılara ulaşmak için bu bağlantıya tıklayabilirsiniz.`
             : "Belirtilen bilgilerle blogda yeri olan herhangi bir yazar bulunamadı. Belki de kovulmuştur?"
         },
         {
+          hid: "description",
           name: "description",
           content: this.data.author.name
             ? `EGGSY's Blog'da ${this.data.author.name} adlı yazarın yazdığı yazılara ulaşmak için bu bağlantıya tıklayabilirsiniz.`

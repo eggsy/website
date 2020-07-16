@@ -46,12 +46,14 @@ export default {
         { name: "og:site_name", content: "eggsy.codes - blog" },
         { name: "og:title", content: "Gönderi Düzenleme" },
         {
+          hid: "og:description",
           name: "og:description",
           content: `EGGSY's Blog'daki "${
             this.post.title ? this.post.title : "Bilinmeyen"
           }" adlı gönderiyi düzenleme sayfası. Bu sayfa ile yazıyı güncelleyebilir, silebilir veya taslağa kaldırabilirsiniz.`
         },
         {
+          hid: "description",
           name: "description",
           content: `EGGSY's Blog'daki "${
             this.post.title ? this.post.title : "Bilinmeyen"

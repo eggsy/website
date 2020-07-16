@@ -60,6 +60,7 @@ export default {
           }`
         },
         {
+          hid: "og:description",
           name: "og:description",
           content: `${
             this.params.url && this.settings[this.params.url]
@@ -76,6 +77,7 @@ export default {
           }`
         },
         {
+          hid: "description",
           name: "description",
           content: `${
             this.params.url && this.settings[this.params.url]

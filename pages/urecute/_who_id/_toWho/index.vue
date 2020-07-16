@@ -55,6 +55,7 @@ export default {
           }`
         },
         {
+          hid: "og:description",
           name: "og:description",
           content: `${
             this.params.toWho
@@ -71,6 +72,7 @@ export default {
           content: "/images/projects/heart.png"
         },
         {
+          hid: "description",
           name: "description",
           content: `${
             this.params.toWho

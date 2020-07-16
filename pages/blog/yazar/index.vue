@@ -223,12 +223,14 @@ export default {
       { name: "og:site_name", content: "eggsy.codes - blog" },
       { name: "og:title", content: "Yazar Kontrol Paneli" },
       {
-        name: "og:description",
+        hid: "og:description",
+name: "og:description",
         content:
           "Yazarların EGGSY's Blog'da yazı yazabileceği, varolan yazılarını yönetebileceği ve diğer gerekli araçlara ulaşabileceği panel."
       },
       {
-        name: "description",
+        hid: "description",
+name: "description",
         content:
           "Yazarların EGGSY's Blog'da yazı yazabileceği, varolan yazılarını yönetebileceği ve diğer gerekli araçlara ulaşabileceği panel."
       },

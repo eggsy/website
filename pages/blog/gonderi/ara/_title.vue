@@ -82,10 +82,12 @@ export default {
           content: `Arama: ${this.params.title}`
         },
         {
+          hid: "og:description",
           name: "og:description",
           content: `EGGSY's Blog'da "${this.params.title}" arama sayfası. Bu sayfadan aramanızın sonucunu görebilir ve varsa çıkan gönderileri okuyabilirsiniz.`
         },
         {
+          hid: "description",
           name: "description",
           content: `EGGSY's Blog'da "${this.params.title}" arama sayfası. Bu sayfadan aramanızın sonucunu görebilir ve varsa çıkan gönderileri okuyabilirsiniz.`
         },
@@ -105,8 +107,12 @@ export default {
           `${process.env.apiBase}/blog/posts?type=search&title=${params.title}`
         );
 
-        const mostViewed = await axios.get(`${process.env.apiBase}/blog/posts?type=views`);
-        const songs = await axios.get(`${process.env.apiBase}/dailySong?full=true`);
+        const mostViewed = await axios.get(
+          `${process.env.apiBase}/blog/posts?type=views`
+        );
+        const songs = await axios.get(
+          `${process.env.apiBase}/dailySong?full=true`
+        );
 
         return {
           songs: songs?.data || [],

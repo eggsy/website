@@ -23,10 +23,12 @@ export default {
         { name: "og:site_name", content: "eggsy.codes - blog" },
         { name: "og:title", content: "Yeni Gönderi Oluştur" },
         {
+          hid: "og:description",
           name: "og:description",
           content: `EGGSY's Blog'da yeni bir gönderi oluşturma sayfası.`
         },
         {
+          hid: "description",
           name: "description",
           content: `EGGSY's Blog'da yeni bir gönderi oluşturma sayfası.`
         },

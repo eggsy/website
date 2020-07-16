@@ -341,11 +341,13 @@ export default {
     meta: [
       { name: "og:title", content: "PreMiD Custom Status" },
       {
+        hid: "og:description",
         name: "og:description",
         content:
           "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!"
       },
       {
+        hid: "description",
         name: "description",
         content:
           "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!"

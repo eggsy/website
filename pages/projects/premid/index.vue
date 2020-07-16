@@ -73,6 +73,7 @@ export default {
     meta: [
       { name: "og:title", content: "PreMiD Stuff by EGGSY" },
       {
+        hid: "og:description",
         name: "og:description",
         content:
           "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!"
@@ -82,6 +83,7 @@ export default {
         content: "https://premid.app/assets/images/logo.png"
       },
       {
+        hid: "description",
         name: "description",
         content:
           "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!"

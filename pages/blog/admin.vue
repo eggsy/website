@@ -318,11 +318,13 @@ export default {
       { name: "og:site_name", content: "eggsy.codes - blog" },
       { name: "og:title", content: "Blog Yönetimi" },
       {
+        hid: "og:description",
         name: "og:description",
         content:
           "Buradan EGGSY's Blog'undaki yazıları yönetebilir, yeni yazılar ekleyebilir ve blog için gerekli diğer ayarlamaları yapabilirsiniz."
       },
       {
+        hid: "description",
         name: "description",
         content:
           "Buradan EGGSY's Blog'undaki yazıları yönetebilir, yeni yazılar ekleyebilir ve blog için gerekli diğer ayarlamaları yapabilirsiniz."

@@ -16,6 +16,7 @@ export default {
         content: "width=device-width, initial-scale=1",
       },
       {
+        hid: "theme-color",
         name: "theme-color",
         content: "#212121",
       },

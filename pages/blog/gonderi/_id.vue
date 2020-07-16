@@ -427,6 +427,7 @@ export default {
           content: this.postInfo.title || "Bilinmeyen Gönderi"
         },
         {
+          hid: "og:description",
           name: "og:description",
           content:
             this.postInfo.shortdesc ||
@@ -437,6 +438,7 @@ export default {
           content: this.postInfo.images.small || ""
         },
         {
+          hid: "description",
           name: "description",
           content:
             this.postInfo.shortdesc ||

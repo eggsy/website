@@ -1,7 +1,12 @@
 <template>
   <div>
     <center v-if="langSwitch">
-      <v-system-bar :to="`https://eggsy.codes/projects/overlay?lang=${lang}`" style="max-width:500px" window dark>
+      <v-system-bar
+        :to="`https://eggsy.codes/projects/overlay?lang=${lang}`"
+        style="max-width:500px"
+        window
+        dark
+      >
         <v-icon>mdi-bell</v-icon>
         <span v-html="langMessage"></span>
         <v-spacer></v-spacer>
@@ -14,9 +19,7 @@
         <h2
           style="margin-top:20px;margin-bottom:20px;"
           class="font-weight-thin text-center"
-        >
-          {{ strings.title }}
-        </h2>
+        >{{ strings.title }}</h2>
 
         <div style="margin-top:15px;display:flex;">
           <v-select
@@ -36,15 +39,10 @@
             style="margin-left:15px;height:50px;width:175px;"
             text
             @click="galleryDialog = true"
-            >{{ strings.overlayList }}</v-btn
-          >
+          >{{ strings.overlayList }}</v-btn>
         </div>
 
-        <v-text-field
-          ref="url"
-          clearable
-          :label="strings.imageUrl"
-        ></v-text-field>
+        <v-text-field ref="url" clearable :label="strings.imageUrl"></v-text-field>
 
         <div :style="`${checkBox ? 'display:flex;' : 'display:none;'}`">
           <v-text-field
@@ -63,12 +61,7 @@
           ></v-text-field>
         </div>
 
-        <v-checkbox
-          dark
-          color="primary"
-          v-model="checkBox"
-          :label="strings.checkBox"
-        ></v-checkbox>
+        <v-checkbox dark color="primary" v-model="checkBox" :label="strings.checkBox"></v-checkbox>
 
         <div style="display:flex;">
           <v-btn
@@ -77,16 +70,14 @@
             text
             :loading="createLoading"
             @click="create"
-            >{{ strings.button }}</v-btn
-          >
+          >{{ strings.button }}</v-btn>
           <v-btn
             style="margin-left:15px;"
             color="secondary"
             outlined
             text
             @click="clear"
-            >{{ strings.clearButton }}</v-btn
-          >
+          >{{ strings.clearButton }}</v-btn>
         </div>
 
         <footer style="margin-top:20px;">
@@ -116,13 +107,7 @@
             <v-spacer></v-spacer>
             <v-menu bottom left offset-y>
               <template v-slot:activator="{ on }">
-                <v-btn
-                  title="Download the image."
-                  dark
-                  icon
-                  v-on="on"
-                  @click="download(image)"
-                >
+                <v-btn title="Download the image." dark icon v-on="on" @click="download(image)">
                   <v-icon>mdi-download</v-icon>
                 </v-btn>
               </template>
@@ -149,15 +134,15 @@
               ></v-img>
             </center>
           </div>
-          <v-card-text v-else>{{
+          <v-card-text v-else>
+            {{
             message || "No message specified. Please try again."
-          }}</v-card-text>
+            }}
+          </v-card-text>
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" text @click="dialog = false"
-              >OK</v-btn
-            >
+            <v-btn color="green darken-1" text @click="dialog = false">OK</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -169,13 +154,7 @@
             <v-spacer></v-spacer>
             <v-menu bottom left offset-y>
               <template v-slot:activator="{ on }">
-                <v-btn
-                  title="Close the dialog."
-                  dark
-                  icon
-                  v-on="on"
-                  @click="galleryDialog = false"
-                >
+                <v-btn title="Close the dialog." dark icon v-on="on" @click="galleryDialog = false">
                   <v-icon>mdi-close</v-icon>
                 </v-btn>
               </template>
@@ -219,37 +198,39 @@ import SocialMedia from "../../../components/SocialMedia";
 export default {
   auth: false,
   components: {
-    SocialMedia,
+    SocialMedia
   },
   head() {
     const title = this.strings.title || "Picture Editor with Overlays",
       meta = [
         {
           name: "og:title",
-          content: this.strings.title || "Picture Editor with Overlays",
+          content: this.strings.title || "Picture Editor with Overlays"
         },
         {
+          hid: "og:description",
           name: "og:description",
           content:
             this.strings.description ||
-            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!",
+            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!"
         },
         {
+          hid: "description",
           name: "description",
           content:
             this.strings.description ||
-            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!",
+            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!"
         },
         { name: "premid-details", content: "Viewing a page:" },
         {
           name: "premid-state",
-          content: "Overlay Creator",
-        },
+          content: "Overlay Creator"
+        }
       ];
 
     return {
       title,
-      meta,
+      meta
     };
   },
   data() {
@@ -268,7 +249,7 @@ export default {
       lang: null,
       strings: strs[`${this.$route.query.lang}`]
         ? strs[`${this.$route.query.lang || "en"}`]
-        : strs["en"],
+        : strs["en"]
     };
   },
   methods: {
@@ -281,7 +262,7 @@ export default {
       this.message = null;
       this.selectedOverlay = null;
 
-      Object.keys(this.$refs).forEach((ref) => {
+      Object.keys(this.$refs).forEach(ref => {
         this.$refs[ref].reset ? this.$refs[ref].reset() : false;
       });
     },
@@ -372,12 +353,12 @@ export default {
 
           axios
             .head(resultUrl)
-            .then((res) => {
+            .then(res => {
               this.createLoading = false;
               this.image = resultUrl;
               this.dialog = true;
             })
-            .catch((err) => {
+            .catch(err => {
               this.createLoading = false;
               console.log(err);
               this.message = this.strings.errors[7];
@@ -390,7 +371,7 @@ export default {
           this.dialog = true;
         }
       }
-    },
+    }
   },
   async mounted() {
     if (
@@ -424,10 +405,10 @@ export default {
     const { data } = await axios.get("/api/overlay/frames"),
       frameNames = [];
 
-    data.forEach((f) => {
+    data.forEach(f => {
       const splitted = f
         .split("_")
-        .map((f) => {
+        .map(f => {
           if (!isNaN(f) || !isNaN(f.slice(-2))) {
             return f.toLowerCase().slice(0, -2) + " (" + f.slice(-2) + ")";
           } else if (!isNaN(f.slice(-1)))
@@ -457,6 +438,6 @@ export default {
 
     this.frames = frameNames;
     this.loading = false;
-  },
+  }
 };
 </script>

@@ -324,6 +324,7 @@ export default {
     meta: [
       { name: "og:title", content: "Presence Metadata Creator" },
       {
+        hid: "og:description",
         name: "og:description",
         content:
           "Hey presence developers! This page is there for you to create, edit and make sure about your metadata.json files. You can create one, edit one and even use this to check if there's anything wrong about your file!"
@@ -333,6 +334,7 @@ export default {
         content: "https://premid.app/assets/images/logo.png"
       },
       {
+        hid: "description",
         name: "description",
         content:
           "Hey presence developers! This page is there for you to create, edit and make sure about your metadata.json files. You can create one, edit one and even use this to check if there's anything wrong about your file!"

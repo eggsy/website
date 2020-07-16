@@ -92,10 +92,12 @@ export default {
           content: "Favorilerim"
         },
         {
+          hid: "og:description",
           name: "og:description",
           content: `EGGSY's Blog'da beğendiğiniz veya daha sonra okumak için sakladığınız favori gönderilerinize ulaşabileceğiniz sayfa.`
         },
         {
+          hid: "description",
           name: "description",
           content: `EGGSY's Blog'da beğendiğiniz veya daha sonra okumak için sakladığınız favori gönderilerinize ulaşabileceğiniz sayfa.`
         },

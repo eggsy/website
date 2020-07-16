@@ -42,7 +42,8 @@ export default {
             : "Error",
         },
         {
-          name: "og:description",
+          hid: "og:description",
+name: "og:description",
           content: this.errors[this.error.statusCode]
             ? this.errors[this.error.statusCode].description
             : "Oh well, seems like there was an error processing your request. You better find a different way!",

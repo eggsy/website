@@ -36,11 +36,13 @@ export default {
         content: "Redirecting to homepage"
       },
       {
+        hid: "og:description",
         name: "og:description",
         content:
           "This page requires a parameter to work. Please check your request and try again."
       },
       {
+        hid: "description",
         name: "description",
         content:
           "This page requires a parameter to work. Please check your request and try again."

@@ -219,6 +219,7 @@ export default {
     title: "Presence Stats",
     meta: [
       {
+        hid: "og:description",
         name: "og:description",
         content:
           "See stats about which PreMiD services are used most with their usage numbers and creators!"
@@ -228,6 +229,7 @@ export default {
         content: "https://premid.app/assets/images/logo.png"
       },
       {
+        hid: "description",
         name: "description",
         content:
           "See stats about which PreMiD services are used most with their usage numbers and creators!"

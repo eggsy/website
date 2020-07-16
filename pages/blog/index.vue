@@ -34,18 +34,12 @@
                         ? 'text-overflow:ellipsis;white-space:nowrap;overflow:hidden;'
                         : 'text-align:center;word-break:break-word;'
                     "
-                    >{{ post.title }}</span
-                  >
+                  >{{ post.title }}</span>
                 </v-card-title>
               </v-img>
 
               <v-fade-transition>
-                <v-overlay
-                  v-if="hover"
-                  style="z-index:unset;"
-                  absolute
-                  color="#000000"
-                >
+                <v-overlay v-if="hover" style="z-index:unset;" absolute color="#000000">
                   <v-btn
                     icon
                     x-large
@@ -55,8 +49,9 @@
                         post.short_url ? post.short_url : post._id
                       }`
                     "
-                    ><v-icon>mdi-page-next</v-icon></v-btn
                   >
+                    <v-icon>mdi-page-next</v-icon>
+                  </v-btn>
                   <v-btn
                     @click="
                       favorite(post.short_url ? post.short_url : post._id)
@@ -73,10 +68,9 @@
                           )
                       "
                       style="color:red;"
-                      >mdi-heart</v-icon
-                    >
-                    <v-icon v-else>mdi-heart-outline</v-icon></v-btn
-                  >
+                    >mdi-heart</v-icon>
+                    <v-icon v-else>mdi-heart-outline</v-icon>
+                  </v-btn>
                 </v-overlay>
               </v-fade-transition>
             </v-card>
@@ -218,7 +212,7 @@ export default {
   mixins: [BlogMixin],
   components: {
     Sidebar,
-    PostCard,
+    PostCard
   },
   layout: "blog",
   auth: false,
@@ -228,18 +222,20 @@ export default {
       { name: "og:site_name", content: "eggsy.codes - blog" },
       { name: "og:title", content: "EGGSY's Blog" },
       {
+        hid: "og:description",
         name: "og:description",
         content:
-          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. ",
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. "
       },
       {
+        hid: "description",
         name: "description",
         content:
-          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. ",
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. "
       },
       { name: "premid-details", content: "Viewing a blog page:" },
-      { name: "premid-state", content: "Homepage" },
-    ],
+      { name: "premid-state", content: "Homepage" }
+    ]
   },
   async asyncData({ redirect, error }) {
     try {
@@ -267,12 +263,12 @@ export default {
         dialog: false,
         galleryCount: 4,
         dialogMsg: null,
-        morePostsClicked: false,
+        morePostsClicked: false
       };
     } catch (err) {
       error({
         statusCode: 500,
-        customMessage: "Sunucu taraflı bir hata oluştu",
+        customMessage: "Sunucu taraflı bir hata oluştu"
       });
     }
   },
@@ -320,7 +316,7 @@ export default {
             `${process.env.apiBase}/blog/posts?type=content&skip=0&limit=${this
               .visiblePostCount + 5}`
           )
-          .then((json) => {
+          .then(json => {
             if (json && json.data && this.posts.length != json.data.length) {
               this.posts = json && json.data ? json.data : [];
               this.visiblePostCount += 5;
@@ -359,7 +355,7 @@ export default {
       else timeString = `${date.format("DD/MM/YY HH:mm:SS")}`;
 
       return timeString;
-    },
-  },
+    }
+  }
 };
 </script>
