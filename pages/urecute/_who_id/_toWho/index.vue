@@ -39,6 +39,16 @@ export default {
       }`,
       meta = [
         {
+          hid: "og:site_name",
+          name: "og:site_name",
+          content: null
+        },
+        {
+          hid: "theme-color",
+          name: "theme-color",
+          content: "#ff0000"
+        },
+        {
           name: "og:title",
           content: `Hey ${
             this.params.toWho
