@@ -315,11 +315,15 @@ export default {
   head: {
     title: "Blog Yönetimi",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes blog" },
-      { name: "theme-color", content: "#212121" },
+      { name: "og:site_name", content: "eggsy.codes - blog" },
       { name: "og:title", content: "Blog Yönetimi" },
       {
         name: "og:description",
+        content:
+          "Buradan EGGSY's Blog'undaki yazıları yönetebilir, yeni yazılar ekleyebilir ve blog için gerekli diğer ayarlamaları yapabilirsiniz."
+      },
+      {
+        name: "description",
         content:
           "Buradan EGGSY's Blog'undaki yazıları yönetebilir, yeni yazılar ekleyebilir ve blog için gerekli diğer ayarlamaları yapabilirsiniz."
       },

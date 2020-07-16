@@ -31,14 +31,17 @@ export default {
         "http-equiv": "refresh",
         content: "5;url=/"
       },
-      { name: "og:site_name", content: "eggsy.codes" },
-      { name: "theme-color", content: "#212121" },
       {
         name: "og:title",
         content: "Redirecting to homepage"
       },
       {
         name: "og:description",
+        content:
+          "This page requires a parameter to work. Please check your request and try again."
+      },
+      {
+        name: "description",
         content:
           "This page requires a parameter to work. Please check your request and try again."
       },

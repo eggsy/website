@@ -322,8 +322,6 @@ export default {
   head: {
     title: "PreMiD",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes" },
-      { name: "theme-color", content: "#212121" },
       { name: "og:title", content: "Presence Metadata Creator" },
       {
         name: "og:description",
@@ -333,6 +331,11 @@ export default {
       {
         name: "og:image",
         content: "https://premid.app/assets/images/logo.png"
+      },
+      {
+        name: "description",
+        content:
+          "Hey presence developers! This page is there for you to create, edit and make sure about your metadata.json files. You can create one, edit one and even use this to check if there's anything wrong about your file!"
       },
       { name: "premid-details", content: "Viewing a PreMiD page:" },
       { name: "premid-state", content: "Metadata Creator" }

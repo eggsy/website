@@ -220,11 +220,15 @@ export default {
   head: {
     title: "Yazar Kontrol Paneli",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes blog" },
-      { name: "theme-color", content: "#212121" },
+      { name: "og:site_name", content: "eggsy.codes - blog" },
       { name: "og:title", content: "Yazar Kontrol Paneli" },
       {
         name: "og:description",
+        content:
+          "Yazarların EGGSY's Blog'da yazı yazabileceği, varolan yazılarını yönetebileceği ve diğer gerekli araçlara ulaşabileceği panel."
+      },
+      {
+        name: "description",
         content:
           "Yazarların EGGSY's Blog'da yazı yazabileceği, varolan yazılarını yönetebileceği ve diğer gerekli araçlara ulaşabileceği panel."
       },

@@ -77,13 +77,16 @@ export default {
     const title = `Arama: ${this.params.title}`,
       meta = [
         { name: "og:site_name", content: "eggsy.codes - blog" },
-        { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
           content: `Arama: ${this.params.title}`
         },
         {
           name: "og:description",
+          content: `EGGSY's Blog'da "${this.params.title}" arama sayfası. Bu sayfadan aramanızın sonucunu görebilir ve varsa çıkan gönderileri okuyabilirsiniz.`
+        },
+        {
+          name: "description",
           content: `EGGSY's Blog'da "${this.params.title}" arama sayfası. Bu sayfadan aramanızın sonucunu görebilir ve varsa çıkan gönderileri okuyabilirsiniz.`
         },
         { name: "premid-details", content: "Searching something in blog:" },

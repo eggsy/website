@@ -250,7 +250,6 @@ export default {
   head: {
     title: "Homepage",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes" },
       { name: "og:title", content: "EGGSY's Website" },
       { name: "premid-details", content: "Viewing a page:" },
       { name: "premid-state", content: "Homepage" }

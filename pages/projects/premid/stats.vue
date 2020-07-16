@@ -218,9 +218,6 @@ export default {
   head: {
     title: "Presence Stats",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes" },
-      { name: "theme-color", content: "#212121" },
-      { name: "og:title", content: "PreMiD Presence Stats" },
       {
         name: "og:description",
         content:
@@ -229,6 +226,11 @@ export default {
       {
         name: "og:image",
         content: "https://premid.app/assets/images/logo.png"
+      },
+      {
+        name: "description",
+        content:
+          "See stats about which PreMiD services are used most with their usage numbers and creators!"
       },
       { name: "premid-details", content: "Viewing a PreMiD page:" },
       { name: "premid-state", content: "Presence Stats" }

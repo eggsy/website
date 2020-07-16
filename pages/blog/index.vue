@@ -225,11 +225,15 @@ export default {
   head: {
     title: "Blog",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes" },
-      { name: "theme-color", content: "#212121" },
+      { name: "og:site_name", content: "eggsy.codes - blog" },
       { name: "og:title", content: "EGGSY's Blog" },
       {
         name: "og:description",
+        content:
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. ",
+      },
+      {
+        name: "description",
         content:
           "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. ",
       },

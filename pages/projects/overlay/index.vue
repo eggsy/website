@@ -224,14 +224,18 @@ export default {
   head() {
     const title = this.strings.title || "Picture Editor with Overlays",
       meta = [
-        { name: "og:site_name", content: "eggsy.codes" },
-        { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
           content: this.strings.title || "Picture Editor with Overlays",
         },
         {
           name: "og:description",
+          content:
+            this.strings.description ||
+            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!",
+        },
+        {
+          name: "description",
           content:
             this.strings.description ||
             "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!",

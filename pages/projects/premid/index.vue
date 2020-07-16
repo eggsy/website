@@ -71,8 +71,6 @@ export default {
   head: {
     title: "PreMiD",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes" },
-      { name: "theme-color", content: "#212121" },
       { name: "og:title", content: "PreMiD Stuff by EGGSY" },
       {
         name: "og:description",
@@ -82,6 +80,11 @@ export default {
       {
         name: "og:image",
         content: "https://premid.app/assets/images/logo.png"
+      },
+      {
+        name: "description",
+        content:
+          "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!"
       },
       { name: "premid-details", content: "Viewing a PreMiD page:" },
       { name: "premid-state", content: "Homepage" }

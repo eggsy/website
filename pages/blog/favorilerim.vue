@@ -13,13 +13,9 @@
               )
             ).length == 0
           "
-        >
-          Herhangi bir gönderi favorilerinize eklenmemiş.
-        </h3>
+        >Herhangi bir gönderi favorilerinize eklenmemiş.</h3>
 
-        <h3 v-else style="margin-left:4px;margin-top:2px;">
-          Favorileriniz
-        </h3>
+        <h3 v-else style="margin-left:4px;margin-top:2px;">Favorileriniz</h3>
       </header>
 
       <PostCard
@@ -91,13 +87,16 @@ export default {
     const title = "Favorilerim",
       meta = [
         { name: "og:site_name", content: "eggsy.codes - blog" },
-        { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
           content: "Favorilerim"
         },
         {
           name: "og:description",
+          content: `EGGSY's Blog'da beğendiğiniz veya daha sonra okumak için sakladığınız favori gönderilerinize ulaşabileceğiniz sayfa.`
+        },
+        {
+          name: "description",
           content: `EGGSY's Blog'da beğendiğiniz veya daha sonra okumak için sakladığınız favori gönderilerinize ulaşabileceğiniz sayfa.`
         },
         { name: "premid-details", content: "Viewing a blog page:" },
@@ -118,7 +117,7 @@ export default {
           `${process.env.apiBase}/blog/posts?type=content&skip=0&limit=100`
         );
 
-        const songs = await axios.get(
+      const songs = await axios.get(
         `${process.env.apiBase}/dailySong?full=true&verySecretToken=how-did-you-even-find-this-bro`
       );
 

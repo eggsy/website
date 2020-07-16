@@ -10,6 +10,7 @@ export default {
       {
         charset: "utf-8",
       },
+      { name: "og:site_name", content: "eggsy.codes" },
       {
         name: "viewport",
         content: "width=device-width, initial-scale=1",

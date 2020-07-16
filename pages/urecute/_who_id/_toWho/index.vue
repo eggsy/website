@@ -38,7 +38,6 @@ export default {
         this.query.notCute ? this.query.notCute.replace(/\+/g, " ") : "cute"
       }`,
       meta = [
-        { name: "theme-color", content: "#E84393" },
         {
           name: "og:title",
           content: `Hey ${
@@ -57,7 +56,11 @@ export default {
         },
         {
           name: "og:description",
-          content: `${this.params.toWho ? this.params.toWho.replace(/\+/g, " ") : "someone"} deserves all the ${
+          content: `${
+            this.params.toWho
+              ? this.params.toWho.replace(/\+/g, " ")
+              : "someone"
+          } deserves all the ${
             this.query.notCute
               ? this.query.notCute.replace(/\+/g, " ") + "ness"
               : "happiness"
@@ -66,6 +69,18 @@ export default {
         {
           name: "og:image",
           content: "/images/projects/heart.png"
+        },
+        {
+          name: "description",
+          content: `${
+            this.params.toWho
+              ? this.params.toWho.replace(/\+/g, " ")
+              : "someone"
+          } deserves all the ${
+            this.query.notCute
+              ? this.query.notCute.replace(/\+/g, " ") + "ness"
+              : "happiness"
+          } on the entire planet ❤-❤`
         },
         { name: "premid-details", content: "Viewing a compliment:" },
         {

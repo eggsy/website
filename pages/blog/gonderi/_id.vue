@@ -416,13 +416,12 @@ export default {
   head() {
     const title = this.postInfo.title,
       meta = [
+        { name: "og:site_name", content: "eggsy.codes - blog" },
         {
           name: "og:url",
           content: `https://eggsy.codes/blog/gonderi/${this.postInfo
             .short_url || this.postInfo._id}`
         },
-        { name: "og:site_name", content: "eggsy.codes - blog" },
-        { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
           content: this.postInfo.title || "Bilinmeyen Gönderi"
@@ -434,12 +433,18 @@ export default {
             "Böyle bir gönderi bulunamadı; lütfen gönderi bağlantısını kontrol edin ve hata devam ederse iletişime geçin."
         },
         {
-          name: "premid-details",
-          content: this.postInfo.title || "Bilinmeyen Gönderi"
-        },
-        {
           name: "og:image",
           content: this.postInfo.images.small || ""
+        },
+        {
+          name: "description",
+          content:
+            this.postInfo.shortdesc ||
+            "Böyle bir gönderi bulunamadı; lütfen gönderi bağlantısını kontrol edin ve hata devam ederse iletişime geçin."
+        },
+        {
+          name: "premid-details",
+          content: this.postInfo.title || "Bilinmeyen Gönderi"
         },
         {
           name: "premid-state",

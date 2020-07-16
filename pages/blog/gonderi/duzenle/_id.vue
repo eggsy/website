@@ -3,7 +3,6 @@
     <Breadcrumb />
 
     <Editor :post="post" type="edit" />
-
   </div>
 </template>
 
@@ -45,10 +44,15 @@ export default {
         "Düzenle: " + this.post.title ? this.post.title : "Bilinmeyen",
       meta = [
         { name: "og:site_name", content: "eggsy.codes - blog" },
-        { name: "theme-color", content: "#212121" },
         { name: "og:title", content: "Gönderi Düzenleme" },
         {
           name: "og:description",
+          content: `EGGSY's Blog'daki "${
+            this.post.title ? this.post.title : "Bilinmeyen"
+          }" adlı gönderiyi düzenleme sayfası. Bu sayfa ile yazıyı güncelleyebilir, silebilir veya taslağa kaldırabilirsiniz.`
+        },
+        {
+          name: "description",
           content: `EGGSY's Blog'daki "${
             this.post.title ? this.post.title : "Bilinmeyen"
           }" adlı gönderiyi düzenleme sayfası. Bu sayfa ile yazıyı güncelleyebilir, silebilir veya taslağa kaldırabilirsiniz.`
@@ -80,7 +84,7 @@ export default {
           post: data
         };
       } catch (err) {
-        error({ statusCode: 500 });;
+        error({ statusCode: 500 });
       }
     } else {
       redirect("/blog");
@@ -120,14 +124,11 @@ export default {
           };
 
           axios
-            .post(
-              `${process.env.apiBase}/blog/post/${this.post._id}/update`,
-              {
-                postId: this.post._id,
-                auth: this.$auth.user,
-                data: object
-              }
-            )
+            .post(`${process.env.apiBase}/blog/post/${this.post._id}/update`, {
+              postId: this.post._id,
+              auth: this.$auth.user,
+              data: object
+            })
             .then(res => {
               if (res.data && res.data && res.data.success == true) {
                 this.edited = true;
@@ -195,9 +196,7 @@ export default {
           "Bu etiket daha önce eklenmiş. Aynı etiketten iki tane ekleyemezsiniz.";
         this.dialog = true;
       } else {
-        this.post.tags = this.post.tags.filter(
-          origTag => origTag !== tag
-        );
+        this.post.tags = this.post.tags.filter(origTag => origTag !== tag);
       }
     }
   }

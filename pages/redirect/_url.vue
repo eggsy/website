@@ -51,8 +51,6 @@ export default {
           : "Redirecting to homepage"
       }`,
       meta = [
-        { name: "og:site_name", content: "eggsy.codes" },
-        { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
           content: `${
@@ -75,6 +73,14 @@ export default {
             this.params.url && this.settings[this.params.url]
               ? this.settings[this.params.url].image
               : ""
+          }`
+        },
+        {
+          name: "description",
+          content: `${
+            this.params.url && this.settings[this.params.url]
+              ? this.settings[this.params.url].description
+              : "There is no description for this redirection yet, but it might be added at any time!"
           }`
         },
         { name: "premid-details", content: "Redirecting to:" },

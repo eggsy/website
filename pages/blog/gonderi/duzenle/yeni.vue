@@ -15,25 +15,28 @@ export default {
   layout: "blog",
   components: {
     Breadcrumb,
-    Editor,
+    Editor
   },
   head() {
     const title = "Yeni Gönderi Oluştur",
       meta = [
         { name: "og:site_name", content: "eggsy.codes - blog" },
-        { name: "theme-color", content: "#212121" },
         { name: "og:title", content: "Yeni Gönderi Oluştur" },
         {
           name: "og:description",
-          content: `EGGSY's Blog'da yeni bir gönderi oluşturma sayfası.`,
+          content: `EGGSY's Blog'da yeni bir gönderi oluşturma sayfası.`
+        },
+        {
+          name: "description",
+          content: `EGGSY's Blog'da yeni bir gönderi oluşturma sayfası.`
         },
         { name: "premid-details", content: "Viewing a blog page:" },
-        { name: "premid-state", content: "Create a New Post" },
+        { name: "premid-state", content: "Create a New Post" }
       ];
 
     return {
       title,
-      meta,
+      meta
     };
   },
   async asyncData({ $auth, redirect, error }) {
@@ -52,6 +55,6 @@ export default {
         error({ statusCode: 500 });
       }
     }
-  },
+  }
 };
 </script>

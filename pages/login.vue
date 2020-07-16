@@ -6,12 +6,15 @@ export default {
     return {
       title: "Authorization",
       titleTemplate: "",
-       meta: [
-        { name: "og:site_name", content: "eggsy.codes" },
-        { name: "theme-color", content: "#212121" },
+      meta: [
         { name: "og:title", content: "Authorization Required" },
         {
           name: "og:description",
+          content:
+            "The requested page requires authorization. We use Discord for all of our systems so you'll need to login with Discord to view this page!"
+        },
+        {
+          name: "description",
           content:
             "The requested page requires authorization. We use Discord for all of our systems so you'll need to login with Discord to view this page!"
         },

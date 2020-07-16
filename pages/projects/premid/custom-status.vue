@@ -339,11 +339,14 @@ export default {
   head: {
     title: "Custom Status",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes" },
-      { name: "theme-color", content: "#212121" },
       { name: "og:title", content: "PreMiD Custom Status" },
       {
         name: "og:description",
+        content:
+          "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!"
+      },
+      {
+        name: "description",
         content:
           "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!"
       },

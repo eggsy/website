@@ -134,7 +134,6 @@ export default {
         : "Bilinmeyen Yazar",
       meta = [
         { name: "og:site_name", content: "eggsy.codes - blog" },
-        { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
           content: this.data.author.name
@@ -150,6 +149,12 @@ export default {
         },
         {
           name: "og:description",
+          content: this.data.author.name
+            ? `EGGSY's Blog'da ${this.data.author.name} adlı yazarın yazdığı yazılara ulaşmak için bu bağlantıya tıklayabilirsiniz.`
+            : "Belirtilen bilgilerle blogda yeri olan herhangi bir yazar bulunamadı. Belki de kovulmuştur?"
+        },
+        {
+          name: "description",
           content: this.data.author.name
             ? `EGGSY's Blog'da ${this.data.author.name} adlı yazarın yazdığı yazılara ulaşmak için bu bağlantıya tıklayabilirsiniz.`
             : "Belirtilen bilgilerle blogda yeri olan herhangi bir yazar bulunamadı. Belki de kovulmuştur?"

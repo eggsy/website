@@ -90,13 +90,16 @@ export default {
     const title = "Etiket: " + this.params.name,
       meta = [
         { name: "og:site_name", content: "eggsy.codes - blog" },
-        { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
           content: `EGGSY's Blog - "${this.params.name}" Etiketi`,
         },
         {
           name: "og:description",
+          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`,
+        },
+        {
+          name: "description",
           content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`,
         },
         { name: "premid-details", content: "Viewing a blog page:" },
