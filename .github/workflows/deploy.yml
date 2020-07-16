@@ -7,6 +7,7 @@ on:
       - "**/*"
       - "package.json"
       - "**.js"
+      - "**.vue"
       - "yarn.lock"
       - "**/*.yml"
 jobs:

@@ -2,7 +2,6 @@ import Vue from "vue";
 import VueTippy, { TippyComponent } from "vue-tippy";
 
 Vue.component("tippy", TippyComponent);
-
 Vue.use(VueTippy, {
   directive: "tippy",
   theme: "discord",
