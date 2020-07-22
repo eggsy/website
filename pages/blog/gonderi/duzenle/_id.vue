@@ -43,7 +43,7 @@ export default {
     const title =
         "Düzenle: " + this.post.title ? this.post.title : "Bilinmeyen",
       meta = [
-        { name: "og:site_name", content: "eggsy.xyz - blog" },
+        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
         { name: "og:title", content: "Gönderi Düzenleme" },
         {
           hid: "og:description",

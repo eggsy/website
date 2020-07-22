@@ -416,7 +416,7 @@ export default {
   head() {
     const title = this.postInfo.title,
       meta = [
-        { name: "og:site_name", content: "eggsy.xyz - blog" },
+        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
         {
           name: "og:url",
           content: `https://eggsy.xyz/blog/gonderi/${this.postInfo

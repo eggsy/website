@@ -133,7 +133,7 @@ export default {
         ? `Yazar: ${this.data.author.name}`
         : "Bilinmeyen Yazar",
       meta = [
-        { name: "og:site_name", content: "eggsy.xyz - blog" },
+        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
         {
           name: "og:title",
           content: this.data.author.name

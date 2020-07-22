@@ -220,17 +220,17 @@ export default {
   head: {
     title: "Yazar Kontrol Paneli",
     meta: [
-      { name: "og:site_name", content: "eggsy.xyz - blog" },
+      { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
       { name: "og:title", content: "Yazar Kontrol Paneli" },
       {
         hid: "og:description",
-name: "og:description",
+        name: "og:description",
         content:
           "Yazarların EGGSY's Blog'da yazı yazabileceği, varolan yazılarını yönetebileceği ve diğer gerekli araçlara ulaşabileceği panel."
       },
       {
         hid: "description",
-name: "description",
+        name: "description",
         content:
           "Yazarların EGGSY's Blog'da yazı yazabileceği, varolan yazılarını yönetebileceği ve diğer gerekli araçlara ulaşabileceği panel."
       },

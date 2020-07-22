@@ -20,7 +20,7 @@ export default {
   head() {
     const title = "Yeni Gönderi Oluştur",
       meta = [
-        { name: "og:site_name", content: "eggsy.xyz - blog" },
+        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
         { name: "og:title", content: "Yeni Gönderi Oluştur" },
         {
           hid: "og:description",
