@@ -20,15 +20,15 @@
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "helmet": "^3.23.3",
-    "jodit-vue": "^2.2.0",
+    "jodit-vue": "^2.2.1",
     "moment": "^2.27.0",
-    "mongoose": "^5.9.20",
+    "mongoose": "^5.9.25",
     "net": "^1.0.2",
-    "nuxt": "^2.13.2",
+    "nuxt": "^2.13.3",
     "nuxt-helmet": "^1.2.3",
     "request": "^2.88.2",
     "vue-animejs": "^2.1.1",
-    "vue-tippy": "^4.4.0"
+    "vue-tippy": "^4.5.1"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",

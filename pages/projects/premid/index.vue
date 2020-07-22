@@ -66,7 +66,7 @@ export default {
   layout: "premid",
   auth: false,
   components: {
-    SocialMedia
+    SocialMedia,
   },
   head: {
     title: "PreMiD",
@@ -76,25 +76,31 @@ export default {
         hid: "og:description",
         name: "og:description",
         content:
-          "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!"
+          "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!",
       },
       {
         name: "og:image",
-        content: "https://premid.app/assets/images/logo.png"
+        content: "https://premid.app/assets/images/logo.png",
       },
       {
         hid: "description",
         name: "description",
         content:
-          "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!"
+          "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!",
       },
       { name: "premid-details", content: "Viewing a PreMiD page:" },
-      { name: "premid-state", content: "Homepage" }
-    ]
+      { name: "premid-state", content: "Homepage" },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://eggsy.xyz/projects/premid",
+      },
+    ],
   },
   data() {
     return {
-      dialog: false
+      dialog: false,
     };
   },
   mounted() {
@@ -127,6 +133,6 @@ export default {
         clearInterval(interval);
       }
     }, 100);
-  }
+  },
 };
 </script>

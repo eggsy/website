@@ -17,10 +17,14 @@ mongoose.connect("mongodb://localhost:27017/blog", {
   useCreateIndex: true,
 });
 
-const Posts = mongoose.models.post || require("./files/models.js").Posts,
-  Authors = mongoose.models.author || require("./files/models.js").Authors,
-  Songs = mongoose.models.song || require("./files/models.js").Songs,
-  hosts = ["www.eggsy.xyz", "eggsy.xyz", "eggsy.codes", "www.eggsy.codes", "localhost:3000"];
+const { Posts, Authors, Songs } = require("./files/models.js"),
+  hosts = [
+    "www.eggsy.xyz",
+    "eggsy.xyz",
+    "eggsy.codes",
+    "www.eggsy.codes",
+    "localhost:3000",
+  ];
 
 app.use(cors());
 app.use(
@@ -726,13 +730,13 @@ app.get("/dailySong", async (req, res) => {
 
       if (
         !req.query.verySecretToken ||
-        req.query.verySecretToken != "how-did-you-even-find-this-bro"
+        req.query.verySecretToken !== "how-did-you-even-find-this-bro"
       ) {
         let found = false;
         let newArray = [];
 
         for (let key in songs) {
-          if (found) return;
+          if (found) continue;
           else if (
             songs[key].date ==
             `${new Date().getMonth() +
@@ -787,7 +791,6 @@ app.post("/dailySong/edit", auth("superior"), async (req, res) => {
 
     res.status(200).json({ success: true });
   } catch (err) {
-    console.log(err);
     res.status(500).json({ success: false });
   }
 });

@@ -80,34 +80,45 @@ export default {
   layout: "blog",
   components: {
     Sidebar,
-    PostCard
+    PostCard,
   },
   auth: false,
   head() {
     const title = "Favorilerim",
       meta = [
-        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
+        {
+          hid: "og:site_name",
+          name: "og:site_name",
+          content: "eggsy.xyz - blog",
+        },
         {
           name: "og:title",
-          content: "Favorilerim"
+          content: "Favorilerim",
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: `EGGSY's Blog'da beğendiğiniz veya daha sonra okumak için sakladığınız favori gönderilerinize ulaşabileceğiniz sayfa.`
+          content: `EGGSY's Blog'da beğendiğiniz veya daha sonra okumak için sakladığınız favori gönderilerinize ulaşabileceğiniz sayfa.`,
         },
         {
           hid: "description",
           name: "description",
-          content: `EGGSY's Blog'da beğendiğiniz veya daha sonra okumak için sakladığınız favori gönderilerinize ulaşabileceğiniz sayfa.`
+          content: `EGGSY's Blog'da beğendiğiniz veya daha sonra okumak için sakladığınız favori gönderilerinize ulaşabileceğiniz sayfa.`,
         },
         { name: "premid-details", content: "Viewing a blog page:" },
-        { name: "premid-state", content: "Favourites" }
+        { name: "premid-state", content: "Favourites" },
+      ],
+      link = [
+        {
+          rel: "canonical",
+          href: "https://eggsy.xyz/blog/favorilerim",
+        },
       ];
 
     return {
       title,
-      meta
+      meta,
+      link,
     };
   },
   async asyncData({ redirect, error }) {
@@ -120,20 +131,17 @@ export default {
         );
 
       const songs = await axios.get(
-        `${process.env.apiBase}/dailySong?full=true&verySecretToken=how-did-you-even-find-this-bro`
+        `${process.env.apiBase}/dailySong?full=true`
       );
 
       return {
         songs: songs?.data || [],
         mostViewed: mostViewed?.data || [],
-        posts: posts?.data || []
+        posts: posts?.data || [],
       };
     } catch (err) {
       error({ statusCode: 500 });
     }
   },
-  mounted() {
-    this.$store.commit("posts/initialize", localStorage);
-  }
 };
 </script>

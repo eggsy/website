@@ -212,30 +212,40 @@ export default {
   mixins: [BlogMixin],
   components: {
     Sidebar,
-    PostCard
+    PostCard,
   },
   layout: "blog",
   auth: false,
   head: {
     title: "Blog",
     meta: [
-      { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
+      {
+        hid: "og:site_name",
+        name: "og:site_name",
+        content: "eggsy.xyz - blog",
+      },
       { name: "og:title", content: "EGGSY's Blog" },
       {
         hid: "og:description",
         name: "og:description",
         content:
-          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. "
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. ",
       },
       {
         hid: "description",
         name: "description",
         content:
-          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. "
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası. ",
       },
       { name: "premid-details", content: "Viewing a blog page:" },
-      { name: "premid-state", content: "Homepage" }
-    ]
+      { name: "premid-state", content: "Homepage" },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://eggsy.xyz/blog",
+      },
+    ],
   },
   async asyncData({ redirect, error }) {
     try {
@@ -248,7 +258,7 @@ export default {
       );
 
       const songs = await axios.get(
-        `${process.env.apiBase}/dailySong?full=true&verySecretToken=how-did-you-even-find-this-bro`
+        `${process.env.apiBase}/dailySong?full=true`
       );
 
       return {
@@ -263,12 +273,12 @@ export default {
         dialog: false,
         galleryCount: 4,
         dialogMsg: null,
-        morePostsClicked: false
+        morePostsClicked: false,
       };
     } catch (err) {
       error({
         statusCode: 500,
-        customMessage: "Sunucu taraflı bir hata oluştu"
+        customMessage: "Sunucu taraflı bir hata oluştu",
       });
     }
   },
@@ -313,10 +323,11 @@ export default {
 
         axios
           .get(
-            `${process.env.apiBase}/blog/posts?type=content&skip=0&limit=${this
-              .visiblePostCount + 5}`
+            `${process.env.apiBase}/blog/posts?type=content&skip=0&limit=${
+              this.visiblePostCount + 5
+            }`
           )
-          .then(json => {
+          .then((json) => {
             if (json && json.data && this.posts.length != json.data.length) {
               this.posts = json && json.data ? json.data : [];
               this.visiblePostCount += 5;
@@ -355,7 +366,7 @@ export default {
       else timeString = `${date.format("DD/MM/YY HH:mm:SS")}`;
 
       return timeString;
-    }
-  }
+    },
+  },
 };
 </script>

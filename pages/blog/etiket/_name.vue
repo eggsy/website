@@ -84,33 +84,44 @@ export default {
   auth: false,
   components: {
     Sidebar,
-    PostCard
+    PostCard,
   },
   head() {
     const title = "Etiket: " + this.params.name,
       meta = [
-        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
+        {
+          hid: "og:site_name",
+          name: "og:site_name",
+          content: "eggsy.xyz - blog",
+        },
         {
           name: "og:title",
-          content: `EGGSY's Blog - "${this.params.name}" Etiketi`
+          content: `EGGSY's Blog - "${this.params.name}" Etiketi`,
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`
+          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`,
         },
         {
           hid: "description",
           name: "description",
-          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`
+          content: `EGGSY's Blog'da "${this.params.name}" etiketine sahip tüm gönderileri görebileceğiniz etiket profili sayfası.`,
         },
         { name: "premid-details", content: "Viewing a blog page:" },
-        { name: "premid-state", content: "Tag: " + this.params.name }
+        { name: "premid-state", content: "Tag: " + this.params.name },
+      ],
+      link = [
+        {
+          rel: "canonical",
+          href: `https://eggsy.xyz/blog/etiket/${this.params.name}`,
+        },
       ];
 
     return {
       title,
-      meta
+      meta,
+      link,
     };
   },
   async asyncData({ params }) {
@@ -124,17 +135,18 @@ export default {
       const mostViewed = await axios.get(
         `${process.env.apiBase}/blog/posts?type=views`
       );
+
       const songs = await axios.get(
         `${process.env.apiBase}/dailySong?full=true`
       );
 
       return {
-        songs: songs?.song || [],
-        mostViewed: mostViewed && mostViewed.data ? mostViewed.data : [],
-        posts: data ? data : [],
-        currentCount: data ? data.length : 0,
+        songs: songs?.data || [],
+        mostViewed: mostViewed?.data || [],
+        posts: data || [],
+        currentCount: data?.length || 0,
         btnLoading: false,
-        params
+        params,
       };
     } catch (err) {
       return {
@@ -142,7 +154,7 @@ export default {
         posts: [],
         currentCount: 0,
         btnLoading: false,
-        params
+        params,
       };
     }
   },
@@ -151,14 +163,15 @@ export default {
       this.btnLoading = true;
 
       let { data } = await axios.get(
-        `${process.env.apiBase}/blog/posts?type=tag&max=${this.currentCount +
-          5}&name=${params.name}`
+        `${process.env.apiBase}/blog/posts?type=tag&max=${
+          this.currentCount + 5
+        }&name=${params.name}`
       );
 
       this.posts = data ? data : [];
       this.currentCount += 5;
       this.btnLoading = false;
-    }
-  }
+    },
+  },
 };
 </script>

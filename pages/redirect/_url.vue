@@ -57,7 +57,7 @@ export default {
             this.params.url && this.settings[this.params.url]
               ? this.settings[this.params.url].name
               : "Redirecting to homepage"
-          }`
+          }`,
         },
         {
           hid: "og:description",
@@ -66,7 +66,7 @@ export default {
             this.params.url && this.settings[this.params.url]
               ? this.settings[this.params.url].description
               : "There is no description for this redirection yet, but it might be added at any time!"
-          }`
+          }`,
         },
         {
           name: "og:image",
@@ -74,7 +74,7 @@ export default {
             this.params.url && this.settings[this.params.url]
               ? this.settings[this.params.url].image
               : ""
-          }`
+          }`,
         },
         {
           hid: "description",
@@ -83,7 +83,7 @@ export default {
             this.params.url && this.settings[this.params.url]
               ? this.settings[this.params.url].description
               : "There is no description for this redirection yet, but it might be added at any time!"
-          }`
+          }`,
         },
         { name: "premid-details", content: "Redirecting to:" },
         {
@@ -92,13 +92,20 @@ export default {
             this.params.url && this.settings[this.params.url]
               ? this.settings[this.params.url].name
               : "Unknown redirect option"
-          }`
-        }
+          }`,
+        },
+      ],
+      link = [
+        {
+          rel: "canonical",
+          href: `https://eggsy.xyz/redirect/${this.params.url}`,
+        },
       ];
 
     return {
       title,
-      meta
+      meta,
+      link,
     };
   },
   data() {
@@ -110,30 +117,30 @@ export default {
           description:
             "You can use this page to get redirected to my Chrome extension Imgur Please. An extension that replaces Imgur images from the document.",
           url: "https://github.com/eggsywashere/imgur-please",
-          image: "https://eggsy.xyz/images/projects/imgur-please.png"
+          image: "https://eggsy.xyz/images/projects/imgur-please.png",
         },
         "is-inside-me": {
           name: "is-inside.me",
           description:
             "This page will get you redirected to the our free file hosting service, is-inside.me!",
           url: "https://is-inside.me/?utm_source=eggsy.xyz",
-          image: "https://eggsy.xyz/images/projects/is-inside-me.png"
+          image: "https://eggsy.xyz/images/projects/is-inside-me.png",
         },
         "discord-steam-verification": {
           name: "Discord Steam Verification",
           description:
             "Check your Discord server member's Steam library for a specific game and give them roles if they have it or punish them if they don't!",
           url: "https://github.com/eggsywashere/discord-steam-verification",
-          image: ""
+          image: "",
         },
         "epey-bot": {
           name: "Epey Bot",
           description:
             "Access epey.com data directly from your Discord server!",
           url: "https://github.com/eggsywashere/epey-bot",
-          image: ""
-        }
-      }
+          image: "",
+        },
+      },
     };
   },
   beforeDestroy() {
@@ -147,6 +154,6 @@ export default {
           : "/"
       }`;
     }, 5000);
-  }
+  },
 };
 </script>

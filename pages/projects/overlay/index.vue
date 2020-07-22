@@ -198,39 +198,46 @@ import SocialMedia from "../../../components/SocialMedia";
 export default {
   auth: false,
   components: {
-    SocialMedia
+    SocialMedia,
   },
   head() {
     const title = this.strings.title || "Picture Editor with Overlays",
       meta = [
         {
           name: "og:title",
-          content: this.strings.title || "Picture Editor with Overlays"
+          content: this.strings.title || "Picture Editor with Overlays",
         },
         {
           hid: "og:description",
           name: "og:description",
           content:
             this.strings.description ||
-            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!"
+            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!",
         },
         {
           hid: "description",
           name: "description",
           content:
             this.strings.description ||
-            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!"
+            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!",
         },
         { name: "premid-details", content: "Viewing a page:" },
         {
           name: "premid-state",
-          content: "Overlay Creator"
-        }
+          content: "Overlay Creator",
+        },
+      ],
+      link = [
+        {
+          rel: "canonical",
+          href: "https://eggsy.xyz/projects/overlay",
+        },
       ];
 
     return {
       title,
-      meta
+      meta,
+      link
     };
   },
   data() {
@@ -249,7 +256,7 @@ export default {
       lang: null,
       strings: strs[`${this.$route.query.lang}`]
         ? strs[`${this.$route.query.lang || "en"}`]
-        : strs["en"]
+        : strs["en"],
     };
   },
   methods: {
@@ -262,7 +269,7 @@ export default {
       this.message = null;
       this.selectedOverlay = null;
 
-      Object.keys(this.$refs).forEach(ref => {
+      Object.keys(this.$refs).forEach((ref) => {
         this.$refs[ref].reset ? this.$refs[ref].reset() : false;
       });
     },
@@ -353,12 +360,12 @@ export default {
 
           axios
             .head(resultUrl)
-            .then(res => {
+            .then((res) => {
               this.createLoading = false;
               this.image = resultUrl;
               this.dialog = true;
             })
-            .catch(err => {
+            .catch((err) => {
               this.createLoading = false;
               console.log(err);
               this.message = this.strings.errors[7];
@@ -371,7 +378,7 @@ export default {
           this.dialog = true;
         }
       }
-    }
+    },
   },
   async mounted() {
     if (
@@ -405,19 +412,16 @@ export default {
     const { data } = await axios.get("/api/overlay/frames"),
       frameNames = [];
 
-    data.forEach(f => {
+    data.forEach((f) => {
       const splitted = f
         .split("_")
-        .map(f => {
+        .map((f) => {
           if (!isNaN(f) || !isNaN(f.slice(-2))) {
             return f.toLowerCase().slice(0, -2) + " (" + f.slice(-2) + ")";
           } else if (!isNaN(f.slice(-1)))
             return (
               f[0].toUpperCase() +
-              f
-                .slice(1)
-                .toLowerCase()
-                .slice(0, -1) +
+              f.slice(1).toLowerCase().slice(0, -1) +
               " (" +
               f.slice(-1) +
               ")"
@@ -438,6 +442,6 @@ export default {
 
     this.frames = frameNames;
     this.loading = false;
-  }
+  },
 };
 </script>

@@ -6,13 +6,7 @@
 
       <v-spacer />
       <div style="display:flex">
-        <v-menu
-          ref="menu"
-          v-model="menu"
-          transition="scale-transition"
-          offset-x
-          min-width="290px"
-        >
+        <v-menu ref="menu" v-model="menu" transition="scale-transition" offset-x min-width="290px">
           <template v-slot:activator="{ on }">
             <v-btn
               v-tippy="{ content: 'Geçmiş bir tarih seçmek için tıklayın.' }"
@@ -76,8 +70,7 @@
               (!selectedSong && iframeSrc == 'dQw4w9WgXcQ') ||
                 (selectedSong && selectedSong == 'dQw4w9WgXcQ')
             "
-            >mdi-cancel</v-icon
-          >
+          >mdi-cancel</v-icon>
           <v-icon v-else>mdi-delete</v-icon>
         </v-btn>
       </div>
@@ -111,26 +104,21 @@
               :title="key.title"
               @click="$router.push('/blog/gonderi/' + key._id)"
               style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;max-width:150px;"
-            >
-              {{ key.title }}
-            </td>
+            >{{ key.title }}</td>
             <td class="text-right">
-              <v-icon v-tippy="{ content: 'Toplam görüntülenme sayısı.' }"
-                >mdi-eye</v-icon
-              >
+              <v-icon v-tippy="{ content: 'Toplam görüntülenme sayısı.' }">mdi-eye</v-icon>
               {{ key.views ? key.views : 0 }}
               <v-icon
                 v-tippy="{ content: 'Verilen toplam tepki sayısı.' }"
                 style="margin-left:6px;"
-                >mdi-emoticon-cool</v-icon
-              >
+              >mdi-emoticon-cool</v-icon>
               {{
-                key.reactions.excited +
-                  key.reactions.lol +
-                  key.reactions.angry +
-                  key.reactions.cry +
-                  key.reactions.dead +
-                  key.reactions.heart
+              key.reactions.excited +
+              key.reactions.lol +
+              key.reactions.angry +
+              key.reactions.cry +
+              key.reactions.dead +
+              key.reactions.heart
               }}
             </td>
           </tr>
@@ -174,22 +162,19 @@ export default {
           : new Date().getDate()
       }`;
 
+      console.log(this.$props.songs)
+
     return {
       menu: false,
       selectedSong: null,
-      iframeSrc: this.$props.songs.find(
-        (i) =>
-          i.date ==
-          `${new Date().getMonth() +
-            1}/${new Date().getDate()}/${new Date().getFullYear()}`
-      )
-        ? this.$props.songs.find(
-            (i) =>
-              i.date ==
-              `${new Date().getMonth() +
-                1}/${new Date().getDate()}/${new Date().getFullYear()}`
-          ).url
-        : "dQw4w9WgXcQ",
+      iframeSrc:
+        this.$props.songs.find(
+          (i) =>
+            i.date ==
+            `${
+              new Date().getMonth() + 1
+            }/${new Date().getDate()}/${new Date().getFullYear()}`
+        )?.url || "dQw4w9WgXcQ",
       today: today,
       date:
         new Date().getFullYear() +

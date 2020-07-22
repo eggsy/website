@@ -222,21 +222,27 @@ export default {
         hid: "og:description",
         name: "og:description",
         content:
-          "See stats about which PreMiD services are used most with their usage numbers and creators!"
+          "See stats about which PreMiD services are used most with their usage numbers and creators!",
       },
       {
         name: "og:image",
-        content: "https://premid.app/assets/images/logo.png"
+        content: "https://premid.app/assets/images/logo.png",
       },
       {
         hid: "description",
         name: "description",
         content:
-          "See stats about which PreMiD services are used most with their usage numbers and creators!"
+          "See stats about which PreMiD services are used most with their usage numbers and creators!",
       },
       { name: "premid-details", content: "Viewing a PreMiD page:" },
-      { name: "premid-state", content: "Presence Stats" }
-    ]
+      { name: "premid-state", content: "Presence Stats" },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://eggsy.xyz/projects/premid/stats",
+      },
+    ],
   },
   data() {
     return {
@@ -247,18 +253,18 @@ export default {
         { text: "# ", align: "left", value: "number" },
         { text: "Service Name ", value: "service" },
         { text: "Users ", value: "users" },
-        { text: "Creator ", value: "creator" }
+        { text: "Creator ", value: "creator" },
       ],
-      presences: []
+      presences: [],
     };
   },
   mounted() {
     axios
       .get("https://api.premid.app/v2/presenceUsage")
-      .then(res => {
+      .then((res) => {
         axios
           .get("https://api.premid.app/v2/presences")
-          .then(result => {
+          .then((result) => {
             const sorted = [],
               presences = [],
               url = new URL(location.href),
@@ -268,14 +274,14 @@ export default {
 
             for (let item in res.data) {
               const filtered =
-                result.data.filter(p => p.metadata.service == item).length > 0
-                  ? result.data.find(p => p.metadata.service == item)
+                result.data.filter((p) => p.metadata.service == item).length > 0
+                  ? result.data.find((p) => p.metadata.service == item)
                   : "Null";
 
               sorted.push([item, res.data[item], filtered]);
             }
 
-            sorted.sort(function(a, b) {
+            sorted.sort(function (a, b) {
               return a[1] - b[1];
             });
 
@@ -295,7 +301,7 @@ export default {
                 metadata:
                   sorted[i] && sorted[i][2] && sorted[i][2].metadata
                     ? sorted[i][2].metadata
-                    : null
+                    : null,
               };
               presences.push(thing);
             }
@@ -305,22 +311,22 @@ export default {
             this.loading = false;
             this.presences = presences;
           })
-          .catch(err => {
+          .catch((err) => {
             console.log(err);
             this.loading = false;
             this.dialog = true;
           });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         this.loading = false;
         this.dialog = true;
       });
   },
   methods: {
-    redirect: function(url) {
+    redirect: function (url) {
       window.location.href = url;
-    }
-  }
+    },
+  },
 };
 </script>

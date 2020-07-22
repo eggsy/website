@@ -344,20 +344,26 @@ export default {
         hid: "og:description",
         name: "og:description",
         content:
-          "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!"
+          "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!",
       },
       {
         hid: "description",
         name: "description",
         content:
-          "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!"
+          "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!",
       },
       {
         name: "og:image",
         content:
-          "https://the-person-under-this-message.is-inside.me/2POrmy3F.png"
-      }
-    ]
+          "https://the-person-under-this-message.is-inside.me/2POrmy3F.png",
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://eggsy.xyz/projects/premid/custom-status",
+      },
+    ],
   },
   async asyncData({ app }) {
     const object = {
@@ -406,7 +412,7 @@ export default {
         "Balance",
         "Bravery",
         "Brilliance",
-        "ESL"
+        "ESL",
       ].sort(),
       smallImages: [
         "Please",
@@ -433,7 +439,7 @@ export default {
         "Tada",
         "Balance",
         "Bravery",
-        "Brilliance"
+        "Brilliance",
       ].sort(),
       smallImageSrc: "",
       showImageInput: false,
@@ -444,7 +450,7 @@ export default {
       snackbar: false,
       largeImageKey: "",
       smallImageKey: "",
-      errorString: null
+      errorString: null,
     };
 
     try {
@@ -478,7 +484,7 @@ export default {
         );
       }
 
-      return (this.errorString = errors.map(e => `▶ ${e}`).join("\n\n"));
+      return (this.errorString = errors.map((e) => `▶ ${e}`).join("\n\n"));
     },
     clearAll() {
       this.elapsedCheck = false;
@@ -507,7 +513,7 @@ export default {
         }
       }
     },
-    getImages: function(type) {
+    getImages: function (type) {
       if (type == "large")
         return {
           heart:
@@ -576,7 +582,8 @@ export default {
             "https://the-person-under-this-message.is-inside.me/BqcsEKro.png",
           tada:
             "https://the-person-under-this-message.is-inside.me/3Msf3Xmi.png",
-          esl: "https://the-person-under-this-message.is-inside.me/AiQ1i9Cf.png"
+          esl:
+            "https://the-person-under-this-message.is-inside.me/AiQ1i9Cf.png",
         };
       else if (type == "small")
         return {
@@ -629,10 +636,10 @@ export default {
           brilliance:
             "https://the-person-under-this-message.is-inside.me/BqcsEKro.png",
           tada:
-            "https://the-person-under-this-message.is-inside.me/3Msf3Xmi.png"
+            "https://the-person-under-this-message.is-inside.me/3Msf3Xmi.png",
         };
     },
-    imageHandle: function(dat, type) {
+    imageHandle: function (dat, type) {
       if (type == "large" && dat) {
         const imageList = this.getImages("large");
 
@@ -651,28 +658,14 @@ export default {
         const imageList = this.getImages("small");
 
         this.smallImageKey = imageList[
-          dat
-            .toLowerCase()
-            .replace(/\s/g, "")
-            .replace("s-", "")
+          dat.toLowerCase().replace(/\s/g, "").replace("s-", "")
         ]
-          ? dat
-              .toLowerCase()
-              .replace(/\s/g, "")
-              .replace("s-", "")
+          ? dat.toLowerCase().replace(/\s/g, "").replace("s-", "")
           : "";
         this.smallImageSrc = imageList[
-          dat
-            .toLowerCase()
-            .replace(/\s/g, "")
-            .replace("s-", "")
+          dat.toLowerCase().replace(/\s/g, "").replace("s-", "")
         ]
-          ? imageList[
-              dat
-                .toLowerCase()
-                .replace(/\s/g, "")
-                .replace("s-", "")
-            ]
+          ? imageList[dat.toLowerCase().replace(/\s/g, "").replace("s-", "")]
           : this.smallImageSrc;
       } else if (type == "small" && !dat) {
         this.smallImageKey = "";
@@ -736,7 +729,7 @@ export default {
           this.snackbar = true;
         } else return `${hours}${minutes}${seconds}`;
       }
-    }
+    },
   },
   beforeDestroy() {
     clearInterval(this.interval1);
@@ -835,7 +828,7 @@ export default {
         "THIS IS SO WEIRD!",
         "Discord FTW!",
         "You feel sick?",
-        "Be good..."
+        "Be good...",
       ],
       states = [
         "You're awesome!",
@@ -846,12 +839,12 @@ export default {
         "You're great!",
         "I love you!",
         "You're my world!",
-        "This is cool."
+        "This is cool.",
       ];
 
     this.details = details[Math.floor(Math.random() * details.length)];
     this.state = states[Math.floor(Math.random() * states.length)];
     this.loading = false;
-  }
+  },
 };
 </script>

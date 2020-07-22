@@ -245,15 +245,16 @@ import socialMedia from "../components/SocialMedia";
 export default {
   auth: false,
   components: {
-    socialMedia
+    socialMedia,
   },
   head: {
     title: "Homepage",
     meta: [
       { name: "og:title", content: "EGGSY's Website" },
       { name: "premid-details", content: "Viewing a page:" },
-      { name: "premid-state", content: "Homepage" }
-    ]
+      { name: "premid-state", content: "Homepage" },
+    ],
+    link: [{ rel: "cannonical", content: "https://eggsy.xyz" }],
   },
   data() {
     return {
@@ -261,28 +262,28 @@ export default {
         {
           name: "JavaScript",
           value: { actual: 100, increase: 0 },
-          color: "#ffca28"
+          color: "#ffca28",
         },
         {
           name: "Node.js",
           value: { actual: 95, increase: 0 },
-          color: "#75ac64"
+          color: "#75ac64",
         },
         {
           name: "TypeScript",
           value: { actual: 85, increase: 0 },
-          color: "#0074c1"
+          color: "#0074c1",
         },
         {
           name: "Nuxt.js",
           value: { actual: 80, increase: 0 },
-          color: "#00c58e"
+          color: "#00c58e",
         },
         {
           name: "Vue.js",
           value: { actual: 70, increase: 0 },
-          color: "#41b883"
-        }
+          color: "#41b883",
+        },
       ],
       positions: [
         {
@@ -290,36 +291,36 @@ export default {
           service: "Discord Templates",
           role: "Website Developer",
           icon: "/images/projects/favicons/dcst.png",
-          url: "https://discordtemplates.com/"
+          url: "https://discordtemplates.com/",
         },
         {
           current: true,
           service: "PreMiD",
           role: "Website Developer",
           icon: "/images/projects/favicons/premid.png",
-          url: "https://premid.app/"
+          url: "https://premid.app/",
         },
         {
           current: true,
           service: "TruckersMP",
           role: "Translator",
           icon: "/images/projects/favicons/truckersmp.png",
-          url: "https://truckersmp.com/"
+          url: "https://truckersmp.com/",
         },
         {
           current: true,
           service: "MultiMC",
           role: "Translator",
           icon: "/images/projects/favicons/multimc.png",
-          url: "https://multimc.org/"
+          url: "https://multimc.org/",
         },
         {
           service: "Discord Bot List",
           role: "Website Moderator",
           icon: "/images/projects/favicons/dbl.png",
-          url: "https://top.gg/"
-        }
-      ].map(i => {
+          url: "https://top.gg/",
+        },
+      ].map((i) => {
         i.url = `${i.url}?utm_source=eggsy.xyz`;
         return i;
       }),
@@ -328,32 +329,32 @@ export default {
           name: "Personal Blog",
           description:
             "My personal Turkish blog where I also share my daily song recommendations!",
-          to: "/blog"
+          to: "/blog",
         },
         {
           name: "PreMiD Stuff",
           description:
             "Utilities for PreMiD, app that you can show what you're doing on web.",
-          to: "/projects/premid"
+          to: "/projects/premid",
         },
         {
           name: "Picture Overlays",
           description:
             "A small canvas project that adds frames to your pictures.",
-          to: "/projects/overlay"
+          to: "/projects/overlay",
         },
         {
           name: "is-inside.me",
           description: "Free ShareX image hosting with wildcard domain names.",
-          to: "/redirect/is-inside-me"
+          to: "/redirect/is-inside-me",
         },
         {
           name: "Imgur Please",
           description:
             "Simple extension that allows access to Imgur images in restricted countries.",
-          to: "/redirect/imgur-please"
-        }
-      ]
+          to: "/redirect/imgur-please",
+        },
+      ],
     };
   },
   mounted() {
@@ -367,7 +368,7 @@ export default {
     open(url, target) {
       if (!target) this.$router.push(url);
       else window.open(url, target).focus();
-    }
-  }
+    },
+  },
 };
 </script>

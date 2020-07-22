@@ -70,34 +70,45 @@ export default {
   layout: "blog",
   components: {
     Sidebar,
-    PostCard
+    PostCard,
   },
   auth: false,
   head() {
-    const title = `Arama: ${this.params.title}`,
+    const title = this.params.title,
       meta = [
-        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
+        {
+          hid: "og:site_name",
+          name: "og:site_name",
+          content: "eggsy.xyz - blog",
+        },
         {
           name: "og:title",
-          content: `Arama: ${this.params.title}`
+          content: this.params.title,
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: `EGGSY's Blog'da "${this.params.title}" arama sayfası. Bu sayfadan aramanızın sonucunu görebilir ve varsa çıkan gönderileri okuyabilirsiniz.`
+          content: `EGGSY's Blog'da "${this.params.title}" arama sayfası. Bu sayfadan aramanızın sonucunu görebilir ve varsa çıkan gönderileri okuyabilirsiniz.`,
         },
         {
           hid: "description",
           name: "description",
-          content: `EGGSY's Blog'da "${this.params.title}" arama sayfası. Bu sayfadan aramanızın sonucunu görebilir ve varsa çıkan gönderileri okuyabilirsiniz.`
+          content: `EGGSY's Blog'da "${this.params.title}" arama sayfası. Bu sayfadan aramanızın sonucunu görebilir ve varsa çıkan gönderileri okuyabilirsiniz.`,
         },
         { name: "premid-details", content: "Searching something in blog:" },
-        { name: "premid-state", content: this.params.title }
+        { name: "premid-state", content: this.params.title },
+      ],
+      link = [
+        {
+          rel: "canonical",
+          href: `https://eggsy.xyz/blog/gonderi/ara/${this.params.title}`,
+        },
       ];
 
     return {
       title,
-      meta
+      meta,
+      link,
     };
   },
   async asyncData({ params, redirect, error }) {
@@ -110,15 +121,16 @@ export default {
         const mostViewed = await axios.get(
           `${process.env.apiBase}/blog/posts?type=views`
         );
+
         const songs = await axios.get(
           `${process.env.apiBase}/dailySong?full=true`
         );
 
         return {
           songs: songs?.data || [],
-          mostViewed: mostViewed && mostViewed.data ? mostViewed.data : [],
-          posts: data ? data : [],
-          params
+          mostViewed: mostViewed?.data || [],
+          posts: data || [],
+          params,
         };
       } catch (err) {
         error({ statusCode: 500 });
@@ -126,6 +138,6 @@ export default {
     } else {
       redirect("/blog");
     }
-  }
+  },
 };
 </script>

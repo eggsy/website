@@ -41,12 +41,12 @@ export default {
         {
           hid: "og:site_name",
           name: "og:site_name",
-          content: null
+          content: null,
         },
         {
           hid: "theme-color",
           name: "theme-color",
-          content: "#ff0000"
+          content: "#ff0000",
         },
         {
           name: "og:title",
@@ -62,7 +62,7 @@ export default {
             this.query.notCute
               ? this.query.notCute.replace(/\+/g, " ")
               : "super cute!"
-          }`
+          }`,
         },
         {
           hid: "og:description",
@@ -75,11 +75,11 @@ export default {
             this.query.notCute
               ? this.query.notCute.replace(/\+/g, " ") + "ness"
               : "happiness"
-          } on the entire planet ❤-❤`
+          } on the entire planet ❤-❤`,
         },
         {
           name: "og:image",
-          content: "/images/projects/heart.png"
+          content: "/images/projects/heart.png",
         },
         {
           hid: "description",
@@ -92,7 +92,7 @@ export default {
             this.query.notCute
               ? this.query.notCute.replace(/\+/g, " ") + "ness"
               : "happiness"
-          } on the entire planet ❤-❤`
+          } on the entire planet ❤-❤`,
         },
         { name: "premid-details", content: "Viewing a compliment:" },
         {
@@ -107,20 +107,27 @@ export default {
               : "someone"
           } is ${
             this.query.notCute ? this.query.notCute.replace(/\+/g, " ") : "cute"
-          }`
-        }
+          }`,
+        },
+      ],
+      link = [
+        {
+          rel: "canonical",
+          href: `https://eggsy.xyz/urecute/${this.params.who_id}/${this.params.toWho}`,
+        },
       ];
 
     return {
       title,
-      meta
+      meta,
+      link,
     };
   },
   data() {
     return {
       query: this.$route.query,
-      params: this.$route.params
+      params: this.$route.params,
     };
-  }
+  },
 };
 </script>

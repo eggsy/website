@@ -133,39 +133,43 @@ export default {
         ? `Yazar: ${this.data.author.name}`
         : "Bilinmeyen Yazar",
       meta = [
-        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
+        {
+          hid: "og:site_name",
+          name: "og:site_name",
+          content: "eggsy.xyz - blog",
+        },
         {
           name: "og:title",
           content: this.data.author.name
             ? `Yazar: ${this.data.author.name}`
-            : "Bilinmeyen Yazar"
+            : "Bilinmeyen Yazar",
         },
         {
           name: "og:image",
           content:
             this.data.author.name && this.data.author.avatar
               ? this.data.author.avatar
-              : "https://eggsy.xyz/images/blog/default-avatar.png"
+              : "https://eggsy.xyz/images/blog/default-avatar.png",
         },
         {
           hid: "og:description",
           name: "og:description",
           content: this.data.author.name
             ? `EGGSY's Blog'da ${this.data.author.name} adlı yazarın yazdığı yazılara ulaşmak için bu bağlantıya tıklayabilirsiniz.`
-            : "Belirtilen bilgilerle blogda yeri olan herhangi bir yazar bulunamadı. Belki de kovulmuştur?"
+            : "Belirtilen bilgilerle blogda yeri olan herhangi bir yazar bulunamadı. Belki de kovulmuştur?",
         },
         {
           hid: "description",
           name: "description",
           content: this.data.author.name
             ? `EGGSY's Blog'da ${this.data.author.name} adlı yazarın yazdığı yazılara ulaşmak için bu bağlantıya tıklayabilirsiniz.`
-            : "Belirtilen bilgilerle blogda yeri olan herhangi bir yazar bulunamadı. Belki de kovulmuştur?"
+            : "Belirtilen bilgilerle blogda yeri olan herhangi bir yazar bulunamadı. Belki de kovulmuştur?",
         },
         { name: "premid-details", content: "Viewing a blog author:" },
         {
           name: "premid-state",
-          content: this.data.author.name ? this.data.author.name : "Unknown"
-        }
+          content: this.data.author.name ? this.data.author.name : "Unknown",
+        },
       ],
       link = [
         {
@@ -174,14 +178,14 @@ export default {
             this.data.author.name && this.data.author.discordId
               ? this.data.author.discordId
               : "162969778699501569"
-          }`
-        }
+          }`,
+        },
       ];
 
     return {
       title,
       meta,
-      link
+      link,
     };
   },
   async asyncData({ params, redirect }) {
@@ -192,14 +196,14 @@ export default {
         );
 
         data.data.posts = data.data.posts.filter(
-          post => post.published === true
+          (post) => post.published === true
         );
 
         return {
           data: data.data,
           dialog: false,
           dialogMsg: null,
-          isActive: false
+          isActive: false,
         };
       } catch (err) {
         return {
@@ -207,7 +211,7 @@ export default {
           isActive: false,
           dialog: true,
           dialogMsg:
-            "Aradığınız yazara ait herhangi bir bilgi bulunamadı. Ana sayfaya yönlendirilmek için 'Tamam' butonuna tıklayabilirsiniz."
+            "Aradığınız yazara ait herhangi bir bilgi bulunamadı. Ana sayfaya yönlendirilmek için 'Tamam' butonuna tıklayabilirsiniz.",
         };
       }
     } else {
@@ -216,7 +220,7 @@ export default {
         isActive: false,
         dialog: true,
         dialogMsg:
-          "Aradığınız yazara ait herhangi bir bilgi bulunamadı. Ana sayfaya yönlendirilmek için 'Tamam' butonuna tıklayabilirsiniz."
+          "Aradığınız yazara ait herhangi bir bilgi bulunamadı. Ana sayfaya yönlendirilmek için 'Tamam' butonuna tıklayabilirsiniz.",
       };
     }
   },
@@ -257,7 +261,7 @@ export default {
           return "Yazar";
           break;
       }
-    }
-  }
+    },
+  },
 };
 </script>

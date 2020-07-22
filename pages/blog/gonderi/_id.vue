@@ -409,44 +409,49 @@ export default {
   mixins: [BlogMixin],
   components: {
     Sidebar,
-    CommentSection
+    CommentSection,
   },
   layout: "blog",
   auth: false,
   head() {
     const title = this.postInfo.title,
       meta = [
-        { hid: "og:site_name", name: "og:site_name", content: "eggsy.xyz - blog" },
+        {
+          hid: "og:site_name",
+          name: "og:site_name",
+          content: "eggsy.xyz - blog",
+        },
         {
           name: "og:url",
-          content: `https://eggsy.xyz/blog/gonderi/${this.postInfo
-            .short_url || this.postInfo._id}`
+          content: `https://eggsy.xyz/blog/gonderi/${
+            this.postInfo.short_url || this.postInfo._id
+          }`,
         },
         {
           name: "og:title",
-          content: this.postInfo.title || "Bilinmeyen Gönderi"
+          content: this.postInfo.title || "Bilinmeyen Gönderi",
         },
         {
           hid: "og:description",
           name: "og:description",
           content:
             this.postInfo.shortdesc ||
-            "Böyle bir gönderi bulunamadı; lütfen gönderi bağlantısını kontrol edin ve hata devam ederse iletişime geçin."
+            "Böyle bir gönderi bulunamadı; lütfen gönderi bağlantısını kontrol edin ve hata devam ederse iletişime geçin.",
         },
         {
           name: "og:image",
-          content: this.postInfo.images.small || ""
+          content: this.postInfo.images.small || "",
         },
         {
           hid: "description",
           name: "description",
           content:
             this.postInfo.shortdesc ||
-            "Böyle bir gönderi bulunamadı; lütfen gönderi bağlantısını kontrol edin ve hata devam ederse iletişime geçin."
+            "Böyle bir gönderi bulunamadı; lütfen gönderi bağlantısını kontrol edin ve hata devam ederse iletişime geçin.",
         },
         {
           name: "premid-details",
-          content: this.postInfo.title || "Bilinmeyen Gönderi"
+          content: this.postInfo.title || "Bilinmeyen Gönderi",
         },
         {
           name: "premid-state",
@@ -455,25 +460,26 @@ export default {
               ? `${this.postInfo.author.name} - ${this.getDate(
                   this.postInfo.date
                 )}`
-              : "Unknown Post"
+              : "Unknown Post",
         },
         {
           name: "article:published-time",
-          content: this.postInfo.date
-        }
+          content: this.postInfo.date,
+        },
       ],
       link = [
         {
           rel: "canonical",
-          href: `https://eggsy.xyz/blog/gonderi/${this.postInfo.short_url ||
-            this.postInfo._id}`
-        }
+          href: `https://eggsy.xyz/blog/gonderi/${
+            this.postInfo.short_url || this.postInfo._id
+          }`,
+        },
       ];
 
     return {
       title,
       meta,
-      link
+      link,
     };
   },
   async asyncData({ params, redirect, store, error }) {
@@ -490,19 +496,19 @@ export default {
       );
 
       const songs = await axios.get(
-        `${process.env.apiBase}/dailySong?full=true&verySecretToken=how-did-you-even-find-this-bro`
+        `${process.env.apiBase}/dailySong?full=true`
       );
 
       return {
-        mostViewed: mostViewed.data,
-        postInfo: data,
-        songs: songs.data || [],
-        sidebarEnabled: data.sidebar,
+        mostViewed: mostViewed?.data || [],
+        postInfo: data || {},
+        songs: songs?.data || [],
+        sidebarEnabled: data?.sidebar || true,
         backupData: data,
         dialog: false,
         dialogMsg: null,
         copied: false,
-        params
+        params,
       };
     } catch (err) {
       error({ statusCode: 404, customMessage: "Gönderi Bulunamadı" });
@@ -579,7 +585,7 @@ export default {
       else timeString = `${date.format("DD/MM/YY HH:mm:SS")}`;
 
       return timeString;
-    }
-  }
+    },
+  },
 };
 </script>

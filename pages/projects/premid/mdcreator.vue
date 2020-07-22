@@ -327,21 +327,27 @@ export default {
         hid: "og:description",
         name: "og:description",
         content:
-          "Hey presence developers! This page is there for you to create, edit and make sure about your metadata.json files. You can create one, edit one and even use this to check if there's anything wrong about your file!"
+          "Hey presence developers! This page is there for you to create, edit and make sure about your metadata.json files. You can create one, edit one and even use this to check if there's anything wrong about your file!",
       },
       {
         name: "og:image",
-        content: "https://premid.app/assets/images/logo.png"
+        content: "https://premid.app/assets/images/logo.png",
       },
       {
         hid: "description",
         name: "description",
         content:
-          "Hey presence developers! This page is there for you to create, edit and make sure about your metadata.json files. You can create one, edit one and even use this to check if there's anything wrong about your file!"
+          "Hey presence developers! This page is there for you to create, edit and make sure about your metadata.json files. You can create one, edit one and even use this to check if there's anything wrong about your file!",
       },
       { name: "premid-details", content: "Viewing a PreMiD page:" },
-      { name: "premid-state", content: "Metadata Creator" }
-    ]
+      { name: "premid-state", content: "Metadata Creator" },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://eggsy.xyz/projects/premid/mdcreator",
+      },
+    ],
   },
   data() {
     return {
@@ -367,15 +373,15 @@ export default {
         "Music",
         "Socials & Stream",
         "Videos",
-        "Other"
-      ]
+        "Other",
+      ],
     };
   },
   methods: {
     clipboardImport() {
       navigator.clipboard
         .readText()
-        .then(text => {
+        .then((text) => {
           try {
             if (!text) {
               this.message =
@@ -385,7 +391,7 @@ export default {
               let data = JSON.parse(text.replace(/\s\s+/g, " "));
 
               const file = new File([JSON.stringify(data)], "metadata.json", {
-                type: "application/json"
+                type: "application/json",
               });
 
               this.fileUpload({ target: { files: [file] } });
@@ -402,7 +408,7 @@ export default {
           this.dialog = true;
         });
     },
-    storeImportHandle: async function() {
+    storeImportHandle: async function () {
       const presenceName =
         this.$refs.storeImportField && this.$refs.storeImportField.lazyValue
           ? this.$refs.storeImportField.lazyValue
@@ -438,7 +444,7 @@ export default {
               [JSON.stringify(data.metadata)],
               "metadata.json",
               {
-                type: "application/json"
+                type: "application/json",
               }
             );
 
@@ -470,7 +476,7 @@ export default {
               [JSON.stringify(data.metadata)],
               "metadata.json",
               {
-                type: "application/json"
+                type: "application/json",
               }
             );
 
@@ -495,7 +501,7 @@ export default {
           1
         );
 
-        this.contributorsArray = this.contributorsArray.filter(function(cont) {
+        this.contributorsArray = this.contributorsArray.filter(function (cont) {
           return cont.id != value;
         });
       } else if (type == "url" && this.urls.indexOf(value) > -1) {
@@ -508,7 +514,7 @@ export default {
         this.tags.splice(this.tags.indexOf(value), 1);
       }
     },
-    fileUpload: function(event) {
+    fileUpload: function (event) {
       const self = this;
 
       if (
@@ -520,7 +526,7 @@ export default {
         const reader = new FileReader();
         reader.readAsText(event.target.files[0], "UTF-8");
 
-        reader.onload = function(evt) {
+        reader.onload = function (evt) {
           try {
             const result = JSON.parse(evt.target.result);
 
@@ -561,7 +567,7 @@ export default {
                 music: "Music",
                 socials: "Socials & Stream",
                 videos: "Videos",
-                other: "Other"
+                other: "Other",
               };
 
               self.$refs.category.lazyValue =
@@ -621,7 +627,7 @@ export default {
               for (let key in result.contributors) {
                 self.contributorsArray.push({
                   name: result.contributors[key].name,
-                  id: result.contributors[key].id
+                  id: result.contributors[key].id,
                 });
                 self.contributorsIdArray.push(result.contributors[key].id);
               }
@@ -642,7 +648,7 @@ export default {
           }
         };
 
-        reader.onerror = function() {
+        reader.onerror = function () {
           event.target.value = null;
 
           self.message =
@@ -651,7 +657,7 @@ export default {
         };
       }
     },
-    download: function(obj) {
+    download: function (obj) {
       const data =
           "data:text/json;charset=utf-8," +
           encodeURIComponent(JSON.stringify(obj)),
@@ -662,7 +668,7 @@ export default {
       element.click();
       element.remove();
     },
-    contHandle: function() {
+    contHandle: function () {
       const contName = this.$refs.contName,
         contId = this.$refs.contId;
 
@@ -675,7 +681,7 @@ export default {
         contName.lazyValue != "" &&
         contId.lazyValue != ""
       ) {
-        if (this.contributorsArray.find(c => c.id == contId.lazyValue)) {
+        if (this.contributorsArray.find((c) => c.id == contId.lazyValue)) {
           this.message =
             "The user with this ID has been already added to the object. Please check the ID and make sure it is not added before.";
           this.dialog = true;
@@ -690,7 +696,7 @@ export default {
         } else {
           const newCont = {
             name: contName.lazyValue || "Unknown",
-            id: contId.lazyValue || "Unknown"
+            id: contId.lazyValue || "Unknown",
           };
 
           this.contributorsIdArray.push(contId.lazyValue);
@@ -705,7 +711,7 @@ export default {
         this.dialog = true;
       }
     },
-    tagHandle: function() {
+    tagHandle: function () {
       const tag = this.$refs.tags;
 
       if (tag && tag.lazyValue && this.tags.includes(tag.lazyValue)) {
@@ -728,7 +734,7 @@ export default {
         this.dialog = true;
       }
     },
-    urlHandle: function() {
+    urlHandle: function () {
       const urlInput = this.$refs.url;
 
       this.dialogWidth = 500;
@@ -745,7 +751,7 @@ export default {
         this.dialog = true;
       }
     },
-    descHandle: function() {
+    descHandle: function () {
       const languageCode = this.$refs.langKey,
         description = this.$refs.description;
 
@@ -770,19 +776,19 @@ export default {
         description.reset();
       }
     },
-    categoryHandle: function(category) {
+    categoryHandle: function (category) {
       const categories = {
         Anime: "anime",
         Games: "games",
         Music: "music",
         "Socials & Stream": "socials",
         Videos: "videos",
-        Other: "other"
+        Other: "other",
       };
 
       if (categories[category]) this.category = categories[category];
     },
-    clear: function() {
+    clear: function () {
       (this.dialogWidth = 500),
         (this.json = null),
         (this.iframeRegexp = "none"),
@@ -797,7 +803,7 @@ export default {
         (this.color.hex = "#FF0000"),
         (this.color.hexa = "#FF0000");
 
-      Object.keys(this.$refs).forEach(ref => {
+      Object.keys(this.$refs).forEach((ref) => {
         this.$refs[ref].reset ? this.$refs[ref].reset() : false;
       });
     },
@@ -879,7 +885,7 @@ export default {
 
         metadata["author"] = {
           name: authorName.lazyValue,
-          id: authorId.lazyValue
+          id: authorId.lazyValue,
         };
 
         contributorsArray.length > 0
@@ -897,7 +903,7 @@ export default {
           thumbnail: thumbnail.lazyValue,
           color: color.hex.toUpperCase(),
           tags: tags,
-          category: category
+          category: category,
         };
 
         for (let key in addThese) {
@@ -919,7 +925,7 @@ export default {
         this.dialogWidth = 750;
         this.dialog = true;
       }
-    }
-  }
+    },
+  },
 };
 </script>
