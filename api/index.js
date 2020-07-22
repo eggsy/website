@@ -20,7 +20,7 @@ mongoose.connect("mongodb://localhost:27017/blog", {
 const Posts = mongoose.models.post || require("./files/models.js").Posts,
   Authors = mongoose.models.author || require("./files/models.js").Authors,
   Songs = mongoose.models.song || require("./files/models.js").Songs,
-  hosts = ["eggsy.codes", "www.eggsy.codes", "localhost:3000"];
+  hosts = ["www.eggsy.xyz", "eggsy.xyz", "eggsy.codes", "www.eggsy.codes", "localhost:3000"];
 
 app.use(cors());
 app.use(

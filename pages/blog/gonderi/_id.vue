@@ -416,10 +416,10 @@ export default {
   head() {
     const title = this.postInfo.title,
       meta = [
-        { name: "og:site_name", content: "eggsy.codes - blog" },
+        { name: "og:site_name", content: "eggsy.xyz - blog" },
         {
           name: "og:url",
-          content: `https://eggsy.codes/blog/gonderi/${this.postInfo
+          content: `https://eggsy.xyz/blog/gonderi/${this.postInfo
             .short_url || this.postInfo._id}`
         },
         {
@@ -465,7 +465,7 @@ export default {
       link = [
         {
           rel: "canonical",
-          href: `https://eggsy.codes/blog/gonderi/${this.postInfo.short_url ||
+          href: `https://eggsy.xyz/blog/gonderi/${this.postInfo.short_url ||
             this.postInfo._id}`
         }
       ];

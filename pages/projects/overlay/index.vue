@@ -2,7 +2,7 @@
   <div>
     <center v-if="langSwitch">
       <v-system-bar
-        :to="`https://eggsy.codes/projects/overlay?lang=${lang}`"
+        :to="`https://eggsy.xyz/projects/overlay?lang=${lang}`"
         style="max-width:500px"
         window
         dark

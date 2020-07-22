@@ -220,7 +220,7 @@ export default {
   head: {
     title: "Yazar Kontrol Paneli",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes - blog" },
+      { name: "og:site_name", content: "eggsy.xyz - blog" },
       { name: "og:title", content: "Yazar Kontrol Paneli" },
       {
         hid: "og:description",
@@ -362,7 +362,7 @@ name: "description",
           : "";
       } else if (type == "background") {
         this.$refs.background.lazyValue =
-          "https://eggsy.codes/images/blog/default-bg.jpg";
+          "https://eggsy.xyz/images/blog/default-bg.jpg";
       }
     },
     getColor(number) {

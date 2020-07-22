@@ -4,8 +4,8 @@ import path from "path";
 export default {
   mode: "universal",
   head: {
-    titleTemplate: "%s - " + "eggsy.codes",
-    title: "eggsy.codes",
+    titleTemplate: "%s - " + "eggsy.xyz",
+    title: "eggsy.xyz",
     meta: [
       {
         charset: "utf-8",
@@ -13,7 +13,7 @@ export default {
       {
         hid: "og:site_name",
         name: "og:site_name",
-        content: "eggsy.codes",
+        content: "eggsy.xyz",
       },
       {
         name: "viewport",
@@ -48,7 +48,7 @@ export default {
     ],
   },
   env: {
-    apiBase: "https://eggsy.codes/api",
+    apiBase: "https://eggsy.xyz/api",
   },
   css: ["./stylesheets/root.scss"],
   plugins: [

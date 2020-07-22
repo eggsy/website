@@ -3,7 +3,7 @@
     <v-app-bar dense hide-on-scroll app>
       <v-container class="d-flex">
         <div class="logo">
-          <nuxt-link to="/">eggsy.codes</nuxt-link>
+          <nuxt-link to="/">eggsy.xyz</nuxt-link>
         </div>
         <v-spacer></v-spacer>
         <div>

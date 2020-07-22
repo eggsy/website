@@ -1,4 +1,3 @@
 User-Agent: *
-Disallow: 
-Sitemap: https://eggsy.codes/sitemap.xml
-
+Disallow:
+Sitemap: https://eggsy.xyz/sitemap.xml

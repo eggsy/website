@@ -33,8 +33,6 @@ export default {
         ? this.errors[this.error.statusCode].shortname
         : "Error",
       meta = [
-        { name: "og:site_name", content: "eggsy.codes" },
-        { name: "theme-color", content: "#212121" },
         {
           name: "og:title",
           content: this.errors[this.error.statusCode]
@@ -43,12 +41,12 @@ export default {
         },
         {
           hid: "og:description",
-name: "og:description",
+          name: "og:description",
           content: this.errors[this.error.statusCode]
             ? this.errors[this.error.statusCode].description
             : "Oh well, seems like there was an error processing your request. You better find a different way!",
         },
-        { name: "og:image", content: "https://eggsy.codes/favicon.ico" },
+        { name: "og:image", content: "https://eggsy.xyz/favicon.ico" },
         { name: "premid-details", content: "Uh oh, it's an error:" },
         {
           name: "premid-state",

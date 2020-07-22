@@ -89,7 +89,7 @@ export default {
   head() {
     const title = "Etiket: " + this.params.name,
       meta = [
-        { name: "og:site_name", content: "eggsy.codes - blog" },
+        { name: "og:site_name", content: "eggsy.xyz - blog" },
         {
           name: "og:title",
           content: `EGGSY's Blog - "${this.params.name}" Etiketi`

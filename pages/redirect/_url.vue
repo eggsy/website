@@ -110,14 +110,14 @@ export default {
           description:
             "You can use this page to get redirected to my Chrome extension Imgur Please. An extension that replaces Imgur images from the document.",
           url: "https://github.com/eggsywashere/imgur-please",
-          image: "https://eggsy.codes/images/projects/imgur-please.png"
+          image: "https://eggsy.xyz/images/projects/imgur-please.png"
         },
         "is-inside-me": {
           name: "is-inside.me",
           description:
             "This page will get you redirected to the our free file hosting service, is-inside.me!",
-          url: "https://is-inside.me/?utm_source=eggsy.codes",
-          image: "https://eggsy.codes/images/projects/is-inside-me.png"
+          url: "https://is-inside.me/?utm_source=eggsy.xyz",
+          image: "https://eggsy.xyz/images/projects/is-inside-me.png"
         },
         "discord-steam-verification": {
           name: "Discord Steam Verification",

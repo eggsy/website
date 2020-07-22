@@ -219,7 +219,7 @@ export default {
   head: {
     title: "Blog",
     meta: [
-      { name: "og:site_name", content: "eggsy.codes - blog" },
+      { name: "og:site_name", content: "eggsy.xyz - blog" },
       { name: "og:title", content: "EGGSY's Blog" },
       {
         hid: "og:description",

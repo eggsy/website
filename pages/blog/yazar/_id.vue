@@ -133,7 +133,7 @@ export default {
         ? `Yazar: ${this.data.author.name}`
         : "Bilinmeyen Yazar",
       meta = [
-        { name: "og:site_name", content: "eggsy.codes - blog" },
+        { name: "og:site_name", content: "eggsy.xyz - blog" },
         {
           name: "og:title",
           content: this.data.author.name
@@ -145,7 +145,7 @@ export default {
           content:
             this.data.author.name && this.data.author.avatar
               ? this.data.author.avatar
-              : "https://eggsy.codes/images/blog/default-avatar.png"
+              : "https://eggsy.xyz/images/blog/default-avatar.png"
         },
         {
           hid: "og:description",
@@ -170,7 +170,7 @@ export default {
       link = [
         {
           rel: "canonical",
-          href: `https://eggsy.codes/blog/yazar/${
+          href: `https://eggsy.xyz/blog/yazar/${
             this.data.author.name && this.data.author.discordId
               ? this.data.author.discordId
               : "162969778699501569"

@@ -86,7 +86,7 @@ export default {
   head() {
     const title = "Favorilerim",
       meta = [
-        { name: "og:site_name", content: "eggsy.codes - blog" },
+        { name: "og:site_name", content: "eggsy.xyz - blog" },
         {
           name: "og:title",
           content: "Favorilerim"

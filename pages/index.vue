@@ -320,7 +320,7 @@ export default {
           url: "https://top.gg/"
         }
       ].map(i => {
-        i.url = `${i.url}?utm_source=eggsy.codes`;
+        i.url = `${i.url}?utm_source=eggsy.xyz`;
         return i;
       }),
       projects: [
