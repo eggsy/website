@@ -254,7 +254,7 @@ export default {
       { name: "premid-details", content: "Viewing a page:" },
       { name: "premid-state", content: "Homepage" },
     ],
-    link: [{ rel: "cannonical", content: "https://eggsy.xyz" }],
+    link: [{ rel: "canonical", content: "https://eggsy.xyz" }],
   },
   data() {
     return {
