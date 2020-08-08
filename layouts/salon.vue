@@ -7,14 +7,12 @@
         </div>
         <v-spacer></v-spacer>
         <div>
-          <small>always for the best</small>
+          <small>Abdulbaki Dursun</small>
         </div>
       </v-container>
     </v-app-bar>
 
-    <v-container class="page">
-      <nuxt />
-    </v-container>
+    <nuxt class="page" />
   </v-app>
 </template>
 
@@ -27,7 +25,7 @@ small {
 }
 
 .page {
-  margin-top: 3em;
+  margin-top: 4em;
 }
 
 .logo a {
@@ -41,13 +39,3 @@ small {
   }
 }
 </style>
-
-<script>
-export default {
-  data() {
-    return {
-      drawer: false,
-    };
-  },
-};
-</script>

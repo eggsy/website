@@ -27,13 +27,7 @@ const { Posts, Authors, Songs } = require("./files/models.js"),
   ];
 
 app.use(cors());
-app.use(
-  helmet({
-    frameguard: false,
-    xssFilter: true,
-    hsts: true,
-  })
-);
+app.use(helmet());
 app.use(
   bodyParser.urlencoded({
     extended: true,

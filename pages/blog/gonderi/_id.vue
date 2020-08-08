@@ -8,12 +8,12 @@
           ref="image"
           height="250px"
           :lazy-src="
-            postInfo.images && postInfo.images.postImage
+            postInfo.images && postInfo.images.postImage && !$isMobile()
               ? postInfo.images.postImage
               : postInfo.images.large
           "
           :src="
-            postInfo.images && postInfo.images.postImage
+            postInfo.images && postInfo.images.postImage && !$isMobile()
               ? postInfo.images.postImage
               : postInfo.images.large
           "
