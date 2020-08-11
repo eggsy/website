@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
     "axios": "^0.19.2",
     "babel": "^6.23.0",
     "canvas": "^2.6.1",
@@ -28,7 +29,8 @@
     "nuxt-helmet": "^1.2.3",
     "request": "^2.88.2",
     "vue-animejs": "^2.1.1",
-    "vue-tippy": "^4.5.1"
+    "vue-tippy": "^4.5.1",
+    "vue-worker": "^1.2.1"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",

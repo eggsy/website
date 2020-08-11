@@ -58,17 +58,21 @@ export default {
       mode: "client",
     },
     {
+      src: "@/plugins/editor.js",
+      mode: "client",
+    },
+    {
       src: "@/plugins/tippy.js",
       mode: "client",
     },
     {
-      src: "@/plugins/editor.js",
+      src: "@/plugins/worker.js",
       mode: "client",
     },
   ],
 
   buildModules: ["@nuxtjs/axios", "@nuxtjs/vuetify"],
-  modules: ["nuxt-helmet", "@nuxtjs/auth"],
+  modules: ["nuxt-helmet", "@nuxtjs/auth", "@nuxtjs/pwa"],
   router: {
     middleware: ["auth"],
   },
@@ -113,7 +117,6 @@ export default {
       },
     },
   },
-
   build: {
     postcss: {
       preset: {
