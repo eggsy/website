@@ -35,7 +35,7 @@
 
       <v-col class="ml-md-4 my-md-0 mt-4">
         <v-card class="mx-auto" v-if="menu.selected === 0">
-          <div class="pt-6 pl-6 pb-2" v-if="!loaded">Yükleniyor...</div>
+          <div class="pt-6 px-6 pb-2" v-if="!loaded">Yükleniyor...</div>
           <div
             class="pt-6 pl-6 pb-2"
             v-else-if="!garsons.length"
