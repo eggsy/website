@@ -392,7 +392,9 @@
             single-line
             hide-details
           ></v-text-field>
+
           <v-spacer />
+
           <v-btn
             icon
             @click="star(dialog.garson.object.name); dialog.garson.object.starred = !dialog.garson.object.starred"
@@ -403,6 +405,7 @@
           </v-btn>
 
           <v-btn
+            v-if="!editGarson.enabled"
             icon
             :disabled="!dialog.garson.object.number"
             @click="whatsLink(dialog.garson.object.number)"
@@ -1176,11 +1179,13 @@ export default {
       }
     },
     whatsLink(number) {
+      let numb = number.replace(/\s/g, "");
+
+      if (number.startsWith("0")) numb = `+9${number}`;
+      else if (!number.startsWith("+90")) numb = `+90${number}`;
+
       window
-        .open(
-          `https://api.whatsapp.com/send?phone=${number.replace(/\s/g, "")}`,
-          "_blank"
-        )
+        .open(`https://api.whatsapp.com/send?phone=${numb}`, "_blank")
         .focus();
     },
   },
