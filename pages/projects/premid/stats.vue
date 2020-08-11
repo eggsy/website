@@ -1,8 +1,8 @@
 <template>
   <v-row no-gutters>
-    <v-col cols="1"></v-col>
+    <v-col md="1" cols="0"></v-col>
 
-    <v-col cols="10">
+    <v-col md="10" cols="12" class="pa-4">
       <v-card>
         <v-card-title>
           Presence Stats
@@ -171,6 +171,8 @@
         </v-data-table>
       </v-card>
     </v-col>
+
+    <v-col md="1" cols="0"></v-col>
 
     <div class="text-center">
       <v-dialog v-model="dialog" width="500">

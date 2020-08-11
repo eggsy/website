@@ -65,12 +65,7 @@ export default {
       src: "@/plugins/tippy.js",
       mode: "client",
     },
-    {
-      src: "@/plugins/worker.js",
-      mode: "client",
-    },
   ],
-
   buildModules: ["@nuxtjs/axios", "@nuxtjs/vuetify"],
   modules: ["nuxt-helmet", "@nuxtjs/auth", "@nuxtjs/pwa"],
   router: {

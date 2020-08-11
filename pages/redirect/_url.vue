@@ -1,5 +1,5 @@
 <template>
-  <v-content>
+  <v-main>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
         <v-card loading="secondary" class="elevation-12">
@@ -31,7 +31,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-content>
+  </v-main>
 </template>
 
 <style lang="scss" scoped>

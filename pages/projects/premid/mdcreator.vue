@@ -1,8 +1,8 @@
 <template>
-  <v-row style="margin-top:20px;" no-gutters>
-    <v-col cols="2"></v-col>
+  <v-row no-gutters>
+    <v-col md="2" cols="0"></v-col>
 
-    <v-col cols="8">
+    <v-col md="8" cols="12" class="pa-4">
       <h2 class="text-center font-weight-thin" style="margin-bottom:10px;">Presence Metadata Creator</h2>
 
       <div class="flex">
@@ -285,7 +285,7 @@
       </v-dialog>
     </v-col>
 
-    <v-col cols="2"></v-col>
+    <v-col md="2" cols="0"></v-col>
   </v-row>
 </template>
 

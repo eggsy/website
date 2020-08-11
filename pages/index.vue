@@ -48,9 +48,14 @@
           </div>
           <div>
             <span>{{ position.role }}</span>
-            <a :href="position.url" target="_blank">
+
+            <a v-if="!position.samePage" :href="position.url" target="_blank">
               <v-icon>mdi-open-in-new</v-icon>
             </a>
+
+            <nuxt-link v-else :to="position.url">
+              <v-icon>mdi-open-in-new</v-icon>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -80,7 +85,7 @@
           v-for="project in projects"
           :key="project.name"
           max-width="344"
-          @click="open(project.to)"
+          @click="project.samePage ? $router.push(project.to) : open(project.to)"
           @click.middle="open(project.to, '_blank')"
         >
           <v-list-item three-line>
@@ -302,6 +307,14 @@ export default {
         },
         {
           current: true,
+          service: "Batakköylü Düğün Salonu",
+          role: "Jr. Web Developer",
+          icon: "/images/projects/favicons/btds.png",
+          url: "/salon",
+          samePage: true,
+        },
+        {
+          current: true,
           service: "TruckersMP",
           role: "Translator",
           icon: "/images/projects/favicons/truckersmp.png",
@@ -321,7 +334,7 @@ export default {
           url: "https://top.gg/",
         },
       ].map((i) => {
-        i.url = `${i.url}?utm_source=eggsy.xyz`;
+        if (!i.samePage) i.url = `${i.url}?utm_source=eggsy.xyz`;
         return i;
       }),
       projects: [

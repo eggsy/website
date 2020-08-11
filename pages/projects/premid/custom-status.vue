@@ -1,8 +1,8 @@
 <template>
   <v-row style="margin-top:1.5em;" no-gutters>
-    <v-col cols="3"></v-col>
+    <v-col md="3" cols="0"></v-col>
 
-    <v-col cols="6">
+    <v-col md="6" cols="12">
       <div class="discordCard">
         <div class="cardContent">
           <div class="title">
@@ -200,7 +200,7 @@
       <div style="display:none;" id="object">{}</div>
     </v-col>
 
-    <v-col cols="3"></v-col>
+    <v-col md="3" cols="0"></v-col>
 
     <v-snackbar v-model="snackbar">
       Uh oh, looks like you've selected a wrong time or the timer is up! Make
@@ -736,25 +736,8 @@ export default {
     clearInterval(this.interval2);
   },
   mounted() {
-    const col = document.querySelector("div.col.col-6");
-
     this.interval1 = setInterval(() => {
       this.errorChecker();
-
-      if (this.$isMobile() && col && col.classList) {
-        this.work = false;
-        col.classList.remove("col");
-        col.classList.remove("col-6");
-      } else if (
-        !this.$isMobile() &&
-        col &&
-        col.classList &&
-        !col.classList["col"] &&
-        !col.classList["col-6"]
-      ) {
-        col.classList.add("col");
-        col.classList.add("col-6");
-      }
 
       if (this.elapsedCheck && this.clickDate && !this.time) {
         this.timeElapsed = this.getProperTime()
