@@ -97,6 +97,12 @@ export default {
   },
   loading: { color: "#fff" },
   vuetify: {
+    breakpoint: {
+      xs: 600,
+      thresholds: {
+        xs: 340,
+      },
+    },
     customVariables: ["~/assets/variables.scss"],
     theme: {
       dark: true,

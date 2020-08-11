@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row no-gutters>
-      <v-col md="3">
+      <v-col md="3" cols="12">
         <v-card class="mx-auto">
           <v-list flat>
             <v-list-item-group
@@ -27,13 +27,13 @@
         </v-card>
 
         <v-alert
-          class="mt-4"
+          class="mt-4 mb-0"
           color="success darken-3"
           v-if="menu.selected === 1 && garsons.length"
         >Son eklenen: {{ lastGarsonAdded.name }}</v-alert>
       </v-col>
 
-      <v-col class="ml-4">
+      <v-col class="ml-md-4 my-md-0 mt-4">
         <v-card class="mx-auto" v-if="menu.selected === 0">
           <div class="pt-6 pl-6 pb-2" v-if="!loaded">Yükleniyor...</div>
           <div
@@ -86,7 +86,7 @@
           <v-subheader class="pt-4">Garson Ekle</v-subheader>
 
           <v-row no-gutters class="pl-4 pr-4 pt-2 pb-6">
-            <v-col cols="6" class="pr-2">
+            <v-col md="6" cols="12" class="pr-md-2 pr-0">
               <v-text-field
                 aria-autocomplete="false"
                 outlined
@@ -96,7 +96,7 @@
                 required
               ></v-text-field>
             </v-col>
-            <v-col cols="6" class="pl-2">
+            <v-col md="6" cols="12" class="pl-md-2 pl-0">
               <v-text-field
                 aria-autocomplete="false"
                 outlined
@@ -116,12 +116,23 @@
             </v-col>
 
             <v-col cols="12">
-              <v-btn @click="save()">
-                <v-icon left>mdi-content-save</v-icon>Kaydet
-              </v-btn>
-              <v-btn class="ml-2" @click="newGarson = { name: '', about: '', number: '' }">
-                <v-icon left>mdi-delete</v-icon>Sıfırla
-              </v-btn>
+              <v-row no-gutters>
+                <v-col md="2" cols="12" class="px-0">
+                  <v-btn :block="$vuetify.breakpoint.name !== 'md'" @click="save()">
+                    <v-icon left>mdi-content-save</v-icon>Kaydet
+                  </v-btn>
+                </v-col>
+
+                <v-col md="2" cols="12" class="px-0">
+                  <v-btn
+                    :block="$vuetify.breakpoint.name !== 'md'"
+                    class="ml-md-2 my-md-0 ml-0 my-2"
+                    @click="newGarson = { name: '', about: '', number: '' }"
+                  >
+                    <v-icon left>mdi-delete</v-icon>Sıfırla
+                  </v-btn>
+                </v-col>
+              </v-row>
             </v-col>
           </v-row>
         </v-card>
@@ -129,38 +140,48 @@
         <v-card class="mx-auto pb-4" v-if="menu.selected === 2">
           <v-subheader class="pt-4">Günlük Liste Çıkartıcı</v-subheader>
 
-          <v-row class="ml-1 mr-1">
-            <v-col class="pb-0" cols="3">
+          <v-row justify="center" class="ml-1 mr-1 d-md-flex d-block">
+            <v-col class="pb-0" md="3" cols="12">
               <v-dialog
                 ref="dialog"
                 v-model="newList.modal"
                 :return-value.sync="newList.date"
-                persistent
                 width="290px"
               >
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn block color="primary darken-2" v-bind="attrs" v-on="on">
                     <v-icon left>mdi-calendar</v-icon>
-                    {{ newList.date || "Tarih seçin" }}
+                    {{ newList.date ? `${new Date(newList.date).toLocaleString("tr-TR", { day: "numeric", weekday: "short", month: "numeric" })} ${newList.period.slice(0, 3)}` : "Tarih seçin" }}
                   </v-btn>
                 </template>
 
                 <v-date-picker
                   :first-day-of-week="1"
                   locale="tr-TR"
-                  :events="getListedDates"
+                  :events="getListedDates.array"
+                  :event-color="getListedDates.colors"
                   show-current
                   v-model="newList.date"
                   scrollable
                 >
+                  <v-select
+                    v-model="newList.period"
+                    :items="['Sabah', 'Akşam']"
+                    label="Dönem?"
+                    class="ml-4 mr-2"
+                  ></v-select>
                   <v-spacer></v-spacer>
-                  <v-btn text color="primary" @click="newList.modal = false">İptal</v-btn>
-                  <v-btn text color="primary" @click="$refs.dialog.save(newList.date)">Tamam</v-btn>
+                  <v-btn
+                    text
+                    color="primary"
+                    @click="newList.date = ''; newList.modal = false; newList.period = 'Sabah'"
+                  >İptal</v-btn>
+                  <v-btn text color="primary" @click="saveDate()">Tamam</v-btn>
                 </v-date-picker>
               </v-dialog>
             </v-col>
 
-            <v-col class="pb-0" cols="4">
+            <v-col class="pb-0" md="4" cols="12">
               <v-btn
                 :disabled="!newList.date || !garsons.length"
                 @click="addRandomGarson()"
@@ -171,7 +192,7 @@
               </v-btn>
             </v-col>
 
-            <v-col class="pb-0" cols="4">
+            <v-col class="pb-0" md="4" cols="12">
               <v-btn
                 :disabled="!newList.date || !garsons.length"
                 @click="addRandomGarson('starred')"
@@ -182,7 +203,7 @@
               </v-btn>
             </v-col>
 
-            <v-col cols="3">
+            <v-col class="pb-md-2 pb-0" md="3" cols="12">
               <v-btn
                 :disabled="!newList.date || !garsons.length || !newList.list.length"
                 @click="saveNewGarsonList()"
@@ -193,7 +214,7 @@
               </v-btn>
             </v-col>
 
-            <v-col cols="3">
+            <v-col class="pb-md-2 pb-0" md="3" cols="12">
               <v-btn
                 :disabled="!newList.date || !garsons.length || !newList.list.length"
                 @click="clearList()"
@@ -204,7 +225,7 @@
               </v-btn>
             </v-col>
 
-            <v-col cols="5">
+            <v-col class="pb-md-2 pb-0" md="5" cols="12">
               <v-btn
                 v-if="!newList.manualGarsonAdd"
                 :disabled="!newList.date || !garsons.length"
@@ -234,12 +255,12 @@
             </v-col>
           </v-row>
 
-          <v-row no-gutters>
-            <v-col cols="4" v-for="(garson, i) in newList.list" :key="i">
+          <v-row no-gutters class="mt-md-2 mt-4">
+            <v-col md="4" cols="12" v-for="(garson, i) in newList.list" :key="i">
               <v-card color="gray darken-3" class="ml-4 mr-4 mb-4" raised>
                 <v-card-title>
                   <v-row justify="space-between" no-gutters>
-                    <v-col>{{ garson.name }}</v-col>
+                    <v-col class="garson-name" :title="garson.name">{{ garson.name }}</v-col>
                     <v-col cols="2">
                       <v-btn icon dense @click="removeGarson(i)">
                         <v-icon>mdi-window-close</v-icon>
@@ -257,28 +278,39 @@
         </v-card>
 
         <v-card class="mx-auto" v-if="menu.selected === 3">
-          <v-subheader class="pt-4">Listeler</v-subheader>
+          <v-subheader class="pt-4">
+            Listeler
+            <v-spacer />
+            <v-btn icon dense @click="showButtons = !showButtons">
+              <v-icon>mdi-eye</v-icon>
+            </v-btn>
+          </v-subheader>
 
           <div v-if="!dailyLists.length" class="pb-4 ml-4 mr-4">Herhangi bir listeniz yok.</div>
 
-          <v-card class="mx-auto" v-for="(list, i) in dailyLists" :key="i">
-            <v-card-title>
+          <v-card class="mx-auto" v-for="(list, i) in getOrderedLists" :key="i">
+            <v-card-title class="d-md-flex d-block">
               <v-badge
+                class="mx-sm-0 my-sm-2"
                 color="primary"
                 :content="String(list.garsons.length) + ' garson'"
                 inline
-              >{{ new Date(list.date).toLocaleString("tr-TR", { year: "numeric", day: "numeric", month: "long", weekday: "long"}) }}</v-badge>
+                :style="{ wordBreak: 'break-word' }"
+              >{{ `${new Date(list.date).toLocaleString("tr-TR", { year: "numeric", day: "numeric", month: "long", weekday: "short"})}. ${list.period}` }}</v-badge>
               <v-spacer />
-              <v-btn class="mr-2" small dense color="primary darken-3">
-                <v-icon left>mdi-circle-edit-outline</v-icon>Listeyi Düzenle
-              </v-btn>
-              <v-btn @click="shareList(i)" small class="mr-2" dense color="secondary darken-3">
-                <v-icon left>mdi-share</v-icon>Listeyi Paylaş
-              </v-btn>
-              <v-btn @click="deleteList(i)" small dense color="error darken-3">
-                <v-icon>mdi-delete</v-icon>
-              </v-btn>
+              <div class="mt-md-0 mt-2" v-if="showButtons">
+                <v-btn @click="editList(i)" class="mr-2" small dense color="primary darken-3">
+                  <v-icon left>mdi-circle-edit-outline</v-icon>Listeyi Düzenle
+                </v-btn>
+                <v-btn @click="shareList(i)" small class="mr-2" dense color="secondary darken-3">
+                  <v-icon left>mdi-share</v-icon>Listeyi Paylaş
+                </v-btn>
+                <v-btn @click="deleteList(i)" small dense color="error darken-2">
+                  <v-icon>mdi-delete</v-icon>
+                </v-btn>
+              </div>
             </v-card-title>
+
             <v-card-text>
               <v-chip
                 class="mb-2 mr-1"
@@ -292,7 +324,7 @@
         </v-card>
       </v-col>
 
-      <v-col class="pl-3" v-if="menu.selected === 0">
+      <v-col class="ml-md-4 ml-0 mt-md-0 mt-4" v-if="menu.selected === 0">
         <v-alert dense text color="blue" class="mb-0">
           <ul>
             <li>Burada, eklediğiniz tüm garsonların bilgilerine ulaşabilirsiniz.</li>
@@ -352,6 +384,14 @@
               :color="dialog.garson.object.starred ? 'pink' : 'default'"
             >{{ dialog.garson.object.starred ? 'mdi-star' : 'mdi-star-outline' }}</v-icon>
           </v-btn>
+
+          <v-btn
+            icon
+            :disabled="!dialog.garson.object.number"
+            @click="whatsLink(dialog.garson.object.number)"
+          >
+            <v-icon color="green">mdi-whatsapp</v-icon>
+          </v-btn>
         </v-card-title>
 
         <v-card-text>
@@ -360,7 +400,7 @@
               <v-icon>mdi-calendar</v-icon>
             </v-col>
 
-            <v-col>
+            <v-col class="ml-md-0 ml-2">
               <span v-if="dialog.garson.object.addedOn">
                 Bu kişi
                 <strong>{{ new Date(dialog.garson.object.addedOn).toLocaleString("tr-TR") }}</strong> tarihinde eklenmiş.
@@ -374,7 +414,7 @@
               <v-icon>mdi-phone</v-icon>
             </v-col>
 
-            <v-col>
+            <v-col class="ml-md-0 ml-2">
               <a
                 v-if="dialog.garson.object.number && !editGarson.enabled"
                 :href="`tel:${dialog.garson.object.number}`"
@@ -401,7 +441,7 @@
             <v-col cols="1">
               <v-icon>mdi-message-text</v-icon>
             </v-col>
-            <v-col>
+            <v-col class="ml-md-0 ml-2">
               <h4>Hakkında</h4>
             </v-col>
           </v-row>
@@ -459,6 +499,13 @@
     opacity: 1;
   }
 }
+
+.garson-name {
+  text-overflow: ellipsis;
+  word-break: break-all;
+  max-height: 2rem;
+  overflow: hidden;
+}
 </style>
 
 <script>
@@ -467,17 +514,36 @@ export default {
   layout: "salon",
   head: {
     title: "Garson Listesi Çıkarıcı",
+    meta: [
+      { hid: "og:title", name: "og:title", content: "Garson Listesi Çıkarıcı" },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content:
+          "Düğün salonları veya garson çalıştıran herhangi bir işyeri için hazırlanan, günlük sabah/akşam şeklinde gelişmiş garson listesi çıkarma sitesi.",
+      },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Düğün salonları veya garson çalıştıran herhangi bir işyeri için hazırlanan, günlük sabah/akşam şeklinde gelişmiş garson listesi çıkarma sitesi.",
+      },
+      { name: "premid-details", content: "Garson Listesi Çıkarıcı" },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: `https://eggsy.xyz/salon`,
+      },
+    ],
   },
   data() {
-    /*
-      TODO sabah ve akşam listesi çıkartma
-      TODO liste düzenleme
-    */
     return {
       loaded: false,
       page: Number(this.$route.query.page) || 1,
       search: this.$route.query.search || this.$route.query.q || "",
       dailyLists: [],
+      showButtons: true,
       newGarson: {
         name: "",
         about: "",
@@ -503,6 +569,7 @@ export default {
         },
       },
       newList: {
+        period: "Sabah",
         manualGarsonAdd: false,
         date: null,
         modal: false,
@@ -577,7 +644,27 @@ export default {
       );
     },
     getListedDates() {
-      return this.dailyLists.map((l) => l.date);
+      const object = {};
+
+      for (let i in this.dailyLists) {
+        const list = this.dailyLists[i];
+        object[list.date] = this.dailyLists
+          .filter((l) => l.date === list.date)
+          .map((l) => {
+            if (l.period === "Sabah") return "primary";
+            else return "orange";
+          });
+      }
+
+      return {
+        array: this.dailyLists.map((l) => l.date),
+        colors: object,
+      };
+    },
+    getOrderedLists() {
+      return this.dailyLists.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
     },
   },
   beforeDestroy() {
@@ -894,11 +981,18 @@ export default {
 
       if (!dailyGarsonLists) {
         const object = [
-          { date: this.newList.date, garsons: [...this.newList.list] },
+          {
+            date: this.newList.date,
+            period: this.newList.period,
+            garsons: [...this.newList.list],
+          },
         ];
 
         this.dailyLists = object;
-        localStorage.setItem("dailyGarsonList", JSON.stringify());
+        localStorage.setItem(
+          "dailyGarsonList",
+          JSON.stringify(this.dailylists)
+        );
 
         this.snack.color = "success darken-3";
         this.snack.message = "Liste kaydedildi";
@@ -906,12 +1000,15 @@ export default {
       } else {
         const objectList = JSON.parse(dailyGarsonLists);
         const found = objectList.find(
-          (item) => item.date === this.newList.date
+          (item) =>
+            item.date === this.newList.date &&
+            item.period === this.newList.period
         );
 
         if (!found) {
           objectList.push({
             date: this.newList.date,
+            period: this.newList.period,
             garsons: [...this.newList.list],
           });
 
@@ -925,8 +1022,8 @@ export default {
           this.snack.message = "Liste kaydedildi";
           this.snack.enabled = true;
         } else {
-          this.snack.color = "error darken-3";
-          this.snack.message = "Bu tarihte bir liste mevcut";
+          this.snack.color = "error darken-2";
+          this.snack.message = "Bu tarih ve dönemde bir liste mevcut";
           this.snack.enabled = true;
         }
       }
@@ -957,6 +1054,43 @@ export default {
         this.snack.enabled = true;
       }
     },
+    editList(index) {
+      const list = this.dailyLists[index] || null;
+
+      if (!list) {
+        this.snack.color = "error darken-2";
+        this.snack.message = "Böyle bir liste yok";
+        this.snack.enabled = true;
+      } else {
+        const consent = confirm(
+          'Bir liste düzenleyebilmek için, öncelikle varolan listenin silinip, aynı tarihte yeni bir liste oluşturulması gerekir. Sistem, bu listenin verisini otomatik olarak yeni listeye aktaracaktır ancak bu işlem eğer daha önceden yeni bir liste yapıp kaydetmediyseniz onun verisini SİLECEKTİR ve "Listeler" sayfasından bu listeyi kaldıracaktır. Eğer düzenleme esnasında listeyi kaydetmezseniz bu listeyi tekrar geri alamazsınız. Onaylıyor musunuz?'
+        );
+
+        if (consent) {
+          this.newList = {
+            period: list.period || "Sabah",
+            manualGarsonAdd: false,
+            date: list.date || "",
+            modal: false,
+            array: [],
+            list: list.garsons,
+          };
+
+          this.dailyLists.splice(index, 1);
+          localStorage.setItem(
+            "dailyGarsonList",
+            JSON.stringify(this.dailyLists)
+          );
+
+          this.menu.selected = 2;
+          this.updateRoute(2);
+
+          this.snack.color = "secondary darken-2";
+          this.snack.message = "Lütfen kaydetmeyi unutmayın";
+          this.snack.enabled = true;
+        }
+      }
+    },
     shareList(index) {
       const list = this.dailyLists[index] || null;
       const listDate = list
@@ -971,9 +1105,9 @@ export default {
       if (!list || !listDate) return;
 
       const textArea = document.createElement("textarea");
-      textArea.value = `*${listDate}*\n\n${list.garsons
-        .map((g) => g.name)
-        .join("\n")}`;
+      textArea.value = `*${listDate} - ${
+        list.period || ""
+      }*\n\n${list.garsons.map((g) => g.name).join("\n")}`;
 
       textArea.style.top = "0";
       textArea.style.left = "0";
@@ -989,6 +1123,37 @@ export default {
       this.snack.color = "success darken-3";
       this.snack.message = "Liste panonuza kopyalandı";
       this.snack.enabled = true;
+    },
+    saveDate() {
+      if (!this.newList.date) {
+        this.snack.color = "error darken-2";
+        this.snack.message = "Lütfen tarih seçin";
+        this.snack.enabled = true;
+      } else if (!this.newList.period) {
+        this.snack.color = "error darken-2";
+        this.snack.message = "Lütfen dönem seçin";
+        this.snack.enabled = true;
+      } else {
+        const found = this.dailyLists.find(
+          (item) =>
+            item.date === this.newList.date &&
+            item.period === this.newList.period
+        );
+
+        if (found) {
+          this.snack.color = "error darken-2";
+          this.snack.message = "Bu tarih ve dönemde bir liste mevcut";
+          this.snack.enabled = true;
+        } else this.$refs.dialog.save(this.newList.date);
+      }
+    },
+    whatsLink(number) {
+      window
+        .open(
+          `https://api.whatsapp.com/send?phone=${number.replace(/\s/g, "")}`,
+          "_blank"
+        )
+        .focus();
     },
   },
 };
