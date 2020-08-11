@@ -1181,8 +1181,8 @@ export default {
     whatsLink(number) {
       let numb = number.replace(/\s/g, "");
 
-      if (number.startsWith("0")) numb = `+9${number}`;
-      else if (!number.startsWith("+90")) numb = `+90${number}`;
+      if (numb.startsWith("0")) numb = `+9${numb}`;
+      else if (!numb.startsWith("+90")) numb = `+90${numb}`;
 
       window
         .open(`https://api.whatsapp.com/send?phone=${numb}`, "_blank")
