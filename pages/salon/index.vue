@@ -37,7 +37,7 @@
         <v-card class="mx-auto" v-if="menu.selected === 0">
           <div class="pt-6 px-6 pb-2" v-if="!loaded">Yükleniyor...</div>
           <div
-            class="pt-6 pl-6 pb-2"
+            class="pt-6 px-6 pb-2"
             v-else-if="!garsons.length"
           >Henüz garson eklememişsiniz. Yandaki menüden yeni garson ekleyebilirsiniz.</div>
 
@@ -284,6 +284,18 @@
             <v-btn icon dense @click="showButtons = !showButtons">
               <v-icon>mdi-eye</v-icon>
             </v-btn>
+            <v-btn title="İçe Aktar" icon dense @click="importSave">
+              <v-icon>mdi-inbox-arrow-down</v-icon>
+            </v-btn>
+            <v-btn
+              icon
+              dense
+              title="Dışa Aktar"
+              @click="exportSave"
+              :disabled="!garsons.length && !dailyLists.length"
+            >
+              <v-icon>mdi-inbox-arrow-up</v-icon>
+            </v-btn>
           </v-subheader>
 
           <div v-if="!dailyLists.length" class="pb-4 ml-4 mr-4">Herhangi bir listeniz yok.</div>
@@ -336,14 +348,19 @@
 
         <v-row>
           <v-col>
-            <v-btn block color="secondary darken-2" @click="importGarsons">
-              <v-icon left>mdi-application-import</v-icon>
+            <v-btn block color="secondary darken-2" @click="importSave">
+              <v-icon left>mdi-inbox-arrow-down</v-icon>
               <span>İçe Aktar</span>
             </v-btn>
           </v-col>
           <v-col>
-            <v-btn block color="secondary darken-2" @click="exportGarsons">
-              <v-icon left>mdi-application-export</v-icon>
+            <v-btn
+              block
+              color="secondary darken-2"
+              @click="exportSave"
+              :disabled="!garsons.length && !dailyLists.length"
+            >
+              <v-icon left>mdi-inbox-arrow-up</v-icon>
               <span>Dışa Aktar</span>
             </v-btn>
           </v-col>
@@ -358,7 +375,7 @@
       </template>
     </v-snackbar>
 
-    <v-dialog v-model="dialog.enabled" persistent max-width="450">
+    <v-dialog v-model="dialog.enabled" :persistent="editGarson.enabled" max-width="450">
       <v-card>
         <v-card-title class="headline">
           <span v-if="!editGarson.enabled">{{ dialog.garson.object.name }}</span>
@@ -831,23 +848,23 @@ export default {
         this.dialog.enabled = true;
       }
     },
-    exportGarsons() {
+    exportSave() {
       const data =
           "data:text/json;charset=utf-8," +
           encodeURIComponent(
             JSON.stringify({
               exportDate: Date.now(),
-              data: [...this.garsons],
+              data: { garsons: [...this.garsons], lists: [...this.dailyLists] },
             })
           ),
         element = document.createElement("a");
 
       element.setAttribute("href", data);
-      element.setAttribute("download", "garson-listesi.json");
+      element.setAttribute("download", "liste-verisi.json");
       element.click();
       element.remove();
     },
-    importGarsons(file) {
+    importSave(file) {
       const element = document.createElement("input");
 
       element.type = "file";
@@ -855,10 +872,10 @@ export default {
       element.click();
 
       element.addEventListener("change", () =>
-        this.importGarsonsFileListener(element)
+        this.importSaveFileListener(element)
       );
     },
-    importGarsonsFileListener(element) {
+    importSaveFileListener(element) {
       if (!element.files || !element.files[0]) return;
 
       const file = element.files[0];
@@ -872,23 +889,34 @@ export default {
 
           const object = JSON.parse(evt.target.result);
           const consent = confirm(
-            `${new Date(
-              object.exportDate
-            ).toLocaleString()} tarihli içerisinde ${
-              object.data.length
-            } adet garson kaydı içeren bu dosyayı içe aktarmak istediğinize emin misiniz? Bu, eski garson listesini silecektir ve geri dönüşü yoktur.`
+            `${new Date(object.exportDate).toLocaleString(
+              "tr-TR"
+            )} tarihli içerisinde ${
+              object.data.garsons?.length || 0
+            } adet garson kaydı ve ${
+              object.data.lists?.length || 0
+            } adet kayıtlı liste verisi içeren bu dosyayı içe aktarmak istediğinize emin misiniz? Bu, eski garson listesini silecektir ve geri dönüşü yoktur.`
           );
 
           if (consent) {
-            localStorage.setItem("garsonList", JSON.stringify(object.data));
-            this.garsons = object.data;
+            localStorage.setItem(
+              "garsonList",
+              JSON.stringify(object.data.garsons || [])
+            );
+            localStorage.setItem(
+              "dailyGarsonList",
+              JSON.stringify(object.data.lists || [])
+            );
+
+            this.garsons = object.data.garsons || [];
+            this.dailyLists = object.data.lists || [];
           }
         };
 
         reader.onerror = (err) => {
           console.error(err);
 
-          this.snack.color = "error";
+          this.snack.color = "error darken-2";
           this.snack.message = "Dosya okunamadı";
           this.snack.enabled = true;
         };
