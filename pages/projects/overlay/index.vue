@@ -367,13 +367,13 @@ export default {
             })
             .catch((err) => {
               this.createLoading = false;
-              console.log(err);
+              console.error(err);
               this.message = this.strings.errors[7];
               this.dialog = true;
             });
         } catch (err) {
           this.createLoading = false;
-          console.log(err);
+          console.error(err);
           this.message = this.strings.errors[7];
           this.dialog = true;
         }

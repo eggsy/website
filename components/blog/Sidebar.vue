@@ -162,8 +162,6 @@ export default {
           : new Date().getDate()
       }`;
 
-      console.log(this.$props.songs)
-
     return {
       menu: false,
       selectedSong: null,

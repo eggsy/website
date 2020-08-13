@@ -762,6 +762,8 @@ export default {
       garson.about = this.editGarson.object.about || garson.about;
       garson.number = this.editGarson.object.number || garson.number;
 
+      if (!garson.about.replace(/\s/g, "").length) garson.about = "";
+
       const object = garson;
       this.garsons[garsonIndex] = object;
       localStorage.setItem("garsonList", JSON.stringify(this.garsons));

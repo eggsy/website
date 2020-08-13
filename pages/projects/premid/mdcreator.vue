@@ -639,7 +639,7 @@ export default {
               ? self.$refs.storeImportField.reset()
               : null;
           } catch (err) {
-            console.log(err);
+            console.error(err);
             event.target.value = null;
 
             self.message =

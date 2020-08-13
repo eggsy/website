@@ -241,6 +241,13 @@ h3:not(:first-child) {
       margin-left: 0;
     }
   }
+
+  .positions span {
+    max-width: 35vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 </style>
 

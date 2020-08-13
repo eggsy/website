@@ -315,14 +315,14 @@ export default {
             }
           })
           .catch((err) => {
-            console.log(err);
+            console.error(err);
             this.message =
               "Bilgileriniz gönderilirken bir hata oluştu. Lütfen kaydetmeden önce gerekli tüm alanları doldurduğunuzdan emin olun ve tekrar deneyin.";
             this.dialog = true;
           });
       } else if (this.$props.type == "edit") {
         this.edited = false;
-        
+
         const object = {
           title: this.$props.post.title,
           short_url: this.$props.post.short_url,

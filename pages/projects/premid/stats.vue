@@ -314,13 +314,13 @@ export default {
             this.presences = presences;
           })
           .catch((err) => {
-            console.log(err);
+            console.error(err);
             this.loading = false;
             this.dialog = true;
           });
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
         this.loading = false;
         this.dialog = true;
       });
