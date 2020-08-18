@@ -21,12 +21,12 @@ export default {
       accounts: [
         {
           name: "Steam",
-          url: "https://steamcommunity.com/id/eggsywashere",
+          url: "https://steamcommunity.com/id/eggsydev",
           icon: "mdi-steam"
         },
         {
           name: "Twitter",
-          url: "https://twitter.com/eggsywashere",
+          url: "https://twitter.com/eggsydev",
           icon: "mdi-twitter"
         },
         {
@@ -36,12 +36,12 @@ export default {
         },
         {
           name: "Instagram",
-          url: "https://instagram.com/eggsywashere",
+          url: "https://instagram.com/eggsy_dev",
           icon: "mdi-instagram"
         },
         {
           name: "GitHub",
-          url: "https://github.com/eggsywashere",
+          url: "https://github.com/eggsydev",
           icon: "mdi-github"
         },
         { name: "Email", url: "mailto:apodes@live.com", icon: "mdi-email" }

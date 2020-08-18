@@ -547,7 +547,7 @@ export default {
       switch (platform) {
         case "twitter":
           uri =
-            "https://twitter.com/intent/tweet?via=eggsywashere&text=" + text;
+            "https://twitter.com/intent/tweet?via=eggsydev&text=" + text;
           window.open(uri, "Twitter", "width=350,height=500");
           break;
         case "link":

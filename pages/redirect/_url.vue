@@ -116,7 +116,7 @@ export default {
           name: "Imgur Please",
           description:
             "You can use this page to get redirected to my Chrome extension Imgur Please. An extension that replaces Imgur images from the document.",
-          url: "https://github.com/eggsywashere/imgur-please",
+          url: "https://github.com/eggsydev/imgur-please",
           image: "https://eggsy.xyz/images/projects/imgur-please.png",
         },
         "is-inside-me": {
@@ -130,14 +130,14 @@ export default {
           name: "Discord Steam Verification",
           description:
             "Check your Discord server member's Steam library for a specific game and give them roles if they have it or punish them if they don't!",
-          url: "https://github.com/eggsywashere/discord-steam-verification",
+          url: "https://github.com/eggsydev/discord-steam-verification",
           image: "",
         },
         "epey-bot": {
           name: "Epey Bot",
           description:
             "Access epey.com data directly from your Discord server!",
-          url: "https://github.com/eggsywashere/epey-bot",
+          url: "https://github.com/eggsydev/epey-bot",
           image: "",
         },
       },
