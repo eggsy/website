@@ -54,6 +54,10 @@ export default {
   plugins: [
     "@/plugins/util.js",
     {
+      src: "@/plugins/highlight.js",
+      mode: "client"
+    },
+    {
       src: "@/plugins/anime.js",
       mode: "client",
     },
@@ -70,11 +74,6 @@ export default {
   modules: ["nuxt-helmet", "@nuxtjs/auth", "@nuxtjs/pwa"],
   router: {
     middleware: ["auth"],
-  },
-  helmet: {
-    frameguard: false,
-    xssFilter: true,
-    hsts: true,
   },
   auth: {
     redirect: {

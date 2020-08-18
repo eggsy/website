@@ -339,7 +339,11 @@ export default {
   head: {
     title: "Custom Status",
     meta: [
-      { name: "og:title", content: "PreMiD Custom Status" },
+      {
+        hid: "og:title",
+        name: "og:title",
+        content: "PreMiD Custom Status",
+      },
       {
         hid: "og:description",
         name: "og:description",
@@ -353,6 +357,7 @@ export default {
           "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!",
       },
       {
+        hid: "og:image",
         name: "og:image",
         content:
           "https://the-person-under-this-message.is-inside.me/2POrmy3F.png",

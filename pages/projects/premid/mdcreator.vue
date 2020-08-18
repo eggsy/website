@@ -188,7 +188,7 @@
             content:
               'You shouldn\'t enable this unless you know what you\'re doing! Only enable if your presence requires extra steps to install, like \'Custom Status\' and \'VLC\'.',
             placement: 'top',
-            arrow: true
+            arrow: true,
           }"
           color="primary"
           label="Enable warning?"
@@ -231,14 +231,19 @@
             </v-card-title>
             <v-card-title v-else class="headline" primary-title>Warning</v-card-title>
 
-            <v-card-text>
+            <v-card-text
+              :style="{ marginBottom: json ? '-2em' : '', paddingBottom: json ? '0' : '' }"
+            >
               <p>{{ message }}</p>
             </v-card-text>
-            <center v-if="json">
-              <code style="text-align:left;margin-bottom:15px;width:90%;">
-                <p style="padding:14px;margin-bottom:-10px;margin-top:-10px;">{{ json }}</p>
-              </code>
-            </center>
+
+            <pre v-highlightjs :style="{ margin: '0 1.5em 0 1.5em' }" v-if="json">
+              <code
+  class="json"
+  :style="{ padding: '1em', whiteSpace: 'break-spaces' }"
+  v-text="json"
+/>
+            </pre>
 
             <v-divider></v-divider>
 
@@ -390,9 +395,13 @@ export default {
             } else {
               let data = JSON.parse(text.replace(/\s\s+/g, " "));
 
-              const file = new File([JSON.stringify(data)], "metadata.json", {
-                type: "application/json",
-              });
+              const file = new File(
+                [JSON.stringify(data, null, 2)],
+                "metadata.json",
+                {
+                  type: "application/json",
+                }
+              );
 
               this.fileUpload({ target: { files: [file] } });
             }
@@ -441,7 +450,7 @@ export default {
             this.dialog = true;
           } else if (data && data.metadata) {
             const file = new File(
-              [JSON.stringify(data.metadata)],
+              [JSON.stringify(data.metadata, null, 2)],
               "metadata.json",
               {
                 type: "application/json",
@@ -473,7 +482,7 @@ export default {
             this.dialog = true;
           } else if (data && data.metadata) {
             const file = new File(
-              [JSON.stringify(data.metadata)],
+              [JSON.stringify(data.metadata, null, 2)],
               "metadata.json",
               {
                 type: "application/json",
@@ -657,10 +666,10 @@ export default {
         };
       }
     },
-    download: function (obj) {
+    download(obj) {
       const data =
           "data:text/json;charset=utf-8," +
-          encodeURIComponent(JSON.stringify(obj)),
+          encodeURIComponent(JSON.stringify(obj, null, 2)),
         element = document.createElement("a");
 
       element.setAttribute("href", data);
@@ -668,7 +677,7 @@ export default {
       element.click();
       element.remove();
     },
-    contHandle: function () {
+    contHandle() {
       const contName = this.$refs.contName,
         contId = this.$refs.contId;
 
@@ -711,7 +720,7 @@ export default {
         this.dialog = true;
       }
     },
-    tagHandle: function () {
+    tagHandle() {
       const tag = this.$refs.tags;
 
       if (tag && tag.lazyValue && this.tags.includes(tag.lazyValue)) {
@@ -734,7 +743,7 @@ export default {
         this.dialog = true;
       }
     },
-    urlHandle: function () {
+    urlHandle() {
       const urlInput = this.$refs.url;
 
       this.dialogWidth = 500;
@@ -751,7 +760,7 @@ export default {
         this.dialog = true;
       }
     },
-    descHandle: function () {
+    descHandle() {
       const languageCode = this.$refs.langKey,
         description = this.$refs.description;
 
@@ -776,7 +785,7 @@ export default {
         description.reset();
       }
     },
-    categoryHandle: function (category) {
+    categoryHandle(category) {
       const categories = {
         Anime: "anime",
         Games: "games",
@@ -788,7 +797,7 @@ export default {
 
       if (categories[category]) this.category = categories[category];
     },
-    clear: function () {
+    clear() {
       (this.dialogWidth = 500),
         (this.json = null),
         (this.iframeRegexp = "none"),
@@ -839,9 +848,9 @@ export default {
         this.message =
           "User IDs can only be numbers, please check the ID you've entered. If you don't know how to get an ID, you can Google it.";
         this.dialog = true;
-      } else if (authorId.lazyValue.length != 18) {
+      } else if (authorId.lazyValue.length < 17) {
         this.message =
-          "Discord user IDs are always 18 characters long. Please enter a valid user ID.";
+          "Enter a valid Discord user ID that is at least 17 characters long.";
         this.dialog = true;
       } else if (
         !serviceName ||
@@ -919,6 +928,8 @@ export default {
         regexp && regexp.lazyValue
           ? (metadata["regExp"] = regexp.lazyValue)
           : false;
+
+        console.log(metadata);
 
         this.json = metadata;
         this.message = "Here's your metadata.json file!";
