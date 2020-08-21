@@ -49,6 +49,7 @@ export default {
           content: "#ff0000",
         },
         {
+          hid: "og:title",
           name: "og:title",
           content: `Hey ${
             this.params.toWho
@@ -78,6 +79,7 @@ export default {
           } on the entire planet ❤-❤`,
         },
         {
+          hid: "og:image",
           name: "og:image",
           content: "/images/projects/heart.png",
         },
@@ -96,6 +98,7 @@ export default {
         },
         { name: "premid-details", content: "Viewing a compliment:" },
         {
+          hid: "premid-state",
           name: "premid-state",
           content: `${
             this.params.who_id
