@@ -115,9 +115,16 @@ export default {
         "imgur-please": {
           name: "Imgur Please",
           description:
-            "You can use this page to get redirected to my Chrome extension Imgur Please. An extension that replaces Imgur images from the document.",
-          url: "https://github.com/eggsydev/imgur-please",
-          image: "https://eggsy.xyz/images/projects/imgur-please.png",
+            "You can use this page to get redirected to my Chrome extension Unblock Please. The extension which you can bypass Imgur and Pastebin blockages!",
+          url: "https://github.com/eggsydev/unblock-please",
+          image: "https://eggsy.xyz/images/projects/unblock-please.png",
+        },
+        "unblock-please": {
+          name: "Unblock Please",
+          description:
+            "You can use this page to get redirected to my Chrome extension Unblock Please. The extension which you can bypass Imgur and Pastebin blockages!",
+          url: "https://github.com/eggsydev/unblock-please",
+          image: "https://eggsy.xyz/images/projects/unblock-please.png",
         },
         "is-inside-me": {
           name: "is-inside.me",

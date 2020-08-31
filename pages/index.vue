@@ -90,7 +90,10 @@
         >
           <v-list-item three-line>
             <v-list-item-content>
-              <v-list-item-title class="mb-2">{{ project.name }}</v-list-item-title>
+              <v-list-item-title class="mb-2">
+                {{ project.name }}
+                <span class="new v-align:middle text:xxsmall " v-if="project.new">New</span>
+              </v-list-item-title>
               <v-list-item-subtitle>{{ project.description }}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
@@ -317,8 +320,7 @@ export default {
           service: "Batakköylü Düğün Salonu",
           role: "Jr. Web Developer",
           icon: "/images/projects/favicons/btds.png",
-          url: "/salon",
-          samePage: true,
+          url: "https://batakkoylu.netlify.app",
         },
         {
           current: true,
@@ -369,10 +371,11 @@ export default {
           to: "/redirect/is-inside-me",
         },
         {
-          name: "Imgur Please",
+          name: "Unblock Please",
+          new: true,
           description:
-            "Simple extension that allows access to Imgur images in restricted countries.",
-          to: "/redirect/imgur-please",
+            "An extension that allows you to bypass Imgur and Pastebin blockages.",
+          to: "/redirect/unblock-please",
         },
       ],
     };

@@ -55,7 +55,7 @@ export default {
     "@/plugins/util.js",
     {
       src: "@/plugins/highlight.js",
-      mode: "client"
+      mode: "client",
     },
     {
       src: "@/plugins/anime.js",
@@ -71,7 +71,7 @@ export default {
     },
   ],
   buildModules: ["@nuxtjs/axios", "@nuxtjs/vuetify"],
-  modules: ["nuxt-helmet", "@nuxtjs/auth", "@nuxtjs/pwa"],
+  modules: ["nuxt-helmet", "@nuxtjs/auth", "@nuxtjs/pwa", "@nuxt/content"],
   router: {
     middleware: ["auth"],
   },
@@ -93,7 +93,11 @@ export default {
       },
     },
   },
-  loading: { color: "#fff" },
+  content: {
+    markdown: {
+      remarkPlugins: ["remark-emoji"],
+    },
+  },
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
@@ -122,5 +126,6 @@ export default {
 
     extend(config, ctx) {},
   },
+  loading: { color: "#fff" },
   serverMiddleware: [path.resolve(__dirname, "api/index.js")],
 };

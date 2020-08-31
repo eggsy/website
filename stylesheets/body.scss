@@ -35,6 +35,32 @@ body::-webkit-scrollbar-thumb,
   background: #1e1e1e !important;
 }
 
+span.new {
+  text-transform: uppercase;
+  background-color: rgba(255, 0, 0, 0.85);
+  font-size: small;
+  vertical-align: text-bottom;
+  padding: 2px 4px;
+  margin: 2px;
+  border-radius: 1em;
+  transition: background-color 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+
+  &:hover {
+    background-color: rgba(255, 0, 0, 1);
+  }
+}
+
+.v-align\:middle {
+  vertical-align: middle !important;
+}
+
+.text\:xxsmall {
+  font-size: xx-small !important;
+}
+
 .contentDiv {
   padding: 16px;
 
@@ -77,24 +103,6 @@ body::-webkit-scrollbar-thumb,
 
   table tr td:last-child {
     padding-left: 10px;
-  }
-
-  span.new {
-    text-transform: uppercase;
-    background-color: rgba(255, 0, 0, 0.85);
-    font-size: small;
-    vertical-align: text-bottom;
-    padding: 2px 4px;
-    margin: 2px;
-    border-radius: 1em;
-    transition: background-color 0.2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-
-    &:hover {
-      background-color: rgba(255, 0, 0, 1);
-    }
   }
 
   p {
