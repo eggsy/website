@@ -52,12 +52,9 @@ export default {
       }`,
       meta = [
         {
+          hid: "og:title",
           name: "og:title",
-          content: `${
-            this.params.url && this.settings[this.params.url]
-              ? this.settings[this.params.url].name
-              : "Redirecting to homepage"
-          }`,
+          content: title,
         },
         {
           hid: "og:description",
@@ -88,11 +85,7 @@ export default {
         { name: "premid-details", content: "Redirecting to:" },
         {
           name: "premid-state",
-          content: `${
-            this.params.url && this.settings[this.params.url]
-              ? this.settings[this.params.url].name
-              : "Unknown redirect option"
-          }`,
+          content: title,
         },
       ],
       link = [
