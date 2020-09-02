@@ -210,6 +210,11 @@ export default {
           title: "Linux",
           to: "/blog/gonderi/ara/linux",
         },
+        {
+          icon: "mdi-exit-run",
+          title: "Ana Siteye Dön",
+          to: "/",
+        },
       ],
     };
   },
