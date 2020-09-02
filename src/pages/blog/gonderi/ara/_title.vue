@@ -11,6 +11,10 @@
         <p v-if="posts.length === 0">Aramanıza uygun sonuç bulunamadı.</p>
         <PostCard v-for="(post, index) in posts" :key="index" :post="post" />
       </v-col>
+
+      <v-col md="4" sm="12" class="pl-md-4">
+        <Sidebar />
+      </v-col>
     </v-row>
   </div>
 </template>
