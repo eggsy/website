@@ -1,8 +1,11 @@
 import colors from "vuetify/es5/util/colors";
+import axios from "axios";
 import path from "path";
 
 export default {
   mode: "universal",
+  rootDir: "./",
+  srcDir: "./src",
   head: {
     titleTemplate: "%s - " + "eggsy.xyz",
     title: "eggsy.xyz",
@@ -58,11 +61,7 @@ export default {
       mode: "client",
     },
     {
-      src: "@/plugins/anime.js",
-      mode: "client",
-    },
-    {
-      src: "@/plugins/editor.js",
+      src: "@/plugins/player.js",
       mode: "client",
     },
     {
@@ -70,32 +69,61 @@ export default {
       mode: "client",
     },
   ],
-  buildModules: ["@nuxtjs/axios", "@nuxtjs/vuetify"],
-  modules: ["nuxt-helmet", "@nuxtjs/auth", "@nuxtjs/pwa", "@nuxt/content"],
-  router: {
-    middleware: ["auth"],
-  },
-  auth: {
-    redirect: {
-      login: "/login",
-      logout: "/",
-      callback: "/callback",
-      home: "/blog",
+  buildModules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/vuetify",
+    ["@nuxtjs/google-analytics", { id: "UA-62051904-3" }],
+  ],
+  modules: [
+    "nuxt-helmet",
+    // "nuxt-oauth",
+    "@nuxtjs/pwa",
+    "@nuxt/content",
+    "@nuxtjs/device",
+    "@nuxtjs/firebase",
+  ],
+  firebase: {
+    config: {
+      apiKey: "AIzaSyChDNyClS2rEuQWsBO-enPIun9qVdr6Bdc",
+      authDomain: "eggsy-19751.firebaseapp.com",
+      databaseURL: "https://eggsy-19751.firebaseio.com",
+      projectId: "eggsy-19751",
+      storageBucket: "eggsy-19751.appspot.com",
+      messagingSenderId: "306704974684",
+      appId: "1:306704974684:web:7ccb8e5ea87916d5803799",
+      measurementId: "G-TZS7JWWFVM",
     },
-    strategies: {
-      local: false,
-      discord: {
-        _scheme: "oauth2",
-        authorization_endpoint: "https://discordapp.com/api/oauth2/authorize",
-        userinfo_endpoint: "https://discordapp.com/api/users/@me",
-        scope: ["identify"],
-        client_id: "351611743018942464",
-      },
+    services: {
+      firestore: true,
+    },
+  },
+  oauth: {
+    sessionName: "discord",
+    secretKey: "vErY-SecReT-ToKeN-nO-caN-fİnD2",
+    oauthHost: "https://discord.com/api/oauth2",
+    scopes: ["identify"],
+    oauthClientID: "351611743018942464",
+    oauthClientSecret: "O3I3pf8kiSBMKLlYEuIkoz56Q7XE5-PL",
+    fetchUser: async (accessToken) => {
+      try {
+        const user = await axios.get(`https://discord.com/api/users/@me`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        return { ...user.data };
+      } catch (err) {
+        return {
+          error: true,
+        };
+      }
     },
   },
   content: {
+    liveEdit: false,
     markdown: {
-      remarkPlugins: ["remark-emoji"],
+      remarkPlugins: ["remark-emoji", "remark-attr"],
     },
   },
   vuetify: {
@@ -123,9 +151,8 @@ export default {
         },
       },
     },
-
-    extend(config, ctx) {},
   },
+  components: true,
   loading: { color: "#fff" },
-  serverMiddleware: [path.resolve(__dirname, "api/index.js")],
+  serverMiddleware: [path.resolve(__dirname, "src/api/index.js")],
 };
