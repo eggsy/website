@@ -33,7 +33,7 @@
 
     <div class="cards mb-4">
       <v-row no-gutters>
-        <v-col md="8" sm="12">
+        <v-col md="8" sm="12" :cols="{ '12': $device.isMobile }">
           <PostCard v-for="(post, index) in posts" :key="index" :post="post" />
 
           <div :class="{ 'show-more-container mt-4': true, 'mb-2': $device.isMobile }">
@@ -45,7 +45,7 @@
           </div>
         </v-col>
 
-        <v-col md="4" sm="12" class="pl-md-4">
+        <v-col md="4" sm="12" class="pl-md-4" :cols="{ '12': $device.isMobile }">
           <Sidebar />
         </v-col>
       </v-row>

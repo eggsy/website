@@ -2,7 +2,7 @@
   <div>
     <article>
       <v-card class="card">
-        <v-card-title class="text-h5">{{ title }}</v-card-title>
+        <v-card-title class="__title text-h5">{{ title }}</v-card-title>
         <v-card-subtitle
           :style="{ maxWidth: '500px' }"
           v-if="post.description"
@@ -14,7 +14,7 @@
             {{ getFormattedDate(post.createdAt) }}
           </div>
 
-          <div class="d-flex align-center mr-4">
+          <div :class="{ 'd-flex align-center mr-4': true, 'my-2': $device.isMobile }">
             <v-icon left>mdi-account</v-icon>EGGSY
           </div>
 
@@ -146,6 +146,10 @@ h6 {
 .card {
   padding: 1em;
   margin-bottom: 1em;
+
+  &.__title {
+    word-break: break-word;
+  }
 }
 
 .content {
@@ -242,7 +246,7 @@ export default {
         {
           hid: "og:image",
           name: "og:image",
-          content: this.post.cardImage
+          content: this.post.cardImage,
         },
         {
           hid: "og:url",
