@@ -2,8 +2,7 @@
 title: Botlaştırılmış Kullanıcı Hesapları Neden Yasak?
 description: Bu gönderi ile Discord hesaplarını "bot"a çeviren kullanıcıların neden bunu yapmaması gerektiğini ve bunun neden yasak olduğunu öğrenebilirsiniz.
 tags: discord
-cardImage: https://the-person-under-this-message.is-inside.me/Ks1F2ZPu.png
-image: https://the-person-under-this-message.is-inside.me/rPau9qcR.png
+cardImage: https://the-person-under-this-message.is-inside.me/YoptvMi1.png
 createdAt: 2020-01-09T00:44:29.193Z
 ---
 

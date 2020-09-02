@@ -1,4 +1,5 @@
 <template>
+  <!--
   <main>
     <v-responsive class="overflow-y-auto" max-height="260px" v-if="posts">
       <v-row no-gutters>
@@ -139,7 +140,8 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </main>
+  </main>-->
+  <div>hi</div>
 </template>
 
 <style lang="scss" scoped>
@@ -202,6 +204,7 @@
 </style>
 
 <script>
+/*
 import axios from "axios";
 import moment from "moment";
 import Sidebar from "../../components/blog/Sidebar";
@@ -369,4 +372,5 @@ export default {
     },
   },
 };
+*/
 </script>

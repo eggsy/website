@@ -2,8 +2,7 @@
 title: Sürekli Renk Değiştiren Roller Neden Yasak?
 description: Bu gönderi ile Discord botlarında neden "sürekli renk değiştiren" roller veya diğer bir tabir ile gökkuşağı rollerin neden yasak olduğunu öğrenebilirsiniz.
 tags: discord
-cardImage: https://the-person-under-this-message.is-inside.me/Ks1F2ZPu.png
-image: https://the-person-under-this-message.is-inside.me/rPau9qcR.png
+cardImage: https://the-person-under-this-message.is-inside.me/YoptvMi1.png
 createdAt: 2020-01-09T00:59:03.605Z
 ---
 

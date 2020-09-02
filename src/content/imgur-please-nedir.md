@@ -7,7 +7,9 @@ image: https://the-person-under-this-message.is-inside.me/CJloXrvA.png
 createdAt: 2020-01-29T20:18:39.078Z
 ---
 
-Aslında buraya daha önce gelmiş birinin bildiğinden %37.5 emin olduğum, [sitenin girişinde](/) projelerimin olduğu yerde de ismi geçen Imgur Please adlı eklentim hakkında size birkaç bilgi vermek için bu yzazıyı yazma gereksinimi duydum.
+> Imgur Please eklentisi, 01.08.2020 tarihiyle **Unblock Please** adını almış ve sadece Imgur resimlerinin engelini kaldırmakla yetinmeyip aynı zamanda Pastebin engelini de kaldırmaya başlamıştır. Bu gönderi, Imgur Please hakkındadır ve blogdan kaldırılmayacaktır. Unblock Please hakkında güncel ve yeni yazılmış yazıya gitmek için [buraya](/blog/gonderi/imgur-please-artik-unblock-please) tıklayabilirsiniz.
+
+Aslında buraya daha önce gelmiş birinin bildiğinden %37.5 emin olduğum, [sitenin girişinde](/) projelerimin olduğu yerde de ismi geçen Imgur Please adlı eklentim hakkında size birkaç bilgi vermek için bu yzazıyı yazma gereksinimi duydum.
 
 Eklenti, sadece [Chrome Mağazası](https://chrome.google.com/webstore/detail/imgur-please/lpngbkmgnehdkkobdbieckjpphkohffd)'nda var olsa da, Firefox veya Opera gibi tarayıcılarda Chrome eklentilerini yüklemenize izin veren ek eklentiler kullanarak eklentimi kolaylıkla kurabileceğinizi umuyorum. Eklenti üzerinde çok fazla çalıştım denemez, daha çok Chrome pazarını tanımak, nasıl işlediğini anlamak için girdiğim söylenebilir; bunun da bana sadece bir olayı anlamak için ~3 saate patladığı da doğrudur. Ama zaten bunun için giriştiydim değil mi bu işe? Öğrenmiş oldum. Chrome ve diğer tarayıcıların eklenti mağazasında eminim bu işi çok çok daha iyi yapan diğer eklentiler olabilir ama benim kullandığım bir diğer eklentinin işleyişini beğenmediğimden dolayı neredeyse bütün projelerimi yapma sebebim olan bu sebepten dolayı kendi ihtiyacım için bir eklenti yapma işine girdim. Oldukça basit, bu blogun 1/25'i kadar zorluk çektirdi bana, blogu yaparken eklentiyle yaşadığım sıkıntılar hiçbir şeymiş gibi geldi... Ama sonunda ikisini de tamamlamış ve çalışır vaziyete getirebilmiştim (eklenti konusunda her ne kadar emin olmasam da).
 

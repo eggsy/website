@@ -179,7 +179,7 @@ export default {
         songUrl: "",
         hover: false,
         status: null,
-        loaded: true,
+        loaded: false,
       },
       mobileSearch: "",
       search: "",

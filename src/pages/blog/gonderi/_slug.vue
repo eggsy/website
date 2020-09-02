@@ -157,10 +157,6 @@ h6 {
     padding: 0.5em 0;
   }
 
-  p ~ img {
-    text-align: center;
-  }
-
   table {
     margin-bottom: 1.5em;
     width: 100%;
@@ -195,6 +191,11 @@ h6 {
     padding-bottom: 1em;
   }
 
+  blockquote {
+    border-left: 4px solid gray;
+    padding-left: 1em;
+  }
+
   a {
     text-decoration: none;
     transition: opacity 0.2s;
@@ -205,6 +206,7 @@ h6 {
   }
 
   img {
+    box-shadow: 0px 0px 5px #000000;
     max-width: 100%;
     border-radius: 4px;
     transition: border-radius 0.2s;
