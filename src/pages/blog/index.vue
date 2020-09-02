@@ -120,14 +120,14 @@ export default {
       },
     ],
   },
-  async asyncData({ $content }) {
+  async asyncData({ $content, $device }) {
     const galleryPosts = await $content()
-      .limit(4)
+      .limit($device.isMobile ? 1 : 4)
       .sortBy("createdAt", "desc")
       .fetch();
 
     const posts = await $content()
-      .skip(4)
+      .skip($device.isMobile ? 1 : 4)
       .limit(5)
       .sortBy("createdAt", "desc")
       .fetch();
