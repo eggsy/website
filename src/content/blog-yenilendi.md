@@ -3,6 +3,7 @@ title: Blog Yenilendi!
 description: Gönderilerime daha rahat ve hızlı ulaşabilesiniz diye blogumu baştan aşağıya yeniledim ve seveceğiniz birkaç özellik ekledim!
 tags: blog, haber
 cardImage: https://the-person-under-this-message.is-inside.me/MjldAu3q.PNG
+createdAt: 2020-09-02T17:13:12.000Z
 ---
 
 Uzun bir zaman önce yayın hayatına geçirdiğim blog, yapması ve yönetmesi açısından bana oldukça fazla sıkıntılar yaşatmıştı. Özellikle yapmasının yaklaşık 1 hafta kadar sürmesi ve testlerin uzunluğu, zorluğu ve kafa karıştırıcılığı yüzünden birçok zamanlarda vazgeçmeyi istemiş ancak bu kadar gelmişken bırakmayı istememiştim. Hal böyle olunca da arka plandaki kodlarda birkaç açık bırakılmış ve bu açık birçok defa bazı kullanıcılar tarafından hor kullanılmıştı. Her ne kadar bu zamana kadar beklediğimden çok daha az hor kullanım gerçekleştirilmişse de bu kullanımlar hoşuma gitmiyordu ve her seferinde düzeltmek zamanımı alıyordu. İşte bu ve blogu geliştirmek, daha iyi bir sisteme otutturmak, işleri çok daha hızlı halletmek amacıyla blogu baştan aşağıya yeniledim.

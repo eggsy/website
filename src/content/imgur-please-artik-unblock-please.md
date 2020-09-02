@@ -3,6 +3,7 @@ title: Unblock Please'e Merhaba Deyin!
 description: Imgur Please projem, adı değişerek artık sadece Imgur engelini kaldırmaya değil, aynı zamanda Pastebin engelini de kaldırmaya yarıyor!
 tags: imgur, unblock, pastebin
 cardImage: https://the-person-under-this-message.is-inside.me/jbxM0R7a.PNG
+createdAt: 2020-09-02T17:00:12.000Z
 ---
 
 Chrome için yayınladığım ilk ve tek eklenti olan, kendimi test etmek ve geliştirmek amaçlı yaptığım Imgur Please eklentisi, yayınlandıktan yaklaşık 2 hafta sonra Imgur engeleninin kalkmasının ardından işlevini yitirmiş ve bir işe yaramaz olmuştu. Bazı servis sağlayıcıları uzun bir süre daha bu engeli kaldırmakta sorun yaşasalar ve kullanıcılar Imgur Please'i kullanmaya devam etseler bile artık o sağlayıcılar da Imgur engelini tamamen kaldırdı ve artık herkes Imgur'a sorunsuz bir şekilde erişebiliyor... Bu yüzden Imgur Please eklentisi, kimsenin kullanmadığı boş bir proje olarak tarihte çürümektense geçtiğimiz günlerde üzerinde çalışmalar yaparak ülkemizde hâlâ yasak olan Pastebin için de çalışmasını sağladım.
