@@ -26,14 +26,14 @@
       </v-card>
     </v-row>
 
-    <div class="d-flex mt-6 mb-2">
+    <div class="d-flex mt-md-6 mb-2">
       <v-icon left>mdi-newspaper</v-icon>
       <h3>Gönderiler</h3>
     </div>
 
     <div class="cards mb-4">
       <v-row no-gutters>
-        <v-col md="8" sm="12" :cols="{ '12': $device.isMobile }">
+        <v-col md="8" sm="12" :cols="$device.isMobile ? '12' : null">
           <PostCard v-for="(post, index) in posts" :key="index" :post="post" />
 
           <div :class="{ 'show-more-container mt-4': true, 'mb-2': $device.isMobile }">
@@ -45,7 +45,7 @@
           </div>
         </v-col>
 
-        <v-col md="4" sm="12" class="pl-md-4" :cols="{ '12': $device.isMobile }">
+        <v-col md="4" sm="12" class="pl-md-4" :cols="$device.isMobile ? '12' : null">
           <Sidebar />
         </v-col>
       </v-row>
@@ -80,8 +80,7 @@
 }
 
 .row-mobile {
-  max-height: 250px;
-  overflow-y: scroll;
+  max-height: fit-content;
 }
 </style>
 
