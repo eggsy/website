@@ -240,6 +240,11 @@ export default {
           content: "eggsy.xyz - blog",
         },
         {
+          hid: "og:image",
+          name: "og:image",
+          content: this.post.cardImage
+        },
+        {
           hid: "og:url",
           name: "og:url",
           content: `https://eggsy.xyz/blog/gonderi/${this.$route?.params?.slug}`,
@@ -272,7 +277,7 @@ export default {
         },
         {
           name: "premid-state",
-          content: title,
+          content: `EGGSY - ${this.getFormattedDate(this.post.createdAt)}`,
         },
         {
           name: "article:published-time",
