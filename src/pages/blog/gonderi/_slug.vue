@@ -188,6 +188,12 @@ h6 {
     tr:not(:last-child) td {
       padding-bottom: 4px;
     }
+
+    tr {
+      @media only screen and (max-width: 1024px) {
+        display: grid;
+      }
+    }
   }
 
   ul,
