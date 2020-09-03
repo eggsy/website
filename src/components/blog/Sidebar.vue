@@ -111,3 +111,13 @@
   }
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    open(url) {
+      window.open(url, "_blank");
+    },
+  }
+}
+</script>

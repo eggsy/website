@@ -230,12 +230,19 @@ export default {
         this.player.status = "error";
         this.player.loaded = true;
       } else {
-        this.player.songUrl = data.url;
+        let songUrl = data.url;
+        if (songUrl.includes("youtube.com/watch"))
+          songUrl = new URLSearchParams(new URL(data.url).search).get("v");
+        else if (songUrl.includes("youtu.be/"))
+          songUrl = songUrl.split("/")[songUrl.split("/").length - 1];
+
+        this.player.songUrl = songUrl;
         this.player.status = "loaded";
         this.player.loaded = true;
       }
     } catch (err) {
       this.player.status = "error";
+      this.player.loaded = true;
     }
   },
   methods: {

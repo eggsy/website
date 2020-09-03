@@ -11,12 +11,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/content": "^1.7.1",
+    "@nuxt/content": "^1.8.1",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/device": "^1.2.7",
     "@nuxtjs/firebase": "^6.1.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/sitemap": "^2.4.0",
     "axios": "^0.20.0",
     "babel": "^6.23.0",
     "canvas": "^2.6.1",
@@ -28,8 +29,6 @@
     "moment": "^2.27.0",
     "net": "^1.0.2",
     "nuxt": "^2.14.4",
-    "nuxt-helmet": "^2.0.0",
-    "nuxt-oauth": "^2.8.0",
     "remark-attr": "^0.11.1",
     "remark-emoji": "^2.1.0",
     "request": "^2.88.2",
@@ -39,7 +38,8 @@
     "vue-youtube": "^1.4.0"
   },
   "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/vuetify": "^1.11.2",
-    "material-design-icons-iconfont": "^6.0.1"
+    "material-design-icons-iconfont": "^6.0.2"
   }
 }

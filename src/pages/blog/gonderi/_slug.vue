@@ -147,7 +147,7 @@ h6 {
   padding: 1em;
   margin-bottom: 1em;
 
-  &.__title {
+  .__title {
     word-break: break-word;
   }
 }
@@ -269,6 +269,11 @@ export default {
           name: "og:description",
           content:
             this.post?.description || "Bu gönderinin bir açıklaması yok.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: this.post?.tags || null,
         },
         {
           hid: "og:image",

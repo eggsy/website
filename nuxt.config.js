@@ -1,13 +1,17 @@
 import colors from "vuetify/es5/util/colors";
-import axios from "axios";
-import path from "path";
+import { resolve } from "path";
+
+/*
+  IT'S BETTER IF YOU REMOVE FIREBASE AND ALL RELATED
+  STUFF IF YOU ARE NOT GOING TO NEED IT.
+*/
 
 export default {
   mode: "universal",
   rootDir: "./",
   srcDir: "./src",
   head: {
-    titleTemplate: "%s - " + "eggsy.xyz",
+    titleTemplate: "%s - eggsy.xyz",
     title: "eggsy.xyz",
     meta: [
       {
@@ -44,14 +48,7 @@ export default {
         type: "image/x-icon",
         href: "/favicon.ico",
       },
-      {
-        rel: "manifest",
-        href: "/manifest.json",
-      },
     ],
-  },
-  env: {
-    apiBase: "https://eggsy.xyz/api",
   },
   css: ["./stylesheets/root.scss"],
   plugins: [
@@ -69,55 +66,41 @@ export default {
       mode: "client",
     },
   ],
-  buildModules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/vuetify",
-    ["@nuxtjs/google-analytics", { id: "UA-62051904-3" }],
-  ],
   modules: [
-    "nuxt-helmet",
-    // "nuxt-oauth",
     "@nuxtjs/pwa",
     "@nuxt/content",
     "@nuxtjs/device",
+    "@nuxtjs/sitemap",
     "@nuxtjs/firebase",
   ],
+  buildModules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/vuetify",
+    ["@nuxtjs/dotenv", { path: resolve("./") }],
+    ["@nuxtjs/google-analytics", { id: "UA-62051904-3" }],
+  ],
+  env: {
+    apiBase: process.env.API_BASE || "https://eggsy.xyz/api",
+  },
+  sitemap: {
+    exclude: ["/blog/old_index", "/api/dailySong"],
+  },
+  pwa: {
+    background_color: "#212121",
+    theme_color: "#212121",
+  },
   firebase: {
     config: {
-      apiKey: "AIzaSyChDNyClS2rEuQWsBO-enPIun9qVdr6Bdc",
-      authDomain: "eggsy-19751.firebaseapp.com",
-      databaseURL: "https://eggsy-19751.firebaseio.com",
-      projectId: "eggsy-19751",
-      storageBucket: "eggsy-19751.appspot.com",
-      messagingSenderId: "306704974684",
-      appId: "1:306704974684:web:7ccb8e5ea87916d5803799",
-      measurementId: "G-TZS7JWWFVM",
+      appId: process.env.FIREBASE_APP_ID,
+      apiKey: process.env.FIREBASE_API_KEY,
+      databaseURL: process.env.FIREBASE_DB_URL,
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.MESSAGE_SENDER_ID,
     },
     services: {
       firestore: true,
-    },
-  },
-  oauth: {
-    sessionName: "discord",
-    secretKey: "vErY-SecReT-ToKeN-nO-caN-fİnD2",
-    oauthHost: "https://discord.com/api/oauth2",
-    scopes: ["identify"],
-    oauthClientID: "351611743018942464",
-    oauthClientSecret: "O3I3pf8kiSBMKLlYEuIkoz56Q7XE5-PL",
-    fetchUser: async (accessToken) => {
-      try {
-        const user = await axios.get(`https://discord.com/api/users/@me`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
-
-        return { ...user.data };
-      } catch (err) {
-        return {
-          error: true,
-        };
-      }
     },
   },
   content: {
@@ -154,5 +137,5 @@ export default {
   },
   components: true,
   loading: { color: "#fff" },
-  serverMiddleware: [path.resolve(__dirname, "src/api/index.js")],
+  serverMiddleware: [resolve(__dirname, "src/api/index.js")],
 };

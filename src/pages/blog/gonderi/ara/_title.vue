@@ -12,7 +12,7 @@
         <PostCard v-for="(post, index) in posts" :key="index" :post="post" />
       </v-col>
 
-      <v-col md="4" sm="12" class="pl-md-4">
+      <v-col md="4" sm="12" :cols="$device.isMobile ? '12' : null" class="pl-md-4">
         <Sidebar />
       </v-col>
     </v-row>
