@@ -112,8 +112,6 @@ export default {
         .collection("dailySongs")
         .doc(moment().format("DD.MM.YYYY"));
 
-      const data = (await ref.get()).data();
-	  
 	  const data = (await ref.get()).data();
 	  let songUrl = data?.url || "dQw4w9WgXcQ";
 	
