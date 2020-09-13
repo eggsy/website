@@ -2,9 +2,9 @@
 title: Imgur Please Nedir?
 description: EGGSY'nin yapmış olduğu, internet sayfalarındaki Imgur linklerini ve Imgur resimlerine giden direkt istekleri DuckDuckGo Proxy sunucularını kullanarak erişime açan Imgur Please eklentisi hakkında yazı.
 tags: chrome, eklenti, proje
-cardImage: https://the-person-under-this-message.is-inside.me/qMNC7T8k.png
-image: https://the-person-under-this-message.is-inside.me/CJloXrvA.png
+image: https://i.imgur.com/aqWB6ph.png
 createdAt: 2020-01-29T20:18:39.078Z
+related: imgur-please-artik-unblock-please
 ---
 
 > Imgur Please eklentisi, 01.08.2020 tarihiyle **Unblock Please** adını almış ve sadece Imgur resimlerinin engelini kaldırmakla yetinmeyip aynı zamanda Pastebin engelini de kaldırmaya başlamıştır. Bu gönderi, Imgur Please hakkındadır ve blogdan kaldırılmayacaktır. Unblock Please hakkında güncel ve yeni yazılmış yazıya gitmek için [buraya](/blog/gonderi/imgur-please-artik-unblock-please) tıklayabilirsiniz.

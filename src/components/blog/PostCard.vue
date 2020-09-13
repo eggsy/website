@@ -9,8 +9,8 @@
       <v-col cols="auto">
         <v-img
           class="card-image  hidden-sm-and-down"
-          :lazy-src="post.cardImage || post.image"
-          :src="post.cardImage || post.image"
+          :lazy-src="post.image"
+          :src="post.image"
         ></v-img>
       </v-col>
 

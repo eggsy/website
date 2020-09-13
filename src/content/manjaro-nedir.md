@@ -2,9 +2,9 @@
 title: Manjaro Nedir?
 description: Bu gönderide en popüler Linux dağıtımlarından biri olan Manjaro Linux'ün basit anlatımını ve birkaç ekstra bilgiyi bulabilirsiniz.
 tags: manjaro, linux, arch
-cardImage: https://the-person-under-this-message.is-inside.me/piZrwSxH.png
-image: https://the-person-under-this-message.is-inside.me/ifQLfHNT.png
+image: https://i.imgur.com/PVY3szK.png
 createdAt: 2020-01-09T01:35:56.645Z
+related: octopi-aur-destegi-nasil-aktiflestirilir, aur-discord-yukleme
 ---
 
 Manjaro'dan bahsetmek için öncelikle Linux'un ne olduğundan bahsetmem gerekli. Eğer Linux'un ne olduğunu zaten biliyorsanız bu kısmı atlayabilirsiniz.

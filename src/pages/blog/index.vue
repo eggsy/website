@@ -13,8 +13,8 @@
       >
         <v-img
           class="white--text align-end"
-          :lazy-src="post.cardImage"
-          :src="post.cardImage"
+          :lazy-src="post.image"
+          :src="post.image"
           height="250px"
         >
           <v-card-title>

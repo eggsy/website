@@ -2,8 +2,7 @@
 title: PreMiD Nasıl Kullanılır?
 description: İlk çıktığı sürümden popülerliğini kazanana kadar PreMiD uygulaması sadece belirli servisleri destekliyordu. Yeni yayınlanan 2.0 güncellemesinden sonra ise artık "ne kadar olursa".
 tags: premid, discord
-cardImage: https://the-person-under-this-message.is-inside.me/9sqsgdMt.png
-image: https://the-person-under-this-message.is-inside.me/FBM2GpbO.png
+image: https://i.imgur.com/INEYOvs.png
 createdAt: 2020-01-09T02:38:49.840Z
 ---
 

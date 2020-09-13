@@ -2,9 +2,9 @@
 title: Discord Sunucum Yenilendi!
 description: Discord botum kapandıktan beri eski hâliyle boş bir şekilde duran sunucumu, aynı bu site gibi projelerimi ve projelerim hakkındaki bilgileri paylaştığım bir sunucuya çevirdim.
 tags: discord
-cardImage: https://the-person-under-this-message.is-inside.me/YoptvMi1.png
-image: https://the-person-under-this-message.is-inside.me/e0hiP4nh.png
+image: https://i.imgur.com/nAdqTDz.png
 createdAt: 2020-07-10T14:38:39.506Z
+related: discord-server-templates-yayinda
 ---
 
 Kapanalı bir buçuk yıl olan Discord botumun destek sunucusu, birkaç gün öncesine kadar ölü ve tek kanallı bir sunucu olmasına rağmen içerisinde hâlâ bekleyen 100 aktif, 400 tane de toplam kullanıcı için sunucumu yenileyip, kendime özel bir ortam yaratmak istememin ardından sonunda Discord sunucumu istediğim gibi bir sunucu hâline getirmeyi başardım. Bundan sonra artık Discord sunucumda da botun dışında yaptığım projeler hakkında bilgilendirmeler, duyurular ve gelişmeler paylaşacağım. İsterseniz bu yazıyı okuyabilir isterseniz de [buraya](https://discord.eggsy.xyz) tıklayarak hiç zaman kaybetmeden kendiniz sunucuma gelerek gözlerinizle inceleyebilirsiniz.

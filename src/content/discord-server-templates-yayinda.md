@@ -2,9 +2,9 @@
 title: Discord Server Templates Yayında!
 description: Üç kişi olarak giriştiğimiz, bugüne kadar (kendi) yaptığım en büyük proje olan Discord Server Templates, sonunda yayına geçti!
 tags: discord, server, templates
-cardImage: https://the-person-under-this-message.is-inside.me/BqfkjdI2.png
-image: https://the-person-under-this-message.is-inside.me/crDlVPrz.PNG
+image: https://i.imgur.com/xGUF5or.png
 createdAt: 2020-07-10T14:11:42.334Z
+related: discord-sunucum-yenilendi
 ---
 
 Bu yazıyı her ne kadar proje yayınlandıktan birkaç hafta sonra yazıyor olsam da, yeni projemizi bu yazı ile daha da detaylandırmak istiyorum. Projemizin ismi Discord Server Templates, kısaca DCST... Bu projeye C4Navar, Eri ve ben ortak olarak girdik ve her birimiz işin bir bölümünü paylaşıp sonunda bu güzel siteyi ortaya çıkardı. C4Navar API'yi, Eri Discord botunu hallederken, ben de sitenin kendisini hallettim. Yaklaşık 2 ay süren bir çalışmanın sonunda yayınladığımız proje, projenin Discord sunucusunda oldukça fazla ilgi gördü ve beğenildi. İlk haftalar test ettiğimiz sitede bizi ciddi anlamda üzecek herhangi bir soruna rastlamamamız bizi oldukça rahatlattı. Site oldukça hızlı çalışıyordu ve herhangi bir sorun yaşanmamıştı...

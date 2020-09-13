@@ -2,8 +2,9 @@
 title: Blog Yenilendi!
 description: Gönderilerime daha rahat ve hızlı ulaşabilesiniz diye blogumu baştan aşağıya yeniledim ve seveceğiniz birkaç özellik ekledim!
 tags: blog, haber
-cardImage: https://the-person-under-this-message.is-inside.me/MjldAu3q.PNG
+image: https://i.imgur.com/4liTI0u.png
 createdAt: 2020-09-02T17:13:12.000Z
+related: blogun-baslica-ozellikleri, nedir-bu-blog
 ---
 
 Uzun bir zaman önce yayın hayatına geçirdiğim blog, yapması ve yönetmesi açısından bana oldukça fazla sıkıntılar yaşatmıştı. Özellikle yapmasının yaklaşık 1 hafta kadar sürmesi ve testlerin uzunluğu, zorluğu ve kafa karıştırıcılığı yüzünden birçok zamanlarda vazgeçmeyi istemiş ancak bu kadar gelmişken bırakmayı istememiştim. Hal böyle olunca da arka plandaki kodlarda birkaç açık bırakılmış ve bu açık birçok defa bazı kullanıcılar tarafından hor kullanılmıştı. Her ne kadar bu zamana kadar beklediğimden çok daha az hor kullanım gerçekleştirilmişse de bu kullanımlar hoşuma gitmiyordu ve her seferinde düzeltmek zamanımı alıyordu. İşte bu ve blogu geliştirmek, daha iyi bir sisteme otutturmak, işleri çok daha hızlı halletmek amacıyla blogu baştan aşağıya yeniledim.
@@ -23,12 +24,13 @@ Görsel yeniliklerin en başında ise yeri değiştirilen ve **sayfa geçişleri
 Şuan bu gönderiyi okuduğunuz sayfaların tasarımı da veri tasarrufu ve kararlılık için tekrar elden geçirilerek şuanki hâline getirildi.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/Dv0cFf43.png" alt="image" />
+  <img src="https://i.imgur.com/GZlBuky.png" alt="image" />
 </p>
 
 1. Eskiden arka planı resimle kaplı olan bu alandaki resim kaldırılarak yerine resimde gördüğünüz gibi başlık, açıklama ve yazı hakkında birkaç bilgi getirildi.
-2. Burada gördüğünüz alanda eskiden en çok görüntülenen gönderiler ve günlük müzik yer alırken artık okuma süresi, paylaşma düğmeleri ve düzenleme tarihi yer alıyor. Ayrıca bu kısım siz sayfayı kaydırdıkça sizi takip edecek ve her zaman elinizin altında olacaktır.
+2. Eğer okuduğunuz gönderiye benzer blogda yazılmış başka bir gönderi varsa artık bu köşeden kolaylıkla onlara ulaşıp okuyabileceksiniz.
+3. Burada gördüğünüz alanda eskiden en çok görüntülenen gönderiler ve günlük müzik yer alırken artık okuma süresi, paylaşma düğmeleri ve düzenleme tarihi yer alıyor. Ayrıca bu kısım siz sayfayı kaydırdıkça sizi takip edecek ve her zaman elinizin altında olacaktır.
 
-Bu değişiklikler sayesinde sitede yön bulmanız çok daha basit olacak ve çok fazla değişmemiş yeni tasarıma alışmanız neredeyse hiç zaman almayacaktır. Blogda bundan sonra kontrol paneli, giriş gerektirecek herhangi bir şey de olmadığı için bir çok modül kaldırıldı. Böylelikle sayfanın yüklenme hızının da arttığını düşünüyorum.
+Gönderilerin ve gönderi resimlerinin de genel bir kontrolden geçirilip hataların düzeltilmesi ve geliştirilmesi işlemini de içeren bu değişiklikler sayesinde sitede yön bulmanız çok daha basit olacak ve çok fazla değişmemiş yeni tasarıma alışmanız neredeyse hiç zaman almayacaktır. Blogda bundan sonra kontrol paneli, giriş gerektirecek herhangi bir şey de olmadığı için bir çok modül kaldırıldı. Böylelikle sayfanın yüklenme hızının da arttığını düşünüyorum.
 
 Bu yeniliklerin hepimiz için iyi olacağını, ileride blogu geliştireceğim zaman yenilenmiş ve baştan yazılmış _kaliteli_ kodu çok daha rahat düzenleyeceğimi, aradığıma çok daha kolay ulaşacağıma ve sizlerin de bu değişikliklerden memnun kalacağınıza güvenerek yeni blogumuzu sizlere emanet ediyorum. Eğer blogun eski hâlini özler ve tekrar geri dönüp bakmak isterseniz [buradaki](/blog/gonderi/blogun-baslica-ozellikleri) ekran görüntülerine bakabilirsiniz.

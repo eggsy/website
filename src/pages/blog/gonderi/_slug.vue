@@ -14,10 +14,6 @@
             {{ getFormattedDate(post.createdAt) }}
           </div>
 
-          <div :class="{ 'd-flex align-center mr-4': true, 'my-2': $device.isMobile }">
-            <v-icon left>mdi-account</v-icon>EGGSY
-          </div>
-
           <div class="d-flex" v-if="post.tags && post.tags.split(', ').length">
             <v-icon left v-if="post.tags.split(', ').length > 1">mdi-tag-multiple</v-icon>
             <v-icon left v-else>mdi-tag</v-icon>
@@ -74,49 +70,80 @@
           <nuxt-content ref="content" class="content" :document="post" />
         </v-col>
 
-        <v-col class="pl-4" md="4" sm="12" v-if="!$device.isMobile">
+        <v-col class="pl-6" md="4" sm="12" v-if="!$device.isMobile">
           <div class="sticky">
-            <div class="mb-4">
-              <div class="d-flex mb-1">
-                <v-icon left>mdi-clock</v-icon>
-                <span>Okuma Süresi</span>
-              </div>
-
-              <span class="text-h6">
-                {{ readingTime }}
-                <span class="text-caption">dakika</span>
-              </span>
+            <div class="d-flex mb-2" v-if="post.related">
+              <v-icon left>mdi-puzzle</v-icon>
+              <span>Benzer Gönderiler</span>
             </div>
 
-            <div class="my-4">
-              <div class="d-flex mb-1">
-                <v-icon left>mdi-pencil-circle</v-icon>
-                <span>Son Düzenleme</span>
-              </div>
-
-              <span>{{ getFormattedDate(post.updatedAt) }}</span>
+            <div v-if="!related.loaded && post.related">
+              <v-sheet v-for="key in post.related.split(', ')" class="mb-4" :key="key">
+                <v-skeleton-loader class="mx-auto" type="list-item-two-line"></v-skeleton-loader>
+              </v-sheet>
             </div>
 
-            <div class="my-4">
-              <div class="d-flex mb-1">
-                <v-icon left>mdi-share-circle</v-icon>
-                <span>Paylaş</span>
-              </div>
-
-              <div class="d-flex">
-                <v-btn icon @click="share('twitter')" color="#31a9f3" class="ml-n1">
-                  <v-icon>mdi-twitter</v-icon>
-                </v-btn>
-
-                <v-btn icon class="mx-1" @click="share('telegram')">
-                  <v-icon>mdi-telegram</v-icon>
-                </v-btn>
-
-                <v-btn icon @click="share('link')">
-                  <v-icon>mdi-link</v-icon>
-                </v-btn>
-              </div>
+            <div v-else-if="related.loaded && post.related">
+              <nuxt-link
+                v-for="(related, index) in related.posts"
+                :to="`/blog/gonderi/${related.slug}`"
+                class="related-content pa-4 mb-2"
+                :key="index"
+                tag="div"
+                ripple
+              >{{ related.title }}</nuxt-link>
             </div>
+
+            <v-row no-gutters>
+              <v-col
+                cols="12"
+                :class="{ 'd-flex justify-space-between mb-2': true, 'mt-4': post.related }"
+              >
+                <div>
+                  <div class="d-flex mb-1">
+                    <v-icon left>mdi-clock</v-icon>
+                    <span>Okuma Süresi</span>
+                  </div>
+
+                  <span class="text-h6">
+                    {{ readingTime }}
+                    <span class="text-caption">dakika</span>
+                  </span>
+                </div>
+
+                <div class="text-right">
+                  <div class="d-flex mb-1">
+                    <span>Son Düzenleme</span>
+                    <v-icon right>mdi-pencil-circle</v-icon>
+                  </div>
+
+                  <span>{{ getFormattedDate(post.updatedAt) }}</span>
+                </div>
+              </v-col>
+
+              <v-col cols="12" class="mt-2">
+                <div>
+                  <div class="d-flex mb-1">
+                    <v-icon left>mdi-share-circle</v-icon>
+                    <span>Paylaş</span>
+                  </div>
+
+                  <div class="d-flex">
+                    <v-btn icon @click="share('twitter')" color="#31a9f3" class="ml-n1">
+                      <v-icon>mdi-twitter</v-icon>
+                    </v-btn>
+
+                    <v-btn icon class="mx-1" @click="share('telegram')">
+                      <v-icon>mdi-telegram</v-icon>
+                    </v-btn>
+
+                    <v-btn icon @click="share('link')">
+                      <v-icon>mdi-link</v-icon>
+                    </v-btn>
+                  </div>
+                </div>
+              </v-col>
+            </v-row>
           </div>
         </v-col>
       </v-row>
@@ -226,6 +253,23 @@ h6 {
     }
   }
 }
+
+.related-content {
+  background-color: #212121;
+  transition: opacity 0.2s;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  white-space: nowrap;
+  color: currentColor;
+  border-radius: 4px;
+  user-select: none;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
 </style>
 
 <script>
@@ -236,10 +280,12 @@ export default {
   layout: "blog",
   head() {
     const title = this.title
-      ? this.title
-      : this.found
-      ? "Başlık Yok"
-      : "Gönderi Bulunamadı";
+        ? this.title
+        : this.found
+        ? "Başlık Yok"
+        : "Gönderi Bulunamadı",
+      description =
+        this.post?.description || "Bu gönderinin bir açıklaması yok.";
 
     return {
       title: title,
@@ -252,7 +298,7 @@ export default {
         {
           hid: "og:image",
           name: "og:image",
-          content: this.post.cardImage,
+          content: this.post.image || null,
         },
         {
           hid: "og:url",
@@ -267,8 +313,7 @@ export default {
         {
           hid: "og:description",
           name: "og:description",
-          content:
-            this.post?.description || "Bu gönderinin bir açıklaması yok.",
+          content: description,
         },
         {
           hid: "keywords",
@@ -276,15 +321,9 @@ export default {
           content: this.post?.tags || null,
         },
         {
-          hid: "og:image",
-          name: "og:image",
-          content: this.post?.description,
-        },
-        {
           hid: "description",
           name: "description",
-          content:
-            this.post?.description || "Bu gönderinin bir açıklaması yok.",
+          content: description,
         },
         {
           name: "premid-details",
@@ -293,6 +332,21 @@ export default {
         {
           name: "premid-state",
           content: `EGGSY - ${this.getFormattedDate(this.post.createdAt)}`,
+        },
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+        {
+          hid: "twitter:image",
+          name: "twitter:image",
+          content: this.post.image || null,
         },
         {
           name: "article:published-time",
@@ -307,12 +361,17 @@ export default {
       ],
     };
   },
-  async asyncData({ $content, params, error }) {
+  async asyncData({ $content, params, error, redirect }) {
     try {
-      const { title, ...post } = await $content(params.slug).fetch();
-      return { found: true, title: title || "Başlık Yok", post };
+      const { title, ...post } = await $content(params.slug).fetch(),
+        object = { post, title: title || "Başlık Yok" };
+
+      if (!post.related) object["related"] = { loaded: true, posts: [] };
+      else object["related"] = { loaded: false, posts: [] };
+
+      return object;
     } catch (err) {
-      if (err.message === `/${params.slug} not found`) return { found: false };
+      if (err.message === `/${params.slug} not found`) return redirect("/blog");
       else error({ status: err.statusCode, message: err.message });
     }
   },
@@ -325,10 +384,22 @@ export default {
       },
     };
   },
-  mounted() {
+  async mounted() {
     this.readingTime = String(
       this.$refs?.content?.textContent?.split(" ").length / 200
     ).substring(0, 4);
+
+    // Releated posts loader
+    if (!this.post.related) return;
+    const array = [];
+
+    for (let key of this.post.related.split(", ") || []) {
+      const content = await this.$content(key).only(["title", "slug"]).fetch();
+      array.push(content);
+    }
+
+    this.related.posts = array;
+    this.related.loaded = true;
   },
   methods: {
     getFormattedDate(pureDate) {

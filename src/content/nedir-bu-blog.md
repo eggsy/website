@@ -2,9 +2,9 @@
 title: Nedir Bu Blog? Nereden Çıktı Şimdi?
 description: Bundan sonra gönderilerimi paylaşacağım blogumun hayata geliş hikayesi. Oldukça zorlu bir yoldan geçti ancak sonunda her şeyiyle servise hazır! Yeni blogumuzu siz de inceleyin!
 tags: özel
-cardImage: https://eggsy.codes/images/projects/blog.png
-image: https://eggsy.codes/images/projects/blog.png
+image: https://i.imgur.com/bhuO6FQ.png
 createdAt: 2020-01-09T00:28:41.545Z
+related: blog-yenilendi
 ---
 
 Şuanda bu gönderiyi okuduğunuz blog, sizlere ulaşabilmek için oldukça uzun ve zorlu bir yoldan geçmek zorundaydı. Bunlardan birisi yapan kişinin daha önce hiç bu kadar büyük çapta (evet bottan *daha zor* oldu :smile:) bir proje yapmamış olması... Eğer ilk defa böyle bir işe girişiyorsanız, her şeyin planını önceden yapmalı, oldukça geniş bir zaman ayırmalı ve neredeyse diğer her şeyden kısmanız gerekmekte.

@@ -193,13 +193,9 @@
 <script>
 import axios from "axios";
 import strs from "../../../api/files/overlay/strings.json";
-import SocialMedia from "../../../components/SocialMedia";
 
 export default {
   auth: false,
-  components: {
-    SocialMedia,
-  },
   head() {
     const title = this.strings.title || "Picture Editor with Overlays",
       meta = [

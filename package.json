@@ -23,12 +23,12 @@
     "canvas": "^2.6.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "firebase": "^7.19.1",
+    "firebase": "^7.20.0",
     "fs": "^0.0.1-security",
-    "helmet": "^4.1.0",
-    "moment": "^2.27.0",
+    "helmet": "^4.1.1",
+    "moment": "^2.28.0",
     "net": "^1.0.2",
-    "nuxt": "^2.14.4",
+    "nuxt": "^2.14.5",
     "remark-attr": "^0.11.1",
     "remark-emoji": "^2.1.0",
     "request": "^2.88.2",
@@ -40,6 +40,6 @@
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/vuetify": "^1.11.2",
-    "material-design-icons-iconfont": "^6.0.2"
+    "material-design-icons-iconfont": "^6.1.0"
   }
 }

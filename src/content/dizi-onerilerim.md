@@ -2,8 +2,7 @@
 title: Dizi Önerilerim
 description: Son 2 yılda izlediğim tüm yabancı dizileri, kısa açıklamaları ve 10 üzerinden puanlamalarıyla birlikte sizlerle paylaştığım gönderi. Ayrıca, her yeni dizi bitirdiğimde, bu listeyi de güncelleyeceğim.
 tags: dizi, video
-cardImage: https://the-person-under-this-message.is-inside.me/FmMGryXP.png
-image: https://the-person-under-this-message.is-inside.me/is5ENhr3.png
+image: https://i.imgur.com/CX60mBJ.png
 createdAt: 2020-02-14T14:40:38.470Z
 ---
 

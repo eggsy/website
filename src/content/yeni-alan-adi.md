@@ -2,9 +2,9 @@
 title: Yeni Alan Adı!
 description: Eski alan adının yenileme ücretinin aşırılığı dolayısıyla, yeni bir alan adı alarak sitenin tamamını oraya taşıma kararı aldım. Eski alan adı, kalan süresi boyunca otomatik olarak tüm istekleri yeni alan adına yönlendirecek, o yüzden endişe etmenize gerek yok.
 tags: site, eggsy
-cardImage: https://the-person-under-this-message.is-inside.me/el150dQG.png
-image: https://the-person-under-this-message.is-inside.me/ZqwVnFV5.png
+image: https://i.imgur.com/5i6Nj1v.png
 createdAt: 2020-07-22T14:03:24.368Z
+related: blog-yenilendi
 ---
 
 Bu gönderiyi okuyorsanız tarayıcınızın adres çubuğundan da anlamış olduğunuz üzere eski alan adı olan eggsy.codes, bundan sonra kullanılmayacak ve onun yerini yeni alan adım eggsy.xyz alacaktır. Bu kararın en büyük sebebi, .codes'in pahalı yenileme ücretidir. Bu yenilik, siteden bir çok şeyi alırken aynı zamanda bir kaç güzel şey de ekleyecektir.

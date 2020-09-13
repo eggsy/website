@@ -2,9 +2,9 @@
 title: Blogun Başlıca Özellikleri
 description: Tamamen sıfırdan hazırlanan, EGGSY'nin gönderilerini tutacağı ve paylaşımlar yapacağı yep yeni blogunun öne çıkan ilginç özellikleri ve blogun genel tanıtımı için bu gönderiyi okuyabilirsiniz.
 tags: blog, haber
-cardImage: https://the-person-under-this-message.is-inside.me/fVQbxb2E.png
-image: https://the-person-under-this-message.is-inside.me/K5dGXgGz.png
+image: https://i.imgur.com/pxoNuar.png
 createdAt: 2020-01-09T03:26:00.000Z
+related: blog-yenilendi, nedir-bu-blog
 ---
 
 > Bu yazı, blogun yayınlanan ilk sürümünden olup, şuanki blog için geçerliliğini yitirmiş ve resimler hiçbir geçerli sistemi yansıtmamaktadır. Gönderiyi incelemek isteyenler inceleyebilir ancak gönderide gösterilen resimlerin geçerli hiçbir sayfayı yansıtmadığını lütfen unutmayın. Bu blog güncellemesi ile ilgili daha fazla bilgi almak için [bu sayfayı](/blog/gonderi/blog-yenilendi) ziyaret edin.

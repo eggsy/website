@@ -7,7 +7,6 @@ import { resolve } from "path";
 */
 
 export default {
-  mode: "universal",
   rootDir: "./",
   srcDir: "./src",
   head: {
@@ -16,6 +15,31 @@ export default {
     meta: [
       {
         charset: "utf-8",
+      },
+      {
+        hid: "twitter.card",
+        name: "twitter.card",
+        content: "summary",
+      },
+      {
+        hid: "twitter:site",
+        name: "twitter:site",
+        content: "@eggsydev",
+      },
+      {
+        hid: "twitter:creator",
+        name: "twitter:creator",
+        content: "@eggsydev",
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "eggsy.xyz",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: process.env.npm_package_description,
       },
       {
         hid: "og:site_name",
@@ -34,12 +58,12 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || "",
+        content: process.env.npm_package_description,
       },
       {
         hid: "og:description",
         name: "og:description",
-        content: process.env.npm_package_description || "",
+        content: process.env.npm_package_description,
       },
     ],
     link: [
@@ -125,6 +149,9 @@ export default {
         },
       },
     },
+  },
+  router: {
+    middleware: ["redirection"],
   },
   build: {
     postcss: {
