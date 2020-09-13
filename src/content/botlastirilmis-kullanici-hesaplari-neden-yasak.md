@@ -4,6 +4,7 @@ description: Bu gönderi ile Discord hesaplarını "bot"a çeviren kullanıcıla
 tags: discord
 image: https://i.imgur.com/62kdeIh.png
 createdAt: 2020-01-09T00:44:29.193Z
+related: sunucudaki-herkese-dm-atmak-neden-yasak, sunucudaki-herkese-dm-atmak-neden-yasak
 ---
 
 Discord, oyuncuları bir araya getirmek, beraber oyunlar oynamalarını sağlamak, oyuncuların sesli, yazılı ve görüntülü bir şekilde her türlü ihtiyaçlarını tamamen bedavaya karşılayacağı bir ortamdır. Fakat her resmi/büyük şirketler, uygulamalar ve oyunların kurallarının, kullanım şartlarının olduğu gibi Discord'un kendine ait kullanım şartları vardır. Eğer, bu şartlardan herhangi birisine karşı gelir veya uymazsanız, sonuçları **hesabınızın süresiz bir şekilde kapatılmasına** kadar gidebilir.Bu yüzden, [bu kurallara](https://discord.com/terms) uyun!

@@ -4,7 +4,7 @@ description: Bu gönderi ile Discord botlarında neden "sürekli renk değiştir
 tags: discord
 image: https://i.imgur.com/62kdeIh.png
 createdAt: 2020-01-09T00:59:03.605Z
-related: botlastirilmis-kullanici-hesaplari-neden-yasak
+related: botlastirilmis-kullanici-hesaplari-neden-yasak, sunucudaki-herkese-dm-atmak-neden-yasak
 ---
 
 Bildiğiniz gibi Discord, kuralları ve kullanım şartları olan bir platformdur diğer hepsi gibi. Bu Discord kurallarınca Discord'u kullanırken bir çok şeye dikkat etmeli ve kuralına göre hareket etmeliyiz. Kurallar her ne kadar basit ve "normal" bir kullanıcıya hiçbir zorluk çıkartmayacak, hatta farkettirmeyecek kadar kırılması gizli/zor olsa bile bunları kıranlar için Discord gerekli önemlemleri alarak hesap kapatılmasına kadar bir çok işlem yapabiliyor.
