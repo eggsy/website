@@ -12,8 +12,6 @@ For Nuxt users, it'll be easy to control and manage but if you're new to Nuxt an
 
 > **Note** that I am a Turkish developer and most of my followers are Turkish, although 90% of this website is in English, my blog is completely Turkish _because who would read my useless stories_ 🤣
 
----
-
 ### Table of contents:
 
 - [🛠 Requirements](#-requirements)
