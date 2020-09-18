@@ -9,6 +9,7 @@
     <v-row no-gutters>
       <v-col md="8" sm="12">
         <p v-if="posts.length === 0">Aramanıza uygun sonuç bulunamadı.</p>
+        
         <PostCard v-for="(post, index) in posts" :key="index" :post="post" />
       </v-col>
 
@@ -48,14 +49,19 @@ export default {
     };
   },
   async asyncData({ $content, params }) {
-    const foundByTitle = await $content().search("title", params.title).fetch();
+    const foundByTitle = await $content()
+      .search("title", params.title)
+      .sortBy("createdAt", "desc")
+      .fetch();
 
     const foundByTags = await $content()
       .where({ tags: { $contains: params.title } })
+      .sortBy("createdAt", "desc")
       .fetch();
 
     const foundByDescription = await $content()
       .search("description", params.title)
+      .sortBy("createdAt", "desc")
       .fetch();
 
     let posts = [...foundByTitle, ...foundByTags, ...foundByDescription];
