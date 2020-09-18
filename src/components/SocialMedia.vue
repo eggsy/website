@@ -8,7 +8,7 @@
       target="_blank"
       icon
     >
-      <v-icon class="sclIcons" v-text="account.icon" />
+      <v-icon v-text="account.icon" />
     </v-btn>
   </div>
 </template>
@@ -22,31 +22,35 @@ export default {
         {
           name: "Steam",
           url: "https://steamcommunity.com/id/eggsydev",
-          icon: "mdi-steam"
+          icon: "mdi-steam",
         },
         {
           name: "Twitter",
           url: "https://twitter.com/eggsydev",
-          icon: "mdi-twitter"
+          icon: "mdi-twitter",
         },
         {
           name: "Discord",
-          url: "https://discord.eggsy.xyz",
-          icon: "mdi-discord"
+          url: "https://eggsy.xyz/discord",
+          icon: "mdi-discord",
         },
         {
           name: "Instagram",
           url: "https://instagram.com/eggsy_dev",
-          icon: "mdi-instagram"
+          icon: "mdi-instagram",
         },
         {
           name: "GitHub",
           url: "https://github.com/eggsydev",
-          icon: "mdi-github"
+          icon: "mdi-github",
         },
-        { name: "Email", url: "mailto:apodes@live.com", icon: "mdi-email" }
-      ]
+        {
+          name: "Email",
+          url: "mailto:eggsydev@gmail.com",
+          icon: "mdi-email",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

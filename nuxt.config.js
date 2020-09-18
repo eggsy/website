@@ -98,9 +98,6 @@ export default {
     ["@nuxtjs/dotenv", { path: resolve("./") }],
     ["@nuxtjs/google-analytics", { id: "UA-62051904-3" }],
   ],
-  sitemap: {
-    exclude: ["/blog/old_index", "/api/dailySong"],
-  },
   pwa: {
     background_color: "#212121",
     theme_color: "#212121",
