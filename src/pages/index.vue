@@ -258,13 +258,8 @@ h3:not(:first-child) {
 </style>
 
 <script>
-import socialMedia from "../components/SocialMedia";
-
 export default {
   auth: false,
-  components: {
-    socialMedia,
-  },
   head: {
     title: "Homepage",
     meta: [
