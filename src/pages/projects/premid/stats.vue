@@ -216,7 +216,6 @@ import axios from "axios";
 
 export default {
   layout: "premid",
-  auth: false,
   head: {
     title: "Presence Stats",
     meta: [

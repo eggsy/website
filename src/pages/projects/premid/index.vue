@@ -60,14 +60,8 @@
 </style>
 
 <script>
-import SocialMedia from "../../../components/SocialMedia";
-
 export default {
   layout: "premid",
-  auth: false,
-  components: {
-    SocialMedia,
-  },
   head: {
     title: "PreMiD",
     meta: [

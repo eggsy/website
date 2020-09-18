@@ -30,7 +30,6 @@
 <script>
 export default {
   layout: "centered",
-  auth: false,
   head() {
     const title = `${
         this.params.who_id ? this.params.who_id.replace(/\+/g, " ") : "someone"

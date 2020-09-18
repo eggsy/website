@@ -179,12 +179,16 @@ h6 {
   }
 }
 
+.v-application p {
+  margin-bottom: 0;
+}
+
 .content {
   background-color: #212121;
   border-radius: 4px;
   padding: 1em 2em;
 
-  p {
+  p:not(:last-child) {
     padding: 0.5em 0;
   }
 
@@ -276,7 +280,6 @@ h6 {
 import moment from "moment";
 
 export default {
-  auth: false,
   layout: "blog",
   head() {
     const title = this.title

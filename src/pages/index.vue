@@ -5,19 +5,14 @@
         class="avatar"
         title="Do you think I am cute :3"
         alt="personal-image"
-        src="/images/irl_image.jpeg"
+        src="/images/irl_image.jpg"
       ></v-img>
 
       <div class="skills">
         <div v-for="skill in skills" :key="skill.name">
           <small>{{ skill.name }}</small>
 
-          <v-progress-linear
-            class="progress"
-            :value="skill.value.increase"
-            :color="skill.color"
-            height="20"
-          >
+          <v-progress-linear class="progress" :value="skill.value" :color="skill.color" height="20">
             <template v-slot="{ value }">
               <small>{{ Math.ceil(value) }}%</small>
             </template>
@@ -26,7 +21,7 @@
       </div>
 
       <div class="socials">
-        <socialMedia slice="5" />
+        <SocialMedia slice="5" />
       </div>
     </v-col>
 
@@ -36,7 +31,12 @@
 
       <p>
         I try to create stuff that will be used by people, I want to help them with my knowledge and skills, so I try to focus on open-source projects more.
-        <em>Though this website is not open-source</em> I really love sharing my code with other people. You can check out more about me from other pages and from my social media accounts!
+        I really love sharing my code with other people, you know what that means? Yeah, this website is now open-source!
+        <nuxt-link
+          class="text-decoration-none"
+          to="/redirect/source"
+          target="_blank"
+        >Check the code here</nuxt-link>! You can check out more about me from other pages and from my social media accounts!
       </p>
 
       <h3 class="font-weight-light text-uppercase">My current positions</h3>
@@ -112,10 +112,10 @@ h3:not(:first-child) {
 }
 
 .avatar {
+  transition: border-radius 0.2s;
+  border-radius: 4px;
   height: auto;
   width: 100%;
-  border-radius: 4px;
-  transition: border-radius 0.2s;
 
   &:hover {
     border-radius: 0;
@@ -259,7 +259,6 @@ h3:not(:first-child) {
 
 <script>
 export default {
-  auth: false,
   head: {
     title: "Homepage",
     meta: [
@@ -274,27 +273,27 @@ export default {
       skills: [
         {
           name: "JavaScript",
-          value: { actual: 100, increase: 0 },
+          value: 99,
           color: "#ffca28",
         },
         {
           name: "Node.js",
-          value: { actual: 95, increase: 0 },
+          value: 95,
           color: "#75ac64",
         },
         {
           name: "TypeScript",
-          value: { actual: 85, increase: 0 },
+          value: 85,
           color: "#0074c1",
         },
         {
           name: "Nuxt.js",
-          value: { actual: 80, increase: 0 },
+          value: 85,
           color: "#00c58e",
         },
         {
           name: "Vue.js",
-          value: { actual: 70, increase: 0 },
+          value: 80,
           color: "#41b883",
         },
       ],
@@ -325,7 +324,7 @@ export default {
           service: "TruckersMP",
           role: "Translator",
           icon: "/images/projects/favicons/truckersmp.png",
-          url: "https://truckersmp.com/",
+          url: "https://truckersmp.com/user/1648033",
         },
         {
           current: true,
@@ -378,13 +377,6 @@ export default {
         },
       ],
     };
-  },
-  mounted() {
-    for (let key in this.skills) {
-      const skill = this.skills[key];
-
-      skill.value.increase = skill.value.actual;
-    }
   },
   methods: {
     open(url, target) {

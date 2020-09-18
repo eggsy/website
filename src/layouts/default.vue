@@ -3,7 +3,7 @@
     <v-app-bar dense hide-on-scroll app>
       <v-container class="d-flex">
         <div class="logo">
-          <nuxt-link to="/">eggsy.xyz</nuxt-link>
+          <nuxt-link title="Go to homepage" to="/">eggsy.xyz</nuxt-link>
         </div>
         <v-spacer></v-spacer>
         <div>

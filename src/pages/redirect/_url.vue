@@ -45,13 +45,9 @@ import moment from "moment";
 
 export default {
   layout: "centered",
-  auth: false,
   head() {
-    const title = `${
-        this.params.url && this.settings[this.params.url]
-          ? this.settings[this.params.url].name
-          : "Redirecting to homepage"
-      }`,
+    const title =
+        this.settings[this.params?.url]?.name || "Redirecting to homepage",
       meta = [
         {
           hid: "og:title",
@@ -61,28 +57,20 @@ export default {
         {
           hid: "og:description",
           name: "og:description",
-          content: `${
-            this.params.url && this.settings[this.params.url]
-              ? this.settings[this.params.url].description
-              : "There is no description for this redirection yet, but it might be added at any time!"
-          }`,
+          content:
+            this.settings[this.params?.url]?.description ||
+            "There is no description for this redirection yet, but it might be added at any time!",
         },
         {
           name: "og:image",
-          content: `${
-            this.params.url && this.settings[this.params.url]
-              ? this.settings[this.params.url].image
-              : ""
-          }`,
+          content: this.settings[this.params?.url]?.image,
         },
         {
           hid: "description",
           name: "description",
-          content: `${
-            this.params.url && this.settings[this.params.url]
-              ? this.settings[this.params.url].description
-              : "There is no description for this redirection yet, but it might be added at any time!"
-          }`,
+          content:
+            this.settings[this.params?.url]?.description ||
+            "There is no description for this redirection yet, but it might be added at any time!",
         },
         { name: "premid-details", content: "Redirecting to:" },
         {
@@ -142,6 +130,12 @@ export default {
           url: "https://github.com/eggsydev/epey-bot",
           image: "",
         },
+        source: {
+          name: "Website's Source Code",
+          description: "",
+          url: "https://github.com/eggsydev/eggsy-website",
+          image: "",
+        },
       },
     };
   },
@@ -150,11 +144,7 @@ export default {
   },
   mounted() {
     this.timeout = setTimeout(() => {
-      window.location.href = `${
-        this.params && this.settings[this.params.url]
-          ? this.settings[this.params.url].url
-          : "/"
-      }`;
+      window.location.href = this.settings[this.params?.url]?.url || "/";
     }, 5000);
   },
 };

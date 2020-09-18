@@ -21,5 +21,6 @@ export default async function(ctx) {
       songUrl = songUrl.split("/")[songUrl.split("/").length - 1];
 
     return ctx.redirect(`https://youtube.com/watch?v=${songUrl}`);
-  }
+  } else if (ctx.route.fullPath.toLowerCase() === "/discord")
+    return ctx.redirect("https://discord.gg/tHx9ZKG");
 }

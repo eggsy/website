@@ -86,7 +86,6 @@
 
 <script>
 export default {
-  auth: false,
   layout: "blog",
   head: {
     title: "Blog",

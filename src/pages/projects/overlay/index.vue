@@ -191,11 +191,9 @@
 </template>
 
 <script>
-import axios from "axios";
 import strs from "../../../api/files/overlay/strings.json";
 
 export default {
-  auth: false,
   head() {
     const title = this.strings.title || "Picture Editor with Overlays",
       meta = [
@@ -233,7 +231,7 @@ export default {
     return {
       title,
       meta,
-      link
+      link,
     };
   },
   data() {
@@ -354,7 +352,7 @@ export default {
               : ""
           }`;
 
-          axios
+          this.$axios
             .head(resultUrl)
             .then((res) => {
               this.createLoading = false;
@@ -405,7 +403,7 @@ export default {
       this.langSwitch = true;
     }
 
-    const { data } = await axios.get("/api/overlay/frames"),
+    const { data } = await this.$axios.get("/api/overlay/frames"),
       frameNames = [];
 
     data.forEach((f) => {

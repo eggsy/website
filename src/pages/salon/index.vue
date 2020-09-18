@@ -530,7 +530,6 @@
 
 <script>
 export default {
-  auth: false,
   layout: "salon",
   head: {
     title: "Garson Listesi Çıkarıcı",

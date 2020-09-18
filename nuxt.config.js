@@ -1,11 +1,6 @@
 import colors from "vuetify/es5/util/colors";
 import { resolve } from "path";
 
-/*
-  IT'S BETTER IF YOU REMOVE FIREBASE AND ALL RELATED
-  STUFF IF YOU ARE NOT GOING TO NEED IT.
-*/
-
 export default {
   rootDir: "./",
   srcDir: "./src",
@@ -17,8 +12,8 @@ export default {
         charset: "utf-8",
       },
       {
-        hid: "twitter.card",
-        name: "twitter.card",
+        hid: "twitter:card",
+        name: "twitter:card",
         content: "summary",
       },
       {
@@ -103,9 +98,6 @@ export default {
     ["@nuxtjs/dotenv", { path: resolve("./") }],
     ["@nuxtjs/google-analytics", { id: "UA-62051904-3" }],
   ],
-  env: {
-    apiBase: process.env.API_BASE || "https://eggsy.xyz/api",
-  },
   sitemap: {
     exclude: ["/blog/old_index", "/api/dailySong"],
   },
@@ -134,7 +126,6 @@ export default {
     },
   },
   vuetify: {
-    customVariables: ["~/assets/variables.scss"],
     theme: {
       dark: true,
       themes: {

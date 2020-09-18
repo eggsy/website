@@ -335,7 +335,6 @@ import moment from "moment";
 
 export default {
   layout: "premid",
-  auth: false,
   head: {
     title: "Custom Status",
     meta: [
