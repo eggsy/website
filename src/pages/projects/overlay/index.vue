@@ -403,7 +403,7 @@ export default {
       this.langSwitch = true;
     }
 
-    const { data } = await this.$axios.get("/api/overlay/frames"),
+    const { data } = await this.$axios.get("https://eggsy.xyz/api/overlay/frames"),
       frameNames = [];
 
     data.forEach((f) => {
