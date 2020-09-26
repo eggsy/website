@@ -226,6 +226,18 @@ export default {
           "See stats about which PreMiD services are used most with their usage numbers and creators!",
       },
       {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "Presence Stats",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "See stats about which PreMiD services are used most with their usage numbers and creators!",
+      },
+      {
+        // TODO move these images inside the project
         name: "og:image",
         content: "https://premid.app/assets/images/logo.png",
       },

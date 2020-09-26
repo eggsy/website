@@ -344,6 +344,17 @@ export default {
         content: "PreMiD Custom Status",
       },
       {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "PreMiD Custom Status",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!",
+      },
+      {
         hid: "og:description",
         name: "og:description",
         content:
@@ -354,6 +365,12 @@ export default {
         name: "description",
         content:
           "Now you can have anything you want on your profile! Just type the things you want to show and let us do the rest!",
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content:
+          "https://the-person-under-this-message.is-inside.me/2POrmy3F.png",
       },
       {
         hid: "og:image",

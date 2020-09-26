@@ -97,6 +97,17 @@ export default {
       },
       { hid: "og:title", name: "og:title", content: "EGGSY's Blog" },
       {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "EGGSY's Blog",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
+      },
+      {
         hid: "og:description",
         name: "og:description",
         content:

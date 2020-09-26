@@ -328,6 +328,17 @@ export default {
     meta: [
       { name: "og:title", content: "Presence Metadata Creator" },
       {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "Presence Metadata Creator",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "Hey presence developers! This page is there for you to create, edit and make sure about your metadata.json files. You can create one, edit one and even use this to check if there's anything wrong about your file!",
+      },
+      {
         hid: "og:description",
         name: "og:description",
         content:

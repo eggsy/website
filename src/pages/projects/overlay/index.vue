@@ -202,6 +202,18 @@ export default {
           content: this.strings.title || "Picture Editor with Overlays",
         },
         {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: this.strings.title || "Picture Editor with Overlays",
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content:
+            this.strings.description ||
+            "You can create pictures with frames with this page. You can also resize and use the API for your applications by yourself!",
+        },
+        {
           hid: "og:description",
           name: "og:description",
           content:
@@ -403,7 +415,9 @@ export default {
       this.langSwitch = true;
     }
 
-    const { data } = await this.$axios.get("https://eggsy.xyz/api/overlay/frames"),
+    const { data } = await this.$axios.get(
+        "https://eggsy.xyz/api/overlay/frames"
+      ),
       frameNames = [];
 
     data.forEach((f) => {

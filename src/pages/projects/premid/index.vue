@@ -67,12 +67,29 @@ export default {
     meta: [
       { name: "og:title", content: "PreMiD Stuff by EGGSY" },
       {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "PreMiD Stuff by EGGSY",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!",
+      },
+      {
         hid: "og:description",
         name: "og:description",
         content:
           "Welcome to custom PreMiD 'stuff' made by EGGSY! You can find presence stats, sort them by usage/date or create your own metadata file using metadata creator easily!",
       },
       {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "https://premid.app/assets/images/logo.png",
+      },
+      {
+        hid: "og:image",
         name: "og:image",
         content: "https://premid.app/assets/images/logo.png",
       },
