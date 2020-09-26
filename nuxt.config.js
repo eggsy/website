@@ -1,5 +1,5 @@
-import colors from "vuetify/es5/util/colors";
 import { resolve } from "path";
+import colors from "vuetify/es5/util/colors";
 
 export default {
   rootDir: "./",
@@ -86,11 +86,12 @@ export default {
     },
   ],
   modules: [
-    "@nuxtjs/pwa",
-    "@nuxt/content",
-    "@nuxtjs/device",
-    "@nuxtjs/sitemap",
+    "@nuxt/content", // has to be on top so sitemap and feed module can read data inside it
     "@nuxtjs/firebase",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/device",
+    "@nuxtjs/feed",
+    "@nuxtjs/pwa",
   ],
   buildModules: [
     "@nuxtjs/axios",
@@ -116,11 +117,65 @@ export default {
       firestore: true,
     },
   },
+  async sitemap() {
+    const { $content } = require("@nuxt/content"),
+      posts = await $content().fetch();
+
+    let routes = [];
+    for (const post of posts) {
+      routes.push(`blog/gonderi/${post.slug}`);
+    }
+
+    return {
+      hostname: "https://eggsy.xyz",
+      gzip: true,
+      routes: routes,
+    };
+  },
   content: {
     liveEdit: false,
     markdown: {
       remarkPlugins: ["remark-emoji", "remark-attr"],
     },
+  },
+  async feed() {
+    const { $content } = require("@nuxt/content"),
+      posts = await $content().fetch(),
+      feedFormats = {
+        rss: { type: "rss2", file: "rss.xml" },
+        json: { type: "json1", file: "feed.json" },
+      };
+
+    const createFeedArticles = (feed) => {
+      feed.options = {
+        title: "EGGSY's Blog",
+        description:
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
+        link: "https://eggsy.xyz/blog",
+      };
+
+      posts.forEach((post) => {
+        const url = `https://eggsy.xyz/blog/gonderi/${post.slug}`;
+
+        feed.addItem({
+          title: post.title,
+          id: url,
+          link: url,
+          date: new Date(post.createdAt || post.updatedAt || Date.now()),
+          description: post.description || "",
+          content: post.summary,
+          author: {
+            name: "EGGSY",
+          },
+        });
+      });
+    };
+
+    return Object.values(feedFormats).map(({ file, type }) => ({
+      path: `/feed/posts/${file}`,
+      type: type,
+      create: createFeedArticles,
+    }));
   },
   vuetify: {
     theme: {
