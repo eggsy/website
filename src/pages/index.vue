@@ -12,7 +12,12 @@
         <div v-for="skill in skills" :key="skill.name">
           <small>{{ skill.name }}</small>
 
-          <v-progress-linear class="progress" :value="skill.value" :color="skill.color" height="20">
+          <v-progress-linear
+            class="progress"
+            :value="skill.value"
+            :color="skill.color"
+            height="20"
+          >
             <template v-slot="{ value }">
               <small>{{ Math.ceil(value) }}%</small>
             </template>
@@ -27,21 +32,33 @@
 
     <v-col class="information" md="5">
       <h3 class="font-weight-light text-uppercase">Who am I?</h3>
-      <p>I am a Turkish guy who plays games, codes stuff, and wants to be an English teacher in the future. I mainly focus on everything about JavaScript because that's the only language I know and I'm pretty happy with it.</p>
+      <p>
+        I am a Turkish guy who plays games, codes stuff, and wants to be an
+        English teacher in the future. I mainly focus on everything about
+        JavaScript because that's the only language I know and I'm pretty happy
+        with it.
+      </p>
 
       <p>
-        I try to create stuff that will be used by people, I want to help them with my knowledge and skills, so I try to focus on open-source projects more.
-        I really love sharing my code with other people, you know what that means? Yeah, this website is now open-source!
+        I try to create stuff that will be used by people, I want to help them
+        with my knowledge and skills, so I try to focus on open-source projects
+        more. I really love sharing my code with other people, you know what
+        that means? Yeah, this website is now open-source!
         <nuxt-link
           class="text-decoration-none"
           to="/redirect/source"
           target="_blank"
-        >Check the code here</nuxt-link>! You can check out more about me from other pages and from my social media accounts!
+          >Check the code here</nuxt-link
+        >! You can check out more about me from other pages and from my social
+        media accounts!
       </p>
 
       <h3 class="font-weight-light text-uppercase">My current positions</h3>
       <div class="positions">
-        <div v-for="position in positions.filter(p => p.current)" :key="position.name">
+        <div
+          v-for="position in positions.filter((p) => p.current)"
+          :key="position.name"
+        >
           <div>
             <v-img class="logo" alt="logo" :src="position.icon"></v-img>
             <span>{{ position.service }}</span>
@@ -62,7 +79,10 @@
 
       <h3 class="font-weight-light text-uppercase">I used to be...</h3>
       <div class="positions">
-        <div v-for="position in positions.filter(p => !p.current)" :key="position.name">
+        <div
+          v-for="position in positions.filter((p) => !p.current)"
+          :key="position.name"
+        >
           <div>
             <v-img class="logo" alt="logo" :src="position.icon"></v-img>
             <span>{{ position.service }}</span>
@@ -85,19 +105,22 @@
           v-for="project in projects"
           :key="project.name"
           max-width="344"
-          @click="project.samePage ? $router.push(project.to) : open(project.to)"
+          @click="
+            project.samePage ? $router.push(project.to) : open(project.to)
+          "
           @click.middle="open(project.to, '_blank')"
         >
           <v-list-item three-line>
             <v-list-item-content>
               <v-list-item-title class="mb-2">
                 {{ project.name }}
-                <span
-                  class="new v-align:middle text:xxsmall"
-                  v-if="project.new"
-                >New</span>
+                <span class="new v-align:middle text:xxsmall" v-if="project.new"
+                  >New</span
+                >
               </v-list-item-title>
-              <v-list-item-subtitle>{{ project.description }}</v-list-item-subtitle>
+              <v-list-item-subtitle>{{
+                project.description
+              }}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
         </v-card>
@@ -300,6 +323,14 @@ export default {
       positions: [
         {
           current: true,
+          service: "TruckersMP",
+          role: "Community Moderator",
+          icon: "/images/projects/favicons/truckersmp.png",
+          url: "https://truckersmp.com/user/1648033",
+        },
+
+        {
+          current: true,
           service: "Discord Templates",
           role: "Website Developer",
           icon: "/images/projects/favicons/dcst.png",
@@ -318,13 +349,6 @@ export default {
           role: "Jr. Web Developer",
           icon: "/images/projects/favicons/btds.png",
           url: "https://batakkoylu.netlify.app",
-        },
-        {
-          current: true,
-          service: "TruckersMP",
-          role: "Translator",
-          icon: "/images/projects/favicons/truckersmp.png",
-          url: "https://truckersmp.com/user/1648033",
         },
         {
           current: true,
