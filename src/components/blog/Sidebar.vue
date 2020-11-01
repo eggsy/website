@@ -13,7 +13,7 @@
       <h3 class="mb-2">Beni Takip Et</h3>
 
       <ul class="follow-me">
-        <li @click="open('https://github.com/eggsydev')">
+        <li @click="open('https://github.com/eggsy')">
           <v-card class="profile-card pa-2" width="100%">
             <span>
               <v-icon left>mdi-github</v-icon>eggsydev

@@ -99,14 +99,14 @@ export default {
           name: "Imgur Please",
           description:
             "You can use this page to get redirected to my Chrome extension Unblock Please. The extension which you can bypass Imgur and Pastebin blockages!",
-          url: "https://github.com/eggsydev/unblock-please",
+          url: "https://github.com/eggsy/unblock-please",
           image: "https://eggsy.xyz/images/projects/unblock-please.png",
         },
         "unblock-please": {
           name: "Unblock Please",
           description:
             "You can use this page to get redirected to my Chrome extension Unblock Please. The extension which you can bypass Imgur and Pastebin blockages!",
-          url: "https://github.com/eggsydev/unblock-please",
+          url: "https://github.com/eggsy/unblock-please",
           image: "https://eggsy.xyz/images/projects/unblock-please.png",
         },
         "is-inside-me": {
@@ -120,20 +120,20 @@ export default {
           name: "Discord Steam Verification",
           description:
             "Check your Discord server member's Steam library for a specific game and give them roles if they have it or punish them if they don't!",
-          url: "https://github.com/eggsydev/discord-steam-verification",
+          url: "https://github.com/eggsy/discord-steam-verification",
           image: "",
         },
         "epey-bot": {
           name: "Epey Bot",
           description:
             "Access epey.com data directly from your Discord server!",
-          url: "https://github.com/eggsydev/epey-bot",
+          url: "https://github.com/eggsy/epey-bot",
           image: "",
         },
         source: {
           name: "Website's Source Code",
           description: "",
-          url: "https://github.com/eggsydev/eggsy-website",
+          url: "https://github.com/eggsy/eggsy-website",
           image: "",
         },
       },

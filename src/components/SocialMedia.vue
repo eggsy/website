@@ -41,7 +41,7 @@ export default {
         },
         {
           name: "GitHub",
-          url: "https://github.com/eggsydev",
+          url: "https://github.com/eggsy",
           icon: "mdi-github",
         },
         {
