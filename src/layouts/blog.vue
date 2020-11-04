@@ -220,7 +220,7 @@ export default {
   },
   async mounted() {
     try {
-      const ref = this.$fireStore
+      const ref = this.$fire.firestore
         .collection("dailySongs")
         .doc(new Date().toLocaleDateString("tr-TR"));
 
