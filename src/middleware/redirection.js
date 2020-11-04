@@ -8,7 +8,7 @@ export default async function(ctx) {
   const dailySongPaths = ["/redirect/dailysong", "/api/dailysong"];
 
   if (dailySongPaths.includes(ctx.route.fullPath.toLowerCase())) {
-    const ref = ctx.app.$fireStore
+    const ref = ctx.app.$fire.firestore
       .collection("dailySongs")
       .doc(moment().format("DD.MM.YYYY"));
 
