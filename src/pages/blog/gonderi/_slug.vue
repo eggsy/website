@@ -260,6 +260,11 @@ h6 {
   border-left: solid 4px blueviolet;
   margin: 1em 0 0.5em 0;
   padding-left: 8px;
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
 }
 
 .card {

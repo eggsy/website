@@ -139,7 +139,15 @@ export default {
   content: {
     liveEdit: false,
     markdown: {
-      remarkPlugins: ["remark-emoji", "remark-attr"],
+      remarkPlugins: [
+        "remark-emoji",
+        [
+          "remark-autolink-headings",
+          {
+            behavior: "wrap",
+          },
+        ],
+      ],
     },
   },
   async feed() {
