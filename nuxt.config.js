@@ -4,10 +4,6 @@ import colors from "vuetify/es5/util/colors";
 export default {
   rootDir: "./",
   srcDir: "./src",
-  server: {
-    port: 8000,
-    host: "0.0.0.0",
-  },
   head: {
     titleTemplate: "%s - eggsy.xyz",
     title: "eggsy.xyz",
