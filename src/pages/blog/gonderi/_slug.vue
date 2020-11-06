@@ -99,8 +99,9 @@
               >
                 <a
                   :class="{
-                    'pl-4': link.depth === 4,
                     'active-toc': observer.currentlyActiveToc === link.id,
+                    'mb-1': post.toc.length <= 4,
+                    'pl-4': link.depth === 4,
                   }"
                   @click="tableOfContentsHeadingClick(link)"
                   v-for="link of post.toc"
@@ -247,6 +248,14 @@
 
     &.active-toc {
       background-color: #c0392b;
+    }
+
+    &.active-toc:hover {
+      background-color: rgba($color: #c0392b, $alpha: 0.75);
+    }
+
+    &:not(.active-toc):hover {
+      background-color: rgba($color: #1e1e1e, $alpha: 0.75);
     }
   }
 }
