@@ -6,16 +6,19 @@
         <v-card-subtitle
           :style="{ maxWidth: '500px' }"
           v-if="post.description"
-        >{{ post.description }}</v-card-subtitle>
+          >{{ post.description }}</v-card-subtitle
+        >
 
-        <v-card-text :class="{ 'd-flex px-4' : !$device.isMobile }">
+        <v-card-text :class="{ 'd-flex px-4': !$device.isMobile }">
           <div class="d-flex align-center mr-4">
             <v-icon left>mdi-calendar</v-icon>
-            {{ getFormattedDate(post.createdAt) }}
+            {{ $getFormattedDate(post.createdAt) }}
           </div>
 
           <div class="d-flex" v-if="post.tags && post.tags.split(', ').length">
-            <v-icon left v-if="post.tags.split(', ').length > 1">mdi-tag-multiple</v-icon>
+            <v-icon left v-if="post.tags.split(', ').length > 1"
+              >mdi-tag-multiple</v-icon
+            >
             <v-icon left v-else>mdi-tag</v-icon>
 
             <v-chip
@@ -25,13 +28,18 @@
               color="primary"
               :key="index"
               small
-            >{{ slug }}</v-chip>
+              >{{ slug }}</v-chip
+            >
           </div>
         </v-card-text>
       </v-card>
 
       <v-row no-gutters>
-        <v-col class="d-flex pa-2 mb-1 justify-space-between" v-if="$device.isMobile" cols="12">
+        <v-col
+          class="d-flex pa-2 mb-1 justify-space-between"
+          v-if="$device.isMobile"
+          cols="12"
+        >
           <div>
             <div class="d-flex">
               <v-icon left>mdi-clock</v-icon>
@@ -51,7 +59,12 @@
             </div>
 
             <div class="d-flex">
-              <v-btn icon @click="share('twitter')" color="#31a9f3" class="ml-n1">
+              <v-btn
+                icon
+                @click="share('twitter')"
+                color="#31a9f3"
+                class="ml-n1"
+              >
                 <v-icon>mdi-twitter</v-icon>
               </v-btn>
 
@@ -72,14 +85,50 @@
 
         <v-col class="pl-6" md="4" sm="12" v-if="!$device.isMobile">
           <div class="sticky">
+            <div v-if="post.toc.length">
+              <div class="d-flex mb-2">
+                <v-icon left>mdi-subtitles-outline</v-icon>
+                <span>Başlıklar</span>
+              </div>
+
+              <div
+                :class="{
+                  'grid-titles-list mb-4': true,
+                  'only-four-titles': post.toc.length <= 4,
+                }"
+              >
+                <a
+                  :class="{
+                    'pl-4': link.depth === 4,
+                    'active-toc': observer.currentlyActiveToc === link.id,
+                  }"
+                  @click="tableOfContentsHeadingClick(link)"
+                  v-for="link of post.toc"
+                  :href="`#${link.id}`"
+                  :title="link.text"
+                  :key="link.id"
+                  v-ripple
+                >
+                  {{ link.text }}
+                </a>
+              </div>
+            </div>
+
             <div class="d-flex mb-2" v-if="post.related">
               <v-icon left>mdi-puzzle</v-icon>
               <span>Benzer Gönderiler</span>
             </div>
 
             <div v-if="!related.loaded && post.related">
-              <v-sheet v-for="key in post.related.split(', ')" class="mb-4" :key="key">
-                <v-skeleton-loader class="mx-auto" type="list-item-two-line"></v-skeleton-loader>
+              <v-sheet
+                v-for="key in post.related.split(', ')"
+                class="mb-4"
+                :key="key"
+              >
+                <v-skeleton-loader
+                  class="mx-auto"
+                  type="list-item-two-line"
+                ></v-skeleton-loader>
               </v-sheet>
             </div>
 
@@ -90,14 +139,17 @@
                 class="related-content pa-4 mb-2"
                 :key="index"
                 tag="div"
-                ripple
-              >{{ related.title }}</nuxt-link>
+                >{{ related.title }}</nuxt-link
+              >
             </div>
 
             <v-row no-gutters>
               <v-col
                 cols="12"
-                :class="{ 'd-flex justify-space-between mb-2': true, 'mt-4': post.related }"
+                :class="{
+                  'd-flex justify-space-between mb-2': true,
+                  'mt-4': post.related,
+                }"
               >
                 <div>
                   <div class="d-flex mb-1">
@@ -117,7 +169,7 @@
                     <v-icon right>mdi-pencil-circle</v-icon>
                   </div>
 
-                  <span>{{ getFormattedDate(post.updatedAt) }}</span>
+                  <span>{{ $getFormattedDate(post.updatedAt) }}</span>
                 </div>
               </v-col>
 
@@ -129,7 +181,12 @@
                   </div>
 
                   <div class="d-flex">
-                    <v-btn icon @click="share('twitter')" color="#31a9f3" class="ml-n1">
+                    <v-btn
+                      icon
+                      @click="share('twitter')"
+                      color="#31a9f3"
+                      class="ml-n1"
+                    >
                       <v-icon>mdi-twitter</v-icon>
                     </v-btn>
 
@@ -149,7 +206,12 @@
       </v-row>
     </article>
 
-    <v-snackbar color="success darken-2" class="pb-0" v-model="snack.enabled" bottom>
+    <v-snackbar
+      color="success darken-2"
+      class="pb-0"
+      v-model="snack.enabled"
+      bottom
+    >
       {{ snack.text }}
       <template v-slot:action="{ attrs }">
         <v-btn text v-bind="attrs" @click="snack.enabled = false">Tamam</v-btn>
@@ -159,6 +221,36 @@
 </template>
 
 <style lang="scss" scoped>
+.grid-titles-list {
+  display: grid;
+
+  &:not(.only-four-titles) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 4px;
+  }
+
+  a {
+    transition: background-color 0.2s;
+    background-color: #1e1e1e;
+    -webkit-user-select: none;
+    text-overflow: ellipsis;
+    -moz-user-select: none;
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 8px;
+    user-select: none;
+    overflow: hidden;
+    padding: 4px 1em;
+    cursor: pointer;
+    color: #ffffff;
+
+    &.active-toc {
+      background-color: #c0392b;
+    }
+  }
+}
+
 h1,
 h2,
 h3,
@@ -166,13 +258,13 @@ h4,
 h5,
 h6 {
   border-left: solid 4px blueviolet;
+  margin: 1em 0 0.5em 0;
   padding-left: 8px;
-  margin-bottom: 4px;
 }
 
 .card {
-  padding: 1em;
   margin-bottom: 1em;
+  padding: 1em;
 
   .__title {
     word-break: break-word;
@@ -197,21 +289,22 @@ h6 {
     width: 100%;
 
     td {
-      a {
-        width: 100px;
-        background-color: #ff0000;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 1em;
-        padding: 0.25em 0.5em;
+      span {
+        -webkit-user-select: none;
+        background-color: #c0392b;
         transition: opacity 0.2s;
+        -moz-user-select: none;
+        padding: 0.25em 0.5em;
+        border-radius: 1em;
+        user-select: none;
+        width: 100px;
 
         &:hover {
           opacity: 0.75;
         }
       }
 
-      &.new a {
+      span.new {
         background-color: #2772a2;
       }
     }
@@ -238,8 +331,8 @@ h6 {
   }
 
   a {
-    text-decoration: none;
     transition: opacity 0.2s;
+    text-decoration: none;
 
     &:hover {
       opacity: 0.75;
@@ -248,9 +341,9 @@ h6 {
 
   img {
     box-shadow: 0px 0px 5px #000000;
-    max-width: 100%;
-    border-radius: 4px;
     transition: border-radius 0.2s;
+    border-radius: 4px;
+    max-width: 100%;
 
     &:hover {
       border-radius: 0;
@@ -334,7 +427,7 @@ export default {
         },
         {
           name: "premid-state",
-          content: `EGGSY - ${this.getFormattedDate(this.post.createdAt)}`,
+          content: `EGGSY - ${this.$getFormattedDate(this.post.createdAt)}`,
         },
         {
           hid: "twitter:title",
@@ -385,6 +478,14 @@ export default {
         enabled: false,
         text: "",
       },
+      observer: {
+        instance: null,
+        currentlyActiveToc: "",
+        options: {
+          root: this.$refs.content,
+          threshold: 0,
+        },
+      },
     };
   },
   async mounted() {
@@ -393,35 +494,47 @@ export default {
     ).substring(0, 4);
 
     // Releated posts loader
-    if (!this.post.related) return;
-    const array = [];
+    this.loadRelatedPosts();
 
-    for (let key of this.post.related.split(", ") || []) {
-      const content = await this.$content(key).only(["title", "slug"]).fetch();
-      array.push(content);
-    }
-
-    this.related.posts = array;
-    this.related.loaded = true;
+    /* Observer setup */
+    this.setupObserver();
+  },
+  beforeDestroy() {
+    this.observer.instance.disconnect();
   },
   methods: {
-    getFormattedDate(pureDate) {
-      const date = moment(pureDate),
-        now = moment(),
-        diffMn = now.diff(date, "minutes"),
-        diffHr = now.diff(date, "hours"),
-        diffDy = now.diff(date, "days");
+    setupObserver() {
+      this.observer.instance = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id");
+          if (entry.isIntersecting) {
+            this.observer.currentlyActiveToc = id;
+          }
+        });
+      }, this.observer.options);
 
-      let timeString;
+      document
+        .querySelectorAll(".nuxt-content h2[id], .nuxt-content h3[id]")
+        .forEach((section) => {
+          this.observer.instance.observe(section);
+        });
+    },
+    async loadRelatedPosts() {
+      if (!this.post.related) return;
+      const array = [];
 
-      if (diffHr <= 0 && diffMn == 0) timeString = `Fırından yeni çıktı!`;
-      else if (diffMn < 60 && diffMn > 0) timeString = `${diffMn} dakika önce`;
-      else if (diffHr < 24 && diffHr > 0) timeString = `${diffHr} saat önce`;
-      else if (diffHr <= 48 && diffHr > 24) timeString = "Dün";
-      else if (diffDy > 0 && diffDy < 30) timeString = `${diffDy} gün önce`;
-      else timeString = `${date.format("DD/MM/YY HH:mm:SS")}`;
+      for (let key of this.post.related.split(", ") || []) {
+        const content = await this.$content(key)
+          .only(["title", "slug"])
+          .fetch();
+        array.push(content);
+      }
 
-      return timeString;
+      this.related.posts = array;
+      this.related.loaded = true;
+    },
+    tableOfContentsHeadingClick(link) {
+      this.currentlyActiveToc = link.id;
     },
     share(platform) {
       let uri,

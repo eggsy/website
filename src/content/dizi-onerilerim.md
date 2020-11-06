@@ -13,59 +13,59 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
 <table>
     <tbody>
         <tr>
-            <td><a href="#daredevil">10/10</a> Daredevil</td>
-            <td><a href="#love-death-robots">10/10</a> Love, Death & Robots</td>
+            <td><span>10/10</span> Daredevil</td>
+            <td><span>10/10</span> Love, Death & Robots</td>
         </tr>
         <tr>
-            <td><a href="#prison-break">10/10</a> Prison Break</td>
-            <td><a href="#élite">9.5/10</a> Élite</td>
+            <td><span>10/10</span> Prison Break</td>
+            <td><span>9.5/10</span> Élite</td>
         </tr>
         <tr>
-            <td><a href="#the-witcher">9.5/10</a> The Witcher</td>
-            <td><a href="#roe-ottoman">9.5/10</a> Rise of Empires: Ottoman</td>
+            <td><span>9.5/10</span> The Witcher</td>
+            <td><span>9.5/10</span> Rise of Empires: Ottoman</td>
         </tr>
         <tr>
-            <td><a href="#the-mandalorian">9.5/10</a> The Mandalorian</td>
-            <td><a href="#la-casa-de-papel">9.0/10</a> La Casa de Papel</td>
+            <td><span>9.5/10</span> The Mandalorian</td>
+            <td><span>9.0/10</span> La Casa de Papel</td>
         </tr>
         <tr>
-            <td><a href="#sex-education">9.0/10</a> Sex Education</td>
-            <td><a href="#locke-and-key">9.0/10</a> Locke & Key</td>
+            <td><span>9.0/10</span> Sex Education</td>
+            <td><span>9.0/10</span> Locke & Key</td>
         </tr>
         <tr>
-            <td><a href="#stranger-things">9.0/10</a> Stranger Things</td>
-            <td><a href="#see">9.0/10</a> See</td>
+            <td><span>9.0/10</span> Stranger Things</td>
+            <td><span>9.0/10</span> See</td>
         </tr>
         <tr>
-            <td><a href="#sherlock">9.0/10</a> Sherlock</td>
-            <td class="new"><a href="#snowpiercer">9.0/10</a> Snowpiercer</td>
+            <td><span>9.0/10</span> Sherlock</td>
+            <td><span>9.0/10</span> Snowpiercer</td>
         </tr>
         <tr>
-            <td class="new"><a href="#sense8">9.0/10</a> Sense8</td>
-            <td><a href="#sabrina">9.0/10</a> Chilling Adventures of Sabrina</td>
+            <td><span>9.0/10</span> Sense8</td>
+            <td><span>9.0/10</span> Chilling Adventures of Sabrina</td>
         </tr>
         <tr>
-            <td><a href="#altered-carbon">9.0/10</a> Altered Carbon</td>
-            <td><a href="#aşk-101">8.5/10</a> Aşk 101</td>
+            <td><span>9.0/10</span> Altered Carbon</td>
+            <td><span>8.5/10</span> Aşk 101</td>
         </tr>
         <tr>
-            <td class="new"><a href="#the-order">8.5/10</a> The Order</td>
-            <td><a href="#bojack-horseman">8.5/10</a> BoJack Horseman</td>
+            <td><span>8.5/10</span> The Order</td>
+            <td><span>8.5/10</span> BoJack Horseman</td>
         </tr>
         <tr>
-            <td><a href="#rick-and-morty">8.5/10</a> Rick and Morty</td>
-            <td><a href="#lost-in-space">8.5/10</a> Lost in Space</td>
+            <td><span>8.5/10</span> Rick and Morty</td>
+            <td><span>8.5/10</span> Lost in Space</td>
         </tr>
         <tr>
-            <td><a href="#hill-house">8.0/10</a> The Haunting of Hill House</td>
-            <td><a href="#you">8.0/10</a> You</td>
+            <td><span>8.0/10</span> The Haunting of Hill House</td>
+            <td><span>8.0/10</span> You</td>
         </tr>
         <tr>
-            <td><a href="#lucifer">8.0/10</a> Lucifer</td>
-            <td class="new"><a href="#the-umbrella-academy">8.0/10</a> The Umbrella Academy</td>
+            <td><span>8.0/10</span> Lucifer</td>
+            <td><span>8.0/10</span> The Umbrella Academy</td>
         </tr>
         <tr>
-            <td><a href="#ragnarok">8.0/10</a> Ragnarok</td>
+            <td><span>8.0/10</span> Ragnarok</td>
         </tr>
     </tbody>
 
@@ -78,7 +78,6 @@ güzeli** bile diyebilirim. Dizi, çocuk yaşında görme yetisini kaybeden, ann
 ise boksör olan ana kahramanımız Matthew Murdock'ın babasının trajik ölümünden sonra Hell's Kitchen (New York'da bir _yer_) tüm kötülükleri yok etmeye çalışması sırasında yaşanan olayları ele alıyor. Diziyi izledikçe ana karakterin gerçekten kör olduğuna ikna olabilirsiniz. Başrolü üstlenen Charlie Cox, bugüne kadar gördüğüm, işini en iyi yapan aktörlerden birisi... Öyle ki, dizinin 3 sezonu boyunca herhangi bir heyecan kaybettirmeden, bir sonraki bölümü iple çekeceğiniz hikayesindeki rolünü o kadar iyi oynuyor ki, karakter ne hissediyorsa, sizde aynısını hissediyorsunuz. Özellikle yayınlanan son bölümdeki sahne... Sizi sizden alacaktır eminim... Lütfen sıkılıp kapatmayın. Ayrıca, şunu da söylemek gerekirse, Marvel'ın Netflix'den kendi platformu Disney+'a geçmesinden sonra Daredevil, iptal edilen diziler arasına girdi... Yani Daredevil'ın 3 sezondan sonrasını göremeyebilirsiniz, merak etmeyin hikaye "kesin devam edecek" diyerek bitirmiyor ancak siz de diğer herkes gibi üzüleceksiniz bu duruma. Fragman için [buraya](https://youtu.be/jAy6NJ_D5vU) tıklayabilirsiniz.
 
 ### Love, Death & Robots
-{ id="love-death-robots" }
 
 Bunun hakkında Daredevil kadar bilgi vermeyeceğim çünkü diziyi bitirmeniz neredeyse 6 saatinizi bile almıyor. Bölümleri 7-10-20 dakika arası değişen bu Netflix dizisinde, her bölüm, anladığım kadarıyla bir hikayeye adanmış, farklı tarzlarda animasyonlarla tasarlanmış, hepsi de birbirinden mükemmel ve birbirinden farklı hikayeleri anlatan bir dizi. Komik, heyecanlı ve her bölümünde **farklı bir tarz** tasarım ve animasyonlar göreceğiniz bu diziyi de izlemenizi kesinlikle tavsiye ediyorum. Bunun fragmanı ne olur bilemiyorum ancak Netflix'in yayınladığı [şu fragmana](https://youtu.be/wUFwunMKa4E) bakabilirsiniz.
 
@@ -96,7 +95,6 @@ Popüler dizi La Casa de Papel'e ve bu diziye kadar İspanyolları dinini yaşay
 Herkesin, ama herkesin sevdiği oyun serisi olan The Witcher serisinin dizisi, insanların oyunu hakkında söyledikleri kadar güzel. Oyunlarını henüz oynama fırsatı bulamadığım için her ne kadar hikayesine hâkim olmasam da benim gibi izleyerek pek bir şey kaybedeceğinizi düşünmüyorum. Eğer izleyecek, eski zaman ve _gerçek dışı_ (büyü, ilginçli şeyler) barındıran bir dizi arıyorsanız, bu dizi tam size göre. Fragmanına [buraya](https://youtu.be/sqTeQ6pVGKQ) tıklayarak ulaşabilirsiniz.
 
 ### Rise of Empires: Ottoman
-{ id="roe-ottoman" }
 
 Daha önce benzerini görmediğim ve izlemediğim bu dizide, (Fetih 1453 gibi) yerli yapımların anlatmadığı, değinmediği veya konuyu uzatamayacakları için atladığı bir çok olayı anlatan bu dizide, sadece Osmanlı İmparatorluğu tarafı değil, o zamanın İstanbulunu elinde bulunduran Romalıların yaşadıklarını da anlatıyor. Toplamda 6 bölümden oluşan bu dizi, sadece tek taraflı bir tarih anlayışı değil, yabancı tarih adamları ve profesörlerin Türklerle bir araya gelerek ortak bir noktada birleşip& hazırladığı ve anlattığı bu senaryoyu anlatıyor. Oyuncuların çoğu Türk olmasının yanı sıra, dizi, ana dil olarak İngilizce çekiliyor, üstüne tekrar aynı karakterler Türkçe dublajını yapıyor. Her biri ayrı güzel ve heyecanlı olan 6 bölümden oluşan bu dizi, gerek İngilizce anlatıcısının o muhteşem ses tonu, gerekse de senaryonun, anlatışın, işlenişin, karakterlerin, sahnelerin ve aklınıza gelebilecek her şeyin mükemmelliği ile insanı kendine bağlıyor. Osmanlı'yı ve bizim tarihimizi anlattığı için değil, olaylara, dışarıdan ve yenilgiye uğrayan taraftan profesörlerin ve tarih adamlarının da yorumlarını kattığı ve "en iyi yazılmış tarih" değerinde olan bu dizi, ilk sezonunda Osmanlı İmparatorluğu'nun genç Sultan'ı II. Mehmed'in dönemin Romalılarının elinde bulundurduğu Konstantinopolis'i 2 ay gibi uzun bir sürede nasıl ele geçirdiğini anlatıyor. Yerli yapımların, 2 ayda bitmeyen savaşı sanki Türkler elini kolunu sallayarak almış gibi anlatmasının yanı sıra bu dizi, Türklerin yaşadığı şanssızlıkları, yenilgileri, plana uygun gitmeyen kısımlara da yer verdiği için benim gözümde (neredeyse) tam puan almayı hak etti. Fragmanını izlemek isterseniz [buraya](https://youtu.be/t3ISUY0l0WQ) tıklayabilirsiniz.
 
@@ -129,18 +127,15 @@ Apple'ın çıkmadan önce ismini neredeyse ülkenin her yerinde, takip ettiğim
 
 Fazla anlatmaya gerek yok, aslında çok geç bitirdiğim bu dizi, hepimizin "şerlok usman aga" karakterinden bildiği "şerlok"un ta kendisi. Detektif olan Sherlock'un kafası hayal edebileceğinizden çok daha farklı ve gelişmiş bir şekilde çalıştığı için polislerin hatta ülkenin sahip olduğu en iyi detektiflerin bile çözemeyeceği davalarda çok işe yarıyor. Bölümleri ve sezon sayısı fazla, sezon içerisindeki bölümleri kısa olan bu muhteşem diziyi de kesinlikle izleyin. Fragmanı için [burayı](https://youtu.be/xK7S9mrFWL4) elleyebilirsiniz.
 
-### Snowpiercer <span class="new">Yeni</span>
-{ id="snowpiercer" }
+### Snowpiercer
 
 Konusu ilginç ve devamının gelmeyeceğini, devam etse nereye kadar edebileceğini düşünüp durduğunuz, bir o kadar da severek ve heyecanla izlediğiniz yine bir roman uyarlaması olan dizi. Her bölümde ayrı bir zevk veren, dövüş ve işlenişiyle kendine hayran bırakan, karakterleri sevdiren ve duyguyu yediren Netflix'in yapmış olduğu güzel dizilerden biri. Dizi 1001 vagon uzunluğunda bir trenin, kıyamet sonrası Dünya'nın durumundan sonra hayatta kalmaya çalışan binlerce insanın yanı sıra, trene kaçak binen "kuyruk" adı verilen kesimin haklarını aramasını konu alıyor. Güzel bir dizi. Fragmanına [buradan](https://www.youtube.com/watch?v=lGcJL6TG5cA) ulaşabilirsiniz.
 
-### Sense8 <span class="new">Yeni</span>
-{ id="sense8" }
+### Sense8
 
 İlk bölümlerinde her karakterinden, her sahnesinden, izlediğim her saniyeden pişman eden, bırakmamak için kendimi zor tuttuğum dizi, her ne kadar olaya geç başlasa da başladıktan sonra beni beniden alan bir hikayeye sahip olduğunu gösterdi. Gerçekten bırakmak istememe ve kendimi zor tutmama rağmen ilk sezonu bitirme çabalarım sayesinde, son bölümlerde konunun başlaması üzerine dizi oldukça sarmaya başladı. Özellikle ikinci sezon ve karakterlerin birbirleriyle tanıştıktan sonraki dövüş sahneleri, birbirlerine yardım etmeleri gibi sahneleri daha önce hiçbir dizide olmadığı kadar "şehvetle" izledim. Görsel efektten kaçınmayan, ilk başta nefret ettirse de bir süre sonra 8 karakterin 8'ini de sevdiren bu dizinin fragmanını [buradan](https://www.youtube.com/watch?v=iKpKAlbJ7BQ) bulabilirsiniz.
 
 ### Chilling Adventures of Sabrina
-{ id="sabrina" }
 
 Lucifer izleyip yeterince Tanrımıza şirk koşmadığınızı düşünüyorsanız, içinde Lucifer Morningstar'ın da olduğu (Lucifer'daki Lucifer değil tabi ki, yoksa Lucifer'daki Lucifer'ın İncil'de geçtiğini ve Lucifer Morningstar'ın gerçek olduğunu bilmiyor muydun?) gayet eğlenceli, evreni ile dikkat çeken, biraz uzun olsa bir diğer bölümünü çok da olmasa heyecanla beklettiren bu dizide, şeytan için çalışan cadılardan bir tanesi olan Sabrina'nın zevkli maceralarını izliyoruz. Şeytanla aşık atıp "bu ne genişlik" dedirtse bile artık biri Twitter'dan bizim dinimiz İslam hakkında kötü bir şey söylediğinde onlara karşı kullanabileceğimiz çok kötü bir Netflix dizisi var :) Dizi zevkle izletiyor, fragmanını [buradan](https://www.youtube.com/watch?v=tXDqPmbmk8k) izleyip sizde kendiniz karar verebilirsiniz.
 
@@ -152,8 +147,7 @@ Uzun bir aradan sonra çıkan ikinci sezonuyla birlikte Netflix'de tekrar ses ge
 
 Listedeki tek **Türk dizisi**, hatta Netflix'de "izleyebildiğim" tek Türk dizisi. Konusu her ne kadar bir klişe üzerine kurulu olsa da, konunun işlenişi, karakterler, müzik, karakterler ve karakterler muhteşem. Karakterler diyorum çünkü karakterler arasından sadece 3 ;tanesini tanıdığımı düşünüyorum. Netflix artık ülkemizde de tanınmamış isimleri tanıtmaya başladı anlaşılan. Oyunculukları inanılmaz, karakterleri yedirmeyi gerçekten iyi başarmış bu dizide, bazı "terbiyesiz" öğrenciler, okuldan atılmanın eşiğine gelip bir öğretmenleri sayesinde _neredeyse_ kurtarıldıktan sonra öğrencilerin bir araya gelip bu _neredeyse_ kavramını _tamamen_'e çevirmesini izliyoruz. Karakterleri, müzikleri, oyunculukları, senaryoyu, mekanları ve her şeyi beğendim. Bazı yerlerde duyguyu hafifde olsa yedirememeleri ve üstteki dizilerle boy ölçüşebileceğini düşünmediğim için bu puanı veriyorum. Umarım diğer sezonlarda bozmaz, bu başarısını devam ettirir. Dizinin fragmanına [buradan](https://www.youtube.com/watch?v=t0W5CmuSctY) ulaşabilirsiniz.
 
-### The Order <span class="new">Yeni</span>
-{ id="the-order" }
+### The Order
 
 Son zamanlarda sürekli izleyip durduğum ayin, satanizm ve kara büyüyle ilgili bu diziler yüzünden umarım başıma herhangi bir iş gelmez... Üstelik hepsini de beğeniyorum. Bu dizi de dahil. Üstelik oldukça güzel ve gerçekten iyi işlenmiş bir dizi olduğunu söylemem gerekiyor. Bir okulda yürütülen gizli bir satanist organizasyonunu konu alan bu dizi hem gizli örgütün anlamına, hem de _kurtadam_ terimine yepyeni bir anlam katıyor. İzlenebilecek güzel ve sürükleyici bir dizi olan The Order'ın fragmanına [buradan](https://www.youtube.com/watch?v=iD-cFgDDuqM) ulaşabilirsiniz.
 
@@ -171,7 +165,6 @@ başroldeki bilim manyağı Rick dayı ile küçük yeğen Morty'nin bildiğiniz
 Kesinlikle izlediğim ve gördüğüm en iyi görsel efektlere ve temaya sahip dizi. Hikayesi de oldukça kaliteli, ancak son sezon Stranger Things'de olduğu gibi "acaba her şey kendini tekrar etmeye mi başlayacak" ve ilk sezon beni kanser eden kötü karekter kavramı hep aynı mı kalacak korkusu yok değil... Yine de yeni bir sezon çıkana kadar şuanda var olan 2 güzel sezonu izleyebilirsiniz. Dizinin konusu, falan filan sonrasında Dünya'nın artık yaşanılamaz bir yer hâline gelmesi, insanların "yeterli" olduğunu kanıtladıktan sonra uzayda hepimizin istediği koloni şeklinde bir uzay merkeziyle yaşanılabilir başka bir gezegene göçünü anlatıyor. Tabi, kötü robotlar olmazsa olmaz, başrol karakterlerimiz ne olduğu belirsiz bir gezegene düşüyor ve hayatta kalmaya çalışıyor. Dizinin fragmanına [buradan](https://youtu.be/fzmM0AB60QQ) ulaşabilirsiniz.
 
 ### The Haunting of Hill House
-{ id="hill-house" }
 
 Aslında hiç sevmediğim bir unsur olan _x bölümden sonra heyecanlanan dizi_ durumunda olan bu dizi, ne olursa olsun sonuna kadar izlediğiniz de sizi de etkileyecektir. Bu listedeki tek "korku" kategorili dizi olan bu dizi, korkunun yanı sıra, gizemde olduğu için falan filan izleyin işte güzel bir dizi. Fragman [burada](https://youtu.be/3eqxXqJDmcY).
 
@@ -183,8 +176,7 @@ Aslında hiç sevmediğim bir unsur olan _x bölümden sonra heyecanlanan dizi_ 
 
 Qafirlerin inancına göre şeytanın bir ismi (iblis)... Diziyi izlerken tam anlamıyla şeytana hak veriyor gibi oluyorsunuz. Hatta o kadar iyi işlendiğini söyleyebilirim ki, diziyi izledikten sonra kesinlikle şeytana karşı düşüncelerinizin değişeceğine eminim, her ne kadar uzun ve maalesef beşinci sezonunu Netflix'in üstlendiği bu dizi bitirene kadar sizi çok fazla yerde sıkabilir ve artık bırakmayı isteyebilirsiniz. Ancak güzel bir başrol kahramanı, gelişen olaylar ve azalan suç sahneleriyle dolu beşinci sezonu izlemeden bırakmayın. Fragmana [buradan](https://youtu.be/X4bF_quwNtw) ulaşabilirsiniz.
 
-### The Umbrella Academy <span class="new">Yeni Sezon</span>
-{ id="the-umbrella-academy" }
+### The Umbrella Academy
 
 Bu dizi, çıkış yaparken oldukça iddialı bir çıkış yapmasına rağmen bence tam potansiyeline ulaşamamış bir dizi. Gerçekten güzel bir bilim kurgu ve süper kahraman dizisi olan bu dizi, zaman kavramı hakkında sanki herkesin beyni yeterince karışık değilmiş gibi farklı bir zaman kavramıyla bizleri karşılıyor. Oldukça ilginç bir evreni olan ve _artık_ yeni sezon yayınlarlarsa daha fazlasını görmek isteyebileceğim gayet güzel bir dizi. İsterseniz dizinin fragmanına [buraya](https://youtu.be/0DAmWHxeoKw) tıklayarak ulaşabilirsiniz. _Evet_, bunlar ilk sezon için olan yorumlarımdı. İkinci sezonu kesinlikle beğenmediğimi ve yapılabilecek en saçma kurgu ile ortaya çıktıklarını düşünüyor ve güzel bir dizinin potansiyelini kırdıkları için kendilerini kınıyorum. Yeni sezon güzel sonlanmış olsa da, sezon boyunca takip eden saçmalıklar ve detaylar diziyi gerçekten çekilemez bir dereceye soktu. Gerçekten sinir bozucu...
 

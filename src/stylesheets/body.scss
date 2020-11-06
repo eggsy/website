@@ -41,17 +41,17 @@ body::-webkit-scrollbar-thumb,
 }
 
 span.new {
-  text-transform: uppercase;
-  background-color: rgba(255, 0, 0, 0.85);
-  font-size: x-small;
-  vertical-align: text-bottom;
-  padding: 2px 4px;
-  margin: 2px;
-  border-radius: 1em;
   transition: background-color 0.2s ease-in-out;
-  user-select: none;
+  background-color: rgba(255, 0, 0, 0.85);
+  text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
+  vertical-align: middle;
+  border-radius: 1em;
+  font-size: x-small;
+  user-select: none;
+  padding: 2px 4px;
+  margin: 2px;
 
   &:hover {
     background-color: rgba(255, 0, 0, 1);
