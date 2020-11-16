@@ -1,20 +1,3 @@
-# eggsy-website-tailwind
+## EGGSY's Personal Website **in Tailwind CSS**
 
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+⏳ This branch is going to be the place where I'll rewrite my website in Tailwind CSS. It'll take time so sit tight and wait for me to finish it. No promises; I won't spend much time on this, I'll only work on this when I have some free time.
