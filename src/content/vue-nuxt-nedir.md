@@ -1,8 +1,10 @@
 ---
 title: Vue ve Nuxt Nedir? Ne İşe Yarar?
 description: Kendi internet sitemin ve katkıda bulunduğum tüm projelerinde kullandığı Nuxt'un temeli Vue nedir, ikisi arasındaki farklılıklar nelerdir, bunlarla ne tür şeyler yapılır?
-tags: vue, nuxt
 image: https://i.imgur.com/0V2BWx7.png
+tags:
+  - vue
+  - nuxt
 createdAt: 2020-05-04T21:37:39.798Z
 ---
 

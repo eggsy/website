@@ -1,8 +1,11 @@
 ---
 title: Unblock Please'e Merhaba Deyin!
 description: Imgur Please projem, adı değişerek artık sadece Imgur engelini kaldırmaya değil, aynı zamanda Pastebin engelini de kaldırmaya yarıyor!
-tags: imgur, unblock, pastebin
 image: https://i.imgur.com/JR37Fj9.png
+tags:
+  - imgur
+  - unblock
+  - pastebin
 createdAt: 2020-09-02T17:00:12.000Z
 related: imgur-please-nedir
 ---

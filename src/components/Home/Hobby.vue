@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="dark:text-gray-200">
       <svg
         v-if="icon === 'programming'"
         xmlns="http://www.w3.org/2000/svg"
@@ -194,9 +194,11 @@
       </svg>
     </div>
 
-    <div>
-      <span>{{ title }}</span>
-    </div>
+    <span
+      :title="title"
+      class="text-sm font-semibold text-gray-700 dark:text-gray-300"
+      >{{ title }}</span
+    >
   </div>
 </template>
 
@@ -222,9 +224,6 @@ div {
 
   svg {
     @apply w-16 h-16 mx-auto;
-  }
-  span {
-    @apply text-sm text-gray-700 font-semibold;
   }
 }
 </style>

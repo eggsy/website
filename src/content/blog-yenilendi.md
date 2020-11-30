@@ -1,8 +1,10 @@
 ---
 title: Blog Yenilendi!
 description: Gönderilerime daha rahat ve hızlı ulaşabilesiniz diye blogumu baştan aşağıya yeniledim ve seveceğiniz birkaç özellik ekledim!
-tags: blog, haber
 image: https://i.imgur.com/4liTI0u.png
+tags:
+  - blog
+  - haber
 createdAt: 2020-09-02T17:13:12.000Z
 related: blogun-baslica-ozellikleri, nedir-bu-blog
 ---

@@ -18,7 +18,9 @@
     "nuxt": "^2.14.7",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
-    "tailwindcss": "^2.0.1-compat"
+    "tailwindcss": "^2.0.1-compat",
+    "vue-animejs": "^2.1.1",
+    "vue-rip": "^1.2.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",

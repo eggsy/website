@@ -1,8 +1,8 @@
 <template>
   <div class="py-10 flex justify-center">
-    <div class="w-11/12 space-y-16">
-      <div class="text-center font-semibold pt-10 pb-8">
-        <div class="w-1/6 mx-auto text-center mb-4">
+    <div class="w-11/12 space-y-10 sm:space-y-16">
+      <div class="text-center font-semibold pt-5 pb-4 sm:pt-10 sm:pb-8">
+        <div class="w-3/6 sm:w-1/6 mx-auto text-center mb-4">
           <img
             class="rounded-full shadow-lg"
             alt="irl image"
@@ -11,11 +11,13 @@
           />
         </div>
 
-        <span class="text-xl">Abdulbaki "EGGSY" Dursun</span>
+        <span class="'text-xl text-gray-900 dark:text-gray-200"
+          >Abdulbaki "EGGSY" Dursun</span
+        >
       </div>
 
       <div
-        class="grid grid-cols-2 gap-4 mt-6 divide-x-2 divide-gray-300 divide-opacity-25"
+        class="sm:grid sm:grid-cols-2 gap-4 mt-6 sm:divide-x-2 divide-gray-300 divide-opacity-25"
       >
         <!-- Left Column -->
         <section class="divide-y-2 divide-gray-300 divide-opacity-25">
@@ -77,13 +79,17 @@
           </div>
         </section>
 
+        <hr class="bg-gray-900 bg-opacity-25 mt-6 sm:hidden" />
+
         <!-- Right Column -->
-        <section class="pl-4 divide-y-2 divide-gray-300 divide-opacity-25">
-          <div class="grid grid-cols-2">
+        <section
+          class="mt-4 sm:mt-0 sm:pl-4 divide-y-2 divide-gray-300 divide-opacity-25"
+        >
+          <div class="sm:grid sm:grid-cols-2">
             <div class="flex items-center space-x-2">
               <div>
                 <svg
-                  class="h-16 w-16"
+                  class="h-16 w-16 dark:text-gray-200"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -104,11 +110,12 @@
               </div>
 
               <div class="leading-none">
-                <span class="block text-gray-700 font-semibold"
+                <span
+                  class="block text-gray-700 dark:text-gray-300 font-semibold"
                   >Abdulbaki Dursun</span
                 >
                 <a
-                  class="block text-gray-600 text-sm hover:underline"
+                  class="block text-gray-600 dark:text-gray-200 text-sm hover:underline"
                   href="http://egitim.alparslan.edu.tr/?utm_source=eggsy.xyz"
                   title="I'm gonna be a teacher!"
                   target="_blank"
@@ -117,10 +124,23 @@
               </div>
             </div>
 
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center justify-end space-x-2">
+              <div class="leading-none">
+                <a
+                  class="block text-gray-700 dark:text-gray-300 font-medium hover:underline"
+                  href="mailto:eggsydev@gmail.com"
+                  title="Mail me!"
+                  >eggsydev@gmail.com</a
+                >
+                <span
+                  class="block text-gray-600 text-sm dark:text-gray-200 font-light text-right"
+                  >Sakarya, Turkey</span
+                >
+              </div>
+
               <div>
                 <svg
-                  class="h-14 w-14"
+                  class="h-16 w-16 dark:text-gray-300"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -134,25 +154,13 @@
                   />
                 </svg>
               </div>
-
-              <div class="leading-none">
-                <a
-                  class="block text-gray-700 font-medium hover:underline"
-                  href="mailto:eggsydev@gmail.com"
-                  title="Mail me!"
-                  >eggsydev@gmail.com</a
-                >
-                <span class="block text-gray-700 font-light"
-                  >Sakarya, Turkey</span
-                >
-              </div>
             </div>
           </div>
 
           <div class="mt-4 w-full pt-4">
             <CoolTitle right-down="Introduction" />
 
-            <p>
+            <p class="dark:text-gray-200">
               I am a 19 years old Turkish fullstack web developer and an ELT
               student at Muş Alparslan University since 2020. I do stuff on
               internet I like creating open-source projects. I also love
@@ -168,7 +176,7 @@
               right-down="Technologies that I use"
             />
 
-            <div class="grid grid-cols-5 gap-2">
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
               <Skill
                 v-for="(skill, index) in skills"
                 :key="`skill-${index}`"
@@ -186,7 +194,7 @@
               right-down="And free time activities"
             />
 
-            <div class="grid grid-cols-6 gap-4">
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
               <Hobby
                 v-for="(hobby, index) of hobbies"
                 :key="`hobby-${index}`"
@@ -198,18 +206,22 @@
         </section>
       </div>
 
-      <div class="w-10/12 mx-auto my-10 space-y-4">
+      <div class="w-11/12 sm:w-10/12 mx-auto my-10 space-y-4">
         <CoolTitle class="text-center" right-down="Latest blog posts" />
 
         <div
           v-if="$fetchState.pending || $fetchState.error"
-          class="grid grid-cols-3 gap-2"
+          class="sm:grid sm:grid-cols-3 sm:gap-4 space-y-4 sm:space-y-0"
         >
-          <CardBlog v-for="key in 3" :key="key" :loading="true" />
+          <SkeletonLoader v-for="key in 3" :key="`loader-${key}`" type="post" />
         </div>
 
-        <div v-else-if="posts.length > 0" class="grid grid-cols-3 gap-4">
-          <CardBlog
+        <div
+          v-else-if="posts.length > 0"
+          class="sm:grid sm:grid-cols-3 sm:gap-4 space-y-4 sm:space-y-0"
+          @click="$router.push('/blog')"
+        >
+          <CardPost
             v-for="(post, index) in posts"
             :key="`post-${index}`"
             :post="post"
@@ -217,10 +229,10 @@
         </div>
       </div>
 
-      <div class="w-3/12 mx-auto text-center my-10 space-y-4">
+      <div class="w-full sm:w-3/12 mx-auto text-center my-10 space-y-4">
         <div>
           <CoolTitle right-down="Was it all?" />
-          <span class="text-gray-700"
+          <span class="text-gray-700 dark:text-gray-300"
             >Nope, don't forget to check out my social media accounts</span
           >
         </div>
@@ -293,7 +305,7 @@ export default {
             title: "Rotosis Robotics",
             url: "https://www.rotosis.com",
             position: "Intern",
-            date: "2018-2019",
+            date: "2017-2018",
           },
         ],
       },
@@ -345,10 +357,13 @@ export default {
     const latestPosts = await this.$content()
       .limit(3)
       .sortBy("createdAt", "desc")
-      .only(["title", "slug", "description", "image", "createdAt", "tags"])
+      .without(["body"])
       .fetch()
 
     this.posts = latestPosts
+  },
+  head: {
+    title: "Home",
   },
 }
 </script>

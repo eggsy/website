@@ -2,7 +2,7 @@
   <div class="space-y-1">
     <div class="w-16 h-16 mx-auto relative">
       <div
-        class="absolute -right-2 -top-2 text-white bg-green-600 shadow-lg rounded-full w-8 h-8 font-bold flex justify-center items-center"
+        class="absolute -right-2 -top-2 text-gray-100 bg-green-600 shadow-lg rounded-full w-8 h-8 font-bold flex justify-center items-center"
       >
         {{ level }}
       </div>
@@ -82,7 +82,7 @@
       </svg>
     </div>
 
-    <div class="text-gray-700 font-semibold text-center">
+    <div class="text-gray-700 dark:text-gray-300 font-semibold text-center">
       {{ title }}
     </div>
   </div>

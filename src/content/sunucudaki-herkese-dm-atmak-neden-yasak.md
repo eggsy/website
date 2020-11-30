@@ -1,8 +1,9 @@
 ---
 title: Bot Kullanarak Sunucudaki Herkese DM Atmak Neden Yasak?
 description: Evet, botlar kullanılarak bir veya botun olduğu tüm sunuculardaki kullanıcılara bir anda mesaj gönderilebilir. Bu hoş bir şey mi? Hayır. Bunu yapmak yasak mı? Evet!
-tags: discord
 image: https://i.imgur.com/62kdeIh.png
+tags:
+  - discord
 createdAt: 2020-01-09T01:01:31.423Z
 related: botlastirilmis-kullanici-hesaplari-neden-yasak, renk-degistiren-roller-neden-yasak
 ---
