@@ -106,10 +106,47 @@
               </nuxt-link>
             </div>
           </div>
+
+          <div
+            class="flex space-x-4 overflow-x-auto overflow-y-hidden sm:hidden share-small"
+          >
+            <div class="flex items-center space-x-2" @click="share('twitter')">
+              <icon name="twitter" class="h-6 w-6 text-social-twitter" />
+              <span>Tweet</span>
+            </div>
+
+            <div class="flex items-center space-x-2" @click="share('telegram')">
+              <icon name="telegram" class="h-6 w-6 text-social-telegram" />
+              <span>Telegram</span>
+            </div>
+
+            <div class="flex items-center space-x-2" @click="share('whatsapp')">
+              <icon name="whatsapp" class="h-6 w-6 text-social-whatsapp" />
+              <span>WhatsApp</span>
+            </div>
+
+            <div class="flex items-center space-x-2" @click="share('url')">
+              <icon
+                v-if="copied === true"
+                key="check"
+                name="check"
+                class="h-6 w-6 text-green-600"
+              />
+
+              <icon
+                v-else
+                key="link"
+                name="link"
+                class="h-6 w-6 text-gray-700"
+              />
+
+              <span>Kopyala</span>
+            </div>
+          </div>
         </div>
 
         <div class="mt-4 text-justify">
-          <nuxt-content ref="content" :document="post"></nuxt-content>
+          <nuxt-content :document="post"></nuxt-content>
         </div>
 
         <div
@@ -271,8 +308,6 @@ export default {
       ],
     }
 
-    console.log(object)
-
     return object
   },
   computed: {
@@ -291,12 +326,17 @@ export default {
       return this.post.toc
     },
   },
-  watch: {
-    "$refs.content": "setupObserver",
-  },
   beforeDestroy() {
     clearInterval(this.interval)
     this.observer.instance?.disconnect()
+  },
+  mounted() {
+    this.interval = setInterval(() => {
+      if (this.$fetchState.pending === false && !this.$fetchState.error) {
+        this.setupObserver()
+        clearInterval(this.interval)
+      } else if (this.$fetchState.error) clearInterval(this.interval)
+    }, 100)
   },
   methods: {
     share(option) {
@@ -364,7 +404,7 @@ export default {
             }
           })
         },
-        { root: this.$refs.content }
+        { threshold: 0 }
       )
 
       document
@@ -378,8 +418,14 @@ export default {
 </script>
 
 <style lang="scss">
-.share > div {
-  @apply bg-gray-100 cursor-pointer hover:bg-gray-200 p-3 ring-1 ring-opacity-25 ring-gray-300 rounded-full w-14 h-14 ml-auto;
+.share {
+  > div {
+    @apply bg-gray-100 cursor-pointer hover:bg-gray-200 p-3 ring-1 ring-opacity-25 ring-gray-300 rounded-full w-14 h-14 ml-auto;
+  }
+
+  &-small {
+    @apply mx-auto bg-gray-100 hover:bg-gray-200 cursor-pointer p-3;
+  }
 }
 
 .nuxt-content {
@@ -444,15 +490,6 @@ export default {
         @apply text-gray-50;
       }
     }
-
-    &:not(:last-child) {
-      @apply mb-4;
-    }
-  }
-
-  /* Tables */
-  table {
-    @apply w-full;
 
     &:not(:last-child) {
       @apply mb-4;

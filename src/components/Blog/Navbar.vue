@@ -77,6 +77,16 @@
 
           <ul>
             <nuxt-link
+              to="/"
+              class="hover:bg-gray-800 block px-4 py-4 truncate"
+            >
+              <li class="flex items-center space-x-2">
+                <icon name="home" class="h-6 w-6" />
+                <span>Ana Siteye Dön</span>
+              </li>
+            </nuxt-link>
+
+            <nuxt-link
               v-for="(page, index) in pages"
               :key="`page-mobile-${index}`"
               :to="page.url"
@@ -102,15 +112,15 @@
               </div>
             </li>
 
-            <nuxt-link
-              to="/"
-              class="hover:bg-gray-800 block px-4 py-4 truncate"
+            <a
+              class="hover:bg-gray-800 flex-1 mt-auto block px-4 py-4 truncate"
+              @click="closeMobileMenu"
             >
               <li class="flex items-center space-x-2">
-                <icon name="home" class="h-6 w-6" />
-                <span>Ana Siteye Dön</span>
+                <icon name="arrow-left" class="h-6 w-6" />
+                <span>Kapat</span>
               </li>
-            </nuxt-link>
+            </a>
           </ul>
         </div>
       </div>
@@ -176,6 +186,9 @@ export default {
     const url = await this.$getDaily()
     this.daily = url
   },
+  watch: {
+    "$route.path": "closeMobileMenu",
+  },
   methods: {
     goToDaily() {
       if (this.$fetchState.pending === true) return
@@ -189,6 +202,9 @@ export default {
     focusSearch() {
       this.mobileMenu = true
       setTimeout(() => this.$refs.search?.focus())
+    },
+    closeMobileMenu() {
+      this.mobileMenu = false
     },
   },
 }

@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div v-else class="pt-20 sm:pt-16">
+  <div v-else class="pt-20 mx-4 pb-10 sm:pt-16 sm:pb-8">
     <div v-if="posts.length === 0">
       <CoolTitle
         left="X"
