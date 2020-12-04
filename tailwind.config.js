@@ -1,7 +1,7 @@
 module.exports = {
   // darkMode: "media",
   purge: {
-    content: ["./components/**/*.vue"],
+    content: ["./components/**/*.vue", "./content/**/*.md"],
   },
   theme: {
     extend: {

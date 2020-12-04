@@ -220,6 +220,40 @@ export default {
   },
   head: {
     title: "Blog",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "EGGSY's Blog",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
+      },
+      {
+        hid: "og:site_name",
+        name: "og:site_name",
+        content: "eggsy.xyz - blog",
+      },
+      { hid: "og:title", name: "og:title", content: "EGGSY's Blog" },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content:
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
+      },
+
+      { name: "premid-details", content: "Viewing a blog page:" },
+      { name: "premid-state", content: "Homepage" },
+    ],
   },
 }
 </script>

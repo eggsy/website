@@ -40,6 +40,13 @@
             name="sync"
             class="h-6 w-6 animate-spin"
           />
+
+          <icon
+            v-else-if="$fetchState.error === true"
+            name="ban"
+            class="h-6 w-6 cursor-not-allowed"
+          />
+
           <span v-else>Günlük Müzik</span>
         </li>
 
@@ -104,6 +111,12 @@
                 v-if="$fetchState.pending === true"
                 name="sync"
                 class="h-6 w-6 animate-spin"
+              />
+
+              <icon
+                v-else-if="$fetchState.error === true"
+                name="ban"
+                class="h-6 w-6 cursor-not-allowed"
               />
 
               <div v-else class="flex items-center space-x-2">
@@ -191,7 +204,8 @@ export default {
   },
   methods: {
     goToDaily() {
-      if (this.$fetchState.pending === true) return
+      if (this.$fetchState.pending === true || this.$fetchState.error === true)
+        return
       window.open(`https://youtube.com/watch?v=${this.daily}`, "_blank")
     },
     search() {

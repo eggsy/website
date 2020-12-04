@@ -17,7 +17,7 @@
     "@nuxtjs/pwa": "^3.3.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.8.0",
-    "firebase": "^8.1.1",
+    "firebase": "^8.1.2",
     "nuxt": "^2.14.9",
     "prism-themes": "^1.5.0",
     "sass": "^1.29.0",
@@ -32,13 +32,13 @@
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.1",
     "@nuxtjs/svg": "^0.1.12",
-    "@nuxtjs/tailwindcss": "^3.3.0",
+    "@nuxtjs/tailwindcss": "^3.3.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^7.1.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-vue": "^7.2.0",
     "prettier": "^2.2.1"
   }
 }
