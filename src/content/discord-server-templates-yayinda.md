@@ -7,7 +7,8 @@ tags:
   - server
   - templates
 createdAt: 2020-07-10T14:11:42.334Z
-related: discord-sunucum-yenilendi
+related:
+  - discord-sunucum-yenilendi
 ---
 
 Bu yazıyı her ne kadar proje yayınlandıktan birkaç hafta sonra yazıyor olsam da, yeni projemizi bu yazı ile daha da detaylandırmak istiyorum. Projemizin ismi Discord Server Templates, kısaca DCST... Bu projeye C4Navar, Eri ve ben ortak olarak girdik ve her birimiz işin bir bölümünü paylaşıp sonunda bu güzel siteyi ortaya çıkardı. C4Navar API'yi, Eri Discord botunu hallederken, ben de sitenin kendisini hallettim. Yaklaşık 2 ay süren bir çalışmanın sonunda yayınladığımız proje, projenin Discord sunucusunda oldukça fazla ilgi gördü ve beğenildi. İlk haftalar test ettiğimiz sitede bizi ciddi anlamda üzecek herhangi bir soruna rastlamamamız bizi oldukça rahatlattı. Site oldukça hızlı çalışıyordu ve herhangi bir sorun yaşanmamıştı...

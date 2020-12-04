@@ -7,7 +7,9 @@ tags:
   - linux
   - arch
 createdAt: 2020-01-09T01:35:56.645Z
-related: octopi-aur-destegi-nasil-aktiflestirilir, aur-discord-yukleme
+related:
+  - octopi-aur-destegi-nasil-aktiflestirilir
+  - aur-discord-yukleme
 ---
 
 Manjaro'dan bahsetmek için öncelikle Linux'un ne olduğundan bahsetmem gerekli. Eğer Linux'un ne olduğunu zaten biliyorsanız bu kısmı atlayabilirsiniz.

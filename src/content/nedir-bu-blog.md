@@ -5,10 +5,11 @@ image: https://i.imgur.com/bhuO6FQ.png
 tags:
   - blog
 createdAt: 2020-01-09T00:28:41.545Z
-related: blog-yenilendi
+related:
+  - blog-yenilendi
 ---
 
-Şuanda bu gönderiyi okuduğunuz blog, sizlere ulaşabilmek için oldukça uzun ve zorlu bir yoldan geçmek zorundaydı. Bunlardan birisi yapan kişinin daha önce hiç bu kadar büyük çapta (evet bottan *daha zor* oldu :smile:) bir proje yapmamış olması... Eğer ilk defa böyle bir işe girişiyorsanız, her şeyin planını önceden yapmalı, oldukça geniş bir zaman ayırmalı ve neredeyse diğer her şeyden kısmanız gerekmekte.
+Şuanda bu gönderiyi okuduğunuz blog, sizlere ulaşabilmek için oldukça uzun ve zorlu bir yoldan geçmek zorundaydı. Bunlardan birisi yapan kişinin daha önce hiç bu kadar büyük çapta (evet bottan *daha zor* oldu 😎) bir proje yapmamış olması... Eğer ilk defa böyle bir işe girişiyorsanız, her şeyin planını önceden yapmalı, oldukça geniş bir zaman ayırmalı ve neredeyse diğer her şeyden kısmanız gerekmekte.
 
 Bu blog, bundan sonra yazılarımı yazacağım ve sizlere ulaştıracağım yerdir. Tüm blogda kontrol sahibi olmam sayesinde artık herhangi bir geliştirme, hata düzeltmeleri veya yeni özellik eklemelerini yapmak, sisteme oturtmak ve sizlere ulaştırmak artık tamamen benim sorumluluğumda. Kısaca söyleyecek olursak, şuanda bu yazıyı okuduğunuz blogun tasarımını, kendisini veya benzerini (anladınız siz) herhangi bir yerde bulamazsınız; çünkü blog, önüyle arkasıyla tamamen EGGSY (kim bu yakışıklı?) tarafından tasarlandı, yapıldı ve test edildi. Zor muydu? Kulağınıza 4 gün hayattan uzaklaşmak ne kadar zor geliyorsa o kadar zordu (ama zaten hayattan uzak birisiyseniz vakit geçirecek bir şeyiniz olmuş oldu). Anlayacağınız üzere, bu gönderilerin yazıldığı editör kısmı, isteklerin işlendiği arka plan, görünüş, isteklerinizi gönderdiğiniz ön plan verileri, kısacası yapacağınız her işlem, tıklayacağınız her yer baştan aşağıya EGGSY tarafından tasarlandı. Bunlara yorum sistemi, yazar ekleme / silme/ düzenleme, yazı ekleme / düzenleme / silme, etiket sistemi ve geriye kalan ilginizi çeken ne varsa da dahil.
 

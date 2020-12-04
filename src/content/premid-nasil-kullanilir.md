@@ -14,7 +14,7 @@ Evet, doğru duydunuz. "Olması beklenen bir güncelleme" sonunda gerçekleşti 
 
 ### Peki nasıl işliyor bu "paylaşma" olayı?
 
-Buna "paylaşma" demek yerine "market sistemi" dememiz çok daha mantıklı olacaktır. Güncelleme kaynaklarında ve site üzerinde de servisleri ekleyebileceğiniz kısım "Mağaza" olarak geçiyor. O yüzden bu tam anlamıyla "her şeyin beleş olduğu bir mağaza". Daha fazla uzatmadan iyice derinlere inmek gerekirse; uygulamayı ve eklentiyi düzgünce yükledikten sonra (yeni sürüme ait uygulama ve eklentiye sahip olduğunuza emin olun elbette) artık PreMiD'in sitesindeki mağaza kısmından hiçbir ek bir şeye ihtiyaç duymadan tek bir tuşa basarak istediğiniz servisi ekleyebileceksiniz. **Üstelik mağaza Türkçe'yi de destekliyor!** :smile:
+Buna "paylaşma" demek yerine "market sistemi" dememiz çok daha mantıklı olacaktır. Güncelleme kaynaklarında ve site üzerinde de servisleri ekleyebileceğiniz kısım "Mağaza" olarak geçiyor. O yüzden bu tam anlamıyla "her şeyin beleş olduğu bir mağaza". Daha fazla uzatmadan iyice derinlere inmek gerekirse; uygulamayı ve eklentiyi düzgünce yükledikten sonra (yeni sürüme ait uygulama ve eklentiye sahip olduğunuza emin olun elbette) artık PreMiD'in sitesindeki mağaza kısmından hiçbir ek bir şeye ihtiyaç duymadan tek bir tuşa basarak istediğiniz servisi ekleyebileceksiniz. **Üstelik mağaza Türkçe'yi de destekliyor!**
 
 <p class="text-center">
   <img src="https://the-person-under-this-message.is-inside.me/CL39gBdq.gif" alt="image" />

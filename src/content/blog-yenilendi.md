@@ -6,8 +6,12 @@ tags:
   - blog
   - haber
 createdAt: 2020-09-02T17:13:12.000Z
-related: blogun-baslica-ozellikleri, nedir-bu-blog
+related:
+  - blogun-baslica-ozellikleri
+  - nedir-bu-blog
 ---
+
+> Bu yazı da, sitemizin baştan aşağıya yenilenmesinin ardından geçerliliğini yitirmiştir. Yeni sistemde kaldırılan birkaç paket/modül kullanan bazı kısımlar yazıdan kaldırılmış veya düzenlenmiştir.
 
 Uzun bir zaman önce yayın hayatına geçirdiğim blog, yapması ve yönetmesi açısından bana oldukça fazla sıkıntılar yaşatmıştı. Özellikle yapmasının yaklaşık 1 hafta kadar sürmesi ve testlerin uzunluğu, zorluğu ve kafa karıştırıcılığı yüzünden birçok zamanlarda vazgeçmeyi istemiş ancak bu kadar gelmişken bırakmayı istememiştim. Hal böyle olunca da arka plandaki kodlarda birkaç açık bırakılmış ve bu açık birçok defa bazı kullanıcılar tarafından hor kullanılmıştı. Her ne kadar bu zamana kadar beklediğimden çok daha az hor kullanım gerçekleştirilmişse de bu kullanımlar hoşuma gitmiyordu ve her seferinde düzeltmek zamanımı alıyordu. İşte bu ve blogu geliştirmek, daha iyi bir sisteme otutturmak, işleri çok daha hızlı halletmek amacıyla blogu baştan aşağıya yeniledim.
 
@@ -17,7 +21,7 @@ Yenilenen blog ile her ne kadar bir çok yenilik ve düzeltme geldiyse de bir o 
 
 Görsel yeniliklere geçmeden önce sistemsemsel yeniliklerden en büyüğü artık blogun herhangi bir API'ye bağlı olmadan çalışması durumudur. Bu siteyi ve diğer projelerimi yaparken kullandığım Nuxt ekibinin geçtiğimiz haftalarda yayınladığı oldukça güçlü bir markdown işleyicisine sahip olan `@nuxt/content` modülü ile artık sayfalar API'den değil, yerel hafızadan çekiliyor. Bunun hem artıları hem eksileri olsa da artı yönünde API'nin kullanımdan kalkması, sitenin dış istek atmasının azalması ve sayfaların çok daha hızlanması kötü yanları ortadan kaldırıyor. Kısacası gönderiler ve blog için artık herhangi bir API bağlantısı kullanılmıyor. Günlük müzik özelliği de Firebase adı verilen bir sisteme geçirilerek sunucudaki API tamamen devredışı bırakılacağı için istekleriniz artık çok daha hızlı işlenecek!
 
-Görsel yeniliklerin en başında ise yeri değiştirilen ve **sayfa geçişlerinde de çalışan** günlük müzik özelliği geliyor. Önceki blogda sayfa değişince oynaması duran ve dinlemek için sizi tek sayfaya kilitleyen bu özellik, artık mobil ve PC'de yukarıda gördüğünüz gezinti çubuğuna taşındı. Böylece (blog içerisindeki) her sayfada kullanılabilir duruma geldi. PC'de <v-icon>mdi-play</v-icon> şeklinde gözüken bu düğme üstelik YouTube videosunun durumuna göre de şekil alıyor. Video oynarken videonun oynadığını bildirmek amacıyla bu düğme yanıp sönmeye, video durduğunda <v-icon>mdi-pause</v-icon> hâline, video bittiğinde ise <v-icon>mdi-stop</v-icon> hâlini alıyor.
+Görsel yeniliklerin en başında ise yeri değiştirilen ve **sayfa geçişlerinde de çalışan** günlük müzik özelliği geliyor. Önceki blogda sayfa değişince oynaması duran ve dinlemek için sizi tek sayfaya kilitleyen bu özellik, artık mobil ve PC'de yukarıda gördüğünüz gezinti çubuğuna taşındı. Böylece (blog içerisindeki) her sayfada kullanılabilir duruma geldi. PC'de ▶ şeklinde gözüken bu düğme üstelik YouTube videosunun durumuna göre de şekil alıyor. Video oynarken videonun oynadığını bildirmek amacıyla bu düğme yanıp sönmeye, video durduğunda ⏸ hâline, video bittiğinde ise ⏹ hâlini alıyor.
 
 <p class="text-center">
   <img src="https://the-person-under-this-message.is-inside.me/xUcA5jEA.png" alt="image" />

@@ -1,0 +1,1 @@
+export default ["@/stylesheets/root"]

@@ -8,7 +8,8 @@ tags:
   - manjaro
   - arch
 createdAt: 2020-02-01T11:58:45.357Z
-related: octopi-aur-destegi-nasil-aktiflestirilir
+related:
+  - octopi-aur-destegi-nasil-aktiflestirilir
 ---
 
 Burada anlatılacak olanlar tamamen aşağıdaki sayfa ile bağlıdır ve o sayfadaki işlemler yapılmadan yapılamayacaktır. Lütfen [bu sayfaya](/blog/gonderi/octopi-aur-destegi-nasil-aktiflestirilir) giderek AUR desteğini aktifleştirin ve bu sayfayı tekrar ziyaret edin.

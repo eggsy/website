@@ -6,3 +6,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  head: {
+    titleTemplate: "%s - eggsy.xyz",
+    htmlAttrs: {
+      lang: "tr",
+    },
+  },
+}
+</script>

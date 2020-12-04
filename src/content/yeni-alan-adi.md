@@ -6,7 +6,8 @@ tags:
   - site
   - eggsy
 createdAt: 2020-07-22T14:03:24.368Z
-related: blog-yenilendi
+related:
+  - blog-yenilendi
 ---
 
 Bu gönderiyi okuyorsanız tarayıcınızın adres çubuğundan da anlamış olduğunuz üzere eski alan adı olan eggsy.codes, bundan sonra kullanılmayacak ve onun yerini yeni alan adım eggsy.xyz alacaktır. Bu kararın en büyük sebebi, .codes'in pahalı yenileme ücretidir. Bu yenilik, siteden bir çok şeyi alırken aynı zamanda bir kaç güzel şey de ekleyecektir.

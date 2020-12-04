@@ -1,14 +1,14 @@
 ---
 title: Sitem Artık Açık Kaynak!
 description: Yaklaşık bir buçuk yıldır yönettiğim ve içerik girdiğim, sürekli geliştirip bir süre önce Vue'ya geçirdiğim sitemi açık kaynak olarak GitHub üzerinde paylaştım!
-image: https://i.imgur.com/hYcFlv4.jpeg
+image: https://i.imgur.com/zTuJXvg.jpg
 tags:
   - haber
   - site
-related: blog-yenilendi, vue-nuxt-nedir
+related:
+  - blog-yenilendi
+  - vue-nuxt-nedir
 ---
-
-https://i.imgur.com/VVVdtL0.png
 
 Uzun süre önce hayata geçirdiğim, ilk olarak **eggsy.codes** alan adı altında hizmet vermeye başlayan, botumu kapattıktan sonra yaptığım projeleri listelediğim kişisel sitem, bir süre önce hem sistemsel değişiklikler hem de alan adı değişikliği sonrası daha iyi hâle gelmesi ve son zamanlarda açık kaynak projelere desteğimin artması, ilgimin çoğalması dolayısıyla bu sitemi de, tüm kodları ile birlikte açık kaynak yapma kararı aldım.
 

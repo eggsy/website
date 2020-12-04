@@ -7,7 +7,8 @@ tags:
   - eklenti
   - proje
 createdAt: 2020-01-29T20:18:39.078Z
-related: imgur-please-artik-unblock-please
+related:
+  - imgur-please-artik-unblock-please
 ---
 
 > Imgur Please eklentisi, 01.08.2020 tarihiyle **Unblock Please** adını almış ve sadece Imgur resimlerinin engelini kaldırmakla yetinmeyip aynı zamanda Pastebin engelini de kaldırmaya başlamıştır. Bu gönderi, Imgur Please hakkındadır ve blogdan kaldırılmayacaktır. Unblock Please hakkında güncel ve yeni yazılmış yazıya gitmek için [buraya](/blog/gonderi/imgur-please-artik-unblock-please) tıklayabilirsiniz.

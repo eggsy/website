@@ -1,63 +1,48 @@
-import { resolve } from "path"
+// Import base config
+import buildModules from "./config/buildModules"
+import components from "./config/components"
+import css from "./config/css"
+import head from "./config/head"
+import loader from "./config/loader"
+import modules from "./config/modules"
+import plugins from "./config/plugins"
 
+// Import module specific configs
+import content from "./config/modules/content"
+import dotenv from "./config/modules/dotenv"
+import firebase from "./config/modules/firebase"
+import pwa from "./config/modules/pwa"
+import sitemap from "./config/modules/sitemap"
+import tailwindcss from "./config/modules/tailwindcss"
+
+// Set options as variables
+const rootDir = "./"
+const srcDir = "src"
+const target = "static"
+const ssr = true
+const server = {
+  host: "0.0.0.0",
+  port: "3000",
+}
+
+// Export all collected data
 export default {
-  rootDir: "./",
-  srcDir: "src",
-  target: "static",
-  ssr: false,
-  head: {
-    title: "eggsy.xyz",
-    titleTemplate: "%s - eggsy.xyz",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-    ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-      },
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap",
-      },
-    ],
-  },
-  components: [
-    "~/components",
-    {
-      path: "~/components/Card/",
-      prefix: "Card",
-    },
-  ],
-  css: ["@/stylesheets/root"],
-  buildModules: ["@nuxtjs/eslint-module", "@nuxtjs/tailwindcss"],
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/content"],
-  plugins: [
-    /*
-      Not yet needed
-      {
-        src: "@/plugins/Anime",
-        mode: "client",
-      },
-    */
-    {
-      src: "@/plugins/Ripple",
-      mode: "client",
-    },
-  ],
-  tailwindcss: {
-    configPath: resolve("./tailwind.config.js"),
-  },
-  pwa: {
-    manifest: {
-      name: "eggsy.xyz",
-      short_name: "eggsy.xyz",
-      theme_color: "#f56565",
-      lang: "en",
-    },
-  },
+  server,
+  rootDir,
+  srcDir,
+  target,
+  ssr,
+  head,
+  loader,
+  buildModules,
+  components,
+  css,
+  modules,
+  plugins,
+  content,
+  dotenv,
+  firebase,
+  pwa,
+  sitemap,
+  tailwindcss,
 }

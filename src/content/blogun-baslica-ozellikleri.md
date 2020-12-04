@@ -6,7 +6,9 @@ tags:
   - blog
   - haber
 createdAt: 2020-01-09T03:26:00.000Z
-related: blog-yenilendi, nedir-bu-blog
+related:
+  - blog-yenilendi
+  - nedir-bu-blog
 ---
 
 > Bu yazı, blogun yayınlanan ilk sürümünden olup, şuanki blog için geçerliliğini yitirmiş ve resimler hiçbir geçerli sistemi yansıtmamaktadır. Gönderiyi incelemek isteyenler inceleyebilir ancak gönderide gösterilen resimlerin geçerli hiçbir sayfayı yansıtmadığını lütfen unutmayın. Bu blog güncellemesi ile ilgili daha fazla bilgi almak için [bu sayfayı](/blog/gonderi/blog-yenilendi) ziyaret edin.
@@ -37,7 +39,7 @@ Ana sayfadan şimdilik bu kadar. İlerleyen zamanlarda pek bir değişiklik yapa
   <img src="https://the-person-under-this-message.is-inside.me/saAFY5FM.png" alt="image" />
 </p>
 
-Yan menüden başka her sayfada görünen yönlendirme çubukları ve arama kısmı ise hem mobilde, hem masaüstünde sayfalara daha hızlı ulaşıp bulmak istediğiniz gönderileri aramanızı sağlıyor. Arama sonuçları, yazılmış tüm gönderiler arasında belirtilen kelimeleri içeren başlığa sahip gönderileri tarihlerine göre sıralayıp size gösterecektir. On numara bir arama denemez ama zamanla bunun üzerinde de çalışırsam bu yazıyı burada göremeyebilirsiniz :smiling:
+Yan menüden başka her sayfada görünen yönlendirme çubukları ve arama kısmı ise hem mobilde, hem masaüstünde sayfalara daha hızlı ulaşıp bulmak istediğiniz gönderileri aramanızı sağlıyor. Arama sonuçları, yazılmış tüm gönderiler arasında belirtilen kelimeleri içeren başlığa sahip gönderileri tarihlerine göre sıralayıp size gösterecektir. On numara bir arama denemez ama zamanla bunun üzerinde de çalışırsam bu yazıyı burada göremeyebilirsiniz 😅
 
 <p class="text-center">
   <img src="https://the-person-under-this-message.is-inside.me/44GrkwLo.gif" alt="image" />

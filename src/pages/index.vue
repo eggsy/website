@@ -7,13 +7,33 @@
             class="rounded-full shadow-lg"
             alt="irl image"
             src="https://eggsy.xyz/images/irl_image.jpg"
+            data-not-lazy
             draggable="false"
           />
         </div>
 
-        <span class="'text-xl text-gray-900 dark:text-gray-200"
+        <span class="text-xl text-gray-900 dark:text-gray-200"
           >Abdulbaki "EGGSY" Dursun</span
         >
+      </div>
+
+      <!-- News -->
+      <div
+        v-if="news.available"
+        v-ripple
+        :class="{
+          'sm:flex sm:items-center sm:space-x-2 text-center sm:text-left w-full py-4 px-6 rounded-md': true,
+          'cursor-pointer': news.url,
+          [news.color]: true,
+        }"
+        @click="news.url ? open(news.url) : false"
+      >
+        <icon
+          v-if="news.icon"
+          :name="news.icon"
+          class="h-10 w-10 hidden sm:block"
+        />
+        <span>{{ news.message }}</span>
       </div>
 
       <div
@@ -26,6 +46,7 @@
               :left="new Date().getFullYear() - 2017"
               right-up="Years"
               right-down="Of experience"
+              class="mb-4"
             />
 
             <div class="grid grid-cols-1 gap-2">
@@ -45,6 +66,7 @@
               :left="2"
               right-up="Years"
               right-down="Of business activity"
+              class="mb-4"
             />
 
             <div class="grid grid-cols-1 gap-2">
@@ -64,6 +86,7 @@
               :left="4"
               right-up="Years"
               right-down="Of formal education"
+              class="mb-4"
             />
 
             <div class="grid grid-cols-1 gap-2">
@@ -87,27 +110,7 @@
         >
           <div class="sm:grid sm:grid-cols-2">
             <div class="flex items-center space-x-2">
-              <div>
-                <svg
-                  class="h-16 w-16 dark:text-gray-200"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path fill="transparent" d="M12 14l9-5-9-5-9 5 9 5z" />
-                  <path
-                    fill="transparent"
-                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                  />
-                </svg>
-              </div>
+              <icon name="academic-hat" class="h-16 w-16 dark:text-gray-200" />
 
               <div class="leading-none">
                 <span
@@ -138,27 +141,12 @@
                 >
               </div>
 
-              <div>
-                <svg
-                  class="h-16 w-16 dark:text-gray-300"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"
-                  />
-                </svg>
-              </div>
+              <icon name="fingerprint" class="h-16 w-16 dark:text-gray-300" />
             </div>
           </div>
 
           <div class="mt-4 w-full pt-4">
-            <CoolTitle right-down="Introduction" />
+            <CoolTitle class="mb-4" right-down="Introduction" />
 
             <p class="dark:text-gray-200">
               I am a 19 years old Turkish fullstack web developer and an ELT
@@ -174,6 +162,7 @@
               :left="skills.length"
               right-up="Main"
               right-down="Technologies that I use"
+              class="mb-4"
             />
 
             <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
@@ -192,14 +181,15 @@
               :left="12"
               right-up="Hobbies"
               right-down="And free time activities"
+              class="mb-4"
             />
 
             <div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
               <Hobby
-                v-for="(hobby, index) of hobbies"
+                v-for="(hobby, index) in hobbies"
                 :key="`hobby-${index}`"
-                :title="hobby"
-                :icon="hobby.toLowerCase()"
+                :title="hobby.name"
+                :icon="hobby.icon"
               />
             </div>
           </div>
@@ -207,31 +197,34 @@
       </div>
 
       <div class="w-11/12 sm:w-10/12 mx-auto my-10 space-y-4">
-        <CoolTitle class="text-center" right-down="Latest blog posts" />
+        <CoolTitle
+          class="mb-4 text-center justify-center"
+          right-down="Visit other pages!"
+        />
 
         <div
-          v-if="$fetchState.pending || $fetchState.error"
-          class="sm:grid sm:grid-cols-3 sm:gap-4 space-y-4 sm:space-y-0"
+          class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 space-y-4 sm:space-y-0"
         >
-          <SkeletonLoader v-for="key in 3" :key="`loader-${key}`" type="post" />
-        </div>
+          <nuxt-link
+            to="/blog"
+            class="bg-gray-100 hover:bg-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl select-none"
+          >
+            <icon name="document" class="h-10 w-10" />
+            <span>Blog</span>
+          </nuxt-link>
 
-        <div
-          v-else-if="posts.length > 0"
-          class="sm:grid sm:grid-cols-3 sm:gap-4 space-y-4 sm:space-y-0"
-          @click="$router.push('/blog')"
-        >
-          <CardPost
-            v-for="(post, index) in posts"
-            :key="`post-${index}`"
-            :post="post"
-          />
+          <a
+            class="bg-gray-100 hover:bg-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl cursor-not-allowed select-none"
+          >
+            <icon name="clipboard-list" class="h-10 w-10" />
+            <span>PreMiD (WIP)</span>
+          </a>
         </div>
       </div>
 
       <div class="w-full sm:w-3/12 mx-auto text-center my-10 space-y-4">
         <div>
-          <CoolTitle right-down="Was it all?" />
+          <CoolTitle class="mb-4 justify-center" right-down="Was it all?" />
           <span class="text-gray-700 dark:text-gray-300"
             >Nope, don't forget to check out my social media accounts</span
           >
@@ -247,6 +240,9 @@
 export default {
   data() {
     return {
+      news: {
+        available: false,
+      },
       experiences: {
         job: [
           {
@@ -337,33 +333,38 @@ export default {
         },
       ],
       hobbies: [
-        "Programming",
-        "Reading",
-        "Photography",
-        "Chatting",
-        "Movies",
-        "Camping",
-        "Travelling",
-        "Music",
-        "Shopping",
-        "Swimming",
-        "Parties",
-        "Handwork",
+        { name: "Programming", icon: "terminal" },
+        { name: "Reading", icon: "book-open" },
+        { name: "Photography", icon: "camera" },
+        { name: "Chatting", icon: "chat" },
+        { name: "Movies", icon: "movie" },
+        { name: "Camping", icon: "fire" },
+        { name: "Travelling", icon: "map" },
+        { name: "Music", icon: "music" },
+        { name: "Shopping", icon: "shopping-cart" },
+        { name: "Swimming", icon: "help" },
+        { name: "Parties", icon: "party" },
+        { name: "Handwork", icon: "scissors" },
       ],
       posts: [],
     }
   },
+  fetchOnServer: false,
   async fetch() {
-    const latestPosts = await this.$content()
-      .limit(3)
-      .sortBy("createdAt", "desc")
-      .without(["body"])
-      .fetch()
-
-    this.posts = latestPosts
+    const news = await this.$getNews()
+    if (news && news.available !== undefined && news.available === true) {
+      this.news = news
+      this.news.available = true
+    }
   },
   head: {
     title: "Home",
+  },
+  methods: {
+    open(url) {
+      if (!url.startsWith("https://")) return this.$router.push(url)
+      else return window.open(url, "_self")
+    },
   },
 }
 </script>

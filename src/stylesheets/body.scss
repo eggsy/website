@@ -2,9 +2,15 @@ html,
 body {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
+  scroll-padding: 55px;
 }
 
 // Remove blue highlight from mobile users
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+// Scrollbar
+.scrollbar-thin {
+  @apply scrollbar-track-gray-700 scrollbar-thumb-gray-900;
 }

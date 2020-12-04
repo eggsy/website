@@ -4,6 +4,16 @@ module.exports = {
     content: ["./components/**/*.vue"],
   },
   theme: {
+    extend: {
+      colors: {
+        social: {
+          twitter: "#1DA1F2",
+          discord: "#7289DA",
+          telegram: "#2EAADE",
+          whatsapp: "#25D366",
+        },
+      },
+    },
     fontFamily: {
       sans: ["Inter", "sans-serif"],
     },
@@ -16,4 +26,5 @@ module.exports = {
       },
     },
   },
+  plugins: [require("tailwind-scrollbar")],
 }

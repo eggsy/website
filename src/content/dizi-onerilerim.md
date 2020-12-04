@@ -3,71 +3,71 @@ title: Dizi Önerilerim
 description: Son 2 yılda izlediğim tüm yabancı dizileri, kısa açıklamaları ve 10 üzerinden puanlamalarıyla birlikte sizlerle paylaştığım gönderi. Ayrıca, her yeni dizi bitirdiğimde, bu listeyi de güncelleyeceğim.
 image: https://i.imgur.com/CX60mBJ.png
 tags:
-    - dizi
-    - video
+  - dizi
+  - video
 createdAt: 2020-02-14T14:40:38.470Z
 ---
 
-Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim özelliklerden birisi olan "etiket sistemi" olarak adlandırdığım, sizin belirlediğiniz bir etiket ile istediğiniz bir şeyi not almanızı sağlayan güzelim o komuttu. O komut sayesinde dizi önerilerimi sorulduğunda neredeyse her sunucuda kolayca gösterebiliyor ve kimseyi uğraştırmamış oluyordum. Bugün bir dizi daha bitirdikten sonra "neden bunu bloga yazmayayım?" dedim, üstelik daha fazla açıklama olur ve burası da boş kalmaz :smile: Daha fazla uzatmadan direkt olarak aşağıdaki puanlama listesine geçebilir, eğer isterseniz listenin altına inerek listedeki sırasına göre yazdığım tüm diziler hakkında ne düşündüğümü bulabilir ve dizilerin hepsinin yayınlanan resmi fragmanlarına ulaşabilirsiniz. Ayrıca, bu gönderi, yeni bir dizi önerim olduğunda güncellenecektir. O yüzden takipte kalın!
+Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim özelliklerden birisi olan "etiket sistemi" olarak adlandırdığım, sizin belirlediğiniz bir etiket ile istediğiniz bir şeyi not almanızı sağlayan güzelim o komuttu. O komut sayesinde dizi önerilerimi sorulduğunda neredeyse her sunucuda kolayca gösterebiliyor ve kimseyi uğraştırmamış oluyordum. Bugün bir dizi daha bitirdikten sonra "neden bunu bloga yazmayayım?" dedim, üstelik daha fazla açıklama olur ve burası da boş kalmaz 😅 Daha fazla uzatmadan direkt olarak aşağıdaki puanlama listesine geçebilir, eğer isterseniz listenin altına inerek listedeki sırasına göre yazdığım tüm diziler hakkında ne düşündüğümü bulabilir ve dizilerin hepsinin yayınlanan resmi fragmanlarına ulaşabilirsiniz. Ayrıca, bu gönderi, yeni bir dizi önerim olduğunda güncellenecektir. O yüzden takipte kalın!
 
-Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere :laughing:
+Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂
 
 <table>
     <tbody>
         <tr>
-            <td><span>10/10</span> Daredevil</td>
-            <td><span>10/10</span> Love, Death & Robots</td>
+            <td><Rating name="Daredevil" rating="10/10"></Rating></td>
+            <td><Rating name="Love, Death & Robots" rating="10/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>10/10</span> Prison Break</td>
-            <td><span>9.5/10</span> Élite</td>
+            <td><Rating name="Prison Break" rating="10/10"></Rating></td>
+            <td><Rating name="Élite" rating="9.5/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>9.5/10</span> The Witcher</td>
-            <td><span>9.5/10</span> Rise of Empires: Ottoman</td>
+            <td><Rating name="The Witcher" rating="9.5/10"></Rating></td>
+            <td><Rating name="Rise of Empires: Ottoman" rating="9.5/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>9.5/10</span> The Mandalorian</td>
-            <td><span>9.0/10</span> La Casa de Papel</td>
+            <td><Rating name="The Mandalorian" rating="9.5/10"></Rating></td>
+            <td><Rating name="La Casa de Papel" rating="9.5/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>9.0/10</span> Sex Education</td>
-            <td><span>9.0/10</span> Locke & Key</td>
+            <td><Rating name="Sex Education" rating="9.0/10"></Rating></td>
+            <td><Rating name="Locke & Key" rating="9.0/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>9.0/10</span> Stranger Things</td>
-            <td><span>9.0/10</span> See</td>
+            <td><Rating name="Stranger Things" rating="9.0/10"></Rating></td>
+            <td><Rating name="See" rating="9.0/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>9.0/10</span> Sherlock</td>
-            <td><span>9.0/10</span> Snowpiercer</td>
+            <td><Rating name="Sherlock" rating="9.0/10"></Rating></td>
+            <td><Rating name="Snowpiercer" rating="9.0/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>9.0/10</span> Sense8</td>
-            <td><span>9.0/10</span> Chilling Adventures of Sabrina</td>
+            <td><Rating name="Sense8" rating="9.0/10"></Rating></td>
+            <td><Rating name="Chilling Adventures of Sabrina" rating="9.0/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>9.0/10</span> Altered Carbon</td>
-            <td><span>8.5/10</span> Aşk 101</td>
+            <td><Rating name="Altered Carbon" rating="9.0/10"></Rating></td>
+            <td><Rating name="Aşk 101" rating="8.5/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>8.5/10</span> The Order</td>
-            <td><span>8.5/10</span> BoJack Horseman</td>
+            <td><Rating name="The Order" rating="8.5/10"></Rating></td>
+            <td><Rating name="BoJack Horseman" rating="8.5/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>8.5/10</span> Rick and Morty</td>
-            <td><span>8.5/10</span> Lost in Space</td>
+            <td><Rating name="Rick and Morty" rating="8.5/10"></Rating></td>
+            <td><Rating name="Lost in Space" rating="8.5/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>8.0/10</span> The Haunting of Hill House</td>
-            <td><span>8.0/10</span> You</td>
+            <td><Rating name="The Haunting of Hill House" rating="8.0/10"></Rating></td>
+            <td><Rating name="You" rating="8.0/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>8.0/10</span> Lucifer</td>
-            <td><span>8.0/10</span> The Umbrella Academy</td>
+            <td><Rating name="Lucifer" rating="8.0/10"></Rating></td>
+            <td><Rating name="The Umbrella Academy" rating="8.0/10"></Rating></td>
         </tr>
         <tr>
-            <td><span>8.0/10</span> Ragnarok</td>
+            <td><Rating name="Ragnarok" rating="8.0/10"></Rating></td>
         </tr>
     </tbody>
 
@@ -187,4 +187,4 @@ Bu dizi, çıkış yaparken oldukça iddialı bir çıkış yapmasına rağmen b
 Konusu güzel, sezonu kısa, ana karakter de bir o kadar sıkıcı bir dizi. Ama yine de potansiyeli olduğundan beğendiğim söylenebilir. Genel olarak işleniş "yahu tamam işte ne olduğun belli, kullansana güçlerini" dedirtecek şekilde ilerliyor ancak sanırım bu da yeni sezonunu insanlara "acaba istediklerim olacak mı" merakıyla izletecek olan bir dizi... Fragmanına [buradan](https://www.youtube.com/watch?v=7H9AaiBLHCo) ulaşabilirsiniz.
 
 Böylelikle listenin sonuna gelmeyi başarabildik, unutmayın; her yeni dizi bitirdiğimde; bu yazıyı
-güncelleyeceğim ve yeni eklediğim dizilerin yanına <span class="new">Yeni</span> işareti koyacağım. Şimdilik bu kadar dizi size uzun bir süre yetecektir 😅 İyi seyirler!
+güncelleyeceğim. Şimdilik bu kadar dizi size uzun bir süre yetecektir 😅 İyi seyirler!

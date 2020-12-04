@@ -53,5 +53,3 @@ Resimde gösterilen yerlerden sizin kullanmanız için tek ihtiyacınız olan k�
 GIF'de gördüğünüz işlemlerden "Yakalama Sonrası" yapılacak seçeneklerin içerisinden "Resim düzenleyicide aç" seçeneğini de aktifleştirirseniz, yukarıdaki kontrol paneli resminde gördüğünüz gibi düzenlemeler yapabilir ve yükleyebilirsiniz.
 
 ShareX sadece Windows'ta mevcut olduğundan dolayı yukarıda gördüğünüz tüm yazı sadece Windows'ta geçerli olacaktır. Eğer bir Linux kullanıcısıysanız ve yine de is-inside.me servisini kullanmak istiyorsanız KShare adındaki programı kullanabilirsiniz. Site üzerindeki adımları takip ederek o yükleyici ile de yükleme işlemlerinizi gerçekleştirebilirsiniz.
-
-_Havalı, değil mi? :sunglasses:_

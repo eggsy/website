@@ -7,7 +7,9 @@ tags:
   - linux
   - arch
 createdAt: 2020-01-09T01:57:28.803Z
-related: aur-discord-yukleme, manjaro-nedir
+related:
+  - aur-discord-yukleme
+  - manjaro-nedir
 ---
 
 Eğer AUR'un ne olduğunu, bilmiyorsanız [bu gönderiyi](/blog/gonderi/manjaro-nedir) de okumanızı tavsiye ediyorum. Bu sayfada sadece başlıkta belirtilen AUR desteğini aktifleştirme anlatılacaktır.
