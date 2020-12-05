@@ -196,7 +196,66 @@
         </section>
       </div>
 
-      <div class="w-11/12 sm:w-10/12 mx-auto my-10 space-y-4">
+      <section class="w-11/12 sm:w-10/12 mx-auto my-10 space-y-4">
+        <CoolTitle
+          class="mb-4 text-center justify-center"
+          right-down="GitHub Repositories"
+        />
+
+        <div
+          v-if="$fetchState.pending"
+          class="grid grid-cols-1 sm:grid-cols-3 gap-2"
+        >
+          <SkeletonLoader
+            v-for="item in 6"
+            :key="`repo-skeleton-${item}`"
+            type="repository"
+          />
+        </div>
+
+        <div
+          v-else-if="$fetchState.error"
+          class="flex items-center justify-center p-4 font-semibold text-gray-800 bg-gray-100 rounded-md cursor-not-allowed"
+        >
+          Couldn't load GitHub Repositories
+        </div>
+
+        <div
+          v-else-if="
+            $fetchState.pending === false &&
+            !$fetchState.error &&
+            repos.length > 0
+          "
+          class="grid grid-cols-1 sm:grid-cols-3 gap-2"
+        >
+          <a
+            v-for="(repo, index) in repos"
+            :key="`repo-${index}`"
+            :href="repo.html_url"
+            target="_blank"
+            class="bg-gray-100 hover:bg-gray-200 rounded-md p-4 text-gray-700"
+          >
+            <div class="flex space-x-1 items-center mb-2">
+              <div class="flex-grow truncate hover:underline">
+                <span class="block text-gray-800 truncate">{{
+                  repo.name
+                }}</span>
+                <span class="block text-xs text-gray-500">{{
+                  repo.language
+                }}</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <span>{{ repo.stargazers_count }}</span>
+                <icon name="star-filled" class="h-6 w-6 text-gray-700" />
+              </div>
+            </div>
+
+            <p class="text-sm text-gray-500">{{ repo.description }}</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="w-11/12 sm:w-10/12 mx-auto my-10 space-y-4">
         <CoolTitle
           class="mb-4 text-center justify-center"
           right-down="Visit other pages!"
@@ -220,9 +279,9 @@
             <span>PreMiD (WIP)</span>
           </a>
         </div>
-      </div>
+      </section>
 
-      <div class="w-full sm:w-3/12 mx-auto text-center my-10 space-y-4">
+      <section class="w-full sm:w-3/12 mx-auto text-center my-10 space-y-4">
         <div>
           <CoolTitle class="mb-4 justify-center" right-down="Was it all?" />
           <span class="text-gray-700 dark:text-gray-300"
@@ -231,7 +290,7 @@
         </div>
 
         <Socials />
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -243,6 +302,7 @@ export default {
       news: {
         available: false,
       },
+      repos: [],
       experiences: {
         job: [
           {
@@ -346,16 +406,28 @@ export default {
         { name: "Parties", icon: "party" },
         { name: "Handwork", icon: "scissors" },
       ],
-      posts: [],
     }
   },
   fetchOnServer: false,
   async fetch() {
     const news = await this.$getNews()
+
     if (news && news.available !== undefined && news.available === true) {
       this.news = news
       this.news.available = true
     }
+
+    const { data: repos } = await this.$axios.get(
+      "https://api.github.com/users/eggsy/repos"
+    )
+    const dontDisplayRepositories = ["eggsy", "DBM", "eggsywashere.github.io"]
+
+    this.repos = repos
+      ?.filter(
+        (repo) =>
+          repo.fork === false && !dontDisplayRepositories.includes(repo.name)
+      )
+      ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count)
   },
   head: {
     title: "Home",
