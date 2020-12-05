@@ -108,7 +108,7 @@
           </div>
 
           <div
-            class="flex space-x-4 overflow-x-auto overflow-y-hidden sm:hidden share-small"
+            class="flex space-x-4 overflow-x-auto overflow-y-hidden sm:hidden share-small rounded-md pr-1"
           >
             <div class="flex items-center space-x-2" @click="share('twitter')">
               <icon name="twitter" class="h-6 w-6 text-social-twitter" />
@@ -424,7 +424,11 @@ export default {
   }
 
   &-small {
-    @apply mx-auto bg-gray-100 hover:bg-gray-200 cursor-pointer p-3;
+    @apply mx-auto bg-gray-100 cursor-pointer;
+
+    > div {
+      @apply hover:bg-gray-200 p-3;
+    }
   }
 }
 
@@ -471,6 +475,19 @@ export default {
 
     &:not(:last-child) {
       @apply mb-4;
+    }
+  }
+
+  /* Ratings */
+  .ratings {
+    @apply space-y-px mb-4;
+
+    .ratings-container {
+      @apply flex items-center space-x-2;
+
+      .rating {
+        @apply bg-red-600 hover:bg-red-700 select-none w-16 px-2 py-px rounded-md text-gray-100 font-semibold text-center;
+      }
     }
   }
 

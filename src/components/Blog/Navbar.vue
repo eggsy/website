@@ -2,7 +2,7 @@
   <nav class="w-full fixed top-0 z-40 left-0 bg-gray-900">
     <!-- Desktop Navbar -->
     <div
-      class="hidden sm:block container shadow-lg mx-auto bg-gray-900 font-medium text-gray-200"
+      class="hidden sm:block truncate container shadow-lg mx-auto bg-gray-900 font-medium text-gray-200"
     >
       <ul class="flex">
         <nuxt-link to="/blog" class="hover:bg-gray-800 px-4 py-2">
@@ -84,6 +84,18 @@
 
           <ul>
             <nuxt-link
+              v-if="$route.path !== '/blog'"
+              to="/blog"
+              class="hover:bg-gray-800 block px-4 py-4 truncate"
+            >
+              <li class="flex items-center space-x-2">
+                <icon name="home" class="h-6 w-6" />
+                <span>Ana Sayfa</span>
+              </li>
+            </nuxt-link>
+
+            <nuxt-link
+              v-else
               to="/"
               class="hover:bg-gray-800 block px-4 py-4 truncate"
             >
@@ -119,7 +131,10 @@
                 class="h-6 w-6 cursor-not-allowed"
               />
 
-              <div v-else class="flex items-center space-x-2">
+              <div
+                v-else
+                class="flex items-center space-x-2 cursor-pointer select-none"
+              >
                 <icon name="music-note" class="h-6 w-6" />
                 <span>Günlük Müzik</span>
               </div>

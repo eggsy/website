@@ -14,6 +14,13 @@ export default {
     htmlAttrs: {
       lang: "tr",
     },
+    meta: [
+      {
+        hid: "og:site_name",
+        name: "og:site_name",
+        content: "eggsy.xyz - blog",
+      },
+    ],
   },
 }
 </script>

@@ -123,6 +123,10 @@ export default {
         case "indigo":
           option = "bg-indigo-700 hover:bg-indigo-800"
           break
+        case "mobile-indigo":
+          option =
+            "bg-indigo-700 hover:bg-indigo-800 sm:bg-gray-800 sm:hover:bg-gray-900"
+          break
         default:
           option = "bg-gray-800 hover:bg-gray-900"
           break

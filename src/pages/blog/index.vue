@@ -82,7 +82,7 @@
             }"
             :class="{ 'sm:col-span-2': index === 0, truncate: true }"
           >
-            <CardPost :post="post" :image="false" />
+            <CardPost :post="post" :image="false" color="mobile-indigo" />
           </nuxt-link>
         </div>
       </div>
@@ -227,6 +227,7 @@ export default {
         content:
           "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
       },
+      // Twitter
       {
         hid: "twitter:title",
         name: "twitter:title",
@@ -238,11 +239,7 @@ export default {
         content:
           "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
       },
-      {
-        hid: "og:site_name",
-        name: "og:site_name",
-        content: "eggsy.xyz - blog",
-      },
+      // Open-Graph
       { hid: "og:title", name: "og:title", content: "EGGSY's Blog" },
       {
         hid: "og:description",
@@ -250,7 +247,7 @@ export default {
         content:
           "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
       },
-
+      // PreMiD
       { name: "premid-details", content: "Viewing a blog page:" },
       { name: "premid-state", content: "Homepage" },
     ],

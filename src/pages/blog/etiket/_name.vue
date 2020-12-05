@@ -89,7 +89,6 @@ export default {
       posts: [],
     }
   },
-
   async fetch() {
     if (!this.$route.params) return
 
@@ -100,6 +99,69 @@ export default {
       .fetch()
 
     this.posts = posts
+  },
+  head() {
+    const tagName = this.$route.params?.name
+      ? this.$route.params?.name[0].toUpperCase() +
+        this.$route.params?.name.slice(1).toLowerCase()
+      : "Belirsiz"
+
+    const title = `${tagName} Etiketine Sahip Gönderiler`
+    const description = `Blog üzerinde ${tagName} etiketine sahip gönderilere bu adresten ulaşın!`
+
+    const object = {
+      title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `blog, etiket, eggsy, ${tagName}`,
+        },
+        // Open-Graph
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: title,
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
+        },
+        {
+          hid: "og:url",
+          name: "og:url",
+          content: `https://eggsy.xyz/blog/etiket/${this.$route?.params?.name}`,
+        },
+        // Twitter
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+        // PreMiD
+        {
+          name: "premid-details",
+          content: "Bir Etikete Göz Atıyor:",
+        },
+        {
+          name: "premid-state",
+          content: tagName,
+        },
+      ],
+    }
+
+    return object
   },
   watch: {
     "$route.params": "refresh",

@@ -20,10 +20,10 @@
     "firebase": "^8.1.2",
     "nuxt": "^2.14.9",
     "prism-themes": "^1.5.0",
-    "sass": "^1.29.0",
+    "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
     "tailwind-scrollbar": "^1.0.1",
-    "tailwindcss": "^2.0.1-compat",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-animejs": "^2.1.1",
     "vue-rip": "^1.2.6"
   },
@@ -32,13 +32,15 @@
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.1",
     "@nuxtjs/svg": "^0.1.12",
-    "@nuxtjs/tailwindcss": "^3.3.1",
+    "@nuxtjs/tailwindcss": "^3.3.3",
+    "autoprefixer": "9",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.14.0",
+    "eslint": "^7.15.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-vue": "^7.2.0",
+    "postcss": "7",
     "prettier": "^2.2.1"
   }
 }

@@ -86,12 +86,16 @@ export default {
   layout: "blog",
   data() {
     return {
-      query: "",
+      query:
+        this.$route?.query?.q ||
+        this.$route?.query?.search ||
+        this.$route?.query?.query ||
+        this.$route?.query?.sorgu ||
+        "",
       fetchCalled: false,
       posts: [],
     }
   },
-
   async fetch() {
     if (!this.query) return
 
@@ -115,10 +119,72 @@ export default {
 
     this.posts = posts
   },
+  head() {
+    const query = this.query
+      ? this.query[0].toUpperCase() + this.query.slice(1).toLowerCase()
+      : "Belirsiz"
+
+    const title = `${query} Araması İçin Sonuçlar`
+    const description = `Blog üzerinde "${query}" arayın ve bu sorguyu içeren blog yazılarına ulaşın!`
+
+    const object = {
+      title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `blog, etiket, arama, eggsy, ${query}`,
+        },
+        // Open-Graph
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: title,
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
+        },
+        {
+          hid: "og:url",
+          name: "og:url",
+          content: `https://eggsy.xyz/blog/ara`,
+        },
+        // Twitter
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+        // PreMiD
+        {
+          name: "premid-details",
+          content: "Bir Etikete Göz Atıyor:",
+        },
+        {
+          name: "premid-state",
+          content: query,
+        },
+      ],
+    }
+
+    return object
+  },
   watch: {
     "$route.query": "refresh",
   },
-  created() {
+  beforeMount() {
     this.refresh()
   },
   methods: {
@@ -128,7 +194,7 @@ export default {
         this.$route?.query?.search ||
         this.$route?.query?.query ||
         this.$route?.query?.sorgu ||
-        null
+        ""
 
       this.query = query
 
