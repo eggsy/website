@@ -6,6 +6,7 @@ import head from "./config/head"
 import loader from "./config/loader"
 import modules from "./config/modules"
 import plugins from "./config/plugins"
+import router from "./config/router"
 
 // Import module specific configs
 import content from "./config/modules/content"
@@ -31,6 +32,7 @@ export default {
   rootDir,
   srcDir,
   target,
+  router,
   ssr,
   head,
   loader,
