@@ -4,7 +4,7 @@ export default {
     routes.push({
       name: "discord",
       path: "/discord/",
-      component: resolve(__dirname, "pages/index.vue"),
+      component: resolve("@/pages/index.vue"),
     })
   },
 }
