@@ -133,6 +133,7 @@
                   href="http://egitim.alparslan.edu.tr/?utm_source=eggsy.xyz"
                   title="I'm gonna be a teacher!"
                   target="_blank"
+                  rel="nofollow"
                   >MŞÜ ELT</a
                 >
               </div>
@@ -144,6 +145,7 @@
                   class="block text-gray-700 dark:text-gray-300 font-medium hover:underline"
                   href="mailto:eggsydev@gmail.com"
                   title="Mail me!"
+                  rel="nofollow"
                   >eggsydev@gmail.com</a
                 >
                 <span
@@ -244,6 +246,7 @@
             :key="`repo-${index}`"
             :href="repo.html_url"
             target="_blank"
+            rel="nofollow"
           >
             <CardRepository
               :name="repo.name"
@@ -273,12 +276,13 @@
             <span>Blog</span>
           </nuxt-link>
 
-          <a
+          <div
             class="bg-gray-100 hover:bg-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl cursor-not-allowed select-none"
+            rel="nofollow"
           >
             <icon name="clipboard-list" class="h-10 w-10" />
             <span>PreMiD (WIP)</span>
-          </a>
+          </div>
         </div>
       </section>
 

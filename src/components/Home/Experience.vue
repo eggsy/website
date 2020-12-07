@@ -11,6 +11,7 @@
         class="block truncate hover:underline font-bold text-gray-800 dark:text-gray-400"
         :href="`${url}?utm_source=eggsy.xyz`"
         target="_blank"
+        rel="nofollow"
         >{{ title }}</a
       >
       <span class="block truncate text-gray-600 dark:text-gray-500">{{
