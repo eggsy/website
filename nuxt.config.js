@@ -11,6 +11,7 @@ import plugins from "./config/plugins"
 import content from "./config/modules/content"
 import dotenv from "./config/modules/dotenv"
 import firebase from "./config/modules/firebase"
+import optimizedImages from "./config/modules/optimizedImages"
 import pwa from "./config/modules/pwa"
 import sitemap from "./config/modules/sitemap"
 import tailwindcss from "./config/modules/tailwindcss"
@@ -42,6 +43,7 @@ export default {
   content,
   dotenv,
   firebase,
+  optimizedImages,
   pwa,
   sitemap,
   tailwindcss,

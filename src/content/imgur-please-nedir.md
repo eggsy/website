@@ -1,7 +1,6 @@
 ---
 title: Imgur Please Nedir?
 description: EGGSY'nin yapmış olduğu, internet sayfalarındaki Imgur linklerini ve Imgur resimlerine giden direkt istekleri DuckDuckGo Proxy sunucularını kullanarak erişime açan Imgur Please eklentisi hakkında yazı.
-image: https://i.imgur.com/aqWB6ph.png
 tags:
   - chrome
   - eklenti

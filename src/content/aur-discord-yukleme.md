@@ -1,7 +1,6 @@
 ---
 title: AUR'dan Discord'u Yükleme
 description: Bu gönderide Manjaro ve Arch tabanlı diğer Linux dağıtımlarının kullandığı AUR'dan Discord'un nasıl yükleyebileceğini öğrenebilirsiniz.
-image: https://i.imgur.com/a8Cnqnk.png
 tags:
   - discord
   - linux

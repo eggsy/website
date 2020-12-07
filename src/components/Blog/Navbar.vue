@@ -9,7 +9,7 @@
           <li>Blog</li>
         </nuxt-link>
 
-        <span class="flex-grow"></span>
+        <li class="flex-grow"></li>
 
         <li class="flex items-center mx-auto">
           <input

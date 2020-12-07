@@ -1,7 +1,6 @@
 ---
 title: Discord Server Templates Yayında!
 description: Üç kişi olarak giriştiğimiz, bugüne kadar (kendi) yaptığım en büyük proje olan Discord Server Templates, sonunda yayına geçti!
-image: https://i.imgur.com/xGUF5or.png
 tags:
   - discord
   - server

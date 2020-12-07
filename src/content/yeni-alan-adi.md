@@ -1,7 +1,6 @@
 ---
 title: Yeni Alan Adı!
 description: Eski alan adının yenileme ücretinin aşırılığı dolayısıyla, yeni bir alan adı alarak sitenin tamamını oraya taşıma kararı aldım. Eski alan adı, kalan süresi boyunca otomatik olarak tüm istekleri yeni alan adına yönlendirecek, o yüzden endişe etmenize gerek yok.
-image: https://i.imgur.com/5i6Nj1v.png
 tags:
   - site
   - eggsy

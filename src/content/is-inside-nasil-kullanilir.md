@@ -1,7 +1,6 @@
 ---
 title: is-inside.me Nasıl Kullanılır?
 description: ShareX gibi kendi internet servisinize resim yüklemeyi destekleyen programlar için EGGSY ve Tresmos tarafından geliştirilen is-inside.me sitesi nedir ve nasıl kullanılır?
-image: https://i.imgur.com/ZtgBDH0.png
 tags:
   - sharex
   - is-inside.me

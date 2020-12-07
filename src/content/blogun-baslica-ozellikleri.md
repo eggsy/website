@@ -1,7 +1,6 @@
 ---
 title: Blogun Başlıca Özellikleri
 description: Tamamen sıfırdan hazırlanan, EGGSY'nin gönderilerini tutacağı ve paylaşımlar yapacağı yep yeni blogunun öne çıkan ilginç özellikleri ve blogun genel tanıtımı için bu gönderiyi okuyabilirsiniz.
-image: https://i.imgur.com/pxoNuar.png
 tags:
   - blog
   - haber

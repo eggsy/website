@@ -15,7 +15,7 @@
                 hidden: imageLoaded === false,
               }"
               alt="irl image"
-              src="https://eggsy.xyz/images/irl_image.jpg"
+              src="/assets/images/irl_image.jpg"
               data-not-lazy
               draggable="false"
               @load="imageLoaded = true"

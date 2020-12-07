@@ -133,11 +133,14 @@ export default {
   },
   computed: {
     getPostInfo() {
+      const image =
+        this.post?.image || `/assets/images/posts/${this.post?.slug}.jpg` || ""
+
       return {
         title: this.post.title || "",
         description: this.post.description || "",
-        image: this.post.image || "",
         tags: this.post.tags || "",
+        image,
       }
     },
     getColorOption() {

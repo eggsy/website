@@ -1,7 +1,6 @@
 ---
 title: Discord Sunucum Yenilendi!
 description: Discord botum kapandıktan beri eski hâliyle boş bir şekilde duran sunucumu, aynı bu site gibi projelerimi ve projelerim hakkındaki bilgileri paylaştığım bir sunucuya çevirdim.
-image: https://i.imgur.com/nAdqTDz.png
 tags:
   - discord
 createdAt: 2020-07-10T14:38:39.506Z

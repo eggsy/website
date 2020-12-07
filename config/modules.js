@@ -3,5 +3,7 @@ export default [
   "@nuxtjs/pwa",
   "@nuxt/content",
   "@nuxtjs/firebase",
+  "@nuxtjs/robots",
   "@nuxtjs/sitemap",
+  "@nuxtjs/amp",
 ]

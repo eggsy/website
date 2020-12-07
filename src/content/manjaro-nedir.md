@@ -1,7 +1,6 @@
 ---
 title: Manjaro Nedir?
 description: Bu gönderide en popüler Linux dağıtımlarından biri olan Manjaro Linux'ün basit anlatımını ve birkaç ekstra bilgiyi bulabilirsiniz.
-image: https://i.imgur.com/PVY3szK.png
 tags:
   - manjaro
   - linux

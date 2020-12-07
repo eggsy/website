@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-gray-100 hover:bg-gray-200 rounded-md p-4 text-gray-700">
-    <div class="flex space-x-1 items-center mb-2">
-      <div class="flex-grow truncate space-x-2 text-gray-800 hover:underline">
+  <div class="repository-card">
+    <div class="title-container">
+      <div class="title">
         {{ name }}
       </div>
-      <div class="flex items-center space-x-1">
-        <div class="flex items-center space-x-1">
+      <div class="information">
+        <div class="stars">
           <span>{{ stars }}</span>
           <icon name="star-filled" class="h-6 w-6 text-yellow-600" />
         </div>
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <p class="text-sm text-gray-500">{{ description }}</p>
+    <p class="description">{{ description }}</p>
   </div>
 </template>
 
@@ -57,3 +57,29 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.repository-card {
+  @apply bg-gray-100 hover:bg-gray-200 rounded-md p-4 text-gray-700;
+
+  .title-container {
+    @apply flex space-x-1 items-center mb-2;
+
+    .title {
+      @apply flex-grow truncate space-x-2 text-gray-800 hover:underline;
+    }
+
+    .information {
+      @apply flex items-center space-x-1;
+
+      .stars {
+        @apply flex items-center space-x-1;
+      }
+    }
+  }
+
+  .description {
+    @apply text-sm text-gray-500;
+  }
+}
+</style>

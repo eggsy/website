@@ -238,7 +238,7 @@ export default {
     const description =
       this.post?.description ||
       "EGGSY'nin blogunda bu yazıyı okumaya davet edildin."
-    const image = this.post?.image || false
+    const image = this.getPostImage || false
 
     const object = {
       title,
@@ -324,6 +324,10 @@ export default {
     },
     getToc() {
       return this.post.toc
+    },
+    getPostImage() {
+      if (this.post?.image) return this.post.image
+      else return `/assets/images/posts/${this.post?.slug}`
     },
   },
   beforeDestroy() {
