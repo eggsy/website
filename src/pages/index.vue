@@ -133,7 +133,7 @@
                   href="http://egitim.alparslan.edu.tr/?utm_source=eggsy.xyz"
                   title="I'm gonna be a teacher!"
                   target="_blank"
-                  rel="nofollow"
+                  rel="noreferrer"
                   >MŞÜ ELT</a
                 >
               </div>
@@ -246,7 +246,7 @@
             :key="`repo-${index}`"
             :href="repo.html_url"
             target="_blank"
-            rel="nofollow"
+            rel="noreferrer"
           >
             <CardRepository
               :name="repo.name"
