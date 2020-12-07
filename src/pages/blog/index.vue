@@ -53,8 +53,8 @@
     <!-- Discord Posts -->
     <section v-if="posts.discord && posts.discord.length > 0">
       <div class="flex space-x-2 items-center mb-4">
-        <icon name="discord" class="h-10 w-10" />
-        <CoolTitle right-up="Discord" right-down="İle alakalı gönderiler" />
+        <icon name="discord" class="h-8 w-8" />
+        <CoolTitle right-down="Discord" lang="en" />
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
@@ -100,8 +100,8 @@
       <div class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
         <div>
           <div class="flex space-x-2 items-center mb-4">
-            <icon name="linux" class="h-10 w-10" />
-            <CoolTitle right-up="Linux" right-down="İle alakalı gönderiler" />
+            <icon name="linux" class="h-8 w-8" />
+            <CoolTitle right-down="Linux" lang="en" />
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-2">
@@ -121,8 +121,8 @@
 
         <div>
           <div class="flex items-center space-x-2 mb-4">
-            <icon name="document" class="h-10 w-10" />
-            <CoolTitle right-up="Blog" right-down="İle alakalı gönderiler" />
+            <icon name="document" class="h-8 w-8" />
+            <CoolTitle right-down="Blog" />
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-2">
@@ -144,7 +144,10 @@
 
     <!-- Other Posts -->
     <section v-if="posts.rest && posts.rest.length > 0">
-      <CoolTitle right-down="Diğer gönderiler" class="block mb-4" />
+      <div class="flex items-center space-x-2 mb-4">
+        <icon name="book-open" class="h-8 w-8" />
+        <CoolTitle right-down="Diğer gönderiler" />
+      </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
         <nuxt-link

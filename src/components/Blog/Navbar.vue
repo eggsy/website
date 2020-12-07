@@ -1,8 +1,8 @@
 <template>
-  <nav class="w-full fixed top-0 z-40 left-0 bg-gray-900">
+  <nav class="w-full fixed top-0 z-40 left-0 shadow-lg bg-gray-900">
     <!-- Desktop Navbar -->
     <div
-      class="hidden sm:block truncate container shadow-lg mx-auto bg-gray-900 font-medium text-gray-200"
+      class="hidden sm:block truncate container mx-auto bg-gray-900 font-medium text-gray-200"
     >
       <ul class="flex">
         <nuxt-link to="/blog" class="hover:bg-gray-800 px-4 py-2">

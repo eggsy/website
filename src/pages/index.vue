@@ -1,15 +1,26 @@
 <template>
   <div class="py-10 flex justify-center">
-    <div class="w-11/12 space-y-10 sm:space-y-16">
+    <div class="w-11/12 mx-auto space-y-10 sm:space-y-16">
       <div class="text-center font-semibold pt-5 pb-4 sm:pt-10 sm:pb-8">
         <div class="w-3/6 sm:w-1/6 mx-auto text-center mb-4">
-          <img
-            class="rounded-full shadow-lg"
-            alt="irl image"
-            src="https://eggsy.xyz/images/irl_image.jpg"
-            data-not-lazy
-            draggable="false"
-          />
+          <div
+            :class="{
+              'bg-gray-100 h-48 w-48 rounded-full animate-pulse ring-4 ring-opacity-20 ring-black':
+                imageLoaded === false,
+            }"
+          >
+            <img
+              :class="{
+                'rounded-full ring-4 ring-opacity-20 ring-black': true,
+                hidden: imageLoaded === false,
+              }"
+              alt="irl image"
+              src="https://eggsy.xyz/images/irl_image.jpg"
+              data-not-lazy
+              draggable="false"
+              @load="imageLoaded = true"
+            />
+          </div>
         </div>
 
         <span class="text-xl text-gray-900 dark:text-gray-200"
@@ -196,7 +207,7 @@
         </section>
       </div>
 
-      <section class="w-11/12 sm:w-10/12 mx-auto my-10 space-y-4">
+      <section class="my-10 space-y-4">
         <CoolTitle
           class="mb-4 text-center justify-center"
           right-down="GitHub Repositories"
@@ -233,29 +244,19 @@
             :key="`repo-${index}`"
             :href="repo.html_url"
             target="_blank"
-            class="bg-gray-100 hover:bg-gray-200 rounded-md p-4 text-gray-700"
           >
-            <div class="flex space-x-1 items-center mb-2">
-              <div class="flex-grow truncate hover:underline">
-                <span class="block text-gray-800 truncate">{{
-                  repo.name
-                }}</span>
-                <span class="block text-xs text-gray-500">{{
-                  repo.language
-                }}</span>
-              </div>
-              <div class="flex items-center space-x-1">
-                <span>{{ repo.stargazers_count }}</span>
-                <icon name="star-filled" class="h-6 w-6 text-gray-700" />
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-500">{{ repo.description }}</p>
+            <CardRepository
+              :name="repo.name"
+              :language="repo.language"
+              :stars="repo.stargazers_count"
+              :description="repo.description"
+              class="h-full"
+            />
           </a>
         </div>
       </section>
 
-      <section class="w-11/12 sm:w-10/12 mx-auto my-10 space-y-4">
+      <section class="my-10 space-y-4">
         <CoolTitle
           class="mb-4 text-center justify-center"
           right-down="Visit other pages!"
@@ -299,6 +300,7 @@
 export default {
   data() {
     return {
+      imageLoaded: false,
       news: {
         available: false,
       },
@@ -412,7 +414,7 @@ export default {
   async fetch() {
     const news = await this.$getNews()
 
-    if (news && news.available !== undefined && news.available === true) {
+    if (news && news.active !== undefined && news.active === true) {
       this.news = news
       this.news.available = true
     }

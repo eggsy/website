@@ -2,29 +2,49 @@
   <div
     v-ripple
     :class="{
-      'rounded-lg shadow-lg hover:shadow-2xl select-none cursor-pointer transition': true,
+      'rounded-lg select-none cursor-pointer transition': true,
+      'shadow-lg hover:shadow-2xl': image === true && imageLoaded === false,
       [getColorOption]: true,
     }"
   >
-    <div class="relative rounded-lg">
+    <div
+      :class="{
+        'relative rounded-lg': true,
+        'h-full flex items-center': type === 'boxed',
+      }"
+    >
       <div
         v-if="image === true"
-        class="relative"
-        :style="{ background: `url('${getPostInfo.image}') no-repeat center` }"
+        :class="{
+          'h-full w-full bg-gray-700 animate-pulse': imageLoaded === false,
+          'h-44 w-full': imageLoaded === false && featured === true,
+          'h-20 w-full': imageLoaded === false && featured === false,
+        }"
+      ></div>
+
+      <div
+        v-if="image === true"
+        :style="{
+          background:
+            imageLoaded === true
+              ? `url('${getPostInfo.image}') no-repeat center`
+              : null,
+        }"
       >
         <div
-          :class="{
-            'bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-25 absolute top-0 left-0 w-full h-full': true,
-          }"
-        ></div>
+          class="absolute top-0 left-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-25 w-full h-full"
+        />
+
         <img
           :src="getPostInfo.image"
           :alt="getPostInfo.title"
           class="invisible"
+          @load="imageLoaded = true"
         />
       </div>
 
       <div
+        v-if="image === false || (image === true && imageLoaded == true)"
         :class="{
           'leading-tight p-4': true,
           'absolute bottom-0 left-0 w-full': image === true,
@@ -47,9 +67,10 @@
 
           <h2
             :class="{
-              'text-gray-100 font-semibold truncate text-center sm:text-left': true,
+              'text-gray-100 font-semibold text-center sm:text-left': true,
               'text-lg sm:text-xl ': !featured,
               'text-xl sm:text-2xl': featured === true,
+              'truncate ': type !== 'boxed',
             }"
             :title="getPostInfo.title"
           >
@@ -75,6 +96,11 @@
 <script>
 export default {
   props: {
+    type: {
+      type: String,
+      required: false,
+      default: () => null,
+    },
     post: {
       type: Object,
       required: true,
@@ -99,6 +125,11 @@ export default {
       required: false,
       default: () => null,
     },
+  },
+  data() {
+    return {
+      imageLoaded: false,
+    }
   },
   computed: {
     getPostInfo() {

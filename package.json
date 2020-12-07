@@ -16,7 +16,7 @@
     "@nuxtjs/firebase": "^7.1.1",
     "@nuxtjs/pwa": "^3.3.2",
     "@nuxtjs/sitemap": "^2.4.0",
-    "core-js": "^3.8.0",
+    "core-js": "^3.8.1",
     "firebase": "^8.1.2",
     "nuxt": "^2.14.9",
     "prism-themes": "^1.5.0",
