@@ -12,7 +12,7 @@
     "button": "Get the image",
     "clearButton": "Clear",
     "resultTitle": "Result",
-    "footer": "This page and the API that process images is developed by EGGSY#3388. This page is created for you to access API easiely and with a GUI. If you have enough intelligence abuout APIs, you can check the API endpoint from <a href='/api/overlay/create'>here</a>.",
+    "footer": "This page and the API that process images is developed by EGGSY#3388. This page is created for you to access the API easily and with a GUI. If you have enough knowledge about APIs, you can check out the API endpoint from <a href='/api/overlay/create'>here</a>.",
     "thanksTo": "<br /><br /><a href='/files/overlay/thanksto.txt'>These people</a> helped me a lot to create this API, thanks for their hard work.",
     "errors": [
       "You know what we're going to do here... Why don't you just go and select the frame before I change my mind OK?",
