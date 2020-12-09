@@ -1733,10 +1733,10 @@
     consola "^2.15.0"
     eslint-webpack-plugin "^2.3.0"
 
-"@nuxtjs/firebase@^7.1.1":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/firebase/-/firebase-7.1.1.tgz#786cab89812205bde81b1895a2571b17beaa8b36"
-  integrity sha512-k7yFaqKNpFMEn+6UpTmVESkVzcYNE+LZ+OBchD8QZ0yDmg96SRCVrqMqwhAtKz/PTqiNlujfFXs0jchBIv9eUQ==
+"@nuxtjs/firebase@^7.1.2":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/firebase/-/firebase-7.1.2.tgz#95ac5b99f8b38aaa871c00b5f995a8b2a92b6eb8"
+  integrity sha512-1Zw7q1K3L5GGWZbflBtULlqeIMM2V8MZU5YA8Vqbivpuh6jhHPnhOXzicLtuSd5n7BVizDrBN0S890S8FYm9Jg==
   dependencies:
     consola "^2.15.0"
   optionalDependencies:

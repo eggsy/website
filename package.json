@@ -15,7 +15,7 @@
     "@nuxt/content": "^1.11.1",
     "@nuxtjs/amp": "^0.4.0",
     "@nuxtjs/axios": "^5.12.3",
-    "@nuxtjs/firebase": "^7.1.1",
+    "@nuxtjs/firebase": "^7.1.2",
     "@nuxtjs/pwa": "^3.3.2",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.4.0",

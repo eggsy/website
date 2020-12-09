@@ -1,8 +1,8 @@
 <template>
   <div class="py-10 flex justify-center">
-    <div class="w-11/12 mx-auto space-y-10 sm:space-y-16">
-      <div class="text-center font-semibold pt-5 pb-4 sm:pt-10 sm:pb-8">
-        <div class="w-3/6 sm:w-1/6 mx-auto text-center mb-4">
+    <div class="w-11/12 mx-auto space-y-10 md:space-y-16">
+      <div class="text-center font-semibold pt-5 pb-4 md:pt-10 md:pb-8">
+        <div class="w-3/6 md:w-1/6 mx-auto text-center mb-4">
           <div
             :class="{
               'bg-gray-100 h-48 w-48 rounded-full animate-pulse ring-4 ring-opacity-20 ring-black':
@@ -34,7 +34,7 @@
         v-if="news.available"
         v-ripple
         :class="{
-          'sm:flex sm:items-center sm:space-x-2 text-center sm:text-left w-full py-4 px-6 rounded-md': true,
+          'md:flex md:items-center sm:space-x-2 text-center sm:text-left w-full py-4 px-6 rounded-md': true,
           'cursor-pointer': news.url,
           [news.color]: true,
         }"
@@ -49,7 +49,7 @@
       </div>
 
       <div
-        class="sm:grid sm:grid-cols-2 gap-4 mt-6 sm:divide-x-2 divide-gray-300 divide-opacity-25"
+        class="md:grid md:grid-cols-2 gap-4 mt-6 md:divide-x-2 divide-gray-300 divide-opacity-25"
       >
         <!-- Left Column -->
         <section class="divide-y-2 divide-gray-300 divide-opacity-25">
@@ -118,9 +118,9 @@
 
         <!-- Right Column -->
         <section
-          class="mt-4 sm:mt-0 sm:pl-4 divide-y-2 divide-gray-300 divide-opacity-25"
+          class="mt-4 md:mt-0 md:pl-4 divide-y-2 divide-gray-300 divide-opacity-25"
         >
-          <div class="sm:grid sm:grid-cols-2">
+          <div class="md:grid md:grid-cols-2">
             <div class="flex items-center space-x-2">
               <icon name="academic-hat" class="h-16 w-16 dark:text-gray-200" />
 
@@ -198,7 +198,7 @@
               class="mb-4"
             />
 
-            <div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
               <Hobby
                 v-for="(hobby, index) in hobbies"
                 :key="`hobby-${index}`"
@@ -218,7 +218,7 @@
 
         <div
           v-if="$fetchState.pending"
-          class="grid grid-cols-1 sm:grid-cols-3 gap-2"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2"
         >
           <SkeletonLoader
             v-for="item in 6"
@@ -240,7 +240,7 @@
             !$fetchState.error &&
             repos.length > 0
           "
-          class="grid grid-cols-1 sm:grid-cols-3 gap-2"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2"
         >
           <a
             v-for="(repo, index) in repos"
@@ -267,7 +267,7 @@
         />
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 space-y-4 sm:space-y-0"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 space-y-4 sm:space-y-0"
         >
           <nuxt-link
             to="/blog"
@@ -284,6 +284,14 @@
             <icon name="clipboard-list" class="h-10 w-10" />
             <span>PreMiD (WIP)</span>
           </div>
+
+          <nuxt-link
+            to="/projects/is-inside-me"
+            class="bg-gray-100 hover:bg-gray-200 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl select-none"
+          >
+            <icon name="document" class="h-10 w-10" />
+            <span>is-inside.me</span>
+          </nuxt-link>
         </div>
       </section>
 

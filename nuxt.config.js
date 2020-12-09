@@ -3,7 +3,7 @@ import buildModules from "./config/buildModules"
 import components from "./config/components"
 import css from "./config/css"
 import head from "./config/head"
-import loader from "./config/loader"
+import loading from "./config/loading"
 import modules from "./config/modules"
 import plugins from "./config/plugins"
 
@@ -35,7 +35,7 @@ export default {
   target,
   ssr,
   head,
-  loader,
+  loading,
   buildModules,
   components,
   css,

@@ -1,7 +1,6 @@
 <template>
-  <div :class="{ 'bg-gray-50 dark:bg-gray-900': $route.path === '/' }">
+  <div class="bg-gray-50 dark:bg-gray-900">
     <Nuxt class="min-h-screen container mx-auto" />
-
     <ColorSwitcher />
   </div>
 </template>
