@@ -1,11 +1,16 @@
 <template>
-  <nav class="w-full fixed top-0 z-40 left-0 shadow-lg bg-gray-900">
+  <nav
+    class="w-full fixed top-0 z-40 left-0 shadow-lg bg-gray-900 dark:bg-gray-800"
+  >
     <!-- Desktop Navbar -->
     <div
-      class="hidden sm:block truncate container mx-auto bg-gray-900 font-medium text-gray-200"
+      class="hidden sm:block truncate container mx-auto bg-gray-900 dark:bg-gray-800 font-medium text-gray-200"
     >
       <ul class="flex">
-        <nuxt-link to="/blog" class="hover:bg-gray-800 px-4 py-2">
+        <nuxt-link
+          to="/blog"
+          class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2"
+        >
           <li>Blog</li>
         </nuxt-link>
 
@@ -15,7 +20,7 @@
           <input
             v-model="input"
             placeholder="Gönderi ara..."
-            class="px-4 py-2 bg-gray-900 hover:bg-gray-800 focus:bg-gray-800 focus:outline-none rounded-none"
+            class="px-4 py-2 bg-gray-900 hover:bg-gray-800 focus:bg-gray-800 dark:bg-gray-800 dark:focus:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none rounded-none"
             @keydown.enter="search"
           />
         </li>
@@ -24,7 +29,7 @@
           v-for="(page, index) in pages"
           :key="`page-${index}`"
           :to="page.url"
-          class="hover:bg-gray-800 px-4 py-2"
+          class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2"
         >
           <li>
             {{ page.title }}
@@ -32,7 +37,7 @@
         </nuxt-link>
 
         <li
-          class="hover:bg-gray-800 px-4 py-2 flex items-center cursor-pointer"
+          class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2 flex items-center cursor-pointer"
           @click="goToDaily"
         >
           <icon
@@ -53,7 +58,7 @@
         <nuxt-link
           to="/"
           title="Ana siteye dön"
-          class="hover:bg-gray-800 px-4 py-2 flex items-center"
+          class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2 flex items-center"
         >
           <li>
             <icon name="chevron-double-right" class="h-4 w-4" />
@@ -84,7 +89,7 @@
 
           <ul>
             <nuxt-link
-              v-if="$route.path !== '/blog'"
+              v-if="$route.path !== '/blog' && $route.path !== '/blog/'"
               to="/blog"
               class="hover:bg-gray-800 block px-4 py-4 truncate"
             >

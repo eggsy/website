@@ -1,27 +1,27 @@
 <template>
   <div
     v-if="$fetchState.pending"
-    class="flex items-center h-screen overflow-hidden justify-center space-x-2 text-2xl text-gray-900 font-semibold select-none"
+    class="flex items-center h-screen overflow-hidden justify-center space-x-2 text-2xl text-gray-900 dark:text-gray-200 font-semibold select-none"
   >
-    <icon name="sync" class="h-8 w-8 animate-spin" />
+    <icon name="sync" class="h-8 w-8 animate-spin dark:text-gray-200" />
 
     <h3>Gönderiler yükleniyor...</h3>
   </div>
 
   <div
     v-else-if="$fetchState.error"
-    class="flex items-center h-screen overflow-hidden justify-center space-x-2 text-2xl text-gray-900 font-semibold select-none"
+    class="flex items-center h-screen overflow-hidden justify-center space-x-2 text-2xl text-gray-900 dark:text-gray-200 font-semibold select-none"
   >
-    <icon name="times" class="h-8 w-8" />
+    <icon name="times" class="h-8 w-8 dark:text-gray-200" />
 
     <h3>Gönderiler yüklenemedi.</h3>
   </div>
 
-  <div v-else class="my-8 mx-2 sm:mx-0">
+  <div v-else class="pt-20 pb-8 mx-2 sm:mx-0">
     <!-- Latest Posts -->
     <section v-if="posts.latest && posts.latest.length > 0">
       <div class="hidden sm:flex space-x-2 items-center mb-4">
-        <icon name="clock" class="h-8 w-8" />
+        <icon name="clock" class="h-8 w-8 dark:text-gray-200" />
         <CoolTitle right-down="Son Gönderiler" />
       </div>
 
@@ -53,7 +53,7 @@
     <!-- Discord Posts -->
     <section v-if="posts.discord && posts.discord.length > 0">
       <div class="flex space-x-2 items-center mb-4">
-        <icon name="discord" class="h-8 w-8" />
+        <icon name="discord" class="h-8 w-8 dark:text-gray-200" />
         <CoolTitle right-down="Discord" lang="en" />
       </div>
 
@@ -100,7 +100,7 @@
       <div class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
         <div>
           <div class="flex space-x-2 items-center mb-4">
-            <icon name="linux" class="h-8 w-8" />
+            <icon name="linux" class="h-8 w-8 dark:text-gray-200" />
             <CoolTitle right-down="Linux" lang="en" />
           </div>
 
@@ -121,7 +121,7 @@
 
         <div>
           <div class="flex items-center space-x-2 mb-4">
-            <icon name="document" class="h-8 w-8" />
+            <icon name="document" class="h-8 w-8 dark:text-gray-200" />
             <CoolTitle right-down="Blog" />
           </div>
 
@@ -145,7 +145,7 @@
     <!-- Other Posts -->
     <section v-if="posts.rest && posts.rest.length > 0">
       <div class="flex items-center space-x-2 mb-4">
-        <icon name="book-open" class="h-8 w-8" />
+        <icon name="book-open" class="h-8 w-8 dark:text-gray-200" />
         <CoolTitle right-down="Diğer gönderiler" />
       </div>
 

@@ -11,13 +11,14 @@
           >
             <img
               :class="{
-                'rounded-full ring-4 ring-opacity-20 ring-black': true,
+                'rounded-full ring-4 ring-opacity-20 ring-black dark:ring-gray-400': true,
                 hidden: imageLoaded === false,
               }"
-              alt="irl image"
-              src="/assets/images/irl_image.jpg"
-              data-not-lazy
+              src="/assets/images/irl_image.webp"
               draggable="false"
+              alt="irl image"
+              height="256"
+              width="256"
               @load="imageLoaded = true"
             />
           </div>
@@ -228,7 +229,7 @@
 
         <div
           v-else-if="$fetchState.error"
-          class="flex items-center justify-center p-4 font-semibold text-gray-800 bg-gray-100 rounded-md cursor-not-allowed"
+          class="flex items-center justify-center p-4 font-semibold text-gray-800 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-md cursor-not-allowed"
         >
           Couldn't load GitHub Repositories
         </div>
@@ -270,14 +271,14 @@
         >
           <nuxt-link
             to="/blog"
-            class="bg-gray-100 hover:bg-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl select-none"
+            class="bg-gray-100 hover:bg-gray-200 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl select-none"
           >
             <icon name="document" class="h-10 w-10" />
             <span>Blog</span>
           </nuxt-link>
 
           <div
-            class="bg-gray-100 hover:bg-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl cursor-not-allowed select-none"
+            class="bg-gray-100 hover:bg-gray-200 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl cursor-not-allowed select-none"
             rel="nofollow"
           >
             <icon name="clipboard-list" class="h-10 w-10" />

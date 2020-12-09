@@ -35,9 +35,12 @@
     </div>
   </div>
 
-  <div v-else class="my-8 px-4 sm:px-0 sm:w-11/12 mx-auto sm:flex sm:space-x-4">
+  <div
+    v-else
+    class="pt-16 pb-8 px-4 sm:px-0 sm:w-11/12 mx-auto sm:flex sm:space-x-4"
+  >
     <div
-      class="hidden sm:table-row w-1/12 share left-0 h-full sticky top-14 rounded-md space-y-2"
+      class="share hidden sm:table-row w-1/12 left-0 h-full sticky top-14 rounded-md space-y-2"
     >
       <div @click="share('twitter')">
         <icon name="twitter" class="h-full w-full text-social-twitter" />
@@ -63,18 +66,20 @@
           v-else
           key="link"
           name="link"
-          class="h-full w-full text-gray-700"
+          class="h-full w-full text-gray-700 dark:text-gray-300"
         />
       </div>
     </div>
 
     <div class="w-full sm:w-8/12">
       <article>
-        <div class="leading-thight bg-gray-100 rounded-lg p-4">
-          <h1 class="font-semibold text-gray-800 text-lg sm:text-xl">
+        <div class="leading-thight bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+          <h1
+            class="font-semibold text-gray-800 dark:text-gray-200 text-lg sm:text-xl"
+          >
             {{ post.title }}
           </h1>
-          <p class="text-gray-600">{{ post.description }}</p>
+          <p class="text-gray-600 dark:text-gray-300">{{ post.description }}</p>
         </div>
 
         <div
@@ -84,23 +89,23 @@
           }"
         >
           <div
-            class="bg-gray-100 w-full sm:w-auto whitespace-nowrap rounded-md px-4 py-2 text-center"
+            class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 w-full sm:w-auto whitespace-nowrap rounded-md px-4 py-2 text-center"
           >
             Okuma Süresi: {{ getReadingTime }} dk
           </div>
 
           <div
             v-if="getTags.length > 0"
-            class="bg-gray-100 w-full rounded-md px-4 py-2 col-span-2 flex items-center space-x-2"
+            class="bg-gray-100 dark:bg-gray-800 w-full rounded-md px-4 py-2 col-span-2 flex items-center space-x-2"
           >
-            <span>Etiketler:</span>
+            <span class="dark:text-gray-300">Etiketler:</span>
 
             <div class="space-x-2 overflow-y-hidden overflow-x-auto">
               <nuxt-link
                 v-for="(tag, index) of getTags"
                 :key="`tag-${index}`"
                 :to="`/blog/etiket/${tag}`"
-                class="bg-gray-200 hover:bg-gray-300 select-none text-gray-700 font-medium rounded-md px-2 py-1"
+                class="bg-gray-200 hover:bg-opacity-80 dark:bg-gray-700 dark:text-gray-300 select-none text-gray-700 font-medium rounded-md px-2 py-1"
               >
                 <span>{{ tag }}</span>
               </nuxt-link>
@@ -108,7 +113,7 @@
           </div>
 
           <div
-            class="flex space-x-4 overflow-x-auto overflow-y-hidden sm:hidden share-small rounded-md pr-1"
+            class="flex space-x-4 overflow-x-auto overflow-y-hidden sm:hidden share-small rounded-md pr-1 dark:text-gray-300"
           >
             <div class="flex items-center space-x-2" @click="share('twitter')">
               <icon name="twitter" class="h-6 w-6 text-social-twitter" />
@@ -137,7 +142,7 @@
                 v-else
                 key="link"
                 name="link"
-                class="h-6 w-6 text-gray-700"
+                class="h-6 w-6 text-gray-700 dark:text-gray-300"
               />
 
               <span>Kopyala</span>
@@ -151,7 +156,7 @@
 
         <div
           v-if="getRelatedPosts.length > 0"
-          class="mt-4 bg-gray-100 p-4 rounded-md"
+          class="mt-4 bg-gray-100 dark:bg-gray-800 p-4 rounded-md"
         >
           <CoolTitle
             :left="getRelatedPosts.length"
@@ -165,7 +170,7 @@
               v-for="(related, index) in getRelatedPosts"
               :key="`related-${index}`"
               :to="`/blog/gonderi/${related.slug}`"
-              class="bg-gray-200 text-center sm:text-left truncate transition hover:bg-gray-300 p-4 rounded-md"
+              class="bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-center sm:text-left truncate transition hover:bg-opacity-80 p-4 rounded-md"
             >
               {{ related.title }}
             </nuxt-link>
@@ -181,7 +186,6 @@
       <div
         id="titles"
         class="max-w-screen space-y-2 overflow-y-hidden overflow-x-hidden"
-        style="scroll-behavior: smooth"
       >
         <a
           v-for="link of getToc"
@@ -424,14 +428,14 @@ export default {
 <style lang="scss">
 .share {
   > div {
-    @apply bg-gray-100 cursor-pointer hover:bg-gray-200 p-3 ring-1 ring-opacity-25 ring-gray-300 rounded-full w-14 h-14 ml-auto;
+    @apply bg-gray-100 cursor-pointer hover:bg-opacity-80 p-3 ring-1 ring-opacity-25 ring-gray-300 rounded-full w-14 h-14 ml-auto dark:bg-gray-800;
   }
 
   &-small {
-    @apply mx-auto bg-gray-100 cursor-pointer;
+    @apply mx-auto bg-gray-100 dark:bg-gray-800 cursor-pointer;
 
     > div {
-      @apply hover:bg-gray-200 p-3;
+      @apply hover:bg-opacity-80 p-3;
     }
   }
 }
@@ -441,7 +445,7 @@ export default {
   h1,
   h2,
   h3 {
-    @apply font-semibold hover:underline text-gray-900;
+    @apply font-semibold hover:underline text-gray-900 dark:text-gray-100;
   }
 
   h1 {
@@ -455,14 +459,14 @@ export default {
 
   /* Paragraphs */
   p {
-    @apply text-gray-800;
+    @apply text-gray-800 dark:text-gray-300;
 
     &.text-center {
       @apply flex justify-center;
     }
 
     strong {
-      @apply font-medium text-gray-900;
+      @apply font-medium text-gray-900 dark:text-gray-200;
     }
 
     a {
@@ -470,7 +474,7 @@ export default {
     }
 
     code {
-      @apply bg-gray-800 rounded-md text-gray-200 px-1 py-px font-sans;
+      @apply bg-gray-800 dark:bg-gray-700 rounded-md text-gray-200 px-1 py-px font-sans;
     }
 
     img {
@@ -484,7 +488,7 @@ export default {
 
   /* Ratings */
   .ratings {
-    @apply space-y-px mb-4;
+    @apply space-y-px mb-4 dark:text-gray-200;
 
     .ratings-container {
       @apply flex items-center space-x-2;
@@ -520,7 +524,7 @@ export default {
   /* Ordered and Unordered Lists */
   ol,
   ul {
-    @apply text-gray-800;
+    @apply text-gray-800 dark:text-gray-300;
 
     li:not(:last-child) {
       @apply mb-1;
@@ -545,6 +549,9 @@ export default {
 }
 
 #titles {
+  scroll-behavior: smooth;
   max-height: 90vh;
+
+  @apply text-gray-800 dark:text-gray-200;
 }
 </style>

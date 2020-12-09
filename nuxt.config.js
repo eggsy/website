@@ -8,6 +8,7 @@ import modules from "./config/modules"
 import plugins from "./config/plugins"
 
 // Import module specific configs
+import colorMode from "./config/modules/colorMode"
 import content from "./config/modules/content"
 import dotenv from "./config/modules/dotenv"
 import firebase from "./config/modules/firebase"
@@ -40,6 +41,7 @@ export default {
   css,
   modules,
   plugins,
+  colorMode,
   content,
   dotenv,
   firebase,

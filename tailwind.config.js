@@ -1,5 +1,5 @@
 module.exports = {
-  // darkMode: "media",
+  darkMode: "class",
   purge: {
     content: ["./components/**/*.vue", "./content/**/*.md"],
   },
@@ -24,6 +24,11 @@ module.exports = {
         lg: "1024px",
         xl: "1280px",
       },
+    },
+  },
+  variants: {
+    extend: {
+      backgroundOpacity: ["dark"],
     },
   },
   plugins: [require("tailwind-scrollbar")],

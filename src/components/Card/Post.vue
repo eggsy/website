@@ -4,6 +4,7 @@
     :class="{
       'rounded-lg select-none cursor-pointer transition': true,
       'shadow-lg hover:shadow-2xl': image === true && imageLoaded === false,
+      'h-full': image === true && featured === true && imageLoaded === false,
       [getColorOption]: true,
     }"
   >
@@ -14,16 +15,22 @@
       }"
     >
       <div
-        v-if="image === true"
+        v-if="image === true && imageLoaded === false"
         :class="{
-          'h-full w-full bg-gray-700 animate-pulse': imageLoaded === false,
-          'h-44 w-full': imageLoaded === false && featured === true,
-          'h-20 w-full': imageLoaded === false && featured === false,
+          'w-full bg-gray-700 animate-pulse rounded-md': true,
+          'h-36 sm:h-48': featured === false,
         }"
-      ></div>
+      >
+        <img
+          :src="getPostInfo.image"
+          :alt="getPostInfo.title"
+          class="hidden"
+          @load="imageLoaded = true"
+        />
+      </div>
 
       <div
-        v-if="image === true"
+        v-else-if="image === true && imageLoaded === true"
         :style="{
           background:
             imageLoaded === true
@@ -39,7 +46,6 @@
           :src="getPostInfo.image"
           :alt="getPostInfo.title"
           class="invisible"
-          @load="imageLoaded = true"
         />
       </div>
 
@@ -149,24 +155,23 @@ export default {
       let option
       switch (color) {
         case "red":
-          option = "bg-red-700 hover:bg-red-800"
+          option = "bg-red-700"
           break
         case "orange":
-          option = "bg-yellow-600 hover:bg-yellow-700"
+          option = "bg-yellow-600"
           break
         case "indigo":
-          option = "bg-indigo-700 hover:bg-indigo-800"
+          option = "bg-indigo-700"
           break
         case "mobile-indigo":
-          option =
-            "bg-indigo-700 hover:bg-indigo-800 sm:bg-gray-800 sm:hover:bg-gray-900"
+          option = "bg-indigo-700 sm:bg-gray-800"
           break
         default:
-          option = "bg-gray-800 hover:bg-gray-900"
+          option = "bg-gray-800"
           break
       }
 
-      return option
+      return `${option} hover:bg-opacity-95 dark:hover:bg-opacity-80 dark:bg-gray-800`
     },
   },
 }
