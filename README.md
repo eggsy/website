@@ -1,6 +1,6 @@
-## EGGSY's Personal Website
+> **I am rewriting my website in TailwindCSS on another branch! Check out the [tailwind](https://github.com/eggsy/eggsy-website/tree/tailwind) branch to see the progress and [here](https://eggsy-tailwind.netlify.app) to see what I've done so far! I'll merge that branch with this one when I'm done with it.**
 
-> I am rewriting my website in TailwindCSS on another branch! Check out the [tailwind](https://github.com/eggsy/eggsy-website/tree/tailwind) branch to see the progress and [here](https://eggsy-tailwind-netlify.app) to see what I've done so far! I'll merge that branch with this one when I'm done with it.
+## EGGSY's Personal Website
 
 <p align="center">
     <img src="/images/featuring.png" />
