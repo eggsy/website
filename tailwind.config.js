@@ -8,9 +8,12 @@ module.exports = {
       colors: {
         social: {
           twitter: "#1DA1F2",
-          discord: "#7289DA",
           telegram: "#2EAADE",
           whatsapp: "#25D366",
+          discord: {
+            light: "#7289DA",
+            dark: "#6c82cf",
+          },
         },
       },
       screens: {

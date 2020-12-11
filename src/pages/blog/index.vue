@@ -17,7 +17,7 @@
     <h3>Gönderiler yüklenemedi.</h3>
   </div>
 
-  <div v-else class="pt-20 pb-8 mx-2 sm:mx-0">
+  <div v-else class="pt-20 pb-8">
     <!-- Latest Posts -->
     <section v-if="posts.latest && posts.latest.length > 0">
       <div class="hidden sm:flex space-x-2 items-center mb-4">
