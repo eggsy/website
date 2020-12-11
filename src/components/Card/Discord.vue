@@ -5,8 +5,8 @@
         Playing a game
       </h1>
 
-      <div class="flex space-x-5 items-center">
-        <div class="w-1/5 relative">
+      <div class="flex space-x-3 md:space-x-5 items-center">
+        <div class="w-1/4 md:w-1/5 relative">
           <img
             class="rounded-md"
             :src="getImages.largeImage"
@@ -23,7 +23,9 @@
           />
         </div>
 
-        <div class="flex-grow leading-none truncate w-4/5 text-gray-100">
+        <div
+          class="flex-grow leading-none truncate w-3/4 md:w-4/5 text-gray-100"
+        >
           <span class="font-semibold text-white block">Custom Status</span>
           <span class="text-sm block truncate">{{ getText.details }}</span>
           <span class="text-sm block truncate">{{ getText.state }}</span>
@@ -104,7 +106,7 @@ export default {
       const end = this.timestamp.end
 
       if (start && start.value) {
-        this.startElapsedTimer
+        this.startElapsedTimer()
         return true
       } else if (end && end.value) {
         this.startLeftTimer()

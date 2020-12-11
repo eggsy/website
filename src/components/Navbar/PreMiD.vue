@@ -2,7 +2,7 @@
   <nav
     class="w-full fixed top-0 z-40 left-0 shadow-lg bg-gray-900 dark:bg-gray-800"
   >
-    <div class="container mx-auto flex">
+    <div class="hidden md:flex container mx-auto">
       <nuxt-link
         to="/"
         class="bg-gray-800 hover:bg-gray-700 px-2 flex items-center space-x-2"
@@ -48,6 +48,12 @@
           class="h-6 w-6 mx-auto text-gray-500"
         />
       </a>
+    </div>
+
+    <div
+      class="font-lg flex justify-center py-4 w-full md:hidden text-gray-100"
+    >
+      PreMiD
     </div>
   </nav>
 </template>

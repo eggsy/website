@@ -1,11 +1,13 @@
 <template>
   <div class="space-y-2">
-    <h1 class="text-2xl block font-semibold dark:text-gray-100">
+    <h1
+      class="hidden md:block text-center md:text-left text-2xl font-semibold dark:text-gray-100"
+    >
       PreMiD Custom Status
     </h1>
 
-    <section class="flex space-x-6">
-      <div class="w-6/12">
+    <div class="md:flex md:space-x-6 space-y-6 md:space-y-0">
+      <section class="px-2 md:px-0 md:w-6/12">
         <CardDiscord
           :large-image="presence.largeImageKey"
           :small-image="presence.smallImageKey"
@@ -16,25 +18,34 @@
         />
 
         <div class="mt-4 space-y-2">
-          <div class="flex space-x-2 items-center w-full">
-            <h3 class="text-gray-700 dark:text-gray-200 font-medium w-1/4">
+          <div class="md:flex md:space-x-2 items-center w-full">
+            <h3
+              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+            >
               Details (upper text)
             </h3>
-            <input v-model="presence.details" class="w-3/4" />
+            <input v-model="presence.details" class="w-full md:w-3/4" />
           </div>
 
-          <div class="flex space-x-2 items-center w-full">
-            <h3 class="text-gray-700 dark:text-gray-200 font-medium w-1/4">
+          <div class="md:flex md:space-x-2 items-center w-full">
+            <h3
+              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+            >
               State (lower text)
             </h3>
-            <input v-model="presence.state" class="w-3/4" />
+            <input v-model="presence.state" class="w-full md:w-3/4" />
           </div>
 
-          <div class="flex space-x-2 items-center w-full">
-            <h3 class="text-gray-700 dark:text-gray-200 font-medium w-1/4">
+          <div class="md:flex md:space-x-2 items-center w-full">
+            <h3
+              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+            >
               Large Image
             </h3>
-            <select v-model="presence.largeImageKey" class="w-3/4">
+            <select
+              v-model="presence.largeImageKey"
+              class="bg-white dark:bg-gray-200 w-full md:w-3/4"
+            >
               <option selected>PreMiD</option>
               <option
                 v-for="(image, index) of getImageNames.large"
@@ -45,11 +56,16 @@
             </select>
           </div>
 
-          <div class="flex space-x-2 items-center w-full">
-            <h3 class="text-gray-700 dark:text-gray-200 font-medium w-1/4">
+          <div class="md:flex md:space-x-2 items-center w-full">
+            <h3
+              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+            >
               Small Image
             </h3>
-            <select v-model="presence.smallImageKey" class="w-3/4">
+            <select
+              v-model="presence.smallImageKey"
+              class="bg-white dark:bg-gray-200 w-full md:w-3/4"
+            >
               <option selected>None</option>
               <option
                 v-for="(image, index) of getImageNames.small"
@@ -60,12 +76,14 @@
             </select>
           </div>
 
-          <div class="flex space-x-2 items-center w-full">
-            <h3 class="text-gray-700 dark:text-gray-200 font-medium w-1/4">
+          <div class="md:flex md:space-x-2 items-center w-full">
+            <h3
+              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+            >
               Timestamps
             </h3>
 
-            <div class="w-3/4 grid grid-cols-2 gap-4">
+            <div class="w-full md:w-3/4 grid grid-cols-2 gap-4">
               <div
                 :class="{
                   'rounded-md transition p-2 text-center cursor-pointer select-none ring-2 ring-gray-200 ring-opacity-25': true,
@@ -94,9 +112,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <section class="w-6/12 space-y-4">
+      <section class="px-2 md:px-0 md:w-6/12 space-y-4">
         <div
           class="bg-green-500 dark:bg-green-600 w-full p-4 rounded-md text-white dark:text-gray-100"
         >
@@ -169,7 +187,7 @@
           </p>
         </div>
       </section>
-    </section>
+    </div>
   </div>
 </template>
 

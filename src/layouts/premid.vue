@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-50 dark:bg-gray-800">
     <NavbarPreMiD />
-    <Nuxt class="w-full min-h-screen pt-16 pb-8 container mx-2 sm:mx-auto" />
+    <Nuxt class="w-full min-h-screen pt-16 pb-16 mb:pb-8 container mx-auto" />
 
     <ColorSwitcher />
   </div>
