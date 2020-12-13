@@ -20,13 +20,13 @@
           <nuxt-link
             v-for="(link, index) in links"
             :key="`link-${index}`"
-            :to="`/projects/premid${link.url}`"
+            :to="{ name: link.path }"
             :class="{
               ' flex items-center space-x-2 p-2': true,
               'hover:bg-gray-800 dark:hover:bg-gray-900':
-                $route.path !== `/projects/premid${link.url}`,
+                $route.name !== link.path,
               'bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-900':
-                $route.path === `/projects/premid${link.url}`,
+                $route.name === link.path,
             }"
           >
             <icon :name="link.icon" class="h-6 w-6" />
@@ -66,19 +66,22 @@ export default {
         {
           title: "Presence Stats",
           icon: "trending-up",
-          url: "/stats",
+          path: "stats",
         },
         {
           title: "Metadata Creator",
           icon: "computer",
-          url: "/mdcreator",
+          path: "mdcreator",
         },
         {
           title: "Custom Status",
           icon: "document",
-          url: "/custom-status",
+          path: "custom-status",
         },
-      ],
+      ].map((link) => {
+        link.path = `projects-premid-${link.path}`
+        return link
+      }),
     }
   },
 }

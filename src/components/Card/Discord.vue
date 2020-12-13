@@ -1,9 +1,7 @@
 <template>
   <div class="w-full px-6 py-4 rounded-md bg-social-discord-dark">
     <div class="py-2 space-y-2">
-      <h1 class="uppercase text-white text-xs font-extrabold">
-        Playing a game
-      </h1>
+      <h1 class="uppercase text-white text-xs font-bold">Playing a game</h1>
 
       <div class="flex space-x-3 md:space-x-5 items-center">
         <div class="w-1/4 md:w-1/5 relative">
@@ -77,7 +75,7 @@ export default {
           instance: null,
           string: "",
         },
-        left: {
+        end: {
           instance: null,
           string: "",
         },
@@ -102,13 +100,13 @@ export default {
       }
     },
     isTimerEnabled() {
-      const start = this.timestamp.start
-      const end = this.timestamp.end
+      const start = this?.timestamp?.start
+      const end = this?.timestamp?.end
 
-      if (start && start.value) {
+      if (start?.enabled && start?.value) {
         this.startElapsedTimer()
         return true
-      } else if (end && end.value) {
+      } else if (end?.enabled && end?.value) {
         this.startLeftTimer()
         return true
       } else {
@@ -118,9 +116,8 @@ export default {
     },
     getTime() {
       if (this.isTimerEnabled.value === false) return null
-      else if (this.timers.elapsed) return this.timers.elapsed.string
-      else if (this.isTimerEnabled.timer === "left")
-        return this.timers.left.string
+      else if (this.timers.elapsed?.instance) return this.timers.elapsed.string
+      else if (this.timers.end?.instance) return this.timers.end.string
       else return null
     },
   },
@@ -130,31 +127,31 @@ export default {
   methods: {
     stopTimers() {
       const elapsed = this.timers.elapsed
-      const left = this.timers.left
+      const end = this.timers.end
 
       // Clear elapsed timer
       clearInterval(elapsed.instance)
       elapsed.instance = null
       elapsed.string = ""
 
-      // Clear left timer
-      clearInterval(left.instance)
-      left.instance = null
-      left.string = ""
+      // Clear end timer
+      clearInterval(end.instance)
+      end.instance = null
+      end.string = ""
     },
     startElapsedTimer() {
-      const target = this.timestamp.start.value
-      const timer = this.timers.elapsed
+      const target = this?.timestamp?.start?.value
+      const timer = this?.timers?.elapsed
 
-      timer.string = "00:00"
+      if (!target || !timer) return
+      this.stopTimers()
+
+      timer.string = "00:00 elapsed"
       timer.instance = setInterval(() => {
-        const toTime = this.$dayjs(target)
-        const fromTime = this.$dayjs()
-
         let timeArray = [
-          Math.round(fromTime.diff(toTime, "hours", true)),
-          Math.round(fromTime.diff(toTime, "minutes", true)),
-          Math.round(fromTime.diff(toTime, "seconds", true)),
+          this.$moment().diff(target, "hours"),
+          this.$moment().diff(target, "minutes") % 60,
+          this.$moment().diff(target, "seconds") % 60,
         ]
 
         if (!timeArray[0]) timeArray = timeArray.slice(1)
@@ -162,23 +159,28 @@ export default {
           String(time).length === 1 ? "0" + String(time) : time
         )
 
-        timer.string = timeArray.join(":")
+        timer.string = `${timeArray.join(":")} elapsed`
       }, 1000)
     },
-    // TODO: Finish left timer
     startLeftTimer() {
-      const target = this.timestamp.end.value
-      const timer = this.timers.end
+      const target = this?.timestamp?.end?.value
+      const timer = this?.timers?.end
 
-      timer.string = "--:--"
+      if (!target || !timer) return
+      this.stopTimers()
+
+      timer.string = "--:-- left"
       timer.instance = setInterval(() => {
-        const toTime = this.$dayjs(target)
-        const fromTime = this.$dayjs()
+        const toTime = this.$moment(target, "HH:mm").unix()
+        const fromTime = this.$moment().unix()
+        const duration = this.$moment.duration(toTime - fromTime, "seconds")
+
+        if (duration.asSeconds() < 0) return (timer.string = "00:00 left")
 
         let timeArray = [
-          Math.round(fromTime.diff(toTime, "hours", true)),
-          Math.round(fromTime.diff(toTime, "minutes", true)),
-          Math.round(fromTime.diff(toTime, "seconds", true)),
+          duration.hours(),
+          duration.minutes(),
+          duration.seconds(),
         ]
 
         if (!timeArray[0]) timeArray = timeArray.slice(1)
@@ -186,7 +188,7 @@ export default {
           String(time).length === 1 ? "0" + String(time) : time
         )
 
-        timer.string = timeArray.join(":")
+        timer.string = `${timeArray.join(":")} left`
       }, 1000)
     },
   },

@@ -6,5 +6,4 @@ export default [
   "@nuxtjs/robots",
   "@nuxtjs/sitemap",
   "@nuxtjs/amp",
-  "@nuxtjs/dayjs",
 ]

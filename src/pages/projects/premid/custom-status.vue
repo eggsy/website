@@ -1,13 +1,12 @@
 <template>
-  <div class="space-y-2">
-    <h1
-      class="hidden md:block text-center md:text-left text-2xl font-semibold dark:text-gray-100"
-    >
-      PreMiD Custom Status
-    </h1>
+  <div class="space-y-2 px-4 md:px-0">
+    <!-- Custom Status Presence will read the data from here -->
+    <div id="object" class="hidden">
+      {{ getPresenceData }}
+    </div>
 
     <div class="md:flex md:space-x-6 space-y-6 md:space-y-0">
-      <section class="px-2 md:px-0 md:w-6/12">
+      <section class="md:w-6/12">
         <CardDiscord
           :large-image="presence.largeImageKey"
           :small-image="presence.smallImageKey"
@@ -24,7 +23,11 @@
             >
               Details (upper text)
             </h3>
-            <input v-model="presence.details" class="w-full md:w-3/4" />
+            <input
+              v-model="presence.details"
+              class="w-full md:w-3/4"
+              type="text"
+            />
           </div>
 
           <div class="md:flex md:space-x-2 items-center w-full">
@@ -33,7 +36,11 @@
             >
               State (lower text)
             </h3>
-            <input v-model="presence.state" class="w-full md:w-3/4" />
+            <input
+              v-model="presence.state"
+              class="w-full md:w-3/4"
+              type="text"
+            />
           </div>
 
           <div class="md:flex md:space-x-2 items-center w-full">
@@ -76,6 +83,22 @@
             </select>
           </div>
 
+          <div
+            v-if="presence.smallImageKey !== 'None'"
+            class="md:flex md:space-x-2 items-center w-full"
+          >
+            <h3
+              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+            >
+              Small Image Text
+            </h3>
+            <input
+              v-model="presence.smallImageText"
+              class="w-full md:w-3/4"
+              type="text"
+            />
+          </div>
+
           <div class="md:flex md:space-x-2 items-center w-full">
             <h3
               class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
@@ -83,13 +106,11 @@
               Timestamps
             </h3>
 
-            <div class="w-full md:w-3/4 grid grid-cols-2 gap-4">
+            <div class="w-full md:w-3/4 grid grid-cols-1 gap-2">
               <div
                 :class="{
-                  'rounded-md transition p-2 text-center cursor-pointer select-none ring-2 ring-gray-200 ring-opacity-25': true,
-                  'bg-white dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-300 text-gray-700':
-                    presence.timestamp.start.enabled === false,
-                  'bg-green-500 hover:bg-green-600 text-white':
+                  timestamp: true,
+                  'active text-white':
                     presence.timestamp.start.enabled === true,
                 }"
                 @click="toggleTimestamp('elapsed')"
@@ -99,28 +120,55 @@
 
               <div
                 :class="{
-                  'rounded-md transition p-2 text-center cursor-pointer select-none ring-2 ring-gray-200 ring-opacity-25': true,
-                  'bg-white dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-300 text-gray-700':
-                    presence.timestamp.end.enabled === false,
-                  'bg-green-500 hover:bg-green-600 text-white':
-                    presence.timestamp.end.enabled === true,
+                  'timestamp flex items-center space-x-2 justify-center cursor-default': true,
+                  active: presence.timestamp.end.enabled === true,
                 }"
-                @click="toggleTimestamp('left')"
               >
-                Show Time Left
+                <span
+                  :class="{
+                    'text-white': presence.timestamp.end.enabled === true,
+                  }"
+                  >Time To:
+                </span>
+                <input
+                  v-model="presence.timestamp.end.value"
+                  type="time"
+                  @input="endTimestampChange"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="px-2 md:px-0 md:w-6/12 space-y-4">
-        <div
-          class="bg-green-500 dark:bg-green-600 w-full p-4 rounded-md text-white dark:text-gray-100"
-        >
-          Welcome to the new look of Custom Status! I've completely reworked on
-          this page and all of other pages. Please take a look at other pages
-          too!
+      <section class="md:w-6/12 space-y-4 text-justify">
+        <div class="space-y-2">
+          <div
+            v-if="presence.installed === false"
+            class="hidden sm:block information bg-red-500 dark:bg-red-700"
+          >
+            You need to install the Custom Status presence from the PreMiD Store
+            to be able to use this page.
+            <a
+              href="https://premid.app/store/presences/Custom%20Status"
+              target="_blank"
+              rel="noreferrer"
+              class="text-blue-200"
+              >Click here</a
+            >
+            to visit the store.
+          </div>
+
+          <div class="block sm:hidden information bg-red-500 dark:bg-red-700">
+            Are you on mobile? If you are you should know that PreMiD doesn't
+            work on mobile, so you can't use this page in any way.
+          </div>
+
+          <div class="information bg-green-500 dark:bg-green-600">
+            Welcome to the new look of PreMiD pages including Custom Status. I
+            have completely redesigned my website, please take a look at the
+            rest too!
+          </div>
         </div>
 
         <div>
@@ -171,7 +219,7 @@
           <h2
             class="text-lg block font-semibold text-gray-800 dark:text-gray-100"
           >
-            How do I donate?
+            Can I donate?
           </h2>
 
           <p class="text-gray-700 dark:text-gray-200">
@@ -182,7 +230,7 @@
               rel="noreferrer"
               target="_blank"
               >Discord</a
-            >, my name is <strong>EGGSY#3388</strong> and you can find me on
+            >. My username is <strong>EGGSY#3388</strong> and you can find me on
             PreMiD's Discord server. Thank you for your contributions!
           </p>
         </div>
@@ -200,9 +248,10 @@ export default {
   data() {
     return {
       presence: {
-        raw: "",
+        installed: true,
         largeImageKey: "PreMiD",
         smallImageKey: "None",
+        smallImageText: "",
         details: "",
         state: "",
         timestamp: {
@@ -222,6 +271,10 @@ export default {
     title: "PreMiD Custom Status",
   },
   computed: {
+    /**
+     * Formats image names, adds spaces and returns all in a single object.
+     * @returns {Object} Names of the image: { large: Array, small: Array }
+     */
     getImageNames() {
       const formatName = (name) =>
         name?.match(/[A-Z][a-z]+/g)?.join(" ") || name
@@ -231,8 +284,65 @@ export default {
         small: Object.keys(smallImages).map(formatName)?.sort(),
       }
     },
+    /**
+     * Checks for everything and appends data to Vue, then renders it in template.
+     * @returns {Object|String} An empty object or stringified Discord readable object.
+     */
+    getPresenceData() {
+      const data = this.presence
+      const timestamps = data.timestamp
+      const object = {}
+
+      /* Large and small image */
+      if (data.largeImageKey) object.largeImageKey = data.largeImageKey
+      else object.largeImageKey = "premid"
+
+      if (data.smallImageKey) object.smallImageKey = data.smallImageKey
+      if (data.smallImageKey && data.smallImageText)
+        object.smallImageText = data.smallImageText
+
+      // Replace spaces and force lowercase
+      object.largeImageKey = object.largeImageKey
+        .replace(/\s/g, "")
+        .toLowerCase()
+
+      object.smallImageKey = object.smallImageKey
+        .replace(/\s/g, "")
+        .toLowerCase()
+
+      /* Details and state */
+      if (data.details) object.details = data.details
+      if (data.state) object.state = data.state
+
+      /* Timestamps  */
+      if (timestamps.start.enabled && timestamps.start.value) {
+        object.startTimestamp = timestamps.start.value
+      } else if (timestamps.end.enabled && timestamps.end.value) {
+        object.endTimestamp = this.$moment(
+          timestamps.end.value,
+          "HH:mm"
+        ).valueOf()
+      }
+
+      /* Have to change at least one value because Discord doesn't re-render the data on timestamp changes */
+      object.smallImageText = data.smallImageText || "NULL"
+      if (object.smallImageText === "NULL") delete object.smallImageText
+
+      if (Object.keys(object).length < 1) return {}
+      else return JSON.stringify(object)
+    },
+  },
+  beforeDestroy() {
+    this.observer.disconnect()
+  },
+  mounted() {
+    this.setupMutationObserver()
   },
   methods: {
+    /**
+     * Turns on and off a timestamp value.
+     * @param {elapsed|left} option
+     */
     toggleTimestamp(option) {
       const start = this.presence.timestamp.start
       const end = this.presence.timestamp.end
@@ -241,27 +351,90 @@ export default {
         if (start.enabled === false) {
           end.enabled = false
 
-          start.value = Date.now()
+          start.value = new Date().getTime()
           start.enabled = true
+
+          this.presence.smallImageText = this.presence.smallImageText || null
         } else {
           start.value = null
           start.enabled = false
         }
-      } else if (option === "left") {
-        start.enabled = false
-        start.value = null
+      } else if (option === "left" && end.enabled === true) {
+        end.enabled = false
+        end.value = null
 
         end.enabled = !end.enabled
       }
+    },
+    /**
+     * Gets called when end timestamp value is changed.
+     */
+    endTimestampChange() {
+      this.presence.timestamp.start.enabled = false
+      this.presence.timestamp.start.value = null
+
+      this.presence.timestamp.end.enabled = true
+    },
+    /**
+     * Creates a mutation observer that looks for the changes in #__nuxt, which gets mutated by PreMiD Presence to detect if presence is added.
+     */
+    setupMutationObserver() {
+      const target = document.getElementById("__nuxt")
+      let currentState = target.classList?.contains("presence")
+
+      // Return if it was already set, no need an observer
+      if (currentState) return
+      else this.presence.installed = false
+
+      this.observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName !== "class") return
+
+          const newClassState = mutation.target.classList.contains("presence")
+
+          if (currentState !== newClassState) {
+            currentState = newClassState
+            this.presence.installed = newClassState || false
+
+            if (this.presence.installed === true) this.observer?.disconnect()
+          }
+        })
+      })
+
+      this.observer.observe(target, { attributes: true })
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.information {
+  @apply w-full p-4 rounded-md text-white dark:text-gray-100;
+}
+
 input,
 select {
   @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:bg-gray-200;
+
+  &[type="time"] {
+    @apply px-2 py-px;
+  }
+}
+
+.timestamp {
+  @apply rounded-md transition p-2 text-center  select-none ring-2 ring-gray-200 ring-opacity-25 bg-white dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-300;
+
+  &:not(.cursor-default) {
+    @apply cursor-pointer;
+  }
+
+  &:not(.active) {
+    @apply text-gray-700;
+  }
+
+  &.active {
+    @apply bg-green-500 hover:bg-green-600;
+  }
 }
 
 a {

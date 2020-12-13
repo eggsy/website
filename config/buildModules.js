@@ -5,4 +5,5 @@ export default [
   "@nuxtjs/dotenv",
   "@aceforth/nuxt-optimized-images",
   "@nuxtjs/color-mode",
+  "@nuxtjs/moment"
 ]
