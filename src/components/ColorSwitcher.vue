@@ -1,11 +1,15 @@
 <template>
   <div
     v-if="modal === false"
-    class="fixed bottom-0 z-50 right-0 mb-4 mr-6 px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 rounded-md cursor-pointer dark:hover:bg-gray-800 flex items-center space-x-2 text-gray-700 dark:text-gray-300 shadow-inner ring-opacity-20"
+    class="fixed bottom-0 z-50 right-0 mb-4 mr-6 px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 rounded-full sm:rounded-md cursor-pointer dark:hover:bg-gray-800 flex items-center sm:space-x-2 text-gray-700 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-800"
     @click="modal = true"
   >
-    <span>{{ getColorPreference }}</span>
-    <icon :key="getIconName" :name="getIconName" class="h-4 w-4" />
+    <span class="hidden sm:block">{{ getColorPreference }}</span>
+    <icon
+      :key="getIconName"
+      :name="getIconName"
+      class="h-6 w-6 sm:h-4 sm:w-4"
+    />
   </div>
 
   <div
@@ -13,7 +17,7 @@
     class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50"
   >
     <div
-      class="bg-gray-300 dark:bg-gray-900 rounded-md w-screen h-screen flex flex-col justify-center sm:block sm:w-4/12 sm:h-auto p-6 space-y-4"
+      class="bg-gray-200 dark:bg-gray-800 rounded-md w-screen h-screen flex flex-col justify-center sm:block sm:w-4/12 sm:h-auto p-6 space-y-4 ring-1 ring-gray-300 dark:ring-gray-900"
     >
       <h1 class="text-gray-700 dark:text-gray-200 text-xl block text-center">
         Please Select Your Color Mode
@@ -23,7 +27,7 @@
         <div
           v-for="(option, index) in options"
           :key="`color-mode-${index}`"
-          class="rounded-md cursor-pointer bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-800 p-4 space-y-2"
+          class="rounded-md cursor-pointer bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-900 p-4 space-y-2 ring-1 ring-gray-300 dark:ring-gray-900"
           @click="changeColor(index)"
         >
           <icon

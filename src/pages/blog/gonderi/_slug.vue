@@ -37,7 +37,7 @@
 
   <div
     v-else
-    class="pt-16 pb-8 px-4 sm:px-0 sm:w-11/12 mx-auto sm:flex sm:space-x-4"
+    class="pt-20 sm:pt-16 pb-8 px-4 sm:px-0 sm:w-11/12 mx-auto sm:flex sm:space-x-4"
   >
     <div
       class="share hidden sm:table-row w-1/12 left-0 h-full sticky top-14 rounded-md space-y-2"

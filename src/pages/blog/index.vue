@@ -58,7 +58,7 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
-        <div class="grid sm:grid-cols-2 sm:grid-rows-2 gap-2">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
           <nuxt-link
             v-for="(post, index) in posts.discord.slice(0, 3)"
             :key="`discord-${index}`"
@@ -66,9 +66,12 @@
               name: 'blog-gonderi-slug',
               params: { slug: post.slug },
             }"
-            :class="{ 'sm:col-span-2': index === 2, truncate: true }"
+            :class="{
+              'boxed-post-card': true,
+              'col-span-2 sm:col-span-1': index === 2,
+            }"
           >
-            <CardPost :post="post" :image="false" color="indigo" />
+            <p>{{ post.title }}</p>
           </nuxt-link>
         </div>
 
@@ -259,6 +262,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.boxed-post-card {
+  @apply bg-indigo-700 p-4 text-white rounded-md text-lg text-center sm:text-left sm:text-xl font-semibold hover:bg-opacity-95 dark:hover:bg-opacity-80 dark:bg-gray-800;
+
+  p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
 section:not(:first-child) {
   @apply mt-10;
 }

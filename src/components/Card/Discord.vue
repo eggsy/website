@@ -14,7 +14,11 @@
 
           <img
             v-if="getImages.smallImage"
-            class="rounded-full bg-social-discord-dark box-border absolute -bottom-2 -right-2 w-9 ring-4 ring-social-discord-dark"
+            v-tippy="{
+              content: getText.small,
+              placement: 'top',
+            }"
+            class="rounded-full bg-social-discord-dark box-border absolute -bottom-2 -right-2 w-9 ring-4 ring-social-discord-dark focus:outline-none"
             :src="getImages.smallImage"
             draggable="false"
             alt="small image"
@@ -50,17 +54,22 @@ export default {
     smallImage: {
       type: String,
       required: false,
-      default: () => null,
+      default: null,
+    },
+    smallImageText: {
+      type: String,
+      required: false,
+      default: null,
     },
     details: {
       type: String,
       required: false,
-      default: () => "[ENTER SOMETHING]",
+      default: "[ENTER SOMETHING]",
     },
     state: {
       type: String,
       required: false,
-      default: () => "[ENTER SOMETHING]",
+      default: "[ENTER SOMETHING]",
     },
     timestamp: {
       type: Object,
@@ -90,13 +99,15 @@ export default {
       return {
         largeImage:
           largeImages[largeImageKey] || "https://i.imgur.com/FowB3D5.png",
-        smallImage: smallImages[smallImageKey] || null,
+        smallImage: smallImages[smallImageKey] || "[EMPTY]",
       }
     },
     getText() {
       return {
         details: this.details || "[ENTER SOMETHING]",
         state: this.state || "[ENTER SOMETHING]",
+        small:
+          this.smallImage && this.smallImageText ? this.smallImageText : null,
       }
     },
     isTimerEnabled() {

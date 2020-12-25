@@ -1,23 +1,22 @@
 <template>
   <div
-    v-ripple
     :class="{
-      'rounded-lg select-none cursor-pointer transition': true,
-      'shadow-lg hover:shadow-2xl': image === true && imageLoaded === false,
+      'rounded-md select-none cursor-pointer': true,
       'h-full': image === true && featured === true && imageLoaded === false,
+      'shadow-lg hover:shadow-2xl': image === true && imageLoaded === false,
       [getColorOption]: true,
     }"
   >
     <div
       :class="{
-        'relative rounded-lg': true,
+        relative: true,
         'h-full flex items-center': type === 'boxed',
       }"
     >
       <div
         v-if="image === true && imageLoaded === false"
         :class="{
-          'w-full bg-gray-700 animate-pulse rounded-md': true,
+          'w-full bg-gray-700 animate-pulse': true,
           'h-36 sm:h-48': featured === false,
         }"
       >
@@ -37,9 +36,10 @@
               ? `url('${getPostInfo.image}') no-repeat center`
               : null,
         }"
+        class="rounded-md"
       >
         <div
-          class="absolute top-0 left-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-25 w-full h-full"
+          class="absolute rounded-md top-0 left-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-25 w-full h-full"
         />
 
         <img

@@ -32,7 +32,6 @@
       <!-- News -->
       <div
         v-if="news.available"
-        v-ripple
         :class="{
           'md:flex md:items-center sm:space-x-2 text-center sm:text-left w-full py-4 px-6 rounded-md': true,
           'cursor-pointer': news.url,
@@ -166,8 +165,7 @@
               I am a 19 years old Turkish fullstack web developer and an ELT
               student at Muş Alparslan University since 2020. I do stuff on
               internet I like creating open-source projects. I also love
-              learning new languages and playing computer games. This is me, and
-              it's my life.
+              learning new languages and playing computer games.
             </p>
           </div>
 
@@ -198,7 +196,7 @@
               class="mb-4"
             />
 
-            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-y-4">
               <Hobby
                 v-for="(hobby, index) in hobbies"
                 :key="`hobby-${index}`"
@@ -269,26 +267,17 @@
         <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 space-y-4 sm:space-y-0"
         >
-          <nuxt-link
-            to="/blog"
-            class="bg-gray-100 hover:bg-gray-200 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl select-none"
-          >
+          <nuxt-link to="/blog" class="page-box">
             <icon name="document" class="h-10 w-10" />
             <span>Blog</span>
           </nuxt-link>
 
-          <div
-            class="bg-gray-100 hover:bg-gray-200 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl cursor-not-allowed select-none"
-            rel="nofollow"
-          >
+          <div class="page-box cursor-not-allowed" rel="nofollow">
             <icon name="clipboard-list" class="h-10 w-10" />
             <span>PreMiD (WIP)</span>
           </div>
 
-          <nuxt-link
-            to="/projects/is-inside-me"
-            class="bg-gray-100 hover:bg-gray-200 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl select-none"
-          >
+          <nuxt-link to="/projects/is-inside-me" class="page-box">
             <icon name="document" class="h-10 w-10" />
             <span>is-inside.me</span>
           </nuxt-link>
@@ -455,3 +444,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.page-box {
+  @apply bg-gray-100 hover:bg-gray-200 ring-1 ring-gray-200 dark:ring-gray-900 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl select-none;
+}
+</style>

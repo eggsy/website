@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 rounded-md p-4 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+    class="bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 rounded-md p-4 text-gray-700 dark:bg-gray-800 dark:text-gray-300 ring-1 ring-gray-200 dark:ring-gray-900"
   >
     <div class="flex space-x-1 items-center mb-2">
       <div

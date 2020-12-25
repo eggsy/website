@@ -8,6 +8,7 @@
     <div class="md:flex md:space-x-6 space-y-6 md:space-y-0">
       <section class="md:w-6/12">
         <CardDiscord
+          :small-image-text="presence.smallImageText"
           :large-image="presence.largeImageKey"
           :small-image="presence.smallImageKey"
           :timestamp="presence.timestamp"
@@ -269,6 +270,12 @@ export default {
   },
   head: {
     title: "PreMiD Custom Status",
+    link: [
+      {
+        rel: "prefetch",
+        href: "https://i.imgur.com/FowB3D5.png",
+      },
+    ],
   },
   computed: {
     /**

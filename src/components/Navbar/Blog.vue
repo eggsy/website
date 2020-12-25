@@ -172,11 +172,7 @@
         Blog
       </nuxt-link>
 
-      <div
-        v-ripple
-        class="rounded-full hover:bg-gray-800 p-2"
-        @click="focusSearch"
-      >
+      <div class="rounded-full hover:bg-gray-800 p-2" @click="focusSearch">
         <icon name="search" class="h-6 w-6" />
       </div>
     </div>
