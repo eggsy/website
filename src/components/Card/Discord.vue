@@ -99,7 +99,7 @@ export default {
       return {
         largeImage:
           largeImages[largeImageKey] || "https://i.imgur.com/FowB3D5.png",
-        smallImage: smallImages[smallImageKey] || "[EMPTY]",
+        smallImage: smallImages[smallImageKey],
       }
     },
     getText() {
