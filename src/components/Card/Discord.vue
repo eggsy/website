@@ -103,11 +103,14 @@ export default {
       }
     },
     getText() {
+      let small
+      if (this.smallImage && this.smallImageText) small = this.smallImageText
+      else if (this.smallImage && !this.smallImageText) small = "[EMPTY]"
+
       return {
         details: this.details || "[ENTER SOMETHING]",
         state: this.state || "[ENTER SOMETHING]",
-        small:
-          this.smallImage && this.smallImageText ? this.smallImageText : null,
+        small,
       }
     },
     isTimerEnabled() {
