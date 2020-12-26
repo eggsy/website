@@ -6,24 +6,26 @@
     <div
       class="hidden sm:block truncate container mx-auto bg-gray-900 dark:bg-gray-800 font-medium text-gray-200"
     >
-      <ul class="flex">
+      <div class="flex">
         <nuxt-link
           to="/blog"
           class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2"
         >
-          <li>Blog</li>
+          Blog
         </nuxt-link>
 
-        <li class="flex-grow"></li>
+        <div class="flex-grow"></div>
 
-        <li class="flex items-center mx-auto">
+        <div class="flex items-center mx-auto">
+          <label for="input" class="hidden">Gönderi Ara</label>
           <input
+            id="input"
             v-model="input"
             placeholder="Gönderi ara..."
             class="px-4 py-2 bg-gray-900 hover:bg-gray-800 focus:bg-gray-800 dark:bg-gray-800 dark:focus:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none rounded-none"
             @keydown.enter="search"
           />
-        </li>
+        </div>
 
         <nuxt-link
           v-for="(page, index) in pages"
@@ -31,12 +33,10 @@
           :to="page.url"
           class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2"
         >
-          <li>
-            {{ page.title }}
-          </li>
+          {{ page.title }}
         </nuxt-link>
 
-        <li
+        <div
           class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2 flex items-center cursor-pointer"
           @click="goToDaily"
         >
@@ -53,18 +53,16 @@
           />
 
           <span v-else>Günlük Müzik</span>
-        </li>
+        </div>
 
         <nuxt-link
           to="/"
           title="Ana siteye dön"
           class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2 flex items-center"
         >
-          <li>
-            <icon name="chevron-double-right" class="h-4 w-4" />
-          </li>
+          <icon name="chevron-double-right" class="h-4 w-4" />
         </nuxt-link>
-      </ul>
+      </div>
     </div>
 
     <!-- Moble Navbar -->
@@ -87,16 +85,15 @@
             @keydown.enter="search"
           />
 
-          <ul>
             <nuxt-link
               v-if="$route.path !== '/blog' && $route.path !== '/blog/'"
               to="/blog"
               class="hover:bg-gray-800 block px-4 py-4 truncate"
             >
-              <li class="flex items-center space-x-2">
+              <div class="flex items-center space-x-2">
                 <icon name="home" class="h-6 w-6" />
                 <span>Ana Sayfa</span>
-              </li>
+              </div>
             </nuxt-link>
 
             <nuxt-link
@@ -104,10 +101,10 @@
               to="/"
               class="hover:bg-gray-800 block px-4 py-4 truncate"
             >
-              <li class="flex items-center space-x-2">
+              <div class="flex items-center space-x-2">
                 <icon name="home" class="h-6 w-6" />
                 <span>Ana Siteye Dön</span>
-              </li>
+              </div>
             </nuxt-link>
 
             <nuxt-link
@@ -117,13 +114,13 @@
               class="hover:bg-gray-800 block px-4 py-4 truncate"
               @click="mobileMenu = false"
             >
-              <li class="flex items-center space-x-2">
+              <div class="flex items-center space-x-2">
                 <icon :name="page.icon" class="h-6 w-6" />
                 <span>{{ page.title }}</span>
-              </li>
+              </div>
             </nuxt-link>
 
-            <li class="hover:bg-gray-800 px-4 py-4 truncate" @click="goToDaily">
+            <div class="hover:bg-gray-800 px-4 py-4 truncate" @click="goToDaily">
               <icon
                 v-if="$fetchState.pending === true"
                 name="sync"
@@ -143,16 +140,16 @@
                 <icon name="music-note" class="h-6 w-6" />
                 <span>Günlük Müzik</span>
               </div>
-            </li>
+            </div>
 
             <a
               class="hover:bg-gray-800 flex-1 mt-auto block px-4 py-4 truncate"
               @click="closeMobileMenu"
             >
-              <li class="flex items-center space-x-2">
+              <div class="flex items-center space-x-2">
                 <icon name="arrow-left" class="h-6 w-6" />
                 <span>Kapat</span>
-              </li>
+              </div>
             </a>
           </ul>
         </div>

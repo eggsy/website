@@ -117,7 +117,7 @@
               }"
               :class="{ 'sm:col-span-2': index === 0, truncate: true }"
             >
-              <CardPost :post="post" :image="false" color="orange" />
+              <CardPost :post="post" :image="false" color="teal" />
             </nuxt-link>
           </div>
         </div>
@@ -263,7 +263,7 @@ export default {
 
 <style lang="scss" scoped>
 .boxed-post-card {
-  @apply bg-indigo-700 p-4 text-white rounded-md text-lg text-center sm:text-left sm:text-xl font-semibold hover:bg-opacity-95 dark:hover:bg-opacity-80 dark:bg-gray-800;
+  @apply bg-indigo-700 hover:bg-indigo-800 p-4 text-white rounded-md text-lg text-center sm:text-left sm:text-xl font-semibold dark:hover:bg-opacity-80 dark:bg-gray-800;
 
   p {
     display: -webkit-box;

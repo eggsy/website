@@ -155,23 +155,24 @@ export default {
       let option
       switch (color) {
         case "red":
-          option = "bg-red-700"
+          option = "bg-red-700 hover:bg-red-800"
           break
-        case "orange":
-          option = "bg-yellow-600"
+        case "teal":
+          option = "bg-teal-700 hover:bg-teal-800"
           break
         case "indigo":
-          option = "bg-indigo-700"
+          option = "bg-indigo-700 hover:bg-indigo-800"
           break
         case "mobile-indigo":
-          option = "bg-indigo-700 sm:bg-gray-800"
+          option =
+            "bg-indigo-700 hover:bg-indigo-800 sm:bg-gray-800 sm:hover:bg-gray-900 sm:dark:hover:bg-gray-800 sm:dark:hover:bg-opacity-80"
           break
         default:
-          option = "bg-gray-800"
+          option = "bg-gray-800 hover:bg-gray-900"
           break
       }
 
-      return `${option} hover:bg-opacity-95 dark:hover:bg-opacity-80 dark:bg-gray-800`
+      return `${option} dark:hover:bg-opacity-80 dark:bg-gray-800`
     },
   },
 }

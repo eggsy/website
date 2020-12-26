@@ -73,7 +73,9 @@
 
     <div class="w-full sm:w-8/12">
       <article>
-        <div class="leading-thight bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+        <div
+          class="leading-thight bg-gray-100 dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 rounded-lg p-4"
+        >
           <h1
             class="font-semibold text-gray-800 dark:text-gray-200 text-lg sm:text-xl"
           >
@@ -89,14 +91,14 @@
           }"
         >
           <div
-            class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 w-full sm:w-auto whitespace-nowrap rounded-md px-4 py-2 text-center"
+            class="bg-gray-100 dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 dark:text-gray-300 w-full sm:w-auto whitespace-nowrap rounded-md px-4 py-2 text-center"
           >
             Okuma Süresi: {{ getReadingTime }} dk
           </div>
 
           <div
             v-if="getTags.length > 0"
-            class="bg-gray-100 dark:bg-gray-800 w-full rounded-md px-4 py-2 col-span-2 flex items-center space-x-2"
+            class="bg-gray-100 dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 w-full rounded-md px-4 py-2 col-span-2 flex items-center space-x-2"
           >
             <span class="dark:text-gray-300">Etiketler:</span>
 
@@ -105,7 +107,7 @@
                 v-for="(tag, index) of getTags"
                 :key="`tag-${index}`"
                 :to="`/blog/etiket/${tag}`"
-                class="bg-gray-200 hover:bg-opacity-80 dark:bg-gray-700 dark:text-gray-300 select-none text-gray-700 font-medium rounded-md px-2 py-1"
+                class="bg-gray-200 hover:bg-opacity-80 ring-1 ring-gray-300 dark:bg-gray-700 dark:text-gray-300 select-none text-gray-700 font-medium rounded-md px-2 py-1"
               >
                 <span>{{ tag }}</span>
               </nuxt-link>
@@ -156,7 +158,7 @@
 
         <div
           v-if="getRelatedPosts.length > 0"
-          class="mt-4 bg-gray-100 dark:bg-gray-800 p-4 rounded-md"
+          class="mt-4 bg-gray-100 dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 p-4 rounded-md"
         >
           <CoolTitle
             :left="getRelatedPosts.length"
@@ -170,7 +172,7 @@
               v-for="(related, index) in getRelatedPosts"
               :key="`related-${index}`"
               :to="`/blog/gonderi/${related.slug}`"
-              class="bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-center sm:text-left truncate transition hover:bg-opacity-80 p-4 rounded-md"
+              class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 ring-1 ring-opacity-50 ring-gray-300 dark:ring-gray-800 dark:text-gray-300 text-center sm:text-left truncate p-4 rounded-md"
             >
               {{ related.title }}
             </nuxt-link>
@@ -428,7 +430,7 @@ export default {
 <style lang="scss">
 .share {
   > div {
-    @apply bg-gray-100 cursor-pointer hover:bg-opacity-80 p-3 ring-1 ring-opacity-25 ring-gray-300 rounded-full w-14 h-14 ml-auto dark:bg-gray-800;
+    @apply bg-gray-100 cursor-pointer hover:bg-gray-200 p-3 ring-1 ring-gray-200 dark:ring-gray-800 rounded-full w-14 h-14 ml-auto dark:bg-gray-800 dark:hover:bg-opacity-75;
   }
 
   &-small {
