@@ -1652,10 +1652,10 @@
     webpack-node-externals "^2.5.2"
     webpackbar "^4.0.0"
 
-"@nuxtjs/amp@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/amp/-/amp-0.5.1.tgz#33ef2703565f784a7d597eae498f4be3e2d3ff0f"
-  integrity sha512-uMlQnt4DdozygglJhXwy3c1ObBqftNcZTXvjTwKvD860IHVWNVN/jf3YaXPPTNk5tzpNPcWLs+h7W08siV9lQQ==
+"@nuxtjs/amp@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/amp/-/amp-0.5.2.tgz#f400bb82276ecd4611741bd4a404ab6e9f80cbd4"
+  integrity sha512-LEzN67P6fXuG66Ih8Bm/+RAjR4YO8c6t8fGQEJJ1Jee9FUnkUC/R5lGmXvULkMdncgGzhqJgqjxzF7KF3WDydA==
   dependencies:
     amphtml-validator "^1.0.33"
     chalk "^4.1.0"
@@ -1711,10 +1711,10 @@
     consola "^2.15.0"
     eslint-webpack-plugin "^2.4.1"
 
-"@nuxtjs/firebase@^7.2.2":
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/firebase/-/firebase-7.2.2.tgz#22a0d9c4b2dd12ab029155d97e677ccccd961d46"
-  integrity sha512-97xEIFmV9D62bnnYX2QY+fuK9K6lG+oa0/4i1EE7BL2q9wGGrD3PcEyE85g8PzLoULXM6/ebr5T8vkrzn7G/qw==
+"@nuxtjs/firebase@^7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/firebase/-/firebase-7.3.0.tgz#63d30c6a941a0a0e3a76cdf678c63c97e11ce30c"
+  integrity sha512-ajNmIMxI/+ToKNY6ItXV7KOhcsqmmMnwfgmu745tcU5uOY/2ddZBuvTLVIQUsutEuWPiqKaQPxWtx7H9TAblNQ==
   dependencies:
     consola "^2.15.0"
   optionalDependencies:
@@ -5158,10 +5158,10 @@ eslint-plugin-vue@^7.1.0:
     semver "^7.3.2"
     vue-eslint-parser "^7.1.1"
 
-eslint-plugin-vue@^7.3.0:
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.3.0.tgz#0faf0fcf0e1b1052bf800d4dee42d64f50679cb0"
-  integrity sha512-4rc9xrZgwT4aLz3XE6lrHu+FZtDLWennYvtzVvvS81kW9c65U4DUzQQWAFjDCgCFvN6HYWxi7ueEtxZVSB+f0g==
+eslint-plugin-vue@^7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.4.0.tgz#27324cbe8f00705708c9fa9e8c0401d8f0742c20"
+  integrity sha512-bYJV3nHSGV5IL40Ti1231vlY8I2DzjDHYyDjRv9Z1koEI7qyV2RR3+uKMafHdOioXYH9W3e1+iwe4wy7FIBNCQ==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"

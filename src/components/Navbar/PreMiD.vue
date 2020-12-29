@@ -16,7 +16,7 @@
       </nuxt-link>
 
       <div class="flex-grow flex justify-center">
-        <ul class="px-2 space-x-4 flex items-center text-gray-200">
+        <div class="px-2 space-x-4 flex items-center text-gray-200">
           <nuxt-link
             v-for="(link, index) in links"
             :key="`link-${index}`"
@@ -32,7 +32,7 @@
             <icon :name="link.icon" class="h-6 w-6" />
             <span>{{ link.title }}</span>
           </nuxt-link>
-        </ul>
+        </div>
       </div>
 
       <a

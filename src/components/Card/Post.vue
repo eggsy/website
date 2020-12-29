@@ -16,7 +16,7 @@
       <div
         v-if="image === true && imageLoaded === false"
         :class="{
-          'w-full bg-gray-700 animate-pulse': true,
+          'w-full bg-gray-700 animate-pulse rounded-md': true,
           'h-36 sm:h-48': featured === false,
         }"
       >

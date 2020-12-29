@@ -43,7 +43,7 @@
       />
 
       <a
-        class="flex items-center space-x-2 rounded-md transform transition hover:translate-x-2 cursor-pointer select-none w-max"
+        class="flex items-center space-x-2 rounded-md transform hover:translate-x-2 cursor-pointer select-none w-max"
         @click="$router.back()"
       >
         <icon name="arrow-left" class="h-8 w-8" />

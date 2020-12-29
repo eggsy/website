@@ -85,73 +85,72 @@
             @keydown.enter="search"
           />
 
-            <nuxt-link
-              v-if="$route.path !== '/blog' && $route.path !== '/blog/'"
-              to="/blog"
-              class="hover:bg-gray-800 block px-4 py-4 truncate"
-            >
-              <div class="flex items-center space-x-2">
-                <icon name="home" class="h-6 w-6" />
-                <span>Ana Sayfa</span>
-              </div>
-            </nuxt-link>
-
-            <nuxt-link
-              v-else
-              to="/"
-              class="hover:bg-gray-800 block px-4 py-4 truncate"
-            >
-              <div class="flex items-center space-x-2">
-                <icon name="home" class="h-6 w-6" />
-                <span>Ana Siteye Dön</span>
-              </div>
-            </nuxt-link>
-
-            <nuxt-link
-              v-for="(page, index) in pages"
-              :key="`page-mobile-${index}`"
-              :to="page.url"
-              class="hover:bg-gray-800 block px-4 py-4 truncate"
-              @click="mobileMenu = false"
-            >
-              <div class="flex items-center space-x-2">
-                <icon :name="page.icon" class="h-6 w-6" />
-                <span>{{ page.title }}</span>
-              </div>
-            </nuxt-link>
-
-            <div class="hover:bg-gray-800 px-4 py-4 truncate" @click="goToDaily">
-              <icon
-                v-if="$fetchState.pending === true"
-                name="sync"
-                class="h-6 w-6 animate-spin"
-              />
-
-              <icon
-                v-else-if="$fetchState.error === true"
-                name="ban"
-                class="h-6 w-6 cursor-not-allowed"
-              />
-
-              <div
-                v-else
-                class="flex items-center space-x-2 cursor-pointer select-none"
-              >
-                <icon name="music-note" class="h-6 w-6" />
-                <span>Günlük Müzik</span>
-              </div>
+          <nuxt-link
+            v-if="$route.path !== '/blog' && $route.path !== '/blog/'"
+            to="/blog"
+            class="hover:bg-gray-800 block px-4 py-4 truncate"
+          >
+            <div class="flex items-center space-x-2">
+              <icon name="home" class="h-6 w-6" />
+              <span>Ana Sayfa</span>
             </div>
+          </nuxt-link>
 
-            <a
-              class="hover:bg-gray-800 flex-1 mt-auto block px-4 py-4 truncate"
-              @click="closeMobileMenu"
+          <nuxt-link
+            v-else
+            to="/"
+            class="hover:bg-gray-800 block px-4 py-4 truncate"
+          >
+            <div class="flex items-center space-x-2">
+              <icon name="home" class="h-6 w-6" />
+              <span>Ana Siteye Dön</span>
+            </div>
+          </nuxt-link>
+
+          <nuxt-link
+            v-for="(page, index) in pages"
+            :key="`page-mobile-${index}`"
+            :to="page.url"
+            class="hover:bg-gray-800 block px-4 py-4 truncate"
+            @click="mobileMenu = false"
+          >
+            <div class="flex items-center space-x-2">
+              <icon :name="page.icon" class="h-6 w-6" />
+              <span>{{ page.title }}</span>
+            </div>
+          </nuxt-link>
+
+          <div class="hover:bg-gray-800 px-4 py-4 truncate" @click="goToDaily">
+            <icon
+              v-if="$fetchState.pending === true"
+              name="sync"
+              class="h-6 w-6 animate-spin"
+            />
+
+            <icon
+              v-else-if="$fetchState.error === true"
+              name="ban"
+              class="h-6 w-6 cursor-not-allowed"
+            />
+
+            <div
+              v-else
+              class="flex items-center space-x-2 cursor-pointer select-none"
             >
-              <div class="flex items-center space-x-2">
-                <icon name="arrow-left" class="h-6 w-6" />
-                <span>Kapat</span>
-              </div>
-            </a>
-          </ul>
+              <icon name="music-note" class="h-6 w-6" />
+              <span>Günlük Müzik</span>
+            </div>
+          </div>
+
+          <a
+            class="hover:bg-gray-800 flex-1 mt-auto block px-4 py-4 truncate"
+            @click="closeMobileMenu"
+          >
+            <div class="flex items-center space-x-2">
+              <icon name="arrow-left" class="h-6 w-6" />
+              <span>Kapat</span>
+            </div>
+          </a>
         </div>
       </div>
 
