@@ -20,7 +20,7 @@
         <div class="mt-4 space-y-2">
           <div class="md:flex md:space-x-2 items-center w-full">
             <h3
-              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
             >
               Details (upper text)
             </h3>
@@ -33,7 +33,7 @@
 
           <div class="md:flex md:space-x-2 items-center w-full">
             <h3
-              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
             >
               State (lower text)
             </h3>
@@ -46,13 +46,13 @@
 
           <div class="md:flex md:space-x-2 items-center w-full">
             <h3
-              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
             >
               Large Image
             </h3>
             <select
               v-model="presence.largeImageKey"
-              class="bg-white dark:bg-gray-200 w-full md:w-3/4"
+              class="bg-white dark:bg-gray-700 w-full md:w-3/4"
             >
               <option selected>PreMiD</option>
               <option
@@ -66,13 +66,13 @@
 
           <div class="md:flex md:space-x-2 items-center w-full">
             <h3
-              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
             >
               Small Image
             </h3>
             <select
               v-model="presence.smallImageKey"
-              class="bg-white dark:bg-gray-200 w-full md:w-3/4"
+              class="bg-white dark:bg-gray-700 w-full md:w-3/4"
             >
               <option selected>None</option>
               <option
@@ -89,7 +89,7 @@
             class="md:flex md:space-x-2 items-center w-full"
           >
             <h3
-              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
             >
               Small Image Text
             </h3>
@@ -102,7 +102,7 @@
 
           <div class="md:flex md:space-x-2 items-center w-full">
             <h3
-              class="text-gray-700 dark:text-gray-200 font-medium w-full md:w-1/4"
+              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
             >
               Timestamps
             </h3>
@@ -110,8 +110,8 @@
             <div class="w-full md:w-3/4 grid grid-cols-1 gap-2">
               <div
                 :class="{
-                  timestamp: true,
-                  'active text-white':
+                  'timestamp dark:text-gray-200': true,
+                  'active text-white dark:text-gray-100':
                     presence.timestamp.start.enabled === true,
                 }"
                 @click="toggleTimestamp('elapsed')"
@@ -127,7 +127,9 @@
               >
                 <span
                   :class="{
-                    'text-white': presence.timestamp.end.enabled === true,
+                    'dark:text-gray-200': true,
+                    'text-white dark:text-gray-100':
+                      presence.timestamp.end.enabled === true,
                   }"
                   >Time To:
                 </span>
@@ -146,7 +148,7 @@
         <div class="space-y-2">
           <div
             v-if="presence.installed === false"
-            class="hidden sm:block information bg-red-500 dark:bg-red-700"
+            class="hidden sm:block information bg-red-500 dark:bg-gray-700"
           >
             You need to install the Custom Status presence from the PreMiD Store
             to be able to use this page.
@@ -160,12 +162,12 @@
             to visit the store.
           </div>
 
-          <div class="block sm:hidden information bg-red-500 dark:bg-red-700">
+          <div class="block sm:hidden information bg-red-500 dark:bg-gray-700">
             Are you on mobile? If you are you should know that PreMiD doesn't
             work on mobile, so you can't use this page in any way.
           </div>
 
-          <div class="information bg-green-500 dark:bg-green-600">
+          <div class="information bg-green-500 dark:bg-gray-700">
             Welcome to the new look of PreMiD pages including Custom Status. I
             have completely redesigned my website, please take a look at the
             rest too!
@@ -416,12 +418,12 @@ export default {
 
 <style lang="scss" scoped>
 .information {
-  @apply w-full p-4 rounded-md text-white dark:text-gray-100;
+  @apply w-full p-4 rounded-md text-white;
 }
 
 input,
 select {
-  @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:bg-gray-200;
+  @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:bg-gray-700 dark:hover:bg-opacity-75 dark:ring-gray-800 dark:text-gray-200;
 
   &[type="time"] {
     @apply px-2 py-px;
@@ -429,18 +431,18 @@ select {
 }
 
 .timestamp {
-  @apply rounded-md transition p-2 text-center  select-none ring-2 ring-gray-200 ring-opacity-25 bg-white dark:bg-gray-200 hover:bg-gray-200 dark:hover:bg-gray-300;
+  @apply rounded-md p-2 text-center  select-none ring-2 ring-gray-200 ring-opacity-25 bg-white hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-opacity-75 dark:ring-transparent;
 
   &:not(.cursor-default) {
     @apply cursor-pointer;
   }
 
   &:not(.active) {
-    @apply text-gray-700;
+    @apply text-gray-700 dark:text-gray-200;
   }
 
   &.active {
-    @apply bg-green-500 hover:bg-green-600;
+    @apply bg-green-500 hover:bg-green-600 dark:bg-green-700 dark:hover:bg-green-800;
   }
 }
 

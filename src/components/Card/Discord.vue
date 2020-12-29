@@ -1,7 +1,9 @@
 <template>
   <div class="w-full px-6 py-4 rounded-md bg-social-discord-dark">
     <div class="py-2 space-y-2">
-      <h1 class="uppercase text-white text-xs font-bold">Playing a game</h1>
+      <h1 class="uppercase text-white dark:text-gray-100 text-xs font-bold">
+        Playing a game
+      </h1>
 
       <div class="flex space-x-3 md:space-x-5 items-center">
         <div class="w-1/4 md:w-1/5 relative">

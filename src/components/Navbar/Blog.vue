@@ -36,26 +36,16 @@
           {{ page.title }}
         </nuxt-link>
 
-        <div
+        <nuxt-link
+          to="/daily"
+          target="_blank"
           class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2 flex items-center cursor-pointer"
-          @click="goToDaily"
         >
-          <icon
-            v-if="$fetchState.pending === true"
-            name="sync"
-            class="h-6 w-6 animate-spin"
-          />
-
-          <icon
-            v-else-if="$fetchState.error === true"
-            name="ban"
-            class="h-6 w-6 cursor-not-allowed"
-          />
-
-          <span v-else>Günlük Müzik</span>
-        </div>
+          Günlük Müzik
+        </nuxt-link>
 
         <nuxt-link
+          v-tippy="{ content: 'Ana Sayfaya Dön', placement: 'bottom' }"
           to="/"
           title="Ana siteye dön"
           class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2 flex items-center"
@@ -120,27 +110,13 @@
             </div>
           </nuxt-link>
 
-          <div class="hover:bg-gray-800 px-4 py-4 truncate" @click="goToDaily">
-            <icon
-              v-if="$fetchState.pending === true"
-              name="sync"
-              class="h-6 w-6 animate-spin"
-            />
-
-            <icon
-              v-else-if="$fetchState.error === true"
-              name="ban"
-              class="h-6 w-6 cursor-not-allowed"
-            />
-
-            <div
-              v-else
-              class="flex items-center space-x-2 cursor-pointer select-none"
-            >
-              <icon name="music-note" class="h-6 w-6" />
-              <span>Günlük Müzik</span>
-            </div>
-          </div>
+          <nuxt-link
+            to="/daily"
+            class="hover:bg-gray-800 px-4 py-4 truncate flex items-center space-x-2 cursor-pointer"
+          >
+            <icon name="music-note" class="h-6 w-6" />
+            <span>Günlük Müzik</span>
+          </nuxt-link>
 
           <a
             class="hover:bg-gray-800 flex-1 mt-auto block px-4 py-4 truncate"
@@ -205,11 +181,6 @@ export default {
         },
       ],
     }
-  },
-  fetchOnServer: false,
-  async fetch() {
-    const url = await this.$getDaily()
-    this.daily = url
   },
   watch: {
     "$route.path": "closeMobileMenu",

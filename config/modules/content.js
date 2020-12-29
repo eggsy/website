@@ -6,7 +6,7 @@ export default {
     },
     remarkExternalLinks: {
       target: "_blank",
-      rel: "nofollow",
+      rel: "noreferrer",
     },
     remarkPlugins: [
       [

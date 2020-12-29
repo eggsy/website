@@ -265,21 +265,26 @@
         />
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 space-y-4 sm:space-y-0"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4"
         >
-          <nuxt-link to="/blog" class="page-box">
-            <icon name="document" class="h-10 w-10" />
+          <nuxt-link to="/blog" class="page-box sm:col-span-2">
+            <icon name="document" class="h-8 w-8" />
             <span>Blog</span>
           </nuxt-link>
 
           <div class="page-box cursor-not-allowed" rel="nofollow">
-            <icon name="clipboard-list" class="h-10 w-10" />
+            <icon name="clipboard-list" class="h-8 w-8" />
             <span>PreMiD (WIP)</span>
           </div>
 
           <nuxt-link to="/projects/is-inside-me" class="page-box">
-            <icon name="document" class="h-10 w-10" />
+            <icon name="document" class="h-8 w-8" />
             <span>is-inside.me</span>
+          </nuxt-link>
+
+          <nuxt-link to="/daily" class="page-box sm:col-span-2">
+            <icon name="music-note" class="h-8 w-8" />
+            <span>Daily Song</span>
           </nuxt-link>
         </div>
       </section>
@@ -407,7 +412,7 @@ export default {
         { name: "Music", icon: "music" },
         { name: "Shopping", icon: "shopping-cart" },
         { name: "Swimming", icon: "help" },
-        { name: "Parties", icon: "party" },
+        { name: "Gaming", icon: "controller" },
         { name: "Handwork", icon: "scissors" },
       ],
     }
@@ -447,6 +452,6 @@ export default {
 
 <style lang="scss" scoped>
 .page-box {
-  @apply bg-gray-100 hover:bg-gray-200 ring-1 ring-gray-200 dark:ring-gray-900 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center py-4 px-6 space-x-2 text-xl select-none;
+  @apply bg-gray-100 hover:bg-gray-200 ring-1 ring-gray-200 dark:ring-gray-900 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center justify-center py-4 px-6 space-x-2 text-xl select-none;
 }
 </style>

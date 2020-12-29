@@ -1,6 +1,10 @@
-export default ({ $fire }, inject) => {
-  /* Get daily song from Firebase */
-  async function getDaily() {
+export default ({ $fire, $moment }, inject) => {
+  /**
+   * Fetch the daily song from Firebase.
+   * @param {number} [limit=1] The limit of the values to return. If none present, will return one URL in string format.
+   * @returns {string|array} Either array of the songs or the URL of a song if no limit is given.
+   */
+  async function getDaily(limit = 1) {
     const date = {
       day: new Date().getDate(),
       month: new Date().getMonth() + 1,
@@ -12,14 +16,30 @@ export default ({ $fire }, inject) => {
         date[key] = `0${date[key]}`
     })
 
-    const document = $fire.firestore
-      .collection("dailySongs")
-      .doc(`${date.day}.${date.month}.${date.year}`)
+    const ref = $fire.firestore.collection("dailySongs").limit(limit)
 
-    const data = (await document.get()).data()
-    return data?.url || "ZY3J3Y_OU0w"
+    const docs = []
+    await ref
+      .where("date", "<=", new Date())
+      .orderBy("date", "desc")
+      .limit(limit)
+      .get()
+      .then((snapshots) => {
+        snapshots.forEach((snapshot) => {
+          const { date, url, metadata } = snapshot.data()
+          docs.push({ date: date.toDate(), url, metadata })
+        })
+      })
+
+    if (docs.length === 1) return docs[0]
+    else if (docs.length > 1) return docs
+    else return "ZY3J3Y_OU0w"
   }
 
+  /**
+   * Function that returns news from Firebase.
+   * @returns {object} The news object.
+   */
   async function getNews() {
     const document = $fire.firestore.collection("news").doc("latest")
     const data = (await document.get()).data()

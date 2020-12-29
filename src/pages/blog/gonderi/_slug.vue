@@ -107,7 +107,7 @@
                 v-for="(tag, index) of getTags"
                 :key="`tag-${index}`"
                 :to="`/blog/etiket/${tag}`"
-                class="bg-gray-200 hover:bg-opacity-80 dark:bg-gray-700 dark:text-gray-300 select-none text-gray-700 font-medium rounded-md px-2 py-1"
+                class="bg-gray-200 hover:bg-opacity-75 dark:bg-gray-700 dark:text-gray-300 select-none text-gray-700 font-medium rounded-md px-2 py-1"
               >
                 <span>{{ tag }}</span>
               </nuxt-link>
@@ -273,7 +273,7 @@ export default {
         {
           hid: "og:url",
           name: "og:url",
-          content: `https://eggsy.xyz/blog/gonderi/${this.$route?.params?.slug}`,
+          content: `https://eggsy-tailwind.netlify.app/blog/gonderi/${this.$route?.params?.slug}`,
         },
         {
           hid: "og:image",
@@ -309,7 +309,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: `https://eggsy.xyz/blog/gonderi/${this.$route?.params?.slug}`,
+          href: `https://eggsy-tailwind.netlify.app/blog/gonderi/${this.$route?.params?.slug}`,
         },
       ],
     }
