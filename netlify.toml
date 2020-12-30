@@ -1,2 +1,2 @@
 [build.environment]
-  TZ = "Europe/Istanbul"
+  TZ="Europe/Istanbul"
