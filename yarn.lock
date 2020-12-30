@@ -10988,10 +10988,10 @@ sass-loader@^10.1.0:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.30.0:
-  version "1.30.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.30.0.tgz#60bbbbaf76ba10117e61c6c24f00161c3d60610e"
-  integrity sha512-26EUhOXRLaUY7+mWuRFqGeGGNmhB1vblpTENO1Z7mAzzIZeVxZr9EZoaY1kyGLFWdSOZxRMAufiN2mkbO6dAlw==
+sass@^1.32.0:
+  version "1.32.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.0.tgz#10101a026c13080b14e2b374d4e15ee24400a4d3"
+  integrity sha512-fhyqEbMIycQA4blrz/C0pYhv2o4x2y6FYYAH0CshBw3DXh5D5wyERgxw0ptdau1orc/GhNrhF7DFN2etyOCEng==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -11783,10 +11783,10 @@ tailwind-config-viewer@^1.4.0:
     vue "^2.6.10"
     vue-draggable-resizable "^2.2.0"
 
-tailwind-scrollbar@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/tailwind-scrollbar/-/tailwind-scrollbar-1.0.1.tgz#619f52d70a5669201538250b691eb3b206a79bb6"
-  integrity sha512-bOJ1zkUrLcdsvDuU2LtAUqhFIJL/QtKveaexIXKlC557l3jIuIUC03svn5GK5XzNUEK+xCBu625toXdywnw75g==
+tailwind-scrollbar@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/tailwind-scrollbar/-/tailwind-scrollbar-1.1.2.tgz#0a0e24d3ffa10a6e8e099a41f49bc3e3e442c347"
+  integrity sha512-kDOE3Th4zeuDAwDNnUC2t4ueQRqkRtCOXSjP17T9cYfSPi/0q3Dn+vON5PuopdxYkiUBMHnHdtWZ+6Hk3XrXTg==
 
 tailwindcss@^1.9.6:
   version "1.9.6"

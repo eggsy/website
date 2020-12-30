@@ -57,7 +57,7 @@
             <div class="space-y-2">
               <p>
                 I like listening to music a lot and I like sharing my music with
-                those who are in search for somethign new to listen. I created
+                those who are in search for something new to listen. I created
                 this page where you can get fresh new songs each day and listen
                 to them! Hope you like my taste!
               </p>

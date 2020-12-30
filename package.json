@@ -23,9 +23,9 @@
     "firebase": "^8.2.1",
     "nuxt": "^2.14.12",
     "prism-themes": "^1.5.0",
-    "sass": "^1.30.0",
+    "sass": "^1.32.0",
     "sass-loader": "^10.1.0",
-    "tailwind-scrollbar": "^1.0.1",
+    "tailwind-scrollbar": "^1.1.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-tippy": "^4.7.2"
   },
