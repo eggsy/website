@@ -42,6 +42,11 @@ export default {
     },
     /* Open-Graph */
     {
+      hid: "og:type",
+      name: "og:type",
+      content: "website",
+    },
+    {
       hid: "og:site_name",
       name: "og:site_name",
       content: "eggsy.xyz",
