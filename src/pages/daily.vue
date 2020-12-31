@@ -90,12 +90,20 @@
               draggable="false"
             />
 
-            <div class="transform group-hover:translate-x-2">
-              <span class="text-sm text-gray-600 dark:text-gray-300">{{
-                $moment(song.date).format("DD/MM/YYYY")
-              }}</span>
+            <div class="truncate">
+              <div class="flex items-center space-x-1">
+                <icon
+                  v-if="getSongDateTitle(song.date).startsWith('Today')"
+                  name="star"
+                  class="h-4 w-4"
+                />
+                <span class="text-sm text-gray-600 dark:text-gray-300">{{
+                  getSongDateTitle(song.date)
+                }}</span>
+              </div>
+
               <h3
-                class="text-lg leading-none text-gray-900 dark:text-gray-100 font-semibold truncate"
+                class="text-lg leading-tight text-gray-900 dark:text-gray-100 font-semibold truncate"
               >
                 {{ song.metadata.title }}
               </h3>
@@ -111,7 +119,7 @@
 export default {
   data() {
     return {
-      todaySong: "",
+      today: new Date(),
       selected: {},
       songs: [],
     }
@@ -121,7 +129,6 @@ export default {
     const songs = await this.$getDaily(10)
 
     this.selected = songs[0]
-    this.todaySong = songs[0]?.url
     this.songs = songs || []
   },
   head() {
@@ -193,7 +200,11 @@ export default {
      * @returns {string} The title.
      */
     getCardTitle() {
-      if (this.selected?.url === this.todaySong) return "Today's Song"
+      if (
+        this.$moment(this.selected?.date).format("DD/MM/YYYY") ===
+        this.$moment().format("DD/MM/YYYY")
+      )
+        return "Today's Song"
       else return this.$moment(this.selected?.date).format("DD/MM/YYYY")
     },
     /**
@@ -209,6 +220,16 @@ export default {
      */
     getSongList() {
       return this.songs.filter((song) => song.date !== this.selected.date)
+    },
+  },
+  methods: {
+    getSongDateTitle(targetDate) {
+      if (
+        this.$moment(targetDate).format("DD/MM/YYYY") ===
+        this.$moment().format("DD/MM/YYYY")
+      )
+        return "Today's Song"
+      else return this.$moment(targetDate).format("DD/MM/YYYY")
     },
   },
 }
