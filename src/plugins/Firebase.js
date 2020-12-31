@@ -1,22 +1,11 @@
-export default ({ $fire, $moment }, inject) => {
+export default ({ $fire }, inject) => {
   /**
    * Fetch the daily song from Firebase.
    * @param {number} [limit=1] The limit of the values to return. If none present, will return one URL in string format.
    * @returns {string|array} Either array of the songs or the URL of a song if no limit is given.
    */
   async function getDaily(limit = 1) {
-    const date = {
-      day: new Date().getDate(),
-      month: new Date().getMonth() + 1,
-      year: new Date().getFullYear(),
-    }
-
-    Object.keys(date).forEach((key) => {
-      if (key !== "year" && String(date[key]).length < 2)
-        date[key] = `0${date[key]}`
-    })
-
-    const ref = $fire.firestore.collection("dailySongs").limit(limit)
+    const ref = $fire.firestore.collection("dailySongs")
 
     const docs = []
     await ref
