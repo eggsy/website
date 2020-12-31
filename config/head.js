@@ -1,3 +1,6 @@
+const description =
+  "Young JavaScript developer from Turkey, interested in languages, gaming and programming, trying to improve his skills with JavaScript. Check out my portfolio and read my blog posts!"
+
 export default {
   title: "eggsy.xyz",
   htmlAttrs: {
@@ -9,7 +12,7 @@ export default {
     {
       hid: "description",
       name: "description",
-      content: process.env.npm_package_description,
+      content: description,
     },
     /* Twitter */
     {
@@ -35,7 +38,7 @@ export default {
     {
       hid: "twitter:description",
       name: "twitter:description",
-      content: process.env.npm_package_description,
+      content: description,
     },
     /* Open-Graph */
     {
@@ -46,7 +49,7 @@ export default {
     {
       hid: "og:description",
       name: "og:description",
-      content: process.env.npm_package_description,
+      content: description,
     },
     /* Others */
     {

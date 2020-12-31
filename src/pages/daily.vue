@@ -135,6 +135,7 @@ export default {
     const title = "Song Recommendations"
     const description =
       "Here you will find my song recommendations of the last 10 days. You can check this page everyday for a fresh song, songs reset according to GMT+3 timezone!"
+    const image = "/assets/meta/images/daily.jpg"
 
     return {
       title,
@@ -165,6 +166,11 @@ export default {
           name: "og:url",
           content: `https://eggsy-tailwind.netlify.app/daily`,
         },
+        {
+          hid: "og:image",
+          name: "og:image",
+          content: image,
+        },
         // Twitter
         {
           hid: "twitter:title",
@@ -175,6 +181,11 @@ export default {
           hid: "twitter:description",
           name: "twitter:description",
           content: description,
+        },
+        {
+          hid: "twitter:image",
+          name: "twitter:image",
+          content: image,
         },
         // PreMiD
         {
@@ -225,7 +236,8 @@ export default {
   methods: {
     /**
      * Compares the dates between the provided date and current date and returns a title which will be used in cards' title.
-     * @returns {string} The title or date.
+     * @param {date} targetDate The target date that will be used to compare with today's date.
+     * @returns {string} The title "Today's Song" or formatted date.
      */
     getSongDateTitle(targetDate) {
       if (
