@@ -223,6 +223,10 @@ export default {
     },
   },
   methods: {
+    /**
+     * Compares the dates between the provided date and current date and returns a title which will be used in cards' title.
+     * @returns {string} The title or date.
+     */
     getSongDateTitle(targetDate) {
       if (
         this.$moment(targetDate).format("DD/MM/YYYY") ===
