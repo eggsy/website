@@ -40,7 +40,7 @@
     class="pt-20 sm:pt-16 pb-8 px-4 sm:px-0 sm:w-11/12 mx-auto sm:flex sm:space-x-4"
   >
     <div
-      class="share hidden sm:table-row w-1/12 left-0 h-full sticky top-14 rounded-md space-y-2"
+      class="share hidden sm:table-row left-0 h-full sticky top-14 rounded-md space-y-2"
     >
       <div @click="share('twitter')">
         <icon name="twitter" class="h-full w-full text-social-twitter" />
@@ -172,7 +172,11 @@
               v-for="(related, index) in getRelatedPosts"
               :key="`related-${index}`"
               :to="`/blog/gonderi/${related.slug}`"
-              class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 ring-1 ring-opacity-50 ring-gray-300 dark:ring-gray-800 dark:text-gray-300 text-center sm:text-left truncate p-4 rounded-md"
+              :class="{
+                'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 ring-1 ring-opacity-50 ring-gray-300 dark:ring-gray-800 dark:text-gray-300 text-center sm:text-left truncate p-4 rounded-md': true,
+                'sm:col-span-2':
+                  index % 2 === 0 && index + 1 >= getRelatedPosts.length,
+              }"
             >
               {{ related.title }}
             </nuxt-link>
@@ -183,19 +187,16 @@
 
     <div
       v-if="getToc.length > 0"
-      class="hidden sm:block w-3/12 h-full sticky top-14 space-y-2"
+      class="hidden sm:block h-full sticky top-14 space-y-2"
     >
-      <div
-        id="titles"
-        class="max-w-screen space-y-2 overflow-y-hidden overflow-x-hidden"
-      >
+      <div id="titles" class="space-y-2 overflow-y-hidden overflow-x-hidden">
         <a
           v-for="link of getToc"
           :key="link.id"
           :href="`#${link.id}`"
           :title="link.text"
           :class="{
-            'truncate rounded-md transition block transform': true,
+            'rounded-md transition block transform': true,
             'translate-x-2 font-semibold':
               observer.currentlyActiveToc === link.id,
           }"
@@ -504,23 +505,6 @@ export default {
   /* Pre */
   pre {
     @apply rounded-md;
-  }
-
-  /* Blockquotes */
-  blockquote {
-    @apply bg-yellow-500 px-4 py-2 rounded-md;
-
-    p {
-      @apply text-gray-50;
-
-      strong {
-        @apply text-gray-50;
-      }
-    }
-
-    &:not(:last-child) {
-      @apply mb-4;
-    }
   }
 
   /* Ordered and Unordered Lists */

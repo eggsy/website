@@ -1,17 +1,13 @@
 <template>
-  <div class="space-y-1">
-    <div class="w-16 h-16 mx-auto relative">
-      <div
-        class="absolute -right-2 -top-2 text-gray-100 bg-green-600 shadow-lg rounded-full w-8 h-8 font-bold flex justify-center items-center"
-      >
-        {{ level }}
-      </div>
-
-      <icon :name="icon" />
-    </div>
-
-    <div class="text-gray-700 dark:text-gray-300 font-semibold text-center">
-      {{ title }}
+  <div
+    class="bg-gray-200 dark:bg-gray-700 hover:bg-opacity-75 p-2 rounded-md dark:text-white flex items-center justify-center space-x-2 cursor-pointer"
+  >
+    <icon :name="icon" class="h-8 w-8" />
+    <h3 class="truncate flex-grow">{{ title }}</h3>
+    <div
+      class="text-white bg-green-600 rounded-full font-semibold w-8 h-8 flex justify-center items-center"
+    >
+      {{ level }}
     </div>
   </div>
 </template>
@@ -35,9 +31,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.svg-ico {
-  @apply w-16 h-16 rounded-md;
-}
-</style>

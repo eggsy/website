@@ -1,14 +1,9 @@
 <template>
-  <div>
-    <div class="dark:text-gray-200">
-      <icon :name="icon" />
-    </div>
-
-    <span
-      :title="title"
-      class="text-sm font-semibold text-gray-700 dark:text-gray-300"
-      >{{ title }}</span
-    >
+  <div
+    class="bg-gray-200 dark:bg-gray-700 hover:bg-opacity-75 p-2 rounded-md dark:text-white flex items-center justify-center space-x-2 cursor-pointer"
+  >
+    <icon :name="icon" class="h-6 w-6" />
+    <h3 class="truncate text-center flex-grow" :title="title">{{ title }}</h3>
   </div>
 </template>
 
@@ -30,10 +25,6 @@ export default {
 
 <style lang="scss" scoped>
 div {
-  @apply truncate text-center;
-
-  .svg-ico {
-    @apply w-16 h-16 mx-auto;
-  }
+  @apply truncate;
 }
 </style>

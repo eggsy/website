@@ -22,10 +22,10 @@
           </nuxt-link>
 
           <div
-            class="bg-gray-200 dark:bg-gray-700 rounded-md px-4 py-2 ring block w-4/6"
+            class="bg-gray-200 dark:bg-gray-800 rounded-md px-4 py-2 ring block w-4/6"
           >
             <h1
-              class="text-lg font-semibold text-center text-gray-800 dark:text-gray-100"
+              class="text-lg font-semibold text-center text-gray-700 dark:text-gray-100"
             >
               {{ getCardTitle }}
             </h1>
@@ -73,13 +73,13 @@
 
       <div class="sm:w-2/3">
         <div
-          class="bg-gray-200 dark:bg-gray-700 p-4 rounded-md ring grid grid-cols-1 sm:grid-cols-2 gap-2"
+          class="bg-gray-200 dark:bg-gray-800 p-4 rounded-md ring grid grid-cols-1 sm:grid-cols-2 gap-2"
         >
           <div
             v-for="(song, index) in getSongList"
             :key="`song-${index}`"
             :class="{
-              'px-4 py-2 rounded-md bg-white dark:bg-gray-800 hover:bg-opacity-75 cursor-pointer select-none flex space-x-2 items-center group': true,
+              'px-4 py-2 rounded-md bg-white dark:bg-gray-900 hover:bg-opacity-75 cursor-pointer select-none flex space-x-2 items-center group': true,
               'sm:col-span-2': index % 3 === 0,
             }"
             @click="selected = song"
@@ -253,7 +253,7 @@ export default {
 
 <style lang="scss" scoped>
 .side-button {
-  @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-opacity-75 dark:hover:text-gray-300 rounded-md p-2 ring flex items-center justify-center w-1/6;
+  @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-opacity-75 dark:hover:text-gray-300 rounded-md p-2 ring flex items-center justify-center w-1/6;
 }
 
 .ring {

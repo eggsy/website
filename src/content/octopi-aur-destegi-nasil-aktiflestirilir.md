@@ -47,9 +47,9 @@ Bir sonraki aşamada ise Octopi menülerinden "Araçlar" menüsünün altındaki
 
 Açılan sayfada ise yukarıdaki sekmelerden "AUR" sekmesini seçin ve, başta işaretli olan "AUR deposu kullanma" seçeneğinin seçili olduğunu görün. Bu, varsayılan olarak AUR depolarına erişimin olmadığını gösterecektir. Bu ayarı aşağıdan Pacaur olarak değiştirin.
 
-Yukarıdaki resimde gördüğünüz "Pacaur" seçeneğinin yanında --noconfirm seçeneğini seçerseniz, paket yüklemelerinizde konsol size yüklemenin yapılıp yapılmamasını sormayacaktır. Direkt olarak yükleyecektir.
+Yukarıdaki resimde gördüğünüz "Pacaur" seçeneğinin yanında `--noconfirm` seçeneğini seçerseniz, paket yüklemelerinizde konsol size yüklemenin yapılıp yapılmamasını sormayacaktır. Direkt olarak yükleyecektir.
 
-Eğer diğer --noedit seçeneğini seçerseniz ise başta sorulan betik düzenlemelerini sormayacak ve çok daha hızlı bir şekilde direkt olarak yüklemeye geçecektir.
+Eğer diğer `--noedit` seçeneğini seçerseniz ise başta sorulan betik düzenlemelerini sormayacak ve çok daha hızlı bir şekilde direkt olarak yüklemeye geçecektir.
 Bu yüzden eğer isterseniz bu iki ayarı aktif edebilir ve çok daha hızlı bir şekilde yüklemeye geçebilirsiniz.
 
 Eğer yukarıdaki resimdeki gibi "Pacaur" ayarı aktif değilse, pacaur paketini yükleme işlemini başaramamışsınız demektir. Bunu başaramamış olmanızın nedeni internet bağlantınız olabilir. Lütfen kontrol edin ve adımları tekrar uygulayın.

@@ -3,7 +3,6 @@
     :class="{
       'rounded-md select-none cursor-pointer': true,
       'h-full': image === true && featured === true && imageLoaded === false,
-      'shadow-lg hover:shadow-2xl': image === true && imageLoaded === false,
       [getColorOption]: true,
     }"
   >
@@ -35,6 +34,7 @@
             imageLoaded === true
               ? `url('${getPostInfo.image}') no-repeat center`
               : null,
+          backgroundSize: imageLoaded === true ? 'contain' : null,
         }"
         class="rounded-md"
       >
@@ -172,7 +172,9 @@ export default {
           break
       }
 
-      return `${option} dark:hover:bg-opacity-80 dark:bg-gray-800`
+      if (this.type === "featured" && this.image === true)
+        return `${option} dark:hover:bg-opacity-80`
+      else return `${option} dark:hover:bg-opacity-80 dark:bg-gray-800`
     },
   },
 }

@@ -1,16 +1,19 @@
 <template>
   <div :class="{ 'flex items-center space-x-2': left !== null }">
-    <h1 v-if="left" class="text-5xl font-bold dark:text-gray-200">
+    <h1 v-if="left" class="text-5xl font-bold dark:text-white">
       {{ left }}
     </h1>
 
-    <div class="uppercase leading-none text-xl font-semibold">
-      <h2 v-if="rightUp" class="block text-gray-500 dark:text-gray-500">
+    <div class="uppercase">
+      <h2
+        v-if="rightUp"
+        class="block text-gray-500 dark:text-gray-100 text-lg leading-none"
+      >
         {{ rightUp }}
       </h2>
       <h3
         :class="{
-          'block text-gray-700 dark:text-gray-300': true,
+          'block text-gray-700 dark:text-white text-xl leading-none font-semibold': true,
           'text-sm': $route.path == '/blog' && rightUp,
         }"
       >

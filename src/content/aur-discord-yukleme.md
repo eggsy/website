@@ -33,7 +33,7 @@ Yükleme işlemini başlatmak için daha önce `pacaur` yüklemesinde anlatıld�
   <img src="https://the-person-under-this-message.is-inside.me/rtVUYamJ.png" alt="image" />
 </p>
 
-Yükleme tamamlandıktan sonra aynı pacaur paketinde olduğu gibi paketin solunda gördüğünüz simge yeşil olacaktır ve paketin yüklendiğini doğrulayacaktır. Artık uygulamayı başlatmak için isterseniz uygulama menünüzü, isterseniz de KDE'nin <kbd>ALT</kbd> + <kbd>F2</kbd> yöntemini kullanarak çalıştırabilirsiniz.
+Yükleme tamamlandıktan sonra aynı pacaur paketinde olduğu gibi paketin solunda gördüğünüz simge yeşil olacaktır ve paketin yüklendiğini doğrulayacaktır. Artık uygulamayı başlatmak için isterseniz uygulama menünüzü, isterseniz de KDE'nin `ALT` + `F2` yöntemini kullanarak çalıştırabilirsiniz.
 
 <p class="text-center">
   <img src="https://the-person-under-this-message.is-inside.me/w7xRfhok.png" alt="image" />

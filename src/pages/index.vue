@@ -1,32 +1,50 @@
 <template>
   <div class="py-10 flex justify-center">
-    <div class="w-11/12 mx-auto space-y-10 md:space-y-16">
-      <div class="text-center font-semibold pt-5 pb-4 md:pt-10 md:pb-8">
-        <div class="w-3/6 md:w-1/6 mx-auto text-center mb-4">
-          <div
-            :class="{
-              'bg-gray-100 h-48 w-48 rounded-full animate-pulse ring-4 ring-opacity-20 ring-black':
-                imageLoaded === false,
-            }"
-          >
-            <img
+    <div class="px-4 mx-auto space-y-10 md:space-y-16">
+      <div class="pt-5 pb-4 md:pt-10">
+        <div
+          class="flex flex-col-reverse sm:flex-row items-center justify-center sm:space-x-10 rounded-md gray-bg py-4 sm:px-8"
+        >
+          <div class="sm:space-y-2 py-4">
+            <h1 class="text-gray-900 dark:text-white text-xl font-semibold">
+              Abdulbaki "EGGSY" Dursun
+            </h1>
+
+            <p class="hidden sm:block text-gray-700 dark:text-gray-100">
+              I am a young Turkish JavaScript developer who works in his free
+              time as a full-stack JavaScript developer. Trying to create
+              beautiful apps using Vue.js, Nuxt.js, TailwindCSS, and more
+              technologies! Always trying to improve himself by learning new
+              technologies and writing blog posts to share everything I learned
+              with you!
+            </p>
+          </div>
+
+          <div class="w-1/3">
+            <div
               :class="{
-                'rounded-full ring-4 ring-opacity-20 ring-black dark:ring-gray-400': true,
-                hidden: imageLoaded === false,
+                'rounded-full ring-4 ring-gray-300 dark:ring-gray-900': true,
+                'bg-gray-100 dark:bg-gray-700  rounded-full animate-pulse w-full h-full':
+                  imageLoaded === false,
               }"
-              src="/assets/images/irl_image.webp"
-              draggable="false"
-              alt="irl image"
-              height="256"
-              width="256"
-              @load="imageLoaded = true"
-            />
+              :style="{
+                background:
+                  imageLoaded === true
+                    ? `url('/assets/images/irl_image.webp') no-repeat center`
+                    : '',
+                backgroundSize: imageLoaded === true ? 'contain' : '',
+              }"
+            >
+              <img
+                src="/assets/images/irl_image.webp"
+                class="invisible"
+                draggable="false"
+                alt="irl image"
+                @load="imageLoaded = true"
+              />
+            </div>
           </div>
         </div>
-
-        <span class="text-xl text-gray-900 dark:text-gray-200"
-          >Abdulbaki "EGGSY" Dursun</span
-        >
       </div>
 
       <!-- News -->
@@ -47,12 +65,10 @@
         <span>{{ news.message }}</span>
       </div>
 
-      <div
-        class="md:grid md:grid-cols-2 gap-4 mt-6 md:divide-x-2 divide-gray-300 divide-opacity-25"
-      >
+      <div class="md:grid md:grid-cols-2 gap-4 mt-6">
         <!-- Left Column -->
-        <section class="divide-y-2 divide-gray-300 divide-opacity-25">
-          <div>
+        <section>
+          <div class="gray-bg p-4 rounded-md">
             <CoolTitle
               :left="new Date().getFullYear() - 2017"
               right-up="Years"
@@ -72,7 +88,7 @@
             </div>
           </div>
 
-          <div class="mt-4 pt-4">
+          <div class="mt-4 pt-4 gray-bg p-4 rounded-md">
             <CoolTitle
               :left="2"
               right-up="Years"
@@ -92,7 +108,7 @@
             </div>
           </div>
 
-          <div class="mt-4 pt-4">
+          <div class="mt-4 pt-4 gray-bg p-4 rounded-md">
             <CoolTitle
               :left="4"
               right-up="Years"
@@ -116,16 +132,13 @@
         <hr class="bg-gray-900 bg-opacity-25 mt-6 sm:hidden" />
 
         <!-- Right Column -->
-        <section
-          class="mt-4 md:mt-0 md:pl-4 divide-y-2 divide-gray-300 divide-opacity-25"
-        >
-          <div class="md:grid md:grid-cols-2">
+        <section class="mt-4 md:mt-0">
+          <div class="md:grid md:grid-cols-2 p-4 gray-bg rounded-md">
             <div class="flex items-center space-x-2">
-              <icon name="academic-hat" class="h-16 w-16 dark:text-gray-200" />
+              <icon name="academic-hat" class="h-16 w-16 dark:text-gray-100" />
 
               <div class="leading-none">
-                <span
-                  class="block text-gray-700 dark:text-gray-300 font-semibold"
+                <span class="block text-gray-700 dark:text-white font-semibold"
                   >Abdulbaki Dursun</span
                 >
                 <a
@@ -142,7 +155,7 @@
             <div class="flex items-center justify-end space-x-2">
               <div class="leading-none">
                 <a
-                  class="block text-gray-700 dark:text-gray-300 font-medium hover:underline"
+                  class="block text-gray-700 dark:text-white font-medium hover:underline"
                   href="mailto:eggsydev@gmail.com"
                   title="Mail me!"
                   rel="nofollow"
@@ -154,22 +167,23 @@
                 >
               </div>
 
-              <icon name="fingerprint" class="h-16 w-16 dark:text-gray-300" />
+              <icon name="fingerprint" class="h-16 w-16 dark:text-gray-100" />
             </div>
           </div>
 
-          <div class="mt-4 w-full pt-4">
-            <CoolTitle class="mb-4" right-down="Introduction" />
+          <div class="mt-4 w-full p-4 gray-bg rounded-md">
+            <CoolTitle class="mb-2" right-down="Introduction" />
 
-            <p class="dark:text-gray-200">
-              I am a 19 years old Turkish fullstack web developer and an ELT
-              student at Muş Alparslan University since 2020. I do stuff on
-              internet I like creating open-source projects. I also love
-              learning new languages and playing computer games.
+            <p class="dark:text-gray-100">
+              I am a 19-year-old Turkish full-stack web developer and an ELT
+              student at Muş Alparslan University since 2020. I do stuff on the
+              internet and like to create open-source projects. I try to improve
+              myself and learn new stuff when I am free from school and work to
+              improve my skills.
             </p>
           </div>
 
-          <div class="mt-4 w-full pt-4">
+          <div class="mt-4 w-full pt-4 p-4 gray-bg rounded-md">
             <CoolTitle
               :left="skills.length"
               right-up="Main"
@@ -177,18 +191,22 @@
               class="mb-4"
             />
 
-            <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
               <Skill
                 v-for="(skill, index) in skills"
                 :key="`skill-${index}`"
                 :title="skill.title"
                 :icon="skill.icon"
                 :level="skill.level"
+                :class="{
+                  'sm:col-span-2':
+                    index + 1 >= skills.length && skills.length % 3 !== 0,
+                }"
               />
             </div>
           </div>
 
-          <div class="mt-4 w-full pt-4">
+          <div class="mt-4 w-full pt-4 p-4 gray-bg rounded-md">
             <CoolTitle
               :left="12"
               right-up="Hobbies"
@@ -196,7 +214,7 @@
               class="mb-4"
             />
 
-            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-y-4">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
               <Hobby
                 v-for="(hobby, index) in hobbies"
                 :key="`hobby-${index}`"
@@ -381,12 +399,12 @@ export default {
           level: 99,
         },
         {
-          title: "NuxtJS",
+          title: "Nuxt.js",
           icon: "nuxtjs",
           level: 90,
         },
         {
-          title: "VueJS",
+          title: "Vue.js",
           icon: "vuejs",
           level: 85,
         },
@@ -396,9 +414,24 @@ export default {
           level: 80,
         },
         {
-          title: "NodeJS",
+          title: "Node.js",
           icon: "nodejs",
           level: 80,
+        },
+        {
+          title: "Sass",
+          icon: "sass",
+          level: 70,
+        },
+        {
+          title: "WordPress",
+          icon: "wordpress",
+          level: 50,
+        },
+        {
+          title: "PHP",
+          icon: "php",
+          level: 20,
         },
       ],
       hobbies: [
@@ -408,10 +441,10 @@ export default {
         { name: "Chatting", icon: "chat" },
         { name: "Movies", icon: "movie" },
         { name: "Camping", icon: "fire" },
-        { name: "Travelling", icon: "map" },
+        { name: "Travelling", icon: "location-marker" },
         { name: "Music", icon: "music" },
-        { name: "Shopping", icon: "shopping-cart" },
-        { name: "Swimming", icon: "help" },
+        { name: "Shopping", icon: "shopping-bag" },
+        { name: "Swimming", icon: "support" },
         { name: "Gaming", icon: "controller" },
         { name: "Handwork", icon: "scissors" },
       ],
@@ -451,6 +484,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.gray-bg {
+  @apply bg-gray-100 ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-transparent;
+}
+
 .page-box {
   @apply bg-gray-100 hover:bg-gray-200 ring-1 ring-gray-200 dark:ring-gray-900 hover:bg-opacity-80 dark:bg-gray-800 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:text-gray-200 rounded-md flex items-center justify-center py-4 px-6 space-x-2 text-xl select-none;
 }

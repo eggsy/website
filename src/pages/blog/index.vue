@@ -35,7 +35,7 @@
           <CardPost :post="posts.latest[0]" :featured="true" />
         </nuxt-link>
 
-        <div class="grid gap-2 sm:gap-4 grid-cols-2 grid-rows-2">
+        <div class="grid gap-2 sm:gap-2 grid-cols-2 grid-rows-2">
           <nuxt-link
             v-for="(post, index) in posts.latest.slice(1, 5)"
             :key="`latest-${index}`"
