@@ -50,7 +50,7 @@
           </div>
 
           <div
-            class="bg-green-600 dark:bg-gray-700 hidden sm:block rounded-md p-4 text-white"
+            class="bg-green-600 dark:bg-gray-800 hidden sm:block rounded-md p-4 text-white"
           >
             <h3 class="text-lg font-semibold block">What is this about?</h3>
 

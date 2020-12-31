@@ -6,6 +6,7 @@ tags:
   - haber
 createdAt: 2020-09-02T17:13:12.000Z
 related:
+  - neler-donuyor
   - blogun-baslica-ozellikleri
   - nedir-bu-blog
 ---

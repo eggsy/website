@@ -5,9 +5,9 @@ tags:
   - blog
   - haber
 related:
-  - site-artik-acik-kaynak
-  - blogun-baslica-ozellikleri
   - nedir-bu-blog
+  - site-artik-acik-kaynak
+  - yeni-alan-adi
 ---
 
 Bu yazıyı görmeniz, hâli hazırda yeni bloguma göz atıyor olduğunuz veya çoktan göz attığınız anlamına gelmektedir. Yeni blogun amacını, hedefimi ve ayrıntılarını bir çoğunuz bilse de yenilenen sitem hakkında birkaç şeyi bir blog gönderisi olarak yazmak istedim.
