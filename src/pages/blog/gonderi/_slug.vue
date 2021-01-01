@@ -274,7 +274,7 @@ export default {
         {
           hid: "og:url",
           name: "og:url",
-          content: `https://eggsy-tailwind.netlify.app/blog/gonderi/${this.$route?.params?.slug}`,
+          content: `https://new.eggsy.xyz/blog/gonderi/${this.$route?.params?.slug}`,
         },
         {
           hid: "og:image",
@@ -310,7 +310,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: `https://eggsy-tailwind.netlify.app/blog/gonderi/${this.$route?.params?.slug}`,
+          href: `https://new.eggsy.xyz/blog/gonderi/${this.$route?.params?.slug}`,
         },
       ],
     }

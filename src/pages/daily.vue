@@ -164,7 +164,7 @@ export default {
         {
           hid: "og:url",
           name: "og:url",
-          content: `https://eggsy-tailwind.netlify.app/daily`,
+          content: `https://new.eggsy.xyz/daily`,
         },
         {
           hid: "og:image",
@@ -200,7 +200,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: `https://eggsy-tailwind.netlify.app/daily`,
+          href: `https://new.eggsy.xyz/daily`,
         },
       ],
     }

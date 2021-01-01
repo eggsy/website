@@ -3,7 +3,6 @@ export default [
   "@nuxtjs/tailwindcss",
   "@nuxtjs/svg",
   "@nuxtjs/dotenv",
-  "@aceforth/nuxt-optimized-images",
   "@nuxtjs/color-mode",
   "@nuxtjs/moment",
 ]

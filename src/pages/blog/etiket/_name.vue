@@ -136,7 +136,7 @@ export default {
         {
           hid: "og:url",
           name: "og:url",
-          content: `https://eggsy.xyz/blog/etiket/${this.$route?.params?.name}`,
+          content: `https://new.eggsy.xyz/blog/etiket/${this.$route?.params?.name}`,
         },
         // Twitter
         {
