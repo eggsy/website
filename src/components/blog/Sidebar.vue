@@ -1,12 +1,17 @@
 <template>
   <div class="sticky">
     <div class="mt-2 mb-4">
-      <v-card class="announcement-card" width="100%" height="145px">
-        <div>
-          <h5 class="text-h5">Blog Yenilendi</h5>
-          <span class="text-subtitle-2">Gelişmiş ve yeni özelliklerle dolu blogumuza merhaba deyin!</span>
-        </div>
-      </v-card>
+      <a href="https://new.eggsy.xyz">
+        <v-card class="announcement-card" width="100%" height="145px">
+          <div>
+            <h5 class="text-h5">Yeni Bloga Göz Atın</h5>
+            <span class="text-subtitle-2"
+              >Bu karta tıklayın ve yenilenecek olan blog ve sitemi şimdiden
+              ziyaret edin, yeni sayfalara ilk göz atanlardan biri olun!</span
+            >
+          </div>
+        </v-card>
+      </a>
     </div>
 
     <div>
@@ -15,37 +20,27 @@
       <ul class="follow-me">
         <li @click="open('https://github.com/eggsy')">
           <v-card class="profile-card pa-2" width="100%">
-            <span>
-              <v-icon left>mdi-github</v-icon>eggsydev
-            </span>
+            <span> <v-icon left>mdi-github</v-icon>eggsydev </span>
           </v-card>
         </li>
         <li @click="open('https://twitter.com/eggsydev')">
           <v-card class="profile-card pa-2" width="100%">
-            <span>
-              <v-icon left>mdi-twitter</v-icon>eggsydev
-            </span>
+            <span> <v-icon left>mdi-twitter</v-icon>eggsydev </span>
           </v-card>
         </li>
         <li @click="open('https://steamcommunity.com/id/eggsydev')">
           <v-card class="profile-card pa-2" width="100%">
-            <span>
-              <v-icon left>mdi-steam</v-icon>eggsydev
-            </span>
+            <span> <v-icon left>mdi-steam</v-icon>eggsydev </span>
           </v-card>
         </li>
         <li @click="open('https://instagram.com/eggsy_dev')">
           <v-card class="profile-card pa-2" width="100%">
-            <span>
-              <v-icon left>mdi-instagram</v-icon>eggsy_dev
-            </span>
+            <span> <v-icon left>mdi-instagram</v-icon>eggsy_dev </span>
           </v-card>
         </li>
         <li @click="open('https://discord.com/users/162969778699501569')">
           <v-card class="profile-card pa-2" width="100%">
-            <span>
-              <v-icon left>mdi-discord</v-icon>EGGSY#3388
-            </span>
+            <span> <v-icon left>mdi-discord</v-icon>EGGSY#3388 </span>
           </v-card>
         </li>
       </ul>
@@ -56,7 +51,7 @@
 <style lang="scss" scoped>
 .announcement-card {
   border-radius: 4px;
-  background: linear-gradient(45deg, red, blue);
+  background: linear-gradient(45deg, blue, red);
 
   div {
     text-align: center;
@@ -118,6 +113,6 @@ export default {
     open(url) {
       window.open(url, "_blank");
     },
-  }
-}
+  },
+};
 </script>

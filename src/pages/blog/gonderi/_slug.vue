@@ -80,6 +80,15 @@
         </v-col>
 
         <v-col md="8" sm="12">
+          <a
+            :href="`https://new.eggsy.xyz/blog/gonderi/${$route.params.slug}`"
+            class="text-decoration-none"
+          >
+            <v-alert type="info" v-ripple>
+              Bu yazıyı yeni blog görünümünde okumak için buraya tıklayın.
+            </v-alert>
+          </a>
+
           <nuxt-content ref="content" class="content" :document="post" />
         </v-col>
 

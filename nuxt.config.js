@@ -77,17 +77,12 @@ export default {
       mode: "client",
     },
     {
-      src: "@/plugins/player.js",
-      mode: "client",
-    },
-    {
       src: "@/plugins/tippy.js",
       mode: "client",
     },
   ],
   modules: [
     "@nuxt/content", // has to be on top so sitemap and feed module can read data inside it
-    "@nuxtjs/firebase",
     "@nuxtjs/sitemap",
     "@nuxtjs/device",
     "@nuxtjs/feed",
@@ -102,20 +97,6 @@ export default {
   pwa: {
     background_color: "#212121",
     theme_color: "#212121",
-  },
-  firebase: {
-    config: {
-      appId: process.env.FIREBASE_APP_ID,
-      apiKey: process.env.FIREBASE_API_KEY,
-      databaseURL: process.env.FIREBASE_DB_URL,
-      projectId: process.env.FIREBASE_PROJECT_ID,
-      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-      messagingSenderId: process.env.MESSAGE_SENDER_ID,
-    },
-    services: {
-      firestore: true,
-    },
   },
   async sitemap() {
     const { $content } = require("@nuxt/content"),

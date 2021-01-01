@@ -1,4 +1,4 @@
-> **I am rewriting my website in TailwindCSS on another branch! Check out the [tailwind](https://github.com/eggsy/eggsy-website/tree/tailwind) branch to see the progress and [here](https://eggsy-tailwind.netlify.app) to see what I've done so far! I'll merge that branch with this one when I'm done with it.**
+> **I am rewriting my website in TailwindCSS on another branch! Check out the [tailwind](https://github.com/eggsy/eggsy-website/tree/tailwind) branch to see the progress and [here](https://new.eggsy.xyz) to see what I've done so far! I'll merge that branch with this one when I'm done with it.**
 
 ## EGGSY's Personal Website
 
@@ -47,7 +47,7 @@ Make sure you have everything installed and ready, please note that depending on
 
 #### 📄 To do
 
-- [ ] **Clean the code!**
+- [ ] **Clean the code!** (currently in WIP in [tailwind branch](https://github.com/eggsy/eggsy-website/tree/tailwind))
 - [ ] Move Canvas API to HTML Canvas and remove API.
 - [ ] If not going to remove API, move API to SVG to PNG system.
 

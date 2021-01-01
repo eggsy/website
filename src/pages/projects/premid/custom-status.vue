@@ -1,8 +1,15 @@
 <template>
-  <v-row style="margin-top:1.5em;" no-gutters>
+  <v-row style="margin-top: 1.5em" no-gutters>
     <v-col md="3" cols="0"></v-col>
 
     <v-col md="6" cols="12">
+      <a href="https://new.eggsy.xyz/projects/premid/custom-status">
+        <v-alert v-ripple dense type="info">
+          Check out the new look of this page in my website's new (future) look!
+          Click here to get started.
+        </v-alert>
+      </a>
+
       <div class="discordCard">
         <div class="cardContent">
           <div class="title">
@@ -31,9 +38,14 @@
                   </v-btn>
                 </template>
 
-                <v-card style="margin-right:12px;">
+                <v-card style="margin-right: 12px">
                   <p
-                    style="padding:10px;max-width:18em;font-size:small;white-space:pre-wrap;"
+                    style="
+                      padding: 10px;
+                      max-width: 18em;
+                      font-size: small;
+                      white-space: pre-wrap;
+                    "
                     v-html="errorString"
                   />
                 </v-card>
@@ -74,24 +86,24 @@
             <div class="details">
               <div class="appName" title="Custom Status">Custom Status</div>
 
-              <div
-                id="details"
-                :title="details ? details.slice(0, 128) : ''"
-              >{{ details ? details.slice(0, 128) : "[ENTER SOMETHING]" }}</div>
-              <div
-                id="state"
-                :title="state ? state.slice(0, 128) : ''"
-              >{{ state ? state.slice(0, 128) : "" }}</div>
+              <div id="details" :title="details ? details.slice(0, 128) : ''">
+                {{ details ? details.slice(0, 128) : "[ENTER SOMETHING]" }}
+              </div>
+              <div id="state" :title="state ? state.slice(0, 128) : ''">
+                {{ state ? state.slice(0, 128) : "" }}
+              </div>
 
               <div v-if="this.time" class="timestamp">{{ timeLeft }}</div>
-              <div v-else-if="elapsedCheck && !this.time" class="timestamp">{{ timeElapsed }}</div>
+              <div v-else-if="elapsedCheck && !this.time" class="timestamp">
+                {{ timeElapsed }}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div>
-        <div style="display:flex;">
+        <div style="display: flex">
           <v-text-field
             counter="128"
             :loading="loading"
@@ -101,7 +113,7 @@
             label="Details (upper text)"
           ></v-text-field>
           <v-text-field
-            style="margin-left:8px;"
+            style="margin-left: 8px"
             counter="128"
             :loading="loading"
             clearable
@@ -111,12 +123,12 @@
           ></v-text-field>
         </div>
 
-        <div style="display:flex;max-width:100%;">
+        <div style="display: flex; max-width: 100%">
           <v-select
             clearable
             :loading="loading"
             ref="largeImage"
-            style="width:100%;max-width:100%"
+            style="width: 100%; max-width: 100%"
             @change="imageHandle($event, 'large')"
             :items="largeImages"
             label="Large image"
@@ -126,7 +138,7 @@
             clearable
             :loading="loading"
             ref="smallImage"
-            style="width:100%;max-width:100%;margin-left:8px;"
+            style="width: 100%; max-width: 100%; margin-left: 8px"
             @change="imageHandle($event, 'small')"
             :items="smallImages"
             label="Small image"
@@ -167,7 +179,7 @@
 
           <v-dialog ref="dialog" v-model="modal" persistent width="290px">
             <template v-slot:activator="{ on }">
-              <div style="max-width:100%;">
+              <div style="max-width: 100%">
                 <v-text-field
                   v-model="time"
                   clearable
@@ -181,7 +193,9 @@
 
             <v-time-picker v-if="modal" v-model="asyncTime" full-width>
               <v-spacer></v-spacer>
-              <v-btn text raised color="secondary" @click="modal = false">Cancel</v-btn>
+              <v-btn text raised color="secondary" @click="modal = false"
+                >Cancel</v-btn
+              >
               <v-btn
                 text
                 raised
@@ -191,13 +205,14 @@
                   $refs.dialog.save(time);
                   clickDate = new Date();
                 "
-              >OK</v-btn>
+                >OK</v-btn
+              >
             </v-time-picker>
           </v-dialog>
         </v-row>
       </div>
 
-      <div style="display:none;" id="object">{}</div>
+      <div style="display: none" id="object">{}</div>
     </v-col>
 
     <v-col md="3" cols="0"></v-col>

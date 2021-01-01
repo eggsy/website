@@ -100,6 +100,20 @@
     <v-col class="projects">
       <h3 class="font-weight-light text-uppercase">My projects</h3>
       <div class="cards">
+        <a href="https://new.eggsy.xyz" class="text-decoration-none">
+          <v-card v-ripple max-width="344" color="green" class="mb-2">
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>New Website!</v-list-item-title>
+                <v-list-item-subtitle
+                  >Check out the new and future look of this website! It's going
+                  to be beautiful!</v-list-item-subtitle
+                >
+              </v-list-item-content>
+            </v-list-item>
+          </v-card>
+        </a>
+
         <v-card
           v-ripple
           v-for="project in projects"
@@ -373,7 +387,6 @@ export default {
           description:
             "My personal Turkish blog where I also share my daily song recommendations!",
           to: "/blog",
-          new: true,
         },
         {
           name: "PreMiD Stuff",
