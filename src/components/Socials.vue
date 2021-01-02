@@ -2,7 +2,7 @@
   <div class="flex flex-wrap justify-center space-x-2">
     <!-- Discord -->
     <a
-      href="https://discord.gg/tHx9ZKG"
+      :href="getLinks.discord"
       target="_blank"
       rel="noreferrer"
       title="Join my Discord server!"
@@ -12,7 +12,7 @@
 
     <!-- Twitter -->
     <a
-      href="https://twitter.com/eggsydev?utm_source=eggsy.xyz"
+      :href="getLinks.twitter"
       target="_blank"
       rel="noreferrer"
       title="Follow me on Twitter!"
@@ -22,7 +22,7 @@
 
     <!-- GitHub -->
     <a
-      href="https://github.com/eggsy?utm_source=eggsy.xyz"
+      :href="getLinks.github"
       target="_blank"
       rel="noreferrer"
       title="Follow me on GitHub!"
@@ -32,7 +32,7 @@
 
     <!-- Instagram -->
     <a
-      href="https://instagram.com/eggsy_dev?utm_source=eggsy.xyz"
+      :href="getLinks.instagram"
       target="_blank"
       rel="noreferrer"
       title="Follow me on Instagram!"
@@ -41,6 +41,16 @@
     </a>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    getLinks() {
+      return this.$config.social
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 a {

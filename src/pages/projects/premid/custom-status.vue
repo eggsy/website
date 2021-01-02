@@ -144,11 +144,11 @@
         </div>
       </section>
 
-      <section class="md:w-6/12 space-y-4 text-justify">
+      <section class="md:w-6/12 text-justify">
         <div class="space-y-2">
           <div
             v-if="presence.installed === false"
-            class="hidden sm:block information bg-red-500 dark:bg-gray-700"
+            class="hidden sm:block information bg-red-500 dark:bg-gray-700 mb-2"
           >
             You need to install the Custom Status presence from the PreMiD Store
             to be able to use this page.
@@ -162,7 +162,9 @@
             to visit the store.
           </div>
 
-          <div class="block sm:hidden information bg-red-500 dark:bg-gray-700">
+          <div
+            class="block sm:hidden information bg-red-500 dark:bg-gray-700 mb-2"
+          >
             Are you on mobile? If you are you should know that PreMiD doesn't
             work on mobile, so you can't use this page in any way.
           </div>
@@ -282,7 +284,7 @@ export default {
   computed: {
     /**
      * Formats image names, adds spaces and returns all in a single object.
-     * @returns {Object} Names of the image: { large: Array, small: Array }
+     * @returns {{ large: string[], small: string[]}} An object with large and small image array.
      */
     getImageNames() {
       const formatName = (name) =>
@@ -319,11 +321,11 @@ export default {
         .replace(/\s/g, "")
         .toLowerCase()
 
-      /* Details and state */
+      // Details and state
       if (data.details) object.details = data.details
       if (data.state) object.state = data.state
 
-      /* Timestamps  */
+      // Timestamps
       if (timestamps.start.enabled && timestamps.start.value) {
         object.startTimestamp = timestamps.start.value
       } else if (timestamps.end.enabled && timestamps.end.value) {
@@ -333,7 +335,7 @@ export default {
         ).valueOf()
       }
 
-      /* Have to change at least one value because Discord doesn't re-render the data on timestamp changes */
+      // Have to change at least one value because Discord doesn't re-render the data on timestamp changes
       object.smallImageText = data.smallImageText || "NULL"
       if (object.smallImageText === "NULL") delete object.smallImageText
 

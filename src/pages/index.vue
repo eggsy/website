@@ -300,9 +300,14 @@
             <span>is-inside.me</span>
           </nuxt-link>
 
-          <nuxt-link to="/daily" class="page-box sm:col-span-2">
+          <nuxt-link to="/daily" class="page-box">
             <icon name="music-note" class="h-8 w-8" />
             <span>Daily Song</span>
+          </nuxt-link>
+
+          <nuxt-link to="/projects/unblock-please" class="page-box">
+            <icon name="lock-open" class="h-8 w-8" />
+            <span>Unblock Please</span>
           </nuxt-link>
         </div>
       </section>
@@ -417,6 +422,11 @@ export default {
           title: "Node.js",
           icon: "nodejs",
           level: 80,
+        },
+        {
+          title: "TailwindCSS",
+          icon: "tailwindcss",
+          level: 75,
         },
         {
           title: "Sass",

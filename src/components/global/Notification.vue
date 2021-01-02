@@ -1,10 +1,17 @@
 <template>
-  <div
-    :class="{
-      'mb-4 px-4 py-2 rounded-md text-gray-100': true,
-      [getBackgroundColor]: true,
-    }"
-  >
+  <nuxt-link v-if="$props.to" :to="$props.to">
+    <div :class="`content ${getBackgroundColor}`">
+      <slot></slot>
+    </div>
+  </nuxt-link>
+
+  <a v-else-if="$props.href" :href="$props.href">
+    <div :class="`content ${getBackgroundColor}`">
+      <slot></slot>
+    </div>
+  </a>
+
+  <div v-else :class="`content ${getBackgroundColor}`">
     <slot></slot>
   </div>
 </template>
@@ -12,6 +19,16 @@
 <script>
 export default {
   props: {
+    to: {
+      type: [String, Object],
+      required: false,
+      default: null,
+    },
+    href: {
+      type: [String, Object],
+      required: false,
+      default: null,
+    },
     type: {
       type: String,
       required: false,
@@ -38,7 +55,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
+a {
+  @apply no-underline hover:no-underline;
+}
+
+.content {
+  @apply mb-4 px-4 py-2 rounded-md text-gray-100;
+
   a {
     @apply text-purple-600 font-medium hover:underline;
   }

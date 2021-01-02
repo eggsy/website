@@ -10,11 +10,7 @@
         </nuxt-link>
 
         <div class="flex items-center space-x-2 ml-auto">
-          <a
-            href="https://is-inside.me/?utm_source=eggsy.xyz"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a :href="getLink" target="_blank" rel="noreferrer">
             <h1 class="font-semibold">is-inside.me</h1>
           </a>
           <icon name="cursor-click" class="h-6 w-6" />
@@ -31,10 +27,7 @@
 
       <icon name="lightning-bolt" class="hidden sm:block h-6 w-6" />
 
-      <a
-        href="https://is-inside.me/?utm_source=eggsy.xyz"
-        rel="noreferrer"
-        target="_blank"
+      <a :href="getLink" rel="noreferrer" target="_blank"
         ><h2 class="text-2xl font-bold">is-inside.me</h2></a
       >
     </section>
@@ -47,7 +40,7 @@
         <h2 class="project-title">
           What is
           <a
-            href="https://is-inside.me/?utm_source=eggsy.xyz"
+            :href="getLink"
             class="text-red-600"
             rel="noreferrer"
             target="_blank"
@@ -126,7 +119,7 @@
 
         <div class="text-gray-800 dark:text-gray-300">
           <a
-            href="https://is-inside.me/?utm_source=eggsy.xyz"
+            :href="getLink"
             class="font-medium text-red-600"
             rel="noreferrer"
             target="_blank"
@@ -134,7 +127,7 @@
           >
           to create your first account! Or
           <a
-            href="https://is-inside.me/faq/?utm_source=eggsy.xyz"
+            :href="getLink"
             class="font-medium"
             rel="noreferrer"
             target="_blank"
@@ -151,6 +144,11 @@
 export default {
   head: {
     title: "is-inside.me",
+  },
+  computed: {
+    getLink() {
+      return this.$config.links.isInsideMe
+    },
   },
 }
 </script>
