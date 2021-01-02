@@ -6,13 +6,13 @@ import head from "./config/head"
 import loading from "./config/loading"
 import modules from "./config/modules"
 import plugins from "./config/plugins"
+import publicRuntimeConfig from "./config/publicRuntimeConfig"
 
 // Import module specific configs
 import colorMode from "./config/modules/colorMode"
 import content from "./config/modules/content"
 import dotenv from "./config/modules/dotenv"
 import firebase from "./config/modules/firebase"
-import optimizedImages from "./config/modules/optimizedImages"
 import pwa from "./config/modules/pwa"
 import sitemap from "./config/modules/sitemap"
 import tailwindcss from "./config/modules/tailwindcss"
@@ -45,7 +45,7 @@ export default {
   content,
   dotenv,
   firebase,
-  optimizedImages,
+  publicRuntimeConfig,
   pwa,
   sitemap,
   tailwindcss,
