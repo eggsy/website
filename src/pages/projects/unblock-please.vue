@@ -36,7 +36,7 @@
       class="mt-12 sm:mt-24 space-y-14 sm:space-y-28 sm:w-9/12 mx-auto text-justify"
     >
       <!-- What is Unblock Please? -->
-      <div class="flex justify-between items-center">
+      <div class="sm:flex justify-between items-center">
         <div class="sm:w-6/12">
           <h2 class="project-title">
             What is
@@ -61,14 +61,16 @@
 
         <img
           src="/assets/images/projects/unblock-please/featuring.png"
+          class="hidden sm:block"
           alt="featuring image"
         />
       </div>
 
       <!-- What's cool about it? -->
-      <div class="flex justify-between items-center">
+      <div class="sm:flex justify-between items-center">
         <img
           src="/assets/images/projects/unblock-please/featuring2.png"
+          class="hidden sm:block"
           alt="featuring image"
         />
 
@@ -88,7 +90,7 @@
         </div>
       </div>
 
-      <div class="flex justify-between items-center">
+      <div class="sm:flex justify-between items-center">
         <div class="sm:w-6/12">
           <h2 class="project-title">
             Is it <span class="text-red-600">free?</span>
@@ -105,6 +107,7 @@
 
         <img
           src="/assets/images/projects/unblock-please/featuring3.png"
+          class="hidden sm:block"
           alt="featuring image"
         />
       </div>
