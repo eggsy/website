@@ -14,7 +14,7 @@
   </div>
 
   <div v-else class="px-4 sm:px-0 py-4 flex flex-col sm:flex-row items-center">
-    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+    <div class="flex flex-col sm:flex-row w-full gap-4 sm:gap-6">
       <div class="sm:w-1/3 flex flex-col space-y-4">
         <div class="flex space-x-4">
           <nuxt-link :to="{ name: 'index' }" class="side-button">

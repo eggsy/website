@@ -73,8 +73,8 @@ export default {
       const colorMode = this.$colorMode.preference
 
       if (colorMode === "system") return "computer"
-      else if (colorMode === "dark") return "sun"
-      else return "moon"
+      else if (colorMode === "dark") return "moon"
+      else return "sun"
     },
   },
   methods: {
