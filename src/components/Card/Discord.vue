@@ -1,12 +1,12 @@
 <template>
   <div class="w-full px-6 py-4 rounded-md bg-social-discord-dark">
     <div class="py-2 space-y-2">
-      <h1 class="uppercase text-white dark:text-gray-100 text-xs font-bold">
+      <h1 class="text-xs font-bold text-white uppercase dark:text-gray-100">
         Playing a game
       </h1>
 
-      <div class="flex space-x-3 md:space-x-5 items-center">
-        <div class="w-1/4 md:w-1/5 relative">
+      <div class="flex items-center space-x-3 md:space-x-5">
+        <div class="relative w-1/4 md:w-1/5">
           <img
             class="rounded-md"
             :src="getImages.largeImage"
@@ -20,7 +20,7 @@
               content: getText.small,
               placement: 'top',
             }"
-            class="rounded-full bg-social-discord-dark box-border absolute -bottom-2 -right-2 w-9 ring-4 ring-social-discord-dark focus:outline-none"
+            class="box-border absolute rounded-full bg-social-discord-dark -bottom-2 -right-2 w-9 ring-4 ring-social-discord-dark focus:outline-none"
             :src="getImages.smallImage"
             draggable="false"
             alt="small image"
@@ -28,12 +28,12 @@
         </div>
 
         <div
-          class="flex-grow leading-none truncate w-3/4 md:w-4/5 text-gray-100"
+          class="flex-grow w-3/4 leading-none text-gray-100 truncate md:w-4/5"
         >
-          <span class="font-semibold text-white block">Custom Status</span>
-          <span class="text-sm block truncate">{{ getText.details }}</span>
-          <span class="text-sm block truncate">{{ getText.state }}</span>
-          <span v-if="isTimerEnabled === true" class="text-sm block">{{
+          <span class="block font-semibold text-white">Custom Status</span>
+          <span class="block text-sm truncate">{{ getText.details }}</span>
+          <span class="block text-sm truncate">{{ getText.state }}</span>
+          <span v-if="isTimerEnabled === true" class="block text-sm">{{
             getTime
           }}</span>
         </div>

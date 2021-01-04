@@ -7,7 +7,7 @@
     <div class="uppercase">
       <h2
         v-if="rightUp"
-        class="block text-gray-500 dark:text-gray-100 text-lg leading-none"
+        class="block text-lg leading-none text-gray-500 dark:text-gray-100"
       >
         {{ rightUp }}
       </h2>

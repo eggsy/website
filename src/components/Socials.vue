@@ -7,7 +7,7 @@
       rel="noreferrer"
       title="Join my Discord server!"
     >
-      <icon name="discord" class="dark:text-gray-300 h-12 w-12" />
+      <icon name="discord" />
     </a>
 
     <!-- Twitter -->
@@ -17,7 +17,7 @@
       rel="noreferrer"
       title="Follow me on Twitter!"
     >
-      <icon name="twitter" class="dark:text-gray-300 h-12 w-12" />
+      <icon name="twitter" />
     </a>
 
     <!-- GitHub -->
@@ -27,7 +27,7 @@
       rel="noreferrer"
       title="Follow me on GitHub!"
     >
-      <icon name="github" class="dark:text-gray-300 h-12 w-12" />
+      <icon name="github" />
     </a>
 
     <!-- Instagram -->
@@ -37,7 +37,7 @@
       rel="noreferrer"
       title="Follow me on Instagram!"
     >
-      <icon name="instagram" class="dark:text-gray-300 h-12 w-12" />
+      <icon name="instagram" />
     </a>
   </div>
 </template>
@@ -55,5 +55,9 @@ export default {
 <style lang="scss" scoped>
 a {
   @apply transform transition sm:hover:-translate-y-1;
+}
+
+.svg-icon {
+  @apply w-12 h-12 dark:text-gray-300;
 }
 </style>

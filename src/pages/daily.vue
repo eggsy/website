@@ -1,28 +1,28 @@
 <template>
   <div v-if="$fetchState.pending" class="flex items-center justify-center">
     <div class="flex items-center space-x-2 dark:text-gray-200">
-      <icon name="sync" class="h-6 w-6 animate-spin" />
-      <h2 class="font-semibold text-lg">Fetchings songs...</h2>
+      <icon name="sync" class="w-6 h-6 animate-spin" />
+      <h2 class="text-lg font-semibold">Fetchings songs...</h2>
     </div>
   </div>
 
   <div v-else-if="$fetchState.error" class="flex items-center justify-center">
     <div class="flex items-center space-x-2 dark:text-gray-200">
-      <icon name="ban" class="h-6 w-6" />
-      <h2 class="font-semibold text-lg">Couldn't load the song list...</h2>
+      <icon name="ban" class="w-6 h-6" />
+      <h2 class="text-lg font-semibold">Couldn't load the song list...</h2>
     </div>
   </div>
 
-  <div v-else class="px-4 sm:px-0 py-4 flex flex-col sm:flex-row items-center">
-    <div class="flex flex-col sm:flex-row w-full gap-4 sm:gap-6">
-      <div class="sm:w-1/3 flex flex-col space-y-4">
+  <div v-else class="flex flex-col items-center px-4 py-4 sm:px-0 sm:flex-row">
+    <div class="flex flex-col w-full gap-4 sm:flex-row sm:gap-6">
+      <div class="flex flex-col space-y-4 sm:w-1/3">
         <div class="flex space-x-4">
           <nuxt-link :to="{ name: 'index' }" class="side-button">
-            <icon name="home" class="h-6 w-6" />
+            <icon name="home" class="w-6 h-6" />
           </nuxt-link>
 
           <div
-            class="bg-gray-200 dark:bg-gray-800 rounded-md px-4 py-2 ring block w-4/6"
+            class="block w-4/6 px-4 py-2 bg-gray-200 rounded-md dark:bg-gray-800 ring"
           >
             <h1
               class="text-lg font-semibold text-center text-gray-700 dark:text-gray-100"
@@ -36,7 +36,7 @@
             rel="noreferrer"
             class="side-button"
           >
-            <icon name="external-link" class="h-6 w-6" />
+            <icon name="external-link" class="w-6 h-6" />
           </a>
         </div>
 
@@ -50,9 +50,9 @@
           </div>
 
           <div
-            class="bg-green-600 dark:bg-gray-800 hidden sm:block rounded-md p-4 text-white"
+            class="hidden p-4 text-white bg-green-600 rounded-md dark:bg-gray-800 sm:block"
           >
-            <h3 class="text-lg font-semibold block">What is this about?</h3>
+            <h3 class="block text-lg font-semibold">What is this about?</h3>
 
             <div class="space-y-2">
               <p>
@@ -73,7 +73,7 @@
 
       <div class="sm:w-2/3">
         <div
-          class="bg-gray-200 dark:bg-gray-800 p-4 rounded-md ring grid grid-cols-1 sm:grid-cols-2 gap-2"
+          class="grid grid-cols-1 gap-2 p-4 bg-gray-200 rounded-md dark:bg-gray-800 ring sm:grid-cols-2"
         >
           <div
             v-for="(song, index) in getSongList"
@@ -86,7 +86,7 @@
           >
             <img
               :src="song.metadata.thumbnail || 'http://via.placeholder.com/75'"
-              class="thumbnail object-none rounded"
+              class="object-none rounded thumbnail"
               draggable="false"
             />
 
@@ -95,7 +95,7 @@
                 <icon
                   v-if="getSongDateTitle(song.date).startsWith('Today')"
                   name="star"
-                  class="h-4 w-4"
+                  class="w-4 h-4"
                 />
                 <span class="text-sm text-gray-600 dark:text-gray-300">{{
                   getSongDateTitle(song.date)
@@ -103,7 +103,7 @@
               </div>
 
               <h3
-                class="text-lg leading-tight text-gray-900 dark:text-gray-100 font-semibold truncate"
+                class="text-lg font-semibold leading-tight text-gray-900 truncate dark:text-gray-100"
               >
                 {{ song.metadata.title }}
               </h3>

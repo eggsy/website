@@ -1,22 +1,22 @@
 <template>
   <nav
-    class="w-full fixed top-0 z-40 left-0 shadow-lg bg-gray-900 dark:bg-gray-800"
+    class="fixed top-0 left-0 z-40 w-full bg-gray-900 shadow-lg dark:bg-gray-800"
   >
-    <div class="hidden md:flex container mx-auto">
+    <div class="container hidden mx-auto md:flex">
       <nuxt-link
         to="/"
-        class="bg-gray-800 hover:bg-gray-700 px-2 flex items-center space-x-2"
+        class="flex items-center px-2 space-x-2 bg-gray-800 hover:bg-gray-700"
       >
         <icon
           name="arrow-left"
           title="Go back to website"
-          class="h-6 w-6 mx-auto text-gray-500"
+          class="w-6 h-6 mx-auto text-gray-500"
         />
         <span class="text-gray-300">Go Back Home</span>
       </nuxt-link>
 
-      <div class="flex-grow flex justify-center">
-        <div class="px-2 space-x-4 flex items-center text-gray-200">
+      <div class="flex justify-center flex-grow">
+        <div class="flex items-center px-2 space-x-4 text-gray-200">
           <nuxt-link
             v-for="(link, index) in links"
             :key="`link-${index}`"
@@ -29,7 +29,7 @@
                 $route.name === link.path,
             }"
           >
-            <icon :name="link.icon" class="h-6 w-6" />
+            <icon :name="link.icon" class="w-6 h-6" />
             <span>{{ link.title }}</span>
           </nuxt-link>
         </div>
@@ -39,19 +39,19 @@
         href="https://premid.app/?utm_source=eggsy.xyz"
         rel="noreferrer"
         target="_blank"
-        class="bg-gray-800 hover:bg-gray-700 px-2 flex items-center space-x-2"
+        class="flex items-center px-2 space-x-2 bg-gray-800 hover:bg-gray-700"
       >
         <span class="text-gray-300">PreMiD</span>
         <icon
           name="cursor-click"
           title="Visti PreMiD's website"
-          class="h-6 w-6 mx-auto text-gray-500"
+          class="w-6 h-6 mx-auto text-gray-500"
         />
       </a>
     </div>
 
     <div
-      class="font-lg flex justify-center py-4 w-full md:hidden text-gray-100"
+      class="flex justify-center w-full py-4 text-gray-100 font-lg md:hidden"
     >
       PreMiD
     </div>

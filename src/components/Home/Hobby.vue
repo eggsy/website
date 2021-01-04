@@ -1,9 +1,9 @@
 <template>
   <div
-    class="bg-gray-200 dark:bg-gray-700 hover:bg-opacity-75 p-2 rounded-md dark:text-white flex items-center justify-center space-x-2 cursor-pointer"
+    class="flex items-center justify-center p-2 space-x-2 bg-gray-200 rounded-md cursor-pointer dark:bg-gray-700 hover:bg-opacity-75 dark:text-white"
   >
-    <icon :name="icon" class="h-6 w-6" />
-    <h3 class="truncate text-center flex-grow" :title="title">{{ title }}</h3>
+    <icon :name="icon" class="w-6 h-6" />
+    <h3 class="flex-grow text-center truncate" :title="title">{{ title }}</h3>
   </div>
 </template>
 

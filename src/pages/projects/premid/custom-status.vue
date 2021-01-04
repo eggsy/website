@@ -1,11 +1,11 @@
 <template>
-  <div class="space-y-2 px-4 md:px-0">
+  <div class="px-4 space-y-2 md:px-0">
     <!-- Custom Status Presence will read the data from here -->
     <div id="object" class="hidden">
       {{ getPresenceData }}
     </div>
 
-    <div class="md:flex md:space-x-6 space-y-6 md:space-y-0">
+    <div class="space-y-6 md:flex md:space-x-6 md:space-y-0">
       <section class="md:w-6/12">
         <CardDiscord
           :small-image-text="presence.smallImageText"
@@ -18,9 +18,9 @@
         />
 
         <div class="mt-4 space-y-2">
-          <div class="md:flex md:space-x-2 items-center w-full">
+          <div class="items-center w-full md:flex md:space-x-2">
             <h3
-              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
+              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
             >
               Details (upper text)
             </h3>
@@ -31,9 +31,9 @@
             />
           </div>
 
-          <div class="md:flex md:space-x-2 items-center w-full">
+          <div class="items-center w-full md:flex md:space-x-2">
             <h3
-              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
+              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
             >
               State (lower text)
             </h3>
@@ -44,15 +44,15 @@
             />
           </div>
 
-          <div class="md:flex md:space-x-2 items-center w-full">
+          <div class="items-center w-full md:flex md:space-x-2">
             <h3
-              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
+              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
             >
               Large Image
             </h3>
             <select
               v-model="presence.largeImageKey"
-              class="bg-white dark:bg-gray-700 w-full md:w-3/4"
+              class="w-full bg-white dark:bg-gray-700 md:w-3/4"
             >
               <option selected>PreMiD</option>
               <option
@@ -64,15 +64,15 @@
             </select>
           </div>
 
-          <div class="md:flex md:space-x-2 items-center w-full">
+          <div class="items-center w-full md:flex md:space-x-2">
             <h3
-              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
+              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
             >
               Small Image
             </h3>
             <select
               v-model="presence.smallImageKey"
-              class="bg-white dark:bg-gray-700 w-full md:w-3/4"
+              class="w-full bg-white dark:bg-gray-700 md:w-3/4"
             >
               <option selected>None</option>
               <option
@@ -86,10 +86,10 @@
 
           <div
             v-if="presence.smallImageKey !== 'None'"
-            class="md:flex md:space-x-2 items-center w-full"
+            class="items-center w-full md:flex md:space-x-2"
           >
             <h3
-              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
+              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
             >
               Small Image Text
             </h3>
@@ -100,14 +100,14 @@
             />
           </div>
 
-          <div class="md:flex md:space-x-2 items-center w-full">
+          <div class="items-center w-full md:flex md:space-x-2">
             <h3
-              class="text-gray-700 dark:text-gray-100 font-medium w-full md:w-1/4"
+              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
             >
               Timestamps
             </h3>
 
-            <div class="w-full md:w-3/4 grid grid-cols-1 gap-2">
+            <div class="grid w-full grid-cols-1 gap-2 md:w-3/4">
               <div
                 :class="{
                   'timestamp dark:text-gray-200': true,
@@ -144,11 +144,11 @@
         </div>
       </section>
 
-      <section class="md:w-6/12 text-justify">
+      <section class="text-justify md:w-6/12">
         <div class="space-y-2">
           <div
             v-if="presence.installed === false"
-            class="hidden sm:block information bg-red-500 dark:bg-gray-700 mb-2"
+            class="hidden mb-2 bg-red-500 sm:block information dark:bg-gray-700"
           >
             You need to install the Custom Status presence from the PreMiD Store
             to be able to use this page.
@@ -163,13 +163,13 @@
           </div>
 
           <div
-            class="block sm:hidden information bg-red-500 dark:bg-gray-700 mb-2"
+            class="block mb-2 bg-red-500 sm:hidden information dark:bg-gray-700"
           >
             Are you on mobile? If you are you should know that PreMiD doesn't
             work on mobile, so you can't use this page in any way.
           </div>
 
-          <div class="information bg-green-500 dark:bg-gray-700">
+          <div class="bg-green-500 information dark:bg-gray-700">
             Welcome to the new look of PreMiD pages including Custom Status. I
             have completely redesigned my website, please take a look at the
             rest too!
@@ -178,7 +178,7 @@
 
         <div>
           <h2
-            class="text-lg block font-semibold text-gray-800 dark:text-gray-100"
+            class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
           >
             How does it work?
           </h2>
@@ -199,7 +199,7 @@
 
         <div>
           <h2
-            class="text-lg block font-semibold text-gray-800 dark:text-gray-100"
+            class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
           >
             It's not showing anything!?
           </h2>
@@ -222,7 +222,7 @@
 
         <div>
           <h2
-            class="text-lg block font-semibold text-gray-800 dark:text-gray-100"
+            class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
           >
             Can I donate?
           </h2>

@@ -1,9 +1,9 @@
 <template>
   <div
     v-if="$fetchState.pending"
-    class="flex items-center h-screen overflow-hidden justify-center space-x-2 text-2xl text-gray-900 font-semibold select-none"
+    class="flex items-center justify-center h-screen space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none"
   >
-    <icon name="sync" class="h-8 w-8 animate-spin" />
+    <icon name="sync" class="w-8 h-8 animate-spin" />
 
     <h3>Gönderi yükleniyor...</h3>
   </div>
@@ -14,9 +14,9 @@
   >
     <div class="space-y-2">
       <div
-        class="flex items-center justify-center text-gray-900 font-semibold text-2xl space-x-2"
+        class="flex items-center justify-center space-x-2 text-2xl font-semibold text-gray-900"
       >
-        <icon name="times" class="h-8 w-8" />
+        <icon name="times" class="w-8 h-8" />
 
         <h3>Gönderi yüklenemedi.</h3>
       </div>
@@ -26,7 +26,7 @@
       <div class="flex justify-center">
         <nuxt-link
           to="/blog"
-          class="rounded-md px-4 py-2 bg-gray-700 hover:bg-gray-800 text-gray-200"
+          class="px-4 py-2 text-gray-200 bg-gray-700 rounded-md hover:bg-gray-800"
           title="bloga dön"
         >
           Bloga Dön
@@ -37,21 +37,21 @@
 
   <div
     v-else
-    class="pt-20 sm:pt-16 pb-8 px-4 sm:px-0 sm:w-11/12 mx-auto sm:flex sm:space-x-4"
+    class="px-4 pt-20 pb-8 mx-auto sm:pt-16 sm:px-0 sm:w-11/12 sm:flex sm:space-x-4"
   >
     <div
-      class="share hidden sm:table-row left-0 h-full sticky top-14 rounded-md space-y-2"
+      class="sticky left-0 hidden h-full space-y-2 rounded-md share sm:table-row top-14"
     >
       <div @click="share('twitter')">
-        <icon name="twitter" class="h-full w-full text-social-twitter" />
+        <icon name="twitter" class="w-full h-full text-social-twitter" />
       </div>
 
       <div @click="share('telegram')">
-        <icon name="telegram" class="h-full w-full text-social-telegram" />
+        <icon name="telegram" class="w-full h-full text-social-telegram" />
       </div>
 
       <div @click="share('whatsapp')">
-        <icon name="whatsapp" class="h-full w-full text-social-whatsapp" />
+        <icon name="whatsapp" class="w-full h-full text-social-whatsapp" />
       </div>
 
       <div @click="share('url')">
@@ -59,14 +59,14 @@
           v-if="copied === true"
           key="check"
           name="check"
-          class="h-full w-full text-green-600"
+          class="w-full h-full text-green-600"
         />
 
         <icon
           v-else
           key="link"
           name="link"
-          class="h-full w-full text-gray-700 dark:text-gray-300"
+          class="w-full h-full text-gray-700 dark:text-gray-300"
         />
       </div>
     </div>
@@ -74,10 +74,10 @@
     <div class="w-full sm:w-8/12">
       <article>
         <div
-          class="leading-thight bg-gray-100 dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 rounded-lg p-4"
+          class="p-4 bg-gray-100 rounded-lg leading-thight dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
         >
           <h1
-            class="font-semibold text-gray-800 dark:text-gray-200 text-lg sm:text-xl"
+            class="text-lg font-semibold text-gray-800 dark:text-gray-200 sm:text-xl"
           >
             {{ post.title }}
           </h1>
@@ -91,23 +91,23 @@
           }"
         >
           <div
-            class="bg-gray-100 dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 dark:text-gray-300 w-full sm:w-auto whitespace-nowrap rounded-md px-4 py-2 text-center"
+            class="w-full px-4 py-2 text-center bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 dark:text-gray-300 sm:w-auto whitespace-nowrap"
           >
             Okuma Süresi: {{ getReadingTime }} dk
           </div>
 
           <div
             v-if="getTags.length > 0"
-            class="bg-gray-100 dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 w-full rounded-md px-4 py-2 col-span-2 flex items-center space-x-2"
+            class="flex items-center w-full col-span-2 px-4 py-2 space-x-2 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
           >
             <span class="dark:text-gray-300">Etiketler:</span>
 
-            <div class="space-x-2 overflow-y-hidden overflow-x-auto">
+            <div class="space-x-2 overflow-x-auto overflow-y-hidden">
               <nuxt-link
                 v-for="(tag, index) of getTags"
                 :key="`tag-${index}`"
                 :to="`/blog/etiket/${tag}`"
-                class="bg-gray-200 hover:bg-opacity-75 dark:bg-gray-700 dark:text-gray-300 select-none text-gray-700 font-medium rounded-md px-2 py-1"
+                class="px-2 py-1 font-medium text-gray-700 bg-gray-200 rounded-md select-none hover:bg-opacity-75 dark:bg-gray-700 dark:text-gray-300"
               >
                 <span>{{ tag }}</span>
               </nuxt-link>
@@ -115,20 +115,20 @@
           </div>
 
           <div
-            class="flex space-x-4 overflow-x-auto overflow-y-hidden sm:hidden share-small rounded-md pr-1 dark:text-gray-300"
+            class="flex pr-1 space-x-4 overflow-x-auto overflow-y-hidden rounded-md sm:hidden share-small dark:text-gray-300"
           >
             <div class="flex items-center space-x-2" @click="share('twitter')">
-              <icon name="twitter" class="h-6 w-6 text-social-twitter" />
+              <icon name="twitter" class="w-6 h-6 text-social-twitter" />
               <span>Tweet</span>
             </div>
 
             <div class="flex items-center space-x-2" @click="share('telegram')">
-              <icon name="telegram" class="h-6 w-6 text-social-telegram" />
+              <icon name="telegram" class="w-6 h-6 text-social-telegram" />
               <span>Telegram</span>
             </div>
 
             <div class="flex items-center space-x-2" @click="share('whatsapp')">
-              <icon name="whatsapp" class="h-6 w-6 text-social-whatsapp" />
+              <icon name="whatsapp" class="w-6 h-6 text-social-whatsapp" />
               <span>WhatsApp</span>
             </div>
 
@@ -137,14 +137,14 @@
                 v-if="copied === true"
                 key="check"
                 name="check"
-                class="h-6 w-6 text-green-600"
+                class="w-6 h-6 text-green-600"
               />
 
               <icon
                 v-else
                 key="link"
                 name="link"
-                class="h-6 w-6 text-gray-700 dark:text-gray-300"
+                class="w-6 h-6 text-gray-700 dark:text-gray-300"
               />
 
               <span>Kopyala</span>
@@ -158,7 +158,7 @@
 
         <div
           v-if="getRelatedPosts.length > 0"
-          class="mt-4 bg-gray-100 dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900 p-4 rounded-md"
+          class="p-4 mt-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
         >
           <CoolTitle
             :left="getRelatedPosts.length"
@@ -167,7 +167,7 @@
             class="mb-4"
           />
 
-          <div class="grid sm:grid-cols-2 gap-2">
+          <div class="grid gap-2 sm:grid-cols-2">
             <nuxt-link
               v-for="(related, index) in getRelatedPosts"
               :key="`related-${index}`"
@@ -187,9 +187,9 @@
 
     <div
       v-if="getToc.length > 0"
-      class="hidden sm:block h-full sticky top-14 space-y-2"
+      class="sticky hidden h-full space-y-2 sm:block top-14"
     >
-      <div id="titles" class="space-y-2 overflow-y-hidden overflow-x-hidden">
+      <div id="titles" class="space-y-2 overflow-x-hidden overflow-y-hidden">
         <a
           v-for="link of getToc"
           :key="link.id"

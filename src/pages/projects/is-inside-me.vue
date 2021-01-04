@@ -1,31 +1,31 @@
 <template>
-  <div class="pt-6 pb-14 px-4">
-    <nav class="hidden sm:block fixed w-full top-0 left-0 py-4">
+  <div class="px-4 pt-6 pb-14">
+    <nav class="fixed top-0 left-0 hidden w-full py-4 sm:block">
       <div
-        class="container mx-auto flex items-center text-gray-800 dark:text-gray-200"
+        class="container flex items-center mx-auto text-gray-800 dark:text-gray-200"
       >
         <nuxt-link to="/" class="flex items-center space-x-2 hover:underline">
-          <icon name="arrow-left" class="h-6 w-6" />
+          <icon name="arrow-left" class="w-6 h-6" />
           <span>Go Back Home</span>
         </nuxt-link>
 
-        <div class="flex items-center space-x-2 ml-auto">
+        <div class="flex items-center ml-auto space-x-2">
           <a :href="getLink" target="_blank" rel="noreferrer">
             <h1 class="font-semibold">is-inside.me</h1>
           </a>
-          <icon name="cursor-click" class="h-6 w-6" />
+          <icon name="cursor-click" class="w-6 h-6" />
         </div>
       </div>
     </nav>
 
     <section
-      class="mt-12 sm:mt-24 w-full flex items-center justify-center space-x-2 dark:text-gray-200"
+      class="flex items-center justify-center w-full mt-12 space-x-2 sm:mt-24 dark:text-gray-200"
     >
       <nuxt-link class="sm:hidden" to="/">
-        <icon name="arrow-left" class="h-6 w-6" />
+        <icon name="arrow-left" class="w-6 h-6" />
       </nuxt-link>
 
-      <icon name="lightning-bolt" class="hidden sm:block h-6 w-6" />
+      <icon name="lightning-bolt" class="hidden w-6 h-6 sm:block" />
 
       <a :href="getLink" rel="noreferrer" target="_blank"
         ><h2 class="text-2xl font-bold">is-inside.me</h2></a
@@ -33,7 +33,7 @@
     </section>
 
     <section
-      class="mt-12 sm:mt-24 space-y-14 sm:space-y-28 sm:w-9/12 mx-auto text-justify"
+      class="mx-auto mt-12 text-justify sm:mt-24 space-y-14 sm:space-y-28 sm:w-9/12"
     >
       <!-- What is is-inside.me? -->
       <div class="sm:w-6/12">
@@ -82,7 +82,7 @@
       </div>
 
       <!-- What's cool about it? -->
-      <div class="ml-auto sm:w-6/12 text-right">
+      <div class="ml-auto text-right sm:w-6/12">
         <h2 class="project-title">
           What's cool about <span class="text-red-600">it?</span>
         </h2>
@@ -114,7 +114,7 @@
       </div>
 
       <!-- Are you ready? -->
-      <div class="sm:w-5/12 mx-auto text-center">
+      <div class="mx-auto text-center sm:w-5/12">
         <h2 class="project-title">Are you ready?</h2>
 
         <div class="text-gray-800 dark:text-gray-300">

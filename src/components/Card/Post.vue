@@ -39,7 +39,7 @@
         class="rounded-md"
       >
         <div
-          class="absolute rounded-md top-0 left-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black opacity-25 w-full h-full"
+          class="absolute top-0 left-0 w-full h-full rounded-md opacity-25 bg-gradient-to-b from-gray-800 via-gray-900 to-black"
         />
 
         <img
@@ -61,12 +61,12 @@
             v-if="
               featured === true && image === true && getPostInfo.tags.length
             "
-            class="flex justify-center sm:justify-start overflow-x-auto sm:overflow-x-hidden sm:flex-wrap space-x-2 mb-1"
+            class="flex justify-center mb-1 space-x-2 overflow-x-auto sm:justify-start sm:overflow-x-hidden sm:flex-wrap"
           >
             <span
               v-for="(tag, index) of getPostInfo.tags"
               :key="`tag-${index}`"
-              class="bg-gray-700 hover:bg-gray-800 text-gray-200 rounded-md text-sm px-2 py-1"
+              class="px-2 py-1 text-sm text-gray-200 bg-gray-700 rounded-md hover:bg-gray-800"
               >{{ tag }}</span
             >
           </div>

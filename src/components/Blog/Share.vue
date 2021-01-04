@@ -1,15 +1,15 @@
 <template>
   <div class="share">
     <div @click="share('twitter')">
-      <icon name="twitter" class="h-full w-full text-social-twitter" />
+      <icon name="twitter" class="w-full h-full text-social-twitter" />
     </div>
 
     <div @click="share('telegram')">
-      <icon name="telegram" class="h-full w-full text-social-telegram" />
+      <icon name="telegram" class="w-full h-full text-social-telegram" />
     </div>
 
     <div @click="share('whatsapp')">
-      <icon name="whatsapp" class="h-full w-full text-social-whatsapp" />
+      <icon name="whatsapp" class="w-full h-full text-social-whatsapp" />
     </div>
 
     <div @click="share('url')">
@@ -17,10 +17,10 @@
         v-if="copied === true"
         key="check"
         name="check"
-        class="h-full w-full text-green-600"
+        class="w-full h-full text-green-600"
       />
 
-      <icon v-else key="link" name="link" class="h-full w-full text-gray-700" />
+      <icon v-else key="link" name="link" class="w-full h-full text-gray-700" />
     </div>
   </div>
 </template>

@@ -1,11 +1,11 @@
 <template>
   <div
-    class="bg-gray-200 dark:bg-gray-700 hover:bg-opacity-75 p-2 rounded-md dark:text-white flex items-center justify-center space-x-2 cursor-pointer"
+    class="flex items-center justify-center p-2 space-x-2 bg-gray-200 rounded-md cursor-pointer dark:bg-gray-700 hover:bg-opacity-75 dark:text-white"
   >
-    <icon :name="icon" class="h-8 w-8" />
-    <h3 class="truncate flex-grow" :title="title">{{ title }}</h3>
+    <icon :name="icon" class="w-8 h-8" />
+    <h3 class="flex-grow truncate" :title="title">{{ title }}</h3>
     <div
-      class="text-white bg-green-600 rounded-full font-semibold w-8 h-8 flex justify-center items-center"
+      class="flex items-center justify-center w-8 h-8 font-semibold text-white bg-green-600 rounded-full"
     >
       {{ level }}
     </div>

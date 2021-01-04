@@ -1,16 +1,16 @@
 <template>
-  <div class="py-10 flex justify-center">
+  <div class="flex justify-center py-10">
     <div class="px-4 mx-auto space-y-10 md:space-y-16">
       <div class="pt-5 pb-4 md:pt-10">
         <div
-          class="flex flex-col-reverse sm:flex-row items-center justify-center sm:space-x-10 rounded-md gray-bg py-4 sm:px-8"
+          class="flex flex-col-reverse items-center justify-center py-4 rounded-md sm:flex-row sm:space-x-10 gray-bg sm:px-8"
         >
-          <div class="sm:space-y-2 py-4">
-            <h1 class="text-gray-900 dark:text-white text-xl font-semibold">
+          <div class="py-4 sm:space-y-2">
+            <h1 class="text-xl font-semibold text-gray-900 dark:text-white">
               Abdulbaki "EGGSY" Dursun
             </h1>
 
-            <p class="hidden sm:block text-gray-700 dark:text-gray-100">
+            <p class="hidden text-gray-700 sm:block dark:text-gray-100">
               I am a young Turkish JavaScript developer who works in his free
               time as a full-stack JavaScript developer. Trying to create
               beautiful apps using Vue.js, Nuxt.js, TailwindCSS, and more
@@ -60,15 +60,15 @@
         <icon
           v-if="news.icon"
           :name="news.icon"
-          class="h-10 w-10 hidden sm:block"
+          class="hidden w-10 h-10 sm:block"
         />
         <span>{{ news.message }}</span>
       </div>
 
-      <div class="md:grid md:grid-cols-2 gap-4 mt-6">
+      <div class="gap-4 mt-6 md:grid md:grid-cols-2">
         <!-- Left Column -->
         <section>
-          <div class="gray-bg p-4 rounded-md">
+          <div class="p-4 rounded-md gray-bg">
             <CoolTitle
               :left="new Date().getFullYear() - 2017"
               right-up="Years"
@@ -88,7 +88,7 @@
             </div>
           </div>
 
-          <div class="mt-4 pt-4 gray-bg p-4 rounded-md">
+          <div class="p-4 pt-4 mt-4 rounded-md gray-bg">
             <CoolTitle
               :left="2"
               right-up="Years"
@@ -108,7 +108,7 @@
             </div>
           </div>
 
-          <div class="mt-4 pt-4 gray-bg p-4 rounded-md">
+          <div class="p-4 pt-4 mt-4 rounded-md gray-bg">
             <CoolTitle
               :left="4"
               right-up="Years"
@@ -129,20 +129,20 @@
           </div>
         </section>
 
-        <hr class="bg-gray-900 bg-opacity-25 mt-6 sm:hidden" />
+        <hr class="mt-6 bg-gray-900 bg-opacity-25 sm:hidden" />
 
         <!-- Right Column -->
         <section class="mt-4 md:mt-0">
-          <div class="md:grid md:grid-cols-2 p-4 gray-bg rounded-md">
+          <div class="p-4 rounded-md md:grid md:grid-cols-2 gray-bg">
             <div class="flex items-center space-x-2">
-              <icon name="academic-hat" class="h-16 w-16 dark:text-gray-100" />
+              <icon name="academic-hat" class="w-16 h-16 dark:text-gray-100" />
 
               <div class="leading-none">
-                <span class="block text-gray-700 dark:text-white font-semibold"
+                <span class="block font-semibold text-gray-700 dark:text-white"
                   >Abdulbaki Dursun</span
                 >
                 <a
-                  class="block text-gray-600 dark:text-gray-200 text-sm hover:underline"
+                  class="block text-sm text-gray-600 dark:text-gray-200 hover:underline"
                   href="http://egitim.alparslan.edu.tr/?utm_source=eggsy.xyz"
                   title="I'm gonna be a teacher!"
                   target="_blank"
@@ -155,23 +155,23 @@
             <div class="flex items-center justify-end space-x-2">
               <div class="leading-none">
                 <a
-                  class="block text-gray-700 dark:text-white font-medium hover:underline"
+                  class="block font-medium text-gray-700 dark:text-white hover:underline"
                   href="mailto:eggsydev@gmail.com"
                   title="Mail me!"
                   rel="nofollow"
                   >eggsydev@gmail.com</a
                 >
                 <span
-                  class="block text-gray-600 text-sm dark:text-gray-200 font-light text-right"
+                  class="block text-sm font-light text-right text-gray-600 dark:text-gray-200"
                   >Sakarya, Turkey</span
                 >
               </div>
 
-              <icon name="fingerprint" class="h-16 w-16 dark:text-gray-100" />
+              <icon name="fingerprint" class="w-16 h-16 dark:text-gray-100" />
             </div>
           </div>
 
-          <div class="mt-4 w-full p-4 gray-bg rounded-md">
+          <div class="w-full p-4 mt-4 rounded-md gray-bg">
             <CoolTitle class="mb-2" right-down="Introduction" />
 
             <p class="dark:text-gray-100">
@@ -183,7 +183,7 @@
             </p>
           </div>
 
-          <div class="mt-4 w-full pt-4 p-4 gray-bg rounded-md">
+          <div class="w-full p-4 pt-4 mt-4 rounded-md gray-bg">
             <CoolTitle
               :left="skills.length"
               right-up="Main"
@@ -191,7 +191,7 @@
               class="mb-4"
             />
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
               <Skill
                 v-for="(skill, index) in skills"
                 :key="`skill-${index}`"
@@ -206,7 +206,7 @@
             </div>
           </div>
 
-          <div class="mt-4 w-full pt-4 p-4 gray-bg rounded-md">
+          <div class="w-full p-4 pt-4 mt-4 rounded-md gray-bg">
             <CoolTitle
               :left="12"
               right-up="Hobbies"
@@ -214,7 +214,7 @@
               class="mb-4"
             />
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
               <Hobby
                 v-for="(hobby, index) in hobbies"
                 :key="`hobby-${index}`"
@@ -228,13 +228,13 @@
 
       <section class="my-10 space-y-4">
         <CoolTitle
-          class="mb-4 text-center justify-center"
+          class="justify-center mb-4 text-center"
           right-down="GitHub Repositories"
         />
 
         <div
           v-if="$fetchState.pending"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2"
+          class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3"
         >
           <SkeletonLoader
             v-for="item in 6"
@@ -245,7 +245,7 @@
 
         <div
           v-else-if="$fetchState.error"
-          class="flex items-center justify-center p-4 font-semibold text-gray-800 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-md cursor-not-allowed"
+          class="flex items-center justify-center p-4 font-semibold text-gray-800 bg-gray-100 rounded-md cursor-not-allowed dark:bg-gray-800 dark:text-gray-300"
         >
           Couldn't load GitHub Repositories
         </div>
@@ -256,7 +256,7 @@
             !$fetchState.error &&
             repos.length > 0
           "
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2"
+          class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3"
         >
           <a
             v-for="(repo, index) in repos"
@@ -278,43 +278,43 @@
 
       <section class="my-10 space-y-4">
         <CoolTitle
-          class="mb-4 text-center justify-center"
+          class="justify-center mb-4 text-center"
           right-down="Visit other pages!"
         />
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4"
+          class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 sm:gap-4"
         >
           <nuxt-link to="/blog" class="page-box sm:col-span-2">
-            <icon name="document" class="h-8 w-8" />
+            <icon name="document" class="w-8 h-8" />
             <span>Blog</span>
           </nuxt-link>
 
-          <div class="page-box cursor-not-allowed" rel="nofollow">
-            <icon name="clipboard-list" class="h-8 w-8" />
+          <div class="cursor-not-allowed page-box" rel="nofollow">
+            <icon name="clipboard-list" class="w-8 h-8" />
             <span>PreMiD (WIP)</span>
           </div>
 
           <nuxt-link to="/projects/is-inside-me" class="page-box">
-            <icon name="document" class="h-8 w-8" />
+            <icon name="document" class="w-8 h-8" />
             <span>is-inside.me</span>
           </nuxt-link>
 
           <nuxt-link to="/daily" class="page-box">
-            <icon name="music-note" class="h-8 w-8" />
+            <icon name="music-note" class="w-8 h-8" />
             <span>Daily Song</span>
           </nuxt-link>
 
           <nuxt-link to="/projects/unblock-please" class="page-box">
-            <icon name="lock-open" class="h-8 w-8" />
+            <icon name="lock-open" class="w-8 h-8" />
             <span>Unblock Please</span>
           </nuxt-link>
         </div>
       </section>
 
-      <section class="w-full sm:w-3/12 mx-auto text-center my-10 space-y-4">
+      <section class="w-full mx-auto my-10 space-y-4 text-center sm:w-3/12">
         <div>
-          <CoolTitle class="mb-4 justify-center" right-down="Was it all?" />
+          <CoolTitle class="justify-center mb-4" right-down="Was it all?" />
           <span class="text-gray-700 dark:text-gray-300"
             >Nope, don't forget to check out my social media accounts</span
           >

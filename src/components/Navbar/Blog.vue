@@ -1,15 +1,15 @@
 <template>
   <nav
-    class="w-full fixed top-0 z-40 left-0 shadow-lg bg-gray-900 dark:bg-gray-800"
+    class="fixed top-0 left-0 z-40 w-full bg-gray-900 shadow-lg dark:bg-gray-800"
   >
     <!-- Desktop Navbar -->
     <div
-      class="hidden sm:block truncate container mx-auto bg-gray-900 dark:bg-gray-800 font-medium text-gray-200"
+      class="container hidden mx-auto font-medium text-gray-200 truncate bg-gray-900 sm:block dark:bg-gray-800"
     >
       <div class="flex">
         <nuxt-link
           to="/blog"
-          class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2"
+          class="px-4 py-2 hover:bg-gray-800 dark:hover:bg-gray-700"
         >
           Blog
         </nuxt-link>
@@ -22,7 +22,7 @@
             id="input"
             v-model="input"
             placeholder="Gönderi ara..."
-            class="px-4 py-2 bg-gray-900 hover:bg-gray-800 focus:bg-gray-800 dark:bg-gray-800 dark:focus:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none rounded-none"
+            class="px-4 py-2 bg-gray-900 rounded-none hover:bg-gray-800 focus:bg-gray-800 dark:bg-gray-800 dark:focus:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none"
             @keydown.enter="search"
           />
         </div>
@@ -31,7 +31,7 @@
           v-for="(page, index) in pages"
           :key="`page-${index}`"
           :to="page.url"
-          class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2"
+          class="px-4 py-2 hover:bg-gray-800 dark:hover:bg-gray-700"
         >
           {{ page.title }}
         </nuxt-link>
@@ -39,7 +39,7 @@
         <nuxt-link
           to="/daily"
           target="_blank"
-          class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2 flex items-center cursor-pointer"
+          class="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-800 dark:hover:bg-gray-700"
         >
           Günlük Müzik
         </nuxt-link>
@@ -48,40 +48,40 @@
           v-tippy="{ content: 'Ana Sayfaya Dön', placement: 'bottom' }"
           to="/"
           title="Ana siteye dön"
-          class="hover:bg-gray-800 dark:hover:bg-gray-700 px-4 py-2 flex items-center"
+          class="flex items-center px-4 py-2 hover:bg-gray-800 dark:hover:bg-gray-700"
         >
-          <icon name="chevron-double-right" class="h-4 w-4" />
+          <icon name="chevron-double-right" class="w-4 h-4" />
         </nuxt-link>
       </div>
     </div>
 
     <!-- Moble Navbar -->
     <div
-      class="flex sm:hidden shadow:lg container mx-auto bg-gray-900 font-medium text-gray-200 py-2 items-center px-4"
+      class="container flex items-center px-4 py-2 mx-auto font-medium text-gray-200 bg-gray-900 sm:hidden shadow:lg"
     >
       <div v-if="mobileMenu">
         <div
-          class="min-h-screen bg-black bg-opacity-20 absolute left-0 top-0 w-full"
+          class="absolute top-0 left-0 w-full min-h-screen bg-black bg-opacity-20"
           @click="mobileMenu = false"
         ></div>
         <div
-          class="bg-gray-900 min-h-screen w-2/3 absolute left-0 top-0 shadow-lg"
+          class="absolute top-0 left-0 w-2/3 min-h-screen bg-gray-900 shadow-lg"
         >
           <input
             ref="search"
             v-model="input"
             placeholder="Gönderi ara..."
-            class="px-4 w-full py-4 bg-gray-800 hover:bg-gray-700 focus:bg-gray-700 focus:outline-none rounded-none"
+            class="w-full px-4 py-4 bg-gray-800 rounded-none hover:bg-gray-700 focus:bg-gray-700 focus:outline-none"
             @keydown.enter="search"
           />
 
           <nuxt-link
             v-if="$route.path !== '/blog' && $route.path !== '/blog/'"
             to="/blog"
-            class="hover:bg-gray-800 block px-4 py-4 truncate"
+            class="block px-4 py-4 truncate hover:bg-gray-800"
           >
             <div class="flex items-center space-x-2">
-              <icon name="home" class="h-6 w-6" />
+              <icon name="home" class="w-6 h-6" />
               <span>Ana Sayfa</span>
             </div>
           </nuxt-link>
@@ -89,10 +89,10 @@
           <nuxt-link
             v-else
             to="/"
-            class="hover:bg-gray-800 block px-4 py-4 truncate"
+            class="block px-4 py-4 truncate hover:bg-gray-800"
           >
             <div class="flex items-center space-x-2">
-              <icon name="home" class="h-6 w-6" />
+              <icon name="home" class="w-6 h-6" />
               <span>Ana Siteye Dön</span>
             </div>
           </nuxt-link>
@@ -101,29 +101,29 @@
             v-for="(page, index) in pages"
             :key="`page-mobile-${index}`"
             :to="page.url"
-            class="hover:bg-gray-800 block px-4 py-4 truncate"
+            class="block px-4 py-4 truncate hover:bg-gray-800"
             @click="mobileMenu = false"
           >
             <div class="flex items-center space-x-2">
-              <icon :name="page.icon" class="h-6 w-6" />
+              <icon :name="page.icon" class="w-6 h-6" />
               <span>{{ page.title }}</span>
             </div>
           </nuxt-link>
 
           <nuxt-link
             to="/daily"
-            class="hover:bg-gray-800 px-4 py-4 truncate flex items-center space-x-2 cursor-pointer"
+            class="flex items-center px-4 py-4 space-x-2 truncate cursor-pointer hover:bg-gray-800"
           >
-            <icon name="music-note" class="h-6 w-6" />
+            <icon name="music-note" class="w-6 h-6" />
             <span>Günlük Müzik</span>
           </nuxt-link>
 
           <a
-            class="hover:bg-gray-800 flex-1 mt-auto block px-4 py-4 truncate"
+            class="flex-1 block px-4 py-4 mt-auto truncate hover:bg-gray-800"
             @click="closeMobileMenu"
           >
             <div class="flex items-center space-x-2">
-              <icon name="arrow-left" class="h-6 w-6" />
+              <icon name="arrow-left" class="w-6 h-6" />
               <span>Kapat</span>
             </div>
           </a>
@@ -131,21 +131,21 @@
       </div>
 
       <div
-        class="rounded-full hover:bg-gray-800 p-2"
+        class="p-2 rounded-full hover:bg-gray-800"
         @click="mobileMenu = true"
       >
-        <icon name="menu" class="h-6 w-6" />
+        <icon name="menu" class="w-6 h-6" />
       </div>
 
       <nuxt-link
         to="/blog"
-        class="px-4 flex-grow py-2 font-semibold text-lg hover:bg-gray-800 text-center"
+        class="flex-grow px-4 py-2 text-lg font-semibold text-center hover:bg-gray-800"
       >
         Blog
       </nuxt-link>
 
-      <div class="rounded-full hover:bg-gray-800 p-2" @click="focusSearch">
-        <icon name="search" class="h-6 w-6" />
+      <div class="p-2 rounded-full hover:bg-gray-800" @click="focusSearch">
+        <icon name="search" class="w-6 h-6" />
       </div>
     </div>
   </nav>
