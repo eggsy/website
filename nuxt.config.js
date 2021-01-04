@@ -8,15 +8,6 @@ import modules from "./config/modules"
 import plugins from "./config/plugins"
 import publicRuntimeConfig from "./config/publicRuntimeConfig"
 
-// Import module specific configs
-import colorMode from "./config/modules/colorMode"
-import content from "./config/modules/content"
-import dotenv from "./config/modules/dotenv"
-import firebase from "./config/modules/firebase"
-import pwa from "./config/modules/pwa"
-import sitemap from "./config/modules/sitemap"
-import tailwindcss from "./config/modules/tailwindcss"
-
 // Set options as variables
 const rootDir = "./"
 const srcDir = "src"
@@ -41,12 +32,5 @@ export default {
   css,
   modules,
   plugins,
-  colorMode,
-  content,
-  dotenv,
-  firebase,
   publicRuntimeConfig,
-  pwa,
-  sitemap,
-  tailwindcss,
 }
