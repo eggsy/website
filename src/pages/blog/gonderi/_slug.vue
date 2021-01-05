@@ -38,7 +38,7 @@
       <article>
         <header class="mb-12 space-y-2">
           <h1
-            class="block text-4xl font-semibold text-center text-gray-800 sm:text-6xl dark:text-gray-200"
+            class="block text-4xl font-semibold text-center text-gray-800 sm:text-6xl dark:text-white"
           >
             {{ post.title }}
           </h1>
@@ -69,12 +69,33 @@
           <Share :title="post.title" :path="$route.path" />
         </div>
 
+        <div v-if="getTags.length > 0">
+          <h3 class="mb-1 text-lg font-semibold dark:text-gray-100">
+            Etiketler
+          </h3>
+
+          <div class="flex flex-wrap gap-2">
+            <nuxt-link
+              v-for="(tag, index) in getTags"
+              :key="`tag-${index}`"
+              :to="{
+                name: 'blog-etiket-name',
+                params: {
+                  name: tag,
+                },
+              }"
+              class="px-2 py-1 text-gray-800 bg-gray-200 rounded-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-300 dark:text-gray-100"
+            >
+              {{ tag }}
+            </nuxt-link>
+          </div>
+        </div>
+
         <div
           v-if="getRelatedPosts.length > 0"
           class="p-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
         >
           <CoolTitle
-            :left="getRelatedPosts.length"
             right-up="Bunlar da"
             right-down="Hoşunuza gidebilir"
             class="mb-4"
@@ -130,11 +151,14 @@ export default {
     }
   },
   head() {
-    const title = this.post?.title || "Gönderi Yükleniyor"
+    const title = this.post?.title
     const description =
       this.post?.description ||
       "EGGSY'nin blogunda bu yazıyı okumaya davet edildin."
+
     const image = this.getPostImage || false
+    const tags = this.getTags?.join(", ") || title || "etiket"
+    const href = `https://new.eggsy.xyz${this.$route?.path}`
 
     const object = {
       title,
@@ -147,7 +171,7 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          content: this.getTags || null,
+          content: `eggsy, eggsy blog, blog, teknoloji, vue, yazılım, discord, eggsys, gönderi, ${tags}`,
         },
         // Open-Graph
         {
@@ -163,7 +187,7 @@ export default {
         {
           hid: "og:url",
           name: "og:url",
-          content: `https://new.eggsy.xyz/blog/gonderi/${this.$route?.params?.slug}`,
+          content: href,
         },
         {
           hid: "og:image",
@@ -199,7 +223,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: `https://new.eggsy.xyz/blog/gonderi/${this.$route?.params?.slug}`,
+          href,
         },
       ],
     }
@@ -207,6 +231,13 @@ export default {
     return object
   },
   computed: {
+    /**
+     * Returns the tags of the current post, if there's none specified, returns an empty array instead.
+     * @returns {string[]} Array of tags.
+     */
+    getTags() {
+      return this.post?.tags || []
+    },
     /**
      * Calculates the words and returns the potential maximum reading time.
      * @returns {number|string} Reading time in minutes.

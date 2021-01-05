@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
     <div class="flex items-center space-x-2">
       <div class="button" @click="share('twitter')">
         <icon name="twitter" class="text-social-twitter" />
@@ -18,7 +18,7 @@
       ref="share-url"
       readonly
       :value="`https://new.eggsy.xyz${path}`"
-      class="p-3 sm:p-2 ring-1 ring-opacity-25 ring-gray-800 focus:outline-none dark:bg-gray-800 dark:ring-transparent dark:text-gray-100"
+      class="p-3 rounded-md sm:py-2 sm:px-4 ring-1 ring-opacity-25 ring-gray-800 focus:outline-none dark:bg-gray-800 dark:ring-transparent dark:text-gray-100 sm:col-span-2"
       @click="share('url')"
     />
   </div>

@@ -24,7 +24,9 @@
             name: $route.name === 'blog' ? 'index' : 'blog',
           }"
           class="p-2 py-2 rounded-full hover:underline hover:bg-gray-500 focus:outline-none"
-          title="Ana sayfaya geri dön"
+          :title="
+            $route.name === 'blog' ? 'Ana sayfaya geri dön' : 'Bloga geri dön'
+          "
         >
           <icon
             v-if="$route.name === 'blog'"
