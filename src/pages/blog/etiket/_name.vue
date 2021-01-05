@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div v-else class="pt-20 pb-10 sm:pt-16 sm:pb-8">
+  <div v-else class="pb-10 sm:pb-8">
     <div v-if="posts.length === 0">
       <CoolTitle
         left="X"
@@ -43,7 +43,7 @@
       />
 
       <a
-        class="flex items-center space-x-2 transform rounded-md cursor-pointer select-none hover:translate-x-2 w-max"
+        class="flex items-center space-x-2 transition transform rounded-md cursor-pointer select-none hover:translate-x-2 w-max"
         @click="$router.back()"
       >
         <icon name="arrow-left" class="w-8 h-8" />

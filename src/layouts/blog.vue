@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-gray-50 dark:bg-gray-900 w-full min-h-screen">
+  <div class="w-full min-h-screen bg-gray-50 dark:bg-gray-900">
     <NavbarBlog />
-    <Nuxt class="container px-4 sm:mx-auto" />
+    <Nuxt class="container px-4 pt-6 sm:pt-10 sm:mx-auto" />
 
     <ColorSwitcher />
   </div>

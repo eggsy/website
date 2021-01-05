@@ -3,7 +3,9 @@ title: Neler Dönüyor?
 description: Bu site ne? Neden yeni bir site yapıyorum? Sitemin geleceği için ne gibi kararlar alacağım? Hepsini bu yazıda açıklıyorum!
 tags:
   - blog
+  - site
   - haber
+createdAt: 1/2/2021 08:00 PM
 related:
   - nedir-bu-blog
   - site-artik-acik-kaynak

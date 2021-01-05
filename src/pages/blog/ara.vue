@@ -1,9 +1,9 @@
 <template>
   <div
     v-if="$fetchState.pending || !fetchCalled"
-    class="flex items-center h-screen overflow-hidden justify-center space-x-2 text-2xl text-gray-900 font-semibold select-none"
+    class="flex items-center justify-center h-screen space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none"
   >
-    <icon name="sync" class="h-8 w-8 animate-spin" />
+    <icon name="sync" class="w-8 h-8 animate-spin" />
 
     <h3>Gönderiler yükleniyor...</h3>
   </div>
@@ -14,9 +14,9 @@
   >
     <div class="space-y-2">
       <div
-        class="flex items-center justify-center text-gray-900 font-semibold text-2xl space-x-2"
+        class="flex items-center justify-center space-x-2 text-2xl font-semibold text-gray-900"
       >
-        <icon name="times" class="h-8 w-8" />
+        <icon name="times" class="w-8 h-8" />
 
         <h3>Gönderiler yüklenemedi.</h3>
       </div>
@@ -24,7 +24,7 @@
       <div class="flex justify-center">
         <nuxt-link
           to="/blog"
-          class="rounded-md px-4 py-2 bg-gray-700 hover:bg-gray-800 text-gray-200"
+          class="px-4 py-2 text-gray-200 bg-gray-700 rounded-md hover:bg-gray-800"
           title="bloga dön"
         >
           Bloga Dön
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div v-else class="pt-20 pb-10 sm:pt-16 sm:pb-8">
+  <div v-else class="pb-10 sm:pb-8">
     <div v-if="posts.length === 0">
       <CoolTitle
         left="X"
@@ -43,10 +43,10 @@
       />
 
       <a
-        class="flex items-center space-x-2 rounded-md transform hover:translate-x-2 cursor-pointer select-none w-max"
+        class="flex items-center space-x-2 transition transform rounded-md cursor-pointer select-none hover:translate-x-2 w-max"
         @click="$router.back()"
       >
-        <icon name="arrow-left" class="h-8 w-8" />
+        <icon name="arrow-left" class="w-8 h-8" />
         <span class="text-xl text-gray-900">Geri Dön</span>
       </a>
     </div>

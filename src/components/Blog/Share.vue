@@ -1,22 +1,24 @@
 <template>
-  <div class="flex items-center space-x-4">
-    <div class="button" @click="share('twitter')">
-      <icon name="twitter" class="text-social-twitter" />
-    </div>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div class="flex items-center space-x-2">
+      <div class="button" @click="share('twitter')">
+        <icon name="twitter" class="text-social-twitter" />
+      </div>
 
-    <div class="button" @click="share('telegram')">
-      <icon name="telegram" class="text-social-telegram" />
-    </div>
+      <div class="button" @click="share('telegram')">
+        <icon name="telegram" class="text-social-telegram" />
+      </div>
 
-    <div class="button" @click="share('whatsapp')">
-      <icon name="whatsapp" class="text-social-whatsapp" />
+      <div class="button" @click="share('whatsapp')">
+        <icon name="whatsapp" class="text-social-whatsapp" />
+      </div>
     </div>
 
     <input
       ref="share-url"
       readonly
       :value="`https://new.eggsy.xyz${path}`"
-      class="w-6/12 p-3 sm:p-2 sm:w-full ring-1 ring-opacity-25 ring-gray-800 focus:outline-none dark:bg-gray-800 dark:ring-transparent dark:text-gray-100"
+      class="p-3 sm:p-2 ring-1 ring-opacity-25 ring-gray-800 focus:outline-none dark:bg-gray-800 dark:ring-transparent dark:text-gray-100"
       @click="share('url')"
     />
   </div>
@@ -77,6 +79,6 @@ export default {
 
 <style scoped>
 div.button {
-  @apply w-12 h-full p-2 bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 ring-1 ring-opacity-25 ring-gray-400 dark:bg-gray-800 dark:ring-transparent;
+  @apply w-12 h-12 p-2 bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 ring-1 ring-opacity-25 ring-gray-400 dark:bg-gray-800 dark:ring-transparent dark:hover:bg-opacity-75;
 }
 </style>

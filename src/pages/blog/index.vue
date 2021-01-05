@@ -1,30 +1,25 @@
 <template>
   <div
     v-if="$fetchState.pending"
-    class="flex items-center h-screen overflow-hidden justify-center space-x-2 text-2xl text-gray-900 dark:text-gray-200 font-semibold select-none"
+    class="flex items-center justify-center h-screen space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-200"
   >
-    <icon name="sync" class="h-8 w-8 animate-spin dark:text-gray-200" />
+    <icon name="sync" class="w-8 h-8 animate-spin dark:text-gray-200" />
 
     <h3>Gönderiler yükleniyor...</h3>
   </div>
 
   <div
     v-else-if="$fetchState.error"
-    class="flex items-center h-screen overflow-hidden justify-center space-x-2 text-2xl text-gray-900 dark:text-gray-200 font-semibold select-none"
+    class="flex items-center justify-center h-screen space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-200"
   >
-    <icon name="times" class="h-8 w-8 dark:text-gray-200" />
+    <icon name="times" class="w-8 h-8 dark:text-gray-200" />
 
     <h3>Gönderiler yüklenemedi.</h3>
   </div>
 
-  <div v-else class="pt-20 pb-8">
+  <div v-else class="pb-8">
     <!-- Latest Posts -->
     <section v-if="posts.latest && posts.latest.length > 0">
-      <div class="hidden sm:flex space-x-2 items-center mb-4">
-        <icon name="clock" class="h-8 w-8 dark:text-gray-200" />
-        <CoolTitle right-down="Son Gönderiler" />
-      </div>
-
       <div class="space-y-2 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6">
         <nuxt-link
           :to="{
@@ -35,7 +30,7 @@
           <CardPost :post="posts.latest[0]" :featured="true" />
         </nuxt-link>
 
-        <div class="grid gap-2 sm:gap-2 grid-cols-2 grid-rows-2">
+        <div class="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-2">
           <nuxt-link
             v-for="(post, index) in posts.latest.slice(1, 5)"
             :key="`latest-${index}`"
@@ -52,13 +47,23 @@
 
     <!-- Discord Posts -->
     <section v-if="posts.discord && posts.discord.length > 0">
-      <div class="flex space-x-2 items-center mb-4">
-        <icon name="discord" class="h-8 w-8 dark:text-gray-200" />
-        <CoolTitle right-down="Discord" lang="en" />
+      <div class="flex items-center mb-4 space-x-2">
+        <icon name="discord" class="w-8 h-8 dark:text-gray-200" />
+        <nuxt-link
+          :to="{
+            name: 'blog-etiket-name',
+            params: {
+              name: 'discord',
+            },
+          }"
+          class="hover:underline"
+        >
+          <CoolTitle lang="en" right-down="Discord" />
+        </nuxt-link>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+      <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
+        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
           <nuxt-link
             v-for="(post, index) in posts.discord.slice(0, 3)"
             :key="`discord-${index}`"
@@ -75,7 +80,7 @@
           </nuxt-link>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-2">
+        <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:grid-rows-2">
           <nuxt-link
             v-for="(post, index) in posts.discord.slice(3, 7)"
             :key="`discord-2-${index}`"
@@ -102,12 +107,23 @@
     >
       <div class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
         <div>
-          <div class="flex space-x-2 items-center mb-4">
-            <icon name="linux" class="h-8 w-8 dark:text-gray-200" />
-            <CoolTitle right-down="Linux" lang="en" />
+          <div class="flex items-center mb-4 space-x-2">
+            <icon name="linux" class="w-8 h-8 dark:text-gray-200" />
+
+            <nuxt-link
+              :to="{
+                name: 'blog-etiket-name',
+                params: {
+                  name: 'linux',
+                },
+              }"
+              class="hover:underline"
+            >
+              <CoolTitle right-down="Linux" lang="en" />
+            </nuxt-link>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-2">
+          <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:grid-rows-2">
             <nuxt-link
               v-for="(post, index) in posts.linux"
               :key="`linux-${index}`"
@@ -123,12 +139,23 @@
         </div>
 
         <div>
-          <div class="flex items-center space-x-2 mb-4">
-            <icon name="document" class="h-8 w-8 dark:text-gray-200" />
-            <CoolTitle right-down="Blog" />
+          <div class="flex items-center mb-4 space-x-2">
+            <icon name="document" class="w-8 h-8 dark:text-gray-200" />
+
+            <nuxt-link
+              :to="{
+                name: 'blog-etiket-name',
+                params: {
+                  name: 'site',
+                },
+              }"
+              class="hover:underline"
+            >
+              <CoolTitle right-down="Site" />
+            </nuxt-link>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-2">
+          <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:grid-rows-2">
             <nuxt-link
               v-for="(post, index) in posts.blog"
               :key="`blog-${index}`"
@@ -147,12 +174,12 @@
 
     <!-- Other Posts -->
     <section v-if="posts.rest && posts.rest.length > 0">
-      <div class="flex items-center space-x-2 mb-4">
-        <icon name="book-open" class="h-8 w-8 dark:text-gray-200" />
+      <div class="flex items-center mb-4 space-x-2">
+        <icon name="book-open" class="w-8 h-8 dark:text-gray-200" />
         <CoolTitle right-down="Diğer gönderiler" />
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+      <div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
         <nuxt-link
           v-for="(post, index) in posts.rest"
           :key="`rest-${index}`"

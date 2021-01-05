@@ -10,6 +10,23 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+// Absolute align
+.absolute-align-middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.absolute-align-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.absolute-align-both {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // Scrollbar
 .scrollbar-thin {
   @apply scrollbar-track-gray-700 scrollbar-thumb-gray-900;

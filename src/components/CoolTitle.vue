@@ -7,14 +7,15 @@
     <div class="uppercase">
       <h2
         v-if="rightUp"
-        class="block text-lg leading-none text-gray-500 dark:text-gray-100"
+        class="block text-lg leading-none text-gray-500 break-all sm:break-words dark:text-gray-100"
       >
         {{ rightUp }}
       </h2>
       <h3
         :class="{
-          'block text-gray-700 dark:text-white text-xl leading-none font-semibold': true,
-          'text-sm': $route.path == '/blog' && rightUp,
+          'block text-gray-700 dark:text-white text-xl leading-none font-semibold sm:break-words': true,
+          'break-all': $route.name !== 'index',
+          'text-sm': $route.name === 'blog' && rightUp,
         }"
       >
         {{ rightDown }}

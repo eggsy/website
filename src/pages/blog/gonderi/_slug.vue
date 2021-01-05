@@ -33,10 +33,10 @@
     </div>
   </div>
 
-  <div v-else class="px-4 pt-24 pb-10 space-x-6 sm:pt-24 sm:px-0">
+  <div v-else class="px-4 pb-10 space-x-6 pt-14 sm:pt-14 sm:px-0">
     <div class="w-full mx-auto sm:w-7/12">
       <article>
-        <header class="mb-8 space-y-2">
+        <header class="mb-12 space-y-2">
           <h1
             class="block text-4xl font-semibold text-center text-gray-800 sm:text-6xl dark:text-gray-200"
           >
@@ -56,10 +56,12 @@
         <div class="mt-4 text-justify">
           <nuxt-content :document="post"></nuxt-content>
         </div>
+      </article>
 
+      <div class="mt-10 space-y-10">
         <PrevNext :current-slug="post.slug" />
 
-        <div class="mt-10">
+        <div>
           <h3 class="mb-1 text-lg font-semibold dark:text-gray-100">
             Yazıyı paylaş
           </h3>
@@ -69,7 +71,7 @@
 
         <div
           v-if="getRelatedPosts.length > 0"
-          class="p-4 mt-10 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
+          class="p-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
         >
           <CoolTitle
             :left="getRelatedPosts.length"
@@ -86,14 +88,15 @@
               :class="{
                 'px-3 py-2 text-center truncate bg-gray-200 rounded-md hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 ring-1 ring-opacity-50 ring-gray-300 dark:ring-gray-800 dark:text-gray-300 sm:text-left': true,
                 'sm:col-span-2':
-                  index % 2 === 0 && index + 1 >= getRelatedPosts.length,
+                  Number(index) % 2 === 0 &&
+                  Number(index) + 1 >= getRelatedPosts.length,
               }"
             >
               {{ relatedPost.title }}
             </nuxt-link>
           </div>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </template>
@@ -204,11 +207,19 @@ export default {
     return object
   },
   computed: {
+    /**
+     * Calculates the words and returns the potential maximum reading time.
+     * @returns {number|string} Reading time in minutes.
+     */
     getReadingTime() {
       const body = JSON.stringify(this.post.body)
       const words = body?.split(" ").length || 0
       return Math.ceil(words / 200).toFixed()
     },
+    /**
+     * Returns the date as a readable string.
+     * @returns {string} Today, yesterday, x day before, x months before or DD/MM/YYYY.
+     */
     getReadableDate() {
       const now = this.$moment()
       const createdAt = this.$moment(this.post?.createdAt)
@@ -221,12 +232,19 @@ export default {
         return `${Math.floor(diff / 30)} ay önce`
       else return createdAt.format("DD/MM/YYYY")
     },
+    /**
+     * Returns the related posts, if there's no related post, returns an empty array instead.
+     * @returns {string[]|object} Related posts' slugs.
+     */
     getRelatedPosts() {
       return this.related || []
     },
+    /**
+     * Returns the post image if explicitly set, if none, looks for a jpg under assets.
+     * @returns {string} The URL of the image.
+     */
     getPostImage() {
-      if (this.post?.image) return this.post.image
-      else return `/assets/images/posts/${this.post?.slug}.jpg`
+      return this.post?.image || `/assets/images/posts/${this.post?.slug}.jpg`
     },
   },
 }
@@ -242,7 +260,6 @@ header h1 {
   h1,
   h2,
   h3 {
-    font-family: "Quicksand", sans-serif;
     @apply font-semibold hover:underline text-gray-900 dark:text-gray-100;
   }
 
@@ -268,7 +285,7 @@ header h1 {
     }
 
     a {
-      @apply text-blue-700 hover:text-blue-800 hover:underline;
+      @apply text-blue-700 hover:text-blue-800 dark:text-blue-600 dark:hover:text-blue-700 hover:underline;
     }
 
     code {

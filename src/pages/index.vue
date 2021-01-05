@@ -172,7 +172,7 @@
           </div>
 
           <div class="w-full p-4 mt-4 rounded-md gray-bg">
-            <CoolTitle class="mb-2" right-down="Introduction" />
+            <CoolTitle right-down="Introduction" class="mb-2" />
 
             <p class="dark:text-gray-100">
               I am a 19-year-old Turkish full-stack web developer and an ELT
@@ -314,7 +314,7 @@
 
       <section class="w-full mx-auto my-10 space-y-4 text-center sm:w-3/12">
         <div>
-          <CoolTitle class="justify-center mb-4" right-down="Was it all?" />
+          <CoolTitle right-down="Was it all?" class="justify-center mb-4" />
           <span class="text-gray-700 dark:text-gray-300"
             >Nope, don't forget to check out my social media accounts</span
           >

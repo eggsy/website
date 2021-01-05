@@ -5,17 +5,17 @@
 
   <div
     v-else-if="typeof classes === 'string'"
-    :class="`svg-ico ${classes}`"
+    :class="`svg-icon ${classes}`"
     v-html="icon"
   ></div>
 
   <div
     v-else-if="typeof classes === 'object'"
-    :class="{ 'svg-ico': true, [classes]: true }"
+    :class="`svg-icon ${classes}`"
     v-html="icon"
   ></div>
 
-  <div v-else class="svg-ico" v-html="icon"></div>
+  <div v-else class="svg-icon" v-html="icon"></div>
 </template>
 
 <script>

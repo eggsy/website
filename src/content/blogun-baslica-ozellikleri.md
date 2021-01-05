@@ -3,6 +3,7 @@ title: Blogun Başlıca Özellikleri
 description: Tamamen sıfırdan hazırlanan, EGGSY'nin gönderilerini tutacağı ve paylaşımlar yapacağı yep yeni blogunun öne çıkan ilginç özellikleri ve blogun genel tanıtımı için bu gönderiyi okuyabilirsiniz.
 tags:
   - blog
+  - site
   - haber
 createdAt: 2020-01-09T03:26:00.000Z
 related:
