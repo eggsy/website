@@ -30,6 +30,7 @@ module.exports = {
   variants: {
     extend: {
       backgroundOpacity: ["dark"],
+      translate: ["group-hover"],
     },
   },
   plugins: [require("tailwind-scrollbar")],

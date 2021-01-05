@@ -1,9 +1,12 @@
 <template>
-  <div class="ratings-container">
-    <div class="rating">
+  <div class="rating">
+    <div class="number">
       {{ rating }}
     </div>
-    <div class="truncate">{{ name }}</div>
+
+    <div class="truncate">
+      {{ name }}
+    </div>
   </div>
 </template>
 
@@ -21,3 +24,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.rating {
+  @apply flex items-center space-x-2;
+
+  .number {
+    @apply w-16 px-2 py-px font-semibold text-center text-gray-100 bg-red-600 rounded-md select-none hover:bg-red-700;
+  }
+}
+</style>
