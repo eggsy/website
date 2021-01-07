@@ -162,17 +162,17 @@
             to visit the store.
           </div>
 
+          <div class="bg-green-500 information dark:bg-gray-700">
+            Welcome to the new look of PreMiD pages including Custom Status. I
+            have completely redesigned my website, please take a look at the
+            rest too!
+          </div>
+
           <div
             class="block mb-2 bg-red-500 sm:hidden information dark:bg-gray-700"
           >
             Are you on mobile? If you are you should know that PreMiD doesn't
             work on mobile, so you can't use this page in any way.
-          </div>
-
-          <div class="bg-green-500 information dark:bg-gray-700">
-            Welcome to the new look of PreMiD pages including Custom Status. I
-            have completely redesigned my website, please take a look at the
-            rest too!
           </div>
         </div>
 
