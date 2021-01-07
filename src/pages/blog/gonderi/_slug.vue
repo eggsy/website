@@ -44,16 +44,14 @@
           </h1>
 
           <div
-            class="flex items-center justify-center w-full space-x-4 dark:text-gray-300 whitespace-nowrap"
+            class="flex justify-center w-full dark:text-gray-300 whitespace-nowrap"
           >
-            <span>{{ getReadingTime }} dakika okuma</span>
-            <span>
-              {{ getReadableDate }}
-            </span>
+            {{ getReadingTime }} dakika okuma - {{ getReadableDate }}
           </div>
         </header>
 
-        <div class="mt-4 text-justify">
+        <div class="mt-4 space-y-4 text-justify">
+          <p class="text-lg font-medium">{{ post.description }}</p>
           <nuxt-content :document="post"></nuxt-content>
         </div>
       </article>

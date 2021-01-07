@@ -144,7 +144,7 @@
         </div>
       </section>
 
-      <section class="text-justify md:w-6/12">
+      <section class="space-y-4 text-justify md:w-6/12">
         <div class="space-y-2">
           <div
             v-if="presence.installed === false"
