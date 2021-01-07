@@ -168,9 +168,7 @@
             rest too!
           </div>
 
-          <div
-            class="block mb-2 bg-red-500 sm:hidden information dark:bg-gray-700"
-          >
+          <div class="block bg-red-500 sm:hidden information dark:bg-gray-700">
             Are you on mobile? If you are you should know that PreMiD doesn't
             work on mobile, so you can't use this page in any way.
           </div>
