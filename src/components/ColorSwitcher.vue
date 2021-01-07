@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="modal === false"
-    class="fixed bottom-0 right-0 z-50 flex items-center px-4 py-2 mb-4 mr-6 text-gray-700 bg-gray-200 rounded-full shadow-md cursor-pointer hover:bg-gray-300 dark:bg-gray-700 sm:rounded-md dark:hover:bg-gray-800 sm:space-x-2 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-800"
+    class="flex items-center px-4 py-2 text-gray-700 bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 dark:bg-gray-700 sm:rounded-md dark:hover:bg-gray-800 sm:space-x-2 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-800"
     @click="modal = true"
   >
     <span class="hidden sm:block">{{ getColorPreference }}</span>

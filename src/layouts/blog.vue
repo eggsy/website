@@ -3,7 +3,12 @@
     <NavbarBlog />
     <Nuxt class="container px-4 pt-6 sm:pt-10 sm:mx-auto" />
 
-    <ColorSwitcher />
+    <div
+      class="fixed bottom-0 right-0 z-50 flex items-center mb-4 mr-6 space-x-2 sm:space-x-4"
+    >
+      <GoTop v-if="$route.name === 'blog-gonderi-slug'" />
+      <ColorSwitcher />
+    </div>
   </div>
 </template>
 
