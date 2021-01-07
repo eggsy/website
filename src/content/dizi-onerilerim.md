@@ -11,34 +11,88 @@ Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim öz
 
 Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂
 
-<div class="ratings">
-    <Rating name="Daredevil" rating="10/10"></Rating>
-    <Rating name="Love, Death & Robots" rating="10/10"></Rating>
-    <Rating name="Prison Break" rating="10/10"></Rating>
-    <Rating name="Élite" rating="9.5/10"></Rating>
-    <Rating name="The Witcher" rating="9.5/10"></Rating>
-    <Rating name="Rise of Empires: Ottoman" rating="9.5/10"></Rating>
-    <Rating name="The Mandalorian" rating="9.5/10"></Rating>
-    <Rating name="La Casa de Papel" rating="9.5/10"></Rating>
-    <Rating name="Sex Education" rating="9.0/10"></Rating>
-    <Rating name="Locke & Key" rating="9.0/10"></Rating>
-    <Rating name="Stranger Things" rating="9.0/10"></Rating>
-    <Rating name="See" rating="9.0/10"></Rating>
-    <Rating name="Sherlock" rating="9.0/10"></Rating>
-    <Rating name="Snowpiercer" rating="9.0/10"></Rating>
-    <Rating name="Sense8" rating="9.0/10"></Rating>
-    <Rating name="Chilling Adventures of Sabrina" rating="9.0/10"></Rating>
-    <Rating name="Altered Carbon" rating="9.0/10"></Rating>
-    <Rating name="Aşk 101" rating="8.5/10"></Rating>
-    <Rating name="The Order" rating="8.5/10"></Rating>
-    <Rating name="BoJack Horseman" rating="8.5/10"></Rating>
-    <Rating name="Rick and Morty" rating="8.5/10"></Rating>
-    <Rating name="Lost in Space" rating="8.5/10"></Rating>
-    <Rating name="The Haunting of Hill House" rating="8.0/10"></Rating>
-    <Rating name="You" rating="8.0/10"></Rating>
-    <Rating name="Lucifer" rating="8.0/10"></Rating>
-    <Rating name="The Umbrella Academy" rating="8.0/10"></Rating>
-    <Rating name="Ragnarok" rating="8.0/10"></Rating>
+<div class="grid grid-cols-2 ratings">
+    <Rating rating="10">
+      <a href="#daredevil">Daredevil</a>
+    </Rating>
+    <Rating rating="10">
+      <a href="#love-death--robots">Love, Death & Robots</a>
+    </Rating>
+    <Rating rating="10">
+      <a href="#prison-break">Prison Break</a>
+    </Rating>
+    <Rating rating="9.5">
+      <a href="#élite">Élite</a>
+    </Rating>
+    <Rating  rating="9.5">
+      <a href="#the-witcher">The Witcher</a>
+    </Rating>
+    <Rating  rating="9.5">
+      <a href="#rise-of-empires-ottoman">Rise of Empires: Ottoman</a>
+    </Rating>
+    <Rating  rating="9.5">
+      <a href="#the-mandalorian">The Mandalorian</a>
+    </Rating>
+    <Rating  rating="9.5">
+      <a href="#la-casa-de-papel">La Casa de Papel</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#sex-education">Sex Education</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#locke--key">Locke & Key</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#stranger-things">Stranger Things</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#see">See</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#sherlock">Sherlock</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#snowpiercer">Snowpiercer</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#sense8">Sense8</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#chilling-adventures-of-sabrina">Chilling Adventures of Sabrina</a>
+    </Rating>
+    <Rating  rating="9.0">
+      <a href="#altered-carbon">Altered Carbon</a>
+    </Rating>
+    <Rating  rating="8.5">
+      <a href="#aşk-101">Aşk 101</a>
+    </Rating>
+    <Rating  rating="8.5">
+      <a href="#the-order">The Order</a>
+    </Rating>
+    <Rating  rating="8.5">
+      <a href="#bojack-horseman">BoJack Horseman</a>
+    </Rating>
+    <Rating  rating="8.5">
+      <a href="#rick-and-morty">Rick and Morty</a>
+    </Rating>
+    <Rating  rating="8.5">
+      <a href="#lost-in-space">Lost in Space</a>
+    </Rating>
+    <Rating  rating="8.0">
+      <a href="#the-haunting-of-hill-house">The Haunting of Hill House</a>
+    </Rating>
+    <Rating  rating="8.0">
+      <a href="#you">You</a>
+    </Rating>
+    <Rating  rating="8.0">
+      <a href="#lucifer">Lucifer</a>
+    </Rating>
+    <Rating  rating="8.0">
+      <a href="#the-umbrella-academy">The Umbrella Academy</a>
+    </Rating>
+    <Rating  rating="8.0">
+      <a href="#ragnarok">Ragnarok</a>
+    </Rating>
 </div>
 
 ### Daredevil

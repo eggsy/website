@@ -1,11 +1,9 @@
 <template>
   <div class="rating">
-    <div class="number">
-      {{ rating }}
-    </div>
+    <div class="number">{{ rating }}/{{ max }}</div>
 
     <div class="truncate">
-      {{ name }}
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -13,13 +11,15 @@
 <script>
 export default {
   props: {
-    name: {
-      type: String,
-      required: true,
-    },
     rating: {
-      type: String,
+      type: [String, Number],
       required: true,
+      default: 0,
+    },
+    max: {
+      type: [String, Number],
+      required: false,
+      default: 10,
     },
   },
 }
@@ -31,6 +31,10 @@ export default {
 
   .number {
     @apply w-16 px-2 py-px font-semibold text-center text-gray-100 bg-red-600 rounded-md select-none hover:bg-red-700;
+  }
+
+  a {
+    @apply hover:underline;
   }
 }
 </style>
