@@ -14,13 +14,24 @@
       </div>
     </div>
 
-    <input
-      ref="share-url"
-      readonly
-      :value="`https://new.eggsy.xyz${path}`"
-      class="p-3 rounded-md sm:py-2 sm:px-4 ring-1 ring-opacity-25 ring-gray-800 focus:outline-none dark:bg-gray-800 dark:ring-transparent dark:text-gray-100 sm:col-span-2"
-      @click="share('url')"
-    />
+    <div class="relative flex items-center space-x-2 sm:col-span-2">
+      <input
+        ref="share-url"
+        readonly
+        :value="`https://new.eggsy.xyz${path}`"
+        class="w-full p-3 rounded-md sm:py-3 sm:px-4 ring-1 ring-opacity-25 ring-gray-800 focus:outline-none dark:bg-gray-800 dark:text-gray-100"
+        @click="share('url')"
+      />
+
+      <transition name="fade">
+        <div
+          v-if="copied === true"
+          class="absolute p-1 bg-green-500 rounded-full right-2"
+        >
+          <icon name="check" class="w-5 h-5 text-gray-100" />
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -38,13 +49,25 @@ export default {
       default: null,
     },
   },
+  data() {
+    return {
+      copied: false,
+    }
+  },
   methods: {
+    /**
+     * Creates a window or copies the URL.
+     * @param {'url'|'twitter'|'telegram'|'whatsapp'} option The share option.
+     */
     share(option) {
       if (option === "url") {
         const el = this.$refs["share-url"]
 
         el.select()
         document.execCommand("copy")
+        this.copied = true
+
+        setTimeout(() => (this.copied = false), 3000)
       } else {
         let url = ""
 

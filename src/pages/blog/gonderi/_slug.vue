@@ -38,7 +38,7 @@
       <article>
         <header class="mb-12 space-y-2">
           <h1
-            class="block text-4xl font-semibold text-center text-gray-800 sm:text-6xl dark:text-white"
+            class="block text-4xl font-semibold text-center text-gray-800 sm:text-6xl dark:text-gray-50"
           >
             {{ post.title }}
           </h1>
@@ -51,7 +51,10 @@
         </header>
 
         <div class="mt-4 space-y-4 text-justify">
-          <p class="text-lg font-medium">{{ post.description }}</p>
+          <p class="text-lg font-medium dark:text-gray-100">
+            {{ post.description }}
+          </p>
+
           <nuxt-content :document="post"></nuxt-content>
         </div>
       </article>
@@ -105,7 +108,7 @@
               :key="`related-${index}`"
               :to="`/blog/gonderi/${relatedPost.slug}`"
               :class="{
-                'px-3 py-2 text-center truncate bg-gray-200 rounded-md hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 ring-1 ring-opacity-50 ring-gray-300 dark:ring-gray-800 dark:text-gray-300 sm:text-left': true,
+                'p-3 text-center truncate bg-gray-200 rounded-md hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 ring-1 ring-opacity-50 ring-gray-300 dark:ring-gray-800 dark:text-gray-300 sm:text-left': true,
                 'sm:col-span-2':
                   Number(index) % 2 === 0 &&
                   Number(index) + 1 >= getRelatedPosts.length,
