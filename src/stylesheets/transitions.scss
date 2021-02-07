@@ -1,4 +1,4 @@
-/* Page Enter/Leave */
+/* Page and layout enter/leave transition */
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.25s;
@@ -9,7 +9,17 @@
   opacity: 0;
 }
 
-/* Fade */
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.25s;
+}
+
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+}
+
+/* Fade transition */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s;
