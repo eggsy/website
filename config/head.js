@@ -63,5 +63,13 @@ export default {
       content: "#111827",
     },
   ],
-  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+  link: [
+    { rel: "icon", type: "image/x-icon", href: "/assets/icons/icon.ico" },
+    {
+      rel: "search",
+      type: "application/opensearchdescription+xml",
+      title: "EGGSY's Blog",
+      href: "/opensearch.xml",
+    },
+  ],
 }
