@@ -241,6 +241,9 @@ export default {
   watch: {
     "$route.query": "setQuery",
   },
+  mounted() {
+    this.setQuery()
+  },
   methods: {
     /**
      * Updates the query variable in Vue data from Vue Router.

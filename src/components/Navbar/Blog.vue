@@ -50,7 +50,7 @@
           <nuxt-link :to="{ name: 'blog' }">
             <div
               :style="{ backgroundImage: `url('/assets/icons/icon-blog.svg')` }"
-              class="w-10 h-10 transition transform bg-white bg-center bg-contain rounded-md hover:-rotate-6"
+              class="w-10 h-10 transition bg-white bg-center bg-contain rounded-md sm:transform hover:-rotate-6"
               title="EGGSY's Blog"
               alt="blog icon"
             />
