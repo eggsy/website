@@ -7,21 +7,24 @@
       'bg-gray-700': searchEnabled === true,
     }"
   >
-    <div class="mx-auto text-gray-200 truncate sm:container">
+    <div class="container mx-auto text-gray-200 truncate sm:px-0 sm:w-7/12">
       <div
         v-if="searchEnabled === false"
-        class="flex items-center px-4 py-2 space-x-10 sm:px-0 space-between sm:justify-center"
+        class="flex items-center justify-between px-4 py-2 sm:px-0"
       >
         <nuxt-link
           v-tippy="{
             content:
-              $route.name === 'blog'
+              $route.name === 'blog' && !Object.keys($route.query).length
                 ? 'Ana sayfaya geri dön'
                 : 'Bloga geri dön',
             placement: 'bottom',
           }"
           :to="{
-            name: $route.name === 'blog' ? 'index' : 'blog',
+            name:
+              $route.name === 'blog' && !Object.keys($route.query).length
+                ? 'index'
+                : 'blog',
           }"
           class="p-2 py-2 rounded-full hover:underline hover:bg-gray-500 focus:outline-none"
           :title="
@@ -29,7 +32,7 @@
           "
         >
           <icon
-            v-if="$route.name === 'blog'"
+            v-if="$route.name === 'blog' && !Object.keys($route.query).length"
             key="double-chevron"
             name="chevron-double-left"
             class="w-4 h-4"
@@ -43,28 +46,34 @@
           />
         </nuxt-link>
 
-        <nuxt-link
-          to="/blog"
-          class="flex-grow text-xl font-semibold text-center sm:flex-grow-0 hover:underline"
-        >
-          Blog
-        </nuxt-link>
+        <div class="flex items-center justify-center flex-grow space-x-4">
+          <nuxt-link :to="{ name: 'blog' }">
+            <div
+              :style="{ backgroundImage: `url('/assets/icons/icon-blog.svg')` }"
+              class="w-10 h-10 transition transform bg-white bg-center bg-contain rounded-md hover:-rotate-6"
+              title="EGGSY's Blog"
+              alt="blog icon"
+            />
+          </nuxt-link>
+        </div>
 
-        <div
-          v-tippy="{
-            content: 'Gönderi ara',
-            placement: 'bottom',
-          }"
-          class="p-2 py-2 rounded-full cursor-pointer hover:underline hover:bg-gray-500 focus:outline-none"
-          title="Gönderi ara"
-          @click="
-            {
-              searchEnabled = true
-              focusSearch()
-            }
-          "
-        >
-          <icon name="search" class="w-4 h-4" />
+        <div class="flex items-center space-x-4">
+          <div
+            v-tippy="{
+              content: 'Gönderi ara',
+              placement: 'bottom',
+            }"
+            class="p-2 py-2 rounded-full cursor-pointer hover:underline hover:bg-gray-500 focus:outline-none"
+            title="Gönderi ara"
+            @click="
+              {
+                searchEnabled = true
+                focusSearch()
+              }
+            "
+          >
+            <icon name="search" class="w-4 h-4" />
+          </div>
         </div>
       </div>
 
@@ -76,11 +85,11 @@
             ref="search"
             v-model="input"
             placeholder="Ne aramak istiyorsunuz?"
-            class="w-full py-3 pl-4 pr-24 bg-gray-700 rounded-none sm:pr-28 focus:outline-none"
+            class="w-full py-4 pl-4 pr-24 bg-gray-700 rounded-none sm:pr-28 focus:outline-none"
             @keydown="handleSearchKeydown"
           />
           <div
-            class="absolute top-0 flex items-center space-x-1 text-xs select-none sm:space-x-2 right-4 sm:right-1 absolute-align-middle"
+            class="absolute top-0 flex items-center space-x-1 text-xs select-none sm:space-x-2 right-4 sm:right-1 absolute-align-middle focus:outline-none"
           >
             <div
               class="p-2 bg-gray-600 rounded-md cursor-pointer hover:bg-gray-800"
@@ -109,6 +118,7 @@ export default {
     return {
       input: "",
       searchEnabled: false,
+      links: ["Haber", "Discord", "Linux"],
     }
   },
   watch: {
@@ -120,8 +130,7 @@ export default {
      */
     search() {
       if (this.input)
-        this.$router.push({ name: "blog-ara", query: { q: this.input } })
-
+        this.$router.push({ name: "blog", query: { q: this.input } })
       this.searchEnabled = false
     },
     /**

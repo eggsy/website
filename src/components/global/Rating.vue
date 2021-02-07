@@ -1,6 +1,14 @@
 <template>
-  <div class="rating">
-    <div class="number">{{ rating }}/{{ max }}</div>
+  <div class="relative rating">
+    <div
+      v-if="isnew === true"
+      v-tippy="{ content: 'Yeni!' }"
+      class="number new"
+    >
+      {{ rating }}/{{ max }}
+    </div>
+
+    <div v-else class="number">{{ rating }}/{{ max }}</div>
 
     <div class="truncate">
       <slot></slot>
@@ -21,6 +29,11 @@ export default {
       required: false,
       default: 10,
     },
+    isnew: {
+      type: [String, Boolean],
+      required: false,
+      default: false,
+    },
   },
 }
 </script>
@@ -30,7 +43,15 @@ export default {
   @apply flex items-center space-x-2;
 
   .number {
-    @apply w-16 px-2 py-px font-semibold text-center text-gray-100 bg-red-600 rounded-md select-none hover:bg-red-700;
+    @apply w-16 px-2 py-px font-semibold text-center text-gray-100  rounded-md select-none;
+
+    &:not(.new) {
+      @apply bg-red-600 hover:bg-red-700;
+    }
+
+    &.new {
+      @apply bg-blue-800 hover:bg-blue-900;
+    }
   }
 
   a {

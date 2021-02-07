@@ -17,181 +17,105 @@
     <h3>Gönderiler yüklenemedi.</h3>
   </div>
 
-  <div v-else class="pb-8">
-    <!-- Latest Posts -->
-    <section v-if="posts.latest && posts.latest.length > 0">
-      <div class="space-y-2 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6">
-        <nuxt-link
-          :to="{
-            name: 'blog-gonderi-slug',
-            params: { slug: posts.latest[0].slug },
-          }"
-        >
-          <CardPost :post="posts.latest[0]" :featured="true" />
-        </nuxt-link>
+  <div v-else class="px-4 pb-16 sm:px-0">
+    <div v-if="getFilteredPosts === false">
+      <h3
+        class="pl-2 space-x-2 text-lg font-semibold text-gray-900 border-l-4 border-gray-800 dark:border-gray-400 dark:text-gray-100"
+      >
+        Son gönderiler
+      </h3>
 
-        <div class="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-2">
+      <div class="grid gap-4 mt-4 sm:grid-cols-2">
+        <CardPost
+          v-for="(post, index) in posts.latest"
+          :key="`latest-${index}`"
+          :post="post"
+        />
+      </div>
+
+      <div class="grid gap-14 sm:gap-6 sm:grid-cols-2 mt-14">
+        <div class="grid grid-cols-1 gap-4">
           <nuxt-link
-            v-for="(post, index) in posts.latest.slice(1, 5)"
-            :key="`latest-${index}`"
             :to="{
-              name: 'blog-gonderi-slug',
-              params: { slug: post.slug },
+              name: 'blog',
+              query: {
+                etiket: 'discord',
+              },
             }"
+            title="Discord etiketli gönderileri gör"
+            class="flex items-center pl-2 space-x-2 text-gray-900 border-l-4 border-gray-800 dark:border-gray-400 dark:text-gray-100"
           >
-            <CardPost :post="post" />
+            <icon name="discord" class="w-6 h-6" />
+            <h3 class="text-lg font-semibold">Discord</h3>
           </nuxt-link>
-        </div>
-      </div>
-    </section>
 
-    <!-- Discord Posts -->
-    <section v-if="posts.discord && posts.discord.length > 0">
-      <div class="flex items-center mb-4 space-x-2">
-        <icon name="discord" class="w-8 h-8 dark:text-gray-200" />
-        <nuxt-link
-          :to="{
-            name: 'blog-etiket-name',
-            params: {
-              name: 'discord',
-            },
-          }"
-          class="hover:underline"
-        >
-          <CoolTitle lang="en" right-down="Discord" />
-        </nuxt-link>
-      </div>
-
-      <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
-        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          <nuxt-link
-            v-for="(post, index) in posts.discord.slice(0, 3)"
+          <CardPost
+            v-for="(post, index) in posts.discord"
             :key="`discord-${index}`"
-            :to="{
-              name: 'blog-gonderi-slug',
-              params: { slug: post.slug },
-            }"
-            :class="{
-              'boxed-post-card': true,
-              'col-span-2 sm:col-span-1': index === 2,
-            }"
-          >
-            <p>{{ post.title }}</p>
-          </nuxt-link>
+            :post="post"
+            type="text"
+          />
         </div>
 
-        <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:grid-rows-2">
+        <div class="grid grid-cols-1 gap-4">
           <nuxt-link
-            v-for="(post, index) in posts.discord.slice(3, 7)"
-            :key="`discord-2-${index}`"
             :to="{
-              name: 'blog-gonderi-slug',
-              params: { slug: post.slug },
+              name: 'blog',
+              query: {
+                etiket: 'linux',
+              },
             }"
-            :class="{ 'sm:col-span-2': index === 0, truncate: true }"
+            title="Linux etiketli gönderileri gör"
+            class="flex items-center pl-2 space-x-2 text-gray-900 border-l-4 border-gray-800 dark:border-gray-400 dark:text-gray-100"
           >
-            <CardPost :post="post" :image="false" color="mobile-indigo" />
+            <icon name="linux" class="w-6 h-6" />
+            <h3 class="text-lg font-semibold">Linux</h3>
           </nuxt-link>
+
+          <CardPost
+            v-for="(post, index) in posts.linux"
+            :key="`linux-${index}`"
+            :post="post"
+            type="text"
+          />
         </div>
       </div>
-    </section>
 
-    <!-- Linux and Blog Posts -->
-    <section
-      v-if="
-        posts.linux &&
-        posts.blog &&
-        posts.linux.length > 0 &&
-        posts.blog.length > 0
-      "
-    >
-      <div class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
-        <div>
-          <div class="flex items-center mb-4 space-x-2">
-            <icon name="linux" class="w-8 h-8 dark:text-gray-200" />
-
-            <nuxt-link
-              :to="{
-                name: 'blog-etiket-name',
-                params: {
-                  name: 'linux',
-                },
-              }"
-              class="hover:underline"
-            >
-              <CoolTitle right-down="Linux" lang="en" />
-            </nuxt-link>
-          </div>
-
-          <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:grid-rows-2">
-            <nuxt-link
-              v-for="(post, index) in posts.linux"
-              :key="`linux-${index}`"
-              :to="{
-                name: 'blog-gonderi-slug',
-                params: { slug: post.slug },
-              }"
-              :class="{ 'sm:col-span-2': index === 0, truncate: true }"
-            >
-              <CardPost :post="post" :image="false" color="teal" />
-            </nuxt-link>
-          </div>
-        </div>
-
-        <div>
-          <div class="flex items-center mb-4 space-x-2">
-            <icon name="document" class="w-8 h-8 dark:text-gray-200" />
-
-            <nuxt-link
-              :to="{
-                name: 'blog-etiket-name',
-                params: {
-                  name: 'site',
-                },
-              }"
-              class="hover:underline"
-            >
-              <CoolTitle right-down="Site" />
-            </nuxt-link>
-          </div>
-
-          <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:grid-rows-2">
-            <nuxt-link
-              v-for="(post, index) in posts.blog"
-              :key="`blog-${index}`"
-              :to="{
-                name: 'blog-gonderi-slug',
-                params: { slug: post.slug },
-              }"
-              :class="{ 'sm:col-span-2': index === 2, truncate: true }"
-            >
-              <CardPost :post="post" :image="false" color="red" />
-            </nuxt-link>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Other Posts -->
-    <section v-if="posts.rest && posts.rest.length > 0">
-      <div class="flex items-center mb-4 space-x-2">
-        <icon name="book-open" class="w-8 h-8 dark:text-gray-200" />
-        <CoolTitle right-down="Diğer gönderiler" />
-      </div>
-
-      <div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
-        <nuxt-link
-          v-for="(post, index) in posts.rest"
-          :key="`rest-${index}`"
-          :to="{
-            name: 'blog-gonderi-slug',
-            params: { slug: post.slug },
-          }"
+      <div class="mt-16">
+        <h3
+          class="pl-2 space-x-2 text-lg font-semibold text-gray-900 border-l-4 border-gray-800 dark:border-gray-400 dark:text-gray-100"
         >
-          <CardPost :post="post" :image="false" :description="true" />
-        </nuxt-link>
+          Diğer gönderiler
+        </h3>
+
+        <div class="grid gap-4 mt-4 sm:grid-cols-3">
+          <CardPost
+            v-for="(post, index) in posts.rest"
+            :key="`linux-${index}`"
+            :post="post"
+            type="text-only-title"
+          />
+        </div>
       </div>
-    </section>
+    </div>
+
+    <div v-else-if="getFilteredPosts">
+      <div
+        v-if="getFilteredPosts !== false && getFilteredPosts.length === 0"
+        class="text-xl font-semibold"
+      >
+        Aramanıza uygun herhangi bir gönderi bulunamadı.
+      </div>
+
+      <div v-else class="space-y-6">
+        <CardPost
+          v-for="(post, index) in getFilteredPosts"
+          :key="`linux-${index}`"
+          :post="post"
+          type="text"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -200,11 +124,11 @@ export default {
   layout: "blog",
   data() {
     return {
+      query: this.$route.query || {},
       posts: {
         latest: [],
         discord: [],
         linux: [],
-        blog: [],
         rest: [],
       },
     }
@@ -212,14 +136,14 @@ export default {
   async fetch() {
     const latestPosts = await this.$content()
       .sortBy("createdAt", "desc")
-      .limit(5)
+      .limit(4)
       .without(["body"])
       .fetch()
 
     const discordPosts = await this.$content()
       .where({ tags: { $contains: "discord" } })
       .sortBy("createdAt", "desc")
-      .limit(6)
+      .limit(3)
       .without(["body"])
       .fetch()
 
@@ -230,16 +154,9 @@ export default {
       .without(["body"])
       .fetch()
 
-    const blogPosts = await this.$content()
-      .where({ tags: { $contains: "blog" } })
-      .sortBy("createdAt", "desc")
-      .limit(3)
-      .without(["body"])
-      .fetch()
-
     const allPosts = await this.$content()
       .sortBy("createdAt", "desc")
-      .skip(5)
+      .skip(4)
       .without(["body"])
       .fetch()
 
@@ -247,7 +164,6 @@ export default {
       latest: latestPosts || [],
       discord: discordPosts || [],
       linux: linuxPosts || [],
-      blog: blogPosts || [],
       rest: allPosts || [],
     }
   },
@@ -285,22 +201,55 @@ export default {
       { name: "premid-state", content: "Homepage" },
     ],
   },
+  computed: {
+    /**
+     * Filters posts with a query variable.
+     * @returns {boolean|array} False if no query set, filtered posts array if there are results.
+     */
+    getFilteredPosts() {
+      let { q, search, query, ara, sorgu, etiket } = this.query
+
+      if (!q && !search && !query && !ara && !sorgu && !etiket) return false
+
+      q = q?.toLowerCase()
+      search = search?.toLowerCase()
+      query = query?.toLowerCase()
+      ara = ara?.toLowerCase()
+      sorgu = sorgu?.toLowerCase()
+      etiket = etiket?.toLowerCase()
+
+      const { latest, discord, linux, rest } = this.posts
+      const allPosts = [...latest, ...discord, ...linux, ...rest]
+
+      if (etiket)
+        return allPosts.filter(
+          (post) =>
+            post.tags.filter((tag) => tag.toLowerCase().includes(etiket)).length
+        )
+      else
+        return allPosts.filter(
+          (post) =>
+            post.title
+              ?.toLowerCase()
+              ?.includes(q || search || query || ara || sorgu) ||
+            post.description
+              ?.toLowerCase()
+              ?.includes(q || search || query || ara || sorgu)
+        )
+    },
+  },
+  watch: {
+    "$route.query": "setQuery",
+  },
+  methods: {
+    /**
+     * Updates the query variable in Vue data from Vue Router.
+     * @returns {object} The router query object.
+     */
+    setQuery() {
+      this.query = this.$route.query
+      console.log(this.query)
+    },
+  },
 }
 </script>
-
-<style lang="scss" scoped>
-.boxed-post-card {
-  @apply bg-indigo-700 hover:bg-indigo-800 p-4 text-white rounded-md text-lg text-center sm:text-left sm:text-xl font-semibold dark:hover:bg-opacity-80 dark:bg-gray-800;
-
-  p {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-}
-
-section:not(:first-child) {
-  @apply mt-10;
-}
-</style>

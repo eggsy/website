@@ -34,27 +34,35 @@
   </div>
 
   <div v-else class="px-4 pb-10 space-x-6 pt-14 sm:pt-14 sm:px-0">
-    <div class="w-full mx-auto sm:w-7/12">
+    <div class="w-full mx-auto">
       <article>
-        <header class="mb-12 space-y-2">
+        <header class="mb-12 space-y-6">
           <h1
-            class="block text-4xl font-semibold text-center text-gray-800 sm:text-6xl dark:text-gray-50"
+            class="block text-4xl font-semibold text-center text-black quicksand sm:text-6xl dark:text-gray-50"
           >
             {{ post.title }}
           </h1>
 
+          <p class="text-center dark:text-gray-100">
+            {{ post.description }}
+          </p>
+
           <div
-            class="flex justify-center w-full dark:text-gray-300 whitespace-nowrap"
+            class="flex justify-center w-full space-x-2 divide-x-2 divide-gray-200 dark:text-gray-300 whitespace-nowrap"
           >
-            {{ getReadingTime }} dakika okuma - {{ getReadableDate }}
+            <div class="flex items-center space-x-1">
+              <icon name="clock" class="w-4 h-4" />
+              <div>{{ getReadingTime }} dakika okuma</div>
+            </div>
+
+            <div class="flex items-center pl-2 space-x-1">
+              <icon name="calendar" class="w-4 h-4" />
+              <div>{{ getReadableDate }}</div>
+            </div>
           </div>
         </header>
 
         <div class="mt-4 space-y-4 text-justify">
-          <p class="text-lg font-medium dark:text-gray-100">
-            {{ post.description }}
-          </p>
-
           <nuxt-content :document="post"></nuxt-content>
         </div>
       </article>
@@ -80,9 +88,9 @@
               v-for="(tag, index) in getTags"
               :key="`tag-${index}`"
               :to="{
-                name: 'blog-etiket-name',
-                params: {
-                  name: tag,
+                name: 'blog',
+                query: {
+                  etiket: tag,
                 },
               }"
               class="px-2 py-1 text-gray-800 bg-gray-200 rounded-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-300 dark:text-gray-100"
@@ -244,25 +252,14 @@ export default {
      * @returns {number|string} Reading time in minutes.
      */
     getReadingTime() {
-      const body = JSON.stringify(this.post.body)
-      const words = body?.split(" ").length || 0
-      return Math.ceil(words / 200).toFixed()
+      return this.$getReadingTime(JSON.stringify(this.post.body))
     },
     /**
      * Returns the date as a readable string.
      * @returns {string} Today, yesterday, x day before, x months before or DD/MM/YYYY.
      */
     getReadableDate() {
-      const now = this.$moment()
-      const createdAt = this.$moment(this.post?.createdAt)
-      const diff = now.diff(createdAt, "days")
-
-      if (diff === 0) return "Bugün"
-      else if (diff === 1) return "Dün"
-      else if (diff <= 30) return `${diff} gün önce`
-      else if (diff >= 30 && diff <= 90)
-        return `${Math.floor(diff / 30)} ay önce`
-      else return createdAt.format("DD/MM/YYYY")
+      return this.$getReadableDate(this.post?.createdAt)
     },
     /**
      * Returns the related posts, if there's no related post, returns an empty array instead.
@@ -283,7 +280,7 @@ export default {
 </script>
 
 <style lang="scss">
-header h1 {
+header h1.quicksand {
   font-family: "Quicksand", sans-serif;
 }
 
@@ -325,7 +322,7 @@ header h1 {
     }
 
     img {
-      @apply rounded-md;
+      @apply rounded;
     }
 
     &:not(:last-child) {
@@ -338,9 +335,17 @@ header h1 {
     @apply space-y-px mb-4 dark:text-gray-200;
   }
 
-  /* Pre */
+  /* Pre and code block filenames */
   pre {
     @apply rounded-md;
+  }
+
+  .nuxt-content-highlight {
+    @apply relative;
+
+    .filename {
+      @apply absolute right-0 text-gray-300 font-light z-10 mr-3 mt-2 text-sm;
+    }
   }
 
   /* Ordered and Unordered Lists */

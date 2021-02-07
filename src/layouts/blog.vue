@@ -1,7 +1,7 @@
 <template>
   <div class="w-full min-h-screen bg-gray-50 dark:bg-gray-900">
     <NavbarBlog />
-    <Nuxt class="container px-4 pt-6 sm:pt-10 sm:mx-auto" />
+    <Nuxt class="container pt-6 sm:w-7/12 sm:pt-10 sm:mx-auto" />
 
     <div
       class="fixed bottom-0 right-0 z-50 flex items-center mb-4 mr-6 space-x-2 sm:space-x-4"
@@ -26,6 +26,13 @@ export default {
           hid: "og:site_name",
           name: "og:site_name",
           content: "eggsy.xyz - blog",
+        },
+      ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/assets/icons/icon-blog-white-bg.ico",
         },
       ],
     }

@@ -12,7 +12,7 @@ Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim öz
 
 Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂
 
-<div class="grid grid-cols-2 ratings">
+<div class="grid grid-cols-2 gap-1 ratings">
     <Rating rating="10">
       <a href="#daredevil">Daredevil</a>
     </Rating>
@@ -55,7 +55,7 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <Rating rating="9.0">
       <a href="#snowpiercer">Snowpiercer</a>
     </Rating>
-    <Rating rating="9.0" :new="true">
+    <Rating rating="9.0" :isnew="true">
       <a href="#the-haunting-of-bly-manor">The Haunting of Bly Manor</a>
     </Rating>
     <Rating rating="9.0">
@@ -67,7 +67,7 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <Rating rating="9.0">
       <a href="#altered-carbon">Altered Carbon</a>
     </Rating>
-    <Rating rating="8.9" :new="true">
+    <Rating rating="8.9" :isnew="true">
       <a href="#the-queens-gambit">The Queen's Gambit</a>
     </Rating>
     <Rating rating="8.5">

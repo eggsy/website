@@ -60,7 +60,7 @@ a {
 }
 
 .content {
-  @apply mb-4 px-4 py-2 rounded-md text-gray-100;
+  @apply mb-4 p-4 rounded-md text-gray-100 shadow;
 
   a {
     @apply text-purple-600 font-medium hover:underline;
