@@ -5,6 +5,7 @@ tags:
   - dizi
   - video
 createdAt: 2020-02-14T14:40:38.470Z
+special: true
 ---
 
 Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim özelliklerden birisi olan "etiket sistemi" olarak adlandırdığım, sizin belirlediğiniz bir etiket ile istediğiniz bir şeyi not almanızı sağlayan güzelim o komuttu. O komut sayesinde dizi önerilerimi sorulduğunda neredeyse her sunucuda kolayca gösterebiliyor ve kimseyi uğraştırmamış oluyordum. Bugün bir dizi daha bitirdikten sonra "neden bunu bloga yazmayayım?" dedim, üstelik daha fazla açıklama olur ve burası da boş kalmaz 😅 Daha fazla uzatmadan direkt olarak aşağıdaki puanlama listesine geçebilir, eğer isterseniz listenin altına inerek listedeki sırasına göre yazdığım tüm diziler hakkında ne düşündüğümü bulabilir ve dizilerin hepsinin yayınlanan resmi fragmanlarına ulaşabilirsiniz. Ayrıca, bu gönderi, yeni bir dizi önerim olduğunda güncellenecektir. O yüzden takipte kalın!
@@ -24,70 +25,76 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <Rating rating="9.5">
       <a href="#élite">Élite</a>
     </Rating>
-    <Rating  rating="9.5">
+    <Rating rating="9.5">
       <a href="#the-witcher">The Witcher</a>
     </Rating>
-    <Rating  rating="9.5">
+    <Rating rating="9.5">
       <a href="#rise-of-empires-ottoman">Rise of Empires: Ottoman</a>
     </Rating>
-    <Rating  rating="9.5">
+    <Rating rating="9.5">
       <a href="#the-mandalorian">The Mandalorian</a>
     </Rating>
-    <Rating  rating="9.5">
+    <Rating rating="9.5">
       <a href="#la-casa-de-papel">La Casa de Papel</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0">
       <a href="#sex-education">Sex Education</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0">
       <a href="#locke--key">Locke & Key</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0">
       <a href="#stranger-things">Stranger Things</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0">
       <a href="#see">See</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0">
       <a href="#sherlock">Sherlock</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0">
       <a href="#snowpiercer">Snowpiercer</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0" :new="true">
+      <a href="#the-haunting-of-bly-manor">The Haunting of Bly Manor</a>
+    </Rating>
+    <Rating rating="9.0">
       <a href="#sense8">Sense8</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0">
       <a href="#chilling-adventures-of-sabrina">Chilling Adventures of Sabrina</a>
     </Rating>
-    <Rating  rating="9.0">
+    <Rating rating="9.0">
       <a href="#altered-carbon">Altered Carbon</a>
     </Rating>
-    <Rating  rating="8.5">
+    <Rating rating="8.9" :new="true">
+      <a href="#the-queens-gambit">The Queen's Gambit</a>
+    </Rating>
+    <Rating rating="8.5">
       <a href="#aşk-101">Aşk 101</a>
     </Rating>
-    <Rating  rating="8.5">
+    <Rating rating="8.5">
       <a href="#the-order">The Order</a>
     </Rating>
-    <Rating  rating="8.5">
+    <Rating rating="8.5">
       <a href="#bojack-horseman">BoJack Horseman</a>
     </Rating>
-    <Rating  rating="8.5">
+    <Rating rating="8.5">
       <a href="#rick-and-morty">Rick and Morty</a>
     </Rating>
-    <Rating  rating="8.5">
+    <Rating rating="8.5">
       <a href="#lost-in-space">Lost in Space</a>
     </Rating>
-    <Rating  rating="8.0">
+    <Rating rating="8.0">
       <a href="#the-haunting-of-hill-house">The Haunting of Hill House</a>
     </Rating>
-    <Rating  rating="8.0">
+    <Rating rating="8.0">
       <a href="#you">You</a>
     </Rating>
-    <Rating  rating="8.0">
+    <Rating rating="8.0">
       <a href="#lucifer">Lucifer</a>
     </Rating>
-    <Rating  rating="8.0">
+    <Rating rating="8.0">
       <a href="#the-umbrella-academy">The Umbrella Academy</a>
     </Rating>
     <Rating  rating="8.0">
@@ -155,6 +162,10 @@ Fazla anlatmaya gerek yok, aslında çok geç bitirdiğim bu dizi, hepimizin "ş
 
 Konusu ilginç ve devamının gelmeyeceğini, devam etse nereye kadar edebileceğini düşünüp durduğunuz, bir o kadar da severek ve heyecanla izlediğiniz yine bir roman uyarlaması olan dizi. Her bölümde ayrı bir zevk veren, dövüş ve işlenişiyle kendine hayran bırakan, karakterleri sevdiren ve duyguyu yediren Netflix'in yapmış olduğu güzel dizilerden biri. Dizi 1001 vagon uzunluğunda bir trenin, kıyamet sonrası Dünya'nın durumundan sonra hayatta kalmaya çalışan binlerce insanın yanı sıra, trene kaçak binen "kuyruk" adı verilen kesimin haklarını aramasını konu alıyor. Güzel bir dizi. Fragmanına [buradan](https://www.youtube.com/watch?v=lGcJL6TG5cA) ulaşabilirsiniz.
 
+### The Haunting of Bly Manor
+
+Son zamanlarda izleyerek beni içine çeken, bir sonraki bölümü bir an önce izleme şehvetini bana tekrar yaşatan bu dizi, ilk sezonu The Haunting of Hill House ile beni her ne kadar fazla etkilememiş olsa da bu sezonu ile inanılmaz bir geri dönüş yaptıklarını düşünüyorum. Korku dizisi olmasına rağmen her bölümde "sıçratan sahneler" veya sürekli hakim bir karanlık tema işlenmemesi, yeri gelince güzel güneşli günlerin ve çimenlerde oynayan çocukların hikayelerinin anlatılması, bilindik korkutma yöntemleri ile değil, dram ile karışık bir şekilde işlenen gerilim/korku ile işlenerek ortaya inanılmaz bir sezon ortaya çıkması diziye her türlü açıdan bir anlam katmış. Hikayesi bir anlatıcının sesi ile işlenen, orta bölümlerde hikayenin tamamına hakim olduğunuz ve finalinde de "ters köşe" olduğunuz bir hikaye ile sizleri bekleyen bu diziyi izlemenizi tavsiye ederim. İsterseniz fragmanı [buradan](https://youtu.be/NHWKpXV404M) izleyebilirsiniz.
+
 ### Sense8
 
 İlk bölümlerinde her karakterinden, her sahnesinden, izlediğim her saniyeden pişman eden, bırakmamak için kendimi zor tuttuğum dizi, her ne kadar olaya geç başlasa da başladıktan sonra beni beniden alan bir hikayeye sahip olduğunu gösterdi. Gerçekten bırakmak istememe ve kendimi zor tutmama rağmen ilk sezonu bitirme çabalarım sayesinde, son bölümlerde konunun başlaması üzerine dizi oldukça sarmaya başladı. Özellikle ikinci sezon ve karakterlerin birbirleriyle tanıştıktan sonraki dövüş sahneleri, birbirlerine yardım etmeleri gibi sahneleri daha önce hiçbir dizide olmadığı kadar "şehvetle" izledim. Görsel efektten kaçınmayan, ilk başta nefret ettirse de bir süre sonra 8 karakterin 8'ini de sevdiren bu dizinin fragmanını [buradan](https://www.youtube.com/watch?v=iKpKAlbJ7BQ) bulabilirsiniz.
@@ -166,6 +177,10 @@ Lucifer izleyip yeterince Tanrımıza şirk koşmadığınızı düşünüyorsan
 ### Altered Carbon
 
 Uzun bir aradan sonra çıkan ikinci sezonuyla birlikte Netflix'de tekrar ses getiren, her ne kadar "aşırı" gelecek ve abartılmış teknoloji hikayelerinden nefret etsem bile, dizinin ilk sezonunu bitirdikten ve ikinci sezondan birkaç bölüm izledikten sonra bu dizi hakkındaki fikrim değişti. İkinci sezonu ile beni yakalayan bu dizide, bahsettiğim gibi "aşırı" bir gelecek senaryosu izliyoruz, ancak işlenen konular oldukça iyi işlenmiş, her şey oturtulmuş ve neredeyse dizide hiçbir hata bulamıyorsunuz. Bunların yanı sıra listedeki bir çok dizinin aksine bu dizide, yapımcılar animasyondan hiç kaçınmamış. Hatta bulabildikleri yere animasyon sıkıştırmışlar. Animasyon derken anime değil tabiki de, kaliteli dövüş sahneleri, sahne tasarımları, patlamalar ve efektler, bunlar tam kıvamında ve güzel olmuş. İzleyin derim, fragmanına [buradan](https://www.youtube.com/watch?v=opFfCf5qsw8) ulaşabilirsiniz.
+
+### The Queen's Gambit
+
+Serinin 10 bölümden daha kısa olması, her bölümünün de 1 saatin altında olması dolayısıyla "çerezlik" gördüğüm bu mini dizi, satranç oyununa ilgisi olan, veya olmayan ama Instagram gibi sosyal mecralarda adını çokça duyurmuş kişiler için güzel bir dizi olabilir. Satrança ilgisi olmayan biri olarak saygı duyduğum bu oyunu, bu dizide izlerken, oyuncuların neleri düşünmek zorunda olduğunu, rakiplerini elemek için yaptığı hamleler, kendilerine sürekli bir şey katmaları ve her zaman pratik yapmaları gerektiğini öğrendim. Oldukça zor ve pratik gerektiren bu oyun bu dizide başarılı bir şekilde işlenmiş ve ara bölümlerde "olmaması gereken" yerler var desem bile listenin altında bulunan dizilerden daha iyi bir hikayesinin, anlatımının ve kalitesinin olduğunu düşünüyorum. İsterseniz dizinin çıkmış ve çıkacak olan tek sezonunun fragmanını [buradan](https://youtu.be/TAGfVAstQlQ) izleyebilirsiniz.
 
 ### Aşk 101
 
