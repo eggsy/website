@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 pt-6 pb-14">
+  <div class="px-4 pt-6">
     <section
       class="flex items-center justify-center w-full mt-12 space-x-2 sm:mt-24 dark:text-gray-200"
     >

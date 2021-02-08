@@ -1,180 +1,174 @@
 <template>
-  <div class="px-4 space-y-2 md:px-0">
+  <div class="space-y-2">
     <!-- Custom Status Presence will read the data from here -->
     <div id="object" class="hidden">
       {{ getPresenceData }}
     </div>
 
-    <div class="space-y-6 md:flex md:space-x-6 md:space-y-0">
-      <section class="md:w-6/12">
-        <CardDiscord
-          :small-image-text="presence.smallImageText"
-          :large-image="presence.largeImageKey"
-          :small-image="presence.smallImageKey"
-          :timestamp="presence.timestamp"
-          :details="presence.details"
-          :state="presence.state"
-          class="shadow-lg"
-        />
-
-        <div class="mt-4 space-y-2">
-          <div class="items-center w-full md:flex md:space-x-2">
-            <h3
-              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-            >
-              Details (upper text)
-            </h3>
-            <input
-              v-model="presence.details"
-              class="w-full md:w-3/4"
-              type="text"
-            />
-          </div>
-
-          <div class="items-center w-full md:flex md:space-x-2">
-            <h3
-              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-            >
-              State (lower text)
-            </h3>
-            <input
-              v-model="presence.state"
-              class="w-full md:w-3/4"
-              type="text"
-            />
-          </div>
-
-          <div class="items-center w-full md:flex md:space-x-2">
-            <h3
-              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-            >
-              Large Image
-            </h3>
-            <select
-              v-model="presence.largeImageKey"
-              class="w-full bg-white dark:bg-gray-700 md:w-3/4"
-            >
-              <option selected>PreMiD</option>
-              <option
-                v-for="(image, index) of getImageNames.large"
-                :key="`large-image-${index}`"
-              >
-                {{ image }}
-              </option>
-            </select>
-          </div>
-
-          <div class="items-center w-full md:flex md:space-x-2">
-            <h3
-              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-            >
-              Small Image
-            </h3>
-            <select
-              v-model="presence.smallImageKey"
-              class="w-full bg-white dark:bg-gray-700 md:w-3/4"
-            >
-              <option selected>None</option>
-              <option
-                v-for="(image, index) of getImageNames.small"
-                :key="`small-image-${index}`"
-              >
-                {{ image }}
-              </option>
-            </select>
-          </div>
-
-          <div
-            v-if="presence.smallImageKey !== 'None'"
-            class="items-center w-full md:flex md:space-x-2"
+    <div class="space-y-6">
+      <div class="space-y-2">
+        <div
+          v-if="presence.installed === false"
+          class="hidden mb-2 bg-red-500 sm:block information dark:bg-gray-700"
+        >
+          You need to install the Custom Status presence from the PreMiD Store
+          to be able to use this page.
+          <a
+            href="https://premid.app/store/presences/Custom%20Status"
+            target="_blank"
+            rel="noreferrer"
+            class="text-blue-200"
+            >Click here</a
           >
-            <h3
-              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
+          to visit the store.
+        </div>
+
+        <div class="block bg-red-500 sm:hidden information dark:bg-gray-700">
+          Are you on mobile? If you are you should know that PreMiD doesn't work
+          on mobile, so you can't use this page in any way.
+        </div>
+      </div>
+
+      <CardDiscord
+        :small-image-text="presence.smallImageText"
+        :large-image="presence.largeImageKey"
+        :small-image="presence.smallImageKey"
+        :timestamp="presence.timestamp"
+        :details="presence.details"
+        :state="presence.state"
+        class="shadow-lg"
+      />
+
+      <div class="mt-4 space-y-2">
+        <div class="items-center w-full md:flex md:space-x-2">
+          <h3
+            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
+          >
+            Details (upper text)
+          </h3>
+          <input
+            v-model="presence.details"
+            class="w-full md:w-3/4"
+            type="text"
+          />
+        </div>
+
+        <div class="items-center w-full md:flex md:space-x-2">
+          <h3
+            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
+          >
+            State (lower text)
+          </h3>
+          <input v-model="presence.state" class="w-full md:w-3/4" type="text" />
+        </div>
+
+        <div class="items-center w-full md:flex md:space-x-2">
+          <h3
+            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
+          >
+            Large Image
+          </h3>
+          <select
+            v-model="presence.largeImageKey"
+            class="w-full bg-white dark:bg-gray-700 md:w-3/4"
+          >
+            <option selected>PreMiD</option>
+            <option
+              v-for="(image, index) of getImageNames.large"
+              :key="`large-image-${index}`"
             >
-              Small Image Text
-            </h3>
-            <input
-              v-model="presence.smallImageText"
-              class="w-full md:w-3/4"
-              type="text"
-            />
-          </div>
+              {{ image }}
+            </option>
+          </select>
+        </div>
 
-          <div class="items-center w-full md:flex md:space-x-2">
-            <h3
-              class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
+        <div class="items-center w-full md:flex md:space-x-2">
+          <h3
+            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
+          >
+            Small Image
+          </h3>
+          <select
+            v-model="presence.smallImageKey"
+            class="w-full bg-white dark:bg-gray-700 md:w-3/4"
+          >
+            <option selected>None</option>
+            <option
+              v-for="(image, index) of getImageNames.small"
+              :key="`small-image-${index}`"
             >
-              Timestamps
-            </h3>
+              {{ image }}
+            </option>
+          </select>
+        </div>
 
-            <div class="grid w-full grid-cols-1 gap-2 md:w-3/4">
-              <div
-                :class="{
-                  'timestamp dark:text-gray-200': true,
-                  'active text-white dark:text-gray-100':
-                    presence.timestamp.start.enabled === true,
-                }"
-                @click="toggleTimestamp('elapsed')"
-              >
-                Show Time Elapsed
-              </div>
+        <div
+          v-if="presence.smallImageKey !== 'None'"
+          class="items-center w-full md:flex md:space-x-2"
+        >
+          <h3
+            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
+          >
+            Small Image Text
+          </h3>
+          <input
+            v-model="presence.smallImageText"
+            class="w-full md:w-3/4"
+            type="text"
+          />
+        </div>
 
-              <div
+        <div class="items-center w-full md:flex md:space-x-2">
+          <h3
+            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
+          >
+            Timestamps
+          </h3>
+
+          <div class="grid w-full grid-cols-1 gap-2 md:w-3/4">
+            <div
+              :class="{
+                'timestamp dark:text-gray-200': true,
+                'active text-white dark:text-gray-100':
+                  presence.timestamp.start.enabled === true,
+              }"
+              @click="toggleTimestamp('elapsed')"
+            >
+              Show Time Elapsed
+            </div>
+
+            <div
+              :class="{
+                'timestamp flex items-center space-x-2 justify-center cursor-default': true,
+                active: presence.timestamp.end.enabled === true,
+              }"
+            >
+              <span
                 :class="{
-                  'timestamp flex items-center space-x-2 justify-center cursor-default': true,
-                  active: presence.timestamp.end.enabled === true,
+                  'dark:text-gray-200': true,
+                  'text-white dark:text-gray-100':
+                    presence.timestamp.end.enabled === true,
                 }"
-              >
-                <span
-                  :class="{
-                    'dark:text-gray-200': true,
-                    'text-white dark:text-gray-100':
-                      presence.timestamp.end.enabled === true,
-                  }"
-                  >Time To:
-                </span>
-                <input
-                  v-model="presence.timestamp.end.value"
-                  type="time"
-                  @input="endTimestampChange"
-                />
-              </div>
+                >Time To:
+              </span>
+              <input
+                v-model="presence.timestamp.end.value"
+                type="time"
+                @input="endTimestampChange"
+              />
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section class="space-y-4 text-justify md:w-6/12">
+      <div class="grid gap-4 sm:grid-cols-2">
         <div class="space-y-2">
-          <div
-            v-if="presence.installed === false"
-            class="hidden mb-2 bg-red-500 sm:block information dark:bg-gray-700"
-          >
-            You need to install the Custom Status presence from the PreMiD Store
-            to be able to use this page.
-            <a
-              href="https://premid.app/store/presences/Custom%20Status"
-              target="_blank"
-              rel="noreferrer"
-              class="text-blue-200"
-              >Click here</a
-            >
-            to visit the store.
-          </div>
-
           <div class="bg-green-500 information dark:bg-gray-700">
             Welcome to the new look of PreMiD pages including Custom Status. I
             have completely redesigned my website, please take a look at the
             rest too!
           </div>
 
-          <div class="block bg-red-500 sm:hidden information dark:bg-gray-700">
-            Are you on mobile? If you are you should know that PreMiD doesn't
-            work on mobile, so you can't use this page in any way.
-          </div>
-        </div>
-
-        <div>
           <h2
             class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
           >
@@ -195,49 +189,51 @@
           </p>
         </div>
 
-        <div>
-          <h2
-            class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
-          >
-            It's not showing anything!?
-          </h2>
-
-          <p class="text-gray-700 dark:text-gray-200">
-            If the system isn't working or it isn't displaying anything on your
-            profile, it's most likely about you. Please check
-            <a
-              href="https://premid.app/store/presences/Custom%20Status?utm_source=eggsy.xyz"
-              title="PreMiD Docs"
-              rel="noreferrer"
-              target="_blank"
-              >Troubleshooting Documentation</a
+        <div class="space-y-2">
+          <div>
+            <h2
+              class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
             >
-            and see if those steps will fix your issue. If nothing works out,
-            you can always find me on PreMiD's Discord server and get support
-            there!
-          </p>
-        </div>
+              It's not showing anything!?
+            </h2>
 
-        <div>
-          <h2
-            class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
-          >
-            Can I donate?
-          </h2>
+            <p class="text-gray-700 dark:text-gray-200">
+              If the system isn't working or it isn't displaying anything on
+              your profile, it's most likely about you. Please check
+              <a
+                href="https://premid.app/store/presences/Custom%20Status?utm_source=eggsy.xyz"
+                title="PreMiD Docs"
+                rel="noreferrer"
+                target="_blank"
+                >Troubleshooting Documentation</a
+              >
+              and see if those steps will fix your issue. If nothing works out,
+              you can always find me on PreMiD's Discord server and get support
+              there!
+            </p>
+          </div>
 
-          <p class="text-gray-700 dark:text-gray-200">
-            If you want to support my work here, you can contact with me on
-            <a
-              href="https://discord.com/users/162969778699501569"
-              title="Click to visit my profile"
-              rel="noreferrer"
-              target="_blank"
-              >Discord</a
-            >. My username is <strong>EGGSY#3388</strong> and you can find me on
-            PreMiD's Discord server. Thank you for your contributions!
-          </p>
+          <div>
+            <h2
+              class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+            >
+              Can I donate?
+            </h2>
+
+            <p class="text-gray-700 dark:text-gray-200">
+              If you want to support my work here, you can contact with me on
+              <a
+                href="https://discord.com/users/162969778699501569"
+                title="Click to visit my profile"
+                rel="noreferrer"
+                target="_blank"
+                >Discord</a
+              >. My username is <strong>EGGSY#3388</strong> and you can find me
+              on PreMiD's Discord server. Thank you for your contributions!
+            </p>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   </div>
 </template>
@@ -247,7 +243,6 @@ import largeImages from "@/assets/files/premid/largeImages"
 import smallImages from "@/assets/files/premid/smallImages"
 
 export default {
-  layout: "premid",
   data() {
     return {
       presence: {

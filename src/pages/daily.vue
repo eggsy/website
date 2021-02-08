@@ -1,115 +1,63 @@
 <template>
-  <div v-if="$fetchState.pending" class="flex items-center justify-center">
+  <div
+    v-if="$fetchState.pending"
+    class="flex items-center justify-center h-screen -mt-10"
+  >
     <div class="flex items-center space-x-2 dark:text-gray-200">
       <icon name="sync" class="w-6 h-6 animate-spin" />
-      <h2 class="text-lg font-semibold">Fetchings songs...</h2>
+      <h2 class="text-lg font-semibold">Fetching songs...</h2>
     </div>
   </div>
 
-  <div v-else-if="$fetchState.error" class="flex items-center justify-center">
+  <div
+    v-else-if="$fetchState.error"
+    class="flex items-center justify-center h-screen -mt-10"
+  >
     <div class="flex items-center space-x-2 dark:text-gray-200">
       <icon name="ban" class="w-6 h-6" />
       <h2 class="text-lg font-semibold">Couldn't load the song list...</h2>
     </div>
   </div>
 
-  <div v-else class="flex flex-col items-center px-4 py-4 sm:px-0 sm:flex-row">
-    <div class="flex flex-col w-full gap-4 sm:flex-row sm:gap-6">
-      <div class="flex flex-col space-y-4 sm:w-1/3">
-        <div class="flex space-x-4">
-          <nuxt-link :to="{ name: 'index' }" class="side-button">
-            <icon name="home" class="w-6 h-6" />
-          </nuxt-link>
+  <div
+    v-else
+    class="flex flex-col pt-2 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row"
+  >
+    <div class="space-y-4 sm:w-5/12">
+      <SkeletonLoader
+        type="iframe"
+        :iframe-url="`https://www.youtube.com/embed/${getSelectedSong}`"
+        class="w-full h-56"
+      />
 
-          <div
-            class="block w-4/6 px-4 py-2 bg-gray-200 rounded-md dark:bg-gray-800 ring"
-          >
-            <h1
-              class="text-lg font-semibold text-center text-gray-700 dark:text-gray-100"
-            >
-              {{ getCardTitle }}
-            </h1>
-          </div>
+      <div
+        class="hidden p-4 text-white bg-green-600 rounded dark:bg-gray-800 sm:block"
+      >
+        <h3 class="block text-lg font-semibold">What is this about?</h3>
 
-          <a
-            :href="`https://youtu.be/${getSelectedSong}`"
-            rel="noreferrer"
-            class="side-button"
-          >
-            <icon name="external-link" class="w-6 h-6" />
-          </a>
-        </div>
-
-        <div class="w-full space-y-4">
-          <div>
-            <iframe
-              class="w-full rounded-md"
-              height="250"
-              :src="`https://www.youtube.com/embed/${getSelectedSong}`"
-            />
-          </div>
-
-          <div
-            class="hidden p-4 text-white bg-green-600 rounded-md dark:bg-gray-800 sm:block"
-          >
-            <h3 class="block text-lg font-semibold">What is this about?</h3>
-
-            <div class="space-y-2">
-              <p>
-                I like listening to music a lot and I like sharing my music with
-                those who are in search for something new to listen. I created
-                this page where you can get fresh new songs each day and listen
-                to them! Hope you like my taste!
-              </p>
-
-              <p>
-                You can see the latest 10 songs including the today's song here
-                in this page. Visit this page everyday to find a new song!
-              </p>
-            </div>
-          </div>
-        </div>
+        <p>
+          I like listening to music a lot and I like sharing my music with those
+          who are in search for something new to listen. I created this page
+          where you can get fresh new songs each day and listen to them! Hope
+          you like my taste!
+        </p>
       </div>
+    </div>
 
-      <div class="sm:w-2/3">
-        <div
-          class="grid grid-cols-1 gap-2 p-4 bg-gray-200 rounded-md dark:bg-gray-800 ring sm:grid-cols-2"
-        >
-          <div
-            v-for="(song, index) in getSongList"
-            :key="`song-${index}`"
-            :class="{
-              'px-4 py-2 rounded-md bg-white dark:bg-gray-900 hover:bg-opacity-75 cursor-pointer select-none flex space-x-2 items-center group': true,
-              'sm:col-span-2': index % 3 === 0,
-            }"
-            @click="selected = song"
-          >
-            <img
-              :src="song.metadata.thumbnail || 'http://via.placeholder.com/75'"
-              class="object-none rounded thumbnail"
-              draggable="false"
-            />
+    <div class="space-y-2 sm:w-7/12">
+      <CardSong
+        v-for="(song, index) in getSongList"
+        :key="`song-${index}`"
+        :title="song.metadata.title"
+        :date="song.date"
+        :thumbnail="song.metadata.thumbnail || 'http://via.placeholder.com/75'"
+      />
 
-            <div class="truncate">
-              <div class="flex items-center space-x-1">
-                <icon
-                  v-if="getSongDateTitle(song.date).startsWith('Today')"
-                  name="star"
-                  class="w-4 h-4"
-                />
-                <span class="text-sm text-gray-600 dark:text-gray-300">{{
-                  getSongDateTitle(song.date)
-                }}</span>
-              </div>
-
-              <h3
-                class="text-lg font-semibold leading-tight text-gray-900 truncate dark:text-gray-100"
-              >
-                {{ song.metadata.title }}
-              </h3>
-            </div>
-          </div>
-        </div>
+      <div
+        class="flex items-center justify-center w-full py-2 space-x-2 text-gray-800 bg-gray-200 rounded-md cursor-pointer dark:text-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-800"
+        @click="page = page === 0 ? 1 : 0"
+      >
+        <span>{{ page === 0 ? "Next" : "Previous" }}</span>
       </div>
     </div>
   </div>
@@ -119,9 +67,11 @@
 export default {
   data() {
     return {
+      iframeLoaded: false,
       today: new Date(),
       selected: {},
       songs: [],
+      page: 0,
     }
   },
   fetchOnServer: false,
@@ -207,18 +157,6 @@ export default {
   },
   computed: {
     /**
-     * Returns the title according to the selected song.
-     * @returns {string} The title.
-     */
-    getCardTitle() {
-      if (
-        this.$moment(this.selected?.date).format("DD/MM/YYYY") ===
-        this.$moment().format("DD/MM/YYYY")
-      )
-        return "Today's Song"
-      else return this.$moment(this.selected?.date).format("DD/MM/YYYY")
-    },
-    /**
      * Returns the selected song's ID, if none present, returns a fireplace video ID instead.
      * @returns {string} The video ID.
      */
@@ -230,22 +168,12 @@ export default {
      * @returns {Object[]} Array of songs without the selected one.
      */
     getSongList() {
-      return this.songs.filter((song) => song.date !== this.selected.date)
-    },
-  },
-  methods: {
-    /**
-     * Compares the dates between the provided date and current date and returns a title which will be used in cards' title.
-     * @param {date} targetDate The target date that will be used to compare with today's date.
-     * @returns {string} The title "Today's Song" or formatted date.
-     */
-    getSongDateTitle(targetDate) {
-      if (
-        this.$moment(targetDate).format("DD/MM/YYYY") ===
-        this.$moment().format("DD/MM/YYYY")
-      )
-        return "Today's Song"
-      else return this.$moment(targetDate).format("DD/MM/YYYY")
+      let slice = { from: 0, to: 5 }
+      if (this.page > 0) slice = { from: 5, to: 10 }
+
+      return this.songs
+        .filter((song) => song.date !== this.selected.date)
+        .slice(slice.from, slice.to)
     },
   },
 }
