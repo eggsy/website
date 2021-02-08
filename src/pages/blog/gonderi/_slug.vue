@@ -83,7 +83,7 @@
             Etiketler
           </h3>
 
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap space-x-2">
             <nuxt-link
               v-for="(tag, index) in getTags"
               :key="`tag-${index}`"
@@ -104,11 +104,13 @@
           v-if="getRelatedPosts.length > 0"
           class="p-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
         >
-          <CoolTitle
-            right-up="Bunlar da"
-            right-down="Hoşunuza gidebilir"
-            class="mb-4"
-          />
+          <div class="w-4/12 mb-2">
+            <h3
+              class="text-xl font-semibold leading-tight text-gray-900 uppercase dark:text-gray-100"
+            >
+              Bunlar da hoşunuza gidebilir
+            </h3>
+          </div>
 
           <div class="grid gap-2 sm:grid-cols-2">
             <nuxt-link

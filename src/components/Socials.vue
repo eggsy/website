@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap justify-center space-x-2">
+  <div class="flex flex-wrap space-x-2">
     <!-- Discord -->
     <a
       :href="getLinks.discord"
@@ -58,6 +58,6 @@ a {
 }
 
 .svg-icon {
-  @apply w-12 h-12 dark:text-gray-300;
+  @apply w-10 h-10 text-gray-800 dark:text-gray-200;
 }
 </style>

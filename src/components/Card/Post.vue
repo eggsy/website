@@ -1,8 +1,8 @@
 <template>
   <div v-if="type === 'normal'">
-    <div class="flex items-center gap-3">
+    <div class="flex items-center space-x-3">
       <div
-        class="w-2/6 h-24 bg-center bg-cover rounded-md"
+        class="flex-shrink-0 w-2/6 h-24 bg-center bg-cover rounded-md"
         :style="{ backgroundImage: `url(${getPostMeta.image})` }"
       />
 
@@ -26,7 +26,7 @@
     </div>
 
     <div
-      class="flex items-center gap-4 mt-2 text-gray-700 dark:text-gray-400 justify-self-end"
+      class="flex items-center mt-2 space-x-4 text-gray-700 dark:text-gray-400 justify-self-end"
     >
       <div class="flex items-center space-x-2">
         <icon name="hashtag" class="w-4 h-4" />

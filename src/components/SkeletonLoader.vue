@@ -12,6 +12,26 @@
       <div class="w-4/12 h-3 bg-gray-300 rounded-md dark:bg-gray-700"></div>
     </div>
   </div>
+
+  <div
+    v-else-if="type === 'image' && imageUrl"
+    :class="{
+      'bg-gray-100 dark:bg-gray-700 animate-pulse': imageLoaded === false,
+    }"
+    :style="{
+      background:
+        imageLoaded === true ? `url('${imageUrl}') no-repeat center` : '',
+      backgroundSize: imageLoaded === true ? 'contain' : '',
+    }"
+  >
+    <img
+      :src="imageUrl"
+      class="invisible"
+      draggable="false"
+      alt="image"
+      @load="imageLoaded = true"
+    />
+  </div>
 </template>
 
 <script>
@@ -21,6 +41,16 @@ export default {
       type: String,
       required: true,
     },
+    imageUrl: {
+      type: String,
+      required: () => false,
+      default: null,
+    },
+  },
+  data() {
+    return {
+      imageLoaded: false,
+    }
   },
 }
 </script>

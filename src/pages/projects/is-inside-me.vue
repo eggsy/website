@@ -1,23 +1,5 @@
 <template>
   <div class="px-4 pt-6 pb-14">
-    <nav class="fixed top-0 left-0 hidden w-full py-4 sm:block">
-      <div
-        class="container flex items-center mx-auto text-gray-800 dark:text-gray-200"
-      >
-        <nuxt-link to="/" class="flex items-center space-x-2 hover:underline">
-          <icon name="arrow-left" class="w-6 h-6" />
-          <span>Go Back Home</span>
-        </nuxt-link>
-
-        <div class="flex items-center ml-auto space-x-2">
-          <a :href="getLink" target="_blank" rel="noreferrer">
-            <h1 class="font-semibold">is-inside.me</h1>
-          </a>
-          <icon name="cursor-click" class="w-6 h-6" />
-        </div>
-      </div>
-    </nav>
-
     <section
       class="flex items-center justify-center w-full mt-12 space-x-2 sm:mt-24 dark:text-gray-200"
     >
@@ -33,7 +15,7 @@
     </section>
 
     <section
-      class="mx-auto mt-12 text-justify sm:mt-24 space-y-14 sm:space-y-28 sm:w-9/12"
+      class="mx-auto mt-12 text-justify sm:mt-24 space-y-14 sm:space-y-28"
     >
       <!-- What is is-inside.me? -->
       <div class="sm:w-6/12">
