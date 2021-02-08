@@ -16,12 +16,12 @@
   <div
     v-else-if="type === 'image' && imageUrl"
     :class="{
-      'bg-gray-100 dark:bg-gray-700 animate-pulse': imageLoaded === false,
+      'bg-gray-100 dark:bg-gray-700 animate-pulse': itemLoaded === false,
     }"
     :style="{
       background:
-        imageLoaded === true ? `url('${imageUrl}') no-repeat center` : '',
-      backgroundSize: imageLoaded === true ? 'contain' : '',
+        itemLoaded === true ? `url('${imageUrl}') no-repeat center` : '',
+      backgroundSize: itemLoaded === true ? 'cover' : '',
     }"
   >
     <img
@@ -29,7 +29,25 @@
       class="invisible"
       draggable="false"
       alt="image"
-      @load="imageLoaded = true"
+      @load="itemLoaded = true"
+    />
+  </div>
+
+  <div
+    v-else-if="type === 'iframe' && iframeUrl"
+    :class="{
+      'h-56 w-full': true,
+      'bg-gray-100 dark:bg-gray-800 rounded animate-pulse':
+        itemLoaded === false,
+    }"
+  >
+    <iframe
+      :class="{
+        'w-full h-full rounded': true,
+        invisible: itemLoaded === false,
+      }"
+      :src="iframeUrl"
+      @load="itemLoaded = true"
     />
   </div>
 </template>
@@ -46,10 +64,15 @@ export default {
       required: false,
       default: null,
     },
+    iframeUrl: {
+      type: String,
+      required: false,
+      default: null,
+    },
   },
   data() {
     return {
-      imageLoaded: false,
+      itemLoaded: false,
     }
   },
 }

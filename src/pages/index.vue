@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-10">
+  <div>
     <header
       class="flex flex-col-reverse py-24 sm:items-center sm:space-x-8 sm:flex-row"
     >
@@ -146,11 +146,7 @@
         </div>
 
         <div
-          v-else-if="
-            $fetchState.pending === false &&
-            !$fetchState.error &&
-            repos.length > 0
-          "
+          v-else-if="repos.length > 0"
           class="grid grid-cols-1 gap-2 sm:grid-cols-2"
         >
           <a

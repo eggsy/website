@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="$fetchState.pending"
-    class="flex items-center justify-center h-screen space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-100"
+    class="flex items-center justify-center h-screen -mt-10 space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-100"
   >
     <icon name="sync" class="w-8 h-8 animate-spin" />
     <h3>Gönderi yükleniyor...</h3>
@@ -9,7 +9,7 @@
 
   <div
     v-else-if="$fetchState.error"
-    class="flex items-center justify-center h-screen overflow-hidden select-none"
+    class="flex items-center justify-center h-screen -mt-10 overflow-hidden select-none"
   >
     <div class="space-y-2">
       <div
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div v-else class="px-4 pb-10 space-x-6 pt-14 sm:pt-14 sm:px-0">
+  <div v-else class="px-4 pb-10 space-x-6 pt-14 sm:px-0">
     <div class="w-full mx-auto">
       <article>
         <header class="mb-12 space-y-6">

@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="$fetchState.pending"
-    class="flex items-center justify-center h-screen space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-200"
+    class="flex items-center justify-center h-screen -mt-10 space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-200"
   >
     <icon name="sync" class="w-8 h-8 animate-spin dark:text-gray-200" />
 
@@ -10,7 +10,7 @@
 
   <div
     v-else-if="$fetchState.error"
-    class="flex items-center justify-center h-screen space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-200"
+    class="flex items-center justify-center h-screen -mt-10 space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-200"
   >
     <icon name="times" class="w-8 h-8 dark:text-gray-200" />
 

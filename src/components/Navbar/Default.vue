@@ -2,14 +2,25 @@
   <nav class="w-full py-2">
     <div class="container relative w-11/12 mx-auto sm:w-10/12 md:w-7/12">
       <div class="flex items-center justify-between">
-        <nuxt-link :to="{ name: 'index' }">
-          <div
-            :style="{ backgroundImage: `url('/assets/icons/icon.svg')` }"
-            class="w-10 h-10 transition bg-gray-100 bg-center bg-contain rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
-            title="EGGSY's Website"
-            alt="website icon"
-          />
-        </nuxt-link>
+        <div class="flex items-center space-x-4">
+          <nuxt-link :to="{ name: 'index' }">
+            <div
+              :style="{ backgroundImage: `url('/assets/icons/icon.svg')` }"
+              class="w-10 h-10 transition bg-gray-100 bg-center bg-contain rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+              title="EGGSY's Website"
+              alt="website icon"
+            />
+          </nuxt-link>
+
+          <transition name="fade">
+            <div
+              v-if="$route.name === 'daily'"
+              class="text-lg font-medium text-gray-900 dark:text-gray-100"
+            >
+              Today's Song
+            </div>
+          </transition>
+        </div>
 
         <div class="hidden space-x-2 sm:flex">
           <nuxt-link
@@ -114,6 +125,15 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    /**
+     * Updates the color mode value.
+     * @param {'light'|'dark'} option The color mode option.
+     */
+    switchTheme(option) {
+      this.$colorMode.preference = option
+    },
   },
 }
 </script>

@@ -1,10 +1,10 @@
 <template>
   <div class="flex items-center space-x-2">
     <div
-      class="flex items-center flex-shrink-0 w-2/6 space-x-1 text-gray-900 truncate dark:text-gray-100"
+      class="flex items-center flex-shrink-0 w-2/6 space-x-1 overflow-hidden text-gray-900 dark:text-gray-100"
     >
-      <icon :name="icon" class="w-6 h-6" />
-      <span>{{ title }}</span>
+      <icon :name="icon" class="flex-shrink-0 w-6 h-6" />
+      <span class="truncate">{{ title }}</span>
     </div>
 
     <div

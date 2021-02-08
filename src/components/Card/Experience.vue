@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <a
       :href="getUrl"
       target="_blank"

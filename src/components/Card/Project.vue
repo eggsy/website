@@ -11,7 +11,7 @@
 
     <div class="p-4">
       <h3
-        class="text-lg font-medium text-gray-900 truncate sm:text-xl hover:underline dark:text-gray-100"
+        class="text-lg font-medium text-gray-900 truncate hover:underline dark:text-gray-100"
         :title="title"
       >
         {{ title }}
