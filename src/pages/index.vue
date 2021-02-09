@@ -204,7 +204,7 @@ export default {
           title: "This Website",
           description:
             "The website where you can learn more and more about me!",
-          image: "https://i.imgur.com/mb4VtrN.jpeg",
+          image: "https://i.imgur.com/pqZnVvS.jpeg",
           to: "/",
         },
         {
