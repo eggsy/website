@@ -1860,6 +1860,11 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
+"@tailwindcss/line-clamp@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.2.0.tgz#7f30f26ed3835d64d1eb5a9b0d60cf5291dd2a3b"
+  integrity sha512-+jXSdRK3/9V/BCPCr+iNpMMhxWMMv62vn/AS2b3/ClmueGuhCijW3bUwO1IiHnE7uCaF74Sli8jUCv9djwvpLg==
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -10803,13 +10808,6 @@ tailwind-scrollbar@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/tailwind-scrollbar/-/tailwind-scrollbar-1.2.3.tgz#3d22982d0c75049470016b83b5b0423841daa017"
   integrity sha512-eMOwG0gkiUztGSA8bPZD626VeBLknFo5QeJQJNLNYLgMID8oPNpzcy7I6EtMMkqYlmbGxSvM0fwoXneSRoXKfg==
-
-tailwindcss-line-clamp@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/tailwindcss-line-clamp/-/tailwindcss-line-clamp-1.0.5.tgz#67053ede8e14f4065e920c7afcaf5d9377d91b11"
-  integrity sha512-tLqJAarIrz9Hgs3P3d98i329PN3vEYADabONPUJ1lccoJz/47Z8Vfhol9XfgjB1sQRZ+A4kdWIfwNJDHdnN1DQ==
-  dependencies:
-    lodash "^4.17.15"
 
 tailwindcss@^1.9.6:
   version "1.9.6"

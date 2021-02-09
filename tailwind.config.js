@@ -1,5 +1,3 @@
-const { teal } = require("tailwindcss/colors")
-
 module.exports = {
   darkMode: "class",
   purge: {
@@ -17,7 +15,6 @@ module.exports = {
             dark: "#6c82cf",
           },
         },
-        teal,
       },
       screens: {
         "2xl": false,
@@ -33,5 +30,5 @@ module.exports = {
       translate: ["group-hover"],
     },
   },
-  plugins: [require("tailwind-scrollbar"), require("tailwindcss-line-clamp")],
+  plugins: [require("tailwind-scrollbar"), require("@tailwindcss/line-clamp")],
 }

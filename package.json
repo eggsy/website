@@ -18,6 +18,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.4.0",
+    "@tailwindcss/line-clamp": "^0.2.0",
     "core-js": "^3.8.3",
     "firebase": "^8.2.6",
     "nuxt": "^2.14.12",
@@ -45,7 +46,6 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.5.0",
     "postcss": "8",
-    "prettier": "^2.2.1",
-    "tailwindcss-line-clamp": "^1.0.5"
+    "prettier": "^2.2.1"
   }
 }
