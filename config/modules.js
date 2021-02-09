@@ -6,7 +6,6 @@ import sitemap from "./modules/sitemap"
 import webfontloader from "./modules/webfontloader"
 
 export default [
-  "@nuxtjs/amp",
   "@nuxtjs/axios",
   "@nuxtjs/robots",
   ["@nuxtjs/pwa", pwa],
