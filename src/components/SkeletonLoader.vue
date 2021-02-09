@@ -29,6 +29,8 @@
       class="invisible"
       draggable="false"
       alt="image"
+      width="100%"
+      height="100%"
       @load="itemLoaded = true"
     />
   </div>
