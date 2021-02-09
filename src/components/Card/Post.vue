@@ -19,7 +19,7 @@
           </h2>
         </nuxt-link>
 
-        <p class="text-gray-800 clamp-3 dark:text-gray-300">
+        <p class="text-gray-800 line-clamp-3 dark:text-gray-300">
           {{ getPostMeta.description }}
         </p>
       </div>
@@ -72,7 +72,7 @@
           </nuxt-link>
         </div>
 
-        <p class="'text-gray-700 dark:text-gray-300 clamp-2">
+        <p class="'text-gray-700 dark:text-gray-300 line-clamp-2">
           {{ getPostMeta.description }}
         </p>
 

@@ -17,7 +17,10 @@
         {{ title }}
       </h3>
 
-      <p v-if="description" class="text-gray-700 clamp-2 dark:text-gray-300">
+      <p
+        v-if="description"
+        class="text-gray-700 line-clamp-2 dark:text-gray-300"
+      >
         {{ description }}
       </p>
     </div>
