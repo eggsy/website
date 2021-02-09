@@ -14,14 +14,7 @@
       <div
         :class="{
           'bg-green-500 dark:bg-green-700 relative h-6 rounded': true,
-          'w-3/12': level <= 30,
-          'w-4/12': level >= 40,
-          'w-6/12': level >= 50,
-          'w-8/12': level >= 60,
-          'w-9/12': level >= 70,
-          'w-10/12': level >= 80,
-          'w-11/12': level >= 90,
-          'w-full': level >= 95,
+          [getSkillWidth]: true,
         }"
       >
         <span
@@ -51,6 +44,24 @@ export default {
       type: String,
       required: false,
       default: "arrow-right",
+    },
+  },
+  computed: {
+    /**
+     * Calculates the level and returns a width value according to it.
+     * @returns {string} The TailwindCSS width class.
+     */
+    getSkillWidth() {
+      const level = Number(this.level)
+
+      if (level >= 95) return "w-full"
+      else if (level >= 90) return "w-11/12"
+      else if (level >= 80) return "w-10/12"
+      else if (level >= 70) return "w-9/12"
+      else if (level >= 60) return "w-8/12"
+      else if (level >= 50) return "w-6/12"
+      else if (level >= 40) return "w-4/12"
+      else return "w-3/12"
     },
   },
 }
