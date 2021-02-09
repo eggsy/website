@@ -104,7 +104,7 @@
           v-if="getRelatedPosts.length > 0"
           class="p-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
         >
-          <div class="w-4/12 mb-2">
+          <div class="w-5/6 mb-2 sm:w-4/12">
             <h3
               class="text-xl font-semibold leading-tight text-gray-900 uppercase dark:text-gray-100"
             >

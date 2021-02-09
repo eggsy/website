@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 pt-6">
+  <div class="px-4 sm:px-0">
     <section
       class="flex items-center justify-center w-full mt-12 space-x-2 sm:mt-24 dark:text-gray-200"
     >
@@ -41,19 +41,19 @@
           </p>
         </div>
 
-        <img
-          src="/assets/images/projects/unblock-please/featuring.png"
+        <SkeletonLoader
+          type="image"
+          image-url="https://i.imgur.com/UPyx8hT.png"
           class="hidden sm:block"
-          alt="featuring image"
         />
       </div>
 
       <!-- What's cool about it? -->
       <div class="items-center justify-between sm:flex">
-        <img
-          src="/assets/images/projects/unblock-please/featuring2.png"
+        <SkeletonLoader
+          type="image"
+          image-url="https://i.imgur.com/3FZZZA5.png"
           class="hidden sm:block"
-          alt="featuring image"
         />
 
         <div class="ml-auto text-right sm:w-6/12">
@@ -87,10 +87,10 @@
           </p>
         </div>
 
-        <img
-          src="/assets/images/projects/unblock-please/featuring3.png"
+        <SkeletonLoader
+          type="image"
+          image-url="https://i.imgur.com/v86245Y.png"
           class="hidden sm:block"
-          alt="featuring image"
         />
       </div>
 
