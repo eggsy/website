@@ -83,4 +83,4 @@ Bir sonraki videoda (resim veya GIF'e sığmayacak derecede uzun işlemler) gör
   <video class="ql-video" controls="" src="https://the-person-under-this-message.is-inside.me/wmYGNW2t.mp4" width="100%"></video>
 </p>
 
-Sanırım şuanda blogun sahip olduğu tüm özellikler bu kadar. Yeni özellikler eklendiğinde de blogda duyurusu geçecektir. Zamanla oluşan hataları düzeltip, yenilikler yapmaya gayret göstereceğim. Umarım sizinde hoşunuza gitmiştir. Ben 4 günümü buna harcadım, siz neler yapıyorsunuz peki?
+Sanırım şu anda blogun sahip olduğu tüm özellikler bu kadar. Yeni özellikler eklendiğinde de blogda duyurusu geçecektir. Zamanla oluşan hataları düzeltip, yenilikler yapmaya gayret göstereceğim. Umarım sizinde hoşunuza gitmiştir. Ben 4 günümü buna harcadım, siz neler yapıyorsunuz peki?
