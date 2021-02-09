@@ -12,9 +12,9 @@
         </div>
 
         <p class="text-gray-700 dark:text-gray-300">
-          Hi there, my name is Abdulbaki from Turkey and I am a self taught web
-          developer. I recently started building complex web apps using Vue.js,
-          Nuxt.js and TailwindCSS. Welcome to my website!
+          Hi there, my name is Abdulbaki, I am from Turkey and I am a self
+          taught web developer. I recently started building complex web apps
+          using Vue.js, Nuxt.js and TailwindCSS.
         </p>
       </div>
 
@@ -77,6 +77,7 @@
           <CardProject
             :title="project.title"
             :description="project.description"
+            class="h-full"
           />
         </nuxt-link>
       </div>
@@ -155,12 +156,14 @@
             :href="repo.html_url"
             target="_blank"
             rel="noreferrer"
+            title="Click here to visit this repository"
           >
             <CardRepository
               :name="repo.name"
               :language="repo.language"
               :stars="repo.stargazers_count"
               :description="repo.description"
+              class="h-full"
             />
           </a>
         </div>
@@ -201,7 +204,7 @@ export default {
           title: "This Website",
           description:
             "The website where you can learn more and more about me!",
-          image: "https://i.imgur.com/ZMMju6H.jpg",
+          image: "https://i.imgur.com/mb4VtrN.jpeg",
           to: "/",
         },
         {
@@ -263,7 +266,12 @@ export default {
         {
           title: "JavaScript",
           icon: "javascript",
-          level: 99,
+          level: 95,
+        },
+        {
+          title: "HTML5",
+          icon: "html",
+          level: 95,
         },
         {
           title: "Nuxt.js",
