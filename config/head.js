@@ -1,5 +1,5 @@
 const description =
-  "Young JavaScript developer from Turkey, interested in languages, gaming and programming, trying to improve his skills with JavaScript. Check out my portfolio and read my blog posts!"
+  "Young JavaScript developer from Turkey, interested in languages, gaming and programming, trying to improve his JavaScript skills!"
 
 export default {
   title: "eggsy.xyz",
@@ -40,6 +40,11 @@ export default {
       name: "twitter:description",
       content: description,
     },
+    {
+      hid: "twitter:image",
+      name: "twitter:image",
+      content: "/icon.png",
+    },
     /* Open-Graph */
     {
       hid: "og:type",
@@ -55,6 +60,11 @@ export default {
       hid: "og:description",
       name: "og:description",
       content: description,
+    },
+    {
+      hid: "og:image",
+      name: "og:image",
+      content: "/icon.png",
     },
     /* Others */
     {

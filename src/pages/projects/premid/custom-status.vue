@@ -265,14 +265,62 @@ export default {
       },
     }
   },
-  head: {
-    title: "PreMiD Custom Status",
-    link: [
-      {
-        rel: "prefetch",
-        href: "https://i.imgur.com/FowB3D5.png",
-      },
-    ],
+  head() {
+    const title = "PreMiD Custom Status"
+    const image = "https://i.imgur.com/FowB3D5.png"
+    const description =
+      "Tool that allows you do display whatever you want on your Discord profile with PreMiD! Easy and free!"
+
+    return {
+      title: "Custom Status",
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: title,
+        },
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+        {
+          hid: "twitter:image",
+          name: "twitter:image",
+          content: image,
+        },
+        {
+          hid: "og:image",
+          name: "og:image",
+          content: image,
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: "https://new.eggsy.xyz/projects/premid/custom-status",
+        },
+        {
+          rel: "prefetch",
+          href: image,
+        },
+      ],
+    }
   },
   computed: {
     /**
