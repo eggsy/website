@@ -6,7 +6,7 @@
       </h1>
 
       <div class="flex items-center space-x-3 md:space-x-5">
-        <div class="relative w-1/4 md:w-1/5">
+        <div class="relative w-32 h-32">
           <img
             class="rounded-md"
             :src="getImages.largeImage"
@@ -27,15 +27,16 @@
           />
         </div>
 
-        <div
-          class="flex-grow w-3/4 leading-none text-gray-100 truncate md:w-4/5"
-        >
-          <span class="block font-semibold text-white">Custom Status</span>
-          <span class="block text-sm truncate">{{ getText.details }}</span>
-          <span class="block text-sm truncate">{{ getText.state }}</span>
-          <span v-if="isTimerEnabled === true" class="block text-sm">{{
-            getTime
-          }}</span>
+        <div class="flex-grow w-3/4 text-gray-100 truncate md:w-4/5">
+          <h1 class="block text-xl font-semibold text-white">Custom Status</h1>
+
+          <div class="leading-tight">
+            <span class="block truncate">{{ getText.details }}</span>
+            <span class="block truncate">{{ getText.state }}</span>
+            <span v-if="isTimerEnabled === true" class="block text-sm">{{
+              getTime
+            }}</span>
+          </div>
         </div>
       </div>
     </div>
