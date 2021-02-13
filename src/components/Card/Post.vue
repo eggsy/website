@@ -1,11 +1,25 @@
 <template>
   <div v-if="type === 'normal'">
     <div class="flex items-center space-x-3">
-      <SkeletonLoader
-        type="image"
-        :image-url="getPostMeta.image"
-        class="flex-shrink-0 w-2/6 h-24 rounded-md"
-      />
+      <nuxt-link
+        :to="{
+          name: 'blog-gonderi-slug',
+          params: { slug: getPostMeta.slug },
+        }"
+        class="relative flex-shrink-0 w-2/6 group"
+      >
+        <SkeletonLoader
+          type="image"
+          :image-url="getPostMeta.image"
+          class="h-24 rounded-md"
+        />
+
+        <div
+          class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center bg-black bg-opacity-25 rounded-md opacity-0 group-hover:opacity-100"
+        >
+          <icon name="link" class="w-6 h-6 text-white" />
+        </div>
+      </nuxt-link>
 
       <div class="w-4/6">
         <nuxt-link
@@ -54,25 +68,25 @@
   <div v-else-if="type === 'text'">
     <div class="flex items-center gap-4">
       <div class="overflow-hidden">
-        <div class="flex items-center space-x-2 text-lg font-semibold">
-          <SkeletonLoader
-            type="image"
-            :image-url="getPostMeta.image"
-            class="flex-shrink-0 w-6 h-6 rounded-full"
-          />
+        <nuxt-link
+          :to="{
+            name: 'blog-gonderi-slug',
+            params: { slug: getPostMeta.slug },
+          }"
+          class="truncate dark:text-gray-200 hover:underline"
+        >
+          <div class="flex items-center space-x-2 text-lg font-semibold">
+            <SkeletonLoader
+              type="image"
+              :image-url="getPostMeta.image"
+              class="flex-shrink-0 w-6 h-6 rounded-full"
+            />
 
-          <nuxt-link
-            :to="{
-              name: 'blog-gonderi-slug',
-              params: { slug: getPostMeta.slug },
-            }"
-            class="truncate dark:text-gray-200 hover:underline"
-          >
             <h3 class="text-lg truncate">
               {{ getPostMeta.title }}
             </h3>
-          </nuxt-link>
-        </div>
+          </div>
+        </nuxt-link>
 
         <p class="'text-gray-700 dark:text-gray-300 line-clamp-2">
           {{ getPostMeta.description }}
