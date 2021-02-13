@@ -36,7 +36,7 @@
   <div v-else class="px-4 pb-10 space-x-6 pt-14 sm:px-0">
     <div class="w-full mx-auto">
       <article>
-        <header class="mb-12 space-y-6">
+        <header class="mx-auto mb-12 space-y-6 sm:w-2/4 md:w-3/4">
           <h1
             class="block text-4xl font-semibold text-center text-black quicksand sm:text-6xl dark:text-gray-50"
           >
