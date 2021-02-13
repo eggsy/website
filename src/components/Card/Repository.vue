@@ -1,13 +1,14 @@
 <template>
   <div
-    class="p-4 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:bg-opacity-80 dark:bg-gray-800 dark:text-gray-300 ring-1 ring-gray-200 dark:ring-gray-900"
+    class="p-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-900"
   >
-    <div class="flex items-center mb-2 space-x-1">
-      <div
-        class="flex-grow space-x-2 text-gray-800 truncate dark:text-gray-200 hover:underline"
-      >
+    <div
+      class="flex items-center space-x-1 text-lg text-gray-900 dark:text-gray-100"
+    >
+      <span class="flex-grow space-x-2 truncate hover:underline">
         {{ name }}
-      </div>
+      </span>
+
       <div class="flex items-center space-x-1">
         <div class="flex items-center space-x-1">
           <span>{{ stars }}</span>
@@ -23,7 +24,9 @@
       </div>
     </div>
 
-    <p class="text-sm text-gray-500 dark:text-gray-400">{{ description }}</p>
+    <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
+      {{ description }}
+    </p>
   </div>
 </template>
 
