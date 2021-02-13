@@ -2,9 +2,7 @@
   <div
     class="p-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-900"
   >
-    <div
-      class="flex items-center space-x-1 text-lg text-gray-900 dark:text-gray-100"
-    >
+    <div class="flex items-center space-x-1 text-gray-900 dark:text-gray-100">
       <span class="flex-grow space-x-2 truncate hover:underline">
         {{ name }}
       </span>
