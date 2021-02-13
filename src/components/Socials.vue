@@ -39,6 +39,16 @@
     >
       <icon name="instagram" />
     </a>
+
+    <!-- Trello -->
+    <a
+      :href="getLinks.trello"
+      target="_blank"
+      rel="noreferrer"
+      title="Visit my Trello board!"
+    >
+      <icon name="trello" />
+    </a>
   </div>
 </template>
 

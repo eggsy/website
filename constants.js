@@ -4,6 +4,7 @@ export default {
     twitter: "https://twitter.com/eggsydev?utm_source=eggsy.xyz",
     github: "https://github.com/eggsy?utm_source=eggsy.xyz",
     instagram: "https://instagram.com/eggsy_dev?utm_source=eggsy.xyz",
+    trello: "https://trello.com/b/XtWZFFiH?utm_source=eggsy.xyz",
   },
   links: {
     unblockPlease: {
