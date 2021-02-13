@@ -30,18 +30,50 @@
         class="w-full h-56"
       />
 
-      <div
-        class="hidden p-4 text-white bg-green-600 rounded dark:bg-gray-800 sm:block"
-      >
-        <h3 class="block text-lg font-semibold">What is this about?</h3>
+      <ul class="space-y-2">
+        <li
+          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+        >
+          <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+            >Title</span
+          >
+          <span
+            class="w-3/4 text-right text-gray-700 truncate dark:text-gray-300"
+            >{{ getSelectedTitle }}</span
+          >
+        </li>
 
-        <p>
-          I like listening to music a lot and I like sharing my music with those
-          who are in search for something new to listen. I created this page
-          where you can get fresh new songs each day and listen to them! Hope
-          you like my taste!
-        </p>
-      </div>
+        <li
+          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+        >
+          <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+            >Date</span
+          >
+
+          <span
+            class="w-3/4 text-right text-gray-700 truncate dark:text-gray-300"
+            >{{ getSelectedDateTitle }}</span
+          >
+        </li>
+
+        <li
+          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+        >
+          <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+            >URL</span
+          >
+
+          <a
+            :href="`https://youtu.be/${getSelectedSong}?utm_source=eggsy.xyz`"
+            title="Click here to visit YouTube"
+            class="w-3/4 text-right text-gray-700 truncate hover:underline dark:text-gray-300"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {{ `https://youtu.be/${getSelectedSong}` }}
+          </a>
+        </li>
+      </ul>
     </div>
 
     <div class="space-y-2 sm:w-7/12">
@@ -51,6 +83,7 @@
         :title="song.metadata.title"
         :date="song.date"
         :thumbnail="song.metadata.thumbnail || 'http://via.placeholder.com/75'"
+        @click.native="selected = song"
       />
 
       <div
@@ -162,6 +195,20 @@ export default {
      */
     getSelectedSong() {
       return this.selected?.url || "ZY3J3Y_OU0w"
+    },
+    /**
+     * Returns the selected song's title.
+     * @returns {string} Title of the selected song.
+     */
+    getSelectedTitle() {
+      return this.selected?.metadata?.title || "Unknown"
+    },
+    /**
+     * Returns the selected song's date in locale format.
+     * @returns {string} The locale date string.
+     */
+    getSelectedDateTitle() {
+      return this.selected?.date?.toLocaleDateString() || "Unknown"
     },
     /**
      * Returns the array of the songs without the currently selected one in it.
