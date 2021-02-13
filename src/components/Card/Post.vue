@@ -1,9 +1,10 @@
 <template>
   <div v-if="type === 'normal'">
     <div class="flex items-center space-x-3">
-      <div
-        class="flex-shrink-0 w-2/6 h-24 bg-center bg-cover rounded-md"
-        :style="{ backgroundImage: `url(${getPostMeta.image})` }"
+      <SkeletonLoader
+        type="image"
+        :image-url="getPostMeta.image"
+        class="flex-shrink-0 w-2/6 h-24 rounded-md"
       />
 
       <div class="w-4/6">
@@ -54,9 +55,10 @@
     <div class="flex items-center gap-4">
       <div class="overflow-hidden">
         <div class="flex items-center space-x-2 text-lg font-semibold">
-          <div
-            class="flex-shrink-0 w-6 h-6 bg-center bg-cover rounded-full"
-            :style="{ backgroundImage: `url(${getPostMeta.image})` }"
+          <SkeletonLoader
+            type="image"
+            :image-url="getPostMeta.image"
+            class="flex-shrink-0 w-6 h-6 rounded-full"
           />
 
           <nuxt-link
