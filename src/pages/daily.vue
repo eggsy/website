@@ -32,7 +32,7 @@
 
       <ul class="space-y-2">
         <li
-          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
         >
           <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
             >Title</span
@@ -44,7 +44,7 @@
         </li>
 
         <li
-          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
         >
           <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
             >Date</span
@@ -57,7 +57,7 @@
         </li>
 
         <li
-          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
         >
           <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
             >URL</span
