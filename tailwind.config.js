@@ -1,3 +1,6 @@
+const { screens } = require("tailwindcss/defaultTheme")
+delete screens["2xl"]
+
 module.exports = {
   darkMode: "class",
   purge: {
@@ -16,13 +19,11 @@ module.exports = {
           },
         },
       },
-      screens: {
-        "2xl": false,
-      },
     },
     fontFamily: {
       sans: ["Inter", "sans-serif"],
     },
+    ...screens,
   },
   variants: {
     extend: {
