@@ -251,7 +251,6 @@ export default {
      */
     setQuery() {
       this.query = this.$route.query
-      console.log(this.query)
     },
   },
 }
