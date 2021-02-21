@@ -110,7 +110,7 @@
         <h3
           class="mt-4 text-xl font-semibold text-gray-900 sm:mt-10 dark:text-gray-100"
         >
-          My skills
+          Technologies I use
         </h3>
 
         <div class="grid gap-2 mt-4">
