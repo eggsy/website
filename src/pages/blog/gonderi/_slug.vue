@@ -68,14 +68,14 @@
       </article>
 
       <div class="mt-10 space-y-10">
-        <PrevNext :current-slug="post.slug" />
+        <BlogPrevNext :current-slug="post.slug" />
 
         <div>
           <h3 class="mb-1 text-lg font-semibold dark:text-gray-100">
             Yazıyı paylaş
           </h3>
 
-          <Share :title="post.title" :path="$route.path" />
+          <BlogShare :title="post.title" :path="$route.path" />
         </div>
 
         <div v-if="getTags.length > 0">
