@@ -1,5 +1,5 @@
 const description =
-  "Young JavaScript developer from Turkey, interested in languages, gaming and programming, trying to improve his JavaScript skills!"
+  "Young JavaScript developer from Turkey, interested in languages, gaming, and programming, trying to improve his JavaScript skills!"
 
 export default {
   title: "eggsy.xyz",
