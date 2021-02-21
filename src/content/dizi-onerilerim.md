@@ -13,93 +13,93 @@ Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim öz
 Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂
 
 <div class="grid grid-cols-2 gap-px ratings">
-    <Rating rating="10">
+    <blog-rating rating="10">
       <a href="#daredevil">Daredevil</a>
-    </Rating>
-    <Rating rating="10">
+    </blog-rating>
+    <blog-rating rating="10">
       <a href="#love-death--robots">Love, Death & Robots</a>
-    </Rating>
-    <Rating rating="10">
+    </blog-rating>
+    <blog-rating rating="10">
       <a href="#prison-break">Prison Break</a>
-    </Rating>
-    <Rating rating="9.5">
+    </blog-rating>
+    <blog-rating rating="9.5">
       <a href="#élite">Élite</a>
-    </Rating>
-    <Rating rating="9.5">
+    </blog-rating>
+    <blog-rating rating="9.5">
       <a href="#the-witcher">The Witcher</a>
-    </Rating>
-    <Rating rating="9.5">
+    </blog-rating>
+    <blog-rating rating="9.5">
       <a href="#rise-of-empires-ottoman">Rise of Empires: Ottoman</a>
-    </Rating>
-    <Rating rating="9.5">
+    </blog-rating>
+    <blog-rating rating="9.5">
       <a href="#the-mandalorian">The Mandalorian</a>
-    </Rating>
-    <Rating rating="9.5">
+    </blog-rating>
+    <blog-rating rating="9.5">
       <a href="#la-casa-de-papel">La Casa de Papel</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#sex-education">Sex Education</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#locke--key">Locke & Key</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#stranger-things">Stranger Things</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#see">See</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#sherlock">Sherlock</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#snowpiercer">Snowpiercer</a>
-    </Rating>
-    <Rating rating="9.0" :isnew="true">
+    </blog-rating>
+    <blog-rating rating="9.0" :isnew="true">
       <a href="#the-haunting-of-bly-manor">The Haunting of Bly Manor</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#sense8">Sense8</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#chilling-adventures-of-sabrina">Chilling Adventures of Sabrina</a>
-    </Rating>
-    <Rating rating="9.0">
+    </blog-rating>
+    <blog-rating rating="9.0">
       <a href="#altered-carbon">Altered Carbon</a>
-    </Rating>
-    <Rating rating="8.9" :isnew="true">
+    </blog-rating>
+    <blog-rating rating="8.9" :isnew="true">
       <a href="#the-queens-gambit">The Queen's Gambit</a>
-    </Rating>
-    <Rating rating="8.5">
+    </blog-rating>
+    <blog-rating rating="8.5">
       <a href="#aşk-101">Aşk 101</a>
-    </Rating>
-    <Rating rating="8.5">
+    </blog-rating>
+    <blog-rating rating="8.5">
       <a href="#the-order">The Order</a>
-    </Rating>
-    <Rating rating="8.5">
+    </blog-rating>
+    <blog-rating rating="8.5">
       <a href="#bojack-horseman">BoJack Horseman</a>
-    </Rating>
-    <Rating rating="8.5">
+    </blog-rating>
+    <blog-rating rating="8.5">
       <a href="#rick-and-morty">Rick and Morty</a>
-    </Rating>
-    <Rating rating="8.5">
+    </blog-rating>
+    <blog-rating rating="8.5">
       <a href="#lost-in-space">Lost in Space</a>
-    </Rating>
-    <Rating rating="8.0">
+    </blog-rating>
+    <blog-rating rating="8.0">
       <a href="#the-haunting-of-hill-house">The Haunting of Hill House</a>
-    </Rating>
-    <Rating rating="8.0">
+    </blog-rating>
+    <blog-rating rating="8.0">
       <a href="#you">You</a>
-    </Rating>
-    <Rating rating="8.0">
+    </blog-rating>
+    <blog-rating rating="8.0">
       <a href="#lucifer">Lucifer</a>
-    </Rating>
-    <Rating rating="8.0">
+    </blog-rating>
+    <blog-rating rating="8.0">
       <a href="#the-umbrella-academy">The Umbrella Academy</a>
-    </Rating>
-    <Rating  rating="8.0">
+    </blog-rating>
+    <blog-rating  rating="8.0">
       <a href="#ragnarok">Ragnarok</a>
-    </Rating>
+    </blog-rating>
 </div>
 
 ### Daredevil

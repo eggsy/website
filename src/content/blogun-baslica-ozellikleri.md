@@ -13,7 +13,7 @@ related:
   - nedir-bu-blog
 ---
 
-<Notification type="warning">Bu yazı, blogun yayınlanan ilk sürümünden olup, şuanki blog için geçerliliğini yitirmiş ve resimler hiçbir geçerli sistemi yansıtmamaktadır. Gönderiyi incelemek isteyenler inceleyebilir ancak gönderide gösterilen resimlerin geçerli hiçbir sayfayı yansıtmadığını lütfen unutmayın. Bu blog güncellemesi ile ilgili daha fazla bilgi almak için [bu sayfayı](/blog/gonderi/blog-yenilendi) ziyaret edin.</Notification>
+<blog-notification type="warning">Bu yazı, blogun yayınlanan ilk sürümünden olup, şuanki blog için geçerliliğini yitirmiş ve resimler hiçbir geçerli sistemi yansıtmamaktadır. Gönderiyi incelemek isteyenler inceleyebilir ancak gönderide gösterilen resimlerin geçerli hiçbir sayfayı yansıtmadığını lütfen unutmayın. Bu blog güncellemesi ile ilgili daha fazla bilgi almak için [bu sayfayı](/blog/gonderi/blog-yenilendi) ziyaret edin.</blog-notification>
 
 [Bu yazımda](/blog/gonderi/nedir-bu-blog) da bahsettiğim gibi blog, hiçbir hazır tasarım (Vuetify dışında), hazır kod veya hazır sistemler kullanılmadan, tamamiyle sıfırdan tasarlanmıştır. Bu gönderide okuyacağınız özelliklerin hiçbiri internetten alınmamış, sıfırdan yapılmıştır.
 
