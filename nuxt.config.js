@@ -9,22 +9,20 @@ import plugins from "./config/plugins"
 import publicRuntimeConfig from "./config/publicRuntimeConfig"
 
 // Set options as variables
-const rootDir = "./"
-const srcDir = "src"
-const target = "static"
-const ssr = true
-const server = {
-  host: "0.0.0.0",
-  port: "3000",
+const options = {
+  rootDir: "./",
+  srcDir: "src",
+  target: "static",
+  ssr: true,
+  server: {
+    host: "0.0.0.0",
+    port: "3000",
+  },
 }
 
 // Export all collected data
 export default {
-  server,
-  rootDir,
-  srcDir,
-  target,
-  ssr,
+  ...options,
   head,
   loading,
   buildModules,
