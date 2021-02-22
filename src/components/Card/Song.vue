@@ -5,7 +5,8 @@
     <SkeletonLoader
       type="image"
       :image-url="thumbnail"
-      class="w-16 h-16 rounded-md bg-auto"
+      background-size="auto"
+      class="flex-shrink-0 w-16 h-16 rounded-md"
     />
 
     <div class="truncate">
@@ -13,16 +14,16 @@
         <icon
           v-if="getDateText.startsWith('Today')"
           name="star"
-          class="w-4 h-4 text-gray-900 dark:text-gray-100"
+          class="flex-shrink-0 w-4 h-4 text-gray-900 dark:text-gray-100"
         />
 
-        <span class="text-sm text-gray-600 dark:text-gray-300">{{
+        <span class="flex-shrink-0 text-sm text-gray-600 dark:text-gray-300">{{
           getDateText
         }}</span>
       </div>
 
       <h3
-        class="text-lg font-semibold leading-tight text-gray-900 truncate dark:text-gray-100"
+        class="flex-shrink-0 text-lg font-semibold leading-tight text-gray-900 truncate dark:text-gray-100"
       >
         {{ title }}
       </h3>
