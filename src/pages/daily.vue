@@ -19,78 +19,111 @@
     </div>
   </div>
 
-  <div
-    v-else
-    class="flex flex-col pt-2 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row"
-  >
-    <div class="space-y-4 sm:w-5/12">
-      <SkeletonLoader
-        type="iframe"
-        :iframe-url="`https://www.youtube.com/embed/${getSelectedSong}`"
-        class="w-full h-56"
-      />
+  <div v-else class="py-4 space-y-6">
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div class="space-y-4">
+        <SkeletonLoader
+          type="iframe"
+          :iframe-url="`https://www.youtube.com/embed/${getSelectedSong}`"
+          class="w-full h-56"
+        />
 
-      <ul class="space-y-2">
-        <li
-          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
-        >
-          <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
-            >Title</span
+        <ul class="space-y-2">
+          <li
+            class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
           >
-          <span
-            class="w-3/4 text-right text-gray-700 truncate dark:text-gray-300"
-            >{{ getSelectedTitle }}</span
-          >
-        </li>
+            <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+              >Title</span
+            >
+            <span
+              class="w-3/4 text-right text-gray-700 truncate dark:text-gray-300"
+              >{{ getSelectedTitle }}</span
+            >
+          </li>
 
-        <li
-          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
-        >
-          <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
-            >Date</span
+          <li
+            class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
           >
+            <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+              >Date</span
+            >
 
-          <span
-            class="w-3/4 text-right text-gray-700 truncate dark:text-gray-300"
-            >{{ getSelectedDateTitle }}</span
+            <span
+              class="w-3/4 text-right text-gray-700 truncate dark:text-gray-300"
+              >{{ getSelectedDateTitle }}</span
+            >
+          </li>
+
+          <li
+            class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
           >
-        </li>
+            <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+              >URL</span
+            >
 
-        <li
-          class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
-        >
-          <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
-            >URL</span
-          >
-
-          <a
-            :href="`https://youtu.be/${getSelectedSong}?utm_source=eggsy.xyz`"
-            title="Click here to visit YouTube"
-            class="w-3/4 text-right text-gray-700 truncate hover:underline dark:text-gray-300"
-            rel="noreferrer"
-            target="_blank"
-          >
-            {{ `https://youtu.be/${getSelectedSong}` }}
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="space-y-2 sm:w-7/12">
-      <CardSong
-        v-for="(song, index) in getSongList"
-        :key="`song-${index}`"
-        :title="song.metadata.title"
-        :date="song.date"
-        :thumbnail="song.metadata.thumbnail || 'http://via.placeholder.com/75'"
-        @click.native="selected = song"
-      />
+            <a
+              :href="`https://youtu.be/${getSelectedSong}?utm_source=eggsy.xyz`"
+              title="Click here to visit YouTube"
+              class="w-3/4 text-right text-gray-700 truncate hover:underline dark:text-gray-300"
+              rel="noreferrer"
+              target="_blank"
+            >
+              {{ `https://youtu.be/${getSelectedSong}` }}
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <div
-        class="flex items-center justify-center w-full py-2 space-x-2 text-gray-800 bg-gray-200 rounded-md cursor-pointer dark:text-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-800"
-        @click="page = page === 0 ? 1 : 0"
+        class="relative flex items-center justify-center p-2 bg-gray-100 rounded h-52 sm:h-auto dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
       >
-        <span>{{ page === 0 ? "Next" : "Previous" }}</span>
+        <div
+          v-if="!getLyrics"
+          class="px-4 py-2 text-gray-900 bg-gray-200 rounded cursor-pointer select-none hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 dark:text-gray-100"
+          @click="fetchLyrics"
+        >
+          <span v-if="lyrics.status === 1">
+            <icon name="sync" class="w-6 h-6 animate-spin" />
+          </span>
+
+          <span v-if="lyrics.status === 2">No Result</span>
+          <span v-else>Fetch Lyrics</span>
+        </div>
+
+        <div
+          v-else
+          class="absolute top-0 bottom-0 left-0 right-0 p-4 space-y-2 overflow-y-auto scrollbar"
+        >
+          <p
+            v-for="(lyric, index) in getLyrics"
+            :key="`lyric-${index}`"
+            :class="{
+              'text-gray-900 dark:text-gray-100': true,
+              'font-semibold': index % 2 === 0,
+            }"
+          >
+            {{ lyric }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+        Older Songs
+      </h3>
+
+      <div class="grid gap-2 mt-2 sm:grid-cols-2 md:grid-cols-3">
+        <CardSong
+          v-for="(song, index) in getSongList"
+          :key="`song-${index}`"
+          :title="song.metadata.title"
+          :date="song.date"
+          :thumbnail="
+            song.metadata.thumbnail || 'http://via.placeholder.com/75'
+          "
+          @click.native="selected = song"
+        />
       </div>
     </div>
   </div>
@@ -104,7 +137,11 @@ export default {
       today: new Date(),
       selected: {},
       songs: [],
-      page: 0,
+      lyrics: {
+        // 0: Not fetching, 1: Fetching, 2: Fetching error
+        status: 0,
+        content: null,
+      },
     }
   },
   fetchOnServer: false,
@@ -215,12 +252,55 @@ export default {
      * @returns {Object[]} Array of songs without the selected one.
      */
     getSongList() {
-      let slice = { from: 0, to: 5 }
-      if (this.page > 0) slice = { from: 5, to: 10 }
+      return this.songs.filter((song) => song.date !== this.selected.date)
+    },
+    /**
+     * Returns lyrics in array format if they were fetched from the API.
+     * @returns {string[] | false} Array of lyrics.
+     */
+    getLyrics() {
+      if (this.lyrics.content === null) return false
+      return this.lyrics?.content?.split("\n")?.filter((l) => l) || false
+    },
+  },
+  watch: {
+    selected: "resetLyrics",
+  },
+  methods: {
+    /**
+     * Fetches lyrics from client using a free API.
+     */
+    async fetchLyrics() {
+      this.lyrics.status = 1
 
-      return this.songs
-        .filter((song) => song.date !== this.selected.date)
-        .slice(slice.from, slice.to)
+      const { data } = await this.$axios.get(
+        `https://some-random-api.ml/lyrics/?title=${this.selected?.metadata?.title}`,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "https://some-random-api.ml",
+          },
+        }
+      )
+
+      if (data?.error)
+        this.lyrics = {
+          status: 2,
+          content: null,
+        }
+      else
+        this.lyrics = {
+          status: 1,
+          content: data?.lyrics,
+        }
+    },
+    /**
+     * Clears the lyrics state.
+     */
+    resetLyrics() {
+      this.lyrics = {
+        fetching: false,
+        content: null,
+      }
     },
   },
 }
@@ -233,6 +313,22 @@ export default {
 
 .ring {
   @apply ring-2 ring-opacity-75 ring-gray-300 dark:ring-transparent;
+}
+
+.scrollbar {
+  @apply scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-400;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+.dark .scrollbar {
+  @apply scrollbar-track-gray-600 scrollbar-thumb-gray-700;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
 }
 
 .thumbnail {
