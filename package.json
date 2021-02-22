@@ -21,6 +21,7 @@
     "core-js": "^3.9.0",
     "firebase": "^8.2.9",
     "nuxt": "^2.15.1",
+    "nuxt-helmet": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
     "prism-themes": "^1.5.0",
     "sass": "^1.32.8",
