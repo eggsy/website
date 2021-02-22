@@ -556,12 +556,16 @@ p,
   }
 }
 
-.svg-icon {
-  @apply flex-shrink-0 w-6 h-6 p-1 bg-gray-200 rounded-full cursor-pointer dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-300;
-}
-
 .dark .scrollbar {
   @apply scrollbar-thin scrollbar-track-gray-500 scrollbar-thumb-gray-600;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+.svg-icon {
+  @apply flex-shrink-0 w-6 h-6 p-1 bg-gray-200 rounded-full cursor-pointer dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-300;
 }
 
 .input {
