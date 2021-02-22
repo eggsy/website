@@ -1,4 +1,3 @@
-// Import module specific configs
 import content from "./modules/content"
 import firebase from "./modules/firebase"
 import pwa from "./modules/pwa"

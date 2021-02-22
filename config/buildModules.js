@@ -1,4 +1,3 @@
-// Import module specific configs
 import dotenv from "./modules/dotenv"
 import colorMode from "./modules/colorMode"
 import tailwindcss from "./modules/tailwindcss"
