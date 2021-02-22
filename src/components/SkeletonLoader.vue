@@ -21,7 +21,7 @@
     :style="{
       background:
         itemLoaded === true ? `url('${imageUrl}') no-repeat center` : '',
-      backgroundSize: itemLoaded === true ? 'cover' : '',
+      backgroundSize: itemLoaded === true ? backgroundSize : '',
     }"
   >
     <img
@@ -65,6 +65,11 @@ export default {
       type: String,
       required: false,
       default: null,
+    },
+    backgroundSize: {
+      type: String,
+      required: false,
+      default: "cover",
     },
     iframeUrl: {
       type: String,
