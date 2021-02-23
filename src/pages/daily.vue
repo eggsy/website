@@ -78,20 +78,7 @@
         class="relative flex items-center justify-center p-2 bg-gray-100 rounded h-52 sm:h-auto dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
       >
         <div
-          v-if="!getLyrics"
-          class="px-4 py-2 text-gray-900 bg-gray-200 rounded cursor-pointer select-none hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 dark:text-gray-100"
-          @click="fetchLyrics"
-        >
-          <span v-if="lyrics.status === 1">
-            <icon name="sync" class="w-6 h-6 animate-spin" />
-          </span>
-
-          <span v-if="lyrics.status === 2">No Result</span>
-          <span v-else>Fetch Lyrics</span>
-        </div>
-
-        <div
-          v-else
+          v-if="getLyrics"
           class="absolute top-0 bottom-0 left-0 right-0 p-4 space-y-2 overflow-y-auto scrollbar"
         >
           <p
@@ -99,11 +86,16 @@
             :key="`lyric-${index}`"
             :class="{
               'text-gray-900 dark:text-gray-100': true,
+              'py-2': lyric === '' && index !== 0,
               'font-semibold': index % 2 === 0,
             }"
           >
             {{ lyric }}
           </p>
+        </div>
+
+        <div v-else class="flex items-center justify-center">
+          <h3 class="text-lg text-gray-900 dark:text-gray-100">No lyrics...</h3>
         </div>
       </div>
     </div>
@@ -137,11 +129,6 @@ export default {
       today: new Date(),
       selected: {},
       songs: [],
-      lyrics: {
-        // 0: Not fetching, 1: Fetching, 2: Fetching error
-        status: 0,
-        content: null,
-      },
     }
   },
   fetchOnServer: false,
@@ -259,48 +246,9 @@ export default {
      * @returns {string[] | false} Array of lyrics.
      */
     getLyrics() {
-      if (this.lyrics.content === null) return false
-      return this.lyrics?.content?.split("\n")?.filter((l) => l) || false
-    },
-  },
-  watch: {
-    selected: "resetLyrics",
-  },
-  methods: {
-    /**
-     * Fetches lyrics from client using a free API.
-     */
-    async fetchLyrics() {
-      this.lyrics.status = 1
-
-      const { data } = await this.$axios.get(
-        `https://some-random-api.ml/lyrics/?title=${this.selected?.metadata?.title}`,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "https://some-random-api.ml",
-          },
-        }
-      )
-
-      if (data?.error)
-        this.lyrics = {
-          status: 2,
-          content: null,
-        }
-      else
-        this.lyrics = {
-          status: 1,
-          content: data?.lyrics,
-        }
-    },
-    /**
-     * Clears the lyrics state.
-     */
-    resetLyrics() {
-      this.lyrics = {
-        fetching: false,
-        content: null,
-      }
+      return this.selected?.metadata?.lyrics?.length > 0
+        ? this.selected?.metadata?.lyrics
+        : null
     },
   },
 }
