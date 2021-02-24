@@ -92,6 +92,17 @@
           >
             {{ lyric }}
           </p>
+
+          <p class="text-xs font-medium text-gray-600 dark:text-gray-400">
+            Lyrics by Genius with the help of
+            <a
+              href="https://some-random-api.ml/?utm_source=eggsy.xyz"
+              class="hover:underline"
+              target="_blank"
+              rel="noreferrer"
+              >SRA</a
+            >
+          </p>
         </div>
 
         <div v-else class="flex items-center justify-center">
