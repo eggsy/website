@@ -1,5 +1,8 @@
 <template>
-  <div v-if="type === 'normal'">
+  <div
+    v-if="type === 'normal'"
+    class="p-4 bg-gray-100 rounded shadow dark:bg-gray-800"
+  >
     <div class="flex items-center space-x-3">
       <nuxt-link
         :to="{
@@ -65,7 +68,10 @@
     </div>
   </div>
 
-  <div v-else-if="type === 'text'">
+  <div
+    v-else-if="type === 'text'"
+    class="p-4 bg-gray-100 rounded shadow dark:bg-gray-800"
+  >
     <div class="flex items-center gap-4">
       <div class="overflow-hidden">
         <nuxt-link
@@ -102,7 +108,10 @@
     </div>
   </div>
 
-  <div v-else-if="type === 'text-only-title'" class="truncate">
+  <div
+    v-else-if="type === 'text-only-title'"
+    class="p-4 truncate bg-gray-100 rounded shadow dark:bg-gray-800"
+  >
     <nuxt-link
       :to="{
         name: 'blog-gonderi-slug',
@@ -124,7 +133,9 @@
         <icon name="fire" class="w-5 h-5 text-red-600 dark:text-red-500" />
       </div>
 
-      <div class="flex items-center space-x-2 text-gray-700 dark:text-gray-400">
+      <div
+        class="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-400"
+      >
         <icon name="clock" class="w-4 h-4" />
         <span>{{ getPostDate }}</span>
       </div>
