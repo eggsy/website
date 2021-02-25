@@ -42,6 +42,7 @@
               :title="project.title"
               :description="project.description"
               :image="project.image"
+              class="h-full"
             />
           </nuxt-link>
 
@@ -56,6 +57,7 @@
               :title="project.title"
               :description="project.description"
               :image="project.image"
+              class="h-full"
             />
           </a>
 
@@ -64,6 +66,7 @@
             :title="project.title"
             :description="project.description"
             :image="project.image"
+            class="h-full"
           />
         </div>
       </div>
