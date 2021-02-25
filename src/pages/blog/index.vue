@@ -101,7 +101,7 @@
           <div
             v-for="page in getTotalPages"
             :key="`pagination-${page}`"
-            class="flex items-center justify-center w-10 h-10 font-medium text-gray-900 bg-gray-200 rounded-full cursor-pointer select-none ring-1 ring-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-800 dark:text-gray-100"
+            class="flex items-center justify-center w-10 h-10 font-medium text-gray-900 bg-gray-200 rounded-full cursor-pointer select-none ring-1 ring-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:ring-gray-800"
             :class="{
               'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
             }"
