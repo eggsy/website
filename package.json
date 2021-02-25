@@ -20,12 +20,12 @@
     "@tailwindcss/line-clamp": "^0.2.0",
     "core-js": "^3.9.0",
     "firebase": "^8.2.9",
-    "nuxt": "^2.15.1",
+    "nuxt": "^2.15.2",
     "nuxt-helmet": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
     "prism-themes": "^1.5.0",
     "sass": "^1.32.8",
-    "sass-loader": "^10.1.0",
+    "sass-loader": "10.1.1",
     "tailwind-scrollbar": "^1.2.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-tippy": "^4.7.3"
@@ -38,15 +38,14 @@
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/svg": "^0.1.12",
     "@nuxtjs/tailwindcss": "^3.4.2",
-    "autoprefixer": "9",
+    "autoprefixer": "10",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.20.0",
-    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.6.0",
-    "postcss": "7",
-    "prettier": "^2.2.1",
-    "vue-windicss-preprocess": "^2.0.0"
+    "postcss": "7.0.32",
+    "prettier": "^2.2.1"
   }
 }
