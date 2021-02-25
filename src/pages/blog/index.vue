@@ -90,11 +90,25 @@
 
         <div class="grid gap-4 mt-4 sm:grid-cols-3">
           <CardPost
-            v-for="(post, index) in posts.rest"
+            v-for="(post, index) in getPaginatedPosts"
             :key="`linux-${index}`"
             :post="post"
             type="text-only-title"
           />
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center mt-4 space-x-2">
+          <div
+            v-for="page in getTotalPages"
+            :key="`pagination-${page}`"
+            class="flex items-center justify-center w-10 h-10 font-medium text-gray-900 bg-gray-200 rounded-full cursor-pointer select-none ring-1 ring-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-800 dark:text-gray-100"
+            :class="{
+              'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
+            }"
+            @click="pagination = page - 1"
+          >
+            {{ page }}
+          </div>
         </div>
       </div>
     </div>
@@ -124,7 +138,8 @@ export default {
   layout: "blog",
   data() {
     return {
-      query: this.$route.query || {},
+      query: {},
+      pagination: 0,
       posts: {
         latest: [],
         discord: [],
@@ -167,44 +182,47 @@ export default {
       rest: allPosts || [],
     }
   },
-  head: {
-    title: "Blog",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content:
-          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
-      },
-      // Twitter
-      {
-        hid: "twitter:title",
-        name: "twitter:title",
-        content: "EGGSY's Blog",
-      },
-      {
-        hid: "twitter:description",
-        name: "twitter:description",
-        content:
-          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
-      },
-      // Open-Graph
-      { hid: "og:title", name: "og:title", content: "EGGSY's Blog" },
-      {
-        hid: "og:description",
-        name: "og:description",
-        content:
-          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
-      },
-      // PreMiD
-      { name: "premid-details", content: "Viewing a blog page:" },
-      { name: "premid-state", content: "Homepage" },
-    ],
+  head() {
+    const title = "EGGSY's Blog"
+    const description =
+      "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası."
+
+    return {
+      title: "Blog",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+        // Twitter
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+        // Open-Graph
+        { hid: "og:title", name: "og:title", content: title },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
+        },
+        // PreMiD
+        { name: "premid-details", content: "Viewing a blog page:" },
+        { name: "premid-state", content: "Home" },
+      ],
+    }
   },
   computed: {
     /**
      * Filters posts with a query variable.
-     * @returns {boolean|array} False if no query set, filtered posts array if there are results.
+     * @returns {boolean|object[]} False if no query set, filtered posts array if there are results.
      */
     getFilteredPosts() {
       let { q, search, query, ara, sorgu, etiket } = this.query
@@ -224,10 +242,11 @@ export default {
       if (etiket)
         return allPosts.filter(
           (post) =>
-            post.tags.filter((tag) => tag.toLowerCase().includes(etiket)).length
+            post.tags?.filter((tag) => tag?.toLowerCase()?.includes(etiket))
+              ?.length
         )
-      else
-        return allPosts.filter(
+      else {
+        const filteredPosts = allPosts.filter(
           (post) =>
             post.title
               ?.toLowerCase()
@@ -236,21 +255,40 @@ export default {
               ?.toLowerCase()
               ?.includes(q || search || query || ara || sorgu)
         )
+
+        return filteredPosts
+      }
+    },
+    /**
+     * Returns the number of pages for the posts.
+     * @returns {number} Page amount.
+     */
+    getTotalPages() {
+      return Math.ceil(this.posts?.rest?.length / 15)
+    },
+    /**
+     * Returns paginated, sliced posts.
+     * @returns {object[]} The posts array.
+     */
+    getPaginatedPosts() {
+      const sliceStart = this.pagination * 15
+      const sliceEnd = sliceStart + 15
+
+      return this.posts.rest.slice(sliceStart, sliceEnd)
     },
   },
-  watchQuery(newQuery) {
-    this.setQuery(newQuery)
+  watch: {
+    "$route.query": "setQuery",
   },
   mounted() {
-    this.setQuery(this.$route.query)
+    this.setQuery()
   },
   methods: {
     /**
      * Updates the query variable in Vue data from Vue Router.
-     * @param {string | string[]} newQuery The new query.
      */
-    setQuery(newQuery) {
-      this.query = newQuery
+    setQuery() {
+      this.query = this.$route.query
     },
   },
 }
