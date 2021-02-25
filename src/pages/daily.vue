@@ -44,32 +44,28 @@
           <li
             class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
           >
-            <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
-              >Date</span
-            >
+            <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100">
+              Artist
+            </span>
 
             <span
               class="w-3/4 text-right text-gray-700 truncate dark:text-gray-300"
-              >{{ getSelectedDateTitle }}</span
             >
+              {{ getSelectedSongMetadata.artist || "Unknown" }}
+            </span>
           </li>
 
           <li
             class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
           >
-            <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
-              >URL</span
-            >
+            <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100">
+              Date
+            </span>
 
-            <a
-              :href="`https://youtu.be/${getSelectedSong}?utm_source=eggsy.xyz`"
-              title="Click here to visit YouTube"
-              class="w-3/4 text-right text-gray-700 truncate hover:underline dark:text-gray-300"
-              rel="noreferrer"
-              target="_blank"
+            <span
+              class="w-3/4 text-right text-gray-700 truncate dark:text-gray-300"
+              >{{ getSelectedDateTitle }}</span
             >
-              {{ `https://youtu.be/${getSelectedSong}` }}
-            </a>
           </li>
         </ul>
       </div>
@@ -232,6 +228,13 @@ export default {
       return this.selected?.url || "ZY3J3Y_OU0w"
     },
     /**
+     * Returns the metadata of the selected song.
+     * @returns {object} The song metadata.
+     */
+    getSelectedSongMetadata() {
+      return this.selected?.metadata || {}
+    },
+    /**
      * Returns the selected song's title.
      * @returns {string} Title of the selected song.
      */
@@ -266,10 +269,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.side-button {
-  @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-opacity-75 dark:hover:text-gray-300 rounded-md p-2 ring flex items-center justify-center w-1/6;
-}
-
 .ring {
   @apply ring-2 ring-opacity-75 ring-gray-300 dark:ring-transparent;
 }
@@ -288,10 +287,5 @@ export default {
   &::-webkit-scrollbar {
     width: 6px;
   }
-}
-
-.thumbnail {
-  height: 75px;
-  width: 75px;
 }
 </style>
