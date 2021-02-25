@@ -20,7 +20,7 @@
   <div v-else class="px-4 pb-16 sm:px-0">
     <div v-if="getFilteredPosts === false">
       <h3
-        class="pl-2 space-x-2 text-lg font-semibold text-gray-900 border-l-4 border-gray-800 dark:border-gray-400 dark:text-gray-100"
+        class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
       >
         Son gönderiler
       </h3>
@@ -43,7 +43,7 @@
               },
             }"
             title="Discord etiketli gönderileri gör"
-            class="flex items-center pl-2 space-x-2 text-gray-900 border-l-4 border-gray-800 dark:border-gray-400 dark:text-gray-100"
+            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
           >
             <icon name="discord" class="w-6 h-6" />
             <h3 class="text-lg font-semibold">Discord</h3>
@@ -66,7 +66,7 @@
               },
             }"
             title="Linux etiketli gönderileri gör"
-            class="flex items-center pl-2 space-x-2 text-gray-900 border-l-4 border-gray-800 dark:border-gray-400 dark:text-gray-100"
+            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
           >
             <icon name="linux" class="w-6 h-6" />
             <h3 class="text-lg font-semibold">Linux</h3>
@@ -83,7 +83,7 @@
 
       <div class="mt-16">
         <h3
-          class="pl-2 space-x-2 text-lg font-semibold text-gray-900 border-l-4 border-gray-800 dark:border-gray-400 dark:text-gray-100"
+          class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
         >
           Diğer gönderiler
         </h3>
