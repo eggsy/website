@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="type === 'normal'"
-    class="p-4 bg-gray-100 rounded shadow dark:bg-gray-800"
+    class="p-4 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-700 dark:bg-gray-800"
   >
     <div class="flex items-center space-x-3">
       <nuxt-link
@@ -70,7 +70,7 @@
 
   <div
     v-else-if="type === 'text'"
-    class="p-4 bg-gray-100 rounded shadow dark:bg-gray-800"
+    class="p-4 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-700 dark:bg-gray-800"
   >
     <div class="flex items-center gap-4">
       <div class="overflow-hidden">
@@ -86,6 +86,7 @@
               type="image"
               :image-url="getPostMeta.image"
               class="flex-shrink-0 w-6 h-6 rounded-full"
+              background-size="cover"
             />
 
             <h3 class="text-lg truncate">
@@ -110,7 +111,7 @@
 
   <div
     v-else-if="type === 'text-only-title'"
-    class="p-4 truncate bg-gray-100 rounded shadow dark:bg-gray-800"
+    class="p-4 truncate bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-700 dark:bg-gray-800"
   >
     <nuxt-link
       :to="{
