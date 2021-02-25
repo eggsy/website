@@ -238,19 +238,19 @@ export default {
         )
     },
   },
-  watch: {
-    "$route.query": "setQuery",
+  watchQuery(newQuery) {
+    this.setQuery(newQuery)
   },
   mounted() {
-    this.setQuery()
+    this.setQuery(this.$route.query)
   },
   methods: {
     /**
      * Updates the query variable in Vue data from Vue Router.
-     * @returns {object} The router query object.
+     * @param {string | string[]} newQuery The new query.
      */
-    setQuery() {
-      this.query = this.$route.query
+    setQuery(newQuery) {
+      this.query = newQuery
     },
   },
 }
