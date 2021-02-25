@@ -36,19 +36,19 @@
   <div v-else class="px-4 pb-10 space-x-6 pt-14 sm:px-0">
     <div class="w-full mx-auto">
       <article>
-        <header class="mx-auto mb-12 space-y-6 sm:w-2/4 md:w-3/4">
+        <header class="mb-12 space-y-4 text-center sm:text-left sm:pr-16">
           <h1
-            class="block text-4xl font-semibold text-center text-black quicksand sm:text-6xl dark:text-gray-50"
+            class="block text-2xl font-semibold text-black quicksand sm:text-4xl dark:text-gray-50"
           >
             {{ post.title }}
           </h1>
 
-          <p class="text-center dark:text-gray-100">
+          <p class="dark:text-gray-100">
             {{ post.description }}
           </p>
 
           <div
-            class="flex justify-center w-full space-x-2 divide-x-2 divide-gray-200 dark:text-gray-300 whitespace-nowrap"
+            class="flex items-center justify-center space-x-2 divide-x-2 divide-gray-200 sm:justify-start dark:text-gray-300 whitespace-nowrap"
           >
             <div class="flex items-center space-x-1">
               <icon name="clock" class="w-4 h-4" />
@@ -62,7 +62,7 @@
           </div>
         </header>
 
-        <div class="mt-4 space-y-4 text-justify">
+        <div class="mt-4 space-y-4">
           <nuxt-content :document="post"></nuxt-content>
         </div>
       </article>
