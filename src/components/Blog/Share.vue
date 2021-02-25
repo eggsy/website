@@ -102,6 +102,6 @@ export default {
 
 <style scoped>
 div.button {
-  @apply w-12 h-12 p-2 bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 ring-1 ring-opacity-25 ring-gray-400 dark:bg-gray-800 dark:ring-transparent dark:hover:bg-opacity-75;
+  @apply w-12 h-12 p-2 bg-gray-100 rounded-full cursor-pointer hover:bg-gray-200 ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-transparent dark:hover:bg-gray-700;
 }
 </style>
