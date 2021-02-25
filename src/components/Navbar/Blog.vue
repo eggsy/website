@@ -21,7 +21,7 @@
 
         <div class="flex items-center space-x-4">
           <nuxt-link
-            v-if="$route.name === 'blog'"
+            v-if="$route.name === 'blog' && !isSearching"
             v-tippy="{
               content: 'Ana sayfaya dön',
               placement: 'bottom',
@@ -119,6 +119,16 @@ export default {
       links: ["Haber", "Discord", "Linux"],
     }
   },
+  computed: {
+    /**
+     * Checks for common query parameters and returns a boolean.
+     * @returns {boolean} Is user searching or not.
+     */
+    isSearching() {
+      const { q, search, query, ara, sorgu, etiket } = this.$route.query
+      return !!q || !!search || !!query || !!ara || !!sorgu || !!etiket
+    },
+  },
   watch: {
     "$route.path": "routeChange",
   },
@@ -135,7 +145,6 @@ export default {
      * Focuses on the search if its reference is available.
      */
     focusSearch() {
-      // Using a timeout, because of a reason I don't know, it doesn't read the ref otherwise.
       setTimeout(() => this.$refs.search?.focus())
     },
     /**
