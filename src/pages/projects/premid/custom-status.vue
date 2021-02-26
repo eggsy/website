@@ -388,8 +388,8 @@ export default {
       const firstButton = this.presence.buttons[0]
       const secondButton = this.presence.buttons[1]
 
-      const isFirstButton = firstButton?.label
-      const isSecondButton = secondButton?.label
+      const isFirstButton = firstButton?.label && firstButton?.url
+      const isSecondButton = secondButton?.label && secondButton?.url
 
       if (!isFirstButton && !isSecondButton) return []
 
@@ -451,17 +451,19 @@ export default {
 
       // Buttons
       if (this.getButtons.length > 0) {
-        object.buttons = {}
+        object.buttons = []
 
-        if (this.getButtons[0].label)
-          object.buttons[0].label = this.getButtons[0].label
-        if (this.getButtons[0].url)
-          object.buttons[0].url = this.getButtons[0].url
+        if (this.getButtons[0]?.label && this.getButtons[0]?.url)
+          object.buttons.push({
+            label: this.getButtons[0].label,
+            url: this.getButtons[0].url,
+          })
 
-        if (this.getButtons[1].label)
-          object.buttons[1].label = this.getButtons[1].label
-        if (this.getButtons[1].label)
-          object.buttons[1].label = this.getButtons[1].label
+        if (this.getButtons[1]?.label && this.getButtons[1]?.url)
+          object.buttons.push({
+            label: this.getButtons[1].label,
+            url: this.getButtons[1].url,
+          })
       }
 
       // Have to change at least one value because Discord doesn't re-render the data on timestamp changes
