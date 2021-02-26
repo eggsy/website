@@ -416,9 +416,7 @@ export default {
     getPresenceData() {
       const data = this.presence
       const timestamps = data.timestamp
-      const object = {
-        buttons: this.getButtons || [],
-      }
+      const object = {}
 
       /* Large and small image */
       if (data.largeImageKey) object.largeImageKey = data.largeImageKey
@@ -449,6 +447,21 @@ export default {
           timestamps.end.value,
           "HH:mm"
         ).valueOf()
+      }
+
+      // Buttons
+      if (this.getButtons.length > 0) {
+        object.buttons = {}
+
+        if (this.getButtons[0].label)
+          object.buttons[0].label = this.getButtons[0].label
+        if (this.getButtons[0].url)
+          object.buttons[0].url = this.getButtons[0].url
+
+        if (this.getButtons[1].label)
+          object.buttons[1].label = this.getButtons[1].label
+        if (this.getButtons[1].label)
+          object.buttons[1].label = this.getButtons[1].label
       }
 
       // Have to change at least one value because Discord doesn't re-render the data on timestamp changes
