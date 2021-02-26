@@ -1,41 +1,71 @@
 <template>
-  <div class="w-full px-6 py-4 rounded-md bg-social-discord-dark">
+  <div
+    class="w-full px-6 py-4 overflow-x-hidden rounded-md bg-social-discord-dark"
+  >
     <div class="py-2 space-y-2">
       <h1 class="text-xs font-bold text-white uppercase dark:text-gray-100">
         Playing a game
       </h1>
 
-      <div class="flex items-center space-x-3 md:space-x-5">
-        <div class="relative w-32 h-32">
-          <img
-            class="rounded-md"
-            :src="getImages.largeImage"
-            draggable="false"
-            alt="big image"
-          />
+      <div
+        class="flex flex-col items-center justify-between space-y-3 overflow-x-hidden sm:space-y-0 sm:space-x-3 sm:flex-row"
+      >
+        <div
+          class="flex items-center w-full space-x-3 overflow-x-hidden sm:w-2/3 md:space-x-5"
+        >
+          <div class="relative flex-shrink-0 w-32 h-32">
+            <img
+              class="rounded-md"
+              :src="getImages.largeImage"
+              draggable="false"
+              alt="big image"
+            />
 
-          <img
-            v-if="getImages.smallImage"
-            v-tippy="{
-              content: getText.small,
-              placement: 'top',
-            }"
-            class="box-border absolute rounded-full bg-social-discord-dark -bottom-2 -right-2 w-9 ring-4 ring-social-discord-dark focus:outline-none"
-            :src="getImages.smallImage"
-            draggable="false"
-            alt="small image"
-          />
+            <img
+              v-if="getImages.smallImage"
+              v-tippy="{
+                content: getText.small,
+                placement: 'top',
+              }"
+              class="box-border absolute rounded-full bg-social-discord-dark -bottom-2 -right-2 w-9 ring-4 ring-social-discord-dark focus:outline-none"
+              :src="getImages.smallImage"
+              draggable="false"
+              alt="small image"
+            />
+          </div>
+
+          <div class="overflow-x-hidden text-gray-100">
+            <h1 class="block text-xl font-semibold text-white">
+              Custom Status
+            </h1>
+
+            <div class="leading-tight">
+              <span class="block truncate">{{ getText.details }}</span>
+              <span class="block truncate">{{ getText.state }}</span>
+              <span v-if="isTimerEnabled === true" class="block text-sm">{{
+                getTime
+              }}</span>
+            </div>
+          </div>
         </div>
 
-        <div class="flex-grow w-3/4 text-gray-100 truncate md:w-4/5">
-          <h1 class="block text-xl font-semibold text-white">Custom Status</h1>
-
-          <div class="leading-tight">
-            <span class="block truncate">{{ getText.details }}</span>
-            <span class="block truncate">{{ getText.state }}</span>
-            <span v-if="isTimerEnabled === true" class="block text-sm">{{
-              getTime
-            }}</span>
+        <div
+          v-if="getButtons.length !== 0"
+          class="flex-shrink-0 w-full overflow-x-hidden sm:w-1/3"
+        >
+          <div class="sm:ml-auto">
+            <div class="grid grid-cols-1 gap-2">
+              <a
+                v-for="(button, index) in getButtons"
+                :key="`button-${index}`"
+                :href="button.url || null"
+                :title="button.url ? 'Click to follow your URL' : null"
+                class="px-4 py-2 text-sm text-center text-white truncate border border-white rounded-sm cursor-pointer select-none sm:px-3 sm:py-1 focus:bg-opacity-10 focus:bg-white"
+                target="_blank"
+              >
+                {{ button.label }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +82,7 @@ export default {
     largeImage: {
       type: String,
       required: false,
-      default: () => "PreMiD",
+      default: "PreMiD",
     },
     smallImage: {
       type: String,
@@ -68,6 +98,11 @@ export default {
       type: String,
       required: false,
       default: "[ENTER SOMETHING]",
+    },
+    buttons: {
+      type: Array,
+      required: false,
+      default: () => [],
     },
     state: {
       type: String,
@@ -95,6 +130,10 @@ export default {
     }
   },
   computed: {
+    /**
+     * Returns large and small image by replacing the spaces in their name.
+     * @returns {{largeImage: string[], smallImage: string[]}}
+     */
     getImages() {
       const largeImageKey = this.largeImage?.replace(/\s/g, "")
       const smallImageKey = this.smallImage?.replace(/\s/g, "")
@@ -105,8 +144,42 @@ export default {
         smallImage: smallImages[smallImageKey],
       }
     },
+    /**
+     * Checks if any of the buttons have label and returns each that has.
+     * @returns {object[]} Buttons array.
+     */
+    getButtons() {
+      const firstButton = this.buttons[0]
+      const secondButton = this.buttons[1]
+
+      const isFirstButton = firstButton?.label
+      const isSecondButton = secondButton?.label
+
+      if (!isFirstButton && !isSecondButton) return []
+
+      const buttonsArray = []
+
+      if (isFirstButton)
+        buttonsArray.push({
+          label: firstButton.label,
+          url: firstButton.url,
+        })
+
+      if (isSecondButton)
+        buttonsArray.push({
+          label: secondButton.label,
+          url: secondButton.url,
+        })
+
+      return buttonsArray
+    },
+    /**
+     * Returns text related parts for the UI.
+     * @returns {{details: string, state: string, small: string}}
+     */
     getText() {
       let small
+
       if (this.smallImage && this.smallImageText) small = this.smallImageText
       else if (this.smallImage && !this.smallImageText) small = "[EMPTY]"
 
@@ -116,6 +189,10 @@ export default {
         small,
       }
     },
+    /**
+     * Checks if timers are enabled, starts or stops timers according to passed props.
+     * @returns {boolean} Whether any timer is enabled or not.
+     */
     isTimerEnabled() {
       const start = this?.timestamp?.start
       const end = this?.timestamp?.end
@@ -131,6 +208,10 @@ export default {
         return false
       }
     },
+    /**
+     * Returns the string for enabled timer.
+     * @returns {boolean|string}
+     */
     getTime() {
       if (this.isTimerEnabled.value === false) return null
       else if (this.timers.elapsed?.instance) return this.timers.elapsed.string
@@ -142,6 +223,9 @@ export default {
     this.stopTimers()
   },
   methods: {
+    /**
+     * Stops both of the timers.
+     */
     stopTimers() {
       const elapsed = this.timers.elapsed
       const end = this.timers.end
@@ -156,6 +240,9 @@ export default {
       end.instance = null
       end.string = ""
     },
+    /**
+     * Calculates the time difference between now and selected time and starts the elapsed timer.
+     */
     startElapsedTimer() {
       const target = this?.timestamp?.start?.value
       const timer = this?.timers?.elapsed
@@ -179,6 +266,9 @@ export default {
         timer.string = `${timeArray.join(":")} elapsed`
       }, 1000)
     },
+    /**
+     * Calculates the time difference between now and selected time and starts the elapsed timer.
+     */
     startLeftTimer() {
       const target = this?.timestamp?.end?.value
       const timer = this?.timers?.end

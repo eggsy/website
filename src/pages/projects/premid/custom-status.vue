@@ -34,28 +34,41 @@
         :large-image="presence.largeImageKey"
         :small-image="presence.smallImageKey"
         :timestamp="presence.timestamp"
+        :buttons="presence.buttons"
         :details="presence.details"
         :state="presence.state"
         class="shadow-lg"
       />
 
-      <div class="grid gap-4 mt-4 sm:grid-cols-2">
+      <div class="gap-4 mt-4 space-y-4 sm:grid sm:space-y-0 sm:grid-cols-2">
         <div class="space-y-2">
-          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">
             Details (upper text)
           </h3>
-          <input v-model="presence.details" class="w-full" type="text" />
+
+          <input
+            v-model="presence.details"
+            type="text"
+            placeholder="Something nice"
+            class="w-full"
+          />
         </div>
 
         <div class="space-y-2">
           <h3 class="font-medium text-gray-700 dark:text-gray-100">
             State (lower text)
           </h3>
-          <input v-model="presence.state" class="w-full" type="text" />
+
+          <input
+            v-model="presence.state"
+            type="text"
+            placeholder="This is neat!"
+            class="w-full"
+          />
         </div>
 
         <div class="space-y-2">
-          <h3 class="w-full font-medium text-gray-700 dark:text-gray-10">
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">
             Large Image
           </h3>
           <select
@@ -102,10 +115,50 @@
 
         <div class="col-span-2 space-y-2">
           <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
+            Buttons
+          </h3>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="space-y-2">
+              <input
+                v-model="presence.buttons[0].label"
+                type="text"
+                class="w-full"
+                placeholder="Label of first button"
+              />
+
+              <input
+                v-model="presence.buttons[0].url"
+                type="text"
+                class="w-full"
+                placeholder="URL of second button"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <input
+                v-model="presence.buttons[1].label"
+                type="text"
+                class="w-full"
+                placeholder="Label of second button"
+              />
+
+              <input
+                v-model="presence.buttons[1].url"
+                type="text"
+                class="w-full"
+                placeholder="URL of second button"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-2 space-y-2">
+          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
             Timestamps
           </h3>
 
-          <div class="grid gap-2 sm:grid-cols-2">
+          <div class="grid gap-4 sm:grid-cols-2">
             <div
               :class="{
                 'timestamp dark:text-gray-200': true,
@@ -149,24 +202,25 @@
             rest too!
           </div>
 
-          <h2
-            class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
-          >
-            How does it work?
-          </h2>
-
-          <p class="text-gray-700 dark:text-gray-200">
-            When you add our Presence from Presence Store from
-            <a
-              href="https://premid.app/store/presences/Custom%20Status?utm_source=eggsy.xyz"
-              title="PreMiD Store"
-              rel="noreferrer"
-              target="_blank"
-              >this page</a
-            >, you will be able to use this page. You just have to set your
-            settings and PreMiD will show those settings on your profile just
-            like in the preview here.
-          </p>
+          <div>
+            <h2
+              class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+            >
+              How does it work?
+            </h2>
+            <p class="text-gray-700 dark:text-gray-200">
+              When you add our Presence from Presence Store from
+              <a
+                href="https://premid.app/store/presences/Custom%20Status?utm_source=eggsy.xyz"
+                title="PreMiD Store"
+                rel="noreferrer"
+                target="_blank"
+                >this page</a
+              >, you will be able to use this page. You just have to set your
+              settings and PreMiD will show those settings on your profile just
+              like in the preview here.
+            </p>
+          </div>
         </div>
 
         <div class="space-y-2">
@@ -232,6 +286,16 @@ export default {
         smallImageText: "",
         details: "",
         state: "",
+        buttons: [
+          {
+            label: "",
+            url: "",
+          },
+          {
+            label: "",
+            url: "",
+          },
+        ],
         timestamp: {
           start: {
             enabled: false,
@@ -323,7 +387,9 @@ export default {
     getPresenceData() {
       const data = this.presence
       const timestamps = data.timestamp
-      const object = {}
+      const object = {
+        buttons: this.presence.buttons || [],
+      }
 
       /* Large and small image */
       if (data.largeImageKey) object.largeImageKey = data.largeImageKey
@@ -446,7 +512,7 @@ export default {
 
 input,
 select {
-  @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:bg-gray-700 dark:hover:bg-opacity-75 dark:ring-gray-800 dark:text-gray-200;
+  @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:bg-gray-700 dark:ring-gray-800 dark:text-gray-200;
 
   &[type="time"] {
     @apply px-2 py-px;
@@ -454,7 +520,7 @@ select {
 }
 
 .timestamp {
-  @apply rounded-md p-2 text-center  select-none ring-2 ring-gray-200 ring-opacity-25 bg-white hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-opacity-75 dark:ring-transparent;
+  @apply rounded-md p-2 text-center  select-none ring-2 ring-gray-200 ring-opacity-25 bg-white dark:bg-gray-700 dark:ring-transparent;
 
   &:not(.cursor-default) {
     @apply cursor-pointer;
@@ -465,7 +531,7 @@ select {
   }
 
   &.active {
-    @apply bg-green-500 hover:bg-green-600 dark:bg-green-700 dark:hover:bg-green-800;
+    @apply bg-green-500 dark:bg-green-700;
   }
 }
 
