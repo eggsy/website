@@ -39,38 +39,28 @@
         class="shadow-lg"
       />
 
-      <div class="mt-4 space-y-2">
-        <div class="items-center w-full md:flex md:space-x-2">
-          <h3
-            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-          >
+      <div class="grid gap-4 mt-4 sm:grid-cols-2">
+        <div class="space-y-2">
+          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
             Details (upper text)
           </h3>
-          <input
-            v-model="presence.details"
-            class="w-full md:w-3/4"
-            type="text"
-          />
+          <input v-model="presence.details" class="w-full" type="text" />
         </div>
 
-        <div class="items-center w-full md:flex md:space-x-2">
-          <h3
-            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-          >
+        <div class="space-y-2">
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">
             State (lower text)
           </h3>
-          <input v-model="presence.state" class="w-full md:w-3/4" type="text" />
+          <input v-model="presence.state" class="w-full" type="text" />
         </div>
 
-        <div class="items-center w-full md:flex md:space-x-2">
-          <h3
-            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-          >
+        <div class="space-y-2">
+          <h3 class="w-full font-medium text-gray-700 dark:text-gray-10">
             Large Image
           </h3>
           <select
             v-model="presence.largeImageKey"
-            class="w-full bg-white dark:bg-gray-700 md:w-3/4"
+            class="w-full bg-white dark:bg-gray-700"
           >
             <option selected>PreMiD</option>
             <option
@@ -82,15 +72,13 @@
           </select>
         </div>
 
-        <div class="items-center w-full md:flex md:space-x-2">
-          <h3
-            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-          >
+        <div class="space-y-2">
+          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
             Small Image
           </h3>
           <select
             v-model="presence.smallImageKey"
-            class="w-full bg-white dark:bg-gray-700 md:w-3/4"
+            class="w-full bg-white dark:bg-gray-700"
           >
             <option selected>None</option>
             <option
@@ -104,28 +92,20 @@
 
         <div
           v-if="presence.smallImageKey !== 'None'"
-          class="items-center w-full md:flex md:space-x-2"
+          class="w-full col-span-2 space-y-2"
         >
-          <h3
-            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-          >
+          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
             Small Image Text
           </h3>
-          <input
-            v-model="presence.smallImageText"
-            class="w-full md:w-3/4"
-            type="text"
-          />
+          <input v-model="presence.smallImageText" type="text" class="w-full" />
         </div>
 
-        <div class="items-center w-full md:flex md:space-x-2">
-          <h3
-            class="w-full font-medium text-gray-700 dark:text-gray-100 md:w-1/4"
-          >
+        <div class="col-span-2 space-y-2">
+          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
             Timestamps
           </h3>
 
-          <div class="grid w-full grid-cols-1 gap-2 md:w-3/4">
+          <div class="grid gap-2 sm:grid-cols-2">
             <div
               :class="{
                 'timestamp dark:text-gray-200': true,
@@ -139,7 +119,7 @@
 
             <div
               :class="{
-                'timestamp flex items-center space-x-2 justify-center cursor-default': true,
+                'timestamp cursor-default': true,
                 active: presence.timestamp.end.enabled === true,
               }"
             >
@@ -161,7 +141,7 @@
         </div>
       </div>
 
-      <div class="grid gap-4 sm:grid-cols-2">
+      <div class="grid gap-6 sm:grid-cols-2">
         <div class="space-y-2">
           <div class="bg-green-500 information dark:bg-gray-700">
             Welcome to the new look of PreMiD pages including Custom Status. I
