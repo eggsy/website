@@ -72,6 +72,7 @@
 
       <div
         class="relative flex items-center justify-center p-2 bg-gray-100 rounded h-52 sm:h-auto dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
+        :class="{ 'hidden sm:flex': !getLyrics }"
       >
         <div
           v-if="getLyrics"
@@ -121,6 +122,7 @@
           :thumbnail="
             song.metadata.thumbnail || 'http://via.placeholder.com/75'
           "
+          class="overflow-x-hidden"
           @click.native="selected = song"
         />
       </div>
