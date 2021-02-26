@@ -19,3 +19,14 @@
 .fade-leave-to {
   opacity: 0;
 }
+
+/* Slide transition */
+.slide-enter-active,
+.slide-leave-enter {
+  transform: translateY(0);
+  transition: all 0.3s linear;
+}
+.slide-enter,
+.slide-leave-to {
+  transform: translateY(100%);
+}
