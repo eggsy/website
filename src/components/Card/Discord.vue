@@ -145,35 +145,6 @@ export default {
       }
     },
     /**
-     * Checks if any of the buttons have label and returns each that has.
-     * @returns {object[]} Buttons array.
-     */
-    getButtons() {
-      const firstButton = this.buttons[0]
-      const secondButton = this.buttons[1]
-
-      const isFirstButton = firstButton?.label
-      const isSecondButton = secondButton?.label
-
-      if (!isFirstButton && !isSecondButton) return []
-
-      const buttonsArray = []
-
-      if (isFirstButton)
-        buttonsArray.push({
-          label: firstButton.label,
-          url: firstButton.url,
-        })
-
-      if (isSecondButton)
-        buttonsArray.push({
-          label: secondButton.label,
-          url: secondButton.url,
-        })
-
-      return buttonsArray
-    },
-    /**
      * Returns text related parts for the UI.
      * @returns {{details: string, state: string, small: string}}
      */

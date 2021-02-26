@@ -34,9 +34,9 @@
         :large-image="presence.largeImageKey"
         :small-image="presence.smallImageKey"
         :timestamp="presence.timestamp"
-        :buttons="presence.buttons"
         :details="presence.details"
         :state="presence.state"
+        :buttons="getButtons"
         class="shadow-lg"
       />
 
@@ -381,6 +381,35 @@ export default {
       }
     },
     /**
+     * Checks if any of the buttons have label and returns each that has.
+     * @returns {object[]} Buttons array.
+     */
+    getButtons() {
+      const firstButton = this.buttons[0]
+      const secondButton = this.buttons[1]
+
+      const isFirstButton = firstButton?.label
+      const isSecondButton = secondButton?.label
+
+      if (!isFirstButton && !isSecondButton) return []
+
+      const buttonsArray = []
+
+      if (isFirstButton)
+        buttonsArray.push({
+          label: firstButton.label,
+          url: firstButton.url,
+        })
+
+      if (isSecondButton)
+        buttonsArray.push({
+          label: secondButton.label,
+          url: secondButton.url,
+        })
+
+      return buttonsArray
+    },
+    /**
      * Checks for everything and appends data to Vue, then renders it in template.
      * @returns {Object|String} An empty object or stringified Discord readable object.
      */
@@ -388,7 +417,7 @@ export default {
       const data = this.presence
       const timestamps = data.timestamp
       const object = {
-        buttons: this.presence.buttons || [],
+        buttons: this.getButtons || [],
       }
 
       /* Large and small image */
