@@ -124,14 +124,14 @@
                 v-model="presence.buttons[0].label"
                 type="text"
                 class="w-full"
-                placeholder="Label of first button"
+                placeholder="Visit This Cool Website"
               />
 
               <input
                 v-model="presence.buttons[0].url"
                 type="text"
                 class="w-full"
-                placeholder="URL of second button"
+                placeholder="https://eggsy.xyz"
               />
             </div>
 
@@ -140,14 +140,14 @@
                 v-model="presence.buttons[1].label"
                 type="text"
                 class="w-full"
-                placeholder="Label of second button"
+                placeholder="Visit PreMiD"
               />
 
               <input
                 v-model="presence.buttons[1].url"
                 type="text"
                 class="w-full"
-                placeholder="URL of second button"
+                placeholder="https://premid.app"
               />
             </div>
           </div>
@@ -393,21 +393,29 @@ export default {
 
       if (!isFirstButton && !isSecondButton) return []
 
-      const buttonsArray = []
+      try {
+        const buttonsArray = []
 
-      if (isFirstButton)
-        buttonsArray.push({
-          label: firstButton.label,
-          url: firstButton.url,
-        })
+        // Check if they are valid URLs
+        const isFirstUrl = isFirstButton ? new URL(firstButton?.url) : false
+        const isSecondUrl = isSecondButton ? new URL(secondButton?.url) : false
 
-      if (isSecondButton)
-        buttonsArray.push({
-          label: secondButton.label,
-          url: secondButton.url,
-        })
+        if (isFirstButton && isFirstUrl)
+          buttonsArray.push({
+            label: firstButton.label,
+            url: firstButton.url,
+          })
 
-      return buttonsArray
+        if (isSecondButton && isSecondUrl)
+          buttonsArray.push({
+            label: secondButton.label,
+            url: secondButton.url,
+          })
+
+        return buttonsArray
+      } catch (_) {
+        return []
+      }
     },
     /**
      * Checks for everything and appends data to Vue, then renders it in template.
