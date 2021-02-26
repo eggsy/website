@@ -50,13 +50,13 @@
         </div>
 
         <div
-          v-if="getButtons.length !== 0"
+          v-if="buttons.length !== 0"
           class="flex-shrink-0 w-full overflow-x-hidden sm:w-1/3"
         >
           <div class="sm:ml-auto">
             <div class="grid grid-cols-1 gap-2">
               <a
-                v-for="(button, index) in getButtons"
+                v-for="(button, index) in buttons"
                 :key="`button-${index}`"
                 :href="button.url || null"
                 :title="button.url ? 'Click to follow your URL' : null"
