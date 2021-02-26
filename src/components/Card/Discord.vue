@@ -11,7 +11,7 @@
         class="flex flex-col items-center justify-between space-y-3 overflow-x-hidden sm:space-y-0 sm:space-x-3 sm:flex-row"
       >
         <div
-          class="flex items-center w-full space-x-3 overflow-x-hidden sm:w-2/3 md:space-x-5"
+          class="flex py-2 items-center w-full space-x-3 overflow-x-hidden sm:w-2/3 md:space-x-5"
         >
           <div class="relative flex-shrink-0 w-32 h-32">
             <img
