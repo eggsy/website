@@ -385,8 +385,8 @@ export default {
      * @returns {object[]} Buttons array.
      */
     getButtons() {
-      const firstButton = this.buttons[0]
-      const secondButton = this.buttons[1]
+      const firstButton = this.presence.buttons[0]
+      const secondButton = this.presence.buttons[1]
 
       const isFirstButton = firstButton?.label
       const isSecondButton = secondButton?.label
