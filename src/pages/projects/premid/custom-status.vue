@@ -393,29 +393,34 @@ export default {
 
       if (!isFirstButton && !isSecondButton) return []
 
-      try {
-        const buttonsArray = []
-
-        // Check if they are valid URLs
-        const isFirstUrl = isFirstButton ? new URL(firstButton?.url) : false
-        const isSecondUrl = isSecondButton ? new URL(secondButton?.url) : false
-
-        if (isFirstButton && isFirstUrl)
-          buttonsArray.push({
-            label: firstButton.label,
-            url: firstButton.url,
-          })
-
-        if (isSecondButton && isSecondUrl)
-          buttonsArray.push({
-            label: secondButton.label,
-            url: secondButton.url,
-          })
-
-        return buttonsArray
-      } catch (_) {
-        return []
+      const isUrl = {
+        first: false,
+        second: false,
       }
+
+      try {
+        if (isFirstButton) isUrl.first = !!new URL(firstButton?.url)
+      } catch (_) {}
+
+      try {
+        if (isSecondButton) isUrl.second = !!new URL(secondButton?.url)
+      } catch (_) {}
+
+      const buttonsArray = []
+
+      if (isFirstButton && isUrl.first)
+        buttonsArray.push({
+          label: firstButton.label,
+          url: firstButton.url,
+        })
+
+      if (isSecondButton && isUrl.second)
+        buttonsArray.push({
+          label: secondButton.label,
+          url: secondButton.url,
+        })
+
+      return buttonsArray
     },
     /**
      * Checks for everything and appends data to Vue, then renders it in template.
