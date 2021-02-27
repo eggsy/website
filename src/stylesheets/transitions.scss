@@ -30,3 +30,13 @@
 .slide-leave-to {
   transform: translateY(100%);
 }
+
+.slide-left-enter-active,
+.slide-left-leave-enter {
+  transform: translateX(0);
+  transition: all 0.2s linear;
+}
+.slide-left-enter,
+.slide-left-leave-to {
+  transform: translateX(100%);
+}
