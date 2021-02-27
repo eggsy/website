@@ -8,6 +8,13 @@ module.exports = {
   },
   theme: {
     extend: {
+      zIndex: {
+        "-1": "-1",
+        "-2": "-2",
+        "-3": "-3",
+        "-4": "-4",
+        "-5": "-5",
+      },
       colors: {
         social: {
           twitter: "#1DA1F2",
