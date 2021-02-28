@@ -54,13 +54,15 @@ export default {
     getSkillWidth() {
       const level = Number(this.level)
 
-      if (level >= 95) return "w-full"
+      if (level >= 100) return "w-full"
+      else if (level >= 95) return "w-11/12"
       else if (level >= 90) return "w-11/12"
-      else if (level >= 80) return "w-10/12"
-      else if (level >= 70) return "w-9/12"
-      else if (level >= 60) return "w-8/12"
+      else if (level >= 85) return "w-10/12"
+      else if (level >= 80) return "w-9/12"
+      else if (level >= 70) return "w-8/12"
+      else if (level >= 60) return "w-7/12"
       else if (level >= 50) return "w-6/12"
-      else if (level >= 40) return "w-4/12"
+      else if (level >= 40) return "w-5/12"
       else return "w-3/12"
     },
   },
