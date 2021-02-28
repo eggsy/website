@@ -100,17 +100,10 @@
           </div>
         </div>
 
-        <div
-          v-if="getRelatedPosts.length > 0"
-          class="p-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-opacity-75 ring-gray-200 dark:ring-gray-900"
-        >
-          <div class="w-5/6 mb-2 sm:w-4/12">
-            <h3
-              class="text-xl font-semibold leading-tight text-gray-900 uppercase dark:text-gray-100"
-            >
-              Bunlar da hoşunuza gidebilir
-            </h3>
-          </div>
+        <div v-if="getRelatedPosts.length > 0">
+          <h3 class="mb-1 text-lg font-semibold dark:text-gray-100">
+            Bunlar da hoşunuza gidebilir
+          </h3>
 
           <div class="grid gap-2 sm:grid-cols-2">
             <nuxt-link
@@ -118,7 +111,7 @@
               :key="`related-${index}`"
               :to="`/blog/gonderi/${relatedPost.slug}`"
               :class="{
-                'p-3 text-center truncate bg-gray-200 rounded-md hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-opacity-75 ring-1 ring-opacity-50 ring-gray-300 dark:ring-gray-800 dark:text-gray-300 sm:text-left': true,
+                'p-3 text-center truncate bg-gray-200 rounded-md hover:bg-gray-300 dark:bg-gray-900 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100 sm:text-left': true,
                 'sm:col-span-2':
                   Number(index) % 2 === 0 &&
                   Number(index) + 1 >= getRelatedPosts.length,
