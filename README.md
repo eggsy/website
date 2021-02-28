@@ -1,8 +1,10 @@
 ## 🔥 My Personal Website
 
+<p align="center">
+  <img src="/demo/featuring.jpg" />
+</p>
 
-
-> 🔥 This is a Nuxt.js Fully Static website, so you can use/host it anywhere!
+> This is a Nuxt.js Fully Static website, so you can use/host it anywhere!
 
 After almost a year that I have published my website's source code on GitHub, I've been working on a new and better version. All I had to do was learn TailwindCSS, Nuxt.js, and Vue.js better. It's been a long journey since I pushed myself into the TailwindCSS world, but it was amazing! It doesn't give you any components; it asks you to create your ones! And that is the most important thing to improve yourself in my opinion. It's been a great learning experience for me, and I think I've learned and improved myself a lot.
 
@@ -18,7 +20,7 @@ Website features many custom built systems, integrations and pages!
   - Completely static, no API needed, Nuxt.js Content blog ready to go!
 - ✅ Firebase integration!
   - My "Daily Song" page fetches data from Firebase to display the today's song! It's all statically generated on client!
-- ✅ TailwindCSS UI!
+- ✅ Designed with TailwindCSS!
   - Clean, beautiful, fast, and responsive UI!
   - No CSS used! The website is done without touching CSS (except some transitions and directives)
 - ✅ Over 15+ custom components!
