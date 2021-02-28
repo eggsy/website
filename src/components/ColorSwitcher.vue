@@ -1,6 +1,7 @@
 <template>
   <div
-    class="flex items-center text-gray-900 rounded-full cursor-pointer dark:text-gray-100"
+    class="flex items-center text-gray-900 rounded-full cursor-pointer select-none dark:text-gray-100"
+    @click="switchTheme('light')"
   >
     <div
       :class="{
@@ -8,7 +9,6 @@
         'bg-gray-100 dark:bg-gray-600': getSelectedTheme !== 'light',
         'bg-gray-200 dark:bg-gray-700': getSelectedTheme === 'light',
       }"
-      @click="switchTheme('light')"
     >
       <icon name="sun" class="w-4 h-4" />
     </div>
@@ -19,7 +19,6 @@
         'bg-gray-100 dark:bg-gray-600': getSelectedTheme !== 'dark',
         'bg-gray-200 dark:bg-gray-700': getSelectedTheme === 'dark',
       }"
-      @click="switchTheme('dark')"
     >
       <icon name="moon" class="w-4 h-4" />
     </div>
@@ -42,8 +41,9 @@ export default {
      * Updates the color mode value.
      * @param {'light'|'dark'} option The color mode option.
      */
-    switchTheme(option) {
-      this.$colorMode.preference = option
+    switchTheme() {
+      this.$colorMode.preference =
+        this.getSelectedTheme === "dark" ? "light" : "dark"
     },
   },
 }
