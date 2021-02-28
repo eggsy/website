@@ -2,7 +2,7 @@
   <div
     class="w-full px-6 py-4 overflow-x-hidden rounded-md bg-social-discord-dark"
   >
-    <div class="py-2 space-y-2">
+    <div class="pt-2">
       <h1 class="text-xs font-bold text-white uppercase dark:text-gray-100">
         Playing a game
       </h1>
@@ -11,7 +11,7 @@
         class="flex flex-col items-center justify-between space-y-3 overflow-x-hidden sm:space-y-0 sm:space-x-3 sm:flex-row"
       >
         <div
-          class="flex py-2 items-center w-full space-x-3 overflow-x-hidden sm:w-2/3 md:space-x-5"
+          class="flex items-center w-full py-2 space-x-3 overflow-x-hidden sm:w-2/3 md:space-x-5"
         >
           <div class="relative flex-shrink-0 w-32 h-32">
             <img
@@ -36,7 +36,7 @@
 
           <div class="overflow-x-hidden text-gray-100">
             <h1 class="block text-xl font-semibold text-white">
-              Custom Status
+              {{ title }}
             </h1>
 
             <div class="leading-tight">
@@ -79,6 +79,11 @@ import smallImages from "@/assets/files/premid/smallImages"
 
 export default {
   props: {
+    title: {
+      type: String,
+      required: true,
+      default: "Custom Status",
+    },
     largeImage: {
       type: String,
       required: false,
