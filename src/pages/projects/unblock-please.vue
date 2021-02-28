@@ -86,7 +86,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: "https://new.eggsy.xyz/projects/unblock-please",
+          href: "https://eggsy.xyz/projects/unblock-please",
         },
       ],
     }

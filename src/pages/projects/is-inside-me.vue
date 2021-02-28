@@ -103,7 +103,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: "https://new.eggsy.xyz/projects/is-inside-me",
+          href: "https://eggsy.xyz/projects/is-inside-me",
         },
       ],
     }

@@ -162,7 +162,7 @@ export default {
 
     const image = this.getPostImage || false
     const tags = this.getTags?.join(", ") || title || "etiket"
-    const href = `https://new.eggsy.xyz${this.$route?.path}`
+    const href = `https://eggsy.xyz${this.$route?.path}`
 
     const object = {
       title,
@@ -217,11 +217,6 @@ export default {
         {
           name: "article:published-time",
           content: this.post?.createdAt || null,
-        },
-        // PreMiD
-        {
-          name: "premid-details",
-          content: title,
         },
       ],
       link: [

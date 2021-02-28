@@ -18,7 +18,7 @@
       <input
         ref="share-url"
         readonly
-        :value="`https://new.eggsy.xyz${path}`"
+        :value="`https://eggsy.xyz${path}`"
         class="w-full p-3 rounded-md sm:py-3 sm:px-4 ring-1 ring-opacity-25 ring-gray-800 focus:outline-none dark:bg-gray-800 dark:text-gray-100"
         @click="share('url')"
       />

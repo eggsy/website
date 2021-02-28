@@ -357,7 +357,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: "https://new.eggsy.xyz/projects/premid/custom-status",
+          href: "https://eggsy.xyz/projects/premid/custom-status",
         },
         {
           rel: "prefetch",

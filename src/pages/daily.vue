@@ -180,7 +180,7 @@ export default {
         {
           hid: "og:url",
           name: "og:url",
-          content: `https://new.eggsy.xyz/daily`,
+          content: `https://eggsy.xyz/daily`,
         },
         {
           hid: "og:image",
@@ -203,20 +203,11 @@ export default {
           name: "twitter:image",
           content: image,
         },
-        // PreMiD
-        {
-          name: "premid-details",
-          content: "In a page:",
-        },
-        {
-          name: "premid-details",
-          content: "Daily Song",
-        },
       ],
       link: [
         {
           rel: "canonical",
-          href: `https://new.eggsy.xyz/daily`,
+          href: `https://eggsy.xyz/daily`,
         },
       ],
     }
