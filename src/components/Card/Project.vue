@@ -9,7 +9,7 @@
       class="rounded-tl rounded-tr"
     />
 
-    <div class="p-4">
+    <div v-if="title || description" class="p-4">
       <h3
         class="text-lg font-medium text-gray-900 truncate hover:underline dark:text-gray-100"
         :title="title"
@@ -32,7 +32,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
+      required: false,
       default: "",
     },
     image: {
