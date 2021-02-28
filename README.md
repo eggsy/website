@@ -72,6 +72,6 @@ You can take a look at [old.eggsy.xyz](https://old.eggsy.xyz) and compare it you
   <img src="/demo/old-vs-new4.jpg" title="No page lol" />
 </p>
 
-#### 🙏 Thanks
+### 🙏 Thanks
 
 This project wouldn't be possible if Nuxt.js team wouldn't have created such an amazing framework, and of course Vue.js is the king 👑 TailwindCSS is a really good CSS utility framework that helped me a lot and I can't get myself out of it anymore! Last but not least, I'd like to thank to the module authors, they're all amazing and I appreciate your work!
