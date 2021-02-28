@@ -13,7 +13,7 @@
 
         <div class="hidden space-x-2 sm:flex">
           <nuxt-link
-            v-for="(link, index) in links"
+            v-for="(link, index) in getCurrentRouteLinks"
             :key="`link-${index}`"
             :to="link.to"
             class="px-2 py-1 text-gray-800 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200"
@@ -50,7 +50,7 @@
 
               <div class="space-y-2">
                 <nuxt-link
-                  v-for="(link, index) in links"
+                  v-for="(link, index) in getCurrentRouteLinks"
                   :key="`link-${index}`"
                   :to="link.to"
                   class="flex justify-center px-4 py-2 text-gray-800 bg-gray-300 rounded-md dark:text-gray-200 dark:bg-gray-700"
@@ -99,23 +99,48 @@ export default {
   data() {
     return {
       mobileMenu: false,
-      links: [
-        {
-          title: "Blog",
-          to: "/blog/",
-        },
-        {
-          title: "Projects",
-          to: "/#projects",
-        },
-        {
-          title: "Repositories",
-          to: "/#repositories",
-        },
-      ],
+      links: {
+        default: [
+          {
+            title: "Blog",
+            to: "/blog/",
+          },
+          {
+            title: "Projects",
+            to: "/#projects",
+          },
+          {
+            title: "Repositories",
+            to: "/#repositories",
+          },
+        ],
+        premid: [
+          {
+            title: "Home",
+            to: "/projects/premid/",
+          },
+          {
+            title: "Custom Status",
+            to: "/projects/premid/custom-status",
+          },
+          {
+            title: "Metadata Creator",
+            to: "/projects/premid/mdcreator",
+          },
+        ],
+      },
     }
   },
   computed: {
+    /**
+     * Checks if route has special links and returns the array according to that.
+     * @returns {Array.<{title: string, to: string}>}
+     */
+    getCurrentRouteLinks() {
+      if (this.$route.path.startsWith("/projects/premid"))
+        return this.links.premid
+      else return this.links.default
+    },
     /**
      * Returns the selected color mode value.
      * @returns {'light'|'dark'} The color mode as "light" or "dark".
