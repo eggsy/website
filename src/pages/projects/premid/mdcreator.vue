@@ -111,6 +111,10 @@
               <div class="overflow-y-auto h-4/5 scrollbar">
                 <div
                   class="px-2 pb-4 space-y-1 text-gray-800 dark:text-gray-200"
+                  :class="{
+                    'h-full flex justify-center items-center':
+                      service.url.list.length === 0,
+                  }"
                 >
                   <div
                     v-for="(url, index) in service.url.list"
@@ -126,6 +130,13 @@
                       title="Click to remove this URL"
                       @click.native="removeItem(url, 'url')"
                     />
+                  </div>
+
+                  <div
+                    v-if="service.url.list.length === 0"
+                    class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                  >
+                    Enter URL and hit enter
                   </div>
                 </div>
               </div>
@@ -146,6 +157,10 @@
               <div class="overflow-y-auto h-4/5 scrollbar">
                 <div
                   class="px-2 pb-4 space-y-1 text-gray-800 dark:text-gray-200"
+                  :class="{
+                    'h-full flex justify-center items-center':
+                      service.tags.list.length === 0,
+                  }"
                 >
                   <div
                     v-for="(tag, index) in service.tags.list"
@@ -161,6 +176,13 @@
                       title="Click to remove this tag"
                       @click.native="removeItem(tag, 'tag')"
                     />
+                  </div>
+
+                  <div
+                    v-if="service.tags.list.length === 0"
+                    class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                  >
+                    Enter tag name and hit enter
                   </div>
                 </div>
               </div>
@@ -192,6 +214,10 @@
                 <div class="overflow-y-auto h-2/3 scrollbar">
                   <div
                     class="px-2 pb-4 space-y-1 text-gray-800 dark:text-gray-200"
+                    :class="{
+                      'h-full flex justify-center items-center':
+                        service.description.list.length === 0,
+                    }"
                   >
                     <div
                       v-for="(description, index) in service.description.list"
@@ -214,6 +240,13 @@
                           removeItem(description.langCode, 'description')
                         "
                       />
+                    </div>
+
+                    <div
+                      v-if="service.description.list.length === 0"
+                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                    >
+                      Fill the inputs and hit enter
                     </div>
                   </div>
                 </div>
@@ -333,6 +366,8 @@
                   <div
                     class="flex items-center h-full px-4 mx-auto space-x-6 overflow-x-auto scrollbar"
                     :class="{
+                      'flex items-center justify-center w-full':
+                        service.contributors.list.length === 0,
                       'py-2': service.contributors.list.length > 0,
                     }"
                   >
@@ -349,6 +384,13 @@
                           removeItem(contributor.id, 'contributor')
                         "
                       />
+                    </div>
+
+                    <div
+                      v-if="service.contributors.list.length === 0"
+                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                    >
+                      Fill the inputs and hit enter
                     </div>
                   </div>
                 </div>
@@ -372,6 +414,8 @@
                   <div
                     class="flex items-center h-full px-4 mx-auto space-x-6 overflow-x-auto scrollbar"
                     :class="{
+                      'flex items-center justify-center w-full':
+                        service.contributors.list.length === 0,
                       'py-2': service.altnames.list.length > 0,
                     }"
                   >
@@ -386,6 +430,13 @@
                         title="Click to remove this alternative name"
                         @click.native="removeItem(altname, 'altname')"
                       />
+                    </div>
+
+                    <div
+                      v-if="service.altnames.list.length === 0"
+                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                    >
+                      Enter a name and hit enter
                     </div>
                   </div>
                 </div>
