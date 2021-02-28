@@ -1,56 +1,75 @@
-## EGGSY's Personal Website
+## 🔥 My Personal Website
 
-> ⚠ Still work in progress... Will be merged with `master` branch when it is done. Until then, you can visit [this website](https://new.eggsy.xyz) to see it in action.
 
-This website, also known as eggsy.codes or eggsy.xyz was first created in HTML, Bootstrap, and then it was moved to Vue.js and Vuetify. Though I liked and worked hard on the previous versions, my current knowledge and skills about web development is able to create something more unique and new. Here is the source code of my entire website, written in Nuxt.js and TailwindCSS!
 
-This branch, will take place of old eggsy.xyz when I am done working on it. It is almost done, I am just taking my time to think more and more about the way I want my website to be. I will only list the updates and what have I done so far, there won't be installation steps until I am done with it. Then I will update this README file.
+> 🔥 This is a Nuxt.js Fully Static website, so you can use/host it anywhere!
 
-### What has changed so far?
+After almost a year that I have published my website's source code on GitHub, I've been working on a new and better version. All I had to do was learn TailwindCSS, Nuxt.js, and Vue.js better. It's been a long journey since I pushed myself into the TailwindCSS world, but it was amazing! It doesn't give you any components; it asks you to create your ones! And that is the most important thing to improve yourself in my opinion. It's been a great learning experience for me, and I think I've learned and improved myself a lot.
 
-Well, basically everything. My entire website is now being written in [Nuxt.js](https://nuxtjs.org) (static mode) and [TailwindCSS](https://tailwindcss.com). If you are not familiar with these two great things, check them out especially if you are looking for something to design your website. But I have to warn you that it is not easy as your favourite UI framework with many components and etc., like Vuetify or Bootstrap. You have to design everything yourself using the provided utility classes. When you get the hang of TailwindCSS, you will be able to create more and more beautiful websites everyday, and that's what I am doing right now.
+It is my website that I use daily, so I had to include everything that I needed. You'll see some pages that may not be suitable for you, but this is a real-world app, and I need them 😅
 
-### Updated homepage
+### ✨ What is included?
 
-I find the old design a bit "unresponsive" since the way I code includes many _fixed_ height and width settings, which lead my old homepage to look weird and "not nice" on larger screens. Now, with the new look, I wanted to design something "more about myself" and I created a page like a small portfolio about where I live, what I do and did in the past and my GitHub repositories including this one. It looks well until I get bored of this too 😅
+Website features many custom built systems, integrations and pages!
+
+- ✅ Sections for a freelancer!
+  - Projects, experiences, skills, GitHub repositories, and social media accounts.
+- ✅ Static blog!
+  - Completely static, no API needed, Nuxt.js Content blog ready to go!
+- ✅ Firebase integration!
+  - My "Daily Song" page fetches data from Firebase to display the today's song! It's all statically generated on client!
+- ✅ TailwindCSS UI!
+  - Clean, beautiful, fast, and responsive UI!
+  - No CSS used! The website is done without touching CSS (except some transitions and directives)
+- ✅ Over 15+ custom components!
+  - Custom props, styles, and classes!
+
+### 🔧 Getting Started
+
+If you are interested in downloading the code, compiling it and running it, you need some tools!
+
+First of all, all of the systems require [Node.js](https://nodejs.org/) to work, so you'll have to download it and install it on your device. This program comes with a package manager called `NPM` where you'll use to download all the dependencies of this project, including (but not limited to) Nuxt.js, Vue.js and TailwindCSS.
+
+If you aren't already using `yarn`, I recommend yarn because it is faster and runs better on most machines. You can install yarn globally to your system using `npm install yarn -g` command. Then you'll have access to `yarn` on your terminal (you might need to restart it).
+
+- Download the source as a ZIP folder or clone it via `git` using the `git clone` command.
+- Install dependencies with your preffered package manager.
+  - With yarn: `yarn`
+  - With NPM: `npm install`
+- If you are going to use Firebase, you'll need to rename `.env.example` to `.env` and fill the config.
+  - **P.S.** You don't need Firebase in this project except for the Daily page. If you are not going to create one for your own, or use Firebase for other purposes, you'll have to do this step. Otherwise you can just remove the file, delete the parts where it is imported and used, then you'll be ready to go.
+- Now you can start the app using one of these commands.
+  - For development:
+    - With yarn: `yarn dev`
+    - With NPM: `npm run dev`
+  - To build and compile:
+    - With yarn: `yarn generate` (or `yarn build`)
+    - With NPM: `npm run generate` or (`npm run build`)
+
+If you are wondering about **how to host it on free/paid static hosting services** like (Netlify, Vercel etc.), you can refer to [Nuxt.js docs](https://nuxtjs.org/docs/2.x/deployment/netlify-deployment). My project is hosted on Netlify.
+
+### ❓ What has changed?
+
+If you are wondering what has changed and what are the differences from the old version; I can only say: "EVERYTHING!"
+
+You can take a look at [old.eggsy.xyz](https://old.eggsy.xyz) and compare it yourself 😂 You can already say UI is a lot nicer and there are some additional pages in this new one! But I also had to remove some features, including my whole API for "Overlay Creator" (it's still available under the `old.eggsy.xyz` domain but you won't be able to access it anymore from the main domain).
 
 <p align="center">
-  <img src="./demo/homepage-dark.png" alt="homepage dark" />
-  <a href="./demo/homepage.png">See it in light mode</a> - <a href="https://eggsy.xyz/?utm_source=github-tailwind-readme">See its old design</a>
+  <img src="/demo/old-vs-new1.jpg" />
 </p>
-
-### Updated blog
-
-I have always felt my old blog was a bit "childish", simple rounded boxes and ugly UI in general. Now that I have learned TailwindCSS, I was able to create something that looks "more like a blog" and I am happy with the design so far. _Yes, it is still Turkish._
 
 <p align="center">
-  <img src="./demo/blog-homepage-dark.png" alt="blog homepage dark" />
-  <a href="./blog-homepage.png">See it in light mode</a> - <a href="https://eggsy.xyz/blog?utm_source=github-tailwind-readme">See its old design</a>
+  <img src="/demo/old-vs-new2.jpg" />
 </p>
-
-And the posts more feel like that you are reading a blog post now.
 
 <p align="center">
-  <img src="./demo/blog-post-dark.png" alt="blog homepage dark" />
-  <a href="./demo/blog-post.png">See it in light mode</a> - <a href="https://eggsy.xyz/blog/gonderi/site-artik-acik-kaynak?utm_source=github-tailwind-readme">See a post in old design</a>
+  <img src="/demo/old-vs-new3.jpg" />
 </p>
-
-### New look of PreMiD's Custom Status page!
-
-This is the most _valuable_ page in my website. Ever since I created the [Custom Status presence](https://premid.app/store/presences/Custom%20Status) for PreMiD, this page started getting more and more hits. Now it's the page that gets most hits, and just like all pages, I redesigned it and cleaned the code, A LOT!
 
 <p align="center">
-  <img src="./demo/custom-status-dark.png" alt="blog homepage dark" />
-  <a href="./demo/homepage.png">See it in light mode</a> - <a href="https://eggsy.xyz/projects/premid/custom-status?utm_source=github-tailwind-readme">See its old design</a>
+  <img src="/demo/old-vs-new4.jpg" title="No page lol" />
 </p>
 
-### And least but most important; Song Recommendations
+#### 🙏 Thanks
 
-You know how I feel about the music I listen to 😅 I look to share what I listen, and for almost 3 years, I have been sharing it my followers with my bot and old `eggsy.xyz`. Now, I think it deserves its own page.
-
-<p align="center">
-  <img src="./demo/daily-dark.png" alt="blog homepage dark" />
-  <a href="./demo/daily.png">See it in light mode</a>
-</p>
-
-Remember, this README file is like a changelog for now, I will include installation steps in the future but for now, it will stay like this. Hope you like the website as much as I do.  Remember to check all of those pages in [old website](https://eggsy.xyz) before you miss it!
+This project wouldn't be possible if Nuxt.js team wouldn't have created such an amazing framework, and of course Vue.js is the king 👑 TailwindCSS is a really good CSS utility framework that helped me a lot and I can't get myself out of it anymore! Last but not least, I'd like to thank to the module authors, they're all amazing and I appreciate your work!
