@@ -1,124 +1,101 @@
 <template>
-  <div>
-    <section
-      class="flex items-center justify-center w-full mt-12 space-x-2 sm:mt-24 dark:text-gray-200"
-    >
-      <nuxt-link class="sm:hidden" to="/">
-        <icon name="arrow-left" class="w-6 h-6" />
-      </nuxt-link>
+  <div class="py-6 space-y-6">
+    <div class="space-y-4 sm:w-9/12">
+      <header class="space-y-2">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+          Unblock Please
+        </h2>
 
-      <icon name="lock-open" class="hidden w-6 h-6 sm:block" />
+        <p class="text-gray-800 dark:text-gray-200">
+          Free to use Chrome extension to unblock Imgur and Pastebin. Some
+          countries or ISPs block access to these services but these both
+          services are the leaders of their concepts. You are most likely to
+          face with an Imgur or Pastebin link but can't open it because it is
+          blocked. With Unblock Please, you can
+          <i>legally</i> access these two services easily!
+        </p>
+      </header>
 
-      <a :href="getLink.webstore" rel="noreferrer" target="_blank"
-        ><h2 class="text-2xl font-bold">Unblock Please</h2></a
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+        <CardProject image="https://i.imgur.com/eBnUzau.png" />
+
+        <CardProject
+          image="https://i.imgur.com/muOyZEq.png"
+          class="hidden sm:block"
+        />
+
+        <CardProject image="https://i.imgur.com/s5prb2j.png" />
+      </div>
+    </div>
+
+    <div class="items-center space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
+      <a
+        :href="getLink.webstore"
+        target="_blank"
+        rel="noreferrer"
+        class="button"
       >
-    </section>
+        <icon name="inbox-in" class="w-6 h-6" />
+        <span>Install to Chrome</span>
+      </a>
 
-    <section
-      class="mx-auto mt-12 text-justify sm:mt-24 space-y-14 sm:space-y-28"
-    >
-      <!-- What is Unblock Please? -->
-      <div class="items-center justify-between sm:flex">
-        <div class="sm:w-6/12">
-          <h2 class="project-title">
-            What is
-            <a
-              :href="getLink.webstore"
-              class="text-red-600"
-              rel="noreferrer"
-              target="_blank"
-              >Unblock Please?</a
-            >
-          </h2>
-
-          <p class="dark:text-gray-300">
-            It is a Chrome extension that allows you to unblock the Imgur and
-            Pastebin restrictions. Some countries or ISPs block access to these
-            services but these both services are the leaders of their concepts.
-            You are most likely to face with an Imgur or Pastebin link but can't
-            open it because of your country or ISP blocks it. With Unblock
-            Please, you can <i>legally</i> access these two services easily!
-          </p>
-        </div>
-
-        <SkeletonLoader
-          type="image"
-          image-url="https://i.imgur.com/UPyx8hT.png"
-          class="hidden sm:block"
-        />
-      </div>
-
-      <!-- What's cool about it? -->
-      <div class="items-center justify-between sm:flex">
-        <SkeletonLoader
-          type="image"
-          image-url="https://i.imgur.com/3FZZZA5.png"
-          class="hidden sm:block"
-        />
-
-        <div class="ml-auto text-right sm:w-6/12">
-          <h2 class="project-title">
-            What's cool about <span class="text-red-600">it?</span>
-          </h2>
-
-          <p class="dark:text-gray-300">
-            Just like everything I have created these days, it is written in
-            Vue, and using Vue, I was able to build cool stuff such as local
-            statistics of how many times it unblocked those two services and
-            when was the last time. You can also disable and enable one (or
-            both) of the services if it is unblocked already or you just don't
-            want extension to deal with it.
-          </p>
-        </div>
-      </div>
-
-      <div class="items-center justify-between sm:flex">
-        <div class="sm:w-6/12">
-          <h2 class="project-title">
-            Is it <span class="text-red-600">free?</span>
-          </h2>
-
-          <p class="dark:text-gray-300">
-            Yes, it is. There is no additional prices or any packages comes with
-            it. It is completely
-            <a :href="getLink.github"><strong>open-source</strong></a> and free
-            on the Chrome Webstore! You can add it with just a single click and
-            surf on Imgur and/or Pastebin!
-          </p>
-        </div>
-
-        <SkeletonLoader
-          type="image"
-          image-url="https://i.imgur.com/v86245Y.png"
-          class="hidden sm:block"
-        />
-      </div>
-
-      <!-- Are you ready? -->
-      <div class="mx-auto text-center sm:w-5/12">
-        <h2 class="project-title">Are you ready?</h2>
-
-        <div class="text-gray-800 dark:text-gray-300">
-          <a
-            :href="getLink.webstore"
-            class="font-medium text-red-600"
-            rel="noreferrer"
-            target="_blank"
-            >Click here</a
-          >
-          to add it to your browser and start using Unblock Please!
-        </div>
-      </div>
-    </section>
+      <a :href="getLink.github" target="_blank" rel="noreferrer" class="button">
+        <icon name="github" class="w-6 h-6" />
+        <span>Source Code</span>
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  head: {
-    title: "Unblock Please",
+  head() {
+    const title = "Unblock Please"
+    const description =
+      "Free to use Chrome extension to unblock Imgur and Pastebin using custom and secure proxies!"
+
+    return {
+      title,
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: title,
+        },
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: "https://new.eggsy.xyz/projects/unblock-please",
+        },
+      ],
+    }
   },
   computed: {
+    /**
+     * Returns the project link from runtime config.
+     * @returns {string}
+     */
     getLink() {
       return this.$config.links.unblockPlease
     },
@@ -127,11 +104,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a {
-  @apply hover:underline;
-}
-
-.project-title {
-  @apply text-xl font-semibold text-gray-800 dark:text-gray-200;
+.button {
+  @apply flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100;
 }
 </style>
