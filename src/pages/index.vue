@@ -201,7 +201,7 @@ export default {
           description:
             "PreMiD is a simple, configurable utility that allows you to show what you're doing on the web in your Discord now playing status.",
           image: "https://i.imgur.com/xel4zVp.jpg",
-          href: "https://premid.app",
+          to: "/projects/premid",
         },
         {
           title: "This Website",
@@ -269,17 +269,17 @@ export default {
         {
           title: "JavaScript",
           icon: "javascript",
-          level: 95,
+          level: 100,
         },
         {
           title: "HTML5",
           icon: "html",
-          level: 95,
+          level: 100,
         },
         {
           title: "Nuxt.js",
           icon: "nuxtjs",
-          level: 90,
+          level: 95,
         },
         {
           title: "Vue.js",
@@ -287,8 +287,8 @@ export default {
           level: 85,
         },
         {
-          title: "TypeScript",
-          icon: "typescript",
+          title: "TailwindCSS",
+          icon: "tailwindcss",
           level: 80,
         },
         {
@@ -297,14 +297,14 @@ export default {
           level: 80,
         },
         {
-          title: "TailwindCSS",
-          icon: "tailwindcss",
-          level: 75,
+          title: "TypeScript",
+          icon: "typescript",
+          level: 80,
         },
         {
           title: "Sass",
           icon: "sass",
-          level: 70,
+          level: 75,
         },
         {
           title: "WordPress",
