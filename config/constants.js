@@ -12,6 +12,9 @@ export default {
         "https://chrome.google.com/webstore/detail/unblock-please/lpngbkmgnehdkkobdbieckjpphkohffd/?utm_source=eggsy.xyz",
       github: "https://github.com/eggsy/unblock-please/?utm_source=eggsy.xyz",
     },
-    isInsideMe: "https://is-inside.me/?utm_source=eggsy.xyz",
+    isInsideMe: {
+      website: "https://is-inside.me/?utm_source=eggsy.xyz",
+      faq: "https://is-inside.me/faq/?utm_source=eggsy.xyz",
+    },
   },
 }
