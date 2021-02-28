@@ -16,11 +16,11 @@
   <div
     v-else-if="type === 'image' && imageUrl"
     :class="{
-      'bg-gray-100 dark:bg-gray-700 animate-pulse': itemLoaded === false,
+      'bg-gray-100 dark:bg-gray-700 animate-pulse bg-no-repeat':
+        itemLoaded === false,
     }"
     :style="{
-      background:
-        itemLoaded === true ? `url('${imageUrl}') no-repeat center` : '',
+      background: itemLoaded === true ? `url('${imageUrl}') center` : '',
       backgroundSize: itemLoaded === true ? backgroundSize : '',
     }"
   >
