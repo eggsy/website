@@ -9,7 +9,7 @@ related:
   - discord-server-templates-yayinda
 ---
 
-Kapanalı bir buçuk yıl olan Discord botumun destek sunucusu, birkaç gün öncesine kadar ölü ve tek kanallı bir sunucu olmasına rağmen içerisinde hâlâ bekleyen 100 aktif, 400 tane de toplam kullanıcı için sunucumu yenileyip, kendime özel bir ortam yaratmak istememin ardından sonunda Discord sunucumu istediğim gibi bir sunucu hâline getirmeyi başardım. Bundan sonra artık Discord sunucumda da botun dışında yaptığım projeler hakkında bilgilendirmeler, duyurular ve gelişmeler paylaşacağım. İsterseniz bu yazıyı okuyabilir isterseniz de [buraya](https://discord.eggsy.xyz) tıklayarak hiç zaman kaybetmeden kendiniz sunucuma gelerek gözlerinizle inceleyebilirsiniz.
+Kapanalı bir buçuk yıl olan Discord botumun destek sunucusu, birkaç gün öncesine kadar ölü ve tek kanallı bir sunucu olmasına rağmen içerisinde hâlâ bekleyen 100 aktif, 400 tane de toplam kullanıcı için sunucumu yenileyip, kendime özel bir ortam yaratmak istememin ardından sonunda Discord sunucumu istediğim gibi bir sunucu hâline getirmeyi başardım. Bundan sonra artık Discord sunucumda da botun dışında yaptığım projeler hakkında bilgilendirmeler, duyurular ve gelişmeler paylaşacağım. İsterseniz bu yazıyı okuyabilir isterseniz de [ana sayfaya](/) buraya tıklayarak hiç zaman kaybetmeden kendiniz sunucuma gelerek gözlerinizle inceleyebilirsiniz.
 
 ### Sunucuda neler değişti?
 
