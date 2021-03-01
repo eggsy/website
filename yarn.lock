@@ -4404,10 +4404,10 @@ core-js@^2.4.0, core-js@^2.6.5:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.9.0.tgz#790b1bb11553a2272b36e2625c7179db345492f8"
-  integrity sha512-PyFBJaLq93FlyYdsndE5VaueA9K5cNB7CGzeCj191YYLhkQM0gdZR2SKihM70oF0wdqKSKClv/tEBOpoRmdOVQ==
+core-js@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.9.1.tgz#cec8de593db8eb2a85ffb0dbdeb312cb6e5460ae"
+  integrity sha512-gSjRvzkxQc1zjM/5paAmL4idJBFzuJoo+jDjF1tStYFMV2ERfD02HhahhCGXUyHxQRG4yFKVSdO6g62eoRMcDg==
 
 core-util-is@~1.0.0:
   version "1.0.2"
@@ -8436,10 +8436,10 @@ nuxt-helmet@^2.0.0:
     consola "^2.11.3"
     helmet "^4.0.0"
 
-nuxt-vite@^0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/nuxt-vite/-/nuxt-vite-0.0.18.tgz#84f019f01f6ef18bbd65ab436707d6ad08c393c6"
-  integrity sha512-fx/VfGQEa7uSZeIf7qpV2L7JG4xY81jYZLi60yYFIsrCN/qW3f9zF6zUSvJcfAeipZFsN49f+F6KqXB3iPn8tg==
+nuxt-vite@^0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/nuxt-vite/-/nuxt-vite-0.0.22.tgz#163db81a164225fddc07b23d8224131db20379df"
+  integrity sha512-2oRWXMz4PdGGrXfgxm19VHLfhl5pN3yHwYIDwb3bTSCnHv0/HdMWyxhlX6n8NcJhJzfXEgikI0Mz+7mLnioHyw==
   dependencies:
     "@nuxt/http" "^0.6.4"
     chokidar "^3.5.1"
