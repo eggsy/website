@@ -4,7 +4,7 @@
     class="grid grid-cols-1 gap-6 sm:grid-cols-2 dark:text-gray-200"
   >
     <div>
-      <h4>Önceki Gönderi</h4>
+      <h4 class="font-medium">Önceki Gönderi</h4>
 
       <nuxt-link v-if="prev" :to="`/blog/gonderi/${prev.slug}`">
         <h5>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="text-right">
-      <h4>Sonraki Gönderi</h4>
+      <h4 class="font-medium">Sonraki Gönderi</h4>
 
       <nuxt-link v-if="next" :to="`/blog/gonderi/${next.slug}`">
         <h5>
@@ -64,11 +64,11 @@ div {
   }
 
   h4 {
-    @apply block text-lg font-semibold text-gray-900 dark:text-gray-100;
+    @apply block text-lg font-medium text-gray-900 dark:text-gray-100;
   }
 
   h5 {
-    @apply text-xl font-light text-gray-800 truncate dark:text-gray-200;
+    @apply text-xl font-light text-gray-700 truncate dark:text-gray-300;
   }
 }
 </style>
