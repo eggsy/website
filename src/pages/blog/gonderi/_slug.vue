@@ -316,7 +316,7 @@ header h1.quicksand {
     }
 
     &:not(:last-child) {
-      @apply mb-4;
+      @apply mb-5;
     }
   }
 
