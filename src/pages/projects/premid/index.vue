@@ -14,7 +14,7 @@
               Welcome to the landing page of my PreMiD tools! From here, you can
               access the tools that I've created for PreMiD for free. If you
               like my work, please consider following me on social media and
-              <nuxt-link to="{name: 'donate'}" class="font-medium underline"
+              <nuxt-link :to="{ name: 'donate' }" class="font-medium underline"
                 >donate</nuxt-link
               >
               if you liked my work.
