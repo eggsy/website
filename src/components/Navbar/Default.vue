@@ -110,8 +110,8 @@ export default {
             to: "/#projects",
           },
           {
-            title: "Repositories",
-            to: "/#repositories",
+            title: "Donate",
+            to: "/donate",
           },
         ],
         premid: [
