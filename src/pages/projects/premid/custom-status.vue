@@ -255,15 +255,15 @@
             </h2>
 
             <p class="text-gray-700 dark:text-gray-200">
-              If you want to support my work here, you can contact with me on
-              <a
-                href="https://discord.com/users/162969778699501569"
-                title="Click to visit my profile"
-                rel="noreferrer"
-                target="_blank"
-                >Discord</a
-              >. My username is <strong>EGGSY#3388</strong> and you can find me
-              on PreMiD's Discord server. Thank you for your contributions!
+              If you want to support my work and make me create better systems
+              in the future, you can donate me through Patreon, please visit
+              <nuxt-link
+                :to="{ name: 'donate' }"
+                class="font-medium hover:underline"
+              >
+                my donate page
+              </nuxt-link>
+              for more information.
             </p>
           </div>
         </div>
