@@ -102,6 +102,7 @@ export default {
       "Like my projects? You can donate me to boost my performance and make me create more, better projects in the future!"
 
     return {
+      title,
       meta: [
         {
           hid: "og:title",
