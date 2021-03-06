@@ -452,9 +452,20 @@
                 </p>
 
                 <p>
-                  If you wish to report a bug, a feature request or contact me
-                  in general, you can visit my website's GitHub repository and
-                  leave an issue.
+                  🐛 If you wish to report a bug, a feature request or contact
+                  me in general, you can visit my website's GitHub repository
+                  and leave an issue.
+                </p>
+
+                <p>
+                  🎉 If you liked my work, please consider donating to see more
+                  tools like this. Visit
+                  <nuxt-link
+                    :to="{ name: 'donate' }"
+                    class="font-medium underline"
+                    >donation</nuxt-link
+                  >
+                  page for more information.
                 </p>
               </div>
             </div>
