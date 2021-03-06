@@ -9,18 +9,45 @@
             Donate
           </h1>
 
-          <div class="space-y-2">
-            <p class="text-gray-800 dark:text-gray-200">
+          <div class="space-y-2 text-gray-800 dark:text-gray-200">
+            <p>
               If you like my projects and/or what I do and you want to
               contribute, make me happy, you can donate to me with the
               information on this page! Thank you ♥
             </p>
-            <small class="text-sm">
-              P.S. Use the name "Abdulbaki Dursun" on your transactions.
-            </small>
+
+            <p>
+              <small class="text-sm">
+                P.S. Use the name "Abdulbaki Dursun" on your transactions.
+              </small>
+            </p>
           </div>
         </div>
       </header>
+
+      <section class="space-y-4">
+        <h2 class="text-lg text-gray-900 dark:text-gray-100">Support Me On</h2>
+
+        <div class="grid gap-4">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            :href="getSponsorLinks.patreon"
+            class="w-max"
+          >
+            <div
+              class="flex items-center px-4 py-2 space-x-2 rounded cursor-pointer hover:bg-opacity-95 bg-social-patreon"
+            >
+              <SkeletonLoader
+                type="image"
+                image-url="https://i.imgur.com/G6fNWpu.png"
+                class="rounded w-7 h-7"
+              />
+              <span class="text-gray-100">Become a Patron</span>
+            </div>
+          </a>
+        </div>
+      </section>
 
       <section class="space-y-4">
         <h2 class="text-lg text-gray-900 dark:text-gray-100">My Accounts</h2>
@@ -56,7 +83,7 @@
 
                 <span
                   v-else
-                  class="underline cursor-pointer"
+                  class="text-gray-800 underline cursor-pointer dark:text-gray-200"
                   @click="account.revealed = true"
                 >
                   Click to reveal
@@ -137,6 +164,15 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    /**
+     * Returns the Sponsor object in runtime config.
+     * @returns {object}
+     */
+    getSponsorLinks() {
+      return this.$config.sponsor
+    },
   },
 }
 </script>

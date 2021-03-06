@@ -6,6 +6,9 @@ export default {
     instagram: "https://instagram.com/eggsy_dev?utm_source=eggsy.xyz",
     trello: "https://trello.com/b/XtWZFFiH?utm_source=eggsy.xyz",
   },
+  sponsor: {
+    patreon: "https://www.patreon.com/eggsy/?utm_source=eggsy.xyz",
+  },
   links: {
     unblockPlease: {
       webstore:
