@@ -12097,6 +12097,11 @@ vue-client-only@^2.0.0:
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
 
+vue-disqus@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/vue-disqus/-/vue-disqus-4.0.1.tgz#9ec040c575f3b87f3ef4bf43477ff20f06cc57dc"
+  integrity sha512-LCmEF4UqLMmMZaZwdMWZ5OO0imu/Cy0pZcr7c0QV7iJk1H9VWKUyxqO7+NNY8hhlAQXTdEq+Hv5tzOA9CfpjdA==
+
 vue-eslint-parser@^7.1.1, vue-eslint-parser@^7.5.0:
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.5.0.tgz#b68221c55fee061899afcfb4441ec74c1495285e"
@@ -12197,10 +12202,10 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue-tippy@^4.7.3:
-  version "4.7.3"
-  resolved "https://registry.yarnpkg.com/vue-tippy/-/vue-tippy-4.7.3.tgz#e792bb9337ddf633caacfe115c90cd5c120c712e"
-  integrity sha512-cbDv1HxuP0KKqgu5DNaNA1PnPwLyzrI75XBGmviOmGbsU/AVyoqg7/QhVkwnOgSS7bU2Cnv4YFrfkFcBUp7qhg==
+vue-tippy@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/vue-tippy/-/vue-tippy-4.8.0.tgz#fb93b562b43f15c5343124c7b8d0dc35b98da547"
+  integrity sha512-aGejh4EsJdTwmiaMVGlJCDzeTk7ulZOGC8UIPrm2yzw3cNJD83MA0xFJPzp3BBOdnea/3vCznsvO+CWwMUJ3ng==
   dependencies:
     humps "^2.0.1"
     tippy.js "^4.3.5"

@@ -29,7 +29,8 @@
     "sass-loader": "10.1.1",
     "tailwind-scrollbar": "^1.2.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vue-tippy": "^4.7.3"
+    "vue-disqus": "^4.0.1",
+    "vue-tippy": "^4.8.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.4",
