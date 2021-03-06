@@ -71,7 +71,7 @@
         </div>
       </article>
 
-      <Disqus class="mt-10" />
+      <Disqus :title="post.title" lang="tr" class="mt-10" />
 
       <div class="mt-10 space-y-10">
         <BlogPrevNext :current-slug="post.slug" />
