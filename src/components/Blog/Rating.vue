@@ -3,7 +3,7 @@
     <div
       v-if="isnew === true"
       v-tippy="{ content: 'Yeni!' }"
-      class="number new"
+      class="number focus:outline-none animate-pulse new"
     >
       {{ rating }}/{{ max }}
     </div>

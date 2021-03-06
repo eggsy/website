@@ -28,6 +28,9 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <blog-rating rating="9.5">
       <a href="#the-witcher">The Witcher</a>
     </blog-rating>
+    <blog-rating rating="9.5" :isnew="true">
+      <a href="#the-boys">The Boys</a>
+    </blog-rating>
     <blog-rating rating="9.5">
       <a href="#rise-of-empires-ottoman">Rise of Empires: Ottoman</a>
     </blog-rating>
@@ -124,6 +127,10 @@ Popüler dizi La Casa de Papel'e ve bu diziye kadar İspanyolları dinini yaşay
 ### The Witcher
 
 Herkesin, ama herkesin sevdiği oyun serisi olan The Witcher serisinin dizisi, insanların oyunu hakkında söyledikleri kadar güzel. Oyunlarını henüz oynama fırsatı bulamadığım için her ne kadar hikayesine hâkim olmasam da benim gibi izleyerek pek bir şey kaybedeceğinizi düşünmüyorum. Eğer izleyecek, eski zaman ve _gerçek dışı_ (büyü, ilginçli şeyler) barındıran bir dizi arıyorsanız, bu dizi tam size göre. Fragmanına [buraya](https://youtu.be/sqTeQ6pVGKQ) tıklayarak ulaşabilirsiniz.
+
+### The Boys
+
+Amazon'un ses getiren ve adını "kan, şiddet, ahlaksızlığın dibi!" şeklinde duyuran bu diziyi izlemeye başladığımdaki masumiyetim ile bitirdiğim arasındaki masumiyetimi kıyaslayacak olursak daha önce bir dizide bu kadar şiddet, kan, gövbe, kafa patlaması gibi şeyler görmediğimi belirtmek isterim. Dizinin sadece bir bölümü için uzun soluklu bir filmin tüm CGI ekibini tutmuşlar gibi, gerek olmadığı yerlerde bile kan gövdeyi götürüyor, vahşet ve dehşet içerisinde her şey havada uçuşuyor. Bunların yanı sıra karakterleri sevdiren, oldukça havaya sokan, heyecanlandıran, düşmana karşılık verildiğinde içinizin yağlarını eriten, klasiklerin yanı sıra süper kahramanların bile kötü olabileceğini gösteren bu dizinin fragmanını [buradan](https://youtu.be/tcrNsIaQkb4) izleyebilirsiniz.
 
 ### Rise of Empires: Ottoman
 

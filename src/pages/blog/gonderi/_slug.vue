@@ -71,7 +71,7 @@
         <BlogPrevNext :current-slug="post.slug" />
 
         <div>
-          <h3 class="mb-1 text-lg font-semibold dark:text-gray-100">
+          <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">
             Yazıyı paylaş
           </h3>
 
@@ -79,7 +79,7 @@
         </div>
 
         <div v-if="getTags.length > 0">
-          <h3 class="mb-1 text-lg font-semibold dark:text-gray-100">
+          <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">
             Etiketler
           </h3>
 
@@ -101,7 +101,7 @@
         </div>
 
         <div v-if="getRelatedPosts.length > 0">
-          <h3 class="mb-1 text-lg font-semibold dark:text-gray-100">
+          <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">
             Bunlar da hoşunuza gidebilir
           </h3>
 
@@ -111,7 +111,7 @@
               :key="`related-${index}`"
               :to="`/blog/gonderi/${relatedPost.slug}`"
               :class="{
-                'p-3 text-center truncate bg-gray-200 rounded-md hover:bg-gray-300 dark:bg-gray-900 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100 sm:text-left': true,
+                'p-3 text-center truncate bg-gray-200 rounded-md hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100 sm:text-left': true,
                 'sm:col-span-2':
                   Number(index) % 2 === 0 &&
                   Number(index) + 1 >= getRelatedPosts.length,
@@ -304,7 +304,7 @@ header h1.quicksand {
     }
 
     a {
-      @apply text-blue-700 hover:text-blue-800 dark:text-blue-600 dark:hover:text-blue-700 hover:underline;
+      @apply text-blue-700 dark:text-blue-600 hover:underline;
     }
 
     code {
@@ -316,7 +316,7 @@ header h1.quicksand {
     }
 
     &:not(:last-child) {
-      @apply mb-4;
+      @apply mb-5;
     }
   }
 
@@ -357,18 +357,15 @@ header h1.quicksand {
   }
 
   ul {
-    @apply list-disc pl-4;
+    @apply list-disc pl-5;
 
     &:not(:last-child) {
       @apply mb-4;
     }
+
+    li::marker {
+      @apply text-gray-600;
+    }
   }
-}
-
-#titles {
-  scroll-behavior: smooth;
-  max-height: 90vh;
-
-  @apply text-gray-800 dark:text-gray-200;
 }
 </style>
