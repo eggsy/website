@@ -48,14 +48,18 @@
           </p>
 
           <div
-            class="flex items-center justify-center space-x-2 divide-x-2 divide-gray-200 sm:justify-start dark:text-gray-300 whitespace-nowrap"
+            class="flex items-center justify-center space-x-2 sm:justify-start dark:text-gray-300 whitespace-nowrap"
           >
-            <div class="flex items-center space-x-1">
+            <div
+              class="flex items-center px-2 py-1 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
+            >
               <icon name="clock" class="w-4 h-4" />
               <div>{{ getReadingTime }} dakika okuma</div>
             </div>
 
-            <div class="flex items-center pl-2 space-x-1">
+            <div
+              class="flex items-center px-2 py-1 pl-2 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
+            >
               <icon name="calendar" class="w-4 h-4" />
               <div>{{ getReadableDate }}</div>
             </div>
@@ -66,6 +70,8 @@
           <nuxt-content :document="post"></nuxt-content>
         </div>
       </article>
+
+      <Disqus class="mt-10" />
 
       <div class="mt-10 space-y-10">
         <BlogPrevNext :current-slug="post.slug" />
