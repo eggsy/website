@@ -43,7 +43,7 @@ export default {
   @apply flex items-center space-x-2;
 
   .number {
-    @apply w-16 px-2 py-px font-semibold text-center text-gray-100  rounded-md select-none;
+    @apply w-16 px-2 py-px font-semibold text-center text-gray-100 rounded-md select-none;
 
     &:not(.new) {
       @apply bg-red-600 hover:bg-red-700;
