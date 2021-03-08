@@ -71,7 +71,12 @@
         </div>
       </article>
 
-      <Disqus :title="post.title" lang="tr" class="mt-10" />
+      <Disqus
+        shortname="eggsy-xyz"
+        :title="post.title"
+        lang="tr"
+        class="mt-10"
+      />
 
       <div class="mt-10 space-y-10">
         <BlogPrevNext :current-slug="post.slug" />
@@ -133,8 +138,13 @@
 </template>
 
 <script>
+import { Disqus } from "vue-disqus"
+
 export default {
   layout: "blog",
+  componentS: {
+    Disqus,
+  },
   data() {
     return {
       post: {},
