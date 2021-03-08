@@ -141,10 +141,10 @@
 import { Disqus } from "vue-disqus"
 
 export default {
-  layout: "blog",
-  componentS: {
+  components: {
     Disqus,
   },
+  layout: "blog",
   data() {
     return {
       post: {},
