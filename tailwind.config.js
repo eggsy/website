@@ -4,7 +4,10 @@ delete screens["2xl"]
 module.exports = {
   darkMode: "class",
   purge: {
-    content: ["./components/**/*.vue", "./content/**/*.md"],
+    options: {
+      // Whitelisting these because purge.content didn't work for some reason
+      safelist: ["mb-6", "lg:grid-cols-2"],
+    },
   },
   theme: {
     extend: {
