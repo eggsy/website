@@ -12,96 +12,93 @@ Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim öz
 
 Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂
 
-<div class="grid grid-cols-2 gap-px ratings">
-    <blog-rating rating="10">
+<div class="grid gap-2 mb-6 lg:grid-cols-2">
+    <blog-rating rating="10" platform="Netflix" seasons="3" status="2">
       <a href="#daredevil">Daredevil</a>
     </blog-rating>
-    <blog-rating rating="10">
+    <blog-rating rating="10" platform="Netflix" seasons="1">
       <a href="#love-death--robots">Love, Death & Robots</a>
     </blog-rating>
-    <blog-rating rating="10">
+    <blog-rating rating="10" platform="Fox" seasons="5">
       <a href="#prison-break">Prison Break</a>
     </blog-rating>
-    <blog-rating rating="9.5">
+    <blog-rating rating="9.5" platform="Netflix" seasons="3">
       <a href="#élite">Élite</a>
     </blog-rating>
-    <blog-rating rating="9.5">
+    <blog-rating rating="9.5" platform="Netflix" seasons="5">
       <a href="#the-witcher">The Witcher</a>
     </blog-rating>
-    <blog-rating rating="9.5" :isnew="true">
+    <blog-rating rating="9.5" platform="Amazon Prime" seasons="5" :isnew="true">
       <a href="#the-boys">The Boys</a>
     </blog-rating>
-    <blog-rating rating="9.5">
+    <blog-rating rating="9.5" platform="Netflix" seasons="5">
       <a href="#rise-of-empires-ottoman">Rise of Empires: Ottoman</a>
     </blog-rating>
-    <blog-rating rating="9.5">
+    <blog-rating rating="9.5" platform="Disney+" seasons="5">
       <a href="#the-mandalorian">The Mandalorian</a>
     </blog-rating>
-    <blog-rating rating="9.5">
+    <blog-rating rating="9.5" platform="Netflix" seasons="4">
       <a href="#la-casa-de-papel">La Casa de Papel</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="Netflix" seasons="2">
       <a href="#sex-education">Sex Education</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="Netflix" seasons="1">
       <a href="#locke--key">Locke & Key</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="Netflix" seasons="4">
       <a href="#stranger-things">Stranger Things</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="Apple TV+" seasons="1">
       <a href="#see">See</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="BBC" seasons="4">
       <a href="#sherlock">Sherlock</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="TNT" seasons="2">
       <a href="#snowpiercer">Snowpiercer</a>
     </blog-rating>
-    <blog-rating rating="9.0" :isnew="true">
+    <blog-rating rating="9.0" platform="Netflix" seasons="1" status="1" :isnew="true">
       <a href="#the-haunting-of-bly-manor">The Haunting of Bly Manor</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="Netflix" seasons="2" status="1">
       <a href="#sense8">Sense8</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="Netflix" seasons="4" status="1">
       <a href="#chilling-adventures-of-sabrina">Chilling Adventures of Sabrina</a>
     </blog-rating>
-    <blog-rating rating="9.0">
+    <blog-rating rating="9.0" platform="Netflix" seasons="2" status="2">
       <a href="#altered-carbon">Altered Carbon</a>
     </blog-rating>
-    <blog-rating rating="8.9" :isnew="true">
+    <blog-rating rating="8.9" platform="Netflix" seasons="1" status="1" :isnew="true">
       <a href="#the-queens-gambit">The Queen's Gambit</a>
     </blog-rating>
-    <blog-rating rating="8.5">
+    <blog-rating rating="8.5" platform="Netflix" seasons="1">
       <a href="#aşk-101">Aşk 101</a>
     </blog-rating>
-    <blog-rating rating="8.5">
+    <blog-rating rating="8.5" platform="Netflix" seasons="2">
       <a href="#the-order">The Order</a>
     </blog-rating>
-    <blog-rating rating="8.5">
+    <blog-rating rating="8.5" platform="Netflix" seasons="6" status="1">
       <a href="#bojack-horseman">BoJack Horseman</a>
     </blog-rating>
-    <blog-rating rating="8.5">
+    <blog-rating rating="8.5" platform="Adult Swim" seasons="4">
       <a href="#rick-and-morty">Rick and Morty</a>
     </blog-rating>
-    <blog-rating rating="8.5">
+    <blog-rating rating="8.5" platform="Netflix" seasons="2">
       <a href="#lost-in-space">Lost in Space</a>
     </blog-rating>
-    <blog-rating rating="8.0">
+    <blog-rating rating="8.0" platform="Netflix" seasons="1" status="1">
       <a href="#the-haunting-of-hill-house">The Haunting of Hill House</a>
     </blog-rating>
-    <blog-rating rating="8.0">
+    <blog-rating rating="8.0" platform="Netflix" seasons="2">
       <a href="#you">You</a>
     </blog-rating>
-    <blog-rating rating="8.0">
+    <blog-rating rating="8.0" platform="Netflix" seasons="5">
       <a href="#lucifer">Lucifer</a>
     </blog-rating>
-    <blog-rating rating="8.0">
+    <blog-rating rating="8.0" platform="Netflix" seasons="2">
       <a href="#the-umbrella-academy">The Umbrella Academy</a>
-    </blog-rating>
-    <blog-rating  rating="8.0">
-      <a href="#ragnarok">Ragnarok</a>
     </blog-rating>
 </div>
 
@@ -225,10 +222,6 @@ Qafirlerin inancına göre şeytanın bir ismi (iblis)... Diziyi izlerken tam an
 ### The Umbrella Academy
 
 Bu dizi, çıkış yaparken oldukça iddialı bir çıkış yapmasına rağmen bence tam potansiyeline ulaşamamış bir dizi. Gerçekten güzel bir bilim kurgu ve süper kahraman dizisi olan bu dizi, zaman kavramı hakkında sanki herkesin beyni yeterince karışık değilmiş gibi farklı bir zaman kavramıyla bizleri karşılıyor. Oldukça ilginç bir evreni olan ve _artık_ yeni sezon yayınlarlarsa daha fazlasını görmek isteyebileceğim gayet güzel bir dizi. İsterseniz dizinin fragmanına [buraya](https://youtu.be/0DAmWHxeoKw) tıklayarak ulaşabilirsiniz. _Evet_, bunlar ilk sezon için olan yorumlarımdı. İkinci sezonu kesinlikle beğenmediğimi ve yapılabilecek en saçma kurgu ile ortaya çıktıklarını düşünüyor ve güzel bir dizinin potansiyelini kırdıkları için kendilerini kınıyorum. Yeni sezon güzel sonlanmış olsa da, sezon boyunca takip eden saçmalıklar ve detaylar diziyi gerçekten çekilemez bir dereceye soktu. Gerçekten sinir bozucu...
-
-### Ragnarok
-
-Konusu güzel, sezonu kısa, ana karakter de bir o kadar sıkıcı bir dizi. Ama yine de potansiyeli olduğundan beğendiğim söylenebilir. Genel olarak işleniş "yahu tamam işte ne olduğun belli, kullansana güçlerini" dedirtecek şekilde ilerliyor ancak sanırım bu da yeni sezonunu insanlara "acaba istediklerim olacak mı" merakıyla izletecek olan bir dizi... Fragmanına [buradan](https://www.youtube.com/watch?v=7H9AaiBLHCo) ulaşabilirsiniz.
 
 Böylelikle listenin sonuna gelmeyi başarabildik, unutmayın; her yeni dizi bitirdiğimde; bu yazıyı
 güncelleyeceğim. Şimdilik bu kadar dizi size uzun bir süre yetecektir 😅 İyi seyirler!
