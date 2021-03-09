@@ -56,9 +56,9 @@
           <div
             v-for="(account, index) in accounts"
             :key="`account-${index}`"
-            class="flex items-center"
+            class="flex items-center h-full"
           >
-            <div class="bg-gray-200 rounded-tl rounded-bl dark:bg-gray-800">
+            <div class="bg-gray-300 rounded-tl rounded-bl dark:bg-gray-800">
               <SkeletonLoader
                 type="image"
                 :image-url="account.image"
@@ -67,7 +67,7 @@
             </div>
 
             <div
-              class="flex items-center w-full h-full pl-4 bg-gray-300 rounded-tr rounded-br dark:bg-gray-700"
+              class="flex items-center w-full h-full pl-4 bg-gray-200 rounded-tr rounded-br dark:bg-gray-700"
             >
               <div>
                 <h3 class="font-medium text-gray-900 dark:text-gray-100">
