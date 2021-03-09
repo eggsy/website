@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-gray-50 dark:bg-gray-900 min-h-screen min-w-screen">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 min-w-screen">
     <div
       class="absolute top-0 left-0 right-0 w-full py-2 bg-indigo-700 dark:bg-indigo-900"
     />
 
     <NavbarBlog class="pt-6" />
-    <Nuxt class="container pt-6 mx-auto sm:w-7/12" />
+    <Nuxt class="container pt-6 mx-auto sm:w-9/12 md:w-7/12" />
 
     <div
       class="fixed bottom-0 right-0 z-50 flex items-center mb-4 mr-6 space-x-2 sm:space-x-4"
