@@ -21,10 +21,9 @@ module.exports = {
           telegram: "#2EAADE",
           whatsapp: "#25D366",
           patreon: "#FF424D",
-          discord: {
-            light: "#7289DA",
-            dark: "#6c82cf",
-          },
+        },
+        brand: {
+          discord: { light: "#7289DA", dark: "#6c82cf" },
         },
       },
     },
