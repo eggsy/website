@@ -16,6 +16,14 @@
 
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="5">
+        <v-alert type="warning" dense border="left">
+          This page will not work since there's no API. You can visit the
+          <a href="https://github.com/eggsy/website/tree/old"
+            >website's source</a
+          >
+          and host the API yourself to use it.
+        </v-alert>
+
         <h2
           style="margin-top: 20px; margin-bottom: 20px"
           class="font-weight-thin text-center"

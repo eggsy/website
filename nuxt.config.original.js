@@ -1,18 +1,9 @@
-/*
-  ! THIS IS A MODIFIED FILE OF ORIGINAL PROJECT
-  This file is edited to be able to work on Netlify-like
-  static hosting services. If you are here to use the
-  old website with full of its features, you'll have to
-  use `nuxt.config.original.js`.
-*/
-
 import { resolve } from "path";
 import colors from "vuetify/es5/util/colors";
 
 export default {
   rootDir: "./",
   srcDir: "./src",
-  target: "static",
   head: {
     titleTemplate: "%s - eggsy.xyz",
     title: "eggsy.xyz",
@@ -94,12 +85,14 @@ export default {
     "@nuxt/content", // has to be on top so sitemap and feed module can read data inside it
     "@nuxtjs/sitemap",
     "@nuxtjs/device",
+    "@nuxtjs/feed",
     "@nuxtjs/pwa",
   ],
   buildModules: [
     "@nuxtjs/axios",
     "@nuxtjs/vuetify",
     ["@nuxtjs/dotenv", { path: resolve("./") }],
+    ["@nuxtjs/google-analytics", { id: "UA-62051904-3" }],
   ],
   pwa: {
     background_color: "#212121",
@@ -134,6 +127,45 @@ export default {
       ],
     },
   },
+  async feed() {
+    const { $content } = require("@nuxt/content"),
+      posts = await $content().fetch(),
+      feedFormats = {
+        rss: { type: "rss2", file: "rss.xml" },
+        json: { type: "json1", file: "feed.json" },
+      };
+
+    const createFeedArticles = (feed) => {
+      feed.options = {
+        title: "EGGSY's Blog",
+        description:
+          "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
+        link: "https://eggsy.xyz/blog",
+      };
+
+      posts.forEach((post) => {
+        const url = `https://eggsy.xyz/blog/gonderi/${post.slug}`;
+
+        feed.addItem({
+          title: post.title,
+          id: url,
+          link: url,
+          date: new Date(post.createdAt || post.updatedAt || Date.now()),
+          description: post.description || "",
+          content: post.summary,
+          author: {
+            name: "EGGSY",
+          },
+        });
+      });
+    };
+
+    return Object.values(feedFormats).map(({ file, type }) => ({
+      path: `/feed/posts/${file}`,
+      type: type,
+      create: createFeedArticles,
+    }));
+  },
   vuetify: {
     theme: {
       dark: true,
@@ -164,5 +196,5 @@ export default {
   },
   components: true,
   loading: { color: "#fff" },
-  /* serverMiddleware: [resolve(__dirname, "src/api/index.js")], */
+  serverMiddleware: [resolve(__dirname, "src/api/index.js")],
 };
