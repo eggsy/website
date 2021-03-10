@@ -5,10 +5,9 @@ import googleAnalytics from "./modules/googleAnalytics"
 
 export default [
   /*
-    Will keep this here until it get's updated an is ready to be used in production
-    IT'S FAST!
+  Will use this once it's stable
   */
-  /* "nuxt-vite", */
+  /* "nuxt-windicss-module", */
   "@nuxtjs/svg",
   "@nuxtjs/moment",
   ["@nuxtjs/dotenv", dotenv],
