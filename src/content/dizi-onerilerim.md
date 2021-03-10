@@ -10,16 +10,16 @@ special: true
 
 Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim özelliklerden birisi olan "etiket sistemi" olarak adlandırdığım, sizin belirlediğiniz bir etiket ile istediğiniz bir şeyi not almanızı sağlayan güzelim o komuttu. O komut sayesinde dizi önerilerimi sorulduğunda neredeyse her sunucuda kolayca gösterebiliyor ve kimseyi uğraştırmamış oluyordum. Bugün bir dizi daha bitirdikten sonra "neden bunu bloga yazmayayım?" dedim, üstelik daha fazla açıklama olur ve burası da boş kalmaz 😅 Daha fazla uzatmadan direkt olarak aşağıdaki puanlama listesine geçebilir, eğer isterseniz listenin altına inerek listedeki sırasına göre yazdığım tüm diziler hakkında ne düşündüğümü bulabilir ve dizilerin hepsinin yayınlanan resmi fragmanlarına ulaşabilirsiniz. Ayrıca, bu gönderi, yeni bir dizi önerim olduğunda güncellenecektir. O yüzden takipte kalın!
 
-Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂
+Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂 <span class="border-blue-300 border-b-2 hover:border-blue-900">Altı mavi ile çizili olan dizilerin yeni eklendiğini unutmayın.</span>
 
-<div class="grid gap-2 mb-6 lg:grid-cols-2">
+<div class="mb-6 grid gap-2 lg:grid-cols-2">
     <blog-rating rating="10" platform="Netflix" seasons="3" status="2">
       <a href="#daredevil">Daredevil</a>
     </blog-rating>
     <blog-rating rating="10" platform="Netflix" seasons="1">
       <a href="#love-death--robots">Love, Death & Robots</a>
     </blog-rating>
-    <blog-rating rating="10" platform="Fox" seasons="5">
+    <blog-rating rating="10" platform="Fox" seasons="5" status="1">
       <a href="#prison-break">Prison Break</a>
     </blog-rating>
     <blog-rating rating="9.5" platform="Netflix" seasons="3">
@@ -31,7 +31,7 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <blog-rating rating="9.5" platform="Amazon Prime" seasons="5" :isnew="true">
       <a href="#the-boys">The Boys</a>
     </blog-rating>
-    <blog-rating rating="9.5" platform="Netflix" seasons="5">
+    <blog-rating rating="9.5" platform="Netflix" seasons="5" status="1">
       <a href="#rise-of-empires-ottoman">Rise of Empires: Ottoman</a>
     </blog-rating>
     <blog-rating rating="9.5" platform="Disney+" seasons="5">
@@ -52,7 +52,7 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <blog-rating rating="9.0" platform="Apple TV+" seasons="1">
       <a href="#see">See</a>
     </blog-rating>
-    <blog-rating rating="9.0" platform="BBC" seasons="4">
+    <blog-rating rating="9.0" platform="BBC" seasons="4" status="1">
       <a href="#sherlock">Sherlock</a>
     </blog-rating>
     <blog-rating rating="9.0" platform="TNT" seasons="2">
