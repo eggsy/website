@@ -116,7 +116,7 @@ export default {
             break
           case "amazon-prime":
             color = "text-gray-100"
-            background = "bg-blue-400"
+            background = "bg-blue-500"
             break
           case "disney+":
             color = "text-white"
