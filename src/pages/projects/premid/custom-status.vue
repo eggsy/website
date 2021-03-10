@@ -410,13 +410,13 @@ export default {
 
       if (isFirstButton && isUrl.first)
         buttonsArray.push({
-          label: firstButton.label,
+          label: firstButton.label.slice(0, 30),
           url: firstButton.url,
         })
 
       if (isSecondButton && isUrl.second)
         buttonsArray.push({
-          label: secondButton.label,
+          label: secondButton.label.slice(0, 30),
           url: secondButton.url,
         })
 
