@@ -1,5 +1,35 @@
 <template>
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+  <div v-if="type === 'vertical'" class="grid grid-cols-1 gap-2">
+    <div class="button" @click="share('twitter')">
+      <icon name="twitter" class="text-social-twitter" />
+    </div>
+
+    <div class="button" @click="share('telegram')">
+      <icon name="telegram" class="text-social-telegram" />
+    </div>
+
+    <div class="button" @click="share('whatsapp')">
+      <icon name="whatsapp" class="text-social-whatsapp" />
+    </div>
+
+    <div class="button" @click="share('url')">
+      <icon
+        v-if="copied === true"
+        key="check"
+        name="check"
+        class="text-green-500 dark:text-green-800"
+      />
+
+      <icon
+        v-else
+        key="link"
+        name="link"
+        class="text-gray-800 dark:text-gray-200"
+      />
+    </div>
+  </div>
+
+  <div v-else class="grid grid-cols-1 gap-4 sm:grid-cols-3">
     <div class="flex items-center space-x-2">
       <div class="button" @click="share('twitter')">
         <icon name="twitter" class="text-social-twitter" />
@@ -9,7 +39,7 @@
         <icon name="telegram" class="text-social-telegram" />
       </div>
 
-      <div class="button" @click="share('whatsapp')">
+      <div class="button" @click="share('url')">
         <icon name="whatsapp" class="text-social-whatsapp" />
       </div>
     </div>
@@ -19,7 +49,7 @@
         ref="share-url"
         readonly
         :value="`https://eggsy.xyz${path}`"
-        class="w-full p-3 rounded-md sm:py-3 sm:px-4 ring-1 ring-opacity-25 ring-gray-800 focus:outline-none dark:bg-gray-800 dark:text-gray-100"
+        class="w-full p-3 rounded-md ring-1 ring-opacity-25 ring-gray-800 sm:py-3 sm:px-4 dark:bg-gray-800 dark:text-gray-100 focus:outline-none"
         @click="share('url')"
       />
 
@@ -38,6 +68,11 @@
 <script>
 export default {
   props: {
+    type: {
+      type: String,
+      required: false,
+      default: "normal",
+    },
     title: {
       type: String,
       required: true,
@@ -61,12 +96,22 @@ export default {
      */
     share(option) {
       if (option === "url") {
-        const el = this.$refs["share-url"]
+        let el = this.$refs["share-url"]
 
-        el.select()
-        document.execCommand("copy")
+        if (!el) {
+          el = document.createElement("input")
+          el.value = `https://eggsy.xyz${path}`
+          document.body.appendChild(el)
+
+          el.select()
+          document.execCommand("copy")
+          document.body.removeChild(el)
+        } else {
+          el.select()
+          document.execCommand("copy")
+        }
+
         this.copied = true
-
         setTimeout(() => (this.copied = false), 3000)
       } else {
         let url = ""
