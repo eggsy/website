@@ -6,7 +6,7 @@ module.exports = {
   purge: {
     options: {
       // Whitelisting these because purge.content didn't work for some reason
-      safelist: ["mb-6", "lg:grid-cols-2"],
+      safelist: ["mb-6", "lg:grid-cols-2", "hover:border-blue-900"],
     },
   },
   theme: {
