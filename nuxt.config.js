@@ -196,5 +196,5 @@ export default {
   },
   components: true,
   loading: { color: "#fff" },
-  serverMiddleware: [resolve(__dirname, "src/api/index.js")],
+  /* serverMiddleware: [resolve(__dirname, "src/api/index.js")], */
 };
