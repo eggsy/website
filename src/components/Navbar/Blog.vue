@@ -2,7 +2,7 @@
   <nav
     :class="{
       'z-40 w-full': true,
-      'bg-indigo-700': searchEnabled === true,
+      'bg-indigo-700 dark:bg-indigo-900': searchEnabled === true,
     }"
   >
     <div class="container mx-auto text-gray-200 sm:px-0 sm:w-7/12">
@@ -29,7 +29,7 @@
             :to="{
               name: 'index',
             }"
-            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:underline hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none"
+            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:bg-gray-200 hover:underline focus:outline-none dark:hover:bg-gray-800"
             title="Ana sayfaya dön"
           >
             <icon
@@ -48,7 +48,7 @@
             :to="{
               name: 'blog',
             }"
-            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:underline hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none"
+            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:bg-gray-200 hover:underline focus:outline-none dark:hover:bg-gray-800"
             title="Bloga dön"
           >
             <icon key="single-left" name="chevron-left" class="w-4 h-4" />
@@ -59,7 +59,7 @@
               content: 'Gönderi ara',
               placement: 'bottom',
             }"
-            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:underline hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none"
+            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:bg-gray-200 hover:underline focus:outline-none dark:hover:bg-gray-800"
             title="Gönderi ara"
             @click="
               {
@@ -83,11 +83,11 @@
             ref="search"
             v-model="input"
             placeholder="Ne aramak istiyorsunuz?"
-            class="w-full py-4 pl-4 pr-24 placeholder-gray-100 bg-indigo-700 rounded-none dark:placeholder-gray-900 sm:pr-28 focus:outline-none"
+            class="w-full py-4 pl-4 pr-24 placeholder-gray-100 bg-indigo-700 rounded-none sm:pr-28 dark:bg-indigo-900 focus:outline-none"
             @keydown="handleSearchKeydown"
           />
           <div
-            class="absolute top-0 flex items-center space-x-1 text-xs select-none sm:space-x-2 right-4 sm:right-1 absolute-align-middle focus:outline-none"
+            class="absolute flex items-center space-x-1 text-xs select-none right-4 absolute-align-middle sm:space-x-2 sm:right-1 focus:outline-none"
           >
             <div
               class="p-2 bg-indigo-600 rounded-md cursor-pointer hover:bg-indigo-800"
