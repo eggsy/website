@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="type === 'normal'"
-    class="p-4 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
+    class="p-4 bg-gray-100 rounded ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-800"
   >
     <div class="flex items-center space-x-3">
       <nuxt-link
@@ -30,7 +30,7 @@
             name: 'blog-gonderi-slug',
             params: { slug: getPostMeta.slug },
           }"
-          class="hover:underline dark:text-gray-200"
+          class="dark:text-gray-200 hover:underline"
         >
           <h2 class="font-semibold truncate" :title="getPostMeta.title">
             {{ getPostMeta.title }}
@@ -44,7 +44,7 @@
     </div>
 
     <div
-      class="flex items-center mt-2 space-x-4 text-gray-700 dark:text-gray-400 justify-self-end"
+      class="flex items-center mt-2 space-x-4 text-gray-700 justify-self-end dark:text-gray-400"
     >
       <div class="flex items-center space-x-2">
         <icon name="hashtag" class="w-4 h-4" />
@@ -70,7 +70,7 @@
 
   <div
     v-else-if="type === 'text'"
-    class="p-4 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
+    class="p-4 bg-gray-100 rounded ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-800"
   >
     <div class="flex items-center gap-4">
       <div class="overflow-hidden">
@@ -95,7 +95,7 @@
           </div>
         </nuxt-link>
 
-        <p class="'text-gray-700 dark:text-gray-300 line-clamp-2">
+        <p class="text-gray-700 dark:text-gray-300 line-clamp-2">
           {{ getPostMeta.description }}
         </p>
 
@@ -111,7 +111,7 @@
 
   <div
     v-else-if="type === 'text-only-title'"
-    class="p-4 truncate bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
+    class="p-4 truncate bg-gray-100 rounded ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-800"
   >
     <nuxt-link
       :to="{
@@ -126,18 +126,15 @@
     </nuxt-link>
 
     <div class="flex items-center space-x-1">
-      <div
+      <icon
         v-if="getPostMeta.special"
         v-tippy="{ content: 'Popüler gönderi', placement: 'bottom' }"
-        class="cursor-pointer"
-      >
-        <icon name="fire" class="w-5 h-5 text-red-600 dark:text-red-500" />
-      </div>
+        name="fire-solid"
+        class="w-5 h-5 text-red-600 dark:text-red-500"
+      />
 
-      <div
-        class="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-400"
-      >
-        <icon name="clock" class="w-4 h-4" />
+      <div class="flex items-center space-x-2 text-gray-700 dark:text-gray-400">
+        <icon name="clock" class="w-5 h-5" />
         <span>{{ getPostDate }}</span>
       </div>
     </div>
@@ -159,6 +156,10 @@ export default {
     },
   },
   computed: {
+    /**
+     * Returns post meta safely.
+     * @returns {{title: string, description: string, slug: string, special: boolean, tag: string, image: string}}
+     */
     getPostMeta() {
       const image =
         this.post?.image || `/assets/images/posts/${this.post?.slug}.jpg` || ""
