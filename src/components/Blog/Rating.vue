@@ -186,24 +186,4 @@ a {
 .new a {
   @apply border-blue-300 border-b-2 hover:border-blue-900;
 }
-
-/* .rating {
-  @apply flex items-center space-x-2;
-
-  .number {
-    @apply w-16 px-2 py-px flex-shrink-0 font-semibold text-center text-gray-100 rounded-md select-none;
-
-    &:not(.new) {
-      @apply bg-red-600 hover:bg-red-700;
-    }
-
-    &.new {
-      @apply bg-blue-800 hover:bg-blue-900;
-    }
-  }
-
-  a {
-    @apply hover:underline;
-  }
-} */
 </style>
