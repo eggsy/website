@@ -102,7 +102,7 @@
             >
               <input
                 v-model="service.url.input"
-                class="w-full px-4 py-2 h-1/5 rounded-tl-md rounded-tr-md focus:outline-none dark:bg-gray-700 dark:text-gray-200"
+                class="w-full px-4 py-2 rounded-tl-md rounded-tr-md h-1/5 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
                 placeholder="URL(s) of the service"
                 @keyup.enter="addItem('url')"
               />
@@ -148,7 +148,7 @@
             >
               <input
                 v-model="service.tags.input"
-                class="w-full px-4 py-2 h-1/5 rounded-tl-md rounded-tr-md focus:outline-none dark:bg-gray-700 dark:text-gray-200"
+                class="w-full px-4 py-2 rounded-tl-md rounded-tr-md h-1/5 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
                 placeholder="Tags for the service"
                 @keyup.enter="addItem('tag')"
               />
@@ -196,7 +196,7 @@
                 <div class="h-1/3">
                   <input
                     v-model="service.description.inputs.langCode"
-                    class="w-full px-4 py-2 h-1/2 rounded-tl-md rounded-tr-md focus:outline-none dark:bg-gray-700 dark:text-gray-200"
+                    class="w-full px-4 py-2 rounded-tl-md rounded-tr-md h-1/2 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
                     placeholder="Language code, e.g. en"
                     @keyup.enter="$refs.descriptionInput.focus()"
                   />
@@ -340,13 +340,13 @@
                 </button>
               </div>
 
-              <div class="grid rounded-md sm:grid-cols-2 ring">
+              <div class="grid rounded-md ring sm:grid-cols-2">
                 <div
                   class="h-full bg-gray-100 rounded-tl-md rounded-bl-md ring dark:bg-gray-800"
                 >
                   <input
                     v-model="service.contributors.inputs.name"
-                    class="w-full rounded-none ring-0 h-1/2 rounded-tl-md input"
+                    class="w-full rounded-none rounded-tl-md h-1/2 ring-0 input"
                     placeholder="Contributor name"
                     @keyup.enter="$refs.contributorsIdInput.focus()"
                   />
@@ -354,7 +354,7 @@
                   <input
                     ref="contributorsIdInput"
                     v-model="service.contributors.inputs.id"
-                    class="w-full rounded-none ring-0 h-1/2 rounded-bl-md input"
+                    class="w-full rounded-none rounded-bl-md h-1/2 ring-0 input"
                     placeholder="Contributor ID"
                     @keyup.enter="addItem('contributor')"
                   />
@@ -396,13 +396,13 @@
                 </div>
               </div>
 
-              <div class="grid rounded-md sm:grid-cols-2 ring">
+              <div class="grid rounded-md ring sm:grid-cols-2">
                 <div
                   class="bg-gray-100 rounded-tl-md rounded-bl-md dark:bg-gray-800"
                 >
                   <input
                     v-model="service.altnames.input"
-                    class="w-full rounded-none ring-0 rounded-tl-md rounded-bl-md input"
+                    class="w-full rounded-none rounded-tl-md rounded-bl-md ring-0 input"
                     placeholder="Alternative name(s), e.g. 精靈寶可夢 (Pokémon)"
                     @keyup.enter="addItem('altname')"
                   />
@@ -511,107 +511,104 @@
       </div>
     </div>
 
+    <div
+      v-if="resultWindow === true"
+      class="fixed top-0 bottom-0 left-0 right-0 hidden bg-black bg-opacity-50 sm:block"
+      @click="resultWindow = false"
+    />
+
     <transition name="slide-left" mode="out-in">
       <div
         v-if="resultWindow === true"
-        class="fixed top-0 bottom-0 right-0 w-full overflow-y-auto scrollbar"
+        class="fixed top-0 bottom-0 right-0 min-h-full p-4 overflow-y-auto bg-gray-100 scrollbar sm:shadow-md sm:ml-auto sm:p-10 dark:bg-gray-800 sm:w-8/12"
       >
-        <div
-          class="fixed top-0 bottom-0 left-0 right-0 hidden bg-black bg-opacity-50 sm:block -z-1"
-          @click="resultWindow = false"
-        />
-
-        <div
-          class="min-h-full p-4 bg-gray-100 sm:shadow-md sm:ml-auto sm:p-10 dark:bg-gray-800 sm:w-8/12"
-        >
-          <div class="space-y-8 sm:w-10/12">
-            <div class="space-y-1">
-              <div
-                class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
-              >
-                <icon name="cog" class="w-5 h-5 no-style" />
-                <h2 class="text-lg font-semibold">Metadata Result</h2>
-              </div>
-
-              <p class="text-gray-800 dark:text-gray-200">
-                The result of your metadata.json, you can see your issues, and
-                download your config from this window. Make sure to fill every
-                and each required input correctly before doing anything!
-              </p>
+        <div class="space-y-8 sm:w-10/12">
+          <div class="space-y-1">
+            <div
+              class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+            >
+              <icon name="cog" class="w-5 h-5 no-style" />
+              <h2 class="text-lg font-semibold">Metadata Result</h2>
             </div>
 
-            <div class="space-y-1">
-              <div
-                class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
-              >
-                <icon name="exclamation-circle" class="w-5 h-5 no-style" />
-                <h2 class="text-lg font-semibold">Errors</h2>
-              </div>
+            <p class="text-gray-800 dark:text-gray-200">
+              The result of your metadata.json, you can see your issues, and
+              download your config from this window. Make sure to fill every and
+              each required input correctly before doing anything!
+            </p>
+          </div>
 
-              <div
-                v-if="getMetadata.error === false"
-                class="p-4 text-white bg-green-600 rounded-md"
-              >
-                No issues/errors found. You're good to go!
-              </div>
-
-              <div v-else class="grid gap-1 sm:grid-cols-2">
-                <div
-                  v-for="(error, index) of getMetadata.errors"
-                  :key="`error-${index}`"
-                  class="p-4 text-white truncate bg-red-600 rounded-md"
-                  :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
-                >
-                  {{ error }}
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-1">
-              <div class="flex items-center justify-between">
-                <div
-                  class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
-                >
-                  <icon name="fire" class="w-5 h-5 no-style" />
-                  <h2 class="text-lg font-semibold">Your Metadata File</h2>
-                </div>
-              </div>
-
-              <!-- eslint-disable vue/no-v-html -->
-              <pre
-                v-if="getMetadata.error === false"
-                class="w-full overflow-y-auto rounded-md shadow language-json h-96 scrollbar"
-                v-html="getHighlightedJson"
-              />
-
-              <span v-else class="text-gray-800 dark:text-gray-200">
-                You have to fix the errors before you can access the metadata
-                JSON.
-              </span>
+          <div class="space-y-1">
+            <div
+              class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+            >
+              <icon name="exclamation-circle" class="w-5 h-5 no-style" />
+              <h2 class="text-lg font-semibold">Errors</h2>
             </div>
 
             <div
-              class="space-y-2 sm:items-center sm:flex sm:space-y-0 sm:space-x-4"
+              v-if="getMetadata.error === false"
+              class="p-4 text-white bg-green-600 rounded-md"
             >
-              <a
-                v-if="getMetadata.error === false"
-                class="flex items-center justify-center space-x-2 bg-gray-200 control-button no-background hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-max"
-                download="metadata.json"
-                :href="`data:text/json;charset=utf-8,${encodeURIComponent(
-                  JSON.stringify(getMetadata.result, null, 2)
-                )}`"
-              >
-                <icon name="inbox-in" class="w-5 h-5 no-style" />
-                <span>Download</span>
-              </a>
+              No issues/errors found. You're good to go!
+            </div>
 
+            <div v-else class="grid gap-1 sm:grid-cols-2">
               <div
-                class="flex items-center justify-center space-x-2 bg-gray-200 control-button no-background hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-max"
-                @click="resultWindow = false"
+                v-for="(error, index) of getMetadata.errors"
+                :key="`error-${index}`"
+                class="p-4 text-white truncate bg-red-600 rounded-md"
+                :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
               >
-                <icon name="x" class="w-5 h-5 no-style" />
-                <span>Close</span>
+                {{ error }}
               </div>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <div
+                class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+              >
+                <icon name="fire-solid" class="w-5 h-5 no-style" />
+                <h2 class="text-lg font-semibold">Your Metadata File</h2>
+              </div>
+            </div>
+
+            <!-- eslint-disable vue/no-v-html -->
+            <pre
+              v-if="getMetadata.error === false"
+              class="w-full overflow-y-auto rounded-md shadow h-96 language-json scrollbar"
+              v-html="getHighlightedJson"
+            />
+
+            <span v-else class="text-gray-800 dark:text-gray-200">
+              You have to fix the errors before you can access the metadata
+              JSON.
+            </span>
+          </div>
+
+          <div
+            class="space-y-2 sm:items-center sm:flex sm:space-y-0 sm:space-x-4"
+          >
+            <a
+              v-if="getMetadata.error === false"
+              class="flex items-center justify-center space-x-2 bg-gray-200 control-button no-background hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-max"
+              download="metadata.json"
+              :href="`data:text/json;charset=utf-8,${encodeURIComponent(
+                JSON.stringify(getMetadata.result, null, 2)
+              )}`"
+            >
+              <icon name="inbox-in" class="w-5 h-5 no-style" />
+              <span>Download</span>
+            </a>
+
+            <div
+              class="flex items-center justify-center space-x-2 bg-gray-200 control-button no-background hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-max"
+              @click="resultWindow = false"
+            >
+              <icon name="x" class="w-5 h-5 no-style" />
+              <span>Close</span>
             </div>
           </div>
         </div>
