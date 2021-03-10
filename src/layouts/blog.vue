@@ -1,14 +1,14 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 min-w-screen">
+  <div class="min-h-screen min-w-screen bg-gray-50 dark:bg-gray-900">
     <div
-      class="absolute top-0 left-0 right-0 w-full py-2 bg-indigo-700 dark:bg-indigo-900"
+      class="bg-indigo-700 w-full py-2 top-0 right-0 left-0 absolute dark:bg-indigo-900"
     />
 
     <NavbarBlog class="pt-6" />
-    <Nuxt class="container pt-6 mx-auto sm:w-9/12 md:w-7/12" />
+    <Nuxt class="container mx-auto pt-6 sm:w-9/12 md:w-7/12" />
 
     <div
-      class="fixed bottom-0 right-0 z-50 flex items-center mb-4 mr-6 space-x-2 sm:space-x-4"
+      class="flex space-x-2 mr-6 mb-4 right-0 bottom-0 z-50 fixed items-center sm:space-x-4"
     >
       <GoTop />
     </div>
@@ -22,7 +22,7 @@ export default {
       titleTemplate: "%s - eggsy.xyz blog",
       htmlAttrs: {
         lang: "tr",
-        class: `scrollbar-thin min-h-screen min-w-screen ${this.$colorMode.value}`,
+        class: `min-h-screen min-w-screen scrollbar-thin ${this.$colorMode.value}`,
       },
       meta: [
         {

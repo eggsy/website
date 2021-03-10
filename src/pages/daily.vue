@@ -30,7 +30,7 @@
 
         <ul class="space-y-2">
           <li
-            class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
+            class="flex items-center px-4 py-2 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
           >
             <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
               >Title</span
@@ -42,7 +42,7 @@
           </li>
 
           <li
-            class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
+            class="flex items-center px-4 py-2 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
           >
             <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100">
               Artist
@@ -56,7 +56,7 @@
           </li>
 
           <li
-            class="flex items-center px-4 py-2 bg-gray-100 rounded dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
+            class="flex items-center px-4 py-2 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
           >
             <span class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100">
               Date
@@ -71,7 +71,7 @@
       </div>
 
       <div
-        class="relative flex items-center justify-center p-2 bg-gray-100 rounded h-52 sm:h-auto dark:ring-gray-800 ring-1 ring-gray-200 dark:bg-gray-800"
+        class="relative flex items-center justify-center p-2 bg-gray-100 rounded h-52 ring-1 ring-gray-200 sm:h-auto dark:ring-gray-800 dark:bg-gray-800"
         :class="{ 'hidden sm:flex': !getLyrics }"
       >
         <div
