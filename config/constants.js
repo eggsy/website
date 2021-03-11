@@ -1,10 +1,10 @@
 export default {
   social: {
-    discord: "https://discord.gg/tHx9ZKG/?utm_source=eggsy.xyz",
-    twitter: "https://twitter.com/eggsydev?utm_source=eggsy.xyz",
-    github: "https://github.com/eggsy?utm_source=eggsy.xyz",
-    instagram: "https://instagram.com/eggsy_dev?utm_source=eggsy.xyz",
-    trello: "https://trello.com/b/XtWZFFiH?utm_source=eggsy.xyz",
+    discord: "https://discord.gg/tHx9ZKG",
+    twitter: "https://twitter.com/eggsydev/?utm_source=eggsy.xyz",
+    github: "https://github.com/eggsy/?utm_source=eggsy.xyz",
+    instagram: "https://instagram.com/eggsy_dev/?utm_source=eggsy.xyz",
+    trello: "https://trello.com/b/XtWZFFiH/?utm_source=eggsy.xyz",
   },
   sponsor: {
     patreon: "https://www.patreon.com/eggsy/?utm_source=eggsy.xyz",
