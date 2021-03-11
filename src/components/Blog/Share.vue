@@ -100,7 +100,7 @@ export default {
 
         if (!el) {
           el = document.createElement("input")
-          el.value = `https://eggsy.xyz${path}`
+          el.value = this.path ? `https://eggsy.xyz${this.path}` : location.href
           document.body.appendChild(el)
 
           el.select()
