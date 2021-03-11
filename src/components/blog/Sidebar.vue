@@ -1,7 +1,7 @@
 <template>
   <div class="sticky">
     <div class="mt-2 mb-4">
-      <a href="https://new.eggsy.xyz">
+      <a href="https://eggsy.xyz/blog/">
         <v-card class="announcement-card" width="100%" height="145px">
           <div>
             <h5 class="text-h5">Yeni Bloga Göz Atın</h5>

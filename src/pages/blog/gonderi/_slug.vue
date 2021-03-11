@@ -81,7 +81,7 @@
 
         <v-col md="8" sm="12">
           <a
-            :href="`https://new.eggsy.xyz/blog/gonderi/${$route.params.slug}`"
+            :href="`https://eggsy.xyz/blog/gonderi/${$route.params.slug}`"
             class="text-decoration-none"
           >
             <v-alert type="info" v-ripple>

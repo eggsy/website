@@ -1,4 +1,4 @@
-> **I am rewriting my website in TailwindCSS on another branch! Check out the [tailwind](https://github.com/eggsy/eggsy-website/tree/tailwind) branch to see the progress and [here](https://new.eggsy.xyz) to see what I've done so far! I'll merge that branch with this one when I'm done with it.**
+> This version of my website is outdated and will no longer be supported. If you are here to check the source or to find what you need, you can search through the files. If you are here to see what it used to look like, you can take a look at [old.eggsy.xyz](https://old.eggsy.xyz/) and compare it with the [new one](https://eggsy.xyz).
 
 ## EGGSY's Personal Website
 
@@ -6,7 +6,7 @@
     <img src="/images/featuring.png" />
 </p>
 
-> This is the source code of [eggsy.xyz](https://eggsy.xyz), use it wisely and improve yourself 🙏❤
+> This is the source code of (old) [eggsy.xyz](https://eggsy.xyz), use it wisely and improve yourself 🙏❤
 
 Hello all 👋 after a long time journey I am finally publishing my website's source code to public! Use this as a template for your new project and make sure to edit the required parts because there are some really old code in this repository that I am going to take a look at when I have time...
 

@@ -3,7 +3,7 @@
     <v-col md="3" cols="0"></v-col>
 
     <v-col md="6" cols="12">
-      <a href="https://new.eggsy.xyz/projects/premid/custom-status">
+      <a href="https://eggsy.xyz/projects/premid/custom-status">
         <v-alert v-ripple dense type="info">
           Check out the new look of this page in my website's new (future) look!
           Click here to get started.

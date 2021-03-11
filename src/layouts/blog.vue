@@ -88,7 +88,7 @@
         ></v-text-field>
 
         <v-btn
-          href="https://new.eggsy.xyz/daily"
+          href="https://eggsy.xyz/daily"
           v-if="!$device.isMobile"
           class="ml-2"
           icon

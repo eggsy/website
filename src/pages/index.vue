@@ -100,7 +100,7 @@
     <v-col class="projects">
       <h3 class="font-weight-light text-uppercase">My projects</h3>
       <div class="cards">
-        <a href="https://new.eggsy.xyz" class="text-decoration-none">
+        <a href="https://eggsy.xyz" class="text-decoration-none">
           <v-card v-ripple max-width="344" color="green" class="mb-2">
             <v-list-item>
               <v-list-item-content>
