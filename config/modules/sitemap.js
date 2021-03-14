@@ -1,5 +1,6 @@
+const { $content } = require("@nuxt/content")
+
 export default async function () {
-  const { $content } = require("@nuxt/content")
   const posts = await $content().fetch()
 
   const routes = []
