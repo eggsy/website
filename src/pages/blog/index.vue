@@ -116,7 +116,7 @@
     <div v-else-if="getFilteredPosts">
       <div
         v-if="getFilteredPosts !== false && getFilteredPosts.length === 0"
-        class="text-xl font-semibold"
+        class="text-xl font-semibold text-gray-900 dark:text-gray-100"
       >
         Aramanıza uygun herhangi bir gönderi bulunamadı.
       </div>
