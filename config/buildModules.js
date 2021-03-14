@@ -10,6 +10,7 @@ export default [
   /* "nuxt-windicss", */
   "@nuxtjs/svg",
   "@nuxtjs/moment",
+  "@nuxt/postcss8",
   ["@nuxtjs/dotenv", dotenv],
   ["@nuxtjs/color-mode", colorMode],
   ["@nuxtjs/tailwindcss", tailwindcss],
