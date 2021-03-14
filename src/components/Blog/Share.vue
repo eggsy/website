@@ -17,7 +17,7 @@
         v-if="copied === true"
         key="check"
         name="check"
-        class="text-green-500 dark:text-green-800"
+        class="text-green-500"
       />
 
       <icon
@@ -44,7 +44,10 @@
       </div>
     </div>
 
-    <div class="relative flex items-center space-x-2 sm:col-span-2">
+    <div
+      v-tippy="{ content: 'Kopyalandı!', trigger: 'click' }"
+      class="relative flex items-center space-x-2 sm:col-span-2"
+    >
       <input
         ref="share-url"
         readonly
