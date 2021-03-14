@@ -4,6 +4,12 @@
   <img src="/demo/featuring.jpg" />
 </p>
 
+<p align="center">
+  <img src="https://api.netlify.com/api/v1/badges/235c4935-39c2-4aef-9b79-f5b6c5686855/deploy-status" alt="Deploy status" />
+
+  <img src="https://app.codacy.com/project/badge/Grade/ff917529015742d3a3c3eda2674162de" alt="Codacy code quality" />
+</p>
+
 > This is a Nuxt.js Fully Static website, so you can use/host it anywhere!
 
 After almost a year that I have published my website's source code on GitHub, I've been working on a new and better version. All I had to do was learn TailwindCSS, Nuxt.js, and Vue.js better. It's been a long journey since I pushed myself into the TailwindCSS world, but it was amazing! It doesn't give you any components; it asks you to create your ones! And that is the most important thing to improve yourself in my opinion. It's been a great learning experience for me, and I think I've learned and improved myself a lot.
