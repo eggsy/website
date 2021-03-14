@@ -49,6 +49,6 @@
     "prettier": "^2.2.1",
     "sass-loader": "10.1.1",
     "tailwind-scrollbar": "^1.0.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "tailwindcss": "^2.0.3"
   }
 }
