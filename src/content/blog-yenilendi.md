@@ -25,13 +25,13 @@ Görsel yeniliklere geçmeden önce sistemsemsel yeniliklerden en büyüğü art
 Görsel yeniliklerin en başında ise yeri değiştirilen ve **sayfa geçişlerinde de çalışan** günlük müzik özelliği geliyor. Önceki blogda sayfa değişince oynaması duran ve dinlemek için sizi tek sayfaya kilitleyen bu özellik, artık mobil ve PC'de yukarıda gördüğünüz gezinti çubuğuna taşındı. Böylece (blog içerisindeki) her sayfada kullanılabilir duruma geldi. PC'de ▶ şeklinde gözüken bu düğme üstelik YouTube videosunun durumuna göre de şekil alıyor. Video oynarken videonun oynadığını bildirmek amacıyla bu düğme yanıp sönmeye, video durduğunda ⏸ hâline, video bittiğinde ise ⏹ hâlini alıyor.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/xUcA5jEA.png" alt="image" />
+  <img src="https://i.vgy.me/7QLxBi.png" alt="image" />
 </p>
 
 Şuan bu gönderiyi okuduğunuz sayfaların tasarımı da veri tasarrufu ve kararlılık için tekrar elden geçirilerek şuanki hâline getirildi.
 
 <p class="text-center">
-  <img src="https://i.imgur.com/GZlBuky.png" alt="image" />
+  <img src="https://i.vgy.me/vUtLtv.png" alt="image" />
 </p>
 
 1. Eskiden arka planı resimle kaplı olan bu alandaki resim kaldırılarak yerine resimde gördüğünüz gibi başlık, açıklama ve yazı hakkında birkaç bilgi getirildi.

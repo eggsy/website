@@ -9,7 +9,7 @@ related:
   - okul-gunlukleri
 ---
 
-Bir önceki yazım olan [Okul Günlükleri - Giriş](/blog/gonderi/okul-gunlukleri-giris) yazısında bahsettiğim okul maceramlarından ilki, bu yazıda belirtilen, Y. Ö.'nün verdiği Oral Communication Skills (Konuşma Becerileri) dersindeki Podcast görevimiz olacak.
+Bir önceki yazım olan [Okul Günlükleri - Giriş](/blog/gonderi/okul-gunlukleri) yazısında bahsettiğim okul maceramlarından ilki, bu yazıda belirtilen, Y. Ö.'nün verdiği Oral Communication Skills (Konuşma Becerileri) dersindeki Podcast görevimiz olacak.
 
 **Podcast**, hepinizin bildiği gibi, sesli anlatım şeklinde sunulan, birçok katılımcının bulunabileceği, belli konu altında kaydedilen bölümler serisine denir. Bizim bu dersteki en büyük amacımız, kelime telaffuzumuzu, anlık konuşma becerimizi geliştirmek ve kendimizi buna hazırlamak. Bu nedenler dolayısıyla haftada bu dersten 2, hatta bazen 3 farklı görev alıyor ve bu görevler genellikle bizim konuşma becerimizi geliştirmek için veriliyor. Okulumuzun ilk döneminde böyle bir görev olmasa da, bunun gibi bir çok görev bulunuyordu. Bu görevler, her hafta değişen bir konu üzerinde 4-5 dakikalık kendimize ait bir ses kaydı ile derse katılım sağlamaktı. Daha önceden belirlenen konular üzerinde videolar izliyor, araştırmalar yapıyor ve daha sonra kendi yorumlarımızı belirtiyorduk. Fakat bu dönem, bu derste, **beni çok heyecanlandıran**, bir o kadarda endişelendiren, grup şeklinde vereceğimiz bir ödev konusunun olmasıydı.
 
@@ -31,7 +31,7 @@ Sonrasında ise bize verilen bu kayıt planı formunu doldurmak için hepimizin 
 
 <p class="text-center bg-white rounded-md">
   <img
-    src="https://i.imgur.com/bSHrDEb.png"
+    src="https://i.vgy.me/wLGUqb.png"
     title="kayıt planımızın sonucu"
     alt="kayıt planımızın sonucu"
   />
@@ -41,7 +41,7 @@ Bu işlemlerin sonunda yukarıdaki hâlini alan kayıt planımızın devamında 
 
 <p class="text-center bg-white rounded-md">
   <img
-    src="https://i.imgur.com/RlYkUEs.png"
+    src="https://i.vgy.me/JpVUf4.png"
     title="öğretmenimizin yorumu"
     alt="öğretmenimizin yorumu"
   />
@@ -85,7 +85,7 @@ Grubumuzun lideri kaydı dinledikten sonra müziklerin ve ses efektlerinin azlı
 
 <p class="text-center bg-white rounded-md">
   <img
-    src="https://i.imgur.com/3tOOhf7.png"
+    src="https://i.vgy.me/cx1Wb6.png"
     title="öğretmenimizin bölümün hakkındaki yorumu"
     alt="öğretmenimizin bölümün hakkındaki yorumu"
   />

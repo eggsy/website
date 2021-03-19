@@ -17,14 +17,14 @@
       </header>
 
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
-        <CardProject image="https://i.imgur.com/eBnUzau.png" />
+        <CardProject image="https://i.vgy.me/OIMc81.png" />
 
         <CardProject
-          image="https://i.imgur.com/muOyZEq.png"
+          image="https://i.vgy.me/Lw6rn5.png"
           class="hidden sm:block"
         />
 
-        <CardProject image="https://i.imgur.com/s5prb2j.png" />
+        <CardProject image="https://i.vgy.me/X10Uid.png" />
       </div>
     </div>
 

@@ -193,21 +193,21 @@ export default {
           title: "Discord Templates",
           description:
             "Create your own kingdom with our diverse range of Discord templates!",
-          image: "https://i.imgur.com/wj1X5jg.jpg",
+          image: "https://i.vgy.me/jbf1UB.jpg",
           href: "https://temp.gg",
         },
         {
           title: "PreMiD",
           description:
             "PreMiD is a simple, configurable utility that allows you to show what you're doing on the web in your Discord now playing status.",
-          image: "https://i.imgur.com/xel4zVp.jpg",
+          image: "https://i.vgy.me/rhHgcJ.jpg",
           to: "/projects/premid",
         },
         {
           title: "This Website",
           description:
             "The website where you can learn more and more about me!",
-          image: "https://i.imgur.com/pqZnVvS.jpeg",
+          image: "https://i.vgy.me/sAQScm.jpg",
           to: "/",
         },
         {

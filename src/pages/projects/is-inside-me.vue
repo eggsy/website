@@ -40,8 +40,8 @@
       </header>
 
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
-        <CardProject image="https://i.imgur.com/HBLZNir.jpeg" />
-        <CardProject image="https://i.imgur.com/1ean8pN.jpeg" />
+        <CardProject image="https://i.vgy.me/iXYvCp.jpg" />
+        <CardProject image="https://i.vgy.me/zEQpUG.jpg" />
       </div>
 
       <div class="items-center space-y-2 sm:flex sm:space-x-2 sm:space-y-0">

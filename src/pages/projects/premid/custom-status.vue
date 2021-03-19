@@ -311,7 +311,7 @@ export default {
   },
   head() {
     const title = "PreMiD Custom Status"
-    const image = "https://i.imgur.com/FowB3D5.png"
+    const image = "https://i.vgy.me/NZdome.png"
     const description =
       "Tool that allows you do display whatever you want on your Discord profile with PreMiD! Easy and free!"
 

@@ -40,7 +40,7 @@
             >
               <SkeletonLoader
                 type="image"
-                image-url="https://i.imgur.com/G6fNWpu.png"
+                image-url="https://i.vgy.me/qxpY9T.png"
                 class="rounded w-7 h-7"
               />
               <span class="text-gray-100">Become a Patron</span>
@@ -103,19 +103,19 @@ export default {
     return {
       accounts: [
         {
-          image: "https://i.imgur.com/uyDptaM.png",
+          image: "https://i.vgy.me/QJNSYE.png",
           name: "Ziraat Bank",
           iban: "TR 1100 0100 2544 95837917 5001",
           revealed: false,
         },
         {
-          image: "https://i.imgur.com/ZoiKNO4.png",
+          image: "https://i.vgy.me/l1CN85.png",
           name: "QNB Finansbank",
           iban: "TR96 0011 1000 0000 0086 7646 98",
           revealed: false,
         },
         {
-          image: "https://i.imgur.com/sk4z04r.png",
+          image: "https://i.vgy.me/R0Jwqn.png",
           name: "Papara",
           iban: "8664721806",
           revealed: false,

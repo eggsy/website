@@ -144,8 +144,7 @@ export default {
       const smallImageKey = this.smallImage?.replace(/\s/g, "")
 
       return {
-        largeImage:
-          largeImages[largeImageKey] || "https://i.imgur.com/FowB3D5.png",
+        largeImage: largeImages[largeImageKey] || "https://i.vgy.me/NZdome.png",
         smallImage: smallImages[smallImageKey],
       }
     },
