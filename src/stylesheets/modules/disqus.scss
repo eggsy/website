@@ -1,0 +1,19 @@
+#disqus_thread {
+  a {
+    @apply text-gray-900;
+
+    &:hover {
+      @apply text-gray-700;
+    }
+  }
+}
+
+.dark #disqus_thread {
+  a {
+    @apply text-gray-100;
+
+    &:hover {
+      @apply text-gray-200;
+    }
+  }
+}
