@@ -9,11 +9,11 @@
 
   <div
     v-else-if="$fetchState.error"
-    class="flex items-center justify-center h-screen -mt-10 overflow-hidden select-none"
+    class="flex items-center justify-center h-screen -mt-10 overflow-hidden text-gray-900 select-none dark:text-gray-100"
   >
     <div class="space-y-2">
       <div
-        class="flex items-center justify-center space-x-2 text-2xl font-semibold text-gray-900 dark:text-gray-100"
+        class="flex items-center justify-center space-x-2 text-2xl font-semibold"
       >
         <icon name="times" class="w-8 h-8" />
         <h3>Gönderi yüklenemedi.</h3>
@@ -37,15 +37,17 @@
     <div class="w-full mx-auto">
       <article>
         <header class="mb-12 space-y-4 text-center sm:text-left sm:pr-16">
-          <h1
-            class="block text-2xl font-semibold text-black quicksand sm:text-4xl dark:text-gray-50"
-          >
-            {{ post.title }}
-          </h1>
+          <div class="space-y-2">
+            <h1
+              class="block text-2xl font-semibold text-black sm:text-4xl dark:text-gray-50"
+            >
+              {{ post.title }}
+            </h1>
 
-          <p class="dark:text-gray-100">
-            {{ post.description }}
-          </p>
+            <p class="dark:text-gray-100">
+              {{ post.description }}
+            </p>
+          </div>
 
           <div
             class="flex items-center justify-center space-x-2 whitespace-nowrap sm:justify-start dark:text-gray-300"
@@ -126,17 +128,12 @@
             Bunlar da hoşunuza gidebilir
           </h3>
 
-          <div class="grid gap-2 sm:grid-cols-2">
+          <div class="grid gap-2 sm:grid-cols-3">
             <nuxt-link
               v-for="(relatedPost, index) in getRelatedPosts"
               :key="`related-${index}`"
               :to="`/blog/gonderi/${relatedPost.slug}`"
-              :class="{
-                'p-3 text-center truncate bg-gray-200 rounded-md hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100 sm:text-left': true,
-                'sm:col-span-2':
-                  Number(index) % 2 === 0 &&
-                  Number(index) + 1 >= getRelatedPosts.length,
-              }"
+              class="p-4 text-center truncate bg-gray-200 rounded hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100"
             >
               {{ relatedPost.title }}
             </nuxt-link>
@@ -296,10 +293,6 @@ export default {
 </script>
 
 <style lang="scss">
-header h1.quicksand {
-  font-family: "Quicksand", sans-serif;
-}
-
 .nuxt-content {
   /* Headings */
   h1,
