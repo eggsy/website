@@ -1,13 +1,9 @@
-const { screens } = require("tailwindcss/defaultTheme")
-delete screens["2xl"]
+const { resolve } = require("path")
 
 module.exports = {
   darkMode: "class",
   purge: {
-    options: {
-      // Whitelisting these because purge.content didn't work for some reason
-      safelist: ["mb-6", "lg:grid-cols-2", "hover:border-blue-900"],
-    },
+    content: [resolve("./src/content/**/*")],
   },
   theme: {
     extend: {
@@ -33,11 +29,10 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
     },
-    screens: { ...screens },
-  },
-  variants: {
-    extend: {
-      backgroundOpacity: ["dark"],
+    variants: {
+      extend: {
+        backgroundOpacity: ["dark"],
+      },
     },
   },
   plugins: [require("tailwind-scrollbar"), require("@tailwindcss/line-clamp")],
