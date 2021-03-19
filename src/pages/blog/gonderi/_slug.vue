@@ -86,6 +86,9 @@
       <Disqus
         shortname="eggsy-xyz"
         :title="post.title"
+        :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
+        :identifier="`/blog/gonderi/${post.slug}`"
+        :slug="post.slug"
         lang="tr"
         class="mt-10"
       />
