@@ -20,7 +20,8 @@
         itemLoaded === false,
     }"
     :style="{
-      background: itemLoaded === true ? `url('${imageUrl}') center` : '',
+      backgroundImage: itemLoaded === true ? `url('${imageUrl}')` : '',
+      backgroundPosition: 'center',
       backgroundSize: itemLoaded === true ? backgroundSize : '',
     }"
   >
