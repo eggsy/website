@@ -33,113 +33,125 @@
     </div>
   </div>
 
-  <div v-else class="px-4 pb-10 space-x-6 pt-14 sm:px-0">
-    <div class="w-full mx-auto">
-      <article>
-        <header class="mb-12 space-y-4 text-center sm:text-left sm:pr-16">
-          <div class="space-y-2">
-            <h1
-              class="block text-2xl font-semibold text-black sm:text-4xl dark:text-gray-50"
-            >
-              {{ post.title }}
-            </h1>
+  <div v-else class="px-4 pb-10 pt-14 sm:px-0">
+    <client-only>
+      <VueScrollProgressBar />
+    </client-only>
 
-            <p class="dark:text-gray-100">
-              {{ post.description }}
-            </p>
-          </div>
+    <div class="space-x-6">
+      <div class="w-full mx-auto">
+        <article>
+          <header class="mb-12 space-y-4 text-center sm:text-left sm:pr-16">
+            <div class="space-y-2">
+              <h1
+                class="block text-2xl font-semibold text-black sm:text-4xl dark:text-gray-50"
+              >
+                {{ post.title }}
+              </h1>
 
-          <div
-            class="flex items-center justify-center space-x-2 whitespace-nowrap sm:justify-start dark:text-gray-300"
-          >
-            <div
-              class="flex items-center px-2 py-1 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
-            >
-              <icon name="clock" class="w-4 h-4" />
-              <div>{{ getReadingTime }} dakika okuma</div>
+              <p class="dark:text-gray-100">
+                {{ post.description }}
+              </p>
             </div>
 
             <div
-              class="flex items-center px-2 py-1 pl-2 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
+              class="flex items-center justify-center space-x-2 whitespace-nowrap sm:justify-start dark:text-gray-300"
             >
-              <icon name="calendar" class="w-4 h-4" />
-              <div>{{ getReadableDate }}</div>
+              <div
+                class="flex items-center px-2 py-1 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
+              >
+                <icon name="clock" class="w-4 h-4" />
+                <div>{{ getReadingTime }} dakika okuma</div>
+              </div>
+
+              <div
+                class="flex items-center px-2 py-1 pl-2 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
+              >
+                <icon name="calendar" class="w-4 h-4" />
+                <div>{{ getReadableDate }}</div>
+              </div>
+            </div>
+          </header>
+
+          <div class="mt-4 space-y-4">
+            <div
+              class="sticky float-left -ml-20 text-right hidden: md:block top-4"
+            >
+              <BlogShare
+                type="vertical"
+                :title="post.title"
+                :path="$route.path"
+              />
+            </div>
+
+            <nuxt-content :document="post" />
+          </div>
+        </article>
+
+        <Disqus
+          shortname="eggsy-xyz"
+          :title="post.title"
+          :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
+          :identifier="`/blog/gonderi/${post.slug}`"
+          :slug="post.slug"
+          lang="tr"
+          class="mt-10"
+        />
+
+        <div class="mt-10 space-y-10">
+          <BlogPrevNext :current-slug="post.slug" />
+
+          <div>
+            <h3
+              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+            >
+              Yazıyı paylaş
+            </h3>
+
+            <BlogShare :title="post.title" :path="$route.path" />
+          </div>
+
+          <div v-if="getTags.length > 0">
+            <h3
+              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+            >
+              Etiketler
+            </h3>
+
+            <div class="flex flex-wrap space-x-2">
+              <nuxt-link
+                v-for="(tag, index) in getTags"
+                :key="`tag-${index}`"
+                :to="{
+                  name: 'blog',
+                  query: {
+                    etiket: tag,
+                  },
+                }"
+                class="px-2 py-1 text-gray-800 bg-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
+              >
+                {{ tag }}
+              </nuxt-link>
             </div>
           </div>
-        </header>
 
-        <div class="mt-4 space-y-4">
-          <div
-            class="sticky float-left -ml-20 text-right hidden: md:block top-4"
-          >
-            <BlogShare
-              type="vertical"
-              :title="post.title"
-              :path="$route.path"
-            />
-          </div>
-
-          <nuxt-content :document="post"></nuxt-content>
-        </div>
-      </article>
-
-      <Disqus
-        shortname="eggsy-xyz"
-        :title="post.title"
-        :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
-        :identifier="`/blog/gonderi/${post.slug}`"
-        :slug="post.slug"
-        lang="tr"
-        class="mt-10"
-      />
-
-      <div class="mt-10 space-y-10">
-        <BlogPrevNext :current-slug="post.slug" />
-
-        <div>
-          <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">
-            Yazıyı paylaş
-          </h3>
-
-          <BlogShare :title="post.title" :path="$route.path" />
-        </div>
-
-        <div v-if="getTags.length > 0">
-          <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">
-            Etiketler
-          </h3>
-
-          <div class="flex flex-wrap space-x-2">
-            <nuxt-link
-              v-for="(tag, index) in getTags"
-              :key="`tag-${index}`"
-              :to="{
-                name: 'blog',
-                query: {
-                  etiket: tag,
-                },
-              }"
-              class="px-2 py-1 text-gray-800 bg-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
+          <div v-if="getRelatedPosts.length > 0">
+            <h3
+              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
             >
-              {{ tag }}
-            </nuxt-link>
-          </div>
-        </div>
+              Bunlar da hoşunuza gidebilir
+            </h3>
 
-        <div v-if="getRelatedPosts.length > 0">
-          <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">
-            Bunlar da hoşunuza gidebilir
-          </h3>
-
-          <div class="grid gap-2 sm:grid-cols-3">
-            <nuxt-link
-              v-for="(relatedPost, index) in getRelatedPosts"
-              :key="`related-${index}`"
-              :to="`/blog/gonderi/${relatedPost.slug}`"
-              class="p-4 text-center truncate bg-gray-200 rounded hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100"
-            >
-              {{ relatedPost.title }}
-            </nuxt-link>
+            <div class="grid gap-2 sm:grid-cols-3">
+              <nuxt-link
+                v-for="(relatedPost, index) in getRelatedPosts"
+                :key="`related-${index}`"
+                :to="`/blog/gonderi/${relatedPost.slug}`"
+                class="p-4 text-center truncate bg-gray-200 rounded hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100"
+              >
+                {{ relatedPost.title }}
+              </nuxt-link>
+            </div>
           </div>
         </div>
       </div>
@@ -149,10 +161,12 @@
 
 <script>
 import { Disqus } from "vue-disqus"
+import { VueScrollProgressBar } from "@guillaumebriday/vue-scroll-progress-bar"
 
 export default {
   components: {
     Disqus,
+    VueScrollProgressBar,
   },
   layout: "blog",
   data() {
