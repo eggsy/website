@@ -121,7 +121,7 @@
         Aramanıza uygun herhangi bir gönderi bulunamadı.
       </div>
 
-      <div v-else class="space-y-6">
+      <div v-else class="space-y-4">
         <CardPost
           v-for="(post, index) in getFilteredPosts"
           :key="`linux-${index}`"
