@@ -1,7 +1,15 @@
 {
-  "name": "eggsy-website-tailwind",
-  "version": "1.0.0",
-  "private": true,
+  "name": "eggsy-website",
+  "description": "EGGSY's personal website made in Nuxt.js + Tailwind CSS",
+  "license": "MIT",
+  "homepage": "https://eggsy.xyz",
+  "readme": "https://github.com/eggsy/website",
+  "version": "2.0.0",
+  "author": {
+    "name": "Abdulbaki <EGGSY> Dursun",
+    "email": "eggsydev@gmail.com",
+    "url": "https://eggsy.xyz"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -19,7 +27,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@tailwindcss/line-clamp": "^0.2.0",
     "core-js": "^3.9.1",
-    "firebase": "^8.3.0",
+    "firebase": "^8.3.1",
     "nuxt": "^2.15.3",
     "nuxt-helmet": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
@@ -29,6 +37,7 @@
     "vue-tippy": "^4.8.0"
   },
   "devDependencies": {
+    "@guillaumebriday/vue-scroll-progress-bar": "^1.0.0",
     "@nuxtjs/color-mode": "^2.0.5",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^6.0.0",
