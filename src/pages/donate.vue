@@ -36,7 +36,7 @@
             class="w-max"
           >
             <div
-              class="flex items-center px-4 py-2 space-x-2 rounded cursor-pointer hover:bg-opacity-95 bg-social-patreon"
+              class="flex items-center px-4 py-2 space-x-2 rounded cursor-pointer hover:bg-opacity-95 bg-[#FF424D]"
             >
               <SkeletonLoader
                 type="image"

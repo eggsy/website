@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-full px-6 py-4 overflow-x-hidden rounded-md bg-brand-discord-dark"
-  >
+  <div class="w-full px-6 py-4 overflow-x-hidden rounded-md bg-[#6c82cf]">
     <div class="pt-2">
       <h1 class="text-xs font-bold text-white uppercase dark:text-gray-100">
         Playing a game
@@ -27,7 +25,7 @@
                 content: getText.small,
                 placement: 'top',
               }"
-              class="box-border absolute rounded-full bg-brand-discord-dark -bottom-2 -right-2 w-9 ring-4 ring-social-discord-dark focus:outline-none"
+              class="box-border absolute rounded-full bg-[#6c82cf] -bottom-2 -right-2 w-9 ring-4 ring-[#6c82cf] focus:outline-none"
               :src="getImages.smallImage"
               draggable="false"
               alt="small image"

@@ -1,15 +1,15 @@
 <template>
   <div v-if="type === 'vertical'" class="grid grid-cols-1 gap-2">
     <div class="button" @click="share('twitter')">
-      <icon name="twitter" class="text-social-twitter" />
+      <icon name="twitter" class="text-[#1DA1F2]" />
     </div>
 
     <div class="button" @click="share('telegram')">
-      <icon name="telegram" class="text-social-telegram" />
+      <icon name="telegram" class="text-[#2EAADE]" />
     </div>
 
     <div class="button" @click="share('whatsapp')">
-      <icon name="whatsapp" class="text-social-whatsapp" />
+      <icon name="whatsapp" class="text-[#25D366]" />
     </div>
 
     <div class="button" @click="share('url')">
@@ -32,15 +32,15 @@
   <div v-else class="grid grid-cols-1 gap-4 sm:grid-cols-3">
     <div class="flex items-center space-x-2">
       <div class="button" @click="share('twitter')">
-        <icon name="twitter" class="text-social-twitter" />
+        <icon name="twitter" class="text-[#1DA1F2]" />
       </div>
 
       <div class="button" @click="share('telegram')">
-        <icon name="telegram" class="text-social-telegram" />
+        <icon name="telegram" class="text-[#2EAADE]" />
       </div>
 
       <div class="button" @click="share('url')">
-        <icon name="whatsapp" class="text-social-whatsapp" />
+        <icon name="whatsapp" class="text-[#25D366]" />
       </div>
     </div>
 
