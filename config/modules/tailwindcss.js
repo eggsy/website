@@ -1,7 +1,7 @@
 import { resolve } from "path"
 
 export default {
-  /* jit: true, */
+  jit: true,
   configPath: resolve("./tailwind.config.js"),
   viewer: false,
 }
