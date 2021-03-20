@@ -3,11 +3,11 @@
     <div class="container relative w-11/12 mx-auto sm:w-10/12 md:w-7/12">
       <div class="flex items-center justify-between">
         <nuxt-link :to="{ name: 'index' }">
-          <div
-            :style="{ backgroundImage: `url('/assets/icons/icon.svg')` }"
-            class="w-10 h-10 transition bg-gray-100 bg-center bg-contain rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+          <SkeletonLoader
+            type="image"
+            image-url="/assets/icons/icon.svg"
+            class="w-10 h-10 transition bg-gray-100 rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
             title="EGGSY's Website"
-            alt="website icon"
           />
         </nuxt-link>
 
