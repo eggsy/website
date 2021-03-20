@@ -10,56 +10,18 @@
         v-if="searchEnabled === false"
         class="flex items-center justify-between px-4 py-2 sm:px-0"
       >
-        <nuxt-link :to="{ name: 'blog' }">
-          <div
-            :style="{ backgroundImage: `url('/assets/icons/icon-blog.svg')` }"
-            class="w-10 h-10 transition bg-gray-100 bg-center bg-contain rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
-            title="EGGSY's Blog"
-            alt="blog icon"
+        <nuxt-link :to="{ name: getTargetRoute.name }">
+          <SkeletonLoader
+            type="image"
+            image-url="/assets/icons/icon.svg"
+            class="w-10 h-10 transition bg-gray-100 rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+            :title="getTargetRoute.title"
           />
         </nuxt-link>
 
         <div class="flex items-center space-x-4">
-          <nuxt-link
-            v-if="$route.name === 'blog' && !isSearching"
-            v-tippy="{
-              content: 'Ana sayfaya dön',
-              placement: 'bottom',
-            }"
-            :to="{
-              name: 'index',
-            }"
-            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:bg-gray-200 hover:underline focus:outline-none dark:hover:bg-gray-800"
-            title="Ana sayfaya dön"
-          >
-            <icon
-              key="double-left"
-              name="chevron-double-left"
-              class="w-4 h-4"
-            />
-          </nuxt-link>
-
-          <nuxt-link
-            v-else
-            v-tippy="{
-              content: 'Bloga dön',
-              placement: 'bottom',
-            }"
-            :to="{
-              name: 'blog',
-            }"
-            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:bg-gray-200 hover:underline focus:outline-none dark:hover:bg-gray-800"
-            title="Bloga dön"
-          >
-            <icon key="single-left" name="chevron-left" class="w-4 h-4" />
-          </nuxt-link>
-
           <div
-            v-tippy="{
-              content: 'Gönderi ara',
-              placement: 'bottom',
-            }"
-            class="p-2 py-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:bg-gray-200 hover:underline focus:outline-none dark:hover:bg-gray-800"
+            class="flex items-center px-2.5 py-2.5 sm:px-3 sm:py-1.5 sm:space-x-2 text-gray-900 rounded-full cursor-pointer dark:text-gray-100 hover:bg-gray-200 focus:outline-none dark:hover:bg-gray-800"
             title="Gönderi ara"
             @click="
               {
@@ -68,6 +30,7 @@
               }
             "
           >
+            <span class="hidden sm:block">Gönderi Ara</span>
             <icon name="search" class="w-4 h-4" />
           </div>
 
@@ -120,6 +83,22 @@ export default {
     }
   },
   computed: {
+    /**
+     * Returns the target route according to the current route.
+     * @returns {{title: string; name: string;}}
+     */
+    getTargetRoute() {
+      if (this.$route.name === "blog")
+        return {
+          title: "Ana Sayfaya Dön",
+          name: "index",
+        }
+      else
+        return {
+          title: "Bloga Dön",
+          name: "blog",
+        }
+    },
     /**
      * Checks for common query parameters and returns a boolean.
      * @returns {boolean} Is user searching or not.
