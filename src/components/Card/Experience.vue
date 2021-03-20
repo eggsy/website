@@ -11,7 +11,7 @@
 
     <div
       :class="{
-        'flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 divide-x-2 divide-gray-300': true,
+        'flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 divide-x-2 divide-gray-300 dark:divide-gray-700': true,
       }"
     >
       <div class="flex items-center flex-shrink-0 space-x-2">
