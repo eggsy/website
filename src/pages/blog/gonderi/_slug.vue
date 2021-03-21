@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div v-else class="px-4 pb-10 pt-14 sm:px-0">
+  <div v-else class="pt-14">
     <client-only>
       <VueScrollProgressBar />
     </client-only>
