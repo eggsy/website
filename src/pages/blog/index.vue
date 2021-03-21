@@ -17,7 +17,7 @@
     <h3>Gönderiler yüklenemedi.</h3>
   </div>
 
-  <div v-else class="px-4 pb-16 sm:px-0">
+  <div v-else>
     <div v-if="getFilteredPosts === false">
       <h3
         class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
@@ -116,9 +116,33 @@
     <div v-else-if="getFilteredPosts">
       <div
         v-if="getFilteredPosts !== false && getFilteredPosts.length === 0"
-        class="text-xl font-semibold text-gray-900 dark:text-gray-100"
+        class="space-y-4"
       >
-        Aramanıza uygun herhangi bir gönderi bulunamadı.
+        <h2
+          class="text-2xl font-semibold text-gray-900 sm:text-4xl dark:text-gray-100"
+        >
+          Aramanıza uygun herhangi bir gönderi bulunamadı.
+        </h2>
+
+        <div class="sm:w-4/6">
+          <h3 class="text-lg">Deneyebileceğiniz yöntemler:</h3>
+          <ul class="pl-4 text-gray-700 list-disc dark:text-gray-300">
+            <li>Aramanızda anahtar kelimeler kullanmayı deneyin.</li>
+            <li>Etiketler kullanmayı deneyin.</li>
+            <li>
+              Gönderinin başlığında veya açıklamasında olan kelimelerle arama
+              yapmayı deneyin.
+            </li>
+          </ul>
+        </div>
+
+        <nuxt-link
+          :to="{ name: 'blog' }"
+          class="flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100"
+        >
+          <icon name="home" class="w-6 h-6" />
+          <span>Bloga Dön</span>
+        </nuxt-link>
       </div>
 
       <div v-else class="space-y-4">
