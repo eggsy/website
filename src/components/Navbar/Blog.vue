@@ -88,7 +88,7 @@ export default {
      * @returns {{title: string; name: string;}}
      */
     getTargetRoute() {
-      if (this.$route.name === "blog")
+      if (this.$route.name === "blog" && !this.isSearching)
         return {
           title: "Ana Sayfaya Dön",
           name: "index",
