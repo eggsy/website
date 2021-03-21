@@ -71,7 +71,7 @@
         </div>
       </div>
 
-      <div class="grid gap-2 mt-4 sm:gap-4 sm:grid-cols-3">
+      <div class="grid gap-2 mt-2 sm:mt-4 sm:gap-4 sm:grid-cols-3">
         <nuxt-link
           v-for="(project, index) in getProjects.rest"
           :key="`project-rest-${index}`"
@@ -178,7 +178,7 @@
         Follow me
       </h2>
 
-      <Socials class="mt-4" />
+      <Socials class="mt-2" />
     </section>
   </div>
 </template>
