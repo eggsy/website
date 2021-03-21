@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap space-x-2">
+  <div class="flex flex-wrap space-x-4">
     <!-- Discord -->
     <a
       :href="getLinks.discord"
@@ -55,6 +55,10 @@
 <script>
 export default {
   computed: {
+    /**
+     * Returns social links in public runtime config.
+     * @returns {object}
+     */
     getLinks() {
       return this.$config.social
     },
@@ -64,10 +68,10 @@ export default {
 
 <style lang="scss" scoped>
 a {
-  @apply transform transition sm:hover:-translate-y-1;
+  @apply rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 ring-transparent ring-[6px] hover:ring-gray-200 dark:hover:ring-gray-700;
 }
 
 .svg-icon {
-  @apply w-10 h-10 text-gray-800 dark:text-gray-200;
+  @apply w-8 h-8 text-gray-800 dark:text-gray-200;
 }
 </style>
