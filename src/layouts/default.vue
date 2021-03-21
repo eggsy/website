@@ -5,7 +5,12 @@
     />
 
     <NavbarDefault class="pt-8" />
-    <Nuxt class="container w-11/12 pb-10 mx-auto sm:w-9/12 md:w-7/12" />
+
+    <Nuxt
+      class="container w-11/12 min-h-screen pb-8 mx-auto sm:pb-10 sm:w-9/12 md:w-7/12"
+    />
+
+    <Footer />
 
     <div
       class="fixed bottom-0 right-0 z-50 flex items-center mb-4 mr-6 space-x-2 sm:space-x-4"
