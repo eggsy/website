@@ -88,19 +88,17 @@
 
     <section
       id="experiences"
-      class="grid gap-6 mt-4 sm:mt-6 sm:gap-8 sm:grid-cols-2"
+      class="grid gap-6 mt-4 sm:mt-6 md:mt-10 sm:gap-8 sm:grid-cols-2"
     >
       <div>
-        <h3
-          class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100"
-        >
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
           My experiences
         </h3>
 
         <div class="grid gap-2 mt-4">
           <CardExperience
-            v-for="(experience, index) in experiences"
-            :key="`experience-${index}`"
+            v-for="(experience, index) in experiences.jobs"
+            :key="`experience-job-${index}`"
             :title="experience.title"
             :url="experience.url"
             :date="experience.date"
@@ -110,21 +108,36 @@
       </div>
 
       <div>
-        <h3
-          class="mt-4 text-xl font-semibold text-gray-900 sm:mt-10 dark:text-gray-100"
-        >
-          Technologies I use
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+          Education
         </h3>
 
         <div class="grid gap-2 mt-4">
-          <CardSkill
-            v-for="(skill, index) in skills"
-            :key="`skill-${index}`"
-            :title="skill.title"
-            :level="skill.level"
-            :icon="skill.icon"
+          <CardExperience
+            v-for="(experience, index) in experiences.education"
+            :key="`experience-education-${index}`"
+            :title="experience.title"
+            :url="experience.url"
+            :date="experience.date"
+            :position="experience.position"
           />
         </div>
+      </div>
+    </section>
+
+    <section id="technologies" class="mt-6">
+      <h3
+        class="mt-4 text-xl font-semibold text-gray-900 sm:mt-10 dark:text-gray-100"
+      >
+        Technologies I use
+      </h3>
+
+      <div class="grid grid-cols-2 gap-2 mt-4 sm:grid-cols-3 md:grid-cols-4">
+        <CardSkill
+          v-for="(skill, index) in skills"
+          :key="`skill-${index}`"
+          :title="skill"
+        />
       </div>
     </section>
 
@@ -227,104 +240,82 @@ export default {
           to: "/daily",
         },
       ],
-      experiences: [
-        {
-          title: "IZM Game Studios",
-          url: "https://izmgamestudios.com",
-          position: "Solution Partner",
-          date: "2020-",
-        },
-        {
-          title: "TruckersMP",
-          url: "https://truckersmp.com/user/1648033",
-          position: "Communitiy Moderator & Translator",
-          date: "2020-",
-        },
-        {
-          title: "Batakköylü Düğün Salonu",
-          url: "https://batakkoylu.netlify.app",
-          position: "Web Developer",
-          date: "2020-2020",
-        },
-        {
-          title: "Discord Bot List",
-          url: "https://top.gg/user/162969778699501569",
-          position: "Website Moderator",
-          date: "2017-2018",
-        },
-        {
-          title: "EGGSY's Discord Bot",
-          url: "https://top.gg/bot/eggsy",
-          position: "Creator, Developer and Maintainer",
-          date: "2017-2019",
-        },
-        {
-          title: "Rotosis Robotics",
-          url: "https://www.rotosis.com",
-          position: "Intern",
-          date: "2017-2018",
-        },
-      ],
+      experiences: {
+        jobs: [
+          {
+            title: "IZM Game Studios",
+            url: "https://izmgamestudios.com",
+            position: "Solution Partner",
+            date: "2020-",
+          },
+          {
+            title: "TruckersMP",
+            url: "https://truckersmp.com/user/1648033",
+            position: "Communitiy Moderator & Translator",
+            date: "2020-",
+          },
+          {
+            title: "Batakköylü Düğün Salonu",
+            url: "https://batakkoylu.netlify.app",
+            position: "Web Developer",
+            date: "2020-2020",
+          },
+          {
+            title: "Discord Bot List",
+            url: "https://top.gg/user/162969778699501569",
+            position: "Website Moderator",
+            date: "2017-2018",
+          },
+          {
+            title: "EGGSY's Discord Bot",
+            url: "https://top.gg/bot/eggsy",
+            position: "Creator, Developer and Maintainer",
+            date: "2017-2019",
+          },
+        ],
+        education: [
+          {
+            title: "Muş Alparslan University",
+            url: "http://alparslan.edu.tr/",
+            position: "English Language Teaching",
+            date: "2020-",
+          },
+          {
+            title: "Rotosis Robotics",
+            url: "https://www.rotosis.com/",
+            position: "Intern",
+            date: "2017-2018",
+          },
+          {
+            title: "Adil Karağaaç MTAL",
+            url: "https://akatl.meb.k12.tr/",
+            position: "Automation Systems",
+            date: "2014-2018",
+          },
+        ],
+      },
       skills: [
-        {
-          title: "JavaScript",
-          icon: "javascript",
-          level: 100,
-        },
-        {
-          title: "HTML5",
-          icon: "html",
-          level: 100,
-        },
-        {
-          title: "Nuxt.js",
-          icon: "nuxtjs",
-          level: 95,
-        },
-        {
-          title: "Vue.js",
-          icon: "vuejs",
-          level: 85,
-        },
-        {
-          title: "TailwindCSS",
-          icon: "tailwindcss",
-          level: 80,
-        },
-        {
-          title: "Node.js",
-          icon: "nodejs",
-          level: 80,
-        },
-        {
-          title: "TypeScript",
-          icon: "typescript",
-          level: 80,
-        },
-        {
-          title: "Sass",
-          icon: "sass",
-          level: 75,
-        },
-        {
-          title: "WordPress",
-          icon: "wordpress",
-          level: 50,
-        },
-        {
-          title: "PHP",
-          icon: "php",
-          level: 20,
-        },
+        "JavaScript",
+        "HTML5",
+        "Nuxt.js",
+        "Vue.js",
+        "Tailwind CSS",
+        "Node.js",
+        "TypeScript",
+        "Sass",
+        "Figma",
+        "Firebase",
+        "WordPress",
+        "PHP",
       ],
     }
   },
   fetchOnServer: false,
   async fetch() {
+    const filter = ["eggsy", "DBM", "eggsywashere.github.io"]
     const { data: repos } = await this.$axios.get(
       "https://api.github.com/users/eggsy/repos"
     )
-    const filter = ["eggsy", "DBM", "eggsywashere.github.io"]
 
     this.repos = repos
       ?.filter((repo) => repo.fork === false && !filter.includes(repo.name))
