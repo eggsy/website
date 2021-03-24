@@ -69,7 +69,10 @@ export default {
       name: "theme-color",
       content: "#111827",
     },
-  ],
+  ].map((i) => {
+    i.property = i.property || i.name || null
+    return i
+  }),
   link: [
     { rel: "icon", type: "image/x-icon", href: "/assets/icons/icon.ico" },
     {
