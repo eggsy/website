@@ -111,7 +111,9 @@
 
       <div
         class="relative p-2 bg-gray-100 rounded h-52 ring-1 ring-gray-200 sm:h-auto dark:ring-gray-800 dark:bg-gray-800"
-        :class="{ 'hidden sm:flex': !getLyrics }"
+        :class="{
+          'hidden sm:flex items-center justify-center': !getLyrics,
+        }"
       >
         <div
           v-if="getLyrics"
@@ -141,7 +143,7 @@
           </p>
         </div>
 
-        <div v-else class="flex items-center justify-center">
+        <div v-else>
           <h3 class="text-lg text-gray-900 dark:text-gray-100">No lyrics...</h3>
         </div>
       </div>
