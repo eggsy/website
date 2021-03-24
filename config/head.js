@@ -61,7 +61,7 @@ export default {
     {
       hid: "og:image",
       name: "og:image",
-      content: "/icon.png",
+      content: "https://eggsy.xyz/icon.png",
     },
     /* Others */
     {
@@ -70,16 +70,20 @@ export default {
       content: "#111827",
     },
   ].map((i) => {
-    i.property = i.property || i.name || null
+    if (i.name && !i.property) i.property = i.name
     return i
   }),
   link: [
-    { rel: "icon", type: "image/x-icon", href: "/assets/icons/icon.ico" },
+    {
+      rel: "icon",
+      type: "image/x-icon",
+      href: "https://eggsy.xyz/assets/icons/icon.ico",
+    },
     {
       rel: "search",
       type: "application/opensearchdescription+xml",
       title: "EGGSY's Blog",
-      href: "/opensearch.xml",
+      href: "https://eggsy.xyz/opensearch.xml",
     },
   ],
 }

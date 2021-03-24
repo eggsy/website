@@ -306,7 +306,9 @@ export default {
      * @returns {string} The URL of the image.
      */
     getPostImage() {
-      return this.post?.image || `/assets/images/posts/${this.post?.slug}.jpg`
+      return this.post?.image
+        ? `https://eggsy.xyz/${this.post?.image}`
+        : `https://eggsy.xyz/assets/images/posts/${this.post?.slug}.jpg`
     },
   },
 }

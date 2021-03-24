@@ -190,7 +190,7 @@ export default {
     const title = "Song Recommendations"
     const description =
       "Here you will find my song recommendations of the last 10 days. You can check this page everyday for a fresh song!"
-    const image = "/assets/meta/images/daily.jpg"
+    const image = "https://eggsy.xyz/assets/meta/images/daily.jpg"
 
     return {
       title,
