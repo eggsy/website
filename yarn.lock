@@ -1827,13 +1827,13 @@
     url-loader "^4.1.0"
     vue-svg-loader "^0.16.0"
 
-"@nuxtjs/tailwindcss@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-4.0.1.tgz#bbe30118f4d66f4c6d751f69a31668af8b0163c1"
-  integrity sha512-FMmCrma9O8NSIi6gPVFMre8d2JKTSMzBV8LidQg/s/yhrmZydcz15Ys2vXh/TDZbr5pUhXiffJnsh3ZbdvIwFw==
+"@nuxtjs/tailwindcss@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-4.0.2.tgz#d9d35668e8f2ba1562da539dace1bbae4dc498f5"
+  integrity sha512-Y/sc1JFveLrRtyM8dkjG4EP9K7sHnAh552XBdhR2YQ55wvEKCupseCT8sCY2gCghkFVXseYEDFpbLJQAimbiEA==
   dependencies:
     "@nuxt/postcss8" "^1.1.3"
-    "@tailwindcss/jit" "^0.1.1"
+    "@tailwindcss/jit" "^0.1.7"
     autoprefixer "^10.2.5"
     chalk "^4.1.0"
     clear-module "^4.1.1"
@@ -1842,8 +1842,8 @@
     postcss "^8.2.8"
     postcss-custom-properties "^11.0.0"
     postcss-nesting "^7.0.1"
-    tailwind-config-viewer "^1.5.0"
-    tailwindcss "^2.0.3"
+    tailwind-config-viewer "^1.5.1"
+    tailwindcss "^2.0.4"
     ufo "^0.6.10"
 
 "@nuxtjs/youch@^4.2.3":
@@ -1913,10 +1913,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@tailwindcss/jit@^0.1.1":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.5.tgz#b4384e986a796eff8745b8b59662a00780474724"
-  integrity sha512-f7Fdd93uD4J0hyaNWX7vrWF0pA39hh7oxHVzTqhwfUWmzWQBGevKfnniLe4GFxwfqYpYHxy5ycOWP76tzWhvrQ==
+"@tailwindcss/jit@^0.1.7":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.8.tgz#0fb2a1319918d5fabdc0349ef71d7d3811da60cb"
+  integrity sha512-YNzq0mUimcJldY0u2B475u7fnyOWQkWbQvHcEftkf7VqQIwQrBvSRM7Cycg0MAU42IMgT14MGOmmV8ObUXzNMQ==
   dependencies:
     chokidar "^3.5.1"
     dlv "^1.1.3"
@@ -4820,6 +4820,16 @@ eslint-plugin-vue@^7.1.0, eslint-plugin-vue@^7.7.0:
   version "7.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.7.0.tgz#a90df4595e670821bf243bd2750ededdb74948b8"
   integrity sha512-mYz4bpLGv5jx6YG/GvKkqbGSfV7uma2u1P3mLA41Q5vQl8W1MeuTneB8tfsLq6xxxesFubcrOC0BZBJ5R+eaCQ==
+  dependencies:
+    eslint-utils "^2.1.0"
+    natural-compare "^1.4.0"
+    semver "^7.3.2"
+    vue-eslint-parser "^7.6.0"
+
+eslint-plugin-vue@^7.8.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.8.0.tgz#cb0e85d65b65fa8d15e783fbb03c049d2c4cfdae"
+  integrity sha512-OGrnPz+PuYL2HmVyBHxm4mRjxW2kfFCQE6Hw9G6qOHs/Pcu0srOlCCW0FMa8SLzIEqxl8WuKoBSPcMnrjUG2vw==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
@@ -10730,7 +10740,7 @@ table@^6.0.4:
     slice-ansi "^4.0.0"
     string-width "^4.2.0"
 
-tailwind-config-viewer@^1.5.0:
+tailwind-config-viewer@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/tailwind-config-viewer/-/tailwind-config-viewer-1.5.1.tgz#c8ba81593ae8bc64d3625be983ebcf25aea3cc30"
   integrity sha512-vlrZjC+sJMgtj5Pz9GsJsJMVVWi1Pv/F3xU54OuOHM8fD+Pb8KSB3Ja2lFVD8KN//wsvkpuJST8OctbApb3mMw==
@@ -10749,7 +10759,7 @@ tailwind-scrollbar@^1.2.4:
   resolved "https://registry.yarnpkg.com/tailwind-scrollbar/-/tailwind-scrollbar-1.2.4.tgz#27fff41883c2d6b453c1f0950410fa9407f0400d"
   integrity sha512-vnB8U1T+FSsOsdko+3v4qJ2rGo7PwgB08xhN3E6Uvo1Wg91e61v06pXOl3Kyc3zRUE1V4jY/zPtfy4dt3Q3MWQ==
 
-tailwindcss@^2.0.3:
+tailwindcss@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.0.4.tgz#cf13e62738c3a27065664e449d93b66ee2945506"
   integrity sha512-WhgR0oiBxGOZ9jY0yVfaJCHnckR7U74Fs/BMsYxGdwGJQ5Hd/HlaKD26bEJFZOvYScJo0QcUj2ImldzedsG7Bw==
