@@ -183,8 +183,6 @@ export default {
   async fetch() {
     const songs = await this.$getDaily(10)
 
-    console.log(songs)
-
     this.selected = songs[0]
     this.songs = songs || []
   },
@@ -244,7 +242,10 @@ export default {
           name: "twitter:image",
           content: image,
         },
-      ],
+      ].map((i) => {
+        i.property = i.property || i.name || null
+        return i
+      }),
       link: [
         {
           rel: "canonical",

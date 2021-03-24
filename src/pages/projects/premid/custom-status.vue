@@ -319,9 +319,9 @@ export default {
       title: "Custom Status",
       meta: [
         {
-          hid: "og:title",
-          name: "og:title",
-          content: title,
+          hid: "description",
+          name: "description",
+          content: description,
         },
         {
           hid: "twitter:title",
@@ -334,26 +334,29 @@ export default {
           content: description,
         },
         {
-          hid: "og:description",
-          name: "og:description",
-          content: description,
-        },
-        {
-          hid: "description",
-          name: "description",
-          content: description,
-        },
-        {
           hid: "twitter:image",
           name: "twitter:image",
           content: image,
+        },
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: title,
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
         },
         {
           hid: "og:image",
           name: "og:image",
           content: image,
         },
-      ],
+      ].map((i) => {
+        i.property = i.property || i.name || null
+        return i
+      }),
       link: [
         {
           rel: "canonical",

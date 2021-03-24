@@ -258,7 +258,10 @@ export default {
           name: "article:published-time",
           content: this.post?.createdAt || null,
         },
-      ],
+      ].map((i) => {
+        i.property = i.property || i.name || null
+        return i
+      }),
       link: [
         {
           rel: "canonical",

@@ -132,6 +132,11 @@ export default {
       title,
       meta: [
         {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+        {
           hid: "og:title",
           name: "og:title",
           content: title,
@@ -151,12 +156,10 @@ export default {
           name: "og:description",
           content: description,
         },
-        {
-          hid: "description",
-          name: "description",
-          content: description,
-        },
-      ],
+      ].map((i) => {
+        i.property = i.property || i.name || null
+        return i
+      }),
       link: [
         {
           rel: "canonical",

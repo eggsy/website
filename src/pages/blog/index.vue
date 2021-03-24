@@ -240,7 +240,10 @@ export default {
         // PreMiD
         { name: "premid-details", content: "Viewing a blog page:" },
         { name: "premid-state", content: "Home" },
-      ],
+      ].map((i) => {
+        i.property = i.property || i.name || null
+        return i
+      }),
     }
   },
   computed: {
