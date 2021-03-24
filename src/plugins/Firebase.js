@@ -15,8 +15,8 @@ export default ({ $fire }, inject) => {
       .get()
       .then((snapshots) => {
         snapshots.forEach((snapshot) => {
-          const { date, url, metadata } = snapshot.data()
-          docs.push({ date: date.toDate(), url, metadata })
+          const { date, url, metadata, spotifyUrl } = snapshot.data()
+          docs.push({ date: date.toDate(), url, metadata, spotifyUrl })
         })
       })
 
