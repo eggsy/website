@@ -53,6 +53,11 @@
       @load="itemLoaded = true"
     />
   </div>
+
+  <div
+    v-else-if="type === 'block'"
+    class="bg-gray-100 rounded dark:bg-gray-800 animate-pulse"
+  />
 </template>
 
 <script>
@@ -60,7 +65,8 @@ export default {
   props: {
     type: {
       type: String,
-      required: true,
+      required: false,
+      default: "block",
     },
     imageUrl: {
       type: String,
