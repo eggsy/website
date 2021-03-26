@@ -3,26 +3,30 @@
     <header
       class="flex flex-col-reverse py-24 sm:items-center sm:space-x-8 sm:flex-row"
     >
-      <div class="sm:w-8/12">
-        <div
-          class="text-2xl font-semibold text-gray-900 sm:text-4xl dark:text-gray-100"
-        >
-          <h1>Self taught</h1>
-          <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
+      <div class="space-y-px sm:w-8/12">
+        <div>
+          <div
+            class="text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100"
+          >
+            <h1>Self taught</h1>
+            <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
+          </div>
+
+          <p class="text-gray-800 dark:text-gray-200">
+            Hi there, my name is Abdulbaki, I am from Turkey and I am a self
+            taught web developer. I recently started building complex web apps
+            using Vue.js, Nuxt.js and TailwindCSS.
+          </p>
         </div>
 
-        <p class="text-gray-700 dark:text-gray-300">
-          Hi there, my name is Abdulbaki, I am from Turkey and I am a self
-          taught web developer. I recently started building complex web apps
-          using Vue.js, Nuxt.js and TailwindCSS.
-        </p>
+        <Status />
       </div>
 
-      <div class="flex mb-8 sm:justify-center sm:mb-0 sm:w-4/12">
+      <div class="flex flex-shrink-0 mb-8 sm:justify-end sm:mb-0 sm:w-4/12">
         <SkeletonLoader
           type="image"
           image-url="/assets/images/irl_image.webp"
-          class="rounded-full h-36 w-36 ring-4 ring-gray-200 dark:ring-gray-700"
+          class="w-40 h-40 rounded-full ring-4 ring-gray-200 dark:ring-gray-700"
         />
       </div>
     </header>
