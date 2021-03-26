@@ -901,7 +901,11 @@ export default {
       }
 
       try {
-        if (type === "url" && !url.list.includes(url.input) && url.input) {
+        if (
+          type === "url" &&
+          !url.list.includes(new URL(url.input).hostname) &&
+          url.input
+        ) {
           const testUrl = new URL(url.input)
           service.url.list.push(testUrl.hostname)
           service.url.input = ""
