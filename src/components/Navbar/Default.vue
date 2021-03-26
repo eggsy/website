@@ -110,6 +110,10 @@ export default {
             to: "/#projects",
           },
           {
+            title: "Contact",
+            to: "/#socials",
+          },
+          {
             title: "Donate",
             to: "/donate",
           },
