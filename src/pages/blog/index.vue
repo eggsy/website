@@ -17,7 +17,7 @@
     <h3>Gönderiler yüklenemedi.</h3>
   </div>
 
-  <div v-else>
+  <div v-else class="pt-6">
     <div v-if="getFilteredPosts === false">
       <h3
         class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
@@ -25,7 +25,7 @@
         Son gönderiler
       </h3>
 
-      <div class="grid gap-4 mt-4 sm:grid-cols-2">
+      <div class="grid gap-4 mt-2 sm:grid-cols-2">
         <CardPost
           v-for="(post, index) in posts.latest"
           :key="`latest-${index}`"
@@ -33,8 +33,8 @@
         />
       </div>
 
-      <div class="grid gap-14 sm:gap-6 sm:grid-cols-2 mt-14">
-        <div class="grid grid-cols-1 gap-4">
+      <div class="grid gap-14 sm:gap-4 sm:grid-cols-2 mt-14">
+        <div class="grid grid-cols-1 gap-2">
           <nuxt-link
             :to="{
               name: 'blog',
@@ -57,7 +57,7 @@
           />
         </div>
 
-        <div class="grid grid-cols-1 gap-4">
+        <div class="grid grid-cols-1 gap-2">
           <nuxt-link
             :to="{
               name: 'blog',
@@ -88,7 +88,7 @@
           Diğer gönderiler
         </h3>
 
-        <div class="grid gap-4 mt-4 sm:grid-cols-3">
+        <div class="grid gap-3 mt-4 sm:grid-cols-3">
           <CardPost
             v-for="(post, index) in getPaginatedPosts"
             :key="`linux-${index}`"
@@ -159,7 +159,7 @@
 
 <script>
 export default {
-  layout: "blog",
+  /* layout: "blog", */
   data() {
     return {
       query: {},
