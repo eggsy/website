@@ -159,7 +159,6 @@
 
 <script>
 export default {
-  /* layout: "blog", */
   data() {
     return {
       query: {},

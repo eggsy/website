@@ -168,7 +168,6 @@ export default {
     Disqus,
     VueScrollProgressBar,
   },
-  layout: "blog",
   data() {
     return {
       post: {},
