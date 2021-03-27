@@ -36,13 +36,6 @@ export default {
           content: "eggsy.xyz - blog",
         },
       ],
-      link: [
-        {
-          rel: "icon",
-          type: "image/x-icon",
-          href: "/assets/icons/icon-blog-white-bg.ico",
-        },
-      ],
     }
   },
 }
