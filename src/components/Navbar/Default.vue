@@ -1,6 +1,6 @@
 <template>
-  <nav class="w-full py-2">
-    <div class="container relative w-11/12 mx-auto sm:w-10/12 md:w-7/12">
+  <nav class="w-full">
+    <div class="container relative w-11/12 mx-auto sm:w-9/12 md:w-7/12">
       <div class="flex items-center justify-between">
         <nuxt-link :to="{ name: 'index' }">
           <SkeletonLoader
