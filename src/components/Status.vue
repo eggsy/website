@@ -42,8 +42,7 @@ export default {
       if (this.lanyard?.discord_status === "offline") return "Offline"
       // Visual Studio Code
       else if (filtered.name === "Visual Studio Code") {
-        const replaced =
-          filtered.state?.replace(/(📁 |\| website)/g, "") || "a file"
+        const replaced = filtered.state?.replace("📁 ", "") || "a file"
         return `Editing ${replaced} in Visual Studio Code`
       }
       // YouTube Music
