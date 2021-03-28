@@ -25,6 +25,7 @@ export default {
     return {
       finished: false,
       lanyard: {},
+      socket: null,
     }
   },
   computed: {
@@ -93,26 +94,29 @@ export default {
       }
     },
   },
+  beforeDestroy() {
+    this.socket.close()
+  },
   mounted() {
     /**
      * Connect to Lanyard Socket API, send heartbeat every 30 seconds and replace the Vue data value with the message
      */
-    const socket = new WebSocket("wss://api.lanyard.rest/socket")
+    this.socket = new WebSocket("wss://api.lanyard.rest/socket")
 
-    socket.addEventListener("open", () => {
+    this.socket.addEventListener("open", () => {
       // Subscribe to ID
-      socket.send(
+      this.socket.send(
         JSON.stringify({
           op: 2,
           d: {
-            subscribe_to_ids: ["162969778699501569"],
+            subscribe_to_id: "162969778699501569",
           },
         })
       )
 
       // Send heartbeat every 30 seconds
       setInterval(() => {
-        socket.send(
+        this.socket.send(
           JSON.stringify({
             op: 3,
           })
@@ -120,12 +124,11 @@ export default {
       }, 30000)
     })
 
-    socket.addEventListener("message", ({ data }) => {
+    this.socket.addEventListener("message", ({ data }) => {
       const { t: type, d: status } = JSON.parse(data)
 
-      if (type === "INIT_STATE")
-        this.lanyard = status?.["162969778699501569"] || {}
-      else if (type === "PRESENCE_UPDATE") this.lanyard = status || {}
+      if (type === "INIT_STATE" || type === "PRESENCE_UPDATE")
+        this.lanyard = status || {}
 
       this.finished = true
     })
