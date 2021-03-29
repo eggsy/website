@@ -1,23 +1,5 @@
 <template>
-  <div
-    v-if="$fetchState.pending"
-    class="flex items-center justify-center h-screen -mt-10 space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-200"
-  >
-    <icon name="sync" class="w-8 h-8 animate-spin dark:text-gray-200" />
-
-    <h3>Gönderiler yükleniyor...</h3>
-  </div>
-
-  <div
-    v-else-if="$fetchState.error"
-    class="flex items-center justify-center h-screen -mt-10 space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-200"
-  >
-    <icon name="times" class="w-8 h-8 dark:text-gray-200" />
-
-    <h3>Gönderiler yüklenemedi.</h3>
-  </div>
-
-  <div v-else class="pt-6">
+  <div class="pt-6">
     <div v-if="getFilteredPosts === false">
       <h3
         class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
@@ -26,11 +8,17 @@
       </h3>
 
       <div class="grid gap-4 mt-2 sm:grid-cols-2">
-        <CardPost
-          v-for="(post, index) in posts.latest"
-          :key="`latest-${index}`"
-          :post="post"
-        />
+        <template v-if="isFetchPending">
+          <SkeletonLoader v-for="i in 4" :key="i" type="repository" />
+        </template>
+
+        <template v-else>
+          <CardPost
+            v-for="(post, index) in posts.latest"
+            :key="`latest-${index}`"
+            :post="post"
+          />
+        </template>
       </div>
 
       <div class="grid gap-14 sm:gap-4 sm:grid-cols-2 mt-14">
@@ -49,12 +37,18 @@
             <h3 class="text-lg font-semibold">Discord</h3>
           </nuxt-link>
 
-          <CardPost
-            v-for="(post, index) in posts.discord"
-            :key="`discord-${index}`"
-            :post="post"
-            type="text"
-          />
+          <template v-if="isFetchPending">
+            <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
+          </template>
+
+          <template v-else>
+            <CardPost
+              v-for="(post, index) in posts.discord"
+              :key="`discord-${index}`"
+              :post="post"
+              type="text"
+            />
+          </template>
         </div>
 
         <div class="grid grid-cols-1 gap-2">
@@ -72,12 +66,18 @@
             <h3 class="text-lg font-semibold">Linux</h3>
           </nuxt-link>
 
-          <CardPost
-            v-for="(post, index) in posts.linux"
-            :key="`linux-${index}`"
-            :post="post"
-            type="text"
-          />
+          <template v-if="isFetchPending">
+            <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
+          </template>
+
+          <template v-else>
+            <CardPost
+              v-for="(post, index) in posts.linux"
+              :key="`linux-${index}`"
+              :post="post"
+              type="text"
+            />
+          </template>
         </div>
       </div>
 
@@ -89,12 +89,18 @@
         </h3>
 
         <div class="grid gap-3 mt-4 sm:grid-cols-3">
-          <CardPost
-            v-for="(post, index) in getPaginatedPosts"
-            :key="`linux-${index}`"
-            :post="post"
-            type="text-only-title"
-          />
+          <template v-if="isFetchPending">
+            <SkeletonLoader v-for="i in 18" :key="i" type="repository" />
+          </template>
+
+          <template v-else>
+            <CardPost
+              v-for="(post, index) in getPaginatedPosts"
+              :key="`linux-${index}`"
+              :post="post"
+              type="text-only-title"
+            />
+          </template>
         </div>
 
         <div class="flex flex-wrap items-center justify-center mt-4 space-x-2">
@@ -125,7 +131,10 @@
         </h2>
 
         <div class="sm:w-4/6">
-          <h3 class="text-lg">Deneyebileceğiniz yöntemler:</h3>
+          <h3 class="text-lg text-gray-900 dark:text-gray-100">
+            Deneyebileceğiniz yöntemler:
+          </h3>
+
           <ul class="pl-4 text-gray-700 list-disc dark:text-gray-300">
             <li>Aramanızda anahtar kelimeler kullanmayı deneyin.</li>
             <li>Etiketler kullanmayı deneyin.</li>
@@ -246,6 +255,13 @@ export default {
     }
   },
   computed: {
+    /**
+     * Checks if fetch state is pending or error.
+     * @returns {boolean}
+     */
+    isFetchPending() {
+      return this.$fetchState?.pending || this.$fetchState.error
+    },
     /**
      * Filters posts with a query variable.
      * @returns {boolean|object[]} False if no query set, filtered posts array if there are results.
