@@ -5,15 +5,15 @@
       !getStatusDetails ||
       Object.keys(lanyard).length === 0
     "
-    class="h-5"
+    class="w-6/12 h-5"
   />
 
   <div
     v-else
-    class="flex items-center space-x-2 text-gray-700 dark:text-gray-300"
+    class="flex items-center space-x-2 text-gray-700 rounded-md dark:text-gray-300"
   >
     <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
-    <div class="text-sm truncate" :title="getStatusDetails">
+    <div class="text-sm leading-tight truncate" :title="getStatusDetails">
       {{ getStatusDetails }}
     </div>
   </div>
@@ -34,10 +34,11 @@ export default {
      * @returns {string}
      */
     getStatusDetails() {
+      const lanyard = this.lanyard
+      if (!lanyard) return {}
+
       const filtered =
-        this.lanyard?.activities?.filter(
-          (activity) => activity.type !== 4
-        )?.[0] || {}
+        lanyard.activities?.filter((activity) => activity.type !== 4)?.[0] || {}
 
       // Offline
       if (this.lanyard?.discord_status === "offline") return "Offline"
@@ -95,7 +96,7 @@ export default {
     },
   },
   beforeDestroy() {
-    this.socket.close()
+    this.socket?.close()
   },
   mounted() {
     /**
