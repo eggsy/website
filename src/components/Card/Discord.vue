@@ -9,7 +9,10 @@
         class="flex flex-col items-center justify-between space-y-3 overflow-x-hidden sm:space-y-0 sm:space-x-3 sm:flex-row"
       >
         <div
-          class="flex items-center w-full py-2 space-x-3 overflow-x-hidden sm:w-2/3 md:space-x-5"
+          :class="{
+            'flex items-center w-full py-2 space-x-3 overflow-x-hidden  md:space-x-5': true,
+            'sm:w-2/3': buttons.length > 0,
+          }"
         >
           <div class="relative flex-shrink-0 w-32 h-32">
             <img
@@ -40,9 +43,10 @@
             <div class="leading-tight">
               <span class="block truncate">{{ getText.details }}</span>
               <span class="block truncate">{{ getText.state }}</span>
-              <span v-if="isTimerEnabled === true" class="block text-sm">{{
-                getTime
-              }}</span>
+
+              <span v-if="isTimerEnabled === true" class="block text-sm">
+                {{ getTime }}
+              </span>
             </div>
           </div>
         </div>
