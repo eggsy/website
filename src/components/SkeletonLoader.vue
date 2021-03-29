@@ -1,4 +1,5 @@
 <template>
+  <!-- Repository -->
   <div
     v-if="type === 'repository'"
     class="p-4 space-y-1 bg-gray-100 rounded-md ring-1 ring-gray-200 dark:ring-gray-900 dark:bg-gray-800"
@@ -13,12 +14,11 @@
       />
     </div>
 
-    <div class="space-y-px animate-pulse">
-      <div class="w-full h-4 bg-gray-300 rounded-md dark:bg-gray-700" />
-      <div class="w-4/12 h-4 bg-gray-300 rounded-md dark:bg-gray-700" />
-    </div>
+    <div class="w-full h-4 bg-gray-300 rounded-md dark:bg-gray-700" />
+    <div class="w-4/12 h-4 bg-gray-300 rounded-md dark:bg-gray-700" />
   </div>
 
+  <!-- Image -->
   <div
     v-else-if="type === 'image' && imageUrl"
     :class="{
@@ -42,6 +42,7 @@
     />
   </div>
 
+  <!-- Iframe -->
   <div
     v-else-if="type === 'iframe' && iframeUrl"
     :class="{
@@ -60,6 +61,7 @@
     />
   </div>
 
+  <!-- Block -->
   <div
     v-else-if="type === 'block'"
     class="bg-gray-100 rounded dark:bg-gray-800 animate-pulse"
