@@ -73,9 +73,9 @@
             </div>
           </header>
 
-          <div class="mt-4 space-y-4">
+          <div class="mt-4">
             <div
-              class="sticky float-left -ml-20 text-right hidden: md:block top-4"
+              class="sticky hidden float-left -ml-20 text-right md:block top-4"
             >
               <BlogShare
                 type="vertical"
