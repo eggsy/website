@@ -38,7 +38,7 @@ export default {
       if (!lanyard) return {}
 
       const filtered =
-        lanyard.activities?.filter((activity) => activity.type !== 4)?.[0] || {}
+        lanyard.activities?.filter((activity) => activity.type !== 4)?.pop() || {}
 
       // Offline
       if (this.lanyard?.discord_status === "offline") return "Offline"
