@@ -11,7 +11,7 @@
           />
         </nuxt-link>
 
-        <div class="hidden space-x-2 sm:flex">
+        <div class="hidden space-x-2 sm:flex sm:items-center">
           <nuxt-link
             v-for="(link, index) in getCurrentRouteLinks"
             :key="`link-${index}`"
