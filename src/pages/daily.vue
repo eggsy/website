@@ -117,7 +117,7 @@
       >
         <div
           v-if="getLyrics"
-          class="absolute top-0 bottom-0 left-0 right-0 p-4 space-y-2 overflow-y-auto scrollbar"
+          class="absolute space-y-2 overflow-y-auto top-4 bottom-4 left-4 right-4 scrollbar"
         >
           <p
             v-for="(lyric, index) in getLyrics"
