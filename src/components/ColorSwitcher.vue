@@ -1,27 +1,16 @@
 <template>
   <div
-    class="flex items-center text-gray-900 rounded-full cursor-pointer select-none dark:text-gray-100"
-    @click="switchTheme('light')"
+    class="p-2 text-gray-900 bg-gray-100 rounded-full cursor-pointer select-none focus:outline-none dark:bg-gray-800 dark:text-gray-100"
+    @click="switchTheme"
   >
-    <div
-      :class="{
-        'p-2 rounded-tl rounded-bl focus:outline-none': true,
-        'bg-gray-100 dark:bg-gray-600': getSelectedTheme !== 'light',
-        'bg-gray-200 dark:bg-gray-700': getSelectedTheme === 'light',
-      }"
-    >
-      <icon name="sun" class="w-4 h-4" />
-    </div>
+    <icon
+      v-if="getSelectedTheme === 'light'"
+      key="sun"
+      name="sun"
+      class="w-5 h-5"
+    />
 
-    <div
-      :class="{
-        'p-2 rounded-tr rounded-br focus:outline-none': true,
-        'bg-gray-100 dark:bg-gray-600': getSelectedTheme !== 'dark',
-        'bg-gray-200 dark:bg-gray-700': getSelectedTheme === 'dark',
-      }"
-    >
-      <icon name="moon" class="w-4 h-4" />
-    </div>
+    <icon v-else key="moon" name="moon" class="w-5 h-5" />
   </div>
 </template>
 
