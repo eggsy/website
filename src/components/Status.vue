@@ -38,13 +38,15 @@ export default {
       if (!lanyard) return {}
 
       const filtered =
-        lanyard.activities?.filter((activity) => activity.type !== 4)?.pop() || {}
+        lanyard.activities?.filter((activity) => activity.type !== 4)?.pop() ||
+        {}
 
       // Offline
       if (this.lanyard?.discord_status === "offline") return "Offline"
       // Visual Studio Code
       else if (filtered.name === "Visual Studio Code") {
-        const replaced = filtered.state?.replace("📁 ", "") || "a file"
+        const replaced =
+          filtered.state?.replace("📁 ", "")?.split(" | ")?.[0] || "a file"
         return `Editing ${replaced} in Visual Studio Code`
       }
       // YouTube Music
