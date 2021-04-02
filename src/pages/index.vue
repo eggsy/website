@@ -3,8 +3,8 @@
     <header
       class="flex flex-col-reverse py-24 sm:items-center sm:space-x-8 sm:flex-row"
     >
-      <div class="space-y-px sm:w-8/12">
-        <div>
+      <div class="sm:w-8/12">
+        <div class="space-y-px">
           <div
             class="text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100"
           >
@@ -19,7 +19,7 @@
           </p>
         </div>
 
-        <Status />
+        <Status class="mt-2" />
       </div>
 
       <div class="flex flex-shrink-0 mb-8 sm:justify-end sm:mb-0 sm:w-4/12">
