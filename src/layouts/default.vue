@@ -1,14 +1,12 @@
 <template>
   <div class="min-h-screen min-w-screen bg-gray-50 dark:bg-gray-900">
     <!-- Colored top bar -->
-    <div
-      class="absolute top-0 left-0 right-0 w-full py-2 bg-indigo-700 dark:bg-indigo-900"
-    />
+    <div class="w-full py-1 bg-indigo-700 dark:bg-indigo-900" />
 
     <!-- Navbar -->
     <transition name="fade" mode="out-in">
-      <NavbarBlog v-if="$route.name.includes('blog')" />
-      <NavbarDefault v-else class="pt-8" />
+      <NavbarBlog v-if="$route.name.includes('blog')" class="pt-4" />
+      <NavbarDefault v-else class="pt-4" />
     </transition>
 
     <!-- Nuxt component -->
@@ -18,6 +16,9 @@
 
     <!-- Footer -->
     <Footer />
+
+    <!-- Colored bottom bar -->
+    <div class="w-full py-1 bg-indigo-700 dark:bg-indigo-900" />
 
     <!-- Go to top button -->
     <div
