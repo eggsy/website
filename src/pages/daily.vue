@@ -31,7 +31,7 @@
         <div class="space-y-2">
           <div class="grid items-center gap-2 sm:grid-cols-2">
             <a
-              :href="`https://youtu.be/${getSelectedSong.youtube}`"
+              :href="`https://youtu.be/${getSelectedSong.youtube}/?utm_source=eggsy.xyz`"
               target="_blank"
               rel="noreferrer"
               class="flex items-center justify-center px-4 py-2 space-x-2 overflow-hidden text-center text-gray-900 bg-gray-100 rounded cursor-pointer select-none hover:bg-gray-200 dark:hover:bg-gray-700 ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800 dark:text-gray-100"
@@ -43,7 +43,7 @@
             <a
               :href="
                 getSelectedSong.spotify
-                  ? `https://open.spotify.com/track/${getSelectedSong.spotify}?utm_source=eggsy.xyz`
+                  ? `https://open.spotify.com/track/${getSelectedSong.spotify}/?utm_source=eggsy.xyz`
                   : false
               "
               target="_blank"
