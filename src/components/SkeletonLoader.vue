@@ -21,6 +21,7 @@
   <!-- Image -->
   <div
     v-else-if="type === 'image' && imageUrl"
+    class="focus:outline-none"
     :class="{
       'bg-gray-100 dark:bg-gray-700 animate-pulse bg-no-repeat':
         itemLoaded === false,
