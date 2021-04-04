@@ -43,7 +43,7 @@
                 image-url="https://i.vgy.me/qxpY9T.png"
                 class="rounded w-7 h-7"
               />
-              <span class="text-gray-100">Become a Patron</span>
+              <span class="text-white">Become a Patron</span>
             </div>
           </a>
         </div>
