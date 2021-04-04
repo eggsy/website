@@ -27,18 +27,18 @@
           Are you on mobile? If you are you should know that PreMiD doesn't work
           on mobile, so you can't use this page in any way.
         </div>
-      </div>
 
-      <CardDiscord
-        :small-image-text="presence.smallImageText"
-        :large-image="presence.largeImageKey"
-        :small-image="presence.smallImageKey"
-        :timestamp="presence.timestamp"
-        :details="presence.details"
-        :state="presence.state"
-        :buttons="getButtons"
-        class="shadow-lg"
-      />
+        <CardDiscord
+          :small-image-text="presence.smallImageText"
+          :large-image="presence.largeImageKey"
+          :small-image="presence.smallImageKey"
+          :timestamp="presence.timestamp"
+          :details="presence.details"
+          :state="presence.state"
+          :buttons="getButtons"
+          class="shadow-lg"
+        />
+      </div>
 
       <div class="gap-4 mt-4 space-y-4 sm:grid sm:space-y-0 sm:grid-cols-2">
         <div class="space-y-2">
