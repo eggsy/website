@@ -1,9 +1,9 @@
 <template>
   <nav class="z-40 w-full">
     <div
-      class="container flex items-center justify-between w-11/12 mx-auto text-gray-200 sm:px-0 sm:w-9/12 md:w-7/12"
+      class="container flex items-center justify-between w-11/12 mx-auto space-x-4 text-gray-200 sm:px-0 sm:w-9/12 md:w-7/12"
     >
-      <nuxt-link :to="{ name: getTargetRoute.name }">
+      <nuxt-link :to="{ name: getTargetRoute.name }" class="flex-shrink-0">
         <SkeletonLoader
           type="image"
           image-url="/assets/icons/icon.svg"
@@ -12,9 +12,9 @@
         />
       </nuxt-link>
 
-      <div class="flex items-center sm:space-x-4">
+      <div class="flex items-center justify-end space-x-2 sm:space-x-4">
         <div
-          class="items-center hidden space-x-2 text-gray-500 bg-gray-100 rounded-lg dark:bg-gray-800 sm:flex"
+          class="flex items-center w-2/3 space-x-2 text-gray-500 bg-gray-100 rounded-lg md:w-full dark:bg-gray-800"
           :class="{
             'ring-2 ring-gray-300 dark:ring-gray-700': inputFocused === true,
           }"
@@ -23,17 +23,13 @@
             id="search"
             v-model="input"
             placeholder="Gönderi ara..."
-            class="px-3 py-1.5 placeholder-gray-500 bg-gray-100 rounded-tl-lg rounded-bl-lg appearance-none focus:outline-none dark:bg-gray-800"
+            class="px-3 w-full py-1.5 placeholder-gray-500 bg-gray-100 rounded-tl-lg rounded-bl-lg appearance-none focus:outline-none dark:bg-gray-800"
             @focus="inputFocused = true"
             @blur="inputFocused = false"
-            @keydown.enter="$router.push({ query: { q: input } })"
+            @keydown.enter="search"
           />
 
-          <label
-            for="search"
-            class="pr-2 cursor-pointer"
-            @click="$router.push({ query: { q: input } })"
-          >
+          <label for="search" class="pr-2 cursor-pointer" @click="search">
             <icon name="search" class="w-4 h-4" />
           </label>
         </div>
@@ -88,12 +84,6 @@ export default {
     search() {
       if (this.input)
         this.$router.push({ name: "blog", query: { q: this.input } })
-    },
-    /**
-     * Focuses on the search if its reference is available.
-     */
-    focusSearch() {
-      setTimeout(() => this.$refs.search?.focus())
     },
     /**
      * Clears input state on route change (called in watch query).
