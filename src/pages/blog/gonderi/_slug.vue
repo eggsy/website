@@ -258,7 +258,7 @@ export default {
           content: this.post?.createdAt || null,
         },
       ].map((i) => {
-        i.property = i.property || i.name || null
+        if (i.name && !i.property) i.property = i.name
         return i
       }),
       link: [
@@ -333,14 +333,14 @@ export default {
 
   /* Paragraphs */
   p {
-    @apply text-gray-800 dark:text-gray-300;
+    @apply text-gray-800 dark:text-gray-200;
 
     &.text-center {
       @apply flex justify-center;
     }
 
     strong {
-      @apply font-medium text-gray-900 dark:text-gray-200;
+      @apply font-medium text-gray-900 dark:text-gray-100;
     }
 
     a {
@@ -393,7 +393,7 @@ export default {
     @apply list-decimal pl-4;
 
     &:not(:last-child) {
-      @apply mb-4;
+      @apply mb-5;
     }
   }
 
@@ -401,12 +401,17 @@ export default {
     @apply list-disc pl-5;
 
     &:not(:last-child) {
-      @apply mb-4;
+      @apply mb-5;
     }
 
     li::marker {
       @apply text-gray-600;
     }
+  }
+
+  /* Horizontal line */
+  hr {
+    @apply border-gray-300 dark:border-gray-700 my-8 border-dashed;
   }
 }
 </style>
