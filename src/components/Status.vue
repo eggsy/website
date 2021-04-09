@@ -5,7 +5,7 @@
       !getStatusDetails ||
       Object.keys(lanyard).length === 0
     "
-    class="w-6/12 h-5"
+    class="w-6/12 h-4"
   />
 
   <div
