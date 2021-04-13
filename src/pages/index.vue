@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header
-      class="flex flex-col-reverse py-24 sm:items-center sm:flex-row"
-    >
+    <header class="flex flex-col-reverse py-24 sm:items-center sm:flex-row">
       <div class="sm:w-8/12">
         <div class="space-y-px">
           <div
