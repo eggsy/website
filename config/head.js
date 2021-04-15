@@ -1,3 +1,4 @@
+const image = "https://eggsy.xyz/icon.png"
 const description =
   "Young JavaScript developer from Turkey, interested in languages, gaming, and programming, trying to improve his JavaScript skills!"
 
@@ -40,7 +41,7 @@ export default {
     {
       hid: "twitter:image",
       name: "twitter:image",
-      content: "/icon.png",
+      content: image,
     },
     /* Open-Graph */
     {
@@ -61,7 +62,7 @@ export default {
     {
       hid: "og:image",
       name: "og:image",
-      content: "https://eggsy.xyz/icon.png",
+      content: image,
     },
     /* Others */
     {
