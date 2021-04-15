@@ -130,35 +130,11 @@ export default {
 
     return {
       title,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: description,
-        },
-        {
-          hid: "og:title",
-          name: "og:title",
-          content: title,
-        },
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: title,
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: description,
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content: description,
-        },
-      ].map((i) => {
-        i.property = i.property || i.name || null
-        return i
+      meta: this.$prepareMeta({
+        title,
+        description,
+        keywords: "donate",
+        url: "https://eggsy.xyz/donate",
       }),
       link: [
         {

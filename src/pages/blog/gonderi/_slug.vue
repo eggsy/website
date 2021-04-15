@@ -200,76 +200,33 @@ export default {
       "EGGSY'nin blogunda bu yazıyı okumaya davet edildin."
 
     const image = this.getPostImage || false
-    const tags = this.getTags?.join(", ") || title || "etiket"
+    const tags = this.getTags?.join(", ") || title
     const href = `https://eggsy.xyz${this.$route?.path}`
 
-    const object = {
+    return {
       title,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: description,
-        },
-        {
-          hid: "keywords",
-          name: "keywords",
-          content: `eggsy, eggsy blog, blog, teknoloji, vue, yazılım, discord, eggsys, gönderi, ${tags}`,
-        },
-        // Open-Graph
-        {
-          hid: "og:title",
-          name: "og:title",
-          content: title,
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content: description,
-        },
-        {
-          hid: "og:url",
-          name: "og:url",
-          content: href,
-        },
-        {
-          hid: "og:image",
-          name: "og:image",
-          content: image,
-        },
-        // Twitter
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: title,
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: description,
-        },
-        {
-          hid: "twitter:image",
-          name: "twitter:image",
-          content: image,
-        },
-        {
-          name: "article:published-time",
-          content: this.post?.createdAt || null,
-        },
-      ].map((i) => {
-        if (i.name && !i.property) i.property = i.name
-        return i
-      }),
       link: [
         {
           rel: "canonical",
           href,
         },
       ],
+      meta: this.$prepareMeta(
+        {
+          title,
+          description,
+          image,
+          keywords: `${tags}, eggsy blog, blog, teknoloji, vue, yazılım, discord, eggsys`,
+          url: href,
+        },
+        [
+          {
+            name: "article:published-time",
+            content: this.post?.createdAt || null,
+          },
+        ]
+      ),
     }
-
-    return object
   },
   computed: {
     /**

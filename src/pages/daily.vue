@@ -263,57 +263,12 @@ export default {
 
     return {
       title,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: description,
-        },
-        {
-          hid: "keywords",
-          name: "keywords",
-          content: "daily, song, recommendation, eggsy, songs",
-        },
-        // Open-Graph
-        {
-          hid: "og:title",
-          name: "og:title",
-          content: title,
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content: description,
-        },
-        {
-          hid: "og:url",
-          name: "og:url",
-          content: `https://eggsy.xyz/daily`,
-        },
-        {
-          hid: "og:image",
-          name: "og:image",
-          content: image,
-        },
-        // Twitter
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: title,
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: description,
-        },
-        {
-          hid: "twitter:image",
-          name: "twitter:image",
-          content: image,
-        },
-      ].map((i) => {
-        i.property = i.property || i.name || null
-        return i
+      meta: this.$prepareMeta({
+        title,
+        description,
+        image,
+        keywords: "daily, song, recommendation",
+        url: "https://eggsy.xyz/daily",
       }),
       link: [
         {

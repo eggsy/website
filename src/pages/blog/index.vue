@@ -221,36 +221,9 @@ export default {
 
     return {
       title: "Blog",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: description,
-        },
-        // Twitter
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: title,
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: description,
-        },
-        // Open-Graph
-        { hid: "og:title", name: "og:title", content: title },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content: description,
-        },
-        // PreMiD
-        { name: "premid-details", content: "Viewing a blog page:" },
-        { name: "premid-state", content: "Home" },
-      ].map((i) => {
-        i.property = i.property || i.name || null
-        return i
+      meta: this.$prepareMeta({
+        title,
+        description,
       }),
     }
   },
