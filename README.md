@@ -12,7 +12,7 @@
 
 > This is a Nuxt.js Fully Static website, so you can use/host it anywhere!
 
-After almost a year that I have published my website's source code on GitHub, I've been working on a new and better version. All I had to do was learn TailwindCSS, Nuxt.js, and Vue.js better. It's been a long journey since I pushed myself into the TailwindCSS world, but it was amazing! It doesn't give you any components; it asks you to create your ones! And that is the most important thing to improve yourself in my opinion. It's been a great learning experience for me, and I think I've learned and improved myself a lot.
+After almost a year that I have published my website's source code on GitHub, I've been working on a new and better version. All I had to do was learn Tailwind CSS, Nuxt.js, and Vue.js better. It's been a long journey since I pushed myself into the Tailwind CSS world, but it was amazing! It doesn't give you any components; it asks you to create your ones! And that is the most important thing to improve yourself in my opinion. It's been a great learning experience for me, and I think I've learned and improved myself a lot.
 
 It is my website that I use daily, so I had to include everything that I needed. You'll see some pages that may not be suitable for you, but this is a real-world app, and I need them 😅
 
@@ -26,7 +26,7 @@ Website features many custom built systems, integrations and pages!
   - Completely static, no API needed, Nuxt.js Content blog ready to go!
 - ✅ Firebase integration!
   - My "Daily Song" page fetches data from Firebase to display the today's song! It's all statically generated on client!
-- ✅ Designed with TailwindCSS!
+- ✅ Designed with Tailwind CSS!
   - Clean, beautiful, fast, and responsive UI!
   - No CSS used! The website is done without touching CSS (except some transitions and directives)
 - ✅ Over 15+ custom components!
@@ -36,7 +36,7 @@ Website features many custom built systems, integrations and pages!
 
 If you are interested in downloading the code, compiling it and running it, you need some tools!
 
-First of all, all of the systems require [Node.js](https://nodejs.org/) to work, so you'll have to download it and install it on your device. This program comes with a package manager called `NPM` where you'll use to download all the dependencies of this project, including (but not limited to) Nuxt.js, Vue.js and TailwindCSS.
+First of all, all of the systems require [Node.js](https://nodejs.org/) to work, so you'll have to download it and install it on your device. This program comes with a package manager called `NPM` where you'll use to download all the dependencies of this project, including (but not limited to) Nuxt.js, Vue.js and Tailwind CSS.
 
 If you aren't already using `yarn`, I recommend yarn because it is faster and runs better on most machines. You can install yarn globally to your system using `npm install yarn -g` command. Then you'll have access to `yarn` on your terminal (you might need to restart it).
 
@@ -80,4 +80,4 @@ You can take a look at [old.eggsy.xyz](https://old.eggsy.xyz) and compare it you
 
 ### 🙏 Thanks
 
-This project wouldn't be possible if Nuxt.js team wouldn't have created such an amazing framework, and of course Vue.js is the king 👑 TailwindCSS is a really good CSS utility framework that helped me a lot and I can't get myself out of it anymore! Last but not least, I'd like to thank to the module authors, they're all amazing and I appreciate your work!
+This project wouldn't be possible if Nuxt.js team wouldn't have created such an amazing framework, and of course Vue.js is the king 👑 Tailwind CSS is a really good CSS utility framework that helped me a lot and I can't get myself out of it anymore! Last but not least, I'd like to thank to the module authors, they're all amazing and I appreciate your work!

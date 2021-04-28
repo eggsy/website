@@ -17,7 +17,7 @@ Bu yazıyı görmeniz, hâli hazırda yeni bloguma göz atıyor olduğunuz veya 
 
 Öncelikle, bu yazının tam bir değişiklik kaydı olmadığını söyleyeyim. Sitemin üzerinde henüz hâlâ çalıştığım ve bir çok sayfa eksik olduğundan, her geçen gün yeni bir şeyler keşfedip siteye yenilikler eklememden dolayı buraya tam bir değişiklik kaydı **henüz** paylaşamam ancak bu yazıyı okuyanlar ve bu sayfayı görenlerin neler olduğu hakkında bilgi sahibi olmaları için ufak bir yazı yazabilirim...
 
-Discord sunucumdaysanız bildiğiniz üzere son zamanlarda kendimi [TailwindCSS](https://tailwindcss.com) denilen bir CSS aracının içerisine attım. Bu zımbırtı, CSS denilince aklınıza gelecek tüm şeyleri sizlere hazır olarak değil, ham halde olarak sunuyor, sonrasında ise siz bu parçaları birleştirerek bir bir şeyler oluşturuyor ve sitenizin / uygulamanızın görüntüsünü elde ediyorsunuz. Benim bu olaya atılmamın nedeni, sunucumda da bulunan, Roi adlı arkadaşın bu araç üzerine uzun süredir çalışmalar yapması, benimde onun yaptığı çalışmaları beğenmemdi. Boş zaman bulduğumda bu aracı öğrenmeye kendimi vereceğime ikna etsem de bu haftalar boyunca gerçekleşmedi. Ancak bir süre sonra bir zaman buldum ve bu aracı öğrenmeye başladım...
+Discord sunucumdaysanız bildiğiniz üzere son zamanlarda kendimi [Tailwind CSS](https://tailwindcss.com) denilen bir CSS aracının içerisine attım. Bu zımbırtı, CSS denilince aklınıza gelecek tüm şeyleri sizlere hazır olarak değil, ham halde olarak sunuyor, sonrasında ise siz bu parçaları birleştirerek bir bir şeyler oluşturuyor ve sitenizin / uygulamanızın görüntüsünü elde ediyorsunuz. Benim bu olaya atılmamın nedeni, sunucumda da bulunan, Roi adlı arkadaşın bu araç üzerine uzun süredir çalışmalar yapması, benimde onun yaptığı çalışmaları beğenmemdi. Boş zaman bulduğumda bu aracı öğrenmeye kendimi vereceğime ikna etsem de bu haftalar boyunca gerçekleşmedi. Ancak bir süre sonra bir zaman buldum ve bu aracı öğrenmeye başladım...
 
 Hâlâ öğrenmekte olduğum bu araç ile çok yol katettiğimi düşünüyorum. Bir çok farklı şeyi, daha önce hiç bilmediğim yöntemlerle, çok daha temiz ve kaliteli bir şekilde gerçekleştirdim. Zaten sitemin açık kaynak olduğunu ve bu kodları da sizinle paylaştığımı biliyorsunuz. Eğer hala yapımını sürdürdüğüm sitemin yeni görünüşünün gidişatını merak ediyorsanız GitHub üzerinden takip edebilirsiniz.
 
@@ -25,7 +25,7 @@ Hâlâ öğrenmekte olduğum bu araç ile çok yol katettiğimi düşünüyorum.
 
 Her şey. Eski siteyi biliyor, veya daha önce kullandıysanız aradaki farkın inanılmaz ölçüde olduğunu göreceksiniz. Hâlâ vakti olanlar son şanslarını da kullanarak eski siteye göz atabilir, ve nelerin değiştiğine bizzat şahit olabilirler. Değişen tek şey görüntü değil, arka plan kodları, çözüm yöntemleri ve her şey de elimden geçerek çok daha temiz bir hâlde **en baştan** yazıldı ve uygulamaya kondu.
 
-Blogda yaptığım yazı sistemi değişikliğinden sonra sitemin açık kaynak olması ve benim çalışma alanımın rahatlaması üzerine sürekli olarak siteme yaptığım eklemelere bir süre ara verip **sitemi tamamen baştan yazma kararı aldım** 😅 Bunu da yukarıda kısaca bahsettiğim TailwindCSS, Nuxt.js, Firebase ve Netlify ile gerçekleştirdim. Şu an gördüğünüz bu site, herhangi bir Node.js sunucusuna ihtiyaç duymadan, normal bir CDN servisinde çalışabilir durumda.
+Blogda yaptığım yazı sistemi değişikliğinden sonra sitemin açık kaynak olması ve benim çalışma alanımın rahatlaması üzerine sürekli olarak siteme yaptığım eklemelere bir süre ara verip **sitemi tamamen baştan yazma kararı aldım** 😅 Bunu da yukarıda kısaca bahsettiğim Tailwind CSS, Nuxt.js, Firebase ve Netlify ile gerçekleştirdim. Şu an gördüğünüz bu site, herhangi bir Node.js sunucusuna ihtiyaç duymadan, normal bir CDN servisinde çalışabilir durumda.
 
 ### Ana Sayfa Yenilendi!
 
@@ -33,7 +33,7 @@ Buraya gelirken yol üzerinde uğramadıysanız ana sayfaya da bir bakın derim.
 
 ### Blog Yenilendi!
 
-Bu yazıyı okurken bu inanılmaz değişimi sizin de farkettiğinizi umuyorum. Eskiden Vuetify kullanarak yaptığım blogumun görüntüsü gün geçtikçe hoşuma gitmemeye ve bir "blog" havası vermemeye başladığı için blogumdan yavaşça soğumaya başlıyordum... Ta ki TailwindCSS ile tanışmam ve aklıma yeni bir blog arayüzü fikri gelene kadar. Şu an da yazıyı okuduğunuz sayfa, [blogun ana sayfası](/blog) ve bloga ait her yer baştan aşağı yenilendi!
+Bu yazıyı okurken bu inanılmaz değişimi sizin de farkettiğinizi umuyorum. Eskiden Vuetify kullanarak yaptığım blogumun görüntüsü gün geçtikçe hoşuma gitmemeye ve bir "blog" havası vermemeye başladığı için blogumdan yavaşça soğumaya başlıyordum... Ta ki Tailwind CSS ile tanışmam ve aklıma yeni bir blog arayüzü fikri gelene kadar. Şu an da yazıyı okuduğunuz sayfa, [blogun ana sayfası](/blog) ve bloga ait her yer baştan aşağı yenilendi!
 
 ### Yeni Günlük Müzik Sayfası!
 
