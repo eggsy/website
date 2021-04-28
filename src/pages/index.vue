@@ -13,7 +13,22 @@
           <p class="text-gray-800 dark:text-gray-200">
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
             taught web developer. I recently started building complex web apps
-            using Vue.js, Nuxt.js and TailwindCSS.
+            using Vue.js,
+            <a
+              href="https://nuxtjs.org/?utm_source=eggsy.xyz"
+              target="_blank"
+              rel="noreferrer"
+              class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
+              >Nuxt.js</a
+            >
+            and
+            <a
+              href="https://tailwindcss.com/?utm_source=eggsy.xyz"
+              target="_blank"
+              rel="noreferrer"
+              class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
+              >Tailwind CSS</a
+            >.
           </p>
         </div>
 
