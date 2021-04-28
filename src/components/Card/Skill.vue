@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center space-x-1 overflow-hidden text-gray-900 dark:text-gray-100"
+    class="flex items-center space-x-2 overflow-hidden text-gray-900 dark:text-gray-100"
   >
     <icon :name="getIconName" class="flex-shrink-0 w-7 h-7" />
     <span class="truncate">{{ title }}</span>
