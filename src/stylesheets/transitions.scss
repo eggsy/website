@@ -34,9 +34,10 @@
 .slide-left-enter-active,
 .slide-left-leave-enter {
   transform: translateX(0);
-  transition: all 0.2s linear;
+  transition: transform 0.2s;
 }
 .slide-left-enter,
 .slide-left-leave-to {
   transform: translateX(100%);
+  transition: transform 0.2s;
 }
