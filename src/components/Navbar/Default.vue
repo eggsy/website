@@ -35,7 +35,7 @@
 
           <transition name="fade" mode="out-in">
             <div
-              v-if="mobileMenu === true"
+              v-show="mobileMenu === true"
               class="absolute z-20 p-4 space-y-4 bg-gray-200 rounded-md shadow-lg -right-1 -top-1 -left-1 dark:bg-gray-800"
             >
               <div

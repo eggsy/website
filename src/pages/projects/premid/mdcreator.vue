@@ -275,7 +275,7 @@
             </p>
           </div>
 
-          <transition name="fade">
+          <transition name="fade" mode="out-in">
             <div v-if="additionalSettings === true" class="mt-4 space-y-4">
               <div class="grid gap-3 sm:grid-cols-2">
                 <input
@@ -519,7 +519,7 @@
 
     <transition name="slide-left" mode="out-in">
       <div
-        v-if="resultWindow === true"
+        v-show="resultWindow === true"
         class="fixed top-0 bottom-0 right-0 min-h-full overflow-y-auto bg-gray-100 scrollbar sm:shadow-md sm:ml-auto dark:bg-gray-800 sm:w-8/12"
       >
         <div class="p-4 space-y-8 sm:w-10/12 sm:p-10">
