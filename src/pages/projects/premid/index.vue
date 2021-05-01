@@ -14,8 +14,10 @@
               Welcome to the landing page of my PreMiD tools! From here, you can
               access the tools that I've created for PreMiD for free. If you
               like my work, please consider following me on social media and
-              <nuxt-link :to="{ name: 'donate' }" class="font-medium underline"
-                >donate</nuxt-link
+              <SmartLink
+                :href="{ name: 'donate' }"
+                class="font-medium underline"
+                >donate</SmartLink
               >
               if you liked my work.
             </p>
@@ -28,25 +30,24 @@
       </header>
 
       <section class="grid gap-4 sm:grid-cols-2">
-        <nuxt-link
+        <SmartLink
           v-for="(page, index) in pages"
           :key="`page-${index}`"
-          :to="page.url"
+          :href="page.url"
         >
           <CardProject :title="page.title" :description="page.description" />
-        </nuxt-link>
+        </SmartLink>
       </section>
 
       <section class="space-y-4">
-        <a
+        <SmartLink
           href="https://premid.app/?utm_source=eggsy.xyz"
-          target="_blank"
-          rel="noreferrer"
           class="flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100"
+          blank
         >
           <icon name="premid" class="w-6 h-6" />
           <span>Visit PreMiD</span>
-        </a>
+        </SmartLink>
       </section>
     </div>
   </div>

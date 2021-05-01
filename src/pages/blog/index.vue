@@ -23,8 +23,8 @@
 
       <div class="grid gap-14 sm:gap-4 sm:grid-cols-2 mt-14">
         <div class="grid grid-cols-1 gap-2">
-          <nuxt-link
-            :to="{
+          <SmartLink
+            :href="{
               name: 'blog',
               query: {
                 etiket: 'discord',
@@ -35,7 +35,7 @@
           >
             <icon name="discord" class="w-6 h-6" />
             <h3 class="text-lg font-semibold">Discord</h3>
-          </nuxt-link>
+          </SmartLink>
 
           <template v-if="isFetchPending">
             <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
@@ -52,8 +52,8 @@
         </div>
 
         <div class="grid grid-cols-1 gap-2">
-          <nuxt-link
-            :to="{
+          <SmartLink
+            :href="{
               name: 'blog',
               query: {
                 etiket: 'linux',
@@ -64,7 +64,7 @@
           >
             <icon name="linux" class="w-6 h-6" />
             <h3 class="text-lg font-semibold">Linux</h3>
-          </nuxt-link>
+          </SmartLink>
 
           <template v-if="isFetchPending">
             <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
@@ -145,13 +145,13 @@
           </ul>
         </div>
 
-        <nuxt-link
-          :to="{ name: 'blog' }"
+        <SmartLink
+          :href="{ name: 'blog' }"
           class="flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100"
         >
           <icon name="home" class="w-6 h-6" />
           <span>Bloga Dön</span>
-        </nuxt-link>
+        </SmartLink>
       </div>
 
       <div v-else class="space-y-4">

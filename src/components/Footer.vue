@@ -6,14 +6,13 @@
       <div
         class="items-center justify-between space-y-4 text-center sm:text-left sm:flex sm:space-y-0 sm:space-x-6"
       >
-        <a
+        <SmartLink
           href="https://github.com/eggsy/website"
           class="text-center sm:truncate hover:underline"
-          target="_blank"
-          rel="noreferrer"
+          blank
         >
           {{ getLocalizedNotice }}
-        </a>
+        </SmartLink>
 
         <Socials
           v-if="$route.name !== 'index'"

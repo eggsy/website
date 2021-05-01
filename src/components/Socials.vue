@@ -1,54 +1,14 @@
 <template>
   <div class="flex flex-wrap space-x-4">
-    <!-- Discord -->
-    <a
-      :href="getLinks.discord"
-      target="_blank"
-      rel="noreferrer"
-      title="Join my Discord server!"
+    <SmartLink
+      v-for="key in Object.keys(getLinks)"
+      :key="key"
+      :href="getLinks[key]"
+      :utm="false"
+      blank
     >
-      <icon name="discord" />
-    </a>
-
-    <!-- Twitter -->
-    <a
-      :href="getLinks.twitter"
-      target="_blank"
-      rel="noreferrer"
-      title="Follow me on Twitter!"
-    >
-      <icon name="twitter" />
-    </a>
-
-    <!-- GitHub -->
-    <a
-      :href="getLinks.github"
-      target="_blank"
-      rel="noreferrer"
-      title="Follow me on GitHub!"
-    >
-      <icon name="github" />
-    </a>
-
-    <!-- Instagram -->
-    <a
-      :href="getLinks.instagram"
-      target="_blank"
-      rel="noreferrer"
-      title="Follow me on Instagram!"
-    >
-      <icon name="instagram" />
-    </a>
-
-    <!-- Trello -->
-    <a
-      :href="getLinks.trello"
-      target="_blank"
-      rel="noreferrer"
-      title="Visit my Trello board!"
-    >
-      <icon name="trello" />
-    </a>
+      <icon :name="key" />
+    </SmartLink>
   </div>
 </template>
 

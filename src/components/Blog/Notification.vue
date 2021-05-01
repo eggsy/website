@@ -1,29 +1,18 @@
 <template>
-  <nuxt-link v-if="$props.to" :to="$props.to">
+  <SmartLink v-if="href" :href="href">
     <div :class="`content ${getBackgroundColor}`">
-      <slot></slot>
+      <slot />
     </div>
-  </nuxt-link>
-
-  <a v-else-if="$props.href" :href="$props.href">
-    <div :class="`content ${getBackgroundColor}`">
-      <slot></slot>
-    </div>
-  </a>
+  </SmartLink>
 
   <div v-else :class="`content ${getBackgroundColor}`">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    to: {
-      type: [String, Object],
-      required: false,
-      default: null,
-    },
     href: {
       type: [String, Object],
       required: false,
@@ -36,6 +25,10 @@ export default {
     },
   },
   computed: {
+    /**
+     * Returns Tailwind CSS background color classes according to passed type prop.
+     * @returns {string}
+     */
     getBackgroundColor() {
       let color = "bg-blue-500 dark:bg-blue-600"
 

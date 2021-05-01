@@ -14,20 +14,18 @@
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
             taught web developer. I recently started building complex web apps
             using Vue.js,
-            <a
-              href="https://nuxtjs.org/?utm_source=eggsy.xyz"
-              target="_blank"
-              rel="noreferrer"
+            <SmartLink
+              href="https://nuxtjs.org/"
               class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
-              >Nuxt.js</a
+              blank
+              >Nuxt.js</SmartLink
             >
             and
-            <a
-              href="https://tailwindcss.com/?utm_source=eggsy.xyz"
-              target="_blank"
-              rel="noreferrer"
+            <SmartLink
+              href="https://tailwindcss.com/"
               class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
-              >Tailwind CSS</a
+              blank
+              >Tailwind CSS</SmartLink
             >.
           </p>
         </div>
@@ -36,9 +34,8 @@
       </div>
 
       <div class="flex flex-shrink-0 mb-8 sm:justify-end sm:mb-0 sm:w-4/12">
-        <SkeletonLoader
-          type="image"
-          image-url="/assets/images/irl_image.webp"
+        <SmartImage
+          src="/assets/images/irl_image.webp"
           class="w-40 h-40 rounded-full ring-4 ring-gray-200 dark:ring-gray-700"
         />
       </div>
@@ -54,21 +51,11 @@
           v-for="(project, index) in getProjects.featured"
           :key="`project-featured-${index}`"
         >
-          <nuxt-link v-if="project.to" :to="project.to">
-            <CardProject
-              :title="project.title"
-              :description="project.description"
-              :image="project.image"
-              class="h-full"
-            />
-          </nuxt-link>
-
-          <a
-            v-else-if="project.href"
-            :href="`${project.href}?utm_source=eggsy.xyz`"
-            rel="noreferrer"
-            target="_blank"
+          <SmartLink
+            v-if="project.to || project.href"
+            :href="project.to || project.href"
             title="Click to visit this project"
+            :blank="!!project.href"
           >
             <CardProject
               :title="project.title"
@@ -76,7 +63,7 @@
               :image="project.image"
               class="h-full"
             />
-          </a>
+          </SmartLink>
 
           <CardProject
             v-else
@@ -89,17 +76,17 @@
       </div>
 
       <div class="grid gap-2 mt-2 sm:mt-4 sm:gap-4 sm:grid-cols-3">
-        <nuxt-link
+        <SmartLink
           v-for="(project, index) in getProjects.rest"
           :key="`project-rest-${index}`"
-          :to="project.to"
+          :href="project.to"
         >
           <CardProject
             :title="project.title"
             :description="project.description"
             class="h-full"
           />
-        </nuxt-link>
+        </SmartLink>
       </div>
     </section>
 
@@ -183,13 +170,12 @@
           v-else-if="repos.length > 0"
           class="grid grid-cols-1 gap-2 sm:grid-cols-2"
         >
-          <a
+          <SmartLink
             v-for="(repo, index) in repos"
             :key="`repo-${index}`"
             :href="repo.html_url"
-            target="_blank"
-            rel="noreferrer"
             title="Click here to visit this repository"
+            blank
           >
             <CardRepository
               :name="repo.name"
@@ -198,7 +184,7 @@
               :description="repo.description"
               class="h-full"
             />
-          </a>
+          </SmartLink>
         </div>
       </div>
     </section>

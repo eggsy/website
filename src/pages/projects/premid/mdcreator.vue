@@ -460,10 +460,10 @@
                 <p>
                   🎉 If you liked my work, please consider donating to see more
                   tools like this. Visit
-                  <nuxt-link
-                    :to="{ name: 'donate' }"
+                  <SmartLink
+                    :href="{ name: 'donate' }"
                     class="font-medium underline"
-                    >donation</nuxt-link
+                    >donation</SmartLink
                   >
                   page for more information.
                 </p>

@@ -1,13 +1,12 @@
 <template>
   <div class="overflow-hidden">
-    <a
-      :href="getUrl"
-      target="_blank"
-      rel="noreferrer"
+    <SmartLink
+      :href="url"
       class="text-gray-800 dark:text-gray-100 hover:underline"
+      blank
     >
       <h3 class="text-lg">{{ title }}</h3>
-    </a>
+    </SmartLink>
 
     <div
       :class="{
@@ -46,16 +45,6 @@ export default {
       type: String,
       required: false,
       default: null,
-    },
-  },
-  computed: {
-    /**
-     * Returns url with utm_source query if it exists.
-     * @returns {string|null} Target URL or null.
-     */
-    getUrl() {
-      if (this.url) return `${this.url}?utm_source=eggsy.xyz`
-      else return null
     },
   },
 }

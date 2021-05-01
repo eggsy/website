@@ -29,20 +29,15 @@
     </div>
 
     <div class="items-center space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
-      <a
-        :href="getLink.webstore"
-        target="_blank"
-        rel="noreferrer"
-        class="button"
-      >
+      <SmartLink :href="getLink.webstore" class="button" blank>
         <icon name="inbox-in" class="w-6 h-6" />
         <span>Install to Chrome</span>
-      </a>
+      </SmartLink>
 
-      <a :href="getLink.github" target="_blank" rel="noreferrer" class="button">
+      <SmartLink :href="getLink.github" class="button" blank>
         <icon name="github" class="w-6 h-6" />
         <span>Source Code</span>
-      </a>
+      </SmartLink>
     </div>
   </div>
 </template>

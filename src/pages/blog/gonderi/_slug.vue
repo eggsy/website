@@ -22,13 +22,13 @@
       <small class="text-sm">Büyük ihtimalle gönderi henüz blogumda yok</small>
 
       <div class="flex justify-center">
-        <nuxt-link
-          to="/blog"
+        <SmartLink
+          href="/blog"
           class="px-4 py-2 text-gray-200 bg-gray-700 rounded-md hover:bg-gray-800"
           title="bloga dön"
         >
           Bloga Dön
-        </nuxt-link>
+        </SmartLink>
       </div>
     </div>
   </div>
@@ -119,10 +119,10 @@
             </h3>
 
             <div class="flex flex-wrap space-x-2">
-              <nuxt-link
+              <SmartLink
                 v-for="(tag, index) in getTags"
                 :key="`tag-${index}`"
-                :to="{
+                :href="{
                   name: 'blog',
                   query: {
                     etiket: tag,
@@ -131,7 +131,7 @@
                 class="px-2 py-1 text-gray-800 bg-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
               >
                 {{ tag }}
-              </nuxt-link>
+              </SmartLink>
             </div>
           </div>
 
@@ -143,14 +143,14 @@
             </h3>
 
             <div class="grid gap-2 sm:grid-cols-3">
-              <nuxt-link
+              <SmartLink
                 v-for="(relatedPost, index) in getRelatedPosts"
                 :key="`related-${index}`"
-                :to="`/blog/gonderi/${relatedPost.slug}`"
+                :href="`/blog/gonderi/${relatedPost.slug}`"
                 class="p-4 text-center truncate bg-gray-200 rounded hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100"
               >
                 {{ relatedPost.title }}
-              </nuxt-link>
+              </SmartLink>
             </div>
           </div>
         </div>

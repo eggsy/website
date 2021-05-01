@@ -14,19 +14,17 @@
 
         <div class="space-y-2">
           <div class="grid items-center gap-2 sm:grid-cols-2">
-            <a
+            <SmartLink
               :href="
-                $fetchState.pending === false
-                  ? `https://youtu.be/${getSelectedSong.youtube}/?utm_source=eggsy.xyz`
-                  : false
+                $fetchState.pending === false &&
+                `https://youtu.be/${getSelectedSong.youtube}/`
               "
-              target="_blank"
-              rel="noreferrer"
               class="flex items-center justify-center px-4 py-2 space-x-2 overflow-hidden text-center text-gray-900 bg-gray-100 rounded cursor-pointer select-none ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800 dark:text-gray-100"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
               }"
+              blank
             >
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
@@ -37,16 +35,13 @@
                 <icon name="youtube" class="flex-shrink-0 w-6 h-6" />
                 <span class="truncate">YouTube</span>
               </template>
-            </a>
+            </SmartLink>
 
-            <a
+            <SmartLink
               :href="
-                getSelectedSong.spotify
-                  ? `https://open.spotify.com/track/${getSelectedSong.spotify}/?utm_source=eggsy.xyz`
-                  : false
+                getSelectedSong.spotify &&
+                `https://open.spotify.com/track/${getSelectedSong.spotify}/`
               "
-              target="_blank"
-              rel="noreferrer"
               class="flex items-center justify-center px-4 py-2 space-x-2 overflow-hidden text-gray-900 bg-gray-100 rounded cursor-pointer select-none ring-1 ring-gray-200 dark:ring-gray-800 dark:text-gray-100"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
@@ -58,6 +53,7 @@
                   $fetchState.error === null &&
                   getSelectedSong.spotify === null,
               }"
+              blank
             >
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
@@ -68,7 +64,7 @@
                 <icon name="spotify" class="flex-shrink-0 w-6 h-6" />
                 <span class="truncate">Spotify</span>
               </template>
-            </a>
+            </SmartLink>
           </div>
 
           <div class="space-y-2">
@@ -182,14 +178,13 @@
 
           <p class="text-xs font-medium text-gray-600 dark:text-gray-400">
             Lyrics by
-            <a
+            <SmartLink
               href="https://api.ksoft.si/?ref=eggsy.xyz"
               class="hover:underline"
-              target="_blank"
-              rel="noreferrer"
+              blank
             >
               KSoft.Si
-            </a>
+            </SmartLink>
           </p>
         </div>
 
