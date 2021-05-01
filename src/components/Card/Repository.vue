@@ -38,7 +38,7 @@ export default {
     language: {
       type: String,
       required: false,
-      default: () => null,
+      default: null,
     },
     stars: {
       type: [String, Number],
@@ -50,6 +50,10 @@ export default {
     },
   },
   computed: {
+    /**
+     * Returns proper name for the language icon.
+     * @returns {string}
+     */
     getLanguageIcon() {
       const icons = {
         Vue: "vuejs",
@@ -57,7 +61,7 @@ export default {
         JavaScript: "javascript",
       }
 
-      return icons[this.language] || false
+      return icons[this.language] || ""
     },
   },
 }
