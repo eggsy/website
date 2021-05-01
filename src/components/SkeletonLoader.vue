@@ -18,31 +18,6 @@
     <div class="w-4/12 h-4 bg-gray-300 rounded-md dark:bg-gray-700" />
   </div>
 
-  <!-- Image -->
-  <div
-    v-else-if="type === 'image' && imageUrl"
-    class="focus:outline-none"
-    :class="{
-      'bg-gray-100 dark:bg-gray-700 animate-pulse bg-no-repeat':
-        itemLoaded === false,
-    }"
-    :style="{
-      backgroundImage: itemLoaded === true ? `url('${imageUrl}')` : '',
-      backgroundPosition: 'center',
-      backgroundSize: itemLoaded === true ? backgroundSize : '',
-    }"
-  >
-    <img
-      :src="imageUrl"
-      class="invisible"
-      draggable="false"
-      alt="image"
-      width="100%"
-      height="100%"
-      @load="itemLoaded = true"
-    />
-  </div>
-
   <!-- Iframe -->
   <div
     v-else-if="type === 'iframe'"
@@ -96,16 +71,6 @@ export default {
       type: String,
       required: false,
       default: "block",
-    },
-    imageUrl: {
-      type: String,
-      required: false,
-      default: null,
-    },
-    backgroundSize: {
-      type: String,
-      required: false,
-      default: "cover",
     },
     iframeUrl: {
       type: String,
