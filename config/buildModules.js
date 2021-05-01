@@ -5,6 +5,7 @@ import googleAnalytics from "./modules/googleAnalytics"
 
 export default [
   "@nuxtjs/svg",
+  "@nuxt/image",
   "@nuxtjs/moment",
   ["@nuxtjs/dotenv", dotenv],
   ["@nuxtjs/color-mode", colorMode],
