@@ -75,12 +75,20 @@
             class="w-full bg-white dark:bg-gray-700"
           >
             <option selected>PreMiD</option>
-            <option
-              v-for="(image, index) of getImageNames.large"
-              :key="`large-image-${index}`"
+            <optgroup
+              v-for="(category, index) in getImages.large"
+              :key="`large-group-${index}`"
+              :label="category.name"
             >
-              {{ image }}
-            </option>
+              <option
+                v-for="(item, i) of category.items.sort((a, b) =>
+                  a.name.localeCompare(b.name)
+                )"
+                :key="`large-option-${i}`"
+              >
+                {{ item.name }}
+              </option>
+            </optgroup>
           </select>
         </div>
 
@@ -93,12 +101,20 @@
             class="w-full bg-white dark:bg-gray-700"
           >
             <option selected>None</option>
-            <option
-              v-for="(image, index) of getImageNames.small"
-              :key="`small-image-${index}`"
+            <optgroup
+              v-for="(category, index) in getImages.small"
+              :key="`small-group-${index}`"
+              :label="category.name"
             >
-              {{ image }}
-            </option>
+              <option
+                v-for="(item, i) of category.items.sort((a, b) =>
+                  a.name.localeCompare(b.name)
+                )"
+                :key="`small-image-${i}`"
+              >
+                {{ item.name }}
+              </option>
+            </optgroup>
           </select>
         </div>
 
@@ -343,13 +359,10 @@ export default {
      * Formats image names, adds spaces and returns all in a single object.
      * @returns {{ large: string[], small: string[]}} An object with large and small image array.
      */
-    getImageNames() {
-      const formatName = (name) =>
-        name?.match(/[A-Z][a-z]+/g)?.join(" ") || name
-
+    getImages() {
       return {
-        large: Object.keys(largeImages).map(formatName)?.sort(),
-        small: Object.keys(smallImages).map(formatName)?.sort(),
+        large: largeImages,
+        small: smallImages,
       }
     },
     /**
