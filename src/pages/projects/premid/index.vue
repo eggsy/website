@@ -41,7 +41,7 @@
 
       <section class="space-y-4">
         <SmartLink
-          href="https://premid.app/?utm_source=eggsy.xyz"
+          href="https://premid.app/"
           class="flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100"
           blank
         >
