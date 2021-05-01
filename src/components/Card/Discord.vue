@@ -6,32 +6,29 @@
       </h1>
 
       <div
-        class="flex flex-col items-center justify-between space-y-3 overflow-x-hidden sm:space-y-0 sm:space-x-3 sm:flex-row"
+        class="flex flex-col items-center justify-between space-y-3 overflow-x-hidden md:space-y-0 md:space-x-3 md:flex-row"
       >
         <div
-          :class="{
-            'flex items-center w-full py-2 space-x-3 overflow-x-hidden  md:space-x-5': true,
-            'sm:w-2/3': buttons.length > 0,
-          }"
+          class="flex items-center w-full py-2 space-x-3 overflow-x-hidden md:space-x-5"
+          :class="buttons.length > 0 && 'md:w-2/3'"
         >
           <div class="relative flex-shrink-0 w-32 h-32">
-            <img
-              class="rounded-md"
+            <SmartImage
               :src="getImages.largeImage"
-              draggable="false"
-              alt="big image"
+              class="rounded-md"
+              alt="large image"
+              height="128"
+              width="128"
             />
 
-            <img
+            <SmartImage
               v-if="getImages.smallImage"
               v-tippy="{
                 content: getText.small,
                 placement: 'top',
               }"
-              class="box-border absolute rounded-full bg-[#6c82cf] -bottom-2 -right-2 w-9 ring-4 ring-[#6c82cf] focus:outline-none"
               :src="getImages.smallImage"
-              draggable="false"
-              alt="small image"
+              class="box-border absolute rounded-full bg-[#6c82cf] -bottom-2 -right-2 w-9 ring-4 ring-[#6c82cf] focus:outline-none"
             />
           </div>
 
@@ -52,22 +49,22 @@
         </div>
 
         <div
-          v-if="buttons.length !== 0"
-          class="flex-shrink-0 w-full overflow-x-hidden sm:w-1/3"
+          v-if="buttons.length > 0"
+          class="flex flex-col flex-shrink-0 space-y-2 md:w-1/3"
         >
-          <div class="sm:ml-auto">
-            <div class="grid grid-cols-1 gap-2">
-              <a
-                v-for="(button, index) in buttons"
-                :key="`button-${index}`"
-                :href="button.url || null"
-                :title="button.url ? 'Click to follow your URL' : null"
-                class="px-4 py-2 text-sm text-center text-white truncate border border-white rounded-sm cursor-pointer select-none sm:px-3 sm:py-1 focus:bg-opacity-10 focus:bg-white"
-                target="_blank"
-              >
-                {{ button.label }}
-              </a>
-            </div>
+          <div
+            v-for="(button, index) in buttons"
+            :key="`button-${index}`"
+            class="flex justify-end"
+          >
+            <SmartLink
+              :href="button.url"
+              :title="button.url"
+              class="px-4 py-2 text-sm text-white truncate border border-white rounded-sm cursor-pointer select-none md:px-3 md:py-1 focus:bg-opacity-10 focus:bg-white"
+              blank
+            >
+              {{ button.label }}
+            </SmartLink>
           </div>
         </div>
       </div>
