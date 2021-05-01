@@ -15,7 +15,7 @@
           <div class="relative flex-shrink-0 w-32 h-32">
             <SmartImage
               :src="getImages.largeImage"
-              class="rounded-md"
+              class="rounded-xl"
               alt="large image"
               height="128"
               width="128"
@@ -73,8 +73,8 @@
 </template>
 
 <script>
-import largeImages from "@/assets/files/premid/largeImages"
-import smallImages from "@/assets/files/premid/smallImages"
+import { largeAll } from "@/assets/files/premid/largeImages"
+import { smallAll } from "@/assets/files/premid/smallImages"
 
 export default {
   props: {
@@ -139,12 +139,16 @@ export default {
      * @returns {{largeImage: string[], smallImage: string[]}}
      */
     getImages() {
-      const largeImageKey = this.largeImage?.replace(/\s/g, "")
-      const smallImageKey = this.smallImage?.replace(/\s/g, "")
+      const { largeImage, smallImage } = this
+
+      /*  const largeImageKey = this.largeImage?.replace(/\s/g, "")
+      const smallImageKey = this.smallImage?.replace(/\s/g, "") */
 
       return {
-        largeImage: largeImages[largeImageKey] || "https://i.vgy.me/NZdome.png",
-        smallImage: smallImages[smallImageKey],
+        largeImage:
+          largeAll.find((item) => item.name === largeImage)?.url ||
+          "https://i.vgy.me/NZdome.png",
+        smallImage: smallAll.find((item) => item.name === smallImage)?.url,
       }
     },
     /**
