@@ -29,23 +29,17 @@
         <h2 class="text-lg text-gray-900 dark:text-gray-100">Support Me On</h2>
 
         <div class="grid gap-4">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            :href="getSponsorLinks.patreon"
-            class="w-max"
-          >
+          <SmartLink :href="getSponsorLinks.patreon" class="w-max" blank>
             <div
               class="flex items-center px-4 py-2 space-x-2 rounded cursor-pointer hover:bg-opacity-95 bg-[#FF424D]"
             >
-              <SkeletonLoader
-                type="image"
-                image-url="https://i.vgy.me/qxpY9T.png"
+              <SmartImage
+                src="https://i.vgy.me/qxpY9T.png"
                 class="rounded w-7 h-7"
               />
               <span class="text-white">Become a Patron</span>
             </div>
-          </a>
+          </SmartLink>
         </div>
       </section>
 
@@ -59,11 +53,7 @@
             class="flex items-center h-full"
           >
             <div class="bg-gray-300 rounded-tl rounded-bl dark:bg-gray-800">
-              <SkeletonLoader
-                type="image"
-                :image-url="account.image"
-                class="w-24 h-24"
-              />
+              <SmartImage :src="account.image" class="w-24 h-24" />
             </div>
 
             <div

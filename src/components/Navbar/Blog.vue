@@ -3,14 +3,18 @@
     <div
       class="container flex items-center justify-between w-11/12 mx-auto space-x-4 text-gray-200 sm:px-0 sm:w-9/12 md:w-7/12"
     >
-      <nuxt-link :to="{ name: getTargetRoute.name }" class="flex-shrink-0">
-        <SkeletonLoader
-          type="image"
-          image-url="/assets/icons/icon.svg"
-          class="w-10 h-10 transition bg-gray-100 rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+      <SmartLink
+        :href="{ name: getTargetRoute.name }"
+        class="flex-shrink-0 w-10 h-10"
+      >
+        <SmartImage
+          src="/assets/icons/icon.svg"
+          class="transition-transform bg-gray-100 rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+          width="100"
+          height="100"
           :title="getTargetRoute.title"
         />
-      </nuxt-link>
+      </SmartLink>
 
       <div class="flex items-center justify-end space-x-2 sm:space-x-4">
         <div

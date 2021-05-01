@@ -11,54 +11,57 @@
           which everyone can signup for free and start uploading their images,
           videos or files! You can set and start using is-inside.me with desktop
           apps like
-          <a
-            href="https://getsharex.com/?utm_source=eggsy.xyz"
+          <SmartLink
+            href="https://getsharex.com/"
             class="font-medium hover:underline"
-            rel="noreferrer"
-            target="_blank"
-            >ShareX</a
+            blank
+            >ShareX</SmartLink
           >
           (Windows),
-          <a
-            href="https://github.com/ArsenArsen/KShare/?utm_source=eggsy.xyz"
+          <SmartLink
+            href="https://github.com/ArsenArsen/KShare/"
             class="font-medium hover:underline"
-            rel="noreferrer"
-            target="_blank"
-            >KShare</a
+            blank
+            >KShare</SmartLink
           >
           (Linux),
-          <a
-            href="https://magiccap.me/?utm_source=eggsy.xyz"
+          <SmartLink
+            href="https://magiccap.me/"
             class="font-medium hover:underline"
-            rel="noreferrer"
-            target="_blank"
-            >MagicCap</a
+            blank
+            >MagicCap</SmartLink
           >
           (Linux, Mac) or your favourite screen capturing tool that supports
           custom uploaders!
         </p>
       </header>
 
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
-        <CardProject image="https://i.vgy.me/iXYvCp.jpg" />
-        <CardProject image="https://i.vgy.me/zEQpUG.jpg" />
+      <div class="flex flex-wrap space-x-4">
+        <SmartImage
+          src="https://i.vgy.me/iXYvCp.jpg"
+          height="150"
+          width="150"
+          class="rounded-md ring-2 ring-gray-200 dark:ring-gray-800"
+        />
+
+        <SmartImage
+          src="https://i.vgy.me/zEQpUG.jpg"
+          height="150"
+          width="150"
+          class="rounded-md ring-2 ring-gray-200 dark:ring-gray-800"
+        />
       </div>
 
       <div class="items-center space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
-        <a
-          :href="getLink.website"
-          target="_blank"
-          rel="noreferrer"
-          class="button"
-        >
+        <SmartLink :href="getLink.website" class="button" blank>
           <icon name="link" class="w-6 h-6" />
           <span>Visit Website</span>
-        </a>
+        </SmartLink>
 
-        <a :href="getLink.faq" target="_blank" rel="noreferrer" class="button">
+        <SmartLink :href="getLink.faq" class="button" blank>
           <icon name="question-circle" class="w-6 h-6" />
           <span>View FAQ</span>
-        </a>
+        </SmartLink>
       </div>
     </div>
   </div>

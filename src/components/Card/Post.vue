@@ -4,17 +4,18 @@
     class="p-4 bg-gray-100 rounded ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-800"
   >
     <div class="flex items-center space-x-3">
-      <nuxt-link
-        :to="{
+      <SmartLink
+        :href="{
           name: 'blog-gonderi-slug',
           params: { slug: getPostMeta.slug },
         }"
         class="relative flex-shrink-0 w-2/6 group"
       >
-        <SkeletonLoader
-          type="image"
-          :image-url="getPostMeta.image"
-          class="h-24 rounded-md"
+        <SmartImage
+          :src="getPostMeta.image"
+          class="rounded-md"
+          width="620"
+          height="448"
         />
 
         <div
@@ -22,11 +23,11 @@
         >
           <icon name="link" class="w-6 h-6 text-white" />
         </div>
-      </nuxt-link>
+      </SmartLink>
 
       <div class="w-4/6">
-        <nuxt-link
-          :to="{
+        <SmartLink
+          :href="{
             name: 'blog-gonderi-slug',
             params: { slug: getPostMeta.slug },
           }"
@@ -35,7 +36,7 @@
           <h2 class="font-semibold truncate" :title="getPostMeta.title">
             {{ getPostMeta.title }}
           </h2>
-        </nuxt-link>
+        </SmartLink>
 
         <p class="text-gray-800 line-clamp-3 dark:text-gray-300">
           {{ getPostMeta.description }}
@@ -48,8 +49,8 @@
     >
       <div class="flex items-center space-x-2">
         <icon name="hashtag" class="w-4 h-4" />
-        <nuxt-link
-          :to="{
+        <SmartLink
+          :href="{
             name: 'blog',
             query: {
               etiket: getPostMeta.tag,
@@ -58,7 +59,7 @@
           class="hover:underline"
         >
           {{ getPostMeta.tag }}
-        </nuxt-link>
+        </SmartLink>
       </div>
 
       <div class="flex items-center space-x-2">
@@ -74,26 +75,26 @@
   >
     <div class="flex items-center gap-4">
       <div class="overflow-hidden">
-        <nuxt-link
-          :to="{
+        <SmartLink
+          :href="{
             name: 'blog-gonderi-slug',
             params: { slug: getPostMeta.slug },
           }"
           class="truncate dark:text-gray-200 hover:underline"
         >
           <div class="flex items-center space-x-2 text-lg font-semibold">
-            <SkeletonLoader
-              type="image"
-              :image-url="getPostMeta.image"
+            <SmartImage
+              :src="getPostMeta.image"
               class="flex-shrink-0 w-6 h-6 rounded-full"
-              background-size="cover"
+              width="50"
+              height="50"
             />
 
             <h3 class="text-lg truncate">
               {{ getPostMeta.title }}
             </h3>
           </div>
-        </nuxt-link>
+        </SmartLink>
 
         <p class="text-gray-700 dark:text-gray-300 line-clamp-2">
           {{ getPostMeta.description }}
@@ -113,8 +114,8 @@
     v-else-if="type === 'text-only-title'"
     class="p-4 truncate bg-gray-100 rounded ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-800"
   >
-    <nuxt-link
-      :to="{
+    <SmartLink
+      :href="{
         name: 'blog-gonderi-slug',
         params: { slug: getPostMeta.slug },
       }"
@@ -123,7 +124,7 @@
       <h3 class="text-lg truncate" :title="getPostMeta.title">
         {{ getPostMeta.title }}
       </h3>
-    </nuxt-link>
+    </SmartLink>
 
     <div class="flex items-center space-x-1">
       <icon

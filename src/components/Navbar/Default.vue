@@ -2,24 +2,25 @@
   <nav class="w-full">
     <div class="container relative w-11/12 mx-auto sm:w-9/12 md:w-7/12">
       <div class="flex items-center justify-between">
-        <nuxt-link :to="{ name: 'index' }">
-          <SkeletonLoader
-            type="image"
-            image-url="/assets/icons/icon.svg"
-            class="w-10 h-10 transition bg-gray-100 rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+        <SmartLink :href="{ name: 'index' }" class="flex-shrink-0 w-10 h-10">
+          <SmartImage
+            src="/assets/icons/icon.svg"
+            class="transition-transform bg-gray-100 rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+            width="100"
+            height="100"
             title="EGGSY's Website"
           />
-        </nuxt-link>
+        </SmartLink>
 
         <div class="hidden space-x-2 sm:flex sm:items-center">
-          <nuxt-link
+          <SmartLink
             v-for="(link, index) in getCurrentRouteLinks"
             :key="`link-${index}`"
-            :to="link.to"
+            :href="link.to"
             class="px-2 py-1 text-gray-800 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200"
           >
             {{ link.title }}
-          </nuxt-link>
+          </SmartLink>
 
           <ColorSwitcher />
         </div>
@@ -49,14 +50,14 @@
               </div>
 
               <div class="space-y-2">
-                <nuxt-link
+                <SmartLink
                   v-for="(link, index) in getCurrentRouteLinks"
                   :key="`link-${index}`"
-                  :to="link.to"
+                  :href="link.to"
                   class="flex justify-center px-4 py-2 text-gray-800 bg-gray-300 rounded-md dark:text-gray-200 dark:bg-gray-700"
                 >
                   {{ link.title }}
-                </nuxt-link>
+                </SmartLink>
               </div>
 
               <div class="flex items-center">
