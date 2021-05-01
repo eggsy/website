@@ -16,8 +16,9 @@
           <div class="grid items-center gap-2 sm:grid-cols-2">
             <SmartLink
               :href="
-                $fetchState.pending === false &&
-                `https://youtu.be/${getSelectedSong.youtube}/`
+                $fetchState.pending === false
+                  ? `https://youtu.be/${getSelectedSong.youtube}/`
+                  : false
               "
               class="flex items-center justify-center px-4 py-2 space-x-2 overflow-hidden text-center text-gray-900 bg-gray-100 rounded cursor-pointer select-none ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800 dark:text-gray-100"
               :class="{
@@ -39,8 +40,9 @@
 
             <SmartLink
               :href="
-                getSelectedSong.spotify &&
-                `https://open.spotify.com/track/${getSelectedSong.spotify}/`
+                getSelectedSong.spotify
+                  ? `https://open.spotify.com/track/${getSelectedSong.spotify}/`
+                  : false
               "
               class="flex items-center justify-center px-4 py-2 space-x-2 overflow-hidden text-gray-900 bg-gray-100 rounded cursor-pointer select-none ring-1 ring-gray-200 dark:ring-gray-800 dark:text-gray-100"
               :class="{
@@ -179,7 +181,7 @@
           <p class="text-xs font-medium text-gray-600 dark:text-gray-400">
             Lyrics by
             <SmartLink
-              href="https://api.ksoft.si/?ref=eggsy.xyz"
+              href="https://api.ksoft.si/"
               class="hover:underline"
               blank
             >
