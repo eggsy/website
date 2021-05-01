@@ -1,26 +1,24 @@
 <template>
-  <div class="space-y-2">
+  <div class="mt-4 space-y-2">
     <!-- Custom Status Presence will read the data from here -->
     <div id="object" class="hidden">
       {{ getPresenceData }}
     </div>
 
     <div class="space-y-6">
-      <div class="space-y-2">
+      <div class="space-y-4">
         <div
           v-if="presence.installed === false"
           class="hidden mb-2 bg-red-500 sm:block information dark:bg-gray-700"
         >
           You need to install the Custom Status presence from the PreMiD Store
           to be able to use this page.
-          <a
+          <SmartLink
             href="https://premid.app/store/presences/Custom%20Status"
-            target="_blank"
-            rel="noreferrer"
             class="text-blue-200"
+            blank
+            >Click here</SmartLink
           >
-            Click here
-          </a>
           to visit the store.
         </div>
 
@@ -111,13 +109,27 @@
           <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
             Small Image Text
           </h3>
-          <input v-model="presence.smallImageText" type="text" class="w-full" />
+
+          <input
+            v-model="presence.smallImageText"
+            type="text"
+            class="w-full"
+            placeholder="[EMPTY]"
+          />
         </div>
 
-        <div class="col-span-2 space-y-2">
-          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
-            Buttons
-          </h3>
+        <div class="col-span-2 space-y-4">
+          <div>
+            <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
+              Buttons
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-300">
+              You can't click your own buttons from your Discord profile. If
+              they appear here, they should also be working for others, blame
+              Discord.
+            </p>
+          </div>
 
           <div class="grid gap-4 sm:grid-cols-2">
             <div class="space-y-2">
@@ -195,14 +207,28 @@
         </div>
       </div>
 
-      <div class="grid gap-6 sm:grid-cols-2">
-        <div class="space-y-2">
-          <div class="bg-green-500 information dark:bg-gray-700">
-            Welcome to the new look of PreMiD pages including Custom Status. I
-            have completely redesigned my website, please take a look at the
-            rest too!
-          </div>
+      <section class="space-y-6">
+        <div>
+          <h2
+            class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+          >
+            Consider Donating!
+          </h2>
 
+          <p class="text-gray-700 dark:text-gray-200">
+            If you want to support my work and make me create better systems in
+            the future, you can donate me through Patreon, please visit
+            <SmartLink
+              :href="{ name: 'donate' }"
+              class="font-medium hover:underline"
+            >
+              my donate page
+            </SmartLink>
+            for more information.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
           <div>
             <h2
               class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
@@ -210,21 +236,18 @@
               How does it work?
             </h2>
             <p class="text-gray-700 dark:text-gray-200">
-              When you add our Presence from Presence Store from
-              <a
-                href="https://premid.app/store/presences/Custom%20Status?utm_source=eggsy.xyz"
+              When you add our Presence from Presence Store which is on
+              <SmartLink
+                href="https://premid.app/store/presences/Custom%20Status"
                 title="PreMiD Store"
-                rel="noreferrer"
-                target="_blank"
-                >this page</a
+                blank
+                >this page</SmartLink
               >, you will be able to use this page. You just have to set your
               settings and PreMiD will show those settings on your profile just
-              like in the preview here.
+              like in the preview you see up here.
             </p>
           </div>
-        </div>
 
-        <div class="space-y-2">
           <div>
             <h2
               class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
@@ -235,40 +258,18 @@
             <p class="text-gray-700 dark:text-gray-200">
               If the system isn't working or it isn't displaying anything on
               your profile, it's most likely about you. Please check
-              <a
-                href="https://premid.app/store/presences/Custom%20Status?utm_source=eggsy.xyz"
+              <SmartLink
+                href="https://premid.app/store/presences/Custom%20Status"
                 title="PreMiD Docs"
-                rel="noreferrer"
-                target="_blank"
-                >Troubleshooting Documentation</a
+                blank
+                >Troubleshooting Documentation</SmartLink
               >
-              and see if those steps will fix your issue. If nothing works out,
-              you can always find me on PreMiD's Discord server and get support
-              there!
-            </p>
-          </div>
-
-          <div>
-            <h2
-              class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
-            >
-              Can I donate?
-            </h2>
-
-            <p class="text-gray-700 dark:text-gray-200">
-              If you want to support my work and make me create better systems
-              in the future, you can donate me through Patreon, please visit
-              <nuxt-link
-                :to="{ name: 'donate' }"
-                class="font-medium hover:underline"
-              >
-                my donate page
-              </nuxt-link>
-              for more information.
+              and see if those steps fixes your issue. If nothing works out, you
+              can always find me on PreMiD's Discord server.
             </p>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
