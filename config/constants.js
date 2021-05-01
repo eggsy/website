@@ -1,23 +1,23 @@
 export default {
   social: {
     discord: "https://discord.gg/tHx9ZKG",
-    twitter: "https://twitter.com/eggsydev/?utm_source=eggsy.xyz",
-    github: "https://github.com/eggsy/?utm_source=eggsy.xyz",
-    instagram: "https://instagram.com/eggsy_dev/?utm_source=eggsy.xyz",
-    trello: "https://trello.com/b/XtWZFFiH/?utm_source=eggsy.xyz",
+    twitter: "https://twitter.com/eggsydev/",
+    github: "https://github.com/eggsy/",
+    instagram: "https://instagram.com/eggsy_dev/",
+    trello: "https://trello.com/b/XtWZFFiH/",
   },
   sponsor: {
-    patreon: "https://www.patreon.com/eggsy/?utm_source=eggsy.xyz",
+    patreon: "https://www.patreon.com/eggsy/",
   },
   links: {
     unblockPlease: {
       webstore:
-        "https://chrome.google.com/webstore/detail/unblock-please/lpngbkmgnehdkkobdbieckjpphkohffd/?utm_source=eggsy.xyz",
-      github: "https://github.com/eggsy/unblock-please/?utm_source=eggsy.xyz",
+        "https://chrome.google.com/webstore/detail/unblock-please/lpngbkmgnehdkkobdbieckjpphkohffd/",
+      github: "https://github.com/eggsy/unblock-please/",
     },
     isInsideMe: {
-      website: "https://is-inside.me/?utm_source=eggsy.xyz",
-      faq: "https://is-inside.me/faq/?utm_source=eggsy.xyz",
+      website: "https://is-inside.me/",
+      faq: "https://is-inside.me/faq/",
     },
   },
 }
