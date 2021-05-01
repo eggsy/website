@@ -1,39 +1,12 @@
 html,
 body {
   scroll-behavior: smooth;
-  -webkit-tap-highlight-color: transparent;
   scroll-padding: 16px;
 }
 
 // Remove blue highlight from mobile users
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-// Absolute align
-.absolute-align {
-  &-middle {
-    top: 50%;
-    transform: translateY(-50%);
+@media screen and (max-width: 1024px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
-
-  &-center {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  &-both {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-// Scrollbar
-.scrollbar-thin {
-  @apply scrollbar-track-gray-300 scrollbar-thumb-gray-400;
-}
-
-.dark.scrollbar-thin {
-  @apply scrollbar-track-gray-700 scrollbar-thumb-gray-800;
 }
