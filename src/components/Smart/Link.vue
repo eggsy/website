@@ -64,11 +64,10 @@ export default {
      * @returns {boolean}
      */
     isInternalPage() {
-      const href = this.href
-      const routes = this.$router.getRoutes()
+      const { href } = this
 
       if (typeof href === "object") return true
-      else if (routes.find((route) => route.path === href)) return true
+      else if (["/", "#"].includes(href[0])) return true
       else return false
     },
   },
