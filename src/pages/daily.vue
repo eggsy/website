@@ -329,20 +329,4 @@ export default {
 .ring {
   @apply ring-2 ring-opacity-75 ring-gray-300 dark:ring-transparent;
 }
-
-.scrollbar {
-  @apply scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-400;
-
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-}
-
-.dark .scrollbar {
-  @apply scrollbar-track-gray-600 scrollbar-thumb-gray-700;
-
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-}
 </style>

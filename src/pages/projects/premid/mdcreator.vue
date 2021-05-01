@@ -1048,22 +1048,6 @@ p,
   @apply text-gray-800 dark:text-gray-200;
 }
 
-.scrollbar {
-  @apply scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-400;
-
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-}
-
-.dark .scrollbar {
-  @apply scrollbar-thin scrollbar-track-gray-500 scrollbar-thumb-gray-600;
-
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-}
-
 .control-button {
   @apply px-4 py-2 rounded text-gray-900 select-none dark:text-gray-100 ring-1 ring-gray-200 dark:ring-gray-700;
 
