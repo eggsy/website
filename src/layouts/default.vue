@@ -38,7 +38,7 @@ export default {
     return {
       titleTemplate: `%s - ${string}`,
       htmlAttrs: {
-        class: `min-h-screen min-w-screen scrollbar-thin ${this.$colorMode.value}`,
+        class: `min-h-screen min-w-screen ${this.$colorMode.value}`,
       },
       meta: [
         {
