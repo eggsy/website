@@ -6,7 +6,7 @@ tags:
 createdAt: 2020-01-09T02:23:59.638Z
 ---
 
-<blog-notification type="information" to="/projects/is-inside-me">
+<blog-notification type="information" href="/projects/is-inside-me">
   Bu yazı eski site ve eski blogdan kalmadır. Yenilenen sitemde is-inside.me'ye özel yaptığım sayfaya ulaşmak için buraya tıklayabilirsiniz.
 </blog-notification>
 
@@ -29,13 +29,13 @@ Alt alan adlarının ne olacağını belirlemek tamamen sizlere kalmış. Eğer 
 1. **Kayıt olun**: Sistemi kullanabilmek için öncelikle bir alt alan adına ve şifreye ihtiyacınız var. Bunu da saniyeler içerisinde yapabilirsiniz, şifreleriniz veritabanımızda şifrelenerek tamamen güvenli bir şekilde saklanacaktır. Bu yüzden hiçbir şekilde korkmanıza gerek yok. Eğer korkuyorsanız da şifrenizi rastgele bir şeyler yapabilirsiniz. Siteyi ziyaret etmek ve kayıt olmak için buraya tıklayabilirsiniz.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/5Nj5sr0B.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/5Nj5sr0B.png"></smart-image>
 </p>
 
 2. Kontrol panelinden gerekli bilgileri alın Kayıt olduktan sonra sizi otomatik olarak kontrol paneline atacaktır. Bu sayfada aslında sistemin nasıl kullanılacağı belirtiliyor ancak sistem İngilizce olduğu için bu sayfayı yazmayı gerek gördüm.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/1Q9pqFGK.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/1Q9pqFGK.png"></smart-image>
 </p>
 
 Resimde gösterilen yerlerden sizin kullanmanız için tek ihtiyacınız olan kısım "Yükleyici program" seçeneğinin hemen altında bulunan "Download" yazısı. Bu yazıya tıkladığınızda tarayıcınız, "is-inside.sxcu" adında bir dosya indirmeye başlayacaktır. Bu dosya, ShareX için özel olarak hazırlanmış ayar dosyasıdır.
@@ -43,13 +43,13 @@ Resimde gösterilen yerlerden sizin kullanmanız için tek ihtiyacınız olan k�
 3. **Dosyayı aktifleştirme**: Dosyayı aktifleştirmek için sadece dosyayı açmanız ve gelen uyarıda evet seçeneğine basmanız yeterli olacaktır. Bundan sonra resim yüklerken resimleriniz otomatik olarak is-inside.me sitesine, seçtiğiniz alt alan adına yüklenecektir.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/RfJtYyUI.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/RfJtYyUI.png"></smart-image>
 </p>
 
 4. **İlk yüklemenizi yapma**: Evet, artık her şey hazır, ayarlarınız içe aktarıldı ve yükleme yapmaya hazırsınız. Ancak bundan önce ShareX üzerinden birkaç ayara değiştirmeniz gerekiyor. Bu kısımda çok detaya girmeyeceğim, daha fazlasını kendiniz ShareX uygulamasını kurcalayarak bulabilir ve kafanıza göre ayarlayabilirsiniz. Aşağıdaki GIF'i izleyerek yükleme işleminin nasıl gerçekleştiğini görebilirsiniz.
 
 <p class="text-center">
-  <img src="https://eggsy.is-inside.me/rgbt5gJN.gif" alt="image" />
+  <smart-image src="https://eggsy.is-inside.me/rgbt5gJN.gif"></smart-image>
 </p>
 
 GIF'de gördüğünüz işlemlerden "Yakalama Sonrası" yapılacak seçeneklerin içerisinden "Resim düzenleyicide aç" seçeneğini de aktifleştirirseniz, yukarıdaki kontrol paneli resminde gördüğünüz gibi düzenlemeler yapabilir ve yükleyebilirsiniz.

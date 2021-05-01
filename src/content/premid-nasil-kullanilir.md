@@ -16,7 +16,7 @@ Evet, doğru duydunuz. "Olması beklenen bir güncelleme" sonunda gerçekleşti 
 Buna "paylaşma" demek yerine "market sistemi" dememiz çok daha mantıklı olacaktır. Güncelleme kaynaklarında ve site üzerinde de servisleri ekleyebileceğiniz kısım "Mağaza" olarak geçiyor. O yüzden bu tam anlamıyla "her şeyin beleş olduğu bir mağaza". Daha fazla uzatmadan iyice derinlere inmek gerekirse; uygulamayı ve eklentiyi düzgünce yükledikten sonra (yeni sürüme ait uygulama ve eklentiye sahip olduğunuza emin olun elbette) artık PreMiD'in sitesindeki mağaza kısmından hiçbir ek bir şeye ihtiyaç duymadan tek bir tuşa basarak istediğiniz servisi ekleyebileceksiniz. **Üstelik mağaza Türkçe'yi de destekliyor!**
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/CL39gBdq.gif" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/CL39gBdq.gif"></smart-image>
 </p>
 
 Yeni güncelleme ile şimdiden 400'ün üzerinden servis desteği eklendi! Ve bu "hoş olmayan bir şekilde" artmaya devam ediyor. Yapımcılar bile bu kadar ilgi olacağını beklemezken herkes kullandıkları servis için bir destek eklemek istiyor. Oldukça kalabalık ve geniş bir mağazaya sahip. Bu hem iyi, hemde kötü bir şey olabilir. Size kalmış.

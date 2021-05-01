@@ -30,21 +30,21 @@ Kayıt planı hazırlamak, sadece boş bir dosyaya yazılar yazmaktan ibaret de�
 Sonrasında ise bize verilen bu kayıt planı formunu doldurmak için hepimizin müsait olduğu bir zaman bulmaya çalıştık. Hepimizin diğer bireysel okul görevleri, gerçek hayat işleri ve sorumlulukları gibi nedenler dolayısıyla ortak bir zaman bulmamız görevi Pazar günü teslim etmemiz gerekmesine rağmen Cuma gününü bulmuştu. Ben ilk bölüm için oldukça heyecanlı olduğum için bir kağıt ve kaleme 2 sayfalık bir "giriş" senaryosu yazdım. Senaryo, Podcast'imizi tanıtmamız ve devamında kendimizi tanıtmamız ile devam ediyordu. Daha sonra bu taslak çalışmayı grubumla paylaştım. Birkaç kere revize ettikten sonra grubumuzun lideri (kendisi bu konuya en hakim olan kişi) sadece kendimizi tanıtmamamızı, konuya az da olsa girmemiz gerektiğini düşündüğü için tekrar revize etti ve Podcast'in yarısında tanışmayı bitirip, devamında ilk bölümümüzün konusu olan "Eğitimde Eşitlik" konusu hakkında ufak yorumlar yapma kararı aldık.
 
 <p class="text-center bg-white rounded-md">
-  <img
+  <smart-image
     src="https://i.vgy.me/wLGUqb.png"
     title="kayıt planımızın sonucu"
     alt="kayıt planımızın sonucu"
-  />
+  ></smart-image>
 </p>
 
 Bu işlemlerin sonunda yukarıdaki hâlini alan kayıt planımızın devamında ise klasik bir senaryo biçiminde kimlerin ne diyeceği, nelere deyineceğini belirten bir tablo vardı. Neredeyse 5 kere revize ettiğimiz bu 3 sayfalık belgeyi öğretmenimize gönderdikten sonra öğretmenimizden gelen tepki, henüz daha bu işi yeni yapacak olan bizleri büyük seviyede motive etmişti.
 
 <p class="text-center bg-white rounded-md">
-  <img
+  <smart-image
     src="https://i.vgy.me/JpVUf4.png"
     title="öğretmenimizin yorumu"
     alt="öğretmenimizin yorumu"
-  />
+  ></smart-image>
 </p>
 
 ### Kayıt haftası
@@ -84,11 +84,11 @@ Grubumuzun lideri kaydı dinledikten sonra müziklerin ve ses efektlerinin yeter
 Ödevi göndermiş, ve iki gün sonra sonucunu almıştık. Öğretmenimiz bizden güzel bir performans bekliyordu. Sanırım öyle de olmuştu ki bana Telegram üzerinden böyle bir mesaj attı:
 
 <p class="text-center bg-white rounded-md">
-  <img
+  <smart-image
     src="https://i.vgy.me/cx1Wb6.png"
     title="öğretmenimizin bölümün hakkındaki yorumu"
     alt="öğretmenimizin bölümün hakkındaki yorumu"
-  />
+  ></smart-image>
 </p>
 
 Bu mesaj beni oldukça sevindirmiş ve gururlandırmıştı. Mesajı hemen grubumuza ve liderimize atarak onu biraz daha teselli etmek istedim. Öğretmenimiz ise bu sırada benden Podcast'i Spotify'da paylaşmamı istedi (bunu tek tuş ile Anchor üzerinden yapabiliyorsunuz ve 20 dakika içerisinde yayınlanıyor). Ben de bu işlemi yaptım ve sonrasında bağlantıyı öğretmenimize attım. Telegram'daki ders grubumuzda bu linki paylaşan hocamız aynı zamanda Anchor linkini de bıraktı ve Anchor'un bir başka mükemmel özelliği olan "Voice Messages" (sesli mesajlar) özelliği ile diğer öğrencilerin bize yorum yapmalarını istemişti. Kendisi de bu yöntem ile bize bir sesli mesaj göndermişti. Bir süre sonra da diğer gruptan başka bir arkadaşımız bizim Podcast'imize güzel bir yorum yapmıştı. Birkaç arkadaşımız da Telegram üzerinden yanıt yazarak bölümümüzün gerçekten iyi olduğunu belirtmişti.

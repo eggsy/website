@@ -18,31 +18,31 @@ Octopi'de AUR desteğinin bir çok yolu vardır ancak herhangi birini kullanabil
 Paketi kurmak için öncelikle Octopi uygulamasını açın ve arama yerine `pacaur` yazın. Daha sonra çıkan tek sonuca sağ tıklayın ve "Yükle" seçeneğini seçin. Octopi ve bir çok paket yöneticisi, bunu seçtikten sonra içerisindeki listeye yüklenecek paketleri listeler ve siz onaylayana kadar orada bekletir. Bu sayede birden çok paketi çok rahat bir şekilde kurabilirsiniz. Onaylamak için ise yukarıdaki tik işaretine basmalısınız.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/UOlnSKJl.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/UOlnSKJl.png"></smart-image>
 </p>
 
 Daha sonra Octopi, size kurulacak paketleri ve kurulması için gerekli bağımlılıkları listeleyecek ve son kez emin olup olmadığınızı soracaktır. Bu ekranda da isterseniz "Evet"e basıp Octopi içerisinde rahat kurulum yapabilir, isterseniz de konsolda çalıştır seçeneğini seçerek konsolda yükleme işlemini başlatabilirsiniz.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/lqKecOoT.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/lqKecOoT.png"></smart-image>
 </p>
 
 Bir sonraki ekranda ise Octopi, sizden `sudo` yani süper kullanıcı/yetkili kullanıcı şifrenizi soracaktır. Bu işlem, Linux'ün güvenli olmasında da başka bir etkendir. Bu sayede sisteminize sizden habersiz herhangi bir yazılım giremez veya düzenleme yapamaz. Gelen alana da şifremizi yazdıktan sonra yükleme işlemi başlayacaktır.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/rE5WuYDa.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/rE5WuYDa.png"></smart-image>
 </p>
 
 Daha sonra ise yükleme işlemi başlayacak ve gerekli dosyalar indirilip sisteminize otomatik olarak kurulacaktır. Kurulum tamamlandıktan sonra herhangi bir fark göremeyeceksiniz, sadece artık paketin solundaki işaretin yeşil olduğunu göreceksiniz. Bu, paketin yüklü olduğu anlamına gelir. Yani, pacaur paketimiz başarıyla kurulmuş durumdadır.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/QJ7ZXgX8.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/QJ7ZXgX8.png"></smart-image>
 </p>
 
 Bir sonraki aşamada ise Octopi menülerinden "Araçlar" menüsünün altındaki "Seçenekler" kısmına girmek var. Bu işlemi yaparak bizi Octopi'nin ayarlarını düzenleyebileceğimiz sayfaya erişebileceğiz.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/O88b5JRC.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/O88b5JRC.png"></smart-image>
 </p>
 
 Açılan sayfada ise yukarıdaki sekmelerden "AUR" sekmesini seçin ve, başta işaretli olan "AUR deposu kullanma" seçeneğinin seçili olduğunu görün. Bu, varsayılan olarak AUR depolarına erişimin olmadığını gösterecektir. Bu ayarı aşağıdan Pacaur olarak değiştirin.
@@ -57,7 +57,7 @@ Eğer yukarıdaki resimdeki gibi "Pacaur" ayarı aktif değilse, pacaur paketini
 Bu ayarları da istediğiniz gibi ayarladıktan sonra **artık AUR depolarını kullanabilirsiniz!** Evet, AUR depolarına erişip binlerce paketi indirebilir ve istediğiniz şekilde kullanabilirsiniz. Merak etmeyin, AUR depoları son derece güvenli ve bir çok yetkili tarafından gözetilmektedir. Neredeyse Manjaro kullanırken bilgisayarınıza ve Linux'ünüze virüs bulaştırmanız imkansızdır.
 
 <p class="text-center">
-  <img src="https://the-person-under-this-message.is-inside.me/ukKDPjn7.png" alt="image" />
+  <smart-image src="https://the-person-under-this-message.is-inside.me/ukKDPjn7.png"></smart-image>
 </p>
 
 Bu seçenekleri de onayladıktan sonra artık arama yerinizin sol tarafına bir "yeşil uzaylı kafası"nın geldiğini görebilirsiniz. AUR depolarında arama yaparken bu işareti kullanacağız.
