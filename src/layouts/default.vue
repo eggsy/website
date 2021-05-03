@@ -5,7 +5,7 @@
 
     <!-- Navbar -->
     <transition name="fade" mode="out-in">
-      <NavbarBlog v-if="$route.name.includes('blog')" class="pt-4" />
+      <NavbarBlog v-if="routeIsBlog" class="pt-4" />
       <NavbarDefault v-else class="pt-4" />
     </transition>
 
@@ -33,7 +33,7 @@
 export default {
   head() {
     let string = "eggsy.xyz"
-    if (this.$route.name.includes("blog")) string = "eggsy.xyz - blog"
+    if (this.routeIsBlog) string = "eggsy.xyz - blog"
 
     return {
       titleTemplate: `%s - ${string}`,
@@ -48,6 +48,15 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    /**
+     * Checks if current route is a blog route.
+     * @returns {boolean | undefined}
+     */
+    routeIsBlog() {
+      return this.$route.name?.includes("blog")
+    },
   },
 }
 </script>
