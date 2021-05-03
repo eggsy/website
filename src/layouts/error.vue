@@ -20,7 +20,7 @@
         <h3 class="font-semibold text-gray-800 dark:text-gray-200">
           Description:
         </h3>
-        <code> {{ getErrorMeta.description }}</code>
+        <code>{{ getErrorMeta.description }}</code>
       </div>
 
       <div class="flex flex-col">
