@@ -1,20 +1,12 @@
-/* Tailwind variables to use in CSS */
-
-$gray-200: rgb(229, 231, 235);
-$gray-300: rgb(209, 213, 219);
-
-$gray-700: rgb(55, 65, 81);
-$gray-800: rgb(31, 41, 55);
-
 /* Scrollbar mixin */
 @mixin scrollbar($isdark, $iselement) {
   scrollbar-width: thin;
 
   /* Don't set background to elements */
   @if $isdark == "true" and $iselement == "false" {
-    background: $gray-700;
+    @apply bg-gray-700;
   } @else if $isdark == "false" and $iselement == "false" {
-    background: $gray-300;
+    @apply bg-gray-300;
   }
 
   ::-webkit-scrollbar {
@@ -29,19 +21,19 @@ $gray-800: rgb(31, 41, 55);
 
     @if $isdark == "true" {
       &-thumb {
-        background: $gray-700;
+        @apply bg-gray-700;
       }
 
       &-track {
-        background: $gray-800;
+        @apply bg-gray-800;
       }
     } @else {
       &-thumb {
-        background: $gray-300;
+        @apply bg-gray-300;
       }
 
       &-track {
-        background: $gray-200;
+        @apply bg-gray-200;
       }
     }
   }
