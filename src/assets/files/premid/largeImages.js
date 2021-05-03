@@ -57,5 +57,3 @@ export default [
     items: brand,
   },
 ]
-
-export const largeAll = [...general, ...brand]

@@ -45,5 +45,3 @@ export default [
     items: brand,
   },
 ]
-
-export const smallAll = [...general, ...brand]
