@@ -3483,9 +3483,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001196, caniuse-lite@^1.0.30001205, caniuse-lite@^1.0.30001219:
-  version "1.0.30001219"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001219.tgz#5bfa5d0519f41f993618bd318f606a4c4c16156b"
-  integrity sha512-c0yixVG4v9KBc/tQ2rlbB3A/bgBFRvl8h8M4IeUbqCca4gsiCfvtaheUssbnux/Mb66Vjz7x8yYjDgYcNQOhyQ==
+  version "1.0.30001220"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001220.tgz#c080e1c8eefb99f6cc9685da6313840bdbaf4c36"
+  integrity sha512-pjC2T4DIDyGAKTL4dMvGUQaMUHRmhvPpAgNNTa14jaBWHu+bLQgvpFqElxh9L4829Fdx0PlKiMp3wnYldRtECA==
 
 capital-case@^1.0.4:
   version "1.0.4"
@@ -5452,7 +5452,7 @@ firebase-admin@^9.5.0:
     "@google-cloud/firestore" "^4.5.0"
     "@google-cloud/storage" "^5.3.0"
 
-firebase@^8.4.2:
+firebase@^8.4.3:
   version "8.4.3"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-8.4.3.tgz#d81170d86d8c752f58d8f1ccd715e5e97f6e3929"
   integrity sha512-STM7xvFBs9MSgtReaWX901HPfIlsA7CNLKkXyVW+aKFmb4znmSxiRFT+pbLyor+ueb5Sj+/VjC97g51Om+Jw4w==
@@ -7959,9 +7959,9 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
 modern-normalize@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/modern-normalize/-/modern-normalize-1.0.0.tgz#539d84a1e141338b01b346f3e27396d0ed17601e"
-  integrity sha512-1lM+BMLGuDfsdwf3rsgBSrxJwAZHFIrQ8YR61xIqdHo0uNKI9M52wNpHSrliZATJp51On6JD0AfRxd4YGSU0lw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/modern-normalize/-/modern-normalize-1.1.0.tgz#da8e80140d9221426bd4f725c6e11283d34f90b7"
+  integrity sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==
 
 moment-locales-webpack-plugin@^1.2.0:
   version "1.2.0"
