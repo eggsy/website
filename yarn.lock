@@ -8298,10 +8298,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-storm@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/nuxt-storm/-/nuxt-storm-1.0.4.tgz#be719c575c4f164570494319417eb7fdd91197f5"
-  integrity sha512-neb4KatEq20UDXJsOKJbmiuR9IE2z59SlAU2cngLDZbS+F7ee+YqCL2fBexcHiwJKpIFg1W60AaT7VuleReU+Q==
+nuxt-storm@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/nuxt-storm/-/nuxt-storm-1.0.5.tgz#5d95234762e1f149c6dee649efe078f1319ce6cd"
+  integrity sha512-LMEPj5sbczbquuSWhGpd2ZS4xjxo1dvKstLKzTHwrRXYK3BaBCCHKPlfy09U6HcxT7AHDbgBPY6h9u2R/UpdgQ==
   dependencies:
     consola "^2.15.3"
 
