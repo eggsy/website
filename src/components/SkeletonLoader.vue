@@ -2,7 +2,7 @@
   <!-- Repository Card -->
   <div
     v-if="type === 'repository'"
-    class="p-4 space-y-1 bg-gray-100 rounded-md ring-1 ring-gray-200 dark:ring-gray-900 dark:bg-gray-800"
+    class="p-4 space-y-2 bg-gray-100 rounded-md ring-1 ring-gray-200 dark:ring-gray-900 dark:bg-gray-800"
   >
     <div class="flex items-center justify-between">
       <div
