@@ -162,7 +162,10 @@
           />
         </div>
 
-        <div v-else-if="$fetchState.error">
+        <div
+          v-else-if="$fetchState.error"
+          class="text-gray-900 dark:text-gray-100"
+        >
           Couldn't load GitHub repositories.
         </div>
 
