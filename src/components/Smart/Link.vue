@@ -17,7 +17,7 @@
     v-else
     :href="href && (utm === false ? href : `${href}?utm_source=eggsy.xyz`)"
     :target="blank && '_blank'"
-    rel="noreferrer"
+    rel="noreferrer noopener"
     :title="title"
   >
     <slot />
