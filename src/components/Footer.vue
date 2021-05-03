@@ -31,7 +31,7 @@ export default {
      * @returns {string}
      */
     getLocalizedNotice() {
-      if (this.$route.name.includes("blog"))
+      if (this.$route.name?.includes("blog"))
         return "Bu site GitHub üzerinde açık kaynak olarak paylaşılmıştır."
       else return "This website is open-source on GitHub"
     },
