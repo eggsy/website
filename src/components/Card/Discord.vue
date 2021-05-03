@@ -73,8 +73,8 @@
 </template>
 
 <script>
-import { largeAll } from "@/assets/files/premid/largeImages"
-import { smallAll } from "@/assets/files/premid/smallImages"
+import largeImages from "@/assets/files/premid/largeImages"
+import smallImages from "@/assets/files/premid/smallImages"
 
 export default {
   props: {
@@ -141,8 +141,18 @@ export default {
     getImages() {
       const { largeImage, smallImage } = this
 
-      /*  const largeImageKey = this.largeImage?.replace(/\s/g, "")
-      const smallImageKey = this.smallImage?.replace(/\s/g, "") */
+      /* Map arrays and combine items in all categories */
+      const largeAll = []
+      const smallAll = []
+
+      /* Loop into all arrays inside items and combine them in a single array */
+      largeImages
+        .map((item) => item.items)
+        .forEach((category) => largeAll.push(...category))
+
+      smallImages
+        .map((item) => item.items)
+        .forEach((category) => smallAll.push(...category))
 
       return {
         largeImage:
