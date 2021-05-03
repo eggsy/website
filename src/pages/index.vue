@@ -18,15 +18,18 @@
               href="https://nuxtjs.org/"
               class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
               blank
-              >Nuxt.js</SmartLink
             >
+              Nuxt.js
+            </SmartLink>
             and
             <SmartLink
               href="https://tailwindcss.com/"
               class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
               blank
-              >Tailwind CSS</SmartLink
-            >.
+            >
+              Tailwind CSS
+            </SmartLink>
+            .
           </p>
         </div>
 
