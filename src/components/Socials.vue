@@ -1,13 +1,14 @@
 <template>
   <div class="flex flex-wrap space-x-4">
     <SmartLink
-      v-for="key in Object.keys(getLinks)"
-      :key="key"
-      :href="getLinks[key]"
+      v-for="(social, index) in getLinks"
+      :key="`social-${index}`"
+      :title="social.title"
+      :href="social.url"
       :utm="false"
       blank
     >
-      <icon :name="key" />
+      <icon :name="social.icon" />
     </SmartLink>
   </div>
 </template>
@@ -20,7 +21,27 @@ export default {
      * @returns {object}
      */
     getLinks() {
-      return this.$config.social
+      const { social } = this.$config
+
+      const titles = {
+        discord: "Join my Discord server!",
+        twitter: "Follow me on Twitter!",
+        github: "Follow me on GitHub!",
+        instagram: "Follow me on Instagram!",
+        trello: "View my Trello board!",
+      }
+
+      const array = []
+
+      for (const item in social) {
+        array.push({
+          url: social[item],
+          title: titles[item] || `Visit ${item}!`,
+          icon: item,
+        })
+      }
+
+      return array
     },
   },
 }
