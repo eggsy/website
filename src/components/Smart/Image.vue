@@ -13,11 +13,15 @@
     }"
   >
     <img
-      :src="src"
+      :src="getBackgroundUrl || src"
       :alt="alt"
       :width="width"
       :height="height"
       class="invisible"
+      @error="
+        error = true
+        loaded = true
+      "
       @load="loaded = true"
     />
   </div>
@@ -57,13 +61,15 @@ export default {
       default: "auto",
     },
   },
-  data: () => ({ loaded: false }),
+  data: () => ({ error: false, loaded: false }),
   computed: {
     /**
      * Optimizes images and returns optimized image URL.
      * @returns {string}
      */
     getBackgroundUrl() {
+      if (this.error === true) return "/icon.png"
+
       const { format, height, width, fit, src } = this
       const image = this.$img(src, { format, height, width, fit })
 
