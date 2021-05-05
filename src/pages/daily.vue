@@ -1,7 +1,7 @@
 <template>
   <div class="py-4 space-y-6">
     <div class="grid gap-6 sm:grid-cols-2">
-      <div class="space-y-4">
+      <div class="space-y-4 overflow-x-hidden">
         <SkeletonLoader
           type="iframe"
           :iframe-url="
