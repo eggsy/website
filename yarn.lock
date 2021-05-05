@@ -8298,13 +8298,6 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-storm@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/nuxt-storm/-/nuxt-storm-1.0.5.tgz#5d95234762e1f149c6dee649efe078f1319ce6cd"
-  integrity sha512-LMEPj5sbczbquuSWhGpd2ZS4xjxo1dvKstLKzTHwrRXYK3BaBCCHKPlfy09U6HcxT7AHDbgBPY6h9u2R/UpdgQ==
-  dependencies:
-    consola "^2.15.3"
-
 nuxt-webfontloader@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/nuxt-webfontloader/-/nuxt-webfontloader-1.1.0.tgz#68b47ffbeaee4c41969f42f57a86946e0c36715c"
