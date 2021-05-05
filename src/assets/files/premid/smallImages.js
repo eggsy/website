@@ -28,6 +28,7 @@ const general = [
 
 const brand = [
   { name: "YouTube", url: "https://i.imgur.com/0Bvl6BU.png" },
+  { name: "YouTube Dark", url: "https://i.imgur.com/mQQO1nv.jpg" },
   { name: "Netflix", url: "https://i.imgur.com/DkZQvkC.png" },
   { name: "Twitter", url: "https://i.imgur.com/AtV70mE.png" },
   { name: "Twitch", url: "https://i.imgur.com/bmIsItf.png" },
