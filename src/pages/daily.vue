@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-6 py-4">
     <div class="grid gap-6 sm:grid-cols-2">
-      <div class="space-y-4 overflow-x-hidden">
+      <div class="space-y-4">
         <SkeletonLoader
           type="iframe"
           :iframe-url="
@@ -71,66 +71,54 @@
 
           <div class="space-y-2">
             <div
-              class="rounded flex bg-gray-100 w-full py-2 px-4 ring-1 ring-gray-200 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
+              class="rounded bg-gray-100 w-full grid py-2 px-4 ring-1 ring-gray-200 grid-cols-4 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
             >
-              <span
-                class="flex-shrink-0 text-gray-900 w-1/4 dark:text-gray-100"
-              >
-                Title
-              </span>
+              <span class="text-gray-900 dark:text-gray-100">Title</span>
 
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="bg-gray-200 h-4 w-1/2 dark:bg-gray-700"
+                class="bg-gray-200 h-4 col-start-3 col-end-5 dark:bg-gray-700"
               />
 
               <span
                 v-else
-                class="text-gray-700 w-3/4 truncate dark:text-gray-300"
+                class="text-right text-gray-700 col-span-3 truncate dark:text-gray-300"
               >
                 {{ getSelectedTitle }}
               </span>
             </div>
 
             <div
-              class="rounded flex bg-gray-100 py-2 px-4 ring-1 ring-gray-200 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
+              class="rounded bg-gray-100 w-full grid py-2 px-4 ring-1 ring-gray-200 grid-cols-4 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
             >
-              <span
-                class="flex-shrink-0 text-gray-900 w-1/4 dark:text-gray-100"
-              >
-                Artist
-              </span>
+              <span class="text-gray-900 dark:text-gray-100">Artist</span>
 
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="bg-gray-200 h-4 w-1/3 dark:bg-gray-700"
+                class="bg-gray-200 h-4 col-start-4 col-end-5 dark:bg-gray-700"
               />
 
               <span
                 v-else
-                class="text-gray-700 w-3/4 truncate dark:text-gray-300"
+                class="text-right text-gray-700 col-span-3 truncate dark:text-gray-300"
               >
                 {{ getSelectedSongMetadata.artist || "Unknown" }}
               </span>
             </div>
 
             <div
-              class="rounded flex bg-gray-100 py-2 px-4 ring-1 ring-gray-200 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
+              class="rounded bg-gray-100 w-full grid py-2 px-4 ring-1 ring-gray-200 grid-cols-4 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
             >
-              <span
-                class="flex-shrink-0 text-gray-900 w-1/4 dark:text-gray-100"
-              >
-                Date
-              </span>
+              <span class="text-gray-900 dark:text-gray-100">Date</span>
 
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="bg-gray-200 h-4 w-3/5 dark:bg-gray-700"
+                class="bg-gray-200 h-4 col-start-2 col-end-5 dark:bg-gray-700"
               />
 
               <span
                 v-else
-                class="text-gray-700 w-3/4 truncate dark:text-gray-300"
+                class="text-right text-gray-700 col-span-3 truncate dark:text-gray-300"
               >
                 {{ getSelectedDateTitle }}
               </span>
