@@ -1,11 +1,11 @@
 <template>
   <SmartLink v-if="href" :href="href">
-    <div :class="`content ${getBackgroundColor}`">
+    <div class="notification" :class="type">
       <slot />
     </div>
   </SmartLink>
 
-  <div v-else :class="`content ${getBackgroundColor}`">
+  <div v-else class="notification" :class="type">
     <slot />
   </div>
 </template>
@@ -24,39 +24,35 @@ export default {
       default: "information",
     },
   },
-  computed: {
-    /**
-     * Returns Tailwind CSS background color classes according to passed type prop.
-     * @returns {string}
-     */
-    getBackgroundColor() {
-      let color = "bg-blue-500 dark:bg-blue-600"
-
-      switch (this.type) {
-        case "warning":
-          color = "bg-yellow-500 dark:bg-yellow-600"
-          break
-        case "danger":
-          color = "bg-red-500 dark:bg-yellow-600"
-          break
-      }
-
-      return color
-    },
-  },
 }
 </script>
 
 <style lang="scss" scoped>
-a {
-  @apply no-underline hover:no-underline;
-}
+.notification {
+  @apply mb-4 p-4 space-y-2 border-l-4 dark:text-gray-100;
 
-.content {
-  @apply mb-4 p-4 rounded-md text-gray-100 shadow;
+  /* Background colors for types */
+  &.information {
+    @apply border-blue-500 bg-blue-600 text-blue-700;
+  }
 
+  &.warning {
+    @apply border-yellow-500 bg-yellow-500 text-yellow-700;
+  }
+
+  &.danger {
+    @apply border-red-500 bg-red-500 text-red-700;
+  }
+
+  &.information,
+  &.warning,
+  &.danger {
+    @apply bg-opacity-25 dark:text-gray-100;
+  }
+
+  /* Other stlings */
   a {
-    @apply text-purple-600 font-medium hover:underline;
+    @apply text-blue-500 font-medium hover:underline;
   }
 }
 </style>
