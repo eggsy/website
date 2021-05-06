@@ -26,10 +26,14 @@ Website features many custom built systems, integrations and pages!
   - Completely static, no API needed, Nuxt.js Content blog ready to go!
 - ✅ Firebase integration!
   - My "Daily Song" page fetches data from Firebase to display the today's song! It's all statically generated on client!
-- ✅ Designed with Tailwind CSS!
+- ✅ Real-time Discord profile data using [Lanyard API](https://github.com/Phineas/lanyard/)!
+  - You can see what you're editing, watching or listening on your website.
+- ✅ Designed with Windi CSS!
+  - Windi introduces a JIT engine, a fast Tailwind compiler and many more stuff like variant grouping etc.!
   - Clean, beautiful, fast, and responsive UI!
   - No CSS used! The website is done without touching CSS (except some transitions and directives)
 - ✅ Over 15+ custom components!
+  - Smart components.
   - Custom props, styles, and classes!
 
 ### 🔧 Getting Started
@@ -54,9 +58,11 @@ If you aren't already using `yarn`, I recommend yarn because it is faster and ru
     - With yarn: `yarn generate` (or `yarn build`)
     - With NPM: `npm run generate` or (`npm run build`)
 
-If you are wondering about **how to host it on free/paid static hosting services** like (Netlify, Vercel etc.), you can refer to [Nuxt.js docs](https://nuxtjs.org/docs/2.x/deployment/netlify-deployment). My project is hosted on Netlify.
+If you are wondering about **how to host it on free/paid static hosting services** like (Netlify, Vercel etc.), you can refer to [Nuxt.js docs](https://nuxtjs.org/docs/2.x/deployment/netlify-deployment). My project is hosted on [Netlify](https://netlify.com).
 
 ### ❓ What has changed?
+
+> In (package.json) version 2.6.0, I've moved from Tailwind to WindiCSS for its features, gold-class support for Vue/Nuxt. Everything is same, but there are more stuff (like variant grouping, important prefix etc.)!
 
 If you are wondering what has changed and what are the differences from the old version; I can only say: "EVERYTHING!"
 
@@ -80,4 +86,6 @@ You can take a look at [old.eggsy.xyz](https://old.eggsy.xyz) and compare it you
 
 ### 🙏 Thanks
 
-This project wouldn't be possible if Nuxt.js team wouldn't have created such an amazing framework, and of course Vue.js is the king 👑 Tailwind CSS is a really good CSS utility framework that helped me a lot and I can't get myself out of it anymore! Last but not least, I'd like to thank to the module authors, they're all amazing and I appreciate your work!
+[WindiCSS](https://github.com/windicss/windicss) - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
+
+This project wouldn't be possible if Nuxt.js team wouldn't have created such an amazing framework, and of course Vue.js is the king 👑. Thank you all contributors that made this projec even better! Tailwind CSS is a really good CSS utility framework that helped me a lot and I can't get myself out of it anymore! Last but not least, I'd like to thank to the module authors, they're all amazing and I appreciate your work!
