@@ -1,21 +1,21 @@
 <template>
   <div
     v-if="$fetchState.pending"
-    class="flex items-center justify-center h-screen -mt-10 space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-100"
+    class="flex font-semibold h-screen space-x-2 -mt-10 text-2xl text-gray-900 items-center justify-center overflow-hidden select-none dark:text-gray-100"
   >
-    <icon name="sync" class="w-8 h-8 animate-spin" />
+    <icon name="sync" class="h-8 animate-spin w-8" />
     <h3>Gönderi yükleniyor...</h3>
   </div>
 
   <div
     v-else-if="$fetchState.error"
-    class="flex items-center justify-center h-screen -mt-10 overflow-hidden text-gray-900 select-none dark:text-gray-100"
+    class="flex h-screen -mt-10 text-gray-900 items-center justify-center overflow-hidden select-none dark:text-gray-100"
   >
     <div class="space-y-2">
       <div
-        class="flex items-center justify-center space-x-2 text-2xl font-semibold"
+        class="flex font-semibold space-x-2 text-2xl items-center justify-center"
       >
-        <icon name="times" class="w-8 h-8" />
+        <icon name="times" class="h-8 w-8" />
         <h3>Gönderi yüklenemedi.</h3>
       </div>
 
@@ -24,7 +24,7 @@
       <div class="flex justify-center">
         <SmartLink
           href="/blog"
-          class="px-4 py-2 text-gray-200 bg-gray-700 rounded-md hover:bg-gray-800"
+          class="rounded-md bg-gray-700 py-2 px-4 text-gray-200 hover:bg-gray-800"
           title="bloga dön"
         >
           Bloga Dön
@@ -39,12 +39,12 @@
     </client-only>
 
     <div class="space-x-6">
-      <div class="w-full mx-auto">
+      <div class="mx-auto w-full">
         <article>
-          <header class="mb-12 space-y-4 text-center sm:text-left sm:pr-16">
+          <header class="space-y-4 text-center mb-12 sm:text-left sm:pr-16">
             <div class="space-y-2">
               <h1
-                class="block text-2xl font-semibold text-black sm:text-4xl dark:text-gray-50"
+                class="font-semibold text-black text-2xl block sm:text-4xl dark:text-gray-50"
               >
                 {{ post.title }}
               </h1>
@@ -55,19 +55,19 @@
             </div>
 
             <div
-              class="flex items-center justify-center space-x-2 whitespace-nowrap sm:justify-start dark:text-gray-300"
+              class="flex space-x-2 items-center justify-center whitespace-nowrap sm:justify-start dark:text-gray-300"
             >
               <div
-                class="flex items-center px-2 py-1 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
+                class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 items-center dark:bg-gray-700"
               >
-                <icon name="clock" class="w-4 h-4" />
+                <icon name="clock" class="h-4 w-4" />
                 <div>{{ getReadingTime }} dakika okuma</div>
               </div>
 
               <div
-                class="flex items-center px-2 py-1 pl-2 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
+                class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 pl-2 items-center dark:bg-gray-700"
               >
-                <icon name="calendar" class="w-4 h-4" />
+                <icon name="calendar" class="h-4 w-4" />
                 <div>{{ getReadableDate }}</div>
               </div>
             </div>
@@ -75,7 +75,7 @@
 
           <div class="mt-4">
             <div
-              class="sticky hidden float-left -ml-20 text-right md:block top-4"
+              class="text-right -ml-20 top-4 sticky hidden float-left md:block"
             >
               <BlogShare
                 type="vertical"
@@ -98,12 +98,12 @@
           class="mt-10"
         />
 
-        <div class="mt-10 space-y-10">
+        <div class="space-y-10 mt-10">
           <BlogPrevNext :current-slug="post.slug" />
 
           <div>
             <h3
-              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
             >
               Yazıyı paylaş
             </h3>
@@ -113,7 +113,7 @@
 
           <div v-if="getTags.length > 0">
             <h3
-              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
             >
               Etiketler
             </h3>
@@ -128,7 +128,7 @@
                     etiket: tag,
                   },
                 }"
-                class="px-2 py-1 text-gray-800 bg-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
+                class="rounded-md bg-gray-200 py-1 px-2 text-gray-800 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
               >
                 {{ tag }}
               </SmartLink>
@@ -137,7 +137,7 @@
 
           <div v-if="getRelatedPosts.length > 0">
             <h3
-              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
             >
               Bunlar da hoşunuza gidebilir
             </h3>
@@ -147,7 +147,7 @@
                 v-for="(relatedPost, index) in getRelatedPosts"
                 :key="`related-${index}`"
                 :href="`/blog/gonderi/${relatedPost.slug}`"
-                class="p-4 text-center truncate bg-gray-200 rounded hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100"
+                class="rounded bg-gray-200 text-center p-4 ring-1 ring-opacity-25 ring-gray-300 truncate dark:(bg-gray-800 hover:bg-gray-700 text-gray-100 hover:bg-opacity-75 ring-gray-800) hover:bg-gray-300"
               >
                 {{ relatedPost.title }}
               </SmartLink>

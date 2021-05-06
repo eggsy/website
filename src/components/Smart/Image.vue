@@ -71,9 +71,10 @@ export default {
       if (this.error === true) return "/icon.png"
 
       const { format, height, width, fit, src } = this
-      const image = this.$img(src, { format, height, width, fit })
 
-      return image
+      /* Return src directly when on SSR to prevent errors */
+      if (process.server) return src
+      else return this.$img(src, { format, height, width, fit })
     },
   },
 }

@@ -9,12 +9,10 @@
     </SmartLink>
 
     <div
-      :class="{
-        'flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 divide-x-2 divide-gray-300 dark:divide-gray-700': true,
-      }"
+      class="flex space-x-2 divide-x-2 divide-gray-300 text-sm text-gray-500 items-center dark:(divide-gray-700 text-gray-400)"
     >
-      <div class="flex items-center flex-shrink-0 space-x-2">
-        <icon name="clock" class="w-4 h-4" />
+      <div class="flex space-x-2 flex-shrink-0 items-center">
+        <icon name="clock" class="h-4 w-4" />
         <span>{{ date }}</span>
       </div>
 

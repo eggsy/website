@@ -5,12 +5,12 @@
       !getStatusDetails ||
       Object.keys(lanyard).length === 0
     "
-    class="w-6/12 h-[17.5px]"
+    class="h-[17.5px] w-6/12"
   />
 
   <div
     v-else
-    class="flex items-center space-x-2 text-gray-700 rounded-md dark:text-gray-300"
+    class="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300"
   >
     <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
     <div class="text-sm leading-tight truncate" :title="getStatusDetails">

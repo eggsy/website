@@ -1,10 +1,10 @@
 <template>
   <div>
-    <header class="flex flex-col-reverse py-24 sm:items-center sm:flex-row">
+    <header class="flex flex-col-reverse py-24 sm:(items-center flex-row)">
       <div class="sm:w-8/12">
         <div class="space-y-px">
           <div
-            class="text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100"
+            class="font-semibold text-2xl text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100"
           >
             <h1>Self taught</h1>
             <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
@@ -33,20 +33,20 @@
         <Status class="mt-2" />
       </div>
 
-      <div class="flex flex-shrink-0 mb-8 sm:justify-end sm:mb-0 sm:w-4/12">
+      <div class="flex flex-shrink-0 mb-8 sm:(justify-end mb-0 w-4/12)">
         <SmartImage
           src="/assets/images/irl_image.webp"
-          class="w-40 h-40 rounded-full ring-4 ring-gray-200 dark:ring-gray-700"
+          class="rounded-full h-40 ring-4 ring-gray-200 w-40 dark:ring-gray-700"
         />
       </div>
     </header>
 
     <section id="projects">
-      <h2 class="mt-10 text-2xl font-semibold text-gray-900 dark:text-gray-100">
+      <h2 class="font-semibold mt-10 text-2xl text-gray-900 dark:text-gray-100">
         Projects I currently work on
       </h2>
 
-      <div class="grid gap-2 mt-2 sm:gap-4 sm:grid-cols-3">
+      <div class="mt-2 grid gap-2 sm:gap-4 sm:grid-cols-3">
         <div
           v-for="(project, index) in getProjects.featured"
           :key="`project-featured-${index}`"
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="grid gap-2 mt-2 sm:mt-4 sm:gap-4 sm:grid-cols-3">
+      <div class="mt-2 grid gap-2 sm:(mt-4 gap-4 grid-cols-3)">
         <SmartLink
           v-for="(project, index) in getProjects.rest"
           :key="`project-rest-${index}`"
@@ -92,14 +92,14 @@
 
     <section
       id="experiences"
-      class="grid gap-6 mt-4 sm:mt-6 md:mt-10 sm:gap-8 sm:grid-cols-2"
+      class="mt-4 grid gap-6 sm:(mt-6 gap-8 grid-cols-2) md:mt-10"
     >
       <div>
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
           My experiences
         </h3>
 
-        <div class="grid gap-2 mt-4">
+        <div class="mt-4 grid gap-2">
           <CardExperience
             v-for="(experience, index) in experiences.jobs"
             :key="`experience-job-${index}`"
@@ -112,11 +112,11 @@
       </div>
 
       <div>
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
           Education
         </h3>
 
-        <div class="grid gap-2 mt-4">
+        <div class="mt-4 grid gap-2">
           <CardExperience
             v-for="(experience, index) in experiences.education"
             :key="`experience-education-${index}`"
@@ -131,12 +131,12 @@
 
     <section id="technologies" class="mt-6">
       <h3
-        class="mt-4 text-xl font-semibold text-gray-900 sm:mt-10 dark:text-gray-100"
+        class="font-semibold mt-4 text-xl text-gray-900 sm:mt-10 dark:text-gray-100"
       >
         Technologies I use
       </h3>
 
-      <div class="grid grid-cols-2 gap-2 mt-4 sm:grid-cols-3 md:grid-cols-4">
+      <div class="mt-4 grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
         <CardSkill
           v-for="(skill, index) in skills"
           :key="`skill-${index}`"
@@ -146,14 +146,14 @@
     </section>
 
     <section id="repositories" class="mt-6">
-      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
         My GitHub repositories
       </h2>
 
       <div class="mt-4">
         <div
           v-if="$fetchState.pending"
-          class="grid grid-cols-1 gap-2 sm:grid-cols-2"
+          class="grid gap-2 grid-cols-1 sm:grid-cols-2"
         >
           <SkeletonLoader
             v-for="item in 6"
@@ -171,7 +171,7 @@
 
         <div
           v-else-if="repos.length > 0"
-          class="grid grid-cols-1 gap-2 sm:grid-cols-2"
+          class="grid gap-2 grid-cols-1 sm:grid-cols-2"
         >
           <SmartLink
             v-for="(repo, index) in repos"
@@ -193,7 +193,7 @@
     </section>
 
     <section id="socials" class="mt-6">
-      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
         Follow me
       </h2>
 

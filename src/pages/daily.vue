@@ -1,5 +1,5 @@
 <template>
-  <div class="py-4 space-y-6">
+  <div class="space-y-6 py-4">
     <div class="grid gap-6 sm:grid-cols-2">
       <div class="space-y-4 overflow-x-hidden">
         <SkeletonLoader
@@ -9,18 +9,18 @@
               ? `https://www.youtube.com/embed/${getSelectedSong.youtube}`
               : ''
           "
-          class="w-full h-56"
+          class="h-56 w-full"
         />
 
         <div class="space-y-2">
-          <div class="grid items-center gap-2 sm:grid-cols-2">
+          <div class="grid gap-2 items-center sm:grid-cols-2">
             <SmartLink
               :href="
                 $fetchState.pending === false
                   ? `https://youtu.be/${getSelectedSong.youtube}/`
                   : false
               "
-              class="flex items-center justify-center px-4 py-2 space-x-2 overflow-hidden text-center text-gray-900 bg-gray-100 rounded cursor-pointer select-none ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800 dark:text-gray-100"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-100 text-center py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center overflow-hidden select-none dark:(bg-gray-800 ring-gray-800 text-gray-100)"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
@@ -29,11 +29,11 @@
             >
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="w-2/3 h-6 bg-gray-200 dark:bg-gray-700"
+                class="bg-gray-200 h-6 w-2/3 dark:bg-gray-700"
               />
 
               <template v-else>
-                <icon name="youtube" class="flex-shrink-0 w-6 h-6" />
+                <icon name="youtube" class="flex-shrink-0 h-6 w-6" />
                 <span class="truncate">YouTube</span>
               </template>
             </SmartLink>
@@ -44,7 +44,7 @@
                   ? `https://open.spotify.com/track/${getSelectedSong.spotify}/`
                   : false
               "
-              class="flex items-center justify-center px-4 py-2 space-x-2 overflow-hidden text-gray-900 bg-gray-100 rounded cursor-pointer select-none ring-1 ring-gray-200 dark:ring-gray-800 dark:text-gray-100"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center overflow-hidden select-none dark:(ring-gray-800 text-gray-100)"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
@@ -59,11 +59,11 @@
             >
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="w-2/3 h-6 bg-gray-200 dark:bg-gray-700"
+                class="bg-gray-200 h-6 w-2/3 dark:bg-gray-700"
               />
 
               <template v-else>
-                <icon name="spotify" class="flex-shrink-0 w-6 h-6" />
+                <icon name="spotify" class="flex-shrink-0 h-6 w-6" />
                 <span class="truncate">Spotify</span>
               </template>
             </SmartLink>
@@ -71,66 +71,66 @@
 
           <div class="space-y-2">
             <div
-              class="flex items-center justify-between w-full px-4 py-2 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
+              class="rounded flex bg-gray-100 w-full py-2 px-4 ring-1 ring-gray-200 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
             >
               <span
-                class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+                class="flex-shrink-0 text-gray-900 w-1/4 dark:text-gray-100"
               >
                 Title
               </span>
 
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="w-1/2 h-4 bg-gray-200 dark:bg-gray-700"
+                class="bg-gray-200 h-4 w-1/2 dark:bg-gray-700"
               />
 
               <span
                 v-else
-                class="w-3/4 text-gray-700 truncate dark:text-gray-300"
+                class="text-gray-700 w-3/4 truncate dark:text-gray-300"
               >
                 {{ getSelectedTitle }}
               </span>
             </div>
 
             <div
-              class="flex items-center justify-between px-4 py-2 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
+              class="rounded flex bg-gray-100 py-2 px-4 ring-1 ring-gray-200 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
             >
               <span
-                class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+                class="flex-shrink-0 text-gray-900 w-1/4 dark:text-gray-100"
               >
                 Artist
               </span>
 
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="w-1/3 h-4 bg-gray-200 dark:bg-gray-700"
+                class="bg-gray-200 h-4 w-1/3 dark:bg-gray-700"
               />
 
               <span
                 v-else
-                class="w-3/4 text-gray-700 truncate dark:text-gray-300"
+                class="text-gray-700 w-3/4 truncate dark:text-gray-300"
               >
                 {{ getSelectedSongMetadata.artist || "Unknown" }}
               </span>
             </div>
 
             <div
-              class="flex items-center justify-between px-4 py-2 bg-gray-100 rounded ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
+              class="rounded flex bg-gray-100 py-2 px-4 ring-1 ring-gray-200 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
             >
               <span
-                class="flex-shrink-0 w-1/4 text-gray-900 dark:text-gray-100"
+                class="flex-shrink-0 text-gray-900 w-1/4 dark:text-gray-100"
               >
                 Date
               </span>
 
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="w-3/5 h-4 bg-gray-200 dark:bg-gray-700"
+                class="bg-gray-200 h-4 w-3/5 dark:bg-gray-700"
               />
 
               <span
                 v-else
-                class="w-3/4 text-gray-700 truncate dark:text-gray-300"
+                class="text-gray-700 w-3/4 truncate dark:text-gray-300"
               >
                 {{ getSelectedDateTitle }}
               </span>
@@ -140,19 +140,19 @@
       </div>
 
       <div
-        class="relative p-2 bg-gray-100 rounded h-52 ring-1 ring-gray-200 sm:h-auto dark:ring-gray-800 dark:bg-gray-800"
+        class="rounded bg-gray-100 h-52 p-2 ring-1 ring-gray-200 relative sm:h-auto dark:(bg-gray-800 ring-gray-800)"
         :class="{
           'hidden sm:flex items-center justify-center': !getLyrics,
         }"
       >
         <div
           v-if="$fetchState.pending === true"
-          class="absolute space-y-2 overflow-y-auto top-4 bottom-4 left-4 right-4 scrollbar"
+          class="space-y-2 top-4 right-4 bottom-4 left-4 absolute overflow-y-auto scrollbar"
         >
           <div
             v-for="lyric in 20"
             :key="`lyric-skeleton-${lyric}`"
-            class="h-4 bg-gray-200 rounded dark:bg-gray-700 animate-pulse"
+            class="rounded bg-gray-200 h-4 animate-pulse dark:bg-gray-700"
             :class="{
               'w-3/4': lyric % 1 === 0,
               'w-2/4': lyric % 2 === 0,
@@ -164,7 +164,7 @@
 
         <div
           v-else-if="getLyrics"
-          class="absolute space-y-2 overflow-y-auto top-4 bottom-4 left-4 right-4 scrollbar"
+          class="space-y-2 top-4 right-4 bottom-4 left-4 absolute overflow-y-auto scrollbar"
         >
           <p
             v-for="(lyric, index) in getLyrics"
@@ -178,7 +178,7 @@
             {{ lyric }}
           </p>
 
-          <p class="text-xs font-medium text-gray-600 dark:text-gray-400">
+          <p class="font-medium text-xs text-gray-600 dark:text-gray-400">
             Lyrics by
             <SmartLink
               href="https://api.ksoft.si/"
@@ -197,11 +197,11 @@
     </div>
 
     <div>
-      <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+      <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
         Older Songs
       </h3>
 
-      <div class="grid gap-2 mt-2 sm:grid-cols-2 md:grid-cols-3">
+      <div class="mt-2 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
         <template v-if="$fetchState.pending === true">
           <SkeletonLoader
             v-for="item in 9"

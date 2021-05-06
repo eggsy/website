@@ -1,10 +1,10 @@
 <template>
   <div
-    class="w-full py-4 text-gray-900 bg-gray-200 dark:bg-gray-800 dark:text-gray-100"
+    class="bg-gray-200 w-full py-4 text-gray-900 dark:(bg-gray-800 text-gray-100)"
   >
-    <div class="w-11/12 mx-auto sm:w-9/12 md:w-7/12">
+    <div class="mx-auto w-11/12 sm:w-9/12 md:w-7/12">
       <div
-        class="items-center justify-between space-y-4 text-center sm:text-left sm:flex sm:space-y-0 sm:space-x-6"
+        class="space-y-4 text-center items-center justify-between sm:(flex space-y-0 space-x-6 text-left)"
       >
         <SmartLink
           href="https://github.com/eggsy/website"
@@ -16,7 +16,7 @@
 
         <Socials
           v-if="$route.name !== 'index'"
-          class="justify-center flex-shrink-0 sm:justify-start"
+          class="flex-shrink-0 justify-center sm:justify-start"
         />
       </div>
     </div>

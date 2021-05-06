@@ -2,12 +2,12 @@
   <div class="pt-6">
     <div v-if="getFilteredPosts === false">
       <h3
-        class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
+        class="font-semibold space-x-2 text-lg text-gray-900 dark:text-gray-100"
       >
         Son gönderiler
       </h3>
 
-      <div class="grid gap-4 mt-2 sm:grid-cols-2">
+      <div class="mt-2 grid gap-4 sm:grid-cols-2">
         <template v-if="isFetchPending">
           <SkeletonLoader v-for="i in 4" :key="i" type="repository" />
         </template>
@@ -21,8 +21,8 @@
         </template>
       </div>
 
-      <div class="grid gap-14 sm:gap-4 sm:grid-cols-2 mt-14">
-        <div class="grid grid-cols-1 gap-2">
+      <div class="mt-14 grid gap-14 sm:(gap-4 grid-cols-2)">
+        <div class="grid gap-2 grid-cols-1">
           <SmartLink
             :href="{
               name: 'blog',
@@ -31,10 +31,10 @@
               },
             }"
             title="Discord etiketli gönderileri gör"
-            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+            class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
           >
-            <icon name="discord" class="w-6 h-6" />
-            <h3 class="text-lg font-semibold">Discord</h3>
+            <icon name="discord" class="h-6 w-6" />
+            <h3 class="font-semibold text-lg">Discord</h3>
           </SmartLink>
 
           <template v-if="isFetchPending">
@@ -51,7 +51,7 @@
           </template>
         </div>
 
-        <div class="grid grid-cols-1 gap-2">
+        <div class="grid gap-2 grid-cols-1">
           <SmartLink
             :href="{
               name: 'blog',
@@ -60,10 +60,10 @@
               },
             }"
             title="Linux etiketli gönderileri gör"
-            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+            class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
           >
-            <icon name="linux" class="w-6 h-6" />
-            <h3 class="text-lg font-semibold">Linux</h3>
+            <icon name="linux" class="h-6 w-6" />
+            <h3 class="font-semibold text-lg">Linux</h3>
           </SmartLink>
 
           <template v-if="isFetchPending">
@@ -83,12 +83,12 @@
 
       <div class="mt-16">
         <h3
-          class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
+          class="font-semibold space-x-2 text-lg text-gray-900 dark:text-gray-100"
         >
           Diğer gönderiler
         </h3>
 
-        <div class="grid gap-3 mt-4 sm:grid-cols-3">
+        <div class="mt-4 grid gap-3 sm:grid-cols-3">
           <template v-if="isFetchPending">
             <SkeletonLoader v-for="i in 18" :key="i" type="repository" />
           </template>
@@ -103,11 +103,11 @@
           </template>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center mt-4 space-x-2">
+        <div class="flex flex-wrap space-x-2 mt-4 items-center justify-center">
           <div
             v-for="page in getTotalPages"
             :key="`pagination-${page}`"
-            class="flex items-center justify-center w-10 h-10 font-medium text-gray-900 bg-gray-200 rounded-full cursor-pointer select-none ring-1 ring-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:ring-gray-800"
+            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-gray-800 ring-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-300"
             :class="{
               'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
             }"
@@ -125,7 +125,7 @@
         class="space-y-4"
       >
         <h2
-          class="text-2xl font-semibold text-gray-900 sm:text-4xl dark:text-gray-100"
+          class="font-semibold text-2xl text-gray-900 sm:text-4xl dark:text-gray-100"
         >
           Aramanıza uygun herhangi bir gönderi bulunamadı.
         </h2>
@@ -135,7 +135,7 @@
             Deneyebileceğiniz yöntemler:
           </h3>
 
-          <ul class="pl-4 text-gray-700 list-disc dark:text-gray-300">
+          <ul class="list-disc pl-4 text-gray-700 dark:text-gray-300">
             <li>Aramanızda anahtar kelimeler kullanmayı deneyin.</li>
             <li>Etiketler kullanmayı deneyin.</li>
             <li>
@@ -147,9 +147,9 @@
 
         <SmartLink
           :href="{ name: 'blog' }"
-          class="flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100"
+          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200"
         >
-          <icon name="home" class="w-6 h-6" />
+          <icon name="home" class="h-6 w-6" />
           <span>Bloga Dön</span>
         </SmartLink>
       </div>

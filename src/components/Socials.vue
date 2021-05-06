@@ -49,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 a {
-  @apply rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 ring-transparent ring-[6px] hover:ring-gray-200 dark:hover:ring-gray-700;
+  @apply rounded-full ring-transparent ring-[6px] hover:(bg-gray-200 ring-gray-200) dark:(hover:bg-gray-700 hover:ring-gray-700);
 }
 
 .svg-icon {

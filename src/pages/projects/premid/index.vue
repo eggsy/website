@@ -4,7 +4,7 @@
       <header class="space-y-4">
         <div class="space-y-1">
           <h1
-            class="text-2xl font-semibold text-gray-900 sm:text-3xl dark:text-gray-100"
+            class="font-semibold text-2xl text-gray-900 sm:text-3xl dark:text-gray-100"
           >
             PreMiD
           </h1>
@@ -42,10 +42,10 @@
       <section class="space-y-4">
         <SmartLink
           href="https://premid.app/"
-          class="flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100"
+          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200"
           blank
         >
-          <icon name="premid" class="w-6 h-6" />
+          <icon name="premid" class="h-6 w-6" />
           <span>Visit PreMiD</span>
         </SmartLink>
       </section>

@@ -2,10 +2,10 @@
   <transition name="fade">
     <div
       v-if="isActive"
-      class="flex items-center p-2 text-gray-700 bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-800 dark:text-gray-300 ring-1 ring-gray-300 dark:ring-gray-800"
+      class="rounded-full cursor-pointer flex bg-gray-200 p-2 ring-1 ring-gray-300 text-gray-700 items-center dark:(bg-gray-700 ring-gray-800 text-gray-300 hover:bg-gray-800) hover:bg-gray-300"
       @click="goTop"
     >
-      <icon name="chevron-up" class="w-6 h-6" />
+      <icon name="chevron-up" class="h-6 w-6" />
     </div>
   </transition>
 </template>

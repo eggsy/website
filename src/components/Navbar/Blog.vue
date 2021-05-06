@@ -1,24 +1,24 @@
 <template>
-  <nav class="z-40 w-full">
+  <nav class="w-full z-40">
     <div
-      class="container flex items-center justify-between w-11/12 mx-auto space-x-4 text-gray-200 sm:px-0 sm:w-9/12 md:w-7/12"
+      class="container flex mx-auto space-x-4 text-gray-200 w-11/12 items-center justify-between sm:(px-0 w-9/12) md:w-7/12"
     >
       <SmartLink
         :href="{ name: getTargetRoute.name }"
-        class="flex-shrink-0 w-10 h-10"
+        class="flex-shrink-0 h-10 w-10"
       >
         <SmartImage
           src="/assets/icons/icon.svg"
-          class="transition-transform bg-gray-100 rounded-md ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+          class="rounded-md bg-gray-100 transition-transform ring-1 ring-gray-200 sm:transform hover:-rotate-6"
           width="100"
           height="100"
           :title="getTargetRoute.title"
         />
       </SmartLink>
 
-      <div class="flex items-center justify-end space-x-2 sm:space-x-4">
+      <div class="flex space-x-2 items-center justify-end sm:space-x-4">
         <div
-          class="flex items-center w-2/3 space-x-2 text-gray-500 bg-gray-100 rounded-lg md:w-full dark:bg-gray-800"
+          class="rounded-lg flex space-x-2 bg-gray-100 text-gray-500 w-2/3 items-center md:w-full dark:bg-gray-800"
           :class="{
             'ring-2 ring-gray-300 dark:ring-gray-700': inputFocused === true,
           }"
@@ -27,14 +27,14 @@
             id="search"
             v-model="input"
             placeholder="Gönderi ara..."
-            class="px-3 w-full py-1.5 placeholder-gray-500 bg-gray-100 rounded-tl-lg rounded-bl-lg appearance-none focus:outline-none dark:bg-gray-800"
+            class="rounded-tl-lg rounded-bl-lg bg-gray-100 w-full py-1.5 px-3 placeholder-gray-500 appearance-none dark:bg-gray-800 focus:outline-none"
             @focus="inputFocused = true"
             @blur="inputFocused = false"
             @keydown.enter="search"
           />
 
-          <label for="search" class="pr-2 cursor-pointer" @click="search">
-            <icon name="search" class="w-4 h-4" />
+          <label for="search" class="cursor-pointer pr-2" @click="search">
+            <icon name="search" class="h-4 w-4" />
           </label>
         </div>
 

@@ -2,7 +2,7 @@
   <div class="pt-6">
     <div class="space-y-8">
       <div>
-        <h1 class="text-xl font-semibold">Presence Metadata Creator</h1>
+        <h1 class="font-semibold text-xl">Presence Metadata Creator</h1>
         <p>
           Create a metadata.json file for your amazing and new PreMiD service
           with an easy to use and free graphical user interface! Worry. You will
@@ -11,12 +11,12 @@
         </p>
       </div>
 
-      <div class="mt-2 space-y-6">
+      <div class="space-y-6 mt-2">
         <!-- Author Information -->
         <div>
-          <h2 class="text-lg font-medium">Author Information</h2>
+          <h2 class="font-medium text-lg">Author Information</h2>
 
-          <div class="grid gap-3 mt-1 sm:grid-cols-2">
+          <div class="mt-1 grid gap-3 sm:grid-cols-2">
             <input
               v-model="service.author.name"
               class="input"
@@ -33,9 +33,9 @@
 
         <!-- Service Information -->
         <div>
-          <h2 class="text-lg font-medium">Service Information</h2>
+          <h2 class="font-medium text-lg">Service Information</h2>
 
-          <div class="grid gap-3 mt-1 sm:grid-cols-2">
+          <div class="mt-1 grid gap-3 sm:grid-cols-2">
             <input
               v-model="service.name"
               class="input"
@@ -69,7 +69,7 @@
             />
           </div>
 
-          <div class="grid grid-cols-2 gap-3 mt-3">
+          <div class="mt-3 grid gap-3 grid-cols-2">
             <div class="relative">
               <input
                 readonly
@@ -82,7 +82,7 @@
               <input
                 ref="color"
                 v-model="service.color"
-                class="absolute top-0 bottom-0 left-0 right-0 invisible"
+                class="top-0 right-0 bottom-0 left-0 absolute invisible"
                 type="color"
                 placeholder="Service color"
               />
@@ -95,22 +95,22 @@
             />
           </div>
 
-          <div class="grid gap-3 mt-3 sm:grid-cols-3">
+          <div class="mt-3 grid gap-3 sm:grid-cols-3">
             <!-- URLs -->
             <div
-              class="h-56 space-y-2 overflow-y-hidden bg-gray-100 rounded-md ring dark:bg-gray-800"
+              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
             >
               <input
                 v-model="service.url.input"
-                class="w-full px-4 py-2 rounded-tl-md rounded-tr-md h-1/5 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none"
                 placeholder="URL(s) of the service"
                 @keyup.enter="addItem('url')"
               />
 
               <!-- List -->
-              <div class="overflow-y-auto h-4/5 scrollbar">
+              <div class="h-4/5 overflow-y-auto scrollbar">
                 <div
-                  class="px-2 pb-4 space-y-1 text-gray-800 dark:text-gray-200"
+                  class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
                   :class="{
                     'h-full flex justify-center items-center':
                       service.url.list.length === 0,
@@ -119,7 +119,7 @@
                   <div
                     v-for="(url, index) in service.url.list"
                     :key="`url-${index}`"
-                    class="flex items-center space-x-4"
+                    class="flex space-x-4 items-center"
                   >
                     <span class="flex-grow truncate">
                       {{ url }}
@@ -144,19 +144,19 @@
 
             <!-- Tags -->
             <div
-              class="h-56 space-y-2 overflow-y-hidden bg-gray-100 rounded-md ring dark:bg-gray-800"
+              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
             >
               <input
                 v-model="service.tags.input"
-                class="w-full px-4 py-2 rounded-tl-md rounded-tr-md h-1/5 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none"
                 placeholder="Tags for the service"
                 @keyup.enter="addItem('tag')"
               />
 
               <!-- List -->
-              <div class="overflow-y-auto h-4/5 scrollbar">
+              <div class="h-4/5 overflow-y-auto scrollbar">
                 <div
-                  class="px-2 pb-4 space-y-1 text-gray-800 dark:text-gray-200"
+                  class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
                   :class="{
                     'h-full flex justify-center items-center':
                       service.tags.list.length === 0,
@@ -165,7 +165,7 @@
                   <div
                     v-for="(tag, index) in service.tags.list"
                     :key="`tag-${index}`"
-                    class="flex items-center space-x-4"
+                    class="flex space-x-4 items-center"
                   >
                     <span class="flex-grow truncate">
                       {{ tag }}
@@ -190,13 +190,13 @@
 
             <!-- Descriptions -->
             <div
-              class="h-56 overflow-y-hidden bg-gray-100 rounded-md ring dark:bg-gray-800"
+              class="rounded-md bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
             >
               <div class="h-full space-y-2">
                 <div class="h-1/3">
                   <input
                     v-model="service.description.inputs.langCode"
-                    class="w-full px-4 py-2 rounded-tl-md rounded-tr-md h-1/2 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
+                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none"
                     placeholder="Language code, e.g. en"
                     @keyup.enter="$refs.descriptionInput.focus()"
                   />
@@ -204,16 +204,16 @@
                   <input
                     ref="descriptionInput"
                     v-model="service.description.inputs.content"
-                    class="w-full px-4 py-2 h-1/2 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
+                    class="h-1/2 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none"
                     placeholder="Localized description"
                     @keyup.enter="addItem('description')"
                   />
                 </div>
 
                 <!-- List -->
-                <div class="overflow-y-auto h-2/3 scrollbar">
+                <div class="h-2/3 overflow-y-auto scrollbar">
                   <div
-                    class="px-2 pb-4 space-y-1 text-gray-800 dark:text-gray-200"
+                    class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
                     :class="{
                       'h-full flex justify-center items-center':
                         service.description.list.length === 0,
@@ -222,7 +222,7 @@
                     <div
                       v-for="(description, index) in service.description.list"
                       :key="`description-${index}`"
-                      class="flex items-center space-x-4"
+                      class="flex space-x-4 items-center"
                     >
                       <div class="flex-grow overflow-x-hidden">
                         <span class="truncate">
@@ -258,10 +258,10 @@
         <!-- Additional Settings -->
         <div>
           <div>
-            <h2 class="text-lg font-medium">
+            <h2 class="font-medium text-lg">
               Additional Settings
               <span
-                class="text-sm font-normal cursor-pointer hover:underline"
+                class="cursor-pointer font-normal text-sm hover:underline"
                 @click="additionalSettings = !additionalSettings"
               >
                 {{ additionalSettings ? "hide" : "show" }}
@@ -276,7 +276,7 @@
           </div>
 
           <transition name="fade" mode="out-in">
-            <div v-if="additionalSettings === true" class="mt-4 space-y-4">
+            <div v-if="additionalSettings === true" class="space-y-4 mt-4">
               <div class="grid gap-3 sm:grid-cols-2">
                 <input
                   v-model="service.regexp.url"
@@ -297,8 +297,8 @@
                     content: 'To be able to read data from iframe sources',
                     placement: 'top',
                   }"
+                  class="text-white transition input"
                   :class="{
-                    'input text-white transition': true,
                     'bg-green-600': service.iframe === true,
                     'bg-red-600': service.iframe === false,
                   }"
@@ -313,8 +313,8 @@
                       'Small warning icon that will take place next to your Presence on Store',
                     placement: 'top',
                   }"
+                  class="text-white transition input"
                   :class="{
-                    'input text-white transition': true,
                     'bg-green-600': service.warning === true,
                     'bg-red-600': service.warning === false,
                   }"
@@ -329,8 +329,8 @@
                       'Required permission to be able to read Console entries',
                     placement: 'top',
                   }"
+                  class="text-white transition input"
                   :class="{
-                    'input text-white transition': true,
                     'bg-green-600': service.readLogs === true,
                     'bg-red-600': service.readLogs === false,
                   }"
@@ -340,13 +340,13 @@
                 </button>
               </div>
 
-              <div class="grid rounded-md ring sm:grid-cols-2">
+              <div class="rounded-md ring grid sm:grid-cols-2">
                 <div
-                  class="h-full bg-gray-100 rounded-tl-md rounded-bl-md ring dark:bg-gray-800"
+                  class="rounded-tl-md rounded-bl-md h-full bg-gray-100 ring dark:bg-gray-800"
                 >
                   <input
                     v-model="service.contributors.inputs.name"
-                    class="w-full rounded-none rounded-tl-md h-1/2 ring-0 input"
+                    class="rounded-none rounded-tl-md h-1/2 w-full ring-0 input"
                     placeholder="Contributor name"
                     @keyup.enter="$refs.contributorsIdInput.focus()"
                   />
@@ -354,17 +354,17 @@
                   <input
                     ref="contributorsIdInput"
                     v-model="service.contributors.inputs.id"
-                    class="w-full rounded-none rounded-bl-md h-1/2 ring-0 input"
+                    class="rounded-none rounded-bl-md h-1/2 w-full ring-0 input"
                     placeholder="Contributor ID"
                     @keyup.enter="addItem('contributor')"
                   />
                 </div>
 
                 <div
-                  class="space-y-2 overflow-y-hidden bg-gray-100 rounded-tr-md rounded-br-md dark:bg-gray-800"
+                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-gray-800"
                 >
                   <div
-                    class="flex items-center h-full px-4 mx-auto space-x-6 overflow-x-auto scrollbar"
+                    class="flex h-full mx-auto space-x-6 px-4 items-center overflow-x-auto scrollbar"
                     :class="{
                       'flex items-center justify-center w-full':
                         service.contributors.list.length === 0,
@@ -374,7 +374,7 @@
                     <div
                       v-for="(contributor, index) in service.contributors.list"
                       :key="`contributor-${index}`"
-                      class="flex items-center flex-shrink-0 space-x-2 text-gray-900 truncate dark:text-gray-100"
+                      class="flex space-x-2 flex-shrink-0 text-gray-900 items-center truncate dark:text-gray-100"
                     >
                       <span class="flex-shrink-0">{{ contributor.name }}</span>
                       <icon
@@ -396,23 +396,23 @@
                 </div>
               </div>
 
-              <div class="grid rounded-md ring sm:grid-cols-2">
+              <div class="rounded-md ring grid sm:grid-cols-2">
                 <div
-                  class="bg-gray-100 rounded-tl-md rounded-bl-md dark:bg-gray-800"
+                  class="rounded-tl-md rounded-bl-md bg-gray-100 dark:bg-gray-800"
                 >
                   <input
                     v-model="service.altnames.input"
-                    class="w-full rounded-none rounded-tl-md rounded-bl-md ring-0 input"
+                    class="rounded-none rounded-tl-md rounded-bl-md w-full ring-0 input"
                     placeholder="Alternative name(s), e.g. 精靈寶可夢 (Pokémon)"
                     @keyup.enter="addItem('altname')"
                   />
                 </div>
 
                 <div
-                  class="space-y-2 overflow-y-hidden bg-gray-100 rounded-tr-md rounded-br-md dark:bg-gray-800"
+                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-gray-800"
                 >
                   <div
-                    class="flex items-center h-full px-4 mx-auto space-x-6 overflow-x-auto scrollbar"
+                    class="flex h-full mx-auto space-x-6 px-4 items-center overflow-x-auto scrollbar"
                     :class="{
                       'flex items-center justify-center w-full':
                         service.contributors.list.length === 0,
@@ -422,7 +422,7 @@
                     <div
                       v-for="(altname, index) in service.altnames.list"
                       :key="`altname-${index}`"
-                      class="flex items-center flex-shrink-0 space-x-2 text-gray-900 truncate dark:text-gray-100"
+                      class="flex space-x-2 flex-shrink-0 text-gray-900 items-center truncate dark:text-gray-100"
                     >
                       <span class="flex-shrink-0">{{ altname }}</span>
                       <icon
@@ -472,13 +472,13 @@
           </transition>
 
           <div
-            class="flex-wrap items-center mt-4 space-y-2 sm:space-y-0 sm:space-x-4 sm:flex"
+            class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4)"
           >
             <div
-              class="flex items-center justify-center space-x-2 control-button"
+              class="flex space-x-2 items-center justify-center control-button"
               @click="resultWindow = true"
             >
-              <icon name="cog" class="w-5 h-5 no-style" />
+              <icon name="cog" class="h-5 w-5 no-style" />
               <span>Generate</span>
             </div>
 
@@ -490,20 +490,20 @@
               <icon
                 v-if="importLoading === true"
                 name="sync"
-                class="w-6 h-6 mx-auto animate-spin no-style"
+                class="mx-auto h-6 animate-spin w-6 no-style"
               />
 
-              <div v-else class="flex items-center justify-center space-x-2">
-                <icon name="inbox-in" class="w-5 h-5 no-style" />
+              <div v-else class="flex space-x-2 items-center justify-center">
+                <icon name="inbox-in" class="h-5 w-5 no-style" />
                 <span>Import From Store</span>
               </div>
             </div>
 
             <div
-              class="flex items-center justify-center space-x-2 control-button"
+              class="flex space-x-2 items-center justify-center control-button"
               @click="service = initialService"
             >
-              <icon name="x" class="w-5 h-5 no-style" />
+              <icon name="x" class="h-5 w-5 no-style" />
               <span>Clear</span>
             </div>
           </div>
@@ -513,22 +513,22 @@
 
     <div
       v-if="resultWindow === true"
-      class="fixed top-0 bottom-0 left-0 right-0 hidden bg-black bg-opacity-50 sm:block"
+      class="bg-black bg-opacity-50 top-0 right-0 bottom-0 left-0 fixed hidden sm:block"
       @click="resultWindow = false"
     />
 
     <transition name="slide-left" mode="out-in">
       <div
         v-show="resultWindow === true"
-        class="fixed top-0 bottom-0 right-0 min-h-full overflow-y-auto bg-gray-100 scrollbar sm:shadow-md sm:ml-auto dark:bg-gray-800 sm:w-8/12"
+        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-gray-800"
       >
-        <div class="p-4 space-y-8 sm:w-10/12 sm:p-10">
+        <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
           <div class="space-y-1">
             <div
-              class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+              class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
             >
-              <icon name="cog" class="w-5 h-5 no-style" />
-              <h2 class="text-lg font-semibold">Metadata Result</h2>
+              <icon name="cog" class="h-5 w-5 no-style" />
+              <h2 class="font-semibold text-lg">Metadata Result</h2>
             </div>
 
             <p class="text-gray-800 dark:text-gray-200">
@@ -540,15 +540,15 @@
 
           <div class="space-y-1">
             <div
-              class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+              class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
             >
-              <icon name="exclamation-circle" class="w-5 h-5 no-style" />
-              <h2 class="text-lg font-semibold">Errors</h2>
+              <icon name="exclamation-circle" class="h-5 w-5 no-style" />
+              <h2 class="font-semibold text-lg">Errors</h2>
             </div>
 
             <div
               v-if="getMetadata.error === false"
-              class="p-4 text-white bg-green-600 rounded-md"
+              class="rounded-md bg-green-600 text-white p-4"
             >
               No issues/errors found. You're good to go!
             </div>
@@ -557,7 +557,7 @@
               <div
                 v-for="(error, index) of getMetadata.errors"
                 :key="`error-${index}`"
-                class="p-4 text-white truncate bg-red-600 rounded-md"
+                class="rounded-md bg-red-600 text-white p-4 truncate"
                 :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
               >
                 {{ error }}
@@ -568,17 +568,17 @@
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <div
-                class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+                class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
               >
-                <icon name="fire-solid" class="w-5 h-5 no-style" />
-                <h2 class="text-lg font-semibold">Your Metadata File</h2>
+                <icon name="fire-solid" class="h-5 w-5 no-style" />
+                <h2 class="font-semibold text-lg">Your Metadata File</h2>
               </div>
             </div>
 
             <!-- eslint-disable vue/no-v-html -->
             <pre
               v-if="getMetadata.error === false"
-              class="w-full overflow-y-auto rounded-md shadow h-96 language-json scrollbar"
+              class="rounded-md h-96 shadow w-full overflow-y-auto language-json scrollbar"
               v-html="getHighlightedJson"
             />
 
@@ -588,26 +588,24 @@
             </span>
           </div>
 
-          <div
-            class="space-y-2 sm:items-center sm:flex sm:space-y-0 sm:space-x-4"
-          >
+          <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center)">
             <a
               v-if="getMetadata.error === false"
-              class="flex items-center justify-center space-x-2 bg-gray-200 control-button no-background hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-max"
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300"
               download="metadata.json"
               :href="`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(getMetadata.result, null, 2)
               )}`"
             >
-              <icon name="inbox-in" class="w-5 h-5 no-style" />
+              <icon name="inbox-in" class="h-5 w-5 no-style" />
               <span>Download</span>
             </a>
 
             <div
-              class="flex items-center justify-center space-x-2 bg-gray-200 control-button no-background hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 sm:w-max"
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300"
               @click="resultWindow = false"
             >
-              <icon name="x" class="w-5 h-5 no-style" />
+              <icon name="x" class="h-5 w-5 no-style" />
               <span>Close</span>
             </div>
           </div>
@@ -1061,18 +1059,18 @@ p,
 }
 
 .svg-icon:not(.no-style) {
-  @apply flex-shrink-0 w-6 h-6 p-1 bg-gray-200 rounded-full cursor-pointer dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-300;
+  @apply flex-shrink-0 w-6 h-6 p-1 bg-gray-200 rounded-full cursor-pointer dark:(bg-gray-800 hover:bg-gray-700) hover:bg-gray-300;
 }
 
 .input {
-  @apply focus:outline-none px-4 py-2 dark:bg-gray-700  dark:text-gray-200;
+  @apply px-4 py-2 focus:outline-none dark:(bg-gray-700 text-gray-200);
 
   &:not(.rounded-none) {
     @apply rounded-md;
   }
 
   &:not(.ring-0) {
-    @apply ring-2 dark:ring-gray-800 ring-opacity-25 ring-gray-300 focus:ring-4;
+    @apply ring-2 ring-opacity-25 ring-gray-300 dark:ring-gray-800 focus:ring-4;
   }
 }
 

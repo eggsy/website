@@ -1,23 +1,23 @@
 <template>
   <div
-    class="flex items-center px-4 py-2 space-x-2 bg-gray-100 rounded-md cursor-pointer select-none hover:bg-gray-200 dark:hover:bg-gray-700 ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
+    class="rounded-md cursor-pointer flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 items-center select-none dark:(hover:bg-gray-700 bg-gray-800 ring-gray-800) hover:bg-gray-200"
   >
-    <div class="flex-shrink-0 rounded-md">
+    <div class="rounded-md flex-shrink-0">
       <SmartImage
         :src="thumbnail"
         fit="outside"
-        class="w-16 h-16 max-w-full max-h-full rounded-md"
+        class="rounded-md max-w-full max-h-full h-16 w-16"
         width="64"
         height="64"
       />
     </div>
 
     <div class="truncate">
-      <div class="flex items-center space-x-1">
+      <div class="flex space-x-1 items-center">
         <icon
           v-if="getDateText.startsWith('Today')"
           name="star"
-          class="flex-shrink-0 w-4 h-4 text-gray-900 dark:text-gray-100"
+          class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-gray-100"
         />
 
         <span class="flex-shrink-0 text-sm text-gray-600 dark:text-gray-300">
@@ -26,7 +26,7 @@
       </div>
 
       <h3
-        class="flex-shrink-0 text-lg font-semibold leading-tight text-gray-900 truncate dark:text-gray-100"
+        class="font-semibold flex-shrink-0 text-lg leading-tight text-gray-900 truncate dark:text-gray-100"
       >
         {{ title }}
       </h3>

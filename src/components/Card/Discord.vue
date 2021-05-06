@@ -1,18 +1,18 @@
 <template>
-  <div class="w-full px-6 py-4 overflow-x-hidden rounded-md bg-[#6c82cf]">
+  <div class="rounded-md bg-[#6c82cf] w-full py-4 px-6 overflow-x-hidden">
     <div class="pt-2">
-      <h1 class="text-xs font-bold text-white uppercase dark:text-gray-100">
+      <h1 class="font-bold text-xs text-white uppercase dark:text-gray-100">
         Playing a game
       </h1>
 
       <div
-        class="flex flex-col items-center justify-between space-y-3 overflow-x-hidden md:space-y-0 md:space-x-3 md:flex-row"
+        class="flex flex-col space-y-3 items-center justify-between overflow-x-hidden md:(space-y-0 space-x-3 flex-row)"
       >
         <div
-          class="flex items-center w-full py-2 space-x-3 overflow-x-hidden md:space-x-5"
+          class="flex space-x-3 w-full py-2 items-center overflow-x-hidden md:space-x-5"
           :class="buttons.length > 0 && 'md:w-2/3'"
         >
-          <div class="relative flex-shrink-0 w-32 h-32">
+          <div class="flex-shrink-0 h-32 w-32 relative">
             <SmartImage
               :src="getImages.largeImage"
               class="rounded-xl"
@@ -28,12 +28,12 @@
                 placement: 'top',
               }"
               :src="getImages.smallImage"
-              class="box-border absolute rounded-full bg-[#6c82cf] -bottom-2 -right-2 w-9 ring-4 ring-[#6c82cf] focus:outline-none"
+              class="rounded-full bg-[#6c82cf] -right-2 -bottom-2 ring-4 ring-[#6c82cf] w-9 box-border absolute focus:outline-none"
             />
           </div>
 
-          <div class="overflow-x-hidden text-gray-100">
-            <h1 class="block text-xl font-semibold text-white">
+          <div class="text-gray-100 overflow-x-hidden">
+            <h1 class="font-semibold text-xl text-white block">
               {{ title }}
             </h1>
 
@@ -41,7 +41,7 @@
               <span class="block truncate">{{ getText.details }}</span>
               <span class="block truncate">{{ getText.state }}</span>
 
-              <span v-if="isTimerEnabled === true" class="block text-sm">
+              <span v-if="isTimerEnabled === true" class="text-sm block">
                 {{ getTime }}
               </span>
             </div>
@@ -50,7 +50,7 @@
 
         <div
           v-if="buttons.length > 0"
-          class="flex flex-col flex-shrink-0 space-y-2 md:w-1/3"
+          class="flex flex-col space-y-2 flex-shrink-0 md:w-1/3"
         >
           <div
             v-for="(button, index) in buttons"
@@ -60,7 +60,7 @@
             <SmartLink
               :href="button.url"
               :title="button.url"
-              class="px-4 py-2 text-sm text-white truncate border border-white rounded-sm cursor-pointer select-none md:px-3 md:py-1 focus:bg-opacity-10 focus:bg-white"
+              class="border border-white rounded-sm cursor-pointer text-sm text-white py-2 px-4 truncate select-none md:(px-3 py-1) focus:(bg-opacity-10 bg-white)"
               blank
             >
               {{ button.label }}

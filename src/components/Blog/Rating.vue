@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-center space-x-2 truncate">
-    <div class="flex items-center flex-shrink-0 space-x-1">
+  <div class="flex space-x-2 items-center truncate">
+    <div class="flex space-x-1 flex-shrink-0 items-center">
       <icon
         v-for="(badge, index) in getBadges"
         :key="`badge-${index}`"
@@ -22,7 +22,7 @@
           content: `${seasons} sezon`,
           placement: 'top',
         }"
-        class="flex items-center justify-center flex-shrink-0 w-10 p-1 text-sm font-medium text-gray-700 bg-gray-200 rounded-md cursor-default dark:text-gray-200 focus:outline-none dark:bg-gray-800"
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-gray-800) focus:outline-none"
       >
         {{ seasons }} S
       </div>
@@ -32,7 +32,7 @@
           content: `${rating}/${max} puan`,
           placement: 'top',
         }"
-        class="flex items-center justify-center flex-shrink-0 w-12 p-1 text-sm font-medium text-gray-700 bg-gray-200 rounded-md cursor-default dark:bg-gray-800 dark:text-gray-200 focus:outline-none"
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-gray-800 text-gray-200) focus:outline-none"
       >
         {{ rating }} P
       </div>
@@ -180,7 +180,7 @@ export default {
 
 <style lang="scss" scoped>
 a {
-  @apply dark:border-gray-700 dark:hover:border-gray-100 border-gray-300 hover:border-gray-900 border-b;
+  @apply dark:(border-gray-700 hover:border-gray-100) border-gray-300 hover:border-gray-900 border-b;
 }
 
 .new a {

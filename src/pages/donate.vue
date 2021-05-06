@@ -4,7 +4,7 @@
       <header class="space-y-4">
         <div class="space-y-1">
           <h1
-            class="text-2xl font-semibold text-gray-900 sm:text-3xl dark:text-gray-100"
+            class="font-semibold text-2xl text-gray-900 sm:text-3xl dark:text-gray-100"
           >
             Donate
           </h1>
@@ -31,11 +31,11 @@
         <div class="grid gap-4">
           <SmartLink :href="getSponsorLinks.patreon" class="w-max" blank>
             <div
-              class="flex items-center px-4 py-2 space-x-2 rounded cursor-pointer hover:bg-opacity-95 bg-[#FF424D]"
+              class="rounded cursor-pointer flex space-x-2 bg-[#FF424D] py-2 px-4 items-center hover:bg-opacity-95"
             >
               <SmartImage
                 src="https://i.vgy.me/qxpY9T.png"
-                class="rounded w-7 h-7"
+                class="rounded h-7 w-7"
               />
               <span class="text-white">Become a Patron</span>
             </div>
@@ -50,14 +50,14 @@
           <div
             v-for="(account, index) in accounts"
             :key="`account-${index}`"
-            class="flex items-center h-full"
+            class="flex h-full items-center"
           >
-            <div class="bg-gray-300 rounded-tl rounded-bl dark:bg-gray-800">
-              <SmartImage :src="account.image" class="w-24 h-24" />
+            <div class="rounded-tl rounded-bl bg-gray-300 dark:bg-gray-800">
+              <SmartImage :src="account.image" class="h-24 w-24" />
             </div>
 
             <div
-              class="flex items-center w-full h-full pl-4 bg-gray-200 rounded-tr rounded-br dark:bg-gray-700"
+              class="rounded-tr rounded-br flex h-full bg-gray-200 w-full pl-4 items-center dark:bg-gray-700"
             >
               <div>
                 <h3 class="font-medium text-gray-900 dark:text-gray-100">
@@ -73,7 +73,7 @@
 
                 <span
                   v-else
-                  class="text-gray-800 underline cursor-pointer dark:text-gray-200"
+                  class="cursor-pointer text-gray-800 underline dark:text-gray-200"
                   @click="account.revealed = true"
                 >
                   Click to reveal

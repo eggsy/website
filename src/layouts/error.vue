@@ -1,5 +1,5 @@
 <template>
-  <div class="py-8 space-y-4">
+  <div class="space-y-4 py-8">
     <div>
       <h1 class="text-2xl text-gray-900 dark:text-gray-100">
         Something bad happened...
@@ -9,7 +9,7 @@
     </div>
 
     <div
-      class="flex flex-col px-4 py-2 space-y-4 whitespace-normal bg-gray-200 rounded dark:text-gray-200 dark:bg-gray-800"
+      class="rounded flex flex-col space-y-4 bg-gray-200 py-2 px-4 whitespace-normal dark:(bg-gray-800 text-gray-200)"
     >
       <div class="flex flex-col">
         <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
@@ -110,6 +110,6 @@ export default {
 
 <style lang="scss" scoped>
 button {
-  @apply px-4 py-2 bg-gray-200 rounded text-gray-900 dark:text-gray-100 cursor-pointer select-none dark:bg-gray-700 dark:hover:bg-gray-800 hover:bg-gray-300 focus:outline-none;
+  @apply px-4 py-2 bg-gray-200 rounded text-gray-900 cursor-pointer select-none dark:(bg-gray-700 text-gray-100 hover:bg-gray-800) hover:bg-gray-300 focus:outline-none;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="$fetchState.pending === false && !$fetchState.error"
-    class="grid grid-cols-1 gap-6 sm:grid-cols-2 dark:text-gray-200"
+    class="grid gap-6 grid-cols-1 sm:grid-cols-2 dark:text-gray-200"
   >
     <div>
       <h4 class="font-medium">Önceki Gönderi</h4>

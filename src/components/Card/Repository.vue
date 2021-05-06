@@ -1,23 +1,23 @@
 <template>
   <div
-    class="p-4 bg-gray-100 rounded-md dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-900"
+    class="rounded-md bg-gray-100 p-4 ring-1 ring-gray-200 dark:(bg-gray-800 ring-gray-900)"
   >
-    <div class="flex items-center space-x-1 text-gray-900 dark:text-gray-100">
+    <div class="flex space-x-1 text-gray-900 items-center dark:text-gray-100">
       <span class="flex-grow space-x-2 truncate hover:underline">
         {{ name }}
       </span>
 
-      <div class="flex items-center space-x-1">
-        <div class="flex items-center space-x-1">
+      <div class="flex space-x-1 items-center">
+        <div class="flex space-x-1 items-center">
           <span>{{ stars }}</span>
-          <icon name="star-filled" class="w-6 h-6 text-yellow-600" />
+          <icon name="star-filled" class="h-6 text-yellow-600 w-6" />
         </div>
 
         <icon
           v-if="getLanguageIcon"
           :name="getLanguageIcon"
           :title="language"
-          class="w-5 h-5"
+          class="h-5 w-5"
         />
       </div>
     </div>

@@ -1,8 +1,8 @@
 <template>
-  <div class="py-6 space-y-6">
+  <div class="space-y-6 py-6">
     <div class="space-y-4 sm:w-9/12">
       <header class="space-y-2">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <h2 class="font-bold text-2xl text-gray-900 dark:text-gray-100">
           Unblock Please
         </h2>
 
@@ -16,7 +16,7 @@
         </p>
       </header>
 
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+      <div class="grid gap-4 grid-cols-2 sm:grid-cols-3">
         <CardProject image="https://i.vgy.me/OIMc81.png" />
 
         <CardProject
@@ -28,14 +28,14 @@
       </div>
     </div>
 
-    <div class="items-center space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
+    <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0)">
       <SmartLink :href="getLink.webstore" class="button" blank>
-        <icon name="inbox-in" class="w-6 h-6" />
+        <icon name="inbox-in" class="h-6 w-6" />
         <span>Install to Chrome</span>
       </SmartLink>
 
       <SmartLink :href="getLink.github" class="button" blank>
-        <icon name="github" class="w-6 h-6" />
+        <icon name="github" class="h-6 w-6" />
         <span>Source Code</span>
       </SmartLink>
     </div>
@@ -79,6 +79,6 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  @apply flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100;
+  @apply flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:(bg-gray-800 hover:bg-gray-700 ring-gray-700 text-gray-100) sm:w-max;
 }
 </style>

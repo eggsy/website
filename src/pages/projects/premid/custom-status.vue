@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-4 space-y-2">
+  <div class="space-y-2 mt-4">
     <!-- Custom Status Presence will read the data from here -->
-    <div id="object" class="hidden">
+    <div id="object" class="text-gray-900 hidden dark:text-gray-100">
       {{ getPresenceData }}
     </div>
 
@@ -9,7 +9,7 @@
       <div class="space-y-4">
         <div
           v-if="presence.installed === false"
-          class="hidden mb-2 bg-red-500 sm:block information dark:bg-gray-700"
+          class="bg-red-500 mb-2 hidden information sm:block dark:bg-gray-700"
         >
           You need to install the Custom Status presence from the PreMiD Store
           to be able to use this page.
@@ -22,7 +22,7 @@
           to visit the store.
         </div>
 
-        <div class="block bg-red-500 sm:hidden information dark:bg-gray-700">
+        <div class="bg-red-500 block information sm:hidden dark:bg-gray-700">
           Are you on mobile? If you are you should know that PreMiD doesn't work
           on mobile, so you can't use this page in any way.
         </div>
@@ -39,7 +39,7 @@
         />
       </div>
 
-      <div class="gap-4 mt-4 space-y-4 sm:grid sm:space-y-0 sm:grid-cols-2">
+      <div class="space-y-4 mt-4 gap-4 sm:(grid space-y-0 grid-cols-2)">
         <div class="space-y-2">
           <h3 class="font-medium text-gray-700 dark:text-gray-100">
             Details (upper text)
@@ -72,7 +72,7 @@
           </h3>
           <select
             v-model="presence.largeImageKey"
-            class="w-full bg-white dark:bg-gray-700"
+            class="bg-white w-full dark:bg-gray-700"
           >
             <option selected>PreMiD</option>
             <optgroup
@@ -93,12 +93,12 @@
         </div>
 
         <div class="space-y-2">
-          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
             Small Image
           </h3>
           <select
             v-model="presence.smallImageKey"
-            class="w-full bg-white dark:bg-gray-700"
+            class="bg-white w-full dark:bg-gray-700"
           >
             <option selected>None</option>
             <optgroup
@@ -120,9 +120,9 @@
 
         <div
           v-if="presence.smallImageKey !== 'None'"
-          class="w-full col-span-2 space-y-2"
+          class="space-y-2 w-full col-span-2"
         >
-          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
             Small Image Text
           </h3>
 
@@ -134,9 +134,9 @@
           />
         </div>
 
-        <div class="col-span-2 space-y-4">
+        <div class="space-y-4 col-span-2">
           <div>
-            <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
+            <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
               Buttons
             </h3>
 
@@ -182,15 +182,15 @@
           </div>
         </div>
 
-        <div class="col-span-2 space-y-2">
-          <h3 class="w-full font-medium text-gray-700 dark:text-gray-100">
+        <div class="space-y-2 col-span-2">
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
             Timestamps
           </h3>
 
           <div class="grid gap-4 sm:grid-cols-2">
             <div
+              class="timestamp dark:text-gray-200"
               :class="{
-                'timestamp dark:text-gray-200': true,
                 'active text-white dark:text-gray-100':
                   presence.timestamp.start.enabled === true,
               }"
@@ -200,14 +200,14 @@
             </div>
 
             <div
+              class="cursor-default timestamp"
               :class="{
-                'timestamp cursor-default': true,
                 active: presence.timestamp.end.enabled === true,
               }"
             >
               <span
+                class="dark:text-gray-200"
                 :class="{
-                  'dark:text-gray-200': true,
                   'text-white dark:text-gray-100':
                     presence.timestamp.end.enabled === true,
                 }"
@@ -226,7 +226,7 @@
       <section class="space-y-6">
         <div>
           <h2
-            class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+            class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
           >
             Consider Donating!
           </h2>
@@ -247,7 +247,7 @@
         <div class="grid gap-6 md:grid-cols-2">
           <div>
             <h2
-              class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+              class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
             >
               How does it work?
             </h2>
@@ -266,7 +266,7 @@
 
           <div>
             <h2
-              class="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+              class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
             >
               It's not showing anything!?
             </h2>
@@ -554,7 +554,7 @@ export default {
 
 input,
 select {
-  @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:bg-gray-700 dark:ring-gray-800 dark:text-gray-200;
+  @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:(bg-gray-700 ring-gray-800 text-gray-200);
 
   &[type="time"] {
     @apply px-2 py-px;
@@ -562,7 +562,7 @@ select {
 }
 
 .timestamp {
-  @apply rounded-md p-2 text-center  select-none ring-2 ring-gray-200 ring-opacity-25 bg-white dark:bg-gray-700 dark:ring-transparent;
+  @apply rounded-md p-2 text-center select-none ring-2 ring-gray-200 ring-opacity-25 bg-white dark:(bg-gray-700 ring-transparent);
 
   &:not(.cursor-default) {
     @apply cursor-pointer;
@@ -578,6 +578,6 @@ select {
 }
 
 a {
-  @apply text-blue-500 hover:text-blue-600 hover:underline;
+  @apply text-blue-500 hover:(text-blue-600 underline);
 }
 </style>

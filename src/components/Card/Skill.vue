@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex items-center space-x-2 overflow-hidden text-gray-900 dark:text-gray-100"
+    class="flex space-x-2 text-gray-900 items-center overflow-hidden dark:text-gray-100"
   >
-    <icon :name="getIconName" class="flex-shrink-0 w-7 h-7" />
+    <icon :name="getIconName" class="flex-shrink-0 h-7 w-7" />
     <span class="truncate">{{ title }}</span>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <div class="py-6 space-y-6">
+  <div class="space-y-6 py-6">
     <div class="space-y-4 sm:w-9/12">
       <header class="space-y-2">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <h2 class="font-bold text-2xl text-gray-900 dark:text-gray-100">
           is-inside.me
         </h2>
 
@@ -52,14 +52,14 @@
         />
       </div>
 
-      <div class="items-center space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
+      <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0)">
         <SmartLink :href="getLink.website" class="button" blank>
-          <icon name="link" class="w-6 h-6" />
+          <icon name="link" class="h-6 w-6" />
           <span>Visit Website</span>
         </SmartLink>
 
         <SmartLink :href="getLink.faq" class="button" blank>
-          <icon name="question-circle" class="w-6 h-6" />
+          <icon name="question-circle" class="h-6 w-6" />
           <span>View FAQ</span>
         </SmartLink>
       </div>
@@ -104,6 +104,6 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  @apply flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100;
+  @apply flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 dark:(ring-gray-700 bg-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-200 sm:w-max;
 }
 </style>
