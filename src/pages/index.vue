@@ -22,10 +22,10 @@
             >
             and
             <SmartLink
-              href="https://tailwindcss.com/"
+              href="https://windicss.org/"
               class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
               blank
-              >Tailwind CSS</SmartLink
+              >Windi CSS</SmartLink
             >.
           </p>
         </div>
@@ -306,6 +306,7 @@ export default {
         "Nuxt.js",
         "Vue.js",
         "Tailwind CSS",
+        "Windi CSS",
         "Node.js",
         "TypeScript",
         "Sass",
