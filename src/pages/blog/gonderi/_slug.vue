@@ -58,14 +58,14 @@
               class="flex space-x-2 items-center justify-center whitespace-nowrap sm:justify-start dark:text-gray-300"
             >
               <div
-                class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 items-center dark:bg-gray-700"
+                class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
               >
                 <icon name="clock" class="h-4 w-4" />
                 <div>{{ getReadingTime }} dakika okuma</div>
               </div>
 
               <div
-                class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 pl-2 items-center dark:bg-gray-700"
+                class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 pl-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
               >
                 <icon name="calendar" class="h-4 w-4" />
                 <div>{{ getReadableDate }}</div>
