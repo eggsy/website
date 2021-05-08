@@ -501,7 +501,11 @@
 
             <div
               class="flex space-x-2 items-center justify-center control-button"
-              @click="service = initialService"
+              @click="
+                {
+                  service = initialService
+                }
+              "
             >
               <icon name="x" class="h-5 w-5 no-style" />
               <span>Clear</span>
@@ -615,11 +619,24 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue"
+
+/* Import third-party modules */
 import Prism from "prismjs"
 import "prism-themes/themes/prism-coldark-dark.css"
 
-export default {
+/* Interfaces */
+import { PresenceMetadata, PresenceSetting } from "@/types/PreMiD"
+import { PreMiDResponse } from "@/types/Response/PreMiD"
+
+interface Metadata {
+  error: boolean
+  errors: string[]
+  result: PresenceMetadata
+}
+
+export default Vue.extend({
   data() {
     const initialService = {
       author: {
@@ -631,12 +648,12 @@ export default {
           name: "",
           id: "",
         },
-        list: [],
+        list: [] as Array<{ id: string; name: string }>,
       },
       name: "",
       altnames: {
         input: "",
-        list: [],
+        list: [] as string[],
       },
       category: {
         selected: "Select a category",
@@ -654,7 +671,7 @@ export default {
           langCode: "",
           content: "",
         },
-        list: [],
+        list: [] as Array<{ langCode: string; content: string }>,
       },
       version: "1.0.0",
       logo: "",
@@ -662,25 +679,25 @@ export default {
       color: "",
       url: {
         input: "",
-        list: [],
+        list: [] as string[],
       },
       tags: {
         input: "",
-        list: [],
+        list: [] as string[],
       },
       regexp: {
-        url: "",
-        iframe: "",
+        url: null as RegExp | null,
+        iframe: null as RegExp | null,
       },
       // This won't be available to be manipulated with this tool, but if a user imports a presence with settings, we will overwrite this array.
-      settings: [],
+      settings: [] as PresenceSetting[],
       iframe: false,
       warning: false,
       readLogs: false,
     }
 
     // Clone the object without letting Vue syncronize each other
-    const service = JSON.parse(JSON.stringify(initialService))
+    const service = Object.assign({}, initialService)
 
     return {
       additionalSettings: false,
@@ -716,27 +733,22 @@ export default {
   computed: {
     /**
      * Checks if any required fields are missing, returns errors or the actual metadata.
-     * @returns {{error: boolean, errors: string[], result: object}} Error boolean and list of errors or metadata JSON.
+     * @returns {Metadata} Error boolean and list of errors or metadata JSON.
      */
-    getMetadata() {
+    getMetadata(): Metadata {
       const imageRegex = {
         logo: /^https?:\/\/?(?:[a-z0-9-]+\.)*[0-9a-z_-]+(?:\.[a-z]+)+\/.*$/g,
         thumbnail: /^https?:\/\/?([a-z0-9-]+\.)*[0-9a-z_-]+(\.[a-z]+)+\/.*$/g,
       }
 
       const service = this.service
-      const errors = []
-      let object = {}
+      const errors: string[] = []
+      let object: any = {}
 
       // Check the required fields
-      const requiredFields = [
-        "name",
-        "url",
-        "logo",
-        "thumbnail",
-        "version",
-        "color",
-      ]
+      const requiredFields: Array<
+        "name" | "url" | "logo" | "thumbnail" | "version" | "color"
+      > = ["name", "url", "logo", "thumbnail", "version", "color"]
 
       for (const field of requiredFields) {
         if (!service[field]) errors.push(`Missing field: ${field}`)
@@ -795,7 +807,8 @@ export default {
         if (service.url.list.length === 1) object.url = service.url.list[0]
         else object.url = service.url.list
 
-        const descriptionObject = {}
+        const descriptionObject: { [k: string]: string } = {}
+
         for (const description of service.description.list) {
           descriptionObject[description.langCode] = description.content
         }
@@ -821,7 +834,7 @@ export default {
      * Returns highlihted string of HTML elements using PrismJS
      * @returns {string} Highlighted strings as HTML elements.
      */
-    getHighlightedJson() {
+    getHighlightedJson(): string {
       return Prism.highlight(
         JSON.stringify(this.getMetadata.result, null, 2),
         Prism.languages.javascript,
@@ -834,7 +847,7 @@ export default {
      * Adds item to specified data object, array or list.
      * @param {string} [type=url] The object name.
      */
-    addItem(type = "url") {
+    addItem(type: string = "url"): void {
       const service = this.service
 
       const url = {
@@ -849,7 +862,7 @@ export default {
 
       const description = {
         inputs: service.description.inputs,
-        list: service.tags.list,
+        list: service.description.list,
       }
 
       const altnames = {
@@ -934,7 +947,7 @@ export default {
      * @param {string} target The target item ID to remove from the specified list.
      * @param {string} [type=url] The object name.
      */
-    removeItem(target, type = "url") {
+    removeItem(target: string, type: string = "url"): void {
       if (type === "url")
         this.service.url.list = this.service.url.list.filter(
           (url) => url !== target
@@ -959,19 +972,17 @@ export default {
     /**
      * Fetches data from PreMiD API and appends to the Vue data.
      */
-    async importFromStore() {
+    async importFromStore(): Promise<void> {
       const input = prompt(
         "Enter the name of the Presence you want to import. Name should match the capitalization of the original name."
       )
       if (!input) return
 
       this.importLoading = true
-      const api = `https://api.premid.app/v2/presences/${encodeURI(
-        input
-      )}/metadata.json`
+      const api = `https://api.premid.app/v2/presences/${encodeURI(input)}`
 
       try {
-        const { data } = await this.$axios.get(api)
+        const data: PreMiDResponse = (await this.$axios.get(api)).data
         if (data.error !== undefined || !data.metadata) return
 
         const metadata = data?.metadata
@@ -998,8 +1009,8 @@ export default {
           metadata.description
         )
 
-        this.service.regexp.url = metadata.regExp || ""
-        this.service.regexp.iframe = metadata.iFrameRegExp || ""
+        this.service.regexp.url = metadata.regExp || null
+        this.service.regexp.iframe = metadata.iFrameRegExp || null
 
         this.service.readLogs = metadata.readLogs || false
         this.service.warning = metadata.warning || false
@@ -1020,7 +1031,9 @@ export default {
      * @param {object} object Original PreMiD metadata description object.
      * @returns {Array.<{ langCode: string, description: string }>}
      */
-    parseDescriptionObject(object) {
+    parseDescriptionObject(
+      object: Record<string, string>
+    ): Array<{ langCode: string; content: string }> {
       const inLocaleDataFormat = []
 
       for (const key in object)
@@ -1032,7 +1045,7 @@ export default {
       return inLocaleDataFormat
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

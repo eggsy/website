@@ -29,8 +29,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+import { IContentDocument } from "@nuxt/content/types/content"
+
+interface Post {
+  title: string
+  slug: string
+}
+
+export default Vue.extend({
   props: {
     currentSlug: {
       type: String,
@@ -40,21 +50,21 @@ export default {
   },
   data() {
     return {
-      prev: {},
-      next: {},
+      prev: {} as IContentDocument,
+      next: {} as IContentDocument,
     }
   },
   async fetch() {
-    const [prev, next] = await this.$content()
+    const [prev, next] = (await this.$content()
       .only(["title", "slug"])
       .sortBy("createdAt", "asc")
       .surround(this.currentSlug)
-      .fetch()
+      .fetch()) as IContentDocument[]
 
     this.prev = prev
     this.next = next
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

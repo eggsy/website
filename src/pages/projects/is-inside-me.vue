@@ -67,8 +67,13 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+import { IsInsideMe } from "~/config/constants"
+
+export default Vue.extend({
   head() {
     const title = "is-inside.me"
     const description =
@@ -93,13 +98,13 @@ export default {
   computed: {
     /**
      * Returns the project link from runtime config.
-     * @returns {{website: string, faq: string}}
+     * @returns {IsInsideMe}
      */
-    getLink() {
+    getLink(): IsInsideMe {
       return this.$config.links.isInsideMe
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

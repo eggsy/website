@@ -27,8 +27,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   props: {
     src: {
       type: String,
@@ -67,15 +69,21 @@ export default {
      * Optimizes images and returns optimized image URL.
      * @returns {string}
      */
-    getBackgroundUrl() {
+    getBackgroundUrl(): string {
       if (this.error === true) return "/icon.png"
 
       const { format, height, width, fit, src } = this
 
       /* Return src directly when on SSR to prevent errors */
       if (process.server) return src
-      else return this.$img(src, { format, height, width, fit })
+      else
+        return this.$img(src, {
+          fit,
+          format,
+          height: Number(height),
+          width: Number(width),
+        })
     },
   },
-}
+})
 </script>

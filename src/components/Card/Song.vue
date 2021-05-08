@@ -34,8 +34,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   props: {
     title: {
       type: String,
@@ -58,7 +60,7 @@ export default {
      * Compares the dates between the provided date and current date and returns a title which will be used in cards' title.
      * @returns {string} The title "Today's Song" or formatted date.
      */
-    getDateText() {
+    getDateText(): string {
       if (
         this.$moment(this.date).format("DD/MM/YYYY") ===
         this.$moment().format("DD/MM/YYYY")
@@ -67,5 +69,5 @@ export default {
       else return this.$moment(this.date).format("DD/MM/YYYY")
     },
   },
-}
+})
 </script>

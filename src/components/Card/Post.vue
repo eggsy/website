@@ -142,11 +142,25 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropType } from "vue"
+
+/* Interfaces */
+import { Post } from "@/types/Post"
+
+interface PostMeta {
+  title?: string
+  description?: string
+  slug?: string
+  special?: boolean
+  tag?: string
+  image?: string
+}
+
+export default Vue.extend({
   props: {
     post: {
-      type: Object,
+      type: Object as PropType<Post>,
       required: true,
       default: () => {},
     },
@@ -159,9 +173,11 @@ export default {
   computed: {
     /**
      * Returns post meta safely.
-     * @returns {{title: string, description: string, slug: string, special: boolean, tag: string, image: string}}
+     * @returns {PostMeta |null}
      */
-    getPostMeta() {
+    getPostMeta(): PostMeta {
+      if (!this.post) return {}
+
       const image =
         this.post?.image || `/assets/images/posts/${this.post?.slug}.jpg` || ""
 
@@ -176,11 +192,12 @@ export default {
     },
     /**
      * Returns post formatted post date that is nicer than the pure way.
-     * @returns {string} The formatted date.
+     * @returns {string| null} The formatted date.
      */
-    getPostDate() {
+    getPostDate(): string | null {
+      if (!this.post || !this.post.createdAt) return null
       return this.$getReadableDate(this.post.createdAt)
     },
   },
-}
+})
 </script>

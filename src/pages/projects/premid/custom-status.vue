@@ -7,9 +7,10 @@
 
     <div class="space-y-6">
       <div class="space-y-4">
-        <div
+        <BlogNotification
           v-if="presence.installed === false"
           class="bg-red-500 mb-2 hidden information sm:block dark:bg-gray-700"
+          type="danger"
         >
           You need to install the Custom Status presence from the PreMiD Store
           to be able to use this page.
@@ -20,12 +21,15 @@
             >Click here</SmartLink
           >
           to visit the store.
-        </div>
+        </BlogNotification>
 
-        <div class="bg-red-500 block information sm:hidden dark:bg-gray-700">
+        <BlogNotification
+          class="bg-red-500 block information sm:hidden dark:bg-gray-700"
+          type="warning"
+        >
           Are you on mobile? If you are you should know that PreMiD doesn't work
           on mobile, so you can't use this page in any way.
-        </div>
+        </BlogNotification>
 
         <CardDiscord
           :small-image-text="presence.smallImageText"
@@ -290,18 +294,31 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+interface ImageCategory {
+  name: string
+  items: {
+    name: string
+    url: string
+  }[]
+}
+
+/* Import image lists */
 import largeImages from "@/assets/files/premid/largeImages"
 import smallImages from "@/assets/files/premid/smallImages"
 
-export default {
+export default Vue.extend({
   data() {
     return {
+      observer: null as any,
       presence: {
         installed: true,
         largeImageKey: "PreMiD",
         smallImageKey: "None",
-        smallImageText: "",
+        smallImageText: "" as string | null,
         details: "",
         state: "",
         buttons: [
@@ -317,11 +334,11 @@ export default {
         timestamp: {
           start: {
             enabled: false,
-            value: null,
+            value: null as number | null,
           },
           end: {
             enabled: false,
-            value: null,
+            value: null as number | null,
           },
         },
       },
@@ -357,9 +374,9 @@ export default {
   computed: {
     /**
      * Formats image names, adds spaces and returns all in a single object.
-     * @returns {{ large: string[], small: string[]}} An object with large and small image array.
+     * @returns {{ large: ImageCategory[], small: ImageCategory[]}} An object with large and small image array.
      */
-    getImages() {
+    getImages(): { large: ImageCategory[]; small: ImageCategory[] } {
       return {
         large: largeImages,
         small: smallImages,
@@ -369,7 +386,7 @@ export default {
      * Checks if any of the buttons have label and returns each that has.
      * @returns {object[]} Buttons array.
      */
-    getButtons() {
+    getButtons(): any {
       const firstButton = this.presence.buttons[0]
       const secondButton = this.presence.buttons[1]
 
@@ -414,7 +431,7 @@ export default {
     getPresenceData() {
       const data = this.presence
       const timestamps = data.timestamp
-      const object = {}
+      const object: Record<string, any> = {}
 
       /* Large and small image */
       if (data.largeImageKey) object.largeImageKey = data.largeImageKey
@@ -424,20 +441,20 @@ export default {
       if (data.smallImageKey && data.smallImageText)
         object.smallImageText = data.smallImageText
 
-      // Replace spaces and force lowercase
+      /*  Replace spaces and force lowercase */
       object.largeImageKey = object.largeImageKey
-        .replace(/\s/g, "")
-        .toLowerCase()
+        ?.replace(/\s/g, "")
+        ?.toLowerCase()
 
       object.smallImageKey = object.smallImageKey
-        .replace(/\s/g, "")
-        .toLowerCase()
+        ?.replace(/\s/g, "")
+        ?.toLowerCase()
 
-      // Details and state
+      /* Details and state */
       if (data.details) object.details = data.details
       if (data.state) object.state = data.state
 
-      // Timestamps
+      /* Timestamps */
       if (timestamps.start.enabled && timestamps.start.value) {
         object.startTimestamp = timestamps.start.value
       } else if (timestamps.end.enabled && timestamps.end.value) {
@@ -447,7 +464,7 @@ export default {
         ).valueOf()
       }
 
-      // Buttons
+      /* Buttons */
       if (this.getButtons.length > 0) {
         object.buttons = []
 
@@ -483,7 +500,7 @@ export default {
      * Turns on and off a timestamp value.
      * @param {elapsed|left} option
      */
-    toggleTimestamp(option) {
+    toggleTimestamp(option: "elapsed" | "left") {
       const start = this.presence.timestamp.start
       const end = this.presence.timestamp.end
 
@@ -520,7 +537,7 @@ export default {
      */
     setupMutationObserver() {
       const target = document.getElementById("__nuxt")
-      let currentState = target.classList?.contains("presence")
+      let currentState = target?.classList?.contains("presence")
 
       // Return if it was already set, no need an observer
       if (currentState) return
@@ -530,7 +547,8 @@ export default {
         mutations.forEach((mutation) => {
           if (mutation.attributeName !== "class") return
 
-          const newClassState = mutation.target.classList.contains("presence")
+          const target = mutation.target as HTMLElement
+          const newClassState = target?.classList.contains("presence")
 
           if (currentState !== newClassState) {
             currentState = newClassState
@@ -544,7 +562,7 @@ export default {
       this.observer.observe(target, { attributes: true })
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

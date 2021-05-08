@@ -72,11 +72,20 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue, { PropType } from "vue"
+
+/* Import image files */
 import largeImages from "@/assets/files/premid/largeImages"
 import smallImages from "@/assets/files/premid/smallImages"
 
-export default {
+/* Interfaces */
+interface ImageCategory {
+  name: string
+  url: string
+}
+
+export default Vue.extend({
   props: {
     title: {
       type: String,
@@ -104,9 +113,9 @@ export default {
       default: "[ENTER SOMETHING]",
     },
     buttons: {
-      type: Array,
+      type: Array as PropType<Array<{ label: string; url: string }>>,
       required: false,
-      default: () => [],
+      default: [],
     },
     state: {
       type: String,
@@ -116,18 +125,18 @@ export default {
     timestamp: {
       type: Object,
       required: false,
-      default: () => {},
+      default: {},
     },
   },
   data() {
     return {
       timers: {
         elapsed: {
-          instance: null,
+          instance: null as NodeJS.Timeout | null,
           string: "",
         },
         end: {
-          instance: null,
+          instance: null as NodeJS.Timeout | null,
           string: "",
         },
       },
@@ -136,14 +145,14 @@ export default {
   computed: {
     /**
      * Returns large and small image by replacing the spaces in their name.
-     * @returns {{largeImage: string[], smallImage: string[]}}
+     * @returns {{largeImage: string, smallImage: string}}
      */
-    getImages() {
+    getImages(): { largeImage: string; smallImage: string | null } {
       const { largeImage, smallImage } = this
 
       /* Map arrays and combine items in all categories */
-      const largeAll = []
-      const smallAll = []
+      const largeAll: ImageCategory[] = []
+      const smallAll: ImageCategory[] = []
 
       /* Loop into all arrays inside items and combine them in a single array */
       largeImages
@@ -158,22 +167,25 @@ export default {
         largeImage:
           largeAll.find((item) => item.name === largeImage)?.url ||
           "https://i.vgy.me/NZdome.png",
-        smallImage: smallAll.find((item) => item.name === smallImage)?.url,
+        smallImage:
+          smallAll.find((item) => item.name === smallImage)?.url || null,
       }
     },
     /**
      * Returns text related parts for the UI.
-     * @returns {{details: string, state: string, small: string}}
+     * @returns {{details: string, state: string, small: string | undefined}}
      */
-    getText() {
+    getText(): { details: string; state: string; small: string | undefined } {
+      const { smallImage, smallImageText, details, state } = this
+
       let small
 
-      if (this.smallImage && this.smallImageText) small = this.smallImageText
-      else if (this.smallImage && !this.smallImageText) small = "[EMPTY]"
+      if (smallImage && smallImageText) small = smallImageText
+      else if (smallImage && !smallImageText) small = "[EMPTY]"
 
       return {
-        details: this.details || "[ENTER SOMETHING]",
-        state: this.state || "[ENTER SOMETHING]",
+        details: details || "[ENTER SOMETHING]",
+        state: state || "[ENTER SOMETHING]",
         small,
       }
     },
@@ -181,7 +193,7 @@ export default {
      * Checks if timers are enabled, starts or stops timers according to passed props.
      * @returns {boolean} Whether any timer is enabled or not.
      */
-    isTimerEnabled() {
+    isTimerEnabled(): boolean {
       const start = this?.timestamp?.start
       const end = this?.timestamp?.end
 
@@ -198,16 +210,16 @@ export default {
     },
     /**
      * Returns the string for enabled timer.
-     * @returns {boolean|string}
+     * @returns {boolean |null | string}
      */
-    getTime() {
-      if (this.isTimerEnabled.value === false) return null
+    getTime(): boolean | null | string {
+      if (this.isTimerEnabled === false) return null
       else if (this.timers.elapsed?.instance) return this.timers.elapsed.string
       else if (this.timers.end?.instance) return this.timers.end.string
       else return null
     },
   },
-  beforeDestory() {
+  beforeDestroy() {
     this.stopTimers()
   },
   methods: {
@@ -215,15 +227,20 @@ export default {
      * Stops both of the timers.
      */
     stopTimers() {
-      const elapsed = this.timers.elapsed
-      const end = this.timers.end
+      const { elapsed, end } = this.timers
 
-      // Clear elapsed timer
+      if (typeof elapsed === "boolean" && typeof end === "boolean") return
+
+      /* Clear elapsed timer */
+
+      // @ts-ignore-next-line
       clearInterval(elapsed.instance)
       elapsed.instance = null
       elapsed.string = ""
 
-      // Clear end timer
+      /* Clear end timer */
+
+      // @ts-ignore-next-line
       clearInterval(end.instance)
       end.instance = null
       end.string = ""
@@ -238,17 +255,17 @@ export default {
       if (!target || !timer) return
       this.stopTimers()
 
-      timer.string = "00:00 elapsed"
+      timer.string = "--:-- elapsed"
       timer.instance = setInterval(() => {
         let timeArray = [
-          this.$moment().diff(target, "hours"),
-          this.$moment().diff(target, "minutes") % 60,
-          this.$moment().diff(target, "seconds") % 60,
+          String(this.$moment().diff(target, "hours")),
+          String(this.$moment().diff(target, "minutes") % 60),
+          String(this.$moment().diff(target, "seconds") % 60),
         ]
 
-        if (!timeArray[0]) timeArray = timeArray.slice(1)
+        if (timeArray[0] === "0") timeArray = timeArray.slice(1)
         timeArray = timeArray.map((time) =>
-          String(time).length === 1 ? "0" + String(time) : time
+          time.length === 1 ? `0${time}` : time
         )
 
         timer.string = `${timeArray.join(":")} elapsed`
@@ -273,19 +290,19 @@ export default {
         if (duration.asSeconds() < 0) return (timer.string = "00:00 left")
 
         let timeArray = [
-          duration.hours(),
-          duration.minutes(),
-          duration.seconds(),
+          String(duration.hours()),
+          String(duration.minutes()),
+          String(duration.seconds()),
         ]
 
-        if (!timeArray[0]) timeArray = timeArray.slice(1)
+        if (timeArray[0] === "0") timeArray = timeArray.slice(1)
         timeArray = timeArray.map((time) =>
-          String(time).length === 1 ? "0" + String(time) : time
+          time.length === 1 ? `0${time}` : time
         )
 
         timer.string = `${timeArray.join(":")} left`
       }, 1000)
     },
   },
-}
+})
 </script>

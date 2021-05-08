@@ -64,11 +64,13 @@
   />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropType } from "vue"
+
+export default Vue.extend({
   props: {
     type: {
-      type: String,
+      type: String as PropType<"repository" | "iframe" | "song" | "block">,
       required: false,
       default: "block",
     },
@@ -83,5 +85,5 @@ export default {
       itemLoaded: false,
     }
   },
-}
+})
 </script>

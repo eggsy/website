@@ -44,8 +44,10 @@
   </nav>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   data() {
     return {
       input: "",
@@ -57,7 +59,7 @@ export default {
      * Returns the target route according to the current route.
      * @returns {{title: string; name: string;}}
      */
-    getTargetRoute() {
+    getTargetRoute(): {title: string, name: string} {
       if (this.$route.name === "blog" && !this.isSearching)
         return {
           title: "Ana Sayfaya Dön",
@@ -73,7 +75,7 @@ export default {
      * Checks for common query parameters and returns a boolean.
      * @returns {boolean} Is user searching or not.
      */
-    isSearching() {
+    isSearching(): boolean {
       const { q, search, query, ara, sorgu, etiket } = this.$route.query
       return !!q || !!search || !!query || !!ara || !!sorgu || !!etiket
     },
@@ -96,5 +98,5 @@ export default {
       this.input = ""
     },
   },
-}
+})
 </script>

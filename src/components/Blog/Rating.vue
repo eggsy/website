@@ -47,8 +47,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+interface Badge {
+  icon?: string
+  title?: string
+  color?: string
+  background?: string
+}
+
+export default Vue.extend({
   props: {
     rating: {
       type: String,
@@ -84,10 +94,13 @@ export default {
   computed: {
     /**
      * Checks for each prop and returns an badge array.
-     * @returns {Array<{icon: string, title: string, color: string, background: string}>}
+     *
+     * Note: Had to give it `any` type because of a TypeScript error I couldn't fix. Will try and see in time
+     *
+     * @returns {Badge[] | any}
      */
-    getBadges() {
-      const array = []
+    getBadges(): Badge[] | any {
+      const array: Badge[] = []
 
       if (this.platform) {
         const title = this.platform
@@ -166,6 +179,7 @@ export default {
 
         array.push({
           icon,
+          // @ts-ignore-next-line
           title: statusObject[Number(this.status)] || statusObject[0],
           background: "bg-gray-200 dark:bg-gray-800",
           color: "text-gray-700 dark:text-gray-200",
@@ -175,7 +189,7 @@ export default {
       return array
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

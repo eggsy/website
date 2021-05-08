@@ -18,8 +18,10 @@
   <div v-else class="svg-icon" v-html="icon" />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   props: {
     name: {
       type: String,
@@ -36,5 +38,5 @@ export default {
       icon: this.name ? require(`~/assets/icons/${this.name}.svg?raw`) : null,
     }
   },
-}
+})
 </script>

@@ -23,18 +23,20 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   computed: {
     /**
      * Returns localized GitHub notice string in Turkish/English according to current route.
      * @returns {string}
      */
-    getLocalizedNotice() {
+    getLocalizedNotice(): string {
       if (this.$route.name?.includes("blog"))
         return "Bu site GitHub üzerinde açık kaynak olarak paylaşılmıştır."
       else return "This website is open-source on GitHub"
     },
   },
-}
+})
 </script>

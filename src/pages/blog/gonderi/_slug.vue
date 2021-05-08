@@ -33,125 +33,113 @@
     </div>
   </div>
 
-  <div v-else class="pt-14">
-    <client-only>
-      <VueScrollProgressBar />
-    </client-only>
+  <div v-else class="space-x-6 pt-14">
+    <div class="mx-auto w-full">
+      <article>
+        <header class="space-y-4 text-center mb-12 sm:text-left sm:pr-16">
+          <div class="space-y-2">
+            <h1
+              class="font-semibold text-black text-2xl block sm:text-4xl dark:text-gray-50"
+            >
+              {{ post.title }}
+            </h1>
 
-    <div class="space-x-6">
-      <div class="mx-auto w-full">
-        <article>
-          <header class="space-y-4 text-center mb-12 sm:text-left sm:pr-16">
-            <div class="space-y-2">
-              <h1
-                class="font-semibold text-black text-2xl block sm:text-4xl dark:text-gray-50"
-              >
-                {{ post.title }}
-              </h1>
+            <p class="dark:text-gray-100">
+              {{ post.description }}
+            </p>
+          </div>
 
-              <p class="dark:text-gray-100">
-                {{ post.description }}
-              </p>
+          <div
+            class="flex space-x-2 items-center justify-center whitespace-nowrap sm:justify-start dark:text-gray-300"
+          >
+            <div
+              class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
+            >
+              <icon name="clock" class="h-4 w-4" />
+              <div>{{ getReadingTime }} dakika okuma</div>
             </div>
 
             <div
-              class="flex space-x-2 items-center justify-center whitespace-nowrap sm:justify-start dark:text-gray-300"
+              class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 pl-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
             >
-              <div
-                class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
-              >
-                <icon name="clock" class="h-4 w-4" />
-                <div>{{ getReadingTime }} dakika okuma</div>
-              </div>
-
-              <div
-                class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 pl-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
-              >
-                <icon name="calendar" class="h-4 w-4" />
-                <div>{{ getReadableDate }}</div>
-              </div>
-            </div>
-          </header>
-
-          <div class="mt-4">
-            <div
-              class="text-right -ml-20 top-4 sticky hidden float-left md:block"
-            >
-              <BlogShare
-                type="vertical"
-                :title="post.title"
-                :path="$route.path"
-              />
-            </div>
-
-            <nuxt-content :document="post" />
-          </div>
-        </article>
-
-        <Disqus
-          shortname="eggsy-xyz"
-          :title="post.title"
-          :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
-          :identifier="`/blog/gonderi/${post.slug}`"
-          :slug="post.slug"
-          lang="tr"
-          class="mt-10"
-        />
-
-        <div class="space-y-10 mt-10">
-          <BlogPrevNext :current-slug="post.slug" />
-
-          <div>
-            <h3
-              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
-            >
-              Yazıyı paylaş
-            </h3>
-
-            <BlogShare :title="post.title" :path="$route.path" />
-          </div>
-
-          <div v-if="getTags.length > 0">
-            <h3
-              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
-            >
-              Etiketler
-            </h3>
-
-            <div class="flex flex-wrap space-x-2">
-              <SmartLink
-                v-for="(tag, index) in getTags"
-                :key="`tag-${index}`"
-                :href="{
-                  name: 'blog',
-                  query: {
-                    etiket: tag,
-                  },
-                }"
-                class="rounded-md bg-gray-200 py-1 px-2 text-gray-800 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
-              >
-                {{ tag }}
-              </SmartLink>
+              <icon name="calendar" class="h-4 w-4" />
+              <div>{{ getReadableDate }}</div>
             </div>
           </div>
+        </header>
 
-          <div v-if="getRelatedPosts.length > 0">
-            <h3
-              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
+        <div class="mt-4">
+          <div
+            class="text-right -ml-20 top-4 sticky hidden float-left md:block"
+          >
+            <BlogShare
+              type="vertical"
+              :title="post.title"
+              :path="$route.path"
+            />
+          </div>
+
+          <nuxt-content :document="post" />
+        </div>
+      </article>
+
+      <Disqus
+        shortname="eggsy-xyz"
+        :title="post.title"
+        :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
+        :identifier="`/blog/gonderi/${post.slug}`"
+        :slug="post.slug"
+        lang="tr"
+        class="mt-10"
+      />
+
+      <div class="space-y-10 mt-10">
+        <BlogPrevNext :current-slug="post.slug" />
+
+        <div>
+          <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">
+            Yazıyı paylaş
+          </h3>
+
+          <BlogShare :title="post.title" :path="$route.path" />
+        </div>
+
+        <div v-if="getTags.length > 0">
+          <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">
+            Etiketler
+          </h3>
+
+          <div class="flex flex-wrap space-x-2">
+            <SmartLink
+              v-for="(tag, index) in getTags"
+              :key="`tag-${index}`"
+              :href="{
+                name: 'blog',
+                query: {
+                  etiket: tag,
+                },
+              }"
+              class="rounded-md bg-gray-200 py-1 px-2 text-gray-800 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
             >
-              Bunlar da hoşunuza gidebilir
-            </h3>
+              {{ tag }}
+            </SmartLink>
+          </div>
+        </div>
 
-            <div class="grid gap-2 sm:grid-cols-3">
-              <SmartLink
-                v-for="(relatedPost, index) in getRelatedPosts"
-                :key="`related-${index}`"
-                :href="`/blog/gonderi/${relatedPost.slug}`"
-                class="rounded bg-gray-200 text-center p-4 ring-1 ring-opacity-25 ring-gray-300 truncate dark:(bg-gray-800 hover:bg-gray-700 text-gray-100 hover:bg-opacity-75 ring-gray-800) hover:bg-gray-300"
-              >
-                {{ relatedPost.title }}
-              </SmartLink>
-            </div>
+        <div v-if="getRelatedPosts.length > 0">
+          <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">
+            Bunlar da hoşunuza gidebilir
+          </h3>
+
+          <div class="grid gap-2 sm:grid-cols-3">
+            <SmartLink
+              v-for="(relatedPost, index) in getRelatedPosts"
+              :key="`related-${index}`"
+              :href="`/blog/gonderi/${relatedPost.slug}`"
+              class="rounded bg-gray-200 text-center p-4 ring-1 ring-opacity-25 ring-gray-300 truncate dark:(bg-gray-800 hover:bg-gray-700 text-gray-100 hover:bg-opacity-75 ring-gray-800) hover:bg-gray-300"
+            >
+              {{ relatedPost.title }}
+            </SmartLink>
           </div>
         </div>
       </div>
@@ -159,48 +147,66 @@
   </div>
 </template>
 
-<script>
-import { Disqus } from "vue-disqus"
-import { VueScrollProgressBar } from "@guillaumebriday/vue-scroll-progress-bar"
+<script lang="ts">
+import Vue from "vue"
 
-export default {
-  components: {
-    Disqus,
-    VueScrollProgressBar,
-  },
+/* Import third-party components */
+import * as Disqus from "vue-disqus"
+Vue.component("Disqus", Disqus)
+
+/* Interfaces */
+import { Post } from "~/src/types/Post"
+
+interface RelatedPost {
+  title: string
+  slug: string
+}
+
+export default Vue.extend({
   data() {
     return {
-      post: {},
-      related: [],
+      post: {} as Post,
+      related: [] as RelatedPost[],
     }
   },
   async fetch() {
-    const post = await this.$content(this.$route.params.slug).fetch()
-    if (!post) return this.$router.push("/blog")
+    const post = (await this.$content(this.$route.params.slug).fetch()) as Post
 
-    this.post = post
+    if (!post) this.$router.push("/blog")
+    else {
+      this.post = post
 
-    if (post.related?.length > 0) {
-      const array = []
-      for (const key of post.related) {
-        const { title } = await this.$content(key).only(["title"]).fetch()
-        array.push({
-          title,
-          slug: key,
-        })
+      if (post.related && post.related?.length > 0) {
+        const array = []
+
+        for (const key of post.related) {
+          const { title }: any = await this.$content(key)
+            .only(["title"])
+            .fetch()
+
+          array.push({
+            title,
+            slug: key,
+          })
+        }
+
+        this.related = array
       }
-
-      this.related = array
     }
   },
   head() {
-    const title = this.post?.title
-    const description =
-      this.post?.description ||
-      "EGGSY'nin blogunda bu yazıyı okumaya davet edildin."
+    const post = this.post as Post
+    const { getPostImage, getTags } = this as {
+      getPostImage: string
+      getTags: string[]
+    }
 
-    const image = this.getPostImage || false
-    const tags = this.getTags?.join(", ") || title
+    const title = post.title
+    const description =
+      post.description || "EGGSY'nin blogunda bu yazıyı okumaya davet edildin."
+
+    const image = getPostImage
+    const tags = getTags?.join(", ") || title
     const href = `https://eggsy.xyz${this.$route?.path}`
 
     return {
@@ -222,7 +228,7 @@ export default {
         [
           {
             name: "article:published-time",
-            content: this.post?.createdAt || null,
+            content: post?.createdAt || null,
           },
         ]
       ),
@@ -233,41 +239,41 @@ export default {
      * Returns the tags of the current post, if there's none specified, returns an empty array instead.
      * @returns {string[]} Array of tags.
      */
-    getTags() {
+    getTags(): string[] {
       return this.post?.tags || []
     },
     /**
      * Calculates the words and returns the potential maximum reading time.
-     * @returns {number|string} Reading time in minutes.
+     * @returns {string} Reading time in minutes.
      */
-    getReadingTime() {
+    getReadingTime(): string {
       return this.$getReadingTime(JSON.stringify(this.post.body))
     },
     /**
      * Returns the date as a readable string.
      * @returns {string} Today, yesterday, x day before, x months before or DD/MM/YYYY.
      */
-    getReadableDate() {
-      return this.$getReadableDate(this.post?.createdAt)
+    getReadableDate(): string {
+      return this.$getReadableDate(this.post?.createdAt || new Date())
     },
     /**
      * Returns the related posts, if there's no related post, returns an empty array instead.
-     * @returns {string[]|object} Related posts' slugs.
+     * @returns {RelatedPost[]} Related posts' slugs.
      */
-    getRelatedPosts() {
+    getRelatedPosts(): RelatedPost[] {
       return this.related || []
     },
     /**
      * Returns the post image if explicitly set, if none, looks for a jpg under assets.
      * @returns {string} The URL of the image.
      */
-    getPostImage() {
+    getPostImage(): string {
       return this.post?.image
         ? `https://eggsy.xyz/${this.post?.image}`
         : `https://eggsy.xyz/assets/images/posts/${this.post?.slug}.jpg`
     },
   },
-}
+})
 </script>
 
 <style lang="scss">

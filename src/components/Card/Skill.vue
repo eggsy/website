@@ -7,8 +7,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   props: {
     title: {
       type: String,
@@ -26,7 +28,7 @@ export default {
      * Returns possible icon name if icon prop is not passed.
      * @returns {string}
      */
-    getIconName() {
+    getIconName(): string {
       if (this.icon) return this.icon
       else
         return (
@@ -34,5 +36,5 @@ export default {
         )
     },
   },
-}
+})
 </script>

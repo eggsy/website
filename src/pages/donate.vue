@@ -87,8 +87,13 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+import { Constants, Sponsor } from "~/config/constants"
+
+export default Vue.extend({
   data() {
     return {
       accounts: [
@@ -117,12 +122,14 @@ export default {
     const title = "Donate"
     const description =
       "Like my projects? You can donate me to boost my performance and make me create more, better projects in the future!"
+    const image = "https://eggsy.xyz/assets/meta/images/daily.jpg"
 
     return {
       title,
       meta: this.$prepareMeta({
         title,
         description,
+        image,
         keywords: "donate",
         url: "https://eggsy.xyz/donate",
       }),
@@ -137,11 +144,12 @@ export default {
   computed: {
     /**
      * Returns the Sponsor object in runtime config.
-     * @returns {object}
+     * @returns {Sponsor}
      */
-    getSponsorLinks() {
-      return this.$config.sponsor
+    getSponsorLinks(): Sponsor {
+      const config: Constants = this.$config
+      return config.sponsor
     },
   },
-}
+})
 </script>

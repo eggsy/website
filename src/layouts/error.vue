@@ -39,12 +39,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropType } from "vue"
+
+export default Vue.extend({
   layout: "default",
   props: {
     error: {
-      type: Object,
+      type: Object as PropType<{
+        title: string
+        statusCode: number
+        description: string
+      }>,
       default: null,
     },
   },
@@ -86,11 +92,14 @@ export default {
      * Checks through the common error object and returns the title-description if exists.
      * @returns {{title: string, description: string}} The object that contains error title and description.
      */
-    getErrorMeta() {
+    getErrorMeta(): { title: string; description: string } {
+      const statusCode = this.error.statusCode
+
       return {
-        title: this.errors[this.error.statusCode]?.title || "Unknown",
-        description:
-          this.errors[this.error.statusCode]?.description || "No description.",
+        // @ts-ignore-next-line
+        title: this.errors[statusCode]?.title || "Unknown",
+        // @ts-ignore-next-line
+        description: this.errors[statusCode]?.description || "No description.",
       }
     },
   },
@@ -105,7 +114,7 @@ export default {
       window.location.reload()
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

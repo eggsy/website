@@ -29,8 +29,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   head() {
     let string = "eggsy.xyz"
     if (this.routeIsBlog) string = "eggsy.xyz - blog"
@@ -54,9 +56,9 @@ export default {
      * Checks if current route is a blog route.
      * @returns {boolean | undefined}
      */
-    routeIsBlog() {
+    routeIsBlog(): boolean | undefined {
       return this.$route.name?.includes("blog")
     },
   },
-}
+})
 </script>

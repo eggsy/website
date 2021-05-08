@@ -14,26 +14,27 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   computed: {
     /**
      * Returns the selected color mode value.
-     * @returns {'light'|'dark'} The color mode as "light" or "dark".
+     * @returns {string} The color mode as "light" or "dark".
      */
-    getSelectedTheme() {
+    getSelectedTheme(): string {
       return this.$colorMode.value
     },
   },
   methods: {
     /**
      * Updates the color mode value.
-     * @param {'light'|'dark'} option The color mode option.
      */
     switchTheme() {
       this.$colorMode.preference =
         this.getSelectedTheme === "dark" ? "light" : "dark"
     },
   },
-}
+})
 </script>

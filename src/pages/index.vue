@@ -202,11 +202,36 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+import { Repository } from "../types/Response/GitHub"
+
+interface Project {
+  title: string
+  description: string
+  href?: string
+  to?: string
+  image?: string
+}
+
+interface Experience {
+  title: string
+  url: string
+  position: string
+  date: string
+}
+
+interface ExperienceObject {
+  jobs: Experience[]
+  education: Experience[]
+}
+
+export default Vue.extend({
   data() {
     return {
-      repos: [],
+      repos: [] as Repository[],
       projects: [
         {
           title: "Discord Templates",
@@ -245,7 +270,7 @@ export default {
           description: "Fresh song from my taste each day!",
           to: "/daily",
         },
-      ],
+      ] as Project[],
       experiences: {
         jobs: [
           {
@@ -299,7 +324,7 @@ export default {
             date: "2014-2018",
           },
         ],
-      },
+      } as ExperienceObject,
       skills: [
         "JavaScript",
         "HTML5",
@@ -320,9 +345,10 @@ export default {
   fetchOnServer: false,
   async fetch() {
     const filter = ["eggsy", "DBM", "eggsywashere.github.io"]
-    const { data: repos } = await this.$axios.get(
-      "https://api.github.com/users/eggsy/repos"
-    )
+
+    const repos: Repository[] = (
+      await this.$axios.get("https://api.github.com/users/eggsy/repos")
+    ).data
 
     this.repos = repos
       ?.filter((repo) => repo.fork === false && !filter.includes(repo.name))
@@ -334,14 +360,14 @@ export default {
   computed: {
     /**
      * Slices the first three projects and creates an object with them, and the rest.
-     * @returns {{featured: object[], rest: object[]}} The projects array.
+     * @returns {{featured: Project[], rest: Project[]}} The projects array.
      */
-    getProjects() {
+    getProjects(): { featured: Project[]; rest: Project[] } {
       return {
         featured: this.projects?.slice(0, 3),
         rest: this.projects.slice(3),
       }
     },
   },
-}
+})
 </script>

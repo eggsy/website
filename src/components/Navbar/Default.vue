@@ -95,8 +95,10 @@
   </nav>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   data() {
     return {
       mobileMenu: false,
@@ -139,18 +141,18 @@ export default {
   computed: {
     /**
      * Checks if route has special links and returns the array according to that.
-     * @returns {Array.<{title: string, to: string}>}
+     * @returns {Array.<{title: string; to: string}>}
      */
-    getCurrentRouteLinks() {
+    getCurrentRouteLinks(): Array<{ title: string; to: string }> {
       if (this.$route.path.startsWith("/projects/premid"))
         return this.links.premid
       else return this.links.default
     },
     /**
      * Returns the selected color mode value.
-     * @returns {'light'|'dark'} The color mode as "light" or "dark".
+     * @returns {string} The color mode as "light" or "dark".
      */
-    getSelectedTheme() {
+    getSelectedTheme(): string {
       return this.$colorMode.value
     },
   },
@@ -159,9 +161,9 @@ export default {
      * Updates the color mode value.
      * @param {'light'|'dark'} option The color mode option.
      */
-    switchTheme(option) {
+    switchTheme(option: "light" | "dark") {
       this.$colorMode.preference = option
     },
   },
-}
+})
 </script>

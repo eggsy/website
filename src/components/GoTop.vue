@@ -10,8 +10,10 @@
   </transition>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   data() {
     return {
       position: 0,
@@ -22,7 +24,7 @@ export default {
      * Checks if the position is higher than a specific number and returns a boolean value.
      * @returns {boolean} Higher than the given number.
      */
-    isActive() {
+    isActive(): boolean {
       return this.position > 100
     },
   },
@@ -43,8 +45,8 @@ export default {
       window.scrollTo(0, 0)
     },
   },
-  beforeDestory() {
+  beforeDestroy() {
     window.removeEventListener("scroll", this.updatePosition)
   },
-}
+})
 </script>

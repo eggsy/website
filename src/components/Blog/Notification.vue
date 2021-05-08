@@ -10,8 +10,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   props: {
     href: {
       type: [String, Object],
@@ -24,7 +26,7 @@ export default {
       default: "information",
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

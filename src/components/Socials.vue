@@ -13,14 +13,23 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+interface Link {
+  url: string
+  title: string
+  icon: string
+}
+
+export default Vue.extend({
   computed: {
     /**
      * Returns social links in public runtime config.
-     * @returns {object}
+     * @returns {Link[]}
      */
-    getLinks() {
+    getLinks(): Link[] {
       const { social } = this.$config
 
       const titles = {
@@ -31,11 +40,12 @@ export default {
         trello: "View my Trello board!",
       }
 
-      const array = []
+      const array: Link[] = []
 
       for (const item in social) {
         array.push({
           url: social[item],
+          // @ts-ignore-next-line
           title: titles[item] || `Visit ${item}!`,
           icon: item,
         })
@@ -44,7 +54,7 @@ export default {
       return array
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

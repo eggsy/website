@@ -24,8 +24,11 @@
   </a>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
+  name: "SmartLink",
   props: {
     href: {
       type: [String, Object, Boolean],
@@ -53,7 +56,7 @@ export default {
       default: null,
     },
     utm: {
-      type: [Boolean, String],
+      type: Boolean,
       required: false,
       default: true,
     },
@@ -63,13 +66,14 @@ export default {
      * Checks if the href leads to an internal page and returns boolean.
      * @returns {boolean}
      */
-    isInternalPage() {
+    isInternalPage(): boolean {
       const { href } = this
 
       if (typeof href === "object") return true
-      else if (["/", "#"].includes(href[0])) return true
+      else if (typeof href === "string" && ["/", "#"].includes(href[0]))
+        return true
       else return false
     },
   },
-}
+})
 </script>

@@ -119,11 +119,12 @@
       </div>
     </div>
 
-    <div v-else-if="getFilteredPosts">
-      <div
-        v-if="getFilteredPosts !== false && getFilteredPosts.length === 0"
-        class="space-y-4"
-      >
+    <div
+      v-else-if="
+        typeof getFilteredPosts === 'object' && getFilteredPosts.length > 0
+      "
+    >
+      <div v-if="getFilteredPosts.length === 0" class="space-y-4">
         <h2
           class="font-semibold text-2xl text-gray-900 sm:text-4xl dark:text-gray-100"
         >
@@ -166,17 +167,22 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+import { Post } from "@/types/Post"
+
+export default Vue.extend({
   data() {
     return {
-      query: {},
+      query: this.$route.query,
       pagination: 0,
       posts: {
-        latest: [],
-        discord: [],
-        linux: [],
-        rest: [],
+        latest: [] as Post[],
+        discord: [] as Post[],
+        linux: [] as Post[],
+        rest: [] as Post[],
       },
     }
   },
@@ -232,15 +238,22 @@ export default {
      * Checks if fetch state is pending or error.
      * @returns {boolean}
      */
-    isFetchPending() {
+    isFetchPending(): boolean {
       return this.$fetchState?.pending || this.$fetchState.error
     },
     /**
      * Filters posts with a query variable.
-     * @returns {boolean|object[]} False if no query set, filtered posts array if there are results.
+     * @returns {boolean|Post[]} False if no query set, filtered posts array if there are results.
      */
-    getFilteredPosts() {
-      let { q, search, query, ara, sorgu, etiket } = this.query
+    getFilteredPosts(): boolean | Post[] {
+      let { q, search, query, ara, sorgu, etiket } = this.query as {
+        q?: string
+        search?: string
+        query?: string
+        ara?: string
+        sorgu?: string
+        etiket?: string
+      }
 
       if (!q && !search && !query && !ara && !sorgu && !etiket) return false
 
@@ -257,18 +270,19 @@ export default {
       if (etiket)
         return allPosts.filter(
           (post) =>
-            post.tags?.filter((tag) => tag?.toLowerCase()?.includes(etiket))
-              ?.length
+            post.tags?.filter((tag) =>
+              tag?.toLowerCase()?.includes(etiket || "")
+            )?.length
         )
       else {
         const filteredPosts = allPosts.filter(
           (post) =>
             post.title
               ?.toLowerCase()
-              ?.includes(q || search || query || ara || sorgu) ||
+              ?.includes(q || search || query || ara || sorgu || "") ||
             post.description
               ?.toLowerCase()
-              ?.includes(q || search || query || ara || sorgu)
+              ?.includes(q || search || query || ara || sorgu || "")
         )
 
         return filteredPosts
@@ -278,14 +292,14 @@ export default {
      * Returns the number of pages for the posts.
      * @returns {number} Page amount.
      */
-    getTotalPages() {
+    getTotalPages(): number {
       return Math.ceil(this.posts?.rest?.length / 15)
     },
     /**
      * Returns paginated, sliced posts.
-     * @returns {object[]} The posts array.
+     * @returns {Post[]} The posts array.
      */
-    getPaginatedPosts() {
+    getPaginatedPosts(): Post[] {
       const sliceStart = this.pagination * 15
       const sliceEnd = sliceStart + 15
 
@@ -306,5 +320,5 @@ export default {
       this.query = this.$route.query
     },
   },
-}
+})
 </script>

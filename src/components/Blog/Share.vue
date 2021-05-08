@@ -68,8 +68,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   props: {
     type: {
       type: String,
@@ -97,12 +99,13 @@ export default {
      * Creates a window or copies the URL.
      * @param {'url'|'twitter'|'telegram'|'whatsapp'} option The share option.
      */
-    share(option) {
+    share(option: "url" | "twitter" | "telegram" | "whatsapp") {
       if (option === "url") {
-        let el = this.$refs["share-url"]
+        let el = this.$refs["share-url"] as HTMLInputElement
 
         if (!el) {
           el = document.createElement("input")
+
           el.value = this.path ? `https://eggsy.xyz${this.path}` : location.href
           document.body.appendChild(el)
 
@@ -145,7 +148,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style scoped>

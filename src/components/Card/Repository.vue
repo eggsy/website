@@ -28,8 +28,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+export default Vue.extend({
   props: {
     name: {
       type: String,
@@ -54,15 +56,16 @@ export default {
      * Returns proper name for the language icon.
      * @returns {string}
      */
-    getLanguageIcon() {
+    getLanguageIcon(): string {
       const icons = {
         Vue: "vuejs",
         TypeScript: "typescript",
         JavaScript: "javascript",
       }
 
+      // @ts-ignore-next-line
       return icons[this.language] || ""
     },
   },
-}
+})
 </script>

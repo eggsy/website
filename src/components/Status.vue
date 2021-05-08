@@ -19,13 +19,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+import { Activity, Data } from "@/types/Response/Lanyard"
+
+export default Vue.extend({
   data() {
     return {
       finished: false,
-      lanyard: {},
-      socket: null,
+      lanyard: {} as Data,
+      socket: null as WebSocket | null,
     }
   },
   computed: {
@@ -33,16 +38,17 @@ export default {
      * Returns status detail as string.
      * @returns {string}
      */
-    getStatusDetails() {
+    getStatusDetails(): string {
       const lanyard = this.lanyard
-      if (!lanyard) return {}
+      if (!lanyard) return "Couldn't fetch data from Lanyard"
 
-      const filtered =
+      const filtered: Activity | null =
         lanyard.activities?.filter((activity) => activity.type !== 4)?.pop() ||
-        {}
+        null
 
       // Offline
       if (this.lanyard?.discord_status === "offline") return "Offline"
+      else if (!filtered) return "Online"
       // Visual Studio Code
       else if (filtered.name === "Visual Studio Code") {
         const replaced =
@@ -84,7 +90,7 @@ export default {
      * Returns Discord status colors.
      * @returns {string} Tailwind color classes
      */
-    getDiscordStatus() {
+    getDiscordStatus(): string {
       switch (this.lanyard.discord_status) {
         case "online":
           return "bg-green-500"
@@ -101,14 +107,12 @@ export default {
     this.socket?.close()
   },
   mounted() {
-    /**
-     * Connect to Lanyard Socket API, send heartbeat every 30 seconds and replace the Vue data value with the message
-     */
+    // Connect to Lanyard Socket API, send heartbeat every 30 seconds and replace the Vue data value with the message
     this.socket = new WebSocket("wss://api.lanyard.rest/socket")
 
     this.socket.addEventListener("open", () => {
       // Subscribe to ID
-      this.socket.send(
+      this.socket?.send(
         JSON.stringify({
           op: 2,
           d: {
@@ -119,7 +123,7 @@ export default {
 
       // Send heartbeat every 30 seconds
       setInterval(() => {
-        this.socket.send(
+        this.socket?.send(
           JSON.stringify({
             op: 3,
           })
@@ -128,7 +132,10 @@ export default {
     })
 
     this.socket.addEventListener("message", ({ data }) => {
-      const { t: type, d: status } = JSON.parse(data)
+      const { t: type, d: status } = JSON.parse(data) as {
+        t: "INIT_STATE" | "PRESENCE_UPDATE"
+        d: Data
+      }
 
       if (type === "INIT_STATE" || type === "PRESENCE_UPDATE")
         this.lanyard = status || {}
@@ -136,5 +143,5 @@ export default {
       this.finished = true
     })
   },
-}
+})
 </script>

@@ -42,8 +42,13 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+import { UnblockPlease } from "~/config/constants"
+
+export default Vue.extend({
   head() {
     const title = "Unblock Please"
     const description =
@@ -68,13 +73,13 @@ export default {
   computed: {
     /**
      * Returns the project link from runtime config.
-     * @returns {string}
+     * @returns {UnblockPlease}
      */
-    getLink() {
+    getLink(): UnblockPlease {
       return this.$config.links.unblockPlease
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
