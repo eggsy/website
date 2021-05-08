@@ -13,22 +13,14 @@ import publicRuntimeConfig from "./config/publicRuntimeConfig"
 /* Types */
 import { NuxtConfig } from "@nuxt/types"
 
-/* Set options as variables */
-const options: {
-  rootDir: string
-  srcDir: string
-  target: "static" | "server"
-  ssr: boolean
-} = {
+const Config: NuxtConfig = {
+  // Constant options
   rootDir: "./",
   srcDir: "src",
   target: "static",
   ssr: true,
-}
 
-/* Actual config object */
-const Config: NuxtConfig = {
-  ...options,
+  // Imported options
   build,
   head,
   loading,
