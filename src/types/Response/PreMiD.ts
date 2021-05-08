@@ -1,6 +1,6 @@
 import { PresenceMetadata } from "../PreMiD"
 
-export interface PreMiDResponse {
+export interface Premid {
   error?: number | boolean
   message?: string
   name: string
