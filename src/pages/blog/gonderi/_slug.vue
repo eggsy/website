@@ -84,7 +84,6 @@
       </article>
 
       <Disqus
-        shortname="eggsy-xyz"
         :title="post.title"
         :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
         :identifier="`/blog/gonderi/${post.slug}`"
@@ -149,10 +148,6 @@
 
 <script lang="ts">
 import Vue from "vue"
-
-/* Import third-party components */
-import * as Disqus from "vue-disqus"
-Vue.component("Disqus", Disqus)
 
 /* Interfaces */
 import { Post } from "~/src/types/Post"
@@ -375,6 +370,11 @@ export default Vue.extend({
   /* Horizontal line */
   hr {
     @apply border-gray-300 dark:border-gray-700 my-8 border-dashed;
+  }
+
+  /* Notification */
+  .notification {
+    @apply mb-4;
   }
 }
 </style>
