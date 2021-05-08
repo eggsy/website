@@ -32,6 +32,8 @@ Website features many custom built systems, integrations and pages!
   - Windi introduces a JIT engine, a fast Tailwind compiler and many more stuff like variant grouping etc.!
   - Clean, beautiful, fast, and responsive UI!
   - No CSS used! The website is done without touching CSS (except some transitions and directives)
+- ✅ Written in TypeScript, so you know what you're doing!
+  - Intellisense, module prop auto-completion and all that juicy TS craziness!
 - ✅ Over 15+ custom components!
   - Smart components.
   - Custom props, styles, and classes!
@@ -61,6 +63,8 @@ If you aren't already using `yarn`, I recommend yarn because it is faster and ru
 If you are wondering about **how to host it on free/paid static hosting services** like (Netlify, Vercel etc.), you can refer to [Nuxt.js docs](https://nuxtjs.org/docs/2.x/deployment/netlify-deployment). My project is hosted on [Netlify](https://netlify.com).
 
 ### ❓ What has changed?
+
+> In (package.json) version 3.0.0, I moved and rewrote everything in TypeScript. Now it's using TypeScript for more powerful stuff!
 
 > In (package.json) version 2.6.0, I've moved from Tailwind to WindiCSS for its features, gold-class support for Vue/Nuxt. Everything is same, but there are more stuff (like variant grouping, important prefix etc.)!
 
