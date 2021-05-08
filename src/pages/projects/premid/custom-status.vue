@@ -19,7 +19,7 @@
           to visit the store.
         </BlogNotification>
 
-        <BlogNotification type="warning">
+        <BlogNotification type="warning" class="sm:hidden">
           Are you on mobile? If you are you should know that PreMiD doesn't work
           on mobile, so you can't use this page in any way.
         </BlogNotification>
