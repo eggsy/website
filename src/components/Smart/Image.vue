@@ -55,15 +55,20 @@ export default Vue.extend({
     width: {
       type: String,
       required: false,
-      default: "auto",
+      default: null,
     },
     height: {
       type: String,
       required: false,
-      default: "auto",
+      default: null,
     },
   },
-  data: () => ({ error: false, loaded: false }),
+  data() {
+    return {
+      error: false,
+      loaded: false,
+    }
+  },
   computed: {
     /**
      * Optimizes images and returns optimized image URL.
@@ -74,15 +79,21 @@ export default Vue.extend({
 
       const { format, height, width, fit, src } = this
 
+      const options: {
+        format?: string
+        fit?: string
+        height?: number
+        width?: number
+      } = {}
+
+      if (format) options.format = format
+      if (fit) options.fit = fit
+      if (height) options.height = parseInt(height)
+      if (width) options.width = parseInt(width)
+
       /* Return src directly when on SSR to prevent errors */
       if (process.server) return src
-      else
-        return this.$img(src, {
-          fit,
-          format,
-          height: Number(height),
-          width: Number(width),
-        })
+      else return this.$img(src, options)
     },
   },
 })
