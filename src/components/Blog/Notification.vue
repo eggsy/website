@@ -31,7 +31,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .notification {
-  @apply mb-4 p-4 space-y-2 border-l-4 dark:text-gray-100;
+  @apply p-4 space-y-2 border-l-4 dark:text-gray-100;
 
   /* Background colors for types */
   &.information {
@@ -46,9 +46,14 @@ export default Vue.extend({
     @apply border-red-500 bg-red-500 text-red-700;
   }
 
+  &.success {
+    @apply border-green-500 bg-green-500 text-green-700;
+  }
+
   &.information,
   &.warning,
-  &.danger {
+  &.danger,
+  &.success {
     @apply bg-opacity-25 dark:text-gray-100;
   }
 
