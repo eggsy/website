@@ -1,8 +1,8 @@
 {
   "name": "eggsy-website",
-  "description": "EGGSY's personal website made in Nuxt.js + Windi/Tailwind CSS",
+  "description": "EGGSY's personal website made in TypeScript, Nuxt.js and Windi/Tailwind CSS",
   "license": "MIT",
-  "version": "2.6.0",
+  "version": "3.0.0",
   "homepage": "https://eggsy.xyz",
   "readme": "https://github.com/eggsy/website#readme",
   "author": {
@@ -33,7 +33,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:js": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js"
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
+    "@types/prismjs": "^1.16.5",
     "core-js": "^3.12.0",
     "firebase": "^8.5.0",
     "nuxt": "^2.15.4",
@@ -53,11 +54,13 @@
     "vue-tippy": "^4.10.0"
   },
   "devDependencies": {
-    "@guillaumebriday/vue-scroll-progress-bar": "^1.0.0",
     "@nuxt/image": "^0.4.8",
+    "@nuxt/types": "^2.15.4",
+    "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/color-mode": "^2.0.5",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^6.0.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/svg": "^0.1.12",
