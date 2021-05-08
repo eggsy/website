@@ -91,7 +91,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { Constants, Sponsor } from "~/config/constants"
+import { Sponsor } from "~/@types/runtimeConfig"
 
 export default Vue.extend({
   data() {
@@ -147,8 +147,8 @@ export default Vue.extend({
      * @returns {Sponsor}
      */
     getSponsorLinks(): Sponsor {
-      const config: Constants = this.$config
-      return config.sponsor
+      const sponsor = this.$config.sponsor as Sponsor
+      return sponsor
     },
   },
 })
