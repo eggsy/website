@@ -13,10 +13,13 @@ module.exports = {
     "eslint:recommended",
     "plugin:vue/recommended",
     "plugin:prettier/recommended",
+    "@nuxtjs/eslint-config-typescript",
   ],
   plugins: ["vue"],
   rules: {
     semi: [2, "never"],
+    quotes: [2, "double", "avoid-escape"],
+    "comma-dangle": false,
     "no-console": "off",
     "vue/max-attributes-per-line": "off",
     "vue/html-self-closing": "off",
