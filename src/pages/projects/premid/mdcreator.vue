@@ -625,7 +625,7 @@ import "prism-themes/themes/prism-coldark-dark.css"
 
 /* Interfaces */
 import { PresenceMetadata, PresenceSetting } from "@/types/PreMiD"
-import { PreMiDResponse } from "@/types/Response/PreMiD"
+import { Premid } from "@/types/Response/PreMiD"
 
 interface Metadata {
   error: boolean
@@ -979,7 +979,7 @@ export default Vue.extend({
       const api = `https://api.premid.app/v2/presences/${encodeURI(input)}`
 
       try {
-        const data: PreMiDResponse = (await this.$axios.get(api)).data
+        const data: Premid = (await this.$axios.get(api)).data
         if (data.error !== undefined || !data.metadata) return
 
         const metadata = data?.metadata
