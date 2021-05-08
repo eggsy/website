@@ -13,19 +13,24 @@
           <p class="text-gray-800 dark:text-gray-200">
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
             taught web developer. I recently started building complex web apps
-            using Vue.js,
+            using
+            <SmartLink href="https://vuejs.org/" class="description-link" blank>
+              Vue.js</SmartLink
+            >,
             <SmartLink
               href="https://nuxtjs.org/"
-              class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
+              class="description-link"
               blank
-              >Nuxt.js</SmartLink
+            >
+              Nuxt.js</SmartLink
             >
             and
             <SmartLink
               href="https://windicss.org/"
-              class="border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75"
+              class="description-link"
               blank
-              >Windi CSS</SmartLink
+            >
+              Windi CSS</SmartLink
             >.
           </p>
         </div>
@@ -46,7 +51,7 @@
         Projects I currently work on
       </h2>
 
-      <div class="mt-2 grid gap-2 sm:gap-4 sm:grid-cols-3">
+      <div class="mt-2 grid gap-2 sm:(gap-4 grid-cols-3)">
         <div
           v-for="(project, index) in getProjects.featured"
           :key="`project-featured-${index}`"
@@ -371,3 +376,9 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.description-link {
+  @apply border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75;
+}
+</style>
