@@ -7,11 +7,7 @@
 
     <div class="space-y-6">
       <div class="space-y-4">
-        <BlogNotification
-          v-if="presence.installed === false"
-          class="bg-red-500 mb-2 hidden information sm:block dark:bg-gray-700"
-          type="danger"
-        >
+        <BlogNotification v-if="presence.installed === false" type="danger">
           You need to install the Custom Status presence from the PreMiD Store
           to be able to use this page.
           <SmartLink
@@ -23,10 +19,7 @@
           to visit the store.
         </BlogNotification>
 
-        <BlogNotification
-          class="bg-red-500 block information sm:hidden dark:bg-gray-700"
-          type="warning"
-        >
+        <BlogNotification type="warning">
           Are you on mobile? If you are you should know that PreMiD doesn't work
           on mobile, so you can't use this page in any way.
         </BlogNotification>
@@ -566,10 +559,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.information {
-  @apply w-full p-4 rounded-md text-white;
-}
-
 input,
 select {
   @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:(bg-gray-700 ring-gray-800 text-gray-200);

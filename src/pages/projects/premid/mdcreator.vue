@@ -550,22 +550,19 @@
               <h2 class="font-semibold text-lg">Errors</h2>
             </div>
 
-            <div
-              v-if="getMetadata.error === false"
-              class="rounded-md bg-green-600 text-white p-4"
-            >
+            <BlogNotification v-if="getMetadata.error === false" type="success">
               No issues/errors found. You're good to go!
-            </div>
+            </BlogNotification>
 
             <div v-else class="grid gap-1 sm:grid-cols-2">
-              <div
+              <BlogNotification
                 v-for="(error, index) of getMetadata.errors"
                 :key="`error-${index}`"
-                class="rounded-md bg-red-600 text-white p-4 truncate"
                 :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
+                type="danger"
               >
                 {{ error }}
-              </div>
+              </BlogNotification>
             </div>
           </div>
 
@@ -1083,7 +1080,7 @@ p,
   }
 
   &:not(.ring-0) {
-    @apply ring-2 ring-opacity-25 ring-gray-300 dark:ring-gray-800 focus:ring-4;
+    @apply ring-2 ring-gray-300 ring-opacity-25 dark:ring-gray-800 focus:ring-4;
   }
 }
 
