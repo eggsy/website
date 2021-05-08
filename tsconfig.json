@@ -34,6 +34,9 @@
       "@nuxt/image",
       /* Additional types */
       "@types/prismjs"
+    ],
+    "typeRoots": [
+      "./@types"
     ]
   },
   "exclude": [
