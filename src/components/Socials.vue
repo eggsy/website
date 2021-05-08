@@ -44,6 +44,7 @@ export default Vue.extend({
 
       for (const item in social) {
         array.push({
+          // @ts-ignore-next-line
           url: social[item],
           // @ts-ignore-next-line
           title: titles[item] || `Visit ${item}!`,
