@@ -23,13 +23,13 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { Activity, Data } from "@/types/Response/Lanyard"
+import { LanyardData, Activity } from "@eggsydev/vue-lanyard/@types/lanyard"
 
 export default Vue.extend({
   data() {
     return {
       finished: false,
-      lanyard: {} as Data,
+      lanyard: {} as LanyardData,
       socket: null as WebSocket | null,
     }
   },
@@ -106,35 +106,17 @@ export default Vue.extend({
   beforeDestroy() {
     this.socket?.close()
   },
-  mounted() {
-    // Connect to Lanyard Socket API, send heartbeat every 30 seconds and replace the Vue data value with the message
-    this.socket = new WebSocket("wss://api.lanyard.rest/socket")
+  async mounted() {
+    // Connect to Lanyard Socket API, send heartbeat every 30 seconds and replace the Vue data value with the message using @eggsydev/vue-lanyard module
+    this.socket = (await this.$lanyard({
+      userId: "162969778699501569",
+      socket: true,
+    })) as WebSocket
 
-    this.socket.addEventListener("open", () => {
-      // Subscribe to ID
-      this.socket?.send(
-        JSON.stringify({
-          op: 2,
-          d: {
-            subscribe_to_id: "162969778699501569",
-          },
-        })
-      )
-
-      // Send heartbeat every 30 seconds
-      setInterval(() => {
-        this.socket?.send(
-          JSON.stringify({
-            op: 3,
-          })
-        )
-      }, 30000)
-    })
-
-    this.socket.addEventListener("message", ({ data }) => {
+    this.socket?.addEventListener("message", ({ data }) => {
       const { t: type, d: status } = JSON.parse(data) as {
         t: "INIT_STATE" | "PRESENCE_UPDATE"
-        d: Data
+        d: LanyardData
       }
 
       if (type === "INIT_STATE" || type === "PRESENCE_UPDATE")
