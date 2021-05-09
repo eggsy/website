@@ -4,6 +4,10 @@ const Plugins: NuxtOptionsPlugin[] = [
   "@/plugins/Util",
   "@/plugins/Disqus",
   {
+    src: "@/plugins/Lanyard",
+    mode: "client",
+  },
+  {
     src: "@/plugins/Firebase",
     mode: "client",
   },
