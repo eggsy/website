@@ -1,5 +1,4 @@
 // Import base config
-import build from "./config/build"
 import buildModules from "./config/buildModules"
 import components from "./config/components"
 import generate from "./config/generate"
@@ -21,7 +20,6 @@ const Config: NuxtConfig = {
   ssr: true,
 
   // Imported options
-  build,
   head,
   loading,
   buildModules,
