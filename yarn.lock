@@ -924,9 +924,9 @@
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
 "@eggsydev/vue-lanyard@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@eggsydev/vue-lanyard/-/vue-lanyard-1.0.6.tgz#1e196300da0ff1e304985093e0116b349eda396c"
-  integrity sha512-6QOHf7jilnxSVk8kVRWNVGbR0d+jQOnGoQ1xTmO6TJSiGi+qdRADfo6cFE9KpgbskiTc8FSPN9wcETspZbZqNg==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@eggsydev/vue-lanyard/-/vue-lanyard-1.1.0.tgz#f47b214c832806c0cef64f123e93e739f42f37b5"
+  integrity sha512-WMwD/bOMdU+2duIsuMsGL5xawlW3eD1kh03WvHcdCcO4MGQ6XGb28769yD8FvswZSc3K/ijtKjBKdBKLIFLz7Q==
 
 "@eslint/eslintrc@^0.4.1":
   version "0.4.1"
