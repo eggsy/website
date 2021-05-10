@@ -161,7 +161,7 @@
           class="grid gap-2 grid-cols-1 sm:grid-cols-2"
         >
           <SkeletonLoader
-            v-for="item in 6"
+            v-for="item in 7"
             :key="`repo-skeleton-${item}`"
             type="repository"
           />
