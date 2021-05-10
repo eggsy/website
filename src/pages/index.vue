@@ -161,7 +161,7 @@
           class="grid gap-2 grid-cols-1 sm:grid-cols-2"
         >
           <SkeletonLoader
-            v-for="item in 6"
+            v-for="item in 7"
             :key="`repo-skeleton-${item}`"
             type="repository"
           />
@@ -352,7 +352,7 @@ export default Vue.extend({
     const filter = ["eggsy", "DBM", "eggsywashere.github.io"]
 
     const repos: Repository[] = (
-      await this.$axios.get("https://api.github.com/users/eggsy/repos")
+      await this.$axios.get("https://api.github.com/users/eggsy/repos?per_page=100")
     ).data
 
     this.repos = repos
