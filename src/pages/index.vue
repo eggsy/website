@@ -352,7 +352,9 @@ export default Vue.extend({
     const filter = ["eggsy", "DBM", "eggsywashere.github.io"]
 
     const repos: Repository[] = (
-      await this.$axios.get("https://api.github.com/users/eggsy/repos?per_page=100")
+      await this.$axios.get(
+        "https://api.github.com/users/eggsy/repos?per_page=100"
+      )
     ).data
 
     this.repos = repos
