@@ -7,9 +7,9 @@
         Son gönderiler
       </h3>
 
-      <div class="mt-2 grid gap-4 sm:grid-cols-2">
+      <div class="mt-2 grid gap-2 md:grid-cols-3">
         <template v-if="isFetchPending">
-          <SkeletonLoader v-for="i in 4" :key="i" type="repository" />
+          <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
         </template>
 
         <template v-else>
@@ -21,7 +21,7 @@
         </template>
       </div>
 
-      <div class="mt-14 grid gap-14 sm:(gap-4 grid-cols-2)">
+      <div class="mt-14 grid gap-14 md:(gap-4 grid-cols-2)">
         <div class="grid gap-2 grid-cols-1">
           <SmartLink
             :href="{
@@ -88,7 +88,7 @@
           Diğer gönderiler
         </h3>
 
-        <div class="mt-4 grid gap-3 sm:grid-cols-3">
+        <div class="mt-4 grid gap-3 md:grid-cols-3">
           <template v-if="isFetchPending">
             <SkeletonLoader v-for="i in 18" :key="i" type="repository" />
           </template>
@@ -126,12 +126,12 @@
     >
       <div v-if="getFilteredPosts.length === 0" class="space-y-4">
         <h2
-          class="font-semibold text-2xl text-gray-900 sm:text-4xl dark:text-gray-100"
+          class="font-semibold text-2xl text-gray-900 md:text-4xl dark:text-gray-100"
         >
           Aramanıza uygun herhangi bir gönderi bulunamadı.
         </h2>
 
-        <div class="sm:w-4/6">
+        <div class="md:w-4/6">
           <h3 class="text-lg text-gray-900 dark:text-gray-100">
             Deneyebileceğiniz yöntemler:
           </h3>
@@ -148,14 +148,14 @@
 
         <SmartLink
           :href="{ name: 'blog' }"
-          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200"
+          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200"
         >
           <icon name="home" class="h-6 w-6" />
           <span>Bloga Dön</span>
         </SmartLink>
       </div>
 
-      <div v-else class="space-y-4">
+      <div v-else class="space-y-2">
         <CardPost
           v-for="(post, index) in getFilteredPosts"
           :key="`linux-${index}`"
@@ -189,7 +189,7 @@ export default Vue.extend({
   async fetch() {
     const latestPosts = await this.$content()
       .sortBy("createdAt", "desc")
-      .limit(4)
+      .limit(3)
       .without(["body"])
       .fetch()
 
@@ -209,7 +209,7 @@ export default Vue.extend({
 
     const allPosts = await this.$content()
       .sortBy("createdAt", "desc")
-      .skip(4)
+      .skip(3)
       .without(["body"])
       .fetch()
 
@@ -246,14 +246,10 @@ export default Vue.extend({
      * @returns {boolean|Post[]} False if no query set, filtered posts array if there are results.
      */
     getFilteredPosts(): boolean | Post[] {
-      let { q, search, query, ara, sorgu, etiket } = this.query as {
-        q?: string
-        search?: string
-        query?: string
-        ara?: string
-        sorgu?: string
-        etiket?: string
-      }
+      let { q, search, query, ara, sorgu, etiket } = this.query as Record<
+        string,
+        string
+      >
 
       if (!q && !search && !query && !ara && !sorgu && !etiket) return false
 
