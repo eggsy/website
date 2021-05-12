@@ -11,10 +11,7 @@
     <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full" />
 
     <div class="flex flex-col">
-      <span
-        v-if="noTag === false"
-        class="font-medium text-sm leading-tight text-gray-600 uppercase dark:text-gray-400"
-      >
+      <span class="font-medium text-sm leading-tight text-gray-600 uppercase dark:text-gray-400">
         {{ getPostMeta.tag }}
       </span>
 
@@ -64,7 +61,7 @@
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="flex flex-col bg-gray-200 bg-opacity-40 dark:bg-gray-800 cursor-pointer hover:shadow-md rounded-lg p-3 transition-shadow"
+    class="flex flex-col bg-gray-200 bg-opacity-40 dark:bg-gray-800 cursor-pointer hover:shadow-md rounded-lg p-3 transition-shadow truncate"
   >
     <h2 class="text-lg text-gray-800 dark:text-gray-200 truncate">
       {{ getPostMeta.title }}
@@ -115,11 +112,6 @@ export default Vue.extend({
       type: String,
       required: false,
       default: "normal",
-    },
-    notag: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
   },
   computed: {
