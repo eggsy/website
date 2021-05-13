@@ -46,16 +46,16 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@types/prismjs": "^1.16.5",
     "core-js": "^3.12.1",
-    "firebase": "^8.6.0",
+    "firebase": "^8.6.1",
     "nuxt": "^2.15.6",
     "nuxt-webfontloader": "^1.1.0",
     "prism-themes": "^1.7.0",
-    "sass": "^1.32.12",
+    "sass": "^1.32.13",
     "vue-disqus": "^4.0.1",
     "vue-tippy": "^4.10.1"
   },
   "devDependencies": {
-    "@nuxt/image": "^0.4.8",
+    "@nuxt/image": "^0.4.9",
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/color-mode": "^2.0.5",
@@ -71,7 +71,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.9.0",
-    "nuxt-windicss": "^0.7.2",
+    "nuxt-windicss": "^0.7.4",
     "prettier": "^2.3.0",
     "sass-loader": "10.1.1"
   }
