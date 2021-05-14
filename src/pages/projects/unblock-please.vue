@@ -46,7 +46,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { UnblockPlease } from "~/config/constants"
+import { UnblockPlease } from "~/@types/runtimeConfig"
 
 export default Vue.extend({
   head() {
