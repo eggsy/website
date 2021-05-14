@@ -1,17 +1,25 @@
 import { FirebaseModuleConfiguration } from "@nuxtjs/firebase/types/index"
+import { config as loadEnv } from "dotenv"
 
-const { FIREBASE_APP_ID, FIREBASE_API_KEY, FIREBASE_PROJECT_ID } = process.env
+/* Load env variables */
+loadEnv()
 
-if (!FIREBASE_APP_ID || !FIREBASE_API_KEY || !FIREBASE_PROJECT_ID)
+const {
+  FIREBASE_APP_ID: appId,
+  FIREBASE_API_KEY: apiKey,
+  FIREBASE_PROJECT_ID: projectId,
+} = process.env
+
+if (!appId || !apiKey || !projectId)
   throw new Error(
     "You are missing Firebase options, please check your .env file and make sure all required keys are present."
   )
 
 const Firebase: FirebaseModuleConfiguration = {
   config: {
-    appId: FIREBASE_APP_ID,
-    apiKey: FIREBASE_API_KEY,
-    projectId: FIREBASE_PROJECT_ID,
+    appId,
+    apiKey,
+    projectId,
     // Setting these because types aren't optional, though they're not required
     databaseURL: "",
     authDomain: "",
