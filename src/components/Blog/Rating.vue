@@ -1,19 +1,26 @@
 <template>
   <div class="flex space-x-2 items-center truncate">
     <div class="flex space-x-1 flex-shrink-0 items-center">
-      <icon
-        v-for="(badge, index) in getBadges"
-        :key="`badge-${index}`"
+      <!-- Channel Icon -->
+      <IconChannel
         v-tippy="{
-          content: badge.title,
+          content: platform,
           placement: 'top',
         }"
-        :name="badge.icon"
-        :class="{
-          'w-6 h-6 p-1 flex-shrink-0 rounded-full focus:outline-none': true,
-          [badge.color]: true,
-          [badge.background]: true,
+        :platform="getPlatformInfo.platform"
+        class="rounded-full flex-shrink-0 h-6 p-1 w-6 focus:outline-none"
+        :class="getPlatformInfo.classes"
+      />
+
+      <!-- Status Icon -->
+      <component
+        :is="getStatusInfo.component"
+        v-tippy="{
+          content: getStatusInfo.title,
+          placement: 'top',
         }"
+        class="rounded-full flex-shrink-0 h-6 p-1 w-6 focus:outline-none"
+        :class="getStatusInfo.classes"
       />
 
       <div
@@ -22,7 +29,8 @@
           content: `${seasons} sezon`,
           placement: 'top',
         }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-gray-800) focus:outline-none"
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200
+          bg-gray-800) focus:outline-none"
       >
         {{ seasons }} S
       </div>
@@ -32,7 +40,8 @@
           content: `${rating}/${max} puan`,
           placement: 'top',
         }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-gray-800 text-gray-200) focus:outline-none"
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-gray-800
+          text-gray-200) focus:outline-none"
       >
         {{ rating }} P
       </div>
@@ -51,11 +60,15 @@
 import Vue from "vue"
 
 /* Interfaces */
-interface Badge {
-  icon?: string
+interface Platform {
+  platform?: string
+  classes?: string
+}
+
+interface Status {
+  component?: string
   title?: string
-  color?: string
-  background?: string
+  classes?: string
 }
 
 export default Vue.extend({
@@ -93,100 +106,87 @@ export default Vue.extend({
   },
   computed: {
     /**
+     * Returns platform according to the prop.
+     * @returns {Platform}
+     */
+    getPlatformInfo(): Platform {
+      if (!this.platform) return {}
+
+      const platform = this.platform.toLowerCase()
+      let classes
+
+      switch (platform) {
+        case "netflix":
+          classes = "text-red-600 bg-black"
+          break
+        case "fox":
+          classes = "text-gray-100 bg-red-500"
+          break
+        case "apple tv+":
+          classes = "text-white bg-black"
+          break
+        case "tnt":
+          classes = "text-white bg-red-600"
+          break
+        case "amazon-prime":
+          classes = "text-gray-100 bg-blue-500"
+          break
+        case "disney+":
+          classes = "text-white bg-blue-900"
+          break
+        case "adult-swim":
+          classes = "text-gray-100 bg-black"
+          break
+        case "bbc":
+          classes = "text-gray-100 bg-black"
+          break
+        default:
+          classes = "bg-gray-200 dark:bg-gray-800"
+          break
+      }
+
+      return {
+        platform,
+        classes,
+      }
+    },
+    /**
      * Checks for each prop and returns an badge array.
      *
      * Note: Had to give it `any` type because of a TypeScript error I couldn't fix. Will try and see in time
      *
-     * @returns {Badge[] | any}
+     * @returns {Status}
      */
-    getBadges(): Badge[] | any {
-      const array: Badge[] = []
+    getStatusInfo(): Status {
+      if (this.status !== undefined) return {}
 
-      if (this.platform) {
-        const title = this.platform
-
-        let icon = this.platform.toLowerCase().split(" ").join("-")
-        let color, background
-
-        if (icon.includes("apple")) icon = "apple"
-
-        switch (icon) {
-          case "netflix":
-            color = "text-red-600"
-            background = "bg-black"
-            break
-          case "fox":
-            color = "text-gray-100"
-            background = "bg-red-500"
-            break
-          case "apple":
-            color = "text-white"
-            background = "bg-black"
-            break
-          case "tnt":
-            color = "text-white"
-            background = "bg-red-600"
-            break
-          case "amazon-prime":
-            color = "text-gray-100"
-            background = "bg-blue-500"
-            break
-          case "disney+":
-            color = "text-white"
-            background = "bg-blue-900"
-            break
-          case "adult-swim":
-            color = "text-gray-100"
-            background = "bg-black"
-            break
-          case "bbc":
-            color = "text-gray-100"
-            background = "bg-black"
-            break
-          default:
-            background = "bg-gray-200 dark:bg-gray-800"
-            break
-        }
-
-        array.push({
-          icon,
-          title,
-          color,
-          background,
-        })
+      const statusObject = {
+        0: "Devam Ediyor",
+        1: "Final Yaptı",
+        2: "İptal Edildi",
       }
 
-      if (this.status !== undefined) {
-        const statusObject = {
-          0: "Devam Ediyor",
-          1: "Final Yaptı",
-          2: "İptal Edildi",
-        }
+      let icon
 
-        let icon
-
-        switch (Number(this.status)) {
-          case 1:
-            icon = "stop"
-            break
-          case 2:
-            icon = "x"
-            break
-          default:
-            icon = "play-solid"
-            break
-        }
-
-        array.push({
-          icon,
-          // @ts-ignore-next-line
-          title: statusObject[Number(this.status)] || statusObject[0],
-          background: "bg-gray-200 dark:bg-gray-800",
-          color: "text-gray-700 dark:text-gray-200",
-        })
+      switch (Number(this.status)) {
+        case 1:
+          icon = "Stop"
+          break
+        case 2:
+          icon = "X"
+          break
+        default:
+          icon = "Play"
+          break
       }
 
-      return array
+      return {
+        component: "Icon" + icon,
+        // @ts-ignore-next-line
+        title: statusObject[Number(this.status)] || statusObject[0],
+        classes:
+          "text-gray-700 dark:text-gray-200 bg-gray-200 dark:bg-gray-800",
+      }
     },
   },
 })

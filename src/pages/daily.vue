@@ -20,7 +20,9 @@
                   ? `https://youtu.be/${getSelectedSong.youtube}/`
                   : false
               "
-              class="rounded cursor-pointer flex space-x-2 bg-gray-100 text-center py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center overflow-hidden select-none dark:(bg-gray-800 ring-gray-800 text-gray-100)"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-100 text-center py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center overflow-hidden select-none dark:(bg-gray-800
+                ring-gray-800
+                text-gray-100)"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
@@ -29,11 +31,11 @@
             >
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="bg-gray-200 h-6 w-2/3 dark:bg-gray-700"
+                class="bg-gray-300 h-6 w-2/3 dark:bg-gray-700"
               />
 
               <template v-else>
-                <icon name="youtube" class="flex-shrink-0 h-6 w-6" />
+                <IconBrand brand="youtube" class="flex-shrink-0 h-6 w-6" />
                 <span class="truncate">YouTube</span>
               </template>
             </SmartLink>
@@ -44,7 +46,8 @@
                   ? `https://open.spotify.com/track/${getSelectedSong.spotify}/`
                   : false
               "
-              class="rounded cursor-pointer flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center overflow-hidden select-none dark:(ring-gray-800 text-gray-100)"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center overflow-hidden select-none dark:(ring-gray-800
+                text-gray-100)"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
@@ -59,11 +62,11 @@
             >
               <SkeletonLoader
                 v-if="$fetchState.pending || $fetchState.error"
-                class="bg-gray-200 h-6 w-2/3 dark:bg-gray-700"
+                class="bg-gray-300 h-6 w-2/3 dark:bg-gray-700"
               />
 
               <template v-else>
-                <icon name="spotify" class="flex-shrink-0 h-6 w-6" />
+                <IconBrand brand="spotify" class="flex-shrink-0 h-6 w-6" />
                 <span class="truncate">Spotify</span>
               </template>
             </SmartLink>

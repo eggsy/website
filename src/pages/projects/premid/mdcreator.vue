@@ -102,7 +102,8 @@
             >
               <input
                 v-model="service.url.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none"
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700
+                  text-gray-200) focus:outline-none"
                 placeholder="URL(s) of the service"
                 @keyup.enter="addItem('url')"
               />
@@ -125,8 +126,7 @@
                       {{ url }}
                     </span>
 
-                    <icon
-                      name="x"
+                    <IconX
                       title="Click to remove this URL"
                       @click.native="removeItem(url, 'url')"
                     />
@@ -148,7 +148,8 @@
             >
               <input
                 v-model="service.tags.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none"
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700
+                  text-gray-200) focus:outline-none"
                 placeholder="Tags for the service"
                 @keyup.enter="addItem('tag')"
               />
@@ -171,8 +172,7 @@
                       {{ tag }}
                     </span>
 
-                    <icon
-                      name="x"
+                    <IconX
                       title="Click to remove this tag"
                       @click.native="removeItem(tag, 'tag')"
                     />
@@ -196,7 +196,8 @@
                 <div class="h-1/3">
                   <input
                     v-model="service.description.inputs.langCode"
-                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none"
+                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-gray-700
+                      text-gray-200) focus:outline-none"
                     placeholder="Language code, e.g. en"
                     @keyup.enter="$refs.descriptionInput.focus()"
                   />
@@ -204,7 +205,8 @@
                   <input
                     ref="descriptionInput"
                     v-model="service.description.inputs.content"
-                    class="h-1/2 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none"
+                    class="h-1/2 w-full py-2 px-4 dark:(bg-gray-700
+                      text-gray-200) focus:outline-none"
                     placeholder="Localized description"
                     @keyup.enter="addItem('description')"
                   />
@@ -234,8 +236,7 @@
                         </p>
                       </div>
 
-                      <icon
-                        name="x"
+                      <IconX
                         @click.native="
                           removeItem(description.langCode, 'description')
                         "
@@ -298,10 +299,9 @@
                     placement: 'top',
                   }"
                   class="text-white transition input"
-                  :class="{
-                    'bg-green-600': service.iframe === true,
-                    'bg-red-600': service.iframe === false,
-                  }"
+                  :class="
+                    service.iframe === true ? 'bg-green-500' : 'bg-red-600'
+                  "
                   @click="service.iframe = !service.iframe"
                 >
                   {{ service.iframe ? "Disable" : "Enable" }} Iframe Support
@@ -314,10 +314,9 @@
                     placement: 'top',
                   }"
                   class="text-white transition input"
-                  :class="{
-                    'bg-green-600': service.warning === true,
-                    'bg-red-600': service.warning === false,
-                  }"
+                  :class="
+                    service.warning === true ? 'bg-green-500' : 'bg-red-600'
+                  "
                   @click="service.warning = !service.warning"
                 >
                   {{ service.warning ? "Disable" : "Enable" }} Warning Icon
@@ -330,10 +329,9 @@
                     placement: 'top',
                   }"
                   class="text-white transition input"
-                  :class="{
-                    'bg-green-600': service.readLogs === true,
-                    'bg-red-600': service.readLogs === false,
-                  }"
+                  :class="
+                    service.readLogs === true ? 'bg-green-500' : 'bg-red-600'
+                  "
                   @click="service.readLogs = !service.readLogs"
                 >
                   {{ service.readLogs ? "Disable" : "Enable" }} Read Logs
@@ -377,8 +375,7 @@
                       class="flex space-x-2 flex-shrink-0 text-gray-900 items-center truncate dark:text-gray-100"
                     >
                       <span class="flex-shrink-0">{{ contributor.name }}</span>
-                      <icon
-                        name="x"
+                      <IconX
                         title="Click to remove this tag"
                         @click.native="
                           removeItem(contributor.id, 'contributor')
@@ -425,8 +422,7 @@
                       class="flex space-x-2 flex-shrink-0 text-gray-900 items-center truncate dark:text-gray-100"
                     >
                       <span class="flex-shrink-0">{{ altname }}</span>
-                      <icon
-                        name="x"
+                      <IconX
                         title="Click to remove this alternative name"
                         @click.native="removeItem(altname, 'altname')"
                       />
@@ -472,13 +468,14 @@
           </transition>
 
           <div
-            class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4)"
+            class="flex-wrap space-y-2 mt-4 items-center sm:(flex
+              space-y-0 space-x-4)"
           >
             <div
               class="flex space-x-2 items-center justify-center control-button"
               @click="resultWindow = true"
             >
-              <icon name="cog" class="h-5 w-5 no-style" />
+              <IconCog class="h-5 w-5 no-style" />
               <span>Generate</span>
             </div>
 
@@ -487,14 +484,13 @@
               :class="{ 'cursor-not-allowed': importLoading === true }"
               @click="importFromStore"
             >
-              <icon
+              <IconSync
                 v-if="importLoading === true"
-                name="sync"
                 class="mx-auto h-6 animate-spin w-6 no-style"
               />
 
               <div v-else class="flex space-x-2 items-center justify-center">
-                <icon name="inbox-in" class="h-5 w-5 no-style" />
+                <IconInbox class="h-5 w-5 no-style" />
                 <span>Import From Store</span>
               </div>
             </div>
@@ -507,7 +503,7 @@
                 }
               "
             >
-              <icon name="x" class="h-5 w-5 no-style" />
+              <IconX class="h-5 w-5 no-style" />
               <span>Clear</span>
             </div>
           </div>
@@ -524,14 +520,16 @@
     <transition name="slide-left" mode="out-in">
       <div
         v-show="resultWindow === true"
-        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-gray-800"
+        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto
+          shadow-md
+          w-8/12) dark:bg-gray-800"
       >
         <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
           <div class="space-y-1">
             <div
               class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
             >
-              <icon name="cog" class="h-5 w-5 no-style" />
+              <IconCog class="h-5 w-5 no-style" />
               <h2 class="font-semibold text-lg">Metadata Result</h2>
             </div>
 
@@ -546,7 +544,7 @@
             <div
               class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
             >
-              <icon name="exclamation-circle" class="h-5 w-5 no-style" />
+              <IconExclamation class="h-5 w-5 no-style" />
               <h2 class="font-semibold text-lg">Errors</h2>
             </div>
 
@@ -571,7 +569,7 @@
               <div
                 class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
               >
-                <icon name="fire-solid" class="h-5 w-5 no-style" />
+                <IconFire class="h-5 w-5 no-style" />
                 <h2 class="font-semibold text-lg">Your Metadata File</h2>
               </div>
             </div>
@@ -592,21 +590,23 @@
           <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center)">
             <a
               v-if="getMetadata.error === false"
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300"
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700
+                hover:bg-gray-600) hover:bg-gray-300"
               download="metadata.json"
               :href="`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(getMetadata.result, null, 2)
               )}`"
             >
-              <icon name="inbox-in" class="h-5 w-5 no-style" />
+              <IconInbox class="h-5 w-5 no-style" />
               <span>Download</span>
             </a>
 
             <div
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300"
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700
+                hover:bg-gray-600) hover:bg-gray-300"
               @click="resultWindow = false"
             >
-              <icon name="x" class="h-5 w-5 no-style" />
+              <IconX class="h-5 w-5 no-style" />
               <span>Close</span>
             </div>
           </div>
@@ -1068,7 +1068,7 @@ p,
   }
 }
 
-.svg-icon:not(.no-style) {
+svg:not(.no-style) {
   @apply flex-shrink-0 w-6 h-6 p-1 bg-gray-200 rounded-full cursor-pointer dark:(bg-gray-800 hover:bg-gray-700) hover:bg-gray-300;
 }
 

@@ -54,12 +54,12 @@
 
       <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0)">
         <SmartLink :href="getLink.website" class="button" blank>
-          <icon name="link" class="h-6 w-6" />
+          <IconLink class="h-6 w-6" />
           <span>Visit Website</span>
         </SmartLink>
 
         <SmartLink :href="getLink.faq" class="button" blank>
-          <icon name="question-circle" class="h-6 w-6" />
+          <IconQuestion class="h-6 w-6" />
           <span>View FAQ</span>
         </SmartLink>
       </div>

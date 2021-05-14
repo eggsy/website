@@ -1,58 +1,51 @@
 <template>
   <div v-if="type === 'vertical'" class="grid gap-2 grid-cols-1">
     <div class="button" @click="share('twitter')">
-      <icon name="twitter" class="text-[#1DA1F2]" />
+      <IconBrand brand="twitter" class="text-[#1DA1F2]" />
     </div>
 
     <div class="button" @click="share('telegram')">
-      <icon name="telegram" class="text-[#2EAADE]" />
+      <IconBrand brand="telegram" class="text-[#2EAADE]" />
     </div>
 
     <div class="button" @click="share('whatsapp')">
-      <icon name="whatsapp" class="text-[#25D366]" />
+      <IconBrand brand="whatsapp" class="text-[#25D366]" />
     </div>
 
     <div class="button" @click="share('url')">
-      <icon
-        v-if="copied === true"
-        key="check"
-        name="check"
-        class="text-green-500"
-      />
-
-      <icon
-        v-else
-        key="link"
-        name="link"
-        class="text-gray-800 dark:text-gray-200"
-      />
+      <IconCheck v-if="copied === true" class="text-green-500" />
+      <IconLink v-else class="text-gray-800 dark:text-gray-200" />
     </div>
   </div>
 
   <div v-else class="grid gap-4 grid-cols-1 sm:grid-cols-3">
     <div class="flex space-x-2 items-center">
       <div class="button" @click="share('twitter')">
-        <icon name="twitter" class="text-[#1DA1F2]" />
+        <IconBrand brand="twitter" class="text-[#1DA1F2]" />
       </div>
 
       <div class="button" @click="share('telegram')">
-        <icon name="telegram" class="text-[#2EAADE]" />
+        <IconBrand brand="telegram" class="text-[#2EAADE]" />
       </div>
 
       <div class="button" @click="share('url')">
-        <icon name="whatsapp" class="text-[#25D366]" />
+        <IconBrand brand="whatsapp" class="text-[#25D366]" />
       </div>
     </div>
 
     <div
-      v-tippy="{ content: 'Kopyalandı!', trigger: 'click' }"
+      v-tippy="{
+        content: 'Kopyalandı!',
+        trigger: 'click',
+      }"
       class="flex space-x-2 relative items-center sm:col-span-2"
     >
       <input
         ref="share-url"
         readonly
         :value="`https://eggsy.xyz${path}`"
-        class="rounded-md w-full p-3 ring-1 ring-opacity-25 ring-gray-800 sm:py-3 sm:px-4 dark:(bg-gray-800 text-gray-100) focus:outline-none"
+        class="rounded-md w-full p-3 ring-1 ring-opacity-25 ring-gray-800 sm:py-3 sm:px-4 dark:(bg-gray-800
+          text-gray-100) focus:outline-none"
         @click="share('url')"
       />
 
@@ -61,7 +54,7 @@
           v-if="copied === true"
           class="rounded-full bg-green-500 p-1 right-2 absolute"
         >
-          <icon name="check" class="h-5 text-gray-100 w-5" />
+          <IconCheck class="h-5 text-gray-100 w-5" />
         </div>
       </transition>
     </div>

@@ -45,7 +45,7 @@
           class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200"
           blank
         >
-          <icon name="premid" class="h-6 w-6" />
+          <IconDev brand="premid" class="h-6 text-gray-800 w-6 dark:text-gray-200" />
           <span>Visit PreMiD</span>
         </SmartLink>
       </section>

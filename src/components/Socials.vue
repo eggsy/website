@@ -8,7 +8,7 @@
       :utm="false"
       blank
     >
-      <icon :name="social.icon" />
+      <IconBrand :brand="social.icon" />
     </SmartLink>
   </div>
 </template>
@@ -63,7 +63,7 @@ a {
   @apply rounded-full ring-transparent ring-[6px] hover:(bg-gray-200 ring-gray-200) dark:(hover:bg-gray-700 hover:ring-gray-700);
 }
 
-.svg-icon {
+svg {
   @apply w-8 h-8 text-gray-800 dark:text-gray-200;
 }
 </style>

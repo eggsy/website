@@ -28,8 +28,7 @@
         <!-- Mobile Navbar -->
         <div class="block sm:hidden">
           <div @click="mobileMenu = !mobileMenu">
-            <icon
-              name="menu"
+            <IconMenu
               class="h-8 text-gray-900 w-8 dark:text-gray-100"
             />
           </div>
@@ -45,7 +44,7 @@
                 <h3 class="font-medium text-lg">Menu</h3>
 
                 <div @click="mobileMenu = false">
-                  <icon name="x" class="h-6 w-6" />
+                  <IconX class="h-6 w-6" />
                 </div>
               </div>
 
@@ -71,7 +70,7 @@
                   }"
                   @click="switchTheme('light')"
                 >
-                  <icon name="sun" class="h-6 w-6" />
+                  <IconSun class="h-6 w-6" />
                   <span>Light</span>
                 </div>
 
@@ -83,7 +82,7 @@
                   }"
                   @click="switchTheme('dark')"
                 >
-                  <icon name="moon" class="h-6 w-6" />
+                  <IconMoon class="h-6 w-6" />
                   <span>Dark</span>
                 </div>
               </div>

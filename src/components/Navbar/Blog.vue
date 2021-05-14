@@ -34,7 +34,7 @@
           />
 
           <label for="search" class="cursor-pointer pr-2" @click="search">
-            <icon name="search" class="h-4 w-4" />
+            <IconSearch class="h-4 w-4" />
           </label>
         </div>
 

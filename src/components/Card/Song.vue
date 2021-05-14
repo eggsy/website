@@ -14,9 +14,8 @@
 
     <div class="truncate">
       <div class="flex space-x-1 items-center">
-        <icon
+        <IconStar
           v-if="getDateText.startsWith('Today')"
-          name="star"
           class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-gray-100"
         />
 

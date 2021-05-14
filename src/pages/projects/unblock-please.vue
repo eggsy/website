@@ -30,12 +30,12 @@
 
     <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0)">
       <SmartLink :href="getLink.webstore" class="button" blank>
-        <icon name="inbox-in" class="h-6 w-6" />
+        <IconInbox class="h-6 w-6" />
         <span>Install to Chrome</span>
       </SmartLink>
 
       <SmartLink :href="getLink.github" class="button" blank>
-        <icon name="github" class="h-6 w-6" />
+        <IconBrand brand="github" class="h-6 w-6" />
         <span>Source Code</span>
       </SmartLink>
     </div>

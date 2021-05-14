@@ -3,7 +3,7 @@
     v-if="$fetchState.pending"
     class="flex font-semibold h-screen space-x-2 -mt-10 text-2xl text-gray-900 items-center justify-center overflow-hidden select-none dark:text-gray-100"
   >
-    <icon name="sync" class="h-8 animate-spin w-8" />
+    <IconSync class="h-8 animate-spin w-8" />
     <h3>Gönderi yükleniyor...</h3>
   </div>
 
@@ -15,7 +15,7 @@
       <div
         class="flex font-semibold space-x-2 text-2xl items-center justify-center"
       >
-        <icon name="times" class="h-8 w-8" />
+        <IconTimes class="h-8 w-8" />
         <h3>Gönderi yüklenemedi.</h3>
       </div>
 
@@ -55,14 +55,14 @@
             <div
               class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
             >
-              <icon name="clock" class="h-4 w-4" />
+              <IconClock class="h-4 w-4" />
               <div>{{ getReadingTime }} dakika okuma</div>
             </div>
 
             <div
               class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 pl-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
             >
-              <icon name="calendar" class="h-4 w-4" />
+              <IconCalendar class="h-4 w-4" />
               <div>{{ getReadableDate }}</div>
             </div>
           </div>

@@ -10,15 +10,10 @@
       <div class="flex space-x-1 items-center">
         <div class="flex space-x-1 items-center">
           <span>{{ stars }}</span>
-          <icon name="star-filled" class="h-6 text-yellow-600 w-6" />
+          <IconStar filled class="h-6 text-yellow-600 w-6" />
         </div>
 
-        <icon
-          v-if="getLanguageIcon"
-          :name="getLanguageIcon"
-          :title="language"
-          class="h-5 w-5"
-        />
+        <IconDev :brand="getLanguageIcon" class="h-5 w-5" />
       </div>
     </div>
 
@@ -58,13 +53,11 @@ export default Vue.extend({
      */
     getLanguageIcon(): string {
       const icons = {
-        Vue: "vuejs",
-        TypeScript: "typescript",
-        JavaScript: "javascript",
+        Vue: "Vue.js",
       }
 
       // @ts-ignore-next-line
-      return icons[this.language] || ""
+      return icons[this.language] || this.language
     },
   },
 })

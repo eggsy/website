@@ -3,14 +3,12 @@
     class="rounded-full cursor-pointer bg-gray-100 p-2 text-gray-900 select-none dark:(bg-gray-800 text-gray-100) focus:outline-none"
     @click="switchTheme"
   >
-    <icon
+    <IconSun
       v-if="getSelectedTheme === 'light'"
-      key="sun"
-      name="sun"
       class="h-5 w-5"
     />
 
-    <icon v-else key="moon" name="moon" class="h-5 w-5" />
+    <IconMoon v-else class="h-5 w-5" />
   </div>
 </template>
 

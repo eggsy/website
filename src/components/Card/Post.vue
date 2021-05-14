@@ -11,7 +11,9 @@
     <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full" />
 
     <div class="flex flex-col">
-      <span class="font-medium text-sm leading-tight text-gray-600 uppercase dark:text-gray-400">
+      <span
+        class="font-medium text-sm leading-tight text-gray-600 uppercase dark:text-gray-400"
+      >
         {{ getPostMeta.tag }}
       </span>
 
@@ -68,18 +70,17 @@
     </h2>
 
     <div class="flex space-x-1 items-center">
-      <icon
+      <IconFire
         v-if="getPostMeta.special"
         v-tippy="{
           content: 'Popüler gönderi',
           placement: 'bottom',
         }"
-        name="fire-solid"
         class="h-5 text-red-600 w-5 dark:text-red-500"
       />
 
       <div class="flex space-x-2 text-gray-700 items-center dark:text-gray-400">
-        <icon name="clock" class="h-5 w-5" />
+        <IconClock class="h-5 w-5" />
         <span>{{ getPostDate }}</span>
       </div>
     </div>
