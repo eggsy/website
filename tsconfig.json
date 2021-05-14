@@ -33,7 +33,8 @@
       "@nuxtjs/color-mode",
       "@nuxt/image",
       /* Additional types */
-      "@types/prismjs"
+      "@types/prismjs",
+      "vite/client",
     ],
     "typeRoots": [
       "./@types"
