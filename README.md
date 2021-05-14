@@ -66,7 +66,7 @@ If you are wondering about **how to host it on free/paid static hosting services
 
 ### ❓ What has changed?
 
-> In (package.json) version 4.0.0, I've worked on each page and component to make them compatibl with [Vite](https://vitejs.dev/), which is an upcoming and blazing fast Bundler! You'll feel the difference!
+> In (package.json) version 4.0.0, I've worked on each page and component to make them compatible with [Vite](https://vitejs.dev/), which is an upcoming and blazing fast tool for Nuxt! You'll feel the difference!
 
 > In (package.json) version 3.0.0, I moved and rewrote everything in TypeScript. Now it's using TypeScript for more powerful stuff!
 
