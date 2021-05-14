@@ -1,4 +1,4 @@
-// Import base config
+/* Import base config */
 import buildModules from "./config/buildModules"
 import components from "./config/components"
 import generate from "./config/generate"
@@ -8,6 +8,9 @@ import loading from "./config/loading"
 import modules from "./config/modules"
 import plugins from "./config/plugins"
 import publicRuntimeConfig from "./config/publicRuntimeConfig"
+
+/* Import specific module options */
+import vite from "./config/modules/vite"
 
 /* Types */
 import { NuxtConfig } from "@nuxt/types"
@@ -29,6 +32,9 @@ const Config: NuxtConfig = {
   modules,
   plugins,
   publicRuntimeConfig,
+
+  // Modules
+  vite,
 }
 
 export default Config
