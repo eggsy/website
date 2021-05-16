@@ -22,7 +22,7 @@
       </div>
 
       <div class="mt-14 grid gap-14 md:(gap-4 grid-cols-2)">
-        <div class="grid gap-2 grid-cols-1">
+        <div class="flex flex-col space-y-2 overflow-hidden">
           <SmartLink
             :href="{
               name: 'blog',
@@ -51,7 +51,7 @@
           </template>
         </div>
 
-        <div class="grid gap-2 grid-cols-1">
+        <div class="flex flex-col space-y-2 overflow-hidden">
           <SmartLink
             :href="{
               name: 'blog',
