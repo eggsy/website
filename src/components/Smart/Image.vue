@@ -12,10 +12,11 @@
         loaded === false,
     }"
     :smart-image="true"
+    :title="title"
   >
     <img
       :src="getBackgroundUrl || src"
-      :alt="alt"
+      :alt="alt || title || 'image'"
       :width="width"
       :height="height"
       class="invisible"
@@ -38,10 +39,15 @@ export default Vue.extend({
       required: true,
       default: null,
     },
+    title: {
+      type: String,
+      required: false,
+      default: null,
+    },
     alt: {
       type: String,
       required: false,
-      default: "image",
+      default: null,
     },
     format: {
       type: String,
