@@ -11,6 +11,7 @@
       'bg-gray-100 animate-pulse dark:bg-gray-700 bg-no-repeat':
         loaded === false,
     }"
+    :smart-image="true"
   >
     <img
       :src="getBackgroundUrl || src"
