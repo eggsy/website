@@ -1,20 +1,66 @@
 ---
 title: PreMiD Nasıl Kullanılır?
-description: İlk çıktığı sürümden popülerliğini kazanana kadar PreMiD uygulaması sadece belirli servisleri destekliyordu. Yeni yayınlanan 2.0 güncellemesinden sonra ise artık "ne kadar olursa".
+description: İnternet sitelerinde yaptığınız, izlediğiniz veya dinlediğiniz aktiviteleri Discord profilinize yansıtan PreMiD nasıl kullanılır?
 tags:
   - premid
   - discord
-createdAt: 2020-01-09T02:38:49.840Z
+createdAt: 2021-05-16T19:55:27.440Z
 ---
 
-PreMiD uygulaması, çıktığı günden bu yana bir çok Discord kullanıcısının isteklerini yerine getiriyor. Özellikle içerisinde birden fazla servisi barındırması ve bunları sadece PreMiD olarak yapması, her servis için farklı uygulama yüklememizin önüne geçiyordu. İlk ve ilk popülerleşmeye başladığı sürümlerde PreMiD, sadece YouTube, YouTube Music, SoundCloud, Netflix gibi en popüler servisleri destekliyordu. Geçtiğimiz haftalarda yayınlanan bir güncelleme ile **artık kullanıcılar ne isterse o servisi destekliyor!**
+<blog-notification>
 
-Evet, doğru duydunuz. "Olması beklenen bir güncelleme" sonunda gerçekleşti ve artık kullanıcılar (geliştiriciler desek daha iyi olur, ya da JavaScript kodlama bilgisi olanlar) istedikleri servis için kendi yazdıkları kodu yazıp, test ettikten sonra PreMiD'in GitHub deposuna gönderebilecek ve gerekli onaylamalardan geçtikten sonra resmi olarak PreMiD kullanıcıları tarafından kullanılabilir hale gelebilecek.
+Bu gönderi, eskisi düzenlenerek yeniden oluşturulmuş ve baştan yazılmıştır. Güncel PreMiD özelliklerinden ve hatalarının çözümünden bahsedildiği için yazıyı tekrar okumak isteyebilirsiniz.
 
-### Peki nasıl işliyor bu "paylaşma" olayı?
+</blog-notification>
 
-Buna "paylaşma" demek yerine "market sistemi" dememiz çok daha mantıklı olacaktır. Güncelleme kaynaklarında ve site üzerinde de servisleri ekleyebileceğiniz kısım "Mağaza" olarak geçiyor. O yüzden bu tam anlamıyla "her şeyin beleş olduğu bir mağaza". Daha fazla uzatmadan iyice derinlere inmek gerekirse; uygulamayı ve eklentiyi düzgünce yükledikten sonra (yeni sürüme ait uygulama ve eklentiye sahip olduğunuza emin olun elbette) artık PreMiD'in sitesindeki mağaza kısmından hiçbir ek bir şeye ihtiyaç duymadan tek bir tuşa basarak istediğiniz servisi ekleyebileceksiniz. **Üstelik mağaza Türkçe'yi de destekliyor!**
+PreMiD uygulaması, yüz binlerce kişiye hizmet veren, neredeyse herkesin bulunduğu sunucularda en az 2 kişinin kullandığı uygulamadır. Bu uygulamanın amacı, internet (YouTube, Netflix gibi) sitelerinde yaptığınız, izlediğiniz veya dinlediğiniz şeyleri Discord profilinizde göstermektir. Göstereceği bilgileri eğer servis destekliyorsa ayarlayabilir, YouTube'da veya Netflix'de ne izlediğinizden, WhatsApp'da kiminle mesajlaştığınıza kadar gösterebilirsiniz.
 
-<smart-image src="https://the-person-under-this-message.is-inside.me/CL39gBdq.gif"></smart-image>
+### PreMiD güvenli mi, veya yasak mı?
 
-Yeni güncelleme ile şimdiden 400'ün üzerinden servis desteği eklendi! Ve bu "hoş olmayan bir şekilde" artmaya devam ediyor. Yapımcılar bile bu kadar ilgi olacağını beklemezken herkes kullandıkları servis için bir destek eklemek istiyor. Oldukça kalabalık ve geniş bir mağazaya sahip. Bu hem iyi, hemde kötü bir şey olabilir. Size kalmış.
+PreMiD projesi internet sitesinden, tarayıcı eklentisine, uygulamasına, Discord sunucusundaki bota kadar açık kaynak ve birden çok kişinin katkıda bulunarak geliştirdiği açık kaynak bir projedir. Eğer mağazadaki sürüme güvenmiyorsanız kaynağından indirip, kodları kendiniz görüp derleyebilir ve kendi sürümünüzü kullanabilirsiniz. Ayrıca bu programın yüz binlerce kişinin kullandığını da söylemeden geçmeyelim.
+
+### PreMiD nasıl çalışır?
+
+PreMiD, iki parçadan oluşur. İlki tarayıcı eklentisi, diğeri ise masaüstü programıdır. Bunlardan herhangi biri olmazsa PreMiD işlem yapamaz. Böyle olmasının nedeni ise tarayıcıdan direkt olarak Discord'a bilgi aktarılamamasıdır, bu yüzden PreMiD, tarayıcıdan kendi programına bilgi aktarır, program da bu bilgiyi Discord'a gönderir. Sistem bu şekilde çalışır, yani PreMiD'i kullanmak için her ikisini de yüklemeniz gerekmektedir.
+
+### PreMiD nasıl indirilir?
+
+PreMiD'i indirmek için internet sitesindeki "[İndirmeler](https://premid.app/downloads)" sayfasını ziyaret edebilirsiniz. Eğer tarayıcınızın dili Türkçe'ye ayarlıysa, PreMiD'in sitesini de Türkçe göreceksiniz. Program, eklenti ve internet sitesinin tamamı Türkçeyi desteklemektedir. Siteye girdikten sonra iki ayrı bağlantı göreceksiniz. Birinde **uygulama**, diğerinde ise **eklenti** yazacaktır. Bir önceki başlıkta da belirttiğim gibi, her ikisini de indirmeniz gerekmektedir. PreMiD'in sitesi otomatik olarak sisteminizi bulmaya çalışacak ve sizin tıklamanız gereken kutuları işaretleyecektir. Eğer bir yanlışlık olursa, burada bulunan seçeneklerden kendi işletim sisteminizi ve tarayıcınızı seçerek işleminize devam edebilirsiniz.
+
+<blog-notification>
+
+PreMiD **Opera**, **Safari**, **Firefox**, **Edge**, **Chrome**, **Linux**, **Mac** gibi bilindik tüm sistemler üzerinde çalışmaktadır. Eğer herhangi bir sorunla karşılaşır veya sormak istediğiniz bir şey olursa PreMiD'in Discord sunucusuna katılabilir ve destek alabilirsiniz.
+
+</blog-notification>
+
+<hr>
+
+Bu kısımda ise PreMiD'de bilinen bazı hataları ve bilmeniz gereken ayrıntılardan bahsedeceğim. Bu yazıyı daha sonra bağlantı olarak gönderip insanlara yardımcı olmak isterseniz başlıkların üstüne tıklayabilir ve başlığa giden direkt bağlantıyı kopyalabilirsiniz.
+
+### PreMiD uygulamasını indirdim ancak herhangi bir şey açılmadı?
+
+PreMiD uygulaması sadece eklenti ve Discord arasındaki haberleşmeyi aktaracağı için herhangi bir arayüze veya ayarlara sahip değildir. Eğer PreMiD'in simgesini görev çubuğunuzda görüyorsanız bu PreMiD'in çalıştığı anlamına gelir.
+
+<smart-image src="https://i.imgur.com/PQ0OXHL.gif" title="PreMiD'i görev çubuğunda gösteren resim"></smart-image>
+
+### Profilimde herhangi bir şey görünmüyor?
+
+Eğer PreMiD'i başarıyla kurduğunuza inanıyor, eklentinin üzerinde sarı bir ünlem işareti uyarısı almıyorsanız, programın da çalıştığından eminseniz fakat hala profilinizde bir şeyin olmadığını söylüyorsanız, Discord Kullanıcı Ayarları kısmındaki "Oyun Etkinliği" sekmesinde bu ayarın açık olduğundan emin olun.
+
+<blog-notification type="warning">
+
+Eğer PreMiD'in çalışması için bu sayfada tarayıcınızı, oyununuzu veya kullandığınız programı eklerseniz, bu yaptığınız PreMiD'in çalışmasını engelleyecektir. Lütfen el ile bir şey eklemeyin, PreMiD çalıştığında sizin herhangi bir ayar yapmanıza gerek yoktur.
+
+</blog-notification>
+
+<div class="rounded bg-[#36393f]">
+  <smart-image src="https://i.imgur.com/PApLvyb.png" title="Kullanıcı ayarlarındaki Oyun Etkinliği sayfası"></smart-image>
+</div>
+
+### Discord yönetici olarak mı çalışıyor?
+
+PreMiD uygulaması, eğer Discord'u yönetici olarak çalıştırıyorsanız Discord'a bilgi aktarımı yapamayacaktır. Lütfen Discord'u yönetici olarak çalıştırmayın.
+
+### Hiçbir şey işe yaramıyor mu?
+
+Bilinen tüm çözüm yöntemlerini ve daha fazla ayrıntıyı içeren PreMiD sorun çözüm sayfasına [buraya](https://docs.premid.app/tr/troubleshooting) tıklayarak erişebilirsiniz. Sayfa Türkçe olduğundan endişe etmenizi gerektirecek bir durum yoktur, sayfaya girebilir ve buradaki adımları deneyerek sorununuzun çözülüp çözülmediğini kontrol edebilirsiniz. Eğer sorununuz devam ediyorsa PreMiD'in Discord sunucusuna girip bir destek bileti oluşturabilirsiniz.
