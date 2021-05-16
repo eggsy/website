@@ -309,13 +309,14 @@ export default Vue.extend({
       @apply bg-gray-800 dark:bg-gray-700 rounded-md text-gray-200 px-1 py-px font-sans;
     }
 
-    img {
-      @apply rounded;
-    }
-
     &:not(:last-child) {
       @apply mb-5;
     }
+  }
+
+  /* Smart image */
+  div[smart-image] {
+    @apply mx-auto w-max max-w-full rounded mb-5;
   }
 
   /* Ratings */
