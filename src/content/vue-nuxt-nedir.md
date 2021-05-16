@@ -19,9 +19,7 @@ Geliştirici Evan You, Google'da bir mühendis olarak çalışmış, daha sonra 
 
 Vue, geliştikçe topluluğu da gelişmeye, kullanım sayısı artmaya, artı yorumlar gelmeye ve Vue için geliştirilen bir çok eklenti çıkmaya başlamış; 2018'in sonlarına doğru da Vue.js, GitHub'da **en çok yıldızlanan** JavaScript arayüzü (framework'ü) olmuş. Bu başarının devamı da kesilmemiş. Kullanıcılarından gelen, sürekli pozitif yorumlar, Evan'ın hevesini iyice arttırmış.
 
-<p class="text-center">
-  <smart-image src="https://the-person-under-this-message.is-inside.me/RX23XD8U.png"></smart-image>
-</p>
+<smart-image src="https://the-person-under-this-message.is-inside.me/RX23XD8U.png"></smart-image>
 
 Bu hikaye, YouTube üzerinde Honeypot kanalı tarafından yapılan "Vue.js Documentary" adlı muhteşem videodan alınmıştır. Sizde Evan You'nun kendi röportajını, Honeypot'un geniş bütçesiyle hazırlanmış bir videoda izlemek istiyorsanız videoya [buradaki](https://www.youtube.com/watch?v=OrxmtDw4pVI) linkten ulaşabilirsiniz.
 
