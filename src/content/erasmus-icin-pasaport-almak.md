@@ -66,7 +66,7 @@ Pasaport randevusu için yukarıda da belirttiğim gibi isterseniz e-Devlet üze
 e-Devlet hesabınıza giriş yaptıktan sonra alt kısımdaki menüde bulunan "Arama" seçeneğine tıklayın ve çıkan yere "Pasaport" yazın.
 
 <div class="rounded bg-[#111111]">
-  <smart-image src="https://i.vgy.me/8brMgP.png" alt="e-Devlet" title="e-Devlet"></smart-image>
+  <smart-image src="https://i.vgy.me/8brMgP.png" title="e-Devlet"></smart-image>
 </div>
 
 Çıkan sonuçlardan "Pasaport Başvuru Randevusu" seçeneğini seçin. Açılan ekranın sağ alt kısmında bulunan artı (+) işaretine tıklayın ve sırasıyla şu adımları takip edin:
@@ -79,7 +79,7 @@ e-Devlet hesabınıza giriş yaptıktan sonra alt kısımdaki menüde bulunan "A
 6. Son aşamada ise seçtiğiniz kişiler ve randevu tarihleri listelenecektir. Buradan da isimlerinizin üzerine tıklayarak randevunuzu oluşturabilirsiniz. Bu aşamayı da geçtikten sonra e-Devlet'e kayıtlı numaranıza NVİ'den bir bilgilendirme mesajı gelecektir. Bu mesaj geldiğinde randevunuz başarıyla oluşturulumuş demektir.
 
 <div class="rounded bg-[#111111]">
-  <smart-image src="https://i.vgy.me/WC1jwy.png" alt="e-Devlet" title="e-Devlet"></smart-image>
+  <smart-image src="https://i.vgy.me/WC1jwy.png" title="e-Devlet"></smart-image>
 </div>
 
 Böylelikle pasaport randevunuzu oluşturmuş bulunmaktasınız. Randevu saatinizde tüm belgelerinizle seçtiğiniz Nüfus Müdürlüğüne gitmelisiniz. **Eğer bir e-Devlet hesabınız yoksa bu işlemleri [NVİ](https://randevu.nvi.gov.tr) sitesi üzerinden de kolayca yapabilirsiniz.**
@@ -104,7 +104,7 @@ Ziraat Bankası uygulamasını kullanarak izlediğim yolları size göstereceği
 6. Daha sonra ücreti ödemek istediğiniz hesabınızı veya kartınızı seçin.
 
 <div class="rounded bg-[#111111]">
-  <smart-image src="https://i.vgy.me/xEPRc9.png" alt="Ziraat Bankası işlemleri" title="Ziraat Bankası işlemleri"></smart-image>
+  <smart-image src="https://i.vgy.me/xEPRc9.png" title="Ziraat Bankası işlemleri"></smart-image>
 </div>
 
 Bankanız otomatik olarak belirttiğiniz TCKN'ye sahip vatandaşın adına pasaport defter bedeli transferini gerçekleştirecektir. Daha sonra ödediğinize dair hesap hareketli kısmından **dekontu alıp yazdırmayı unutmayın**.
@@ -120,7 +120,7 @@ Bu işlem için de e-Devlet sistemini kullanabilirsiniz. İşlem için herhangi 
 3. Açılan sayfada eğitim aldığınız üniversite ve bölümünüz hakkında bilgiler verilecektir. "Belge Oluştur" seçeneğini kullanarak öğrenci belgenizi oluşturabilir ve sonrasında yazdırabilirsiniz.
 
 <div class="rounded bg-[#111111]">
-  <smart-image src="https://i.vgy.me/UgECfC.png" alt="e-Devlet Öğrenci Belgesi" title="e-Devlet Öğrenci Belgesi" ></smart-image>
+  <smart-image src="https://i.vgy.me/UgECfC.png" title="e-Devlet Öğrenci Belgesi" ></smart-image>
 </div>
 
 <hr>

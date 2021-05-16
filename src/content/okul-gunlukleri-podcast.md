@@ -33,7 +33,6 @@ Sonrasında ise bize verilen bu kayıt planı formunu doldurmak için hepimizin 
   <smart-image
     src="https://i.vgy.me/wLGUqb.png"
     title="kayıt planımızın sonucu"
-    alt="kayıt planımızın sonucu"
   ></smart-image>
 </div>
 
@@ -43,7 +42,6 @@ Bu işlemlerin sonunda yukarıdaki hâlini alan kayıt planımızın devamında 
   <smart-image
     src="https://i.vgy.me/JpVUf4.png"
     title="öğretmenimizin yorumu"
-    alt="öğretmenimizin yorumu"
   ></smart-image>
 </div>
 
@@ -87,7 +85,6 @@ Grubumuzun lideri kaydı dinledikten sonra müziklerin ve ses efektlerinin yeter
   <smart-image
     src="https://i.vgy.me/cx1Wb6.png"
     title="öğretmenimizin bölümün hakkındaki yorumu"
-    alt="öğretmenimizin bölümün hakkındaki yorumu"
   ></smart-image>
 </div>
 
