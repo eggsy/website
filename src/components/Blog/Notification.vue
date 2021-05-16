@@ -25,18 +25,38 @@ export default Vue.extend({
   /* Background colors for types */
   &.information {
     @apply border-blue-500 bg-blue-600 text-blue-700;
+
+    p,
+    p strong {
+      @apply text-blue-700;
+    }
   }
 
   &.warning {
     @apply border-yellow-500 bg-yellow-500 text-yellow-700;
+
+    p,
+    p strong {
+      @apply text-yellow-700;
+    }
   }
 
   &.danger {
     @apply border-red-500 bg-red-500 text-red-700;
+
+    p,
+    p strong {
+      @apply text-red-700;
+    }
   }
 
   &.success {
     @apply border-green-500 bg-green-500 text-green-700;
+
+    p,
+    p strong {
+      @apply text-green-700;
+    }
   }
 
   &.information,
@@ -44,6 +64,11 @@ export default Vue.extend({
   &.danger,
   &.success {
     @apply bg-opacity-25 dark:text-gray-100;
+
+    p,
+    p strong {
+      @apply dark:text-gray-100;
+    }
   }
 
   /* Other stlings */
