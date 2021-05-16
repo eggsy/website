@@ -1,11 +1,5 @@
 <template>
-  <SmartLink v-if="href" :href="href">
-    <div class="notification" :class="type">
-      <slot />
-    </div>
-  </SmartLink>
-
-  <div v-else class="notification" :class="type">
+  <div class="notification" :class="type">
     <slot />
   </div>
 </template>
@@ -15,11 +9,6 @@ import Vue from "vue"
 
 export default Vue.extend({
   props: {
-    href: {
-      type: [String, Object],
-      required: false,
-      default: null,
-    },
     type: {
       type: String,
       required: false,
