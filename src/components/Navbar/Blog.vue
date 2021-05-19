@@ -9,7 +9,7 @@
       >
         <SmartImage
           src="/assets/icons/icon.svg"
-          class="rounded-md bg-gray-100 transition-transform ring-1 ring-gray-200 sm:transform hover:-rotate-6"
+          class="rounded-md bg-gray-100 ring-black transition-transform ring-2 ring-opacity-5 sm:transform hover:-rotate-6"
           width="100"
           height="100"
           :title="getTargetRoute.title"
@@ -27,7 +27,7 @@
             id="search"
             v-model="input"
             placeholder="Gönderi ara..."
-            class="rounded-tl-lg rounded-bl-lg bg-gray-100 w-full py-1.5 px-3 placeholder-gray-500 appearance-none dark:bg-gray-800 focus:outline-none"
+            class="rounded-tl-lg rounded-bl-lg bg-gray-100 w-full py-1.5 px-3 placeholder-gray-500 appearance-none focus:outline-none dark:bg-gray-800"
             @focus="inputFocused = true"
             @blur="inputFocused = false"
             @keydown.enter="search"
@@ -59,7 +59,7 @@ export default Vue.extend({
      * Returns the target route according to the current route.
      * @returns {{title: string; name: string;}}
      */
-    getTargetRoute(): {title: string, name: string} {
+    getTargetRoute(): { title: string; name: string } {
       if (this.$route.name === "blog" && !this.isSearching)
         return {
           title: "Ana Sayfaya Dön",
