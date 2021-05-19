@@ -15,7 +15,7 @@
   <!-- External URL -->
   <a
     v-else
-    :href="href && (utm === false ? href : `${href}?utm_source=eggsy.xyz`)"
+    :href="href && (utm === false ? href : getUtmLink)"
     :target="blank && '_blank'"
     rel="noreferrer noopener"
     :title="title"
@@ -67,12 +67,26 @@ export default Vue.extend({
      * @returns {boolean}
      */
     isInternalPage(): boolean {
-      const { href } = this
+      const href = this.href
 
       if (typeof href === "object") return true
       else if (typeof href === "string" && ["/", "#"].includes(href[0]))
         return true
       else return false
+    },
+    /**
+     * Adds UTM query parameter to URL and returns it.
+     * @returns {string}
+     */
+    getUtmLink(): string {
+      try {
+        const url = new URL(this.href)
+        url.searchParams.append("utm_source", "eggsy.xyz")
+
+        return url.href
+      } catch (err) {
+        return this.href
+      }
     },
   },
 })
