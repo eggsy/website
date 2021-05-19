@@ -29,8 +29,7 @@
           content: `${seasons} sezon`,
           placement: 'top',
         }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200
-          bg-gray-800) focus:outline-none"
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center focus:outline-none dark:(text-gray-200 bg-gray-800)"
       >
         {{ seasons }} S
       </div>
@@ -40,8 +39,7 @@
           content: `${rating}/${max} puan`,
           placement: 'top',
         }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-gray-800
-          text-gray-200) focus:outline-none"
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center focus:outline-none dark:(bg-gray-800 text-gray-200)"
       >
         {{ rating }} P
       </div>
