@@ -370,9 +370,11 @@ export default Vue.extend({
      * @returns {{featured: Project[], rest: Project[]}} The projects array.
      */
     getProjects(): { featured: Project[]; rest: Project[] } {
+      const projects = this.projects
+
       return {
-        featured: this.projects?.slice(0, 3),
-        rest: this.projects.slice(3),
+        featured: projects?.slice(0, 3) || [],
+        rest: projects?.slice(3) || [],
       }
     },
   },
@@ -381,6 +383,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .description-link {
-  @apply border-b-2 border-gray-500 border-opacity-50 hover:border-opacity-75;
+  @apply border-gray-500 border-b-2 border-opacity-50 hover:border-opacity-75;
 }
 </style>
