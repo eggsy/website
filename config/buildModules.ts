@@ -7,7 +7,6 @@ import typescriptBuild from "./modules/typescriptBuild"
 
 const BuildModules: NuxtOptionsModule[] = [
   "nuxt-vite",
-  /* "@nuxtjs/svg", */
   "@nuxt/image",
   "nuxt-windicss",
   "@nuxtjs/moment",
