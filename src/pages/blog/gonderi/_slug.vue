@@ -118,7 +118,7 @@
                   etiket: tag,
                 },
               }"
-              class="rounded-lg bg-gray-200 bg-opacity-40 text-center py-1 px-2 transition-shadow hover:shadow-md truncate dark:bg-gray-800"
+              class="rounded-lg bg-gray-200 bg-opacity-40 text-center py-1 px-2 transition-shadow text-gray-800 hover:shadow-md truncate dark:(bg-gray-800 text-gray-200)"
             >
               {{ tag }}
             </SmartLink>
@@ -136,7 +136,7 @@
               :key="`related-${index}`"
               :href="`/blog/gonderi/${relatedPost.slug}`"
 
-              class="rounded-lg bg-gray-200 bg-opacity-40 text-center p-4 transition-shadow hover:shadow-md truncate dark:bg-gray-800"
+              class="rounded-lg bg-gray-200 bg-opacity-40 text-center p-4 transition-shadow text-gray-800 hover:shadow-md truncate dark:(bg-gray-800 text-gray-200)"
             >
               {{ relatedPost.title }}
             </SmartLink>
