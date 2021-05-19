@@ -20,7 +20,7 @@
                   ? `https://youtu.be/${getSelectedSong.youtube}/`
                   : false
               "
-              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 text-center py-2 px-4 transition-colors text-gray-900 items-center justify-center overflow-hidden select-none dark:(bg-gray-800 text-gray-100)"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 text-center py-2 px-4 text-gray-900 items-center justify-center overflow-hidden select-none dark:(bg-gray-800 text-gray-100)"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
@@ -44,13 +44,13 @@
                   ? `https://open.spotify.com/track/${getSelectedSong.spotify}/`
                   : false
               "
-              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 py-2 px-4 transition-colors text-gray-900 items-center justify-center overflow-hidden select-none dark:text-gray-100"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 py-2 px-4 text-gray-900 items-center justify-center overflow-hidden select-none dark:text-gray-100"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
                 'dark:bg-gray-800':
                   $fetchState.pending === true || getSelectedSong.spotify,
-                'cursor-not-allowed bg-gray-200 dark:bg-gray-700':
+                'cursor-not-allowed bg-gray-200 bg-opacity-40 dark:bg-gray-700':
                   $fetchState.pending === false &&
                   $fetchState.error === null &&
                   getSelectedSong.spotify === null,
