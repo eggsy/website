@@ -1,13 +1,13 @@
 <template>
   <div
-    class="rounded bg-gray-100 ring-1 ring-gray-200 dark:(ring-gray-900 bg-gray-800)"
+    class="rounded-lg cursor-pointer bg-gray-200 bg-opacity-40 transition-shadow hover:shadow-md dark:bg-gray-800"
   >
     <SmartImage v-if="image" :src="image" class="rounded-tl rounded-tr" />
 
     <div v-if="title || description" class="p-4">
       <h3
         v-if="title"
-        class="font-medium text-lg text-gray-900 truncate dark:text-gray-100 hover:underline"
+        class="font-medium text-lg text-gray-900 truncate dark:text-gray-100"
         :title="title"
       >
         {{ title }}

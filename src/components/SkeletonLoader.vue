@@ -2,7 +2,7 @@
   <!-- Repository Card -->
   <div
     v-if="type === 'repository'"
-    class="rounded-md space-y-2 bg-gray-100 p-4 ring-1 ring-gray-200 dark:(ring-gray-900 bg-gray-800)"
+    class="rounded-md space-y-2 bg-gray-200 bg-opacity-40 p-4 dark:bg-gray-800"
   >
     <div class="flex items-center justify-between">
       <div
@@ -40,7 +40,7 @@
   <!-- Song Card -->
   <div
     v-else-if="type === 'song'"
-    class="rounded-md cursor-pointer flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 items-center select-none dark:(ring-gray-800 bg-gray-800)"
+    class="rounded-lg cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 py-2 px-4 transition-shadow items-center select-none hover:shadow-md dark:bg-gray-800"
   >
     <div
       class="rounded-md bg-gray-200 flex-shrink-0 h-16 animate-pulse w-16 dark:bg-gray-700"

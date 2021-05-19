@@ -41,7 +41,7 @@
       <div class="flex flex-shrink-0 mb-8 sm:(justify-end mb-0 w-4/12)">
         <SmartImage
           src="/assets/images/irl_image.webp"
-          class="rounded-full h-40 ring-4 ring-gray-200 w-40 dark:ring-gray-700"
+          class="rounded-full h-40 ring-black ring-4 ring-opacity-5 w-40 dark:(ring-white ring-opacity-5)"
         />
       </div>
     </header>

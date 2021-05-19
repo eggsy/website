@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-md cursor-pointer flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 items-center select-none dark:(hover:bg-gray-700 bg-gray-800 ring-gray-800) hover:bg-gray-200"
+    class="rounded-lg cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 py-2 px-4 transition-shadow items-center select-none hover:shadow-md dark:bg-gray-800"
   >
     <div class="rounded-md flex-shrink-0">
       <SmartImage

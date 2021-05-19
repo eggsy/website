@@ -1,9 +1,9 @@
 <template>
   <div
-    class="rounded-md bg-gray-100 p-4 ring-1 ring-gray-200 dark:(bg-gray-800 ring-gray-900)"
+    class="rounded-lg cursor-pointer bg-gray-200 bg-opacity-40 p-4 transition-shadow hover:shadow-md dark:bg-gray-800"
   >
     <div class="flex space-x-1 text-gray-900 items-center dark:text-gray-100">
-      <span class="flex-grow space-x-2 truncate hover:underline">
+      <span class="flex-grow space-x-2 truncate">
         {{ name }}
       </span>
 

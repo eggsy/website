@@ -39,7 +39,7 @@
         <header class="space-y-4 text-center mb-12 sm:text-left sm:pr-16">
           <div class="space-y-2">
             <h1
-              class="font-semibold text-black text-2xl block sm:text-4xl dark:text-gray-50"
+              class="font-semibold text-gray-900 text-2xl block sm:text-4xl dark:text-gray-100"
             >
               {{ post.title }}
             </h1>
@@ -53,14 +53,14 @@
             class="flex space-x-2 items-center justify-center whitespace-nowrap sm:justify-start dark:text-gray-300"
           >
             <div
-              class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
+              class="rounded-lg flex space-x-1 bg-gray-100 py-1 px-2 pl-2 text-gray-800 items-center dark:(bg-gray-700 text-gray-300)"
             >
               <IconClock class="h-4 w-4" />
               <div>{{ getReadingTime }} dakika okuma</div>
             </div>
 
             <div
-              class="rounded-lg flex space-x-1 bg-gray-200 py-1 px-2 pl-2 text-gray-700 items-center dark:(bg-gray-700 text-gray-300)"
+              class="rounded-lg flex space-x-1 bg-gray-100 py-1 px-2 pl-2 text-gray-800 items-center dark:(bg-gray-700 text-gray-300)"
             >
               <IconCalendar class="h-4 w-4" />
               <div>{{ getReadableDate }}</div>
@@ -118,7 +118,7 @@
                   etiket: tag,
                 },
               }"
-              class="rounded-md bg-gray-200 py-1 px-2 text-gray-800 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
+              class="rounded-lg bg-gray-200 bg-opacity-40 text-center py-1 px-2 transition-shadow hover:shadow-md truncate dark:bg-gray-800"
             >
               {{ tag }}
             </SmartLink>
@@ -135,7 +135,8 @@
               v-for="(relatedPost, index) in getRelatedPosts"
               :key="`related-${index}`"
               :href="`/blog/gonderi/${relatedPost.slug}`"
-              class="rounded bg-gray-200 text-center p-4 ring-1 ring-opacity-25 ring-gray-300 truncate dark:(bg-gray-800 hover:bg-gray-700 text-gray-100 hover:bg-opacity-75 ring-gray-800) hover:bg-gray-300"
+
+              class="rounded-lg bg-gray-200 bg-opacity-40 text-center p-4 transition-shadow hover:shadow-md truncate dark:bg-gray-800"
             >
               {{ relatedPost.title }}
             </SmartLink>
@@ -357,7 +358,7 @@ export default Vue.extend({
   }
 
   ul {
-    @apply list-disc pl-5;
+    @apply list-disc pl-6;
 
     &:not(:last-child) {
       @apply mb-5;

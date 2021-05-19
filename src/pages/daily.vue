@@ -20,9 +20,7 @@
                   ? `https://youtu.be/${getSelectedSong.youtube}/`
                   : false
               "
-              class="rounded cursor-pointer flex space-x-2 bg-gray-100 text-center py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center overflow-hidden select-none dark:(bg-gray-800
-                ring-gray-800
-                text-gray-100)"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 text-center py-2 px-4 transition-colors text-gray-900 items-center justify-center overflow-hidden select-none dark:(bg-gray-800 text-gray-100)"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
@@ -46,8 +44,7 @@
                   ? `https://open.spotify.com/track/${getSelectedSong.spotify}/`
                   : false
               "
-              class="rounded cursor-pointer flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center overflow-hidden select-none dark:(ring-gray-800
-                text-gray-100)"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 py-2 px-4 transition-colors text-gray-900 items-center justify-center overflow-hidden select-none dark:text-gray-100"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
@@ -74,7 +71,7 @@
 
           <div class="space-y-2">
             <div
-              class="rounded bg-gray-100 w-full grid py-2 px-4 ring-1 ring-gray-200 grid-cols-4 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
+              class="rounded bg-gray-200 bg-opacity-40 w-full grid py-2 px-4 grid-cols-4 items-center justify-between dark:bg-gray-800"
             >
               <span class="text-gray-900 dark:text-gray-100">Title</span>
 
@@ -92,7 +89,7 @@
             </div>
 
             <div
-              class="rounded bg-gray-100 w-full grid py-2 px-4 ring-1 ring-gray-200 grid-cols-4 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
+              class="rounded bg-gray-200 bg-opacity-40 w-full grid py-2 px-4 grid-cols-4 items-center justify-between dark:bg-gray-800"
             >
               <span class="text-gray-900 dark:text-gray-100">Artist</span>
 
@@ -110,7 +107,7 @@
             </div>
 
             <div
-              class="rounded bg-gray-100 w-full grid py-2 px-4 ring-1 ring-gray-200 grid-cols-4 items-center justify-between dark:(bg-gray-800 ring-gray-800)"
+              class="rounded bg-gray-200 bg-opacity-40 w-full grid py-2 px-4 grid-cols-4 items-center justify-between dark:bg-gray-800"
             >
               <span class="text-gray-900 dark:text-gray-100">Date</span>
 
@@ -131,7 +128,7 @@
       </div>
 
       <div
-        class="rounded bg-gray-100 h-52 p-2 ring-1 ring-gray-200 relative sm:h-auto dark:(bg-gray-800 ring-gray-800)"
+        class="rounded bg-gray-200 bg-opacity-40 h-52 p-2 relative sm:h-auto dark:bg-gray-800"
         :class="{
           'hidden sm:flex items-center justify-center': !getLyrics,
         }"

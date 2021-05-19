@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-full cursor-pointer bg-gray-100 p-2 text-gray-900 select-none dark:(bg-gray-800 text-gray-100) focus:outline-none"
+    class="rounded-full cursor-pointer bg-gray-100 p-2 text-gray-900 select-none focus:outline-none hover:shadow-md dark:(bg-gray-800 text-gray-100)"
     @click="switchTheme"
   >
     <IconSun
