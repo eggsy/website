@@ -58,7 +58,7 @@
     "@nuxt/image": "^0.4.10",
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/color-mode": "^2.0.5",
+    "@nuxtjs/color-mode": "^2.0.8",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
