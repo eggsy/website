@@ -27,4 +27,4 @@ Resimde gördüğünüz kanalların her birinde, yan tarafta gördüğünüz gib
 - Eğer İngilizseniz (burada ne işiniz var) sadece İngilizceye izin verilen kanalda konuşabileceksiniz.
 - En sevdiğiniz mesajları yıldızlayarak "starboard" kanalında bunları ölümsüz hâle getirebileceksiniz.
 
-Sunucunun yenilenen hâli bu şekilde. Eğer siz de beğendiyseniz ve projelerimi Discord üzerinden takip etmek istiyorsanız, [buraya](https://discord.gg/tHx9ZKG) tıklayabilir ve Discord sunucuma katılabilirsiniz.
+Sunucunun yenilenen hâli bu şekilde. Eğer siz de beğendiyseniz ve projelerimi Discord üzerinden takip etmek istiyorsanız, [buraya](/#socials) tıklayabilir ve Discord sunucuma katılabilirsiniz.
