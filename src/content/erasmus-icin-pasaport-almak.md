@@ -47,7 +47,7 @@ Benim aklıma takılan soruların bir çoğunu, sizin de aklınıza takılmış 
 
 ### Randevunuz sırasında bilmeniz gerekenler
 
-Mutlaka randevu saatinizden önce randevuyu aldığınız NVİ dairesine gidip sıramatik cihazından sıranızı alın. Eğer yoğunluk yoksa, randevu saatiniz gelmese bile çağrılabilir ve işlerinizi daha erken halledebilirsiniz. Belgelerinizi eksiksiz tamamladığınızdan emin olun!
+Mutlaka randevu saatinizden önce randevuyu aldığınız NVİ dairesine gidip Sıramatik cihazından sıranızı alın. Eğer yoğunluk yoksa, randevu saatiniz gelmese bile çağrılabilir ve işlerinizi daha erken halledebilirsiniz. Belgelerinizi eksiksiz tamamladığınızdan emin olun!
 
 Tüm belgeleriniz tamamsa, sıra size geldiğinde bir vezneye gidip belgelerinizi teslim edecek ve görevlinin söylediği adımları yerine getireceksiniz. Burada herhangi bir zorluk olmayacaktır, sizden tek isteyeceği parmak iziniz ve 2 yeri imzalamanız olacaktır. Bu işlemlerin tümü 5 dakika kadar sürecek ve en sonunda sizden pasaportunuzun teslimat adresi istenecektir. İsterseniz ikametgâhınızın olduğu adrese verebilir, başka bir adrese teslim edilmesini istiyorsanız da belirtebilirsiniz. Bazı görevliler bunu sormadan direkt olarak ikamet adresinize gönderimi seçebilir, bu kısımda eğer pasaportunuzun başka adrese teslim edilmesini istiyorsanız sizin belirtmeniz daha iyi olacaktır. Adres bilginizi de verdikten sonra belgelerinizi zımbalayacak ve sizi genel müdürün ofisine yönlendirecektir. Size verdiği bu belgeyi teslim edecek ve NVİ binasından ayrılacaksınız. Pasaportunuz 1 hafta içerisinde belirttiğiniz adrese teslim edilecek ve pasaportunuzun süresince yurt dışı işlemlerinizde kullanabileceğiniz bir pasaporta sahip olacaksınız.
 
@@ -61,9 +61,9 @@ Yazıyı buraya kadar okuduysanız ve aklınıza takılan herhangi bir soru yoks
 
 ### Pasaport randevusu nasıl alınır?
 
-Pasaport randevusu için yukarıda da belirttiğim gibi isterseniz e-Devlet üzerinden, isterseniz de [NVİ](https://randevu.nvi.gov.tr)'nin kendi sitesinden işlem yapabilirsiniz. Eğer e-Devlet şifreniz varsa adımlar daha kolay olduğundan e-Devlet hesabınızı kullanarak almanızı tavsiye ederim. E-Devlet üzerinden pasaport sırası alma işlemleri ise şöyle gerçekleşiyor:
+Pasaport randevusu için yukarıda da belirttiğim gibi isterseniz e-Devlet üzerinden, isterseniz de [NVİ](https://randevu.nvi.gov.tr)'nin kendi sitesinden işlem yapabilirsiniz. Eğer e-Devlet şifreniz varsa adımlar daha kolay olduğundan e-Devlet hesabınızı kullanarak almanızı tavsiye ederim. e-Devlet üzerinden pasaport sırası alma işlemleri ise şöyle gerçekleşiyor:
 
-E-Devlet hesabınıza giriş yaptıktan sonra alt kısımdaki menüde bulunan "Arama" seçeneğine tıklayın ve çıkan yere "Pasaport" yazın.
+e-Devlet hesabınıza giriş yaptıktan sonra alt kısımdaki menüde bulunan "Arama" seçeneğine tıklayın ve çıkan yere "Pasaport" yazın.
 
 <div class="rounded bg-[#111111]">
   <smart-image src="https://i.vgy.me/8brMgP.png" title="e-Devlet"></smart-image>
