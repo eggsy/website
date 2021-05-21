@@ -13,11 +13,11 @@ related:
   - nedir-bu-blog
 ---
 
-<blog-notification type="warning">Bu yazı, blogun yayınlanan ilk sürümünden olup, şuanki blog için geçerliliğini yitirmiş ve resimler hiçbir geçerli sistemi yansıtmamaktadır. Gönderiyi incelemek isteyenler inceleyebilir ancak gönderide gösterilen resimlerin geçerli hiçbir sayfayı yansıtmadığını lütfen unutmayın. Bu blog güncellemesi ile ilgili daha fazla bilgi almak için [bu sayfayı](/blog/gonderi/blog-yenilendi) ziyaret edin.</blog-notification>
+<blog-notification type="warning">Bu yazı, blogun yayınlanan ilk sürümünden olup, şu anki blog için geçerliliğini yitirmiş ve resimler hiçbir geçerli sistemi yansıtmamaktadır. Gönderiyi incelemek isteyenler inceleyebilir ancak gönderide gösterilen resimlerin geçerli hiçbir sayfayı yansıtmadığını lütfen unutmayın. Bu blog güncellemesi ile ilgili daha fazla bilgi almak için [bu sayfayı](/blog/gonderi/blog-yenilendi) ziyaret edin.</blog-notification>
 
 [Bu yazımda](/blog/gonderi/nedir-bu-blog) da bahsettiğim gibi blog, hiçbir hazır tasarım (Vuetify dışında), hazır kod veya hazır sistemler kullanılmadan, tamamiyle sıfırdan tasarlanmıştır. Bu gönderide okuyacağınız özelliklerin hiçbiri internetten alınmamış, sıfırdan yapılmıştır.
 
-Blog başlı başına tabii ki tüm elementlerine kadar el ile kodlanmadı. Vuetify sayesinde bu elementler hazır olarak gelse de yerleşimi, arka plandaki API sistemi ve geriye kalan sistemlerin hepsi sıfırdan yazıldı. Bunlardan ilki ise ana sayfa... Ana sayfa, oldukça basit olsa bile bir çok ufak detay barındırıyor. Bunlardan ilki, son 4 (bu sayı monitörünüzün boyutuna göre değişebilir ancak maksimum 5 gönderi gösterecektir, elden bu kadar geldi) gönderinin galeri gibi sayfanın en üstünde yer alması ve bunların üzerine gelince efekt ile birlikte "Devamını Oku" butonunun çıkması.
+Blog başlı başına tabii ki tüm elementlerine kadar el ile kodlanmadı. Vuetify sayesinde bu elementler hazır olarak gelse de yerleşimi, arka plandaki API sistemi ve geriye kalan sistemlerin hepsi sıfırdan yazıldı. Bunlardan ilki ise ana sayfa... Ana sayfa, oldukça basit olsa bile birçok ufak detay barındırıyor. Bunlardan ilki, son 4 (bu sayı monitörünüzün boyutuna göre değişebilir ancak maksimum 5 gönderi gösterecektir, elden bu kadar geldi) gönderinin galeri gibi sayfanın en üstünde yer alması ve bunların üzerine gelince efekt ile birlikte "Devamını Oku" butonunun çıkması.
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/jkWJwCMY.gif"></smart-image>
 
@@ -25,7 +25,7 @@ Ana sayfanın bir diğer yanı ise varsayılan olarak "Gönderiler" başlığın
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/seyqPg22.gif"></smart-image>
 
-Gönderilerinse hemen altında bulunan bir buton da bu gönderilerden daha eski 5 gönderiyi daha getirmenizi sağlıyor. Bu butona tıklayarak gösterilen gönderilere 5 tane daha ekleyebilirsiniz. Gösterilenden daha fazla gönderi olmaması durumunda buton otomatik olarak devredışı kalacak ve yazısı değişecektir.
+Gönderilerinse hemen altında bulunan bir buton da bu gönderilerden daha eski 5 gönderiyi daha getirmenizi sağlıyor. Bu butona tıklayarak gösterilen gönderilere 5 tane daha ekleyebilirsiniz. Gösterilenden daha fazla gönderi olmaması durumunda buton otomatik olarak devre dışı kalacak ve yazısı değişecektir.
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/c8I9VuQi.gif"></smart-image>
 
@@ -37,7 +37,7 @@ Yan menüden başka her sayfada görünen yönlendirme çubukları ve arama kıs
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/44GrkwLo.gif"></smart-image>
 
-Şimdi ise sıra gönderi sayfalarında. Gönderi sayfaları, bir çok farklı tasarım aşamasından geçerek şuanki görünümüne kavuştu. Hala 10/10 denilecek bir görünüme sahip değil ancak şuan elimizdeki en iyisi bu. Zamanla eminim bu sayfalara da güzel bir güncelleme getireceğim. Genel olarak tüm içerik sayfalarının içerdiği bilgileri okunabilir bir şekilde içeririyor. Bunlar, yazarın ismi ve yazara ulaşabileceğiniz profil bağlantısı, gönderinin yazıldığı tarih, gönderinin etiketleri ve gönderinin içeriği.
+Şimdi ise sıra gönderi sayfalarında. Gönderi sayfaları, birçok farklı tasarım aşamasından geçerek şu anki görünümüne kavuştu. Hâlâ 10/10 denilecek bir görünüme sahip değil ancak şu an elimizdeki en iyisi bu. Zamanla eminim bu sayfalara da güzel bir güncelleme getireceğim. Genel olarak tüm içerik sayfalarının içerdiği bilgileri okunabilir bir şekilde içeririyor. Bunlar, yazarın ismi ve yazara ulaşabileceğiniz profil bağlantısı, gönderinin yazıldığı tarih, gönderinin etiketleri ve gönderinin içeriği.
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/yxjXBHHy.png"></smart-image>
 
@@ -63,4 +63,4 @@ Bir sonraki videoda (resim veya GIF'e sığmayacak derecede uzun işlemler) gör
   <video class="ql-video" controls="" src="https://the-person-under-this-message.is-inside.me/wmYGNW2t.mp4" width="100%"></video>
 </p>
 
-Sanırım şu anda blogun sahip olduğu tüm özellikler bu kadar. Yeni özellikler eklendiğinde de blogda duyurusu geçecektir. Zamanla oluşan hataları düzeltip, yenilikler yapmaya gayret göstereceğim. Umarım sizinde hoşunuza gitmiştir. Ben 4 günümü buna harcadım, siz neler yapıyorsunuz peki?
+Sanırım şu anda blogun sahip olduğu tüm özellikler bu kadar. Yeni özellikler eklendiğinde de blogda duyurusu geçecektir. Zamanla oluşan hataları düzeltip, yenilikler yapmaya gayret göstereceğim. Umarım sizin de hoşunuza gitmiştir. Ben 4 günümü buna harcadım, siz neler yapıyorsunuz peki?
