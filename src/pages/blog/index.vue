@@ -190,31 +190,43 @@ export default Vue.extend({
     }
   },
   async fetch() {
-    const latestPosts = await this.$content()
+    const latestPosts: Post[] = await this.$content()
       .sortBy("createdAt", "desc")
       .limit(3)
       .without(["body"])
       .fetch()
 
-    const discordPosts = await this.$content()
+    const discordPosts: Post[] = await this.$content()
       .where({ tags: { $contains: "discord" } })
       .sortBy("createdAt", "desc")
       .limit(3)
       .without(["body"])
       .fetch()
 
-    const linuxPosts = await this.$content()
+    const linuxPosts: Post[] = await this.$content()
       .where({ tags: { $contains: "linux" } })
       .sortBy("createdAt", "desc")
       .limit(3)
       .without(["body"])
       .fetch()
 
-    const allPosts = await this.$content()
+    let allPosts: Post[] = await this.$content()
       .sortBy("createdAt", "desc")
       .skip(3)
       .without(["body"])
       .fetch()
+
+    /* Remove duplicates from allPosts */
+    for (const post of allPosts) {
+      const findFilter = (item: Post) => item.slug === post.slug
+
+      if (
+        latestPosts.findIndex(findFilter) !== -1 ||
+        discordPosts.findIndex(findFilter) !== -1 ||
+        linuxPosts.findIndex(findFilter) !== -1
+      )
+        allPosts = allPosts.filter((item: Post) => item.slug !== post.slug)
+    }
 
     this.posts = {
       latest: latestPosts || [],
