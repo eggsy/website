@@ -87,12 +87,7 @@
 
       <div class="mt-16">
         <h3
-          class="
-            font-semibold
-            space-x-2
-            text-lg text-gray-900
-            dark:text-gray-100
-          "
+          class="font-semibold space-x-2 text-lg text-gray-900 dark:text-gray-100"
         >
           Diğer gönderiler
         </h3>
@@ -116,24 +111,7 @@
           <div
             v-for="page in getTotalPages"
             :key="`pagination-${page}`"
-            class="
-              rounded-full
-              cursor-pointer
-              flex
-              font-medium
-              bg-gray-200
-              h-10
-              ring-1 ring-gray-300
-              text-gray-900
-              w-10
-              items-center
-              justify-center
-              select-none
-              dark:(bg-gray-800
-              ring-gray-800
-              text-gray-100
-              hover:bg-gray-700) hover:bg-gray-300
-            "
+            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-gray-800 ring-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-300"
             :class="{
               'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
             }"
@@ -152,12 +130,7 @@
         :class="{ hidden: isFetchPending }"
       >
         <h2
-          class="
-            font-semibold
-            text-2xl text-gray-900
-            md:text-4xl
-            dark:text-gray-100
-          "
+          class="font-semibold text-2xl text-gray-900 md:text-4xl dark:text-gray-100"
         >
           Aramanıza uygun herhangi bir gönderi bulunamadı.
         </h2>
@@ -179,23 +152,7 @@
 
         <SmartLink
           :href="{ name: 'blog' }"
-          class="
-            rounded
-            flex
-            space-x-2
-            bg-gray-100
-            py-2
-            px-4
-            ring-1 ring-gray-200
-            text-gray-900
-            items-center
-            justify-center
-            md:w-max
-            dark:(bg-gray-800
-            ring-gray-700
-            text-gray-100
-            hover:bg-gray-700) hover:bg-gray-200
-          "
+          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200"
         >
           <IconHome class="h-6 w-6" />
           <span>Bloga Dön</span>
