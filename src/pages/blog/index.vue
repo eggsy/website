@@ -125,9 +125,8 @@
 
     <div v-else-if="typeof getFilteredPosts === 'object'">
       <div
-        v-if="getFilteredPosts.length === 0"
+        v-if="isFetchPending === false && getFilteredPosts.length === 0"
         class="space-y-4"
-        :class="{ hidden: isFetchPending }"
       >
         <h2
           class="font-semibold text-2xl text-gray-900 md:text-4xl dark:text-gray-100"
@@ -243,7 +242,9 @@ export default Vue.extend({
      * @returns {boolean}
      */
     isFetchPending(): boolean {
-      return this.$fetchState?.pending || this.$fetchState.error
+      return (
+        this.$fetchState?.pending === true && this.$fetchState.error !== null
+      )
     },
     /**
      * Filters posts with a query variable.
