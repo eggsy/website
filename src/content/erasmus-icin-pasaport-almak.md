@@ -76,7 +76,7 @@ E-Devlet hesabınıza giriş yaptıktan sonra alt kısımdaki menüde bulunan "A
 3. Randevu yeri seçiminde ilinizi ve size en yakın Nüfus Müdürlüğü dairesini seçin, bu kısımda ayrıca seçtiğiniz dairede ne erken randevu tarihinin ne olduğunu görebilirsiniz.
 4. Kim için randevu aldığınızı seçin. Kendi adınıza, anne, baba veya (varsa) çocuklarınız adına randevu çıkartabilirsiniz. Erasmus+ adayı olduğunuzu varsayarak bu sayfada sadece "Kendisi" yazan seçeneği seçin.
 5. Bu sayfada ise sizden randevu tarihinizi, saatini ve HES kodunuzu soracaktır. Bu bilgileri doldurun. Eğer HES kodunuz yoksa yine e-Devlet üzerinden HES kodu alabilirsiniz.
-6. Son aşamada ise seçtiğiniz kişiler ve randevu tarihleri listelenecektir. Buradan da isimlerinizin üzerine tıklayarak randevunuzu oluşturabilirsiniz. Bu aşamayı da geçtikten sonra e-Devlet'e kayıtlı numaranıza NVİ'den bir bilgilendirme mesajı gelecektir. Bu mesaj geldiğinde randevunuz başarıyla oluşturlumuş demektir.
+6. Son aşamada ise seçtiğiniz kişiler ve randevu tarihleri listelenecektir. Buradan da isimlerinizin üzerine tıklayarak randevunuzu oluşturabilirsiniz. Bu aşamayı da geçtikten sonra e-Devlet'e kayıtlı numaranıza NVİ'den bir bilgilendirme mesajı gelecektir. Bu mesaj geldiğinde randevunuz başarıyla oluşturulmuş demektir.
 
 <div class="rounded bg-[#111111]">
   <smart-image src="https://i.vgy.me/WC1jwy.png" title="e-Devlet"></smart-image>
