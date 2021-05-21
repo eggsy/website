@@ -124,7 +124,7 @@
 
     <div
       v-else-if="
-        typeof getFilteredPosts === 'object' && getFilteredPosts.length > 0
+        typeof getFilteredPosts === 'object' && getFilteredPosts.length >= 0
       "
     >
       <div v-if="getFilteredPosts.length === 0" class="space-y-4">
@@ -287,7 +287,7 @@ export default Vue.extend({
               ?.includes(q || search || query || ara || sorgu || "")
         )
 
-        console.log([...new Map(filteredPosts.map(item => [item.title, item])).values()])
+        console.log(typeof [...new Map(filteredPosts.map(item => [item.title, item])).values()])
         return [...new Map(filteredPosts.map(item => [item.title, item])).values()]
       }
     },
