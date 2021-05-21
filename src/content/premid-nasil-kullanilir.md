@@ -25,7 +25,7 @@ PreMiD, iki parçadan oluşur. İlki tarayıcı eklentisi, diğeri ise masaüst�
 
 ### PreMiD nasıl indirilir?
 
-PreMiD'i indirmek için internet sitesindeki "[İndirmeler](https://premid.app/downloads)" sayfasını ziyaret edebilirsiniz. Eğer tarayıcınızın dili Türkçe'ye ayarlıysa, PreMiD'in sitesini de Türkçe göreceksiniz. Program, eklenti ve internet sitesinin tamamı Türkçeyi desteklemektedir. Siteye girdikten sonra iki ayrı bağlantı göreceksiniz. Birinde **uygulama**, diğerinde ise **eklenti** yazacaktır. Bir önceki başlıkta da belirttiğim gibi, her ikisini de indirmeniz gerekmektedir. PreMiD'in sitesi otomatik olarak sisteminizi bulmaya çalışacak ve sizin tıklamanız gereken kutuları işaretleyecektir. Eğer bir yanlışlık olursa, burada bulunan seçeneklerden kendi işletim sisteminizi ve tarayıcınızı seçerek işleminize devam edebilirsiniz.
+PreMiD'i indirmek için internet sitesindeki "[İndirmeler](https://premid.app/downloads)" sayfasını ziyaret edebilirsiniz. Eğer tarayıcınızın dili Türkçeye ayarlıysa, PreMiD'in sitesini de Türkçe göreceksiniz. Program, eklenti ve internet sitesinin tamamı Türkçeyi desteklemektedir. Siteye girdikten sonra iki ayrı bağlantı göreceksiniz. Birinde **uygulama**, diğerinde ise **eklenti** yazacaktır. Bir önceki başlıkta da belirttiğim gibi, her ikisini de indirmeniz gerekmektedir. PreMiD'in sitesi otomatik olarak sisteminizi bulmaya çalışacak ve sizin tıklamanız gereken kutuları işaretleyecektir. Eğer bir yanlışlık olursa, burada bulunan seçeneklerden kendi işletim sisteminizi ve tarayıcınızı seçerek işleminize devam edebilirsiniz.
 
 <blog-notification>
 
@@ -35,7 +35,7 @@ PreMiD **Opera**, **Safari**, **Firefox**, **Edge**, **Chrome**, **Linux**, **Ma
 
 <hr>
 
-Bu kısımda ise PreMiD'de bilinen bazı hataları ve bilmeniz gereken ayrıntılardan bahsedeceğim. Bu yazıyı daha sonra bağlantı olarak gönderip insanlara yardımcı olmak isterseniz başlıkların üstüne tıklayabilir ve başlığa giden direkt bağlantıyı kopyalabilirsiniz.
+Bu kısımda ise PreMiD'de bilinen bazı hataları ve bilmeniz gereken ayrıntılardan bahsedeceğim. Bu yazıyı daha sonra bağlantı olarak gönderip insanlara yardımcı olmak isterseniz başlıkların üstüne tıklayabilir ve başlığa giden direkt bağlantıyı kopyalayabilirsiniz.
 
 ### PreMiD uygulamasını indirdim ancak herhangi bir şey açılmadı?
 
@@ -45,7 +45,7 @@ PreMiD uygulaması sadece eklenti ve Discord arasındaki haberleşmeyi aktaraca�
 
 ### Profilimde herhangi bir şey görünmüyor?
 
-Eğer PreMiD'i başarıyla kurduğunuza inanıyor, eklentinin üzerinde sarı bir ünlem işareti uyarısı almıyorsanız, programın da çalıştığından eminseniz fakat hala profilinizde bir şeyin olmadığını söylüyorsanız, Discord Kullanıcı Ayarları kısmındaki "Oyun Etkinliği" sekmesinde bu ayarın açık olduğundan emin olun.
+Eğer PreMiD'i başarıyla kurduğunuza inanıyor, eklentinin üzerinde sarı bir ünlem işareti uyarısı almıyorsanız, programın da çalıştığından eminseniz fakat hâlâ profilinizde bir şeyin olmadığını söylüyorsanız, Discord Kullanıcı Ayarları kısmındaki "Oyun Etkinliği" sekmesinde bu ayarın açık olduğundan emin olun.
 
 <blog-notification type="warning">
 
