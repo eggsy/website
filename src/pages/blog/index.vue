@@ -221,7 +221,6 @@ export default Vue.extend({
       const findFilter = (item: Post) => item.slug === post.slug
 
       if (
-        latestPosts.findIndex(findFilter) !== -1 ||
         discordPosts.findIndex(findFilter) !== -1 ||
         linuxPosts.findIndex(findFilter) !== -1
       )
