@@ -124,10 +124,13 @@
 
     <div
       v-else-if="
-        typeof getFilteredPosts === 'object' && getFilteredPosts.length >= 0
+        typeof getFilteredPosts === 'object'
       "
     >
-      <div v-if="getFilteredPosts.length === 0" class="space-y-4">
+      <div v-if="getFilteredPosts.length === 0"
+      class="space-y-4"
+      :class="{'hidden': isFetchPending}"
+      >
         <h2
           class="font-semibold text-2xl text-gray-900 md:text-4xl dark:text-gray-100"
         >
