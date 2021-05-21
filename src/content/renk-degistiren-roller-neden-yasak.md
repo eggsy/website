@@ -10,7 +10,7 @@ related:
   - sunucudaki-herkese-dm-atmak-neden-yasak
 ---
 
-Bildiğiniz gibi Discord, kuralları ve kullanım şartları olan bir platformdur diğer hepsi gibi. Bu Discord kurallarınca Discord'u kullanırken bir çok şeye dikkat etmeli ve kuralına göre hareket etmeliyiz. Kurallar her ne kadar basit ve "normal" bir kullanıcıya hiçbir zorluk çıkartmayacak, hatta farkettirmeyecek kadar kırılması gizli/zor olsa bile bunları kıranlar için Discord gerekli önemlemleri alarak hesap kapatılmasına kadar bir çok işlem yapabiliyor.
+Bildiğiniz gibi Discord, kuralları ve kullanım şartları olan bir platformdur diğer hepsi gibi. Bu Discord kurallarınca Discord'u kullanırken birçok şeye dikkat etmeli ve kuralına göre hareket etmeliyiz. Kurallar her ne kadar basit ve "normal" bir kullanıcıya hiçbir zorluk çıkartmayacak, hatta farkettirmeyecek kadar kırılması gizli/zor olsa bile bunları kıranlar için Discord gerekli önlemleri alarak hesap kapatılmasına kadar birçok işlem yapabiliyor.
 
 ### Ee, nedir bu "sürekli renk değiştiren roller"?
 

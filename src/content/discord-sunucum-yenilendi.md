@@ -17,9 +17,9 @@ Sunucu, tam anlamıyla baştan aşağıya yenilendi. Yeni kurallar, yeni kanalla
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/fBZJMNiT.png"></smart-image>
 
-Resimde gördüğünüz kanalların her birinde, yan tarafta gördüğünüz gibi açıklamalar, ve projeye ait bağlantıyı barındırıyor. Bu bağlantılar bazen (bu) siteme atıyor, bazense direkt olarak GitHub üzerindeki projenin kaynak koduna... Bunların yanı sıra da artık sunucuda şunları bulabileceksiniz:
+Resimde gördüğünüz kanalların her birinde, yan tarafta gördüğünüz gibi açıklamalar, ve projeye ait bağlantıyı barındırıyor. Bu bağlantılar bazen (bu) siteme atıyor, bazense direkt olarak GitHub üzerindeki projenin kaynak koduna. Bunların yanı sıra da artık sunucuda şunları bulabileceksiniz:
 
-- Duyuruları takip edip en son yayınlayacağım projelerim hakkında bilgiler edinebilirsiniz.
+- Duyuruları takip edip en son yayınlayacağım projelerim hakkında bilgiler edinebileceksiniz.
 - Her projeme ait özel kanalla projelerim hakkında en son haberlere ulaşabileceksiniz.
 - GitHub bağlantılı kanal ile GitHub projelerimin herhangi birinde bir değişiklik yaptığımda anında haberdar olabileceksiniz.
 - Tatsumaki botu ile artık benim sunucumda yazdığınız zaman da seviye kazanabileceksiniz.
@@ -27,4 +27,4 @@ Resimde gördüğünüz kanalların her birinde, yan tarafta gördüğünüz gib
 - Eğer İngilizseniz (burada ne işiniz var) sadece İngilizceye izin verilen kanalda konuşabileceksiniz.
 - En sevdiğiniz mesajları yıldızlayarak "starboard" kanalında bunları ölümsüz hâle getirebileceksiniz.
 
-Sunucunun yenilenen hâli bu şekilde. Eğer sizde beğendiyseniz ve projelerimi Discord üzerinden takip etmek istiyorsanız, [buraya](https://discord.eggsy.xyz) tıklayabilir ve Discord sunucuma katılabilirsiniz.
+Sunucunun yenilenen hâli bu şekilde. Eğer siz de beğendiyseniz ve projelerimi Discord üzerinden takip etmek istiyorsanız, [buraya](/#socials) tıklayabilir ve Discord sunucuma katılabilirsiniz.

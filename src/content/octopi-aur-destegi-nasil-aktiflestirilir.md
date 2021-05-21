@@ -13,9 +13,9 @@ related:
 
 Eğer AUR'un ne olduğunu, bilmiyorsanız [bu gönderiyi](/blog/gonderi/manjaro-nedir) de okumanızı tavsiye ediyorum. Bu sayfada sadece başlıkta belirtilen AUR desteğini aktifleştirme anlatılacaktır.
 
-Octopi'de AUR desteğinin bir çok yolu vardır ancak herhangi birini kullanabilmek için öncelikle belli bir paketi yüklemeli ve daha sonra bunun üzerinden işlemlerinizi yapmalısınız. Bu paketin adı `pacaur`'dur ve Manjaro'nun depolarında varsayılan olarak AUR'a erişebileceğiniz tek paket budur. Daha sonra bu paketi kullanarak AUR depolarından daha gelişmiş, daha kolay AUR aracılarını indirip kurabilirsiniz ancak her halükarda öncelikle bu paketi kurmak zorundasınız.
+Octopi'de AUR desteğinin birçok yolu vardır ancak herhangi birini kullanabilmek için öncelikle belli bir paketi yüklemeli ve daha sonra bunun üzerinden işlemlerinizi yapmalısınız. Bu paketin adı `pacaur`'dur ve Manjaro'nun depolarında varsayılan olarak AUR'a erişebileceğiniz tek paket budur. Daha sonra bu paketi kullanarak AUR depolarından daha gelişmiş, daha kolay AUR aracılarını indirip kurabilirsiniz ancak her halükarda öncelikle bu paketi kurmak zorundasınız.
 
-Paketi kurmak için öncelikle Octopi uygulamasını açın ve arama yerine `pacaur` yazın. Daha sonra çıkan tek sonuca sağ tıklayın ve "Yükle" seçeneğini seçin. Octopi ve bir çok paket yöneticisi, bunu seçtikten sonra içerisindeki listeye yüklenecek paketleri listeler ve siz onaylayana kadar orada bekletir. Bu sayede birden çok paketi çok rahat bir şekilde kurabilirsiniz. Onaylamak için ise yukarıdaki tik işaretine basmalısınız.
+Paketi kurmak için öncelikle Octopi uygulamasını açın ve arama yerine `pacaur` yazın. Daha sonra çıkan tek sonuca sağ tıklayın ve "Yükle" seçeneğini seçin. Octopi ve birçok paket yöneticisi, bunu seçtikten sonra içerisindeki listeye yüklenecek paketleri listeler ve siz onaylayana kadar orada bekletir. Bu sayede birden çok paketi çok rahat bir şekilde kurabilirsiniz. Onaylamak için ise yukarıdaki tik işaretine basmalısınız.
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/UOlnSKJl.png"></smart-image>
 
@@ -23,7 +23,7 @@ Daha sonra Octopi, size kurulacak paketleri ve kurulması için gerekli bağıml
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/lqKecOoT.png"></smart-image>
 
-Bir sonraki ekranda ise Octopi, sizden `sudo` yani süper kullanıcı/yetkili kullanıcı şifrenizi soracaktır. Bu işlem, Linux'ün güvenli olmasında da başka bir etkendir. Bu sayede sisteminize sizden habersiz herhangi bir yazılım giremez veya düzenleme yapamaz. Gelen alana da şifremizi yazdıktan sonra yükleme işlemi başlayacaktır.
+Bir sonraki ekranda ise Octopi, sizden `sudo` yani süper kullanıcı/yetkili kullanıcı şifrenizi soracaktır. Bu işlem, Linux'un güvenli olmasında da başka bir etkendir. Bu sayede sisteminize sizden habersiz herhangi bir yazılım giremez veya düzenleme yapamaz. Gelen alana da şifremizi yazdıktan sonra yükleme işlemi başlayacaktır.
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/rE5WuYDa.png"></smart-image>
 
@@ -44,7 +44,7 @@ Bu yüzden eğer isterseniz bu iki ayarı aktif edebilir ve çok daha hızlı bi
 
 Eğer yukarıdaki resimdeki gibi "Pacaur" ayarı aktif değilse, pacaur paketini yükleme işlemini başaramamışsınız demektir. Bunu başaramamış olmanızın nedeni internet bağlantınız olabilir. Lütfen kontrol edin ve adımları tekrar uygulayın.
 
-Bu ayarları da istediğiniz gibi ayarladıktan sonra **artık AUR depolarını kullanabilirsiniz!** Evet, AUR depolarına erişip binlerce paketi indirebilir ve istediğiniz şekilde kullanabilirsiniz. Merak etmeyin, AUR depoları son derece güvenli ve bir çok yetkili tarafından gözetilmektedir. Neredeyse Manjaro kullanırken bilgisayarınıza ve Linux'ünüze virüs bulaştırmanız imkansızdır.
+Bu ayarları da istediğiniz gibi ayarladıktan sonra **artık AUR depolarını kullanabilirsiniz!** Evet, AUR depolarına erişip binlerce paketi indirebilir ve istediğiniz şekilde kullanabilirsiniz. Merak etmeyin, AUR depoları son derece güvenli ve birçok yetkili tarafından gözetilmektedir. Neredeyse Manjaro kullanırken bilgisayarınıza ve Linux'unuza virüs bulaştırmanız imkânsızdır.
 
 <smart-image src="https://the-person-under-this-message.is-inside.me/ukKDPjn7.png"></smart-image>
 
