@@ -287,7 +287,8 @@ export default Vue.extend({
               ?.includes(q || search || query || ara || sorgu || "")
         )
 
-        return filteredPosts
+        console.log([...new Map(filteredPosts.map(item => [item.title, item])).values()])
+        return [...new Map(filteredPosts.map(item => [item.title, item])).values()]
       }
     },
     /**
