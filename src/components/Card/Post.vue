@@ -6,7 +6,7 @@
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="space-y-2 bg-gray-200 bg-opacity-40 dark:bg-gray-800 cursor-pointer hover:shadow-md rounded-lg p-3 transition-shadow"
+    class="rounded-lg cursor-pointer space-y-2 bg-gray-200 bg-opacity-40 p-3 transition-shadow hover:shadow-md dark:bg-gray-800"
   >
     <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full" />
 
@@ -36,7 +36,7 @@
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer flex space-x-4 bg-gray-200 bg-opacity-40 items-center dark:bg-gray-800 hover:shadow-md p-3 transition-shadow"
+    class="rounded-lg cursor-pointer flex space-x-4 bg-gray-200 bg-opacity-40 p-3 transition-shadow items-center hover:shadow-md dark:bg-gray-800"
   >
     <SmartImage
       :src="getPostMeta.image"
@@ -45,7 +45,7 @@
 
     <div class="flex flex-col overflow-x-hidden">
       <h2
-        class="text-gray-800 truncate dark:text-gray-200 font-semibold text-lg"
+        class="font-semibold text-lg text-gray-800 truncate dark:text-gray-200"
       >
         {{ getPostMeta.title }}
       </h2>
@@ -63,9 +63,9 @@
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="flex flex-col bg-gray-200 bg-opacity-40 dark:bg-gray-800 cursor-pointer hover:shadow-md rounded-lg p-3 transition-shadow truncate"
+    class="rounded-lg cursor-pointer flex flex-col bg-gray-200 bg-opacity-40 p-3 transition-shadow hover:shadow-md truncate dark:bg-gray-800"
   >
-    <h2 class="text-lg text-gray-800 dark:text-gray-200 truncate">
+    <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">
       {{ getPostMeta.title }}
     </h2>
 

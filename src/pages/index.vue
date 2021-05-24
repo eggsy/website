@@ -367,7 +367,7 @@ export default Vue.extend({
   computed: {
     /**
      * Slices the first three projects and creates an object with them, and the rest.
-     * @returns {{featured: Project[], rest: Project[]}} The projects array.
+     * @returns {{featured: Project[], rest: Project[]}} The projects object.
      */
     getProjects(): { featured: Project[]; rest: Project[] } {
       const projects = this.projects

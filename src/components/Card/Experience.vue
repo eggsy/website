@@ -2,7 +2,7 @@
   <div class="overflow-hidden">
     <SmartLink
       :href="url"
-      class="text-gray-800 dark:text-gray-100 hover:underline"
+      class="text-gray-800 hover:underline dark:text-gray-100"
       blank
     >
       <h3 class="text-lg">{{ title }}</h3>

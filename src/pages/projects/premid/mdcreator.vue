@@ -102,8 +102,8 @@
             >
               <input
                 v-model="service.url.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700
-                  text-gray-200) focus:outline-none"
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700
+                  text-gray-200)"
                 placeholder="URL(s) of the service"
                 @keyup.enter="addItem('url')"
               />
@@ -148,8 +148,8 @@
             >
               <input
                 v-model="service.tags.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700
-                  text-gray-200) focus:outline-none"
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700
+                  text-gray-200)"
                 placeholder="Tags for the service"
                 @keyup.enter="addItem('tag')"
               />
@@ -196,8 +196,8 @@
                 <div class="h-1/3">
                   <input
                     v-model="service.description.inputs.langCode"
-                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-gray-700
-                      text-gray-200) focus:outline-none"
+                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700
+                      text-gray-200)"
                     placeholder="Language code, e.g. en"
                     @keyup.enter="$refs.descriptionInput.focus()"
                   />
@@ -205,8 +205,8 @@
                   <input
                     ref="descriptionInput"
                     v-model="service.description.inputs.content"
-                    class="h-1/2 w-full py-2 px-4 dark:(bg-gray-700
-                      text-gray-200) focus:outline-none"
+                    class="h-1/2 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700
+                      text-gray-200)"
                     placeholder="Localized description"
                     @keyup.enter="addItem('description')"
                   />
