@@ -58,7 +58,7 @@
     "@nuxt/image": "^0.4.10",
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/color-mode": "^2.0.8",
+    "@nuxtjs/color-mode": "^2.0.9",
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
@@ -71,8 +71,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.9.0",
     "nuxt-swc": "^0.0.3",
-    "nuxt-vite": "^0.1.0",
-    "nuxt-windicss": "^0.8.0",
+    "nuxt-vite": "^0.1.1",
+    "nuxt-windicss": "^0.8.1",
     "prettier": "^2.3.0",
     "sass-loader": "10.1.1"
   }
