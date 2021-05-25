@@ -17,6 +17,7 @@ export interface Social {
   github: string
   instagram: string
   trello: string
+  email: string
 }
 
 export interface Links {
