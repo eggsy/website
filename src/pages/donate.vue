@@ -122,14 +122,12 @@ export default Vue.extend({
     const title = "Donate"
     const description =
       "Like my projects? You can donate me to boost my performance and make me create more, better projects in the future!"
-    const image = "https://eggsy.xyz/assets/meta/images/daily.jpg"
 
     return {
       title,
       meta: this.$prepareMeta({
         title,
         description,
-        image,
         keywords: "donate",
         url: "https://eggsy.xyz/donate",
       }),
