@@ -8,7 +8,7 @@
     }"
     class="rounded-lg cursor-pointer space-y-2 bg-gray-200 bg-opacity-40 p-3 transition-shadow hover:shadow-md dark:bg-gray-800"
   >
-    <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full" />
+    <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full filter dark:brightness-75" />
 
     <div class="flex flex-col">
       <span
@@ -40,7 +40,7 @@
   >
     <SmartImage
       :src="getPostMeta.image"
-      class="rounded flex-shrink-0 h-20 w-24"
+      class="rounded flex-shrink-0 h-20 w-24 filter dark:brightness-75"
     />
 
     <div class="flex flex-col overflow-x-hidden">
