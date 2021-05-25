@@ -5,6 +5,7 @@ export default {
     github: "https://github.com/eggsy/",
     instagram: "https://instagram.com/eggsy_dev/",
     trello: "https://trello.com/b/XtWZFFiH/",
+    email: "eggsydev@gmail.com",
   },
   sponsor: {
     patreon: "https://www.patreon.com/eggsy/",
