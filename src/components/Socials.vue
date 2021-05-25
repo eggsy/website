@@ -10,6 +10,14 @@
     >
       <IconBrand :brand="social.icon" />
     </SmartLink>
+
+    <SmartLink
+      title="Send me an e-mail!"
+      :href="pageLoaded ? `mailto:${$config.social.email}` : false"
+      :utm="false"
+    >
+      <IconAt />
+    </SmartLink>
   </div>
 </template>
 
@@ -24,13 +32,21 @@ interface Link {
 }
 
 export default Vue.extend({
+  data() {
+    return {
+      pageLoaded: false,
+    }
+  },
+  mounted() {
+    this.pageLoaded = true
+  },
   computed: {
     /**
      * Returns social links in public runtime config.
      * @returns {Link[]}
      */
     getLinks(): Link[] {
-      const { social } = this.$config
+      const social = this.$config.social
 
       const titles = {
         discord: "Join my Discord server!",
@@ -43,6 +59,8 @@ export default Vue.extend({
       const array: Link[] = []
 
       for (const item in social) {
+        if (item === "email") continue
+
         array.push({
           // @ts-ignore-next-line
           url: social[item],
