@@ -102,8 +102,7 @@
             >
               <input
                 v-model="service.url.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700
-                  text-gray-200)"
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700 text-gray-200)"
                 placeholder="URL(s) of the service"
                 @keyup.enter="addItem('url')"
               />
@@ -148,8 +147,7 @@
             >
               <input
                 v-model="service.tags.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700
-                  text-gray-200)"
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700 text-gray-200)"
                 placeholder="Tags for the service"
                 @keyup.enter="addItem('tag')"
               />
@@ -158,10 +156,10 @@
               <div class="h-4/5 overflow-y-auto scrollbar">
                 <div
                   class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
-                  :class="{
-                    'h-full flex justify-center items-center':
-                      service.tags.list.length === 0,
-                  }"
+                  :class="
+                    service.tags.list.length === 0 &&
+                    'h-full flex justify-center items-center'
+                  "
                 >
                   <div
                     v-for="(tag, index) in service.tags.list"
@@ -205,8 +203,7 @@
                   <input
                     ref="descriptionInput"
                     v-model="service.description.inputs.content"
-                    class="h-1/2 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700
-                      text-gray-200)"
+                    class="h-1/2 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700 text-gray-200)"
                     placeholder="Localized description"
                     @keyup.enter="addItem('description')"
                   />
@@ -468,8 +465,7 @@
           </transition>
 
           <div
-            class="flex-wrap space-y-2 mt-4 items-center sm:(flex
-              space-y-0 space-x-4)"
+            class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4)"
           >
             <div
               class="flex space-x-2 items-center justify-center control-button"
@@ -520,9 +516,7 @@
     <transition name="slide-left" mode="out-in">
       <div
         v-show="resultWindow === true"
-        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto
-          shadow-md
-          w-8/12) dark:bg-gray-800"
+        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-gray-800"
       >
         <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
           <div class="space-y-1">
@@ -590,8 +584,7 @@
           <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center)">
             <a
               v-if="getMetadata.error === false"
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700
-                hover:bg-gray-600) hover:bg-gray-300"
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300"
               download="metadata.json"
               :href="`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(getMetadata.result, null, 2)
@@ -602,8 +595,7 @@
             </a>
 
             <div
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700
-                hover:bg-gray-600) hover:bg-gray-300"
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300"
               @click="resultWindow = false"
             >
               <IconX class="h-5 w-5 no-style" />
