@@ -112,8 +112,8 @@ export default Vue.extend({
             to: "/#projects",
           },
           {
-            title: "Contact",
-            to: "/#socials",
+            title: "Daily",
+            to: "/daily",
           },
           {
             title: "Donate",
@@ -123,7 +123,7 @@ export default Vue.extend({
         premid: [
           {
             title: "Home",
-            to: "/projects/premid/",
+            to: "/projects/premid",
           },
           {
             title: "Custom Status",
