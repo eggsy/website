@@ -243,7 +243,7 @@ export default Vue.extend({
           description:
             "Create your own kingdom with our diverse range of Discord templates!",
           image: "https://i.vgy.me/jbf1UB.jpg",
-          href: "https://temp.gg",
+          href: "https://discords.com/templates",
         },
         {
           title: "PreMiD",
