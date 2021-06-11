@@ -1,10 +1,10 @@
 <template>
   <div>
-    <header class="flex flex-col-reverse py-24 sm:(items-center flex-row)">
-      <div class="sm:w-8/12">
+    <header class="flex flex-col-reverse py-24 md:(items-center flex-row)">
+      <div class="md:w-8/12">
         <div class="space-y-px">
           <div
-            class="font-semibold text-2xl text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100"
+            class="font-semibold text-2xl text-gray-900 md:text-3xl md:text-4xl dark:text-gray-100"
           >
             <h1>Self taught</h1>
             <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
@@ -38,7 +38,7 @@
         <Status class="mt-2" />
       </div>
 
-      <div class="flex flex-shrink-0 mb-8 sm:(justify-end mb-0 w-4/12)">
+      <div class="flex flex-shrink-0 mb-8 md:(justify-end mb-0 w-4/12)">
         <SmartImage
           src="/assets/images/irl_image.webp"
           class="rounded-full h-40 ring-black ring-4 ring-opacity-5 w-40 dark:(ring-white ring-opacity-5)"
@@ -51,7 +51,7 @@
         Projects I currently work on
       </h2>
 
-      <div class="mt-2 grid gap-2 sm:(gap-4 grid-cols-3)">
+      <div class="mt-2 grid gap-2 md:(gap-4 grid-cols-3)">
         <div
           v-for="(project, index) in getProjects.featured"
           :key="`project-featured-${index}`"
@@ -80,7 +80,7 @@
         </div>
       </div>
 
-      <div class="mt-2 grid gap-2 sm:(mt-4 gap-4 grid-cols-3)">
+      <div class="mt-2 grid gap-2 md:(mt-4 gap-4 grid-cols-2)">
         <SmartLink
           v-for="(project, index) in getProjects.rest"
           :key="`project-rest-${index}`"
@@ -97,11 +97,11 @@
 
     <section
       id="experiences"
-      class="mt-4 grid gap-6 sm:(mt-6 gap-8 grid-cols-2) md:mt-10"
+      class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2)"
     >
       <div>
         <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
-          My experiences
+          Experience
         </h3>
 
         <div class="mt-4 grid gap-2">
@@ -136,7 +136,7 @@
 
     <section id="technologies" class="mt-6">
       <h3
-        class="font-semibold mt-4 text-xl text-gray-900 sm:mt-10 dark:text-gray-100"
+        class="font-semibold mt-4 text-xl text-gray-900 md:mt-10 dark:text-gray-100"
       >
         Technologies I use
       </h3>
@@ -158,7 +158,7 @@
       <div class="mt-4">
         <div
           v-if="$fetchState.pending"
-          class="grid gap-2 grid-cols-1 sm:grid-cols-2"
+          class="grid gap-2 grid-cols-1 md:grid-cols-2"
         >
           <SkeletonLoader
             v-for="item in 7"
@@ -176,7 +176,7 @@
 
         <div
           v-else-if="repos.length > 0"
-          class="grid gap-2 grid-cols-1 sm:grid-cols-2"
+          class="grid gap-2 grid-cols-1 md:grid-cols-2"
         >
           <SmartLink
             v-for="(repo, index) in repos"
@@ -270,11 +270,6 @@ export default Vue.extend({
           description: "Free image and file uploading service for ShareX!",
           to: "/projects/is-inside-me",
         },
-        {
-          title: "Daily Song",
-          description: "Fresh song from my taste each day!",
-          to: "/daily",
-        },
       ] as Project[],
       experiences: {
         jobs: [
@@ -291,22 +286,28 @@ export default Vue.extend({
             date: "2020-",
           },
           {
+            title: "WA Web+ Extension",
+            url: "https://wawplus.com",
+            position: "Translator",
+            date: "2020-2021"
+          },
+          {
             title: "Batakköylü Düğün Salonu",
             url: "https://batakkoylu.netlify.app",
             position: "Web Developer",
             date: "2020-2020",
           },
           {
-            title: "Discord Bot List",
-            url: "https://top.gg/user/162969778699501569",
-            position: "Website Moderator",
-            date: "2017-2018",
-          },
-          {
             title: "EGGSY's Discord Bot",
             url: "https://top.gg/bot/eggsy",
             position: "Creator, Developer and Maintainer",
             date: "2017-2019",
+          },
+          {
+            title: "Discord Bot List",
+            url: "https://top.gg/user/162969778699501569",
+            position: "Website Moderator",
+            date: "2017-2018",
           },
         ],
         education: [
