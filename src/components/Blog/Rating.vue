@@ -156,8 +156,6 @@ export default Vue.extend({
      * @returns {Status}
      */
     getStatusInfo(): Status {
-      if (this.status !== undefined) return {}
-
       const statusObject = {
         0: "Devam Ediyor",
         1: "Final Yaptı",
