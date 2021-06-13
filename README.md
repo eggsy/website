@@ -64,6 +64,20 @@ If you aren't already using `yarn`, I recommend yarn because it is faster and ru
 
 If you are wondering about **how to host it on free/paid static hosting services** like (Netlify, Vercel etc.), you can refer to [Nuxt.js docs](https://nuxtjs.org/docs/2.x/deployment/netlify-deployment). My project is hosted on [Netlify](https://netlify.com).
 
+### 🤔 Don't need Firebase?
+
+If you're here just to fork the website and use it, I bet you will probably _never_ need a Firebase integration and you should definitely remove Firebase from the project if that's the case. Here's how you can do it properly:
+
+1. Remove `firebase` and `@nuxtjs/firebase` modules, they're HUGE! You'll save lots of space when you remove them.
+2. Remove `@nuxtjs/firebase` from `tsconfig.json`.
+3. Remove `firebase` import and the line of `@nuxtjs/firebase` reference in the array in `config/modules.ts` file.
+4. Remove `@/plugins/Firebase` reference from the plugins array in `config/plugins.ts` (remove the whole object), and delete that file from `plugins` directory, you don't need it anymore.
+5. Delete `config/modules/firebase.ts`.
+6. Delete the Daily page: `src/pages/daily.vue`.
+   - After deleting this page, you should also remove every link to that page, there are links around the website, like in Navbar and some blog posts. You have to remove all references or you can't generate the website and it'll throw "route not found" error.
+
+That's all you have to do if you're not going to need Firebase integration! Don't hesitate to create an issue if you run into any problems!
+
 ### ❓ What has changed?
 
 > In (package.json) version 4.0.0, I've worked on each page and component to make them compatible with [Vite](https://vitejs.dev/), which is an upcoming and blazing fast tool for Nuxt! You'll feel the difference!
