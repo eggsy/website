@@ -55,6 +55,9 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <blog-rating rating="9.0" platform="BBC" seasons="4" status="1">
       <a href="#sherlock">Sherlock</a>
     </blog-rating>
+    <blog-rating rating="9.0" platform="Netflix" seasons="2" :isnew="true">
+      <a href="#lupin">Lupin</a>
+    </blog-rating>
     <blog-rating rating="9.0" platform="TNT" seasons="2">
       <a href="#snowpiercer">Snowpiercer</a>
     </blog-rating>
@@ -164,6 +167,10 @@ Apple'ın çıkmadan önce ismini neredeyse ülkenin her yerinde, takip ettiğim
 ### Sherlock
 
 Fazla anlatmaya gerek yok, aslında çok geç bitirdiğim bu dizi, hepimizin "şerlok usman aga" karakterinden bildiği "şerlok"un ta kendisi. Detektif olan Sherlock'un kafası hayal edebileceğinizden çok daha farklı ve gelişmiş bir şekilde çalıştığı için polislerin hatta ülkenin sahip olduğu en iyi detektiflerin bile çözemeyeceği davalarda çok işe yarıyor. Bölümleri ve sezon sayısı fazla, sezon içerisindeki bölümleri kısa olan bu muhteşem diziyi de kesinlikle izleyin. Fragmanı için [burayı](https://youtu.be/xK7S9mrFWL4) elleyebilirsiniz.
+
+### Lupin
+
+Şimdiye kadar izlememenin getirdiği pişmanlık, fakat yeni sezonun çıkmış olması, Türkiye'de birinci sırada olması ve benim boş vaktime denk gelmesi üzerine bu pişmanlığın azalması ile izlemeye başladığım, kendimi alamadığım Fransız bir yapım. Sayesinde bir yandan Fransızca ve Türkçe'deki ortak kelimeleri bulduğum, bir kenara not ettiğim bu dizideki "Sherlock havası" da -her ne kadar Sherlock dizisi kadar iyi olmasa da- bana onun kadar heyecan yaşatıyor, ve bu dizi de neredeyse Sherlock kadar kaliteli bir hikayeye sahip bir Netflix dizisi. Sherlock'u sevdiyseniz bu diziyi sevmemeninizin, bunu sevdiyseniz de Sherlock'u sevmemeninizin ihtimali yok. Her iki seriyi de bir an önce izlemenizi tavsiye ediyorum, ilk adımı [buradan](https://youtu.be/ga0iTWXCGa0) fragmanı izleyerek yapabilirsiniz.
 
 ### Snowpiercer
 
