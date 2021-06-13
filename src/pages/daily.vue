@@ -258,7 +258,7 @@ export default Vue.extend({
   head() {
     const title = "Song Recommendations"
     const description =
-      "Here you will find my song recommendations of the last 10 days. You can check this page everyday for a fresh song!"
+      "Looking for someone else's song recommendations? Here it is! I built a system just for you: Fresh, new songs every day!"
     const image = "https://eggsy.xyz/assets/meta/images/daily.jpg"
 
     return {

@@ -121,7 +121,7 @@ export default Vue.extend({
   head() {
     const title = "Donate"
     const description =
-      "Like my projects? You can donate me to boost my performance and make me create more, better projects in the future!"
+      "Like my projects? You can donate to me to boost my performance and help me create more, better projects in the future!"
 
     return {
       title,
