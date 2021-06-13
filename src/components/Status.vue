@@ -23,7 +23,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { LanyardData, Activity } from "@eggsydev/vue-lanyard/@types/lanyard"
+import type { LanyardData, Activity } from "@eggsydev/vue-lanyard/@types/lanyard"
 
 export default Vue.extend({
   data() {

@@ -211,7 +211,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { Repository } from "../types/Response/GitHub"
+import type { Repository } from "../types/Response/GitHub"
 
 interface Project {
   title: string

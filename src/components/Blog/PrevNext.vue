@@ -33,7 +33,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { IContentDocument } from "@nuxt/content/types/content"
+import type { IContentDocument } from "@nuxt/content/types/content"
 
 interface Post {
   title: string

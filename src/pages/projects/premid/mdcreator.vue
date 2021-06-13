@@ -616,8 +616,8 @@ import Prism from "prismjs"
 import "prism-themes/themes/prism-coldark-dark.css"
 
 /* Interfaces */
-import { PresenceMetadata, PresenceSetting } from "@/types/PreMiD"
-import { Premid } from "@/types/Response/PreMiD"
+import type { PresenceMetadata, PresenceSetting } from "@/types/PreMiD"
+import type { Premid } from "@/types/Response/PreMiD"
 
 interface Metadata {
   error: boolean

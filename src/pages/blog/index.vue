@@ -174,7 +174,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { Post } from "@/types/Post"
+import type { Post } from "@/types/Post"
 
 export default Vue.extend({
   data() {

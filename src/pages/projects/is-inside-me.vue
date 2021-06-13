@@ -71,7 +71,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { IsInsideMe } from "~/@types/runtimeConfig"
+import type { IsInsideMe } from "~/@types/runtimeConfig"
 
 export default Vue.extend({
   head() {

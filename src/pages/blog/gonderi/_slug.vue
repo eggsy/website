@@ -151,7 +151,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { Post } from "~/src/types/Post"
+import type { Post } from "~/src/types/Post"
 
 interface RelatedPost {
   title: string

@@ -91,7 +91,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import { Sponsor } from "~/@types/runtimeConfig"
+import type { Sponsor } from "~/@types/runtimeConfig"
 
 export default Vue.extend({
   data() {
