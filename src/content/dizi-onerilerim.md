@@ -28,7 +28,7 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <blog-rating rating="9.5" platform="Netflix" seasons="5">
       <a href="#the-witcher">The Witcher</a>
     </blog-rating>
-    <blog-rating rating="9.5" platform="Amazon Prime" seasons="5" :isnew="true">
+    <blog-rating rating="9.5" platform="Amazon Prime" seasons="5">
       <a href="#the-boys">The Boys</a>
     </blog-rating>
     <blog-rating rating="9.5" platform="Netflix" seasons="5" status="1">
@@ -58,8 +58,11 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <blog-rating rating="9.0" platform="TNT" seasons="2">
       <a href="#snowpiercer">Snowpiercer</a>
     </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="1" status="1" :isnew="true">
+    <blog-rating rating="9.0" platform="Netflix" seasons="1" status="1">
       <a href="#the-haunting-of-bly-manor">The Haunting of Bly Manor</a>
+    </blog-rating>
+    <blog-rating rating="9.0" platform="Netflix" seasons="1" status="1" :isnew="true">
+      <a href="#when-they-see-us">When They See Us</a>
     </blog-rating>
     <blog-rating rating="9.0" platform="Netflix" seasons="2" status="1">
       <a href="#sense8">Sense8</a>
@@ -70,7 +73,7 @@ Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanı
     <blog-rating rating="9.0" platform="Netflix" seasons="2" status="2">
       <a href="#altered-carbon">Altered Carbon</a>
     </blog-rating>
-    <blog-rating rating="8.9" platform="Netflix" seasons="1" status="1" :isnew="true">
+    <blog-rating rating="8.9" platform="Netflix" seasons="1" status="1">
       <a href="#the-queens-gambit">The Queen's Gambit</a>
     </blog-rating>
     <blog-rating rating="8.5" platform="Netflix" seasons="1">
@@ -169,6 +172,10 @@ Konusu ilginç ve devamının gelmeyeceğini, devam etse nereye kadar edebilece�
 ### The Haunting of Bly Manor
 
 Son zamanlarda izleyerek beni içine çeken, bir sonraki bölümü bir an önce izleme şehvetini bana tekrar yaşatan bu dizi, ilk sezonu The Haunting of Hill House ile beni her ne kadar fazla etkilememiş olsa da bu sezonu ile inanılmaz bir geri dönüş yaptıklarını düşünüyorum. Korku dizisi olmasına rağmen her bölümde "sıçratan sahneler" veya sürekli hakim bir karanlık tema işlenmemesi, yeri gelince güzel güneşli günlerin ve çimenlerde oynayan çocukların hikayelerinin anlatılması, bilindik korkutma yöntemleri ile değil, dram ile karışık bir şekilde işlenen gerilim/korku ile işlenerek ortaya inanılmaz bir sezon ortaya çıkması diziye her türlü açıdan bir anlam katmış. Hikayesi bir anlatıcının sesi ile işlenen, orta bölümlerde hikayenin tamamına hakim olduğunuz ve finalinde de "ters köşe" olduğunuz bir hikâye ile sizleri bekleyen bu diziyi izlemenizi tavsiye ederim. İsterseniz fragmanı [buradan](https://youtu.be/NHWKpXV404M) izleyebilirsiniz.
+
+### When They See Us
+
+Diziyi izlerken (eğer açıklamasını öncesinde okumadıysanız) "acaba bu dizi gerçek hikayeden mi alıntı?" diye düşünüp durduğunuz, finalinde ise tam Netflix'inizi kapatmadan önce çıkan filmdeki karakterlerin gerçek halleri, filmin konusunun sonrasında hayatlarına nasıl devam ettiklerini okuyunca yaşadığınız aydınlanma sonrası izlediğiniz dizinin çok daha anlam kazanması hissini yaşatan bir dizi... Sadece 4 bölümden oluşan, dizinin geçtiği tarihte bile hükümetlerin ne derece kara yüzlerinin olabileceğini bizlere gösteren, suçsuz yere çocuk yaştaki 5 kişiyi, kanunlara uymadan, zorlayarak, işlemedikleri bir suçu kabul etmelerini sağlayıp yıllarca hapis tutan gerçek bir hikayeyi konu alıyor. Karakterlerin havası, konunun karamsarlığı ve "bu kadarı da olmaz artık" dedirten sahneleriyle dolu bu dizinin fragmanına [buradan](https://youtu.be/YyoSErErnCE) ulaşabailirsiniz.
 
 ### Sense8
 
