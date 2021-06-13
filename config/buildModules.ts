@@ -7,11 +7,6 @@ import googleAnalytics from "./modules/googleAnalytics"
 import typescriptBuild from "./modules/typescriptBuild"
 
 const BuildModules: NuxtOptionsModule[] = [
-  /*
-    I'll switch to this one instead of typescript-build
-    as soon as it's stable enough, let's keep it here for a while
-  */
-  /* "nuxt-swc", */
   "nuxt-vite",
   "@nuxt/image",
   "@nuxtjs/moment",
