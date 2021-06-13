@@ -1,6 +1,6 @@
 export default {
   social: {
-    discord: "https://discord.gg/tHx9ZKG",
+    discord: "https://discord.gg/rpvNmR9cP9",
     twitter: "https://twitter.com/eggsydev/",
     github: "https://github.com/eggsy/",
     instagram: "https://instagram.com/eggsy_dev/",
