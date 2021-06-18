@@ -7,8 +7,9 @@
       :href="social.url"
       :utm="false"
       blank
+      class="rounded-full ring-transparent ring-[6px] hover:(bg-gray-200 ring-gray-200) dark:(hover:bg-gray-700 hover:ring-gray-700)"
     >
-      <IconBrand :brand="social.icon" />
+      <IconBrand :brand="social.icon" class="w-8 h-8 text-gray-800 dark:text-gray-200" />
     </SmartLink>
 
     <SmartLink
@@ -16,7 +17,7 @@
       :href="pageLoaded ? `mailto:${$config.social.email}` : false"
       :utm="false"
     >
-      <IconAt />
+      <IconAt class="w-8 h-8 text-gray-800 dark:text-gray-200" />
     </SmartLink>
   </div>
 </template>
@@ -75,13 +76,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-a {
-  @apply rounded-full ring-transparent ring-[6px] hover:(bg-gray-200 ring-gray-200) dark:(hover:bg-gray-700 hover:ring-gray-700);
-}
-
-svg {
-  @apply w-8 h-8 text-gray-800 dark:text-gray-200;
-}
-</style>
