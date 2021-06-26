@@ -4,7 +4,7 @@
       <div class="md:w-8/12">
         <div class="space-y-px">
           <div
-            class="font-semibold text-2xl text-gray-900 md:text-3xl md:text-4xl dark:text-gray-100"
+            class="text-2xl font-semibold text-gray-900 md:text-3xl md:text-4xl dark:text-gray-100"
           >
             <h1>Self taught</h1>
             <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
@@ -47,7 +47,7 @@
     </header>
 
     <section id="projects">
-      <h2 class="font-semibold mt-10 text-2xl text-gray-900 dark:text-gray-100">
+      <h2 class="mt-10 text-2xl font-semibold text-gray-900 dark:text-gray-100">
         Projects I currently work on
       </h2>
 
@@ -100,11 +100,11 @@
       class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2)"
     >
       <div>
-        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
           Experience
         </h3>
 
-        <div class="mt-4 grid gap-2">
+        <div class="grid gap-2 mt-4">
           <CardExperience
             v-for="(experience, index) in experiences.jobs"
             :key="`experience-job-${index}`"
@@ -117,11 +117,11 @@
       </div>
 
       <div>
-        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
           Education
         </h3>
 
-        <div class="mt-4 grid gap-2">
+        <div class="grid gap-2 mt-4">
           <CardExperience
             v-for="(experience, index) in experiences.education"
             :key="`experience-education-${index}`"
@@ -136,12 +136,12 @@
 
     <section id="technologies" class="mt-6">
       <h3
-        class="font-semibold mt-4 text-xl text-gray-900 md:mt-10 dark:text-gray-100"
+        class="mt-4 text-xl font-semibold text-gray-900 md:mt-10 dark:text-gray-100"
       >
         Technologies I use
       </h3>
 
-      <div class="mt-4 grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+      <div class="grid grid-cols-2 gap-2 mt-4 sm:grid-cols-3 md:grid-cols-4">
         <CardSkill
           v-for="(skill, index) in skills"
           :key="`skill-${index}`"
@@ -151,14 +151,14 @@
     </section>
 
     <section id="repositories" class="mt-6">
-      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
+      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
         My GitHub repositories
       </h2>
 
       <div class="mt-4">
         <div
           v-if="$fetchState.pending"
-          class="grid gap-2 grid-cols-1 md:grid-cols-2"
+          class="grid grid-cols-1 gap-2 md:grid-cols-2"
         >
           <SkeletonLoader
             v-for="item in 8"
@@ -176,7 +176,7 @@
 
         <div
           v-else-if="repos.length > 0"
-          class="grid gap-2 grid-cols-1 md:grid-cols-2"
+          class="grid grid-cols-1 gap-2 md:grid-cols-2"
         >
           <SmartLink
             v-for="(repo, index) in repos"
@@ -198,7 +198,7 @@
     </section>
 
     <section id="socials" class="mt-6">
-      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
+      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
         Follow me
       </h2>
 
