@@ -20,9 +20,9 @@
                   ? `https://youtu.be/${getSelectedSong.youtube}/`
                   : false
               "
-              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 text-center py-2 px-4 text-gray-900 text-gray-100 items-center justify-center overflow-hidden select-none"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 text-center py-2 px-4 text-gray-900 items-center justify-center overflow-hidden select-none dark:text-gray-100"
               :class="{
-                'hover:bg-gray-200 dark:hover:bg-gray-700':
+                'hover:bg-gray-200 dark:(bg-gray-800 hover:bg-gray-700)':
                   $fetchState.pending === false && $fetchState.error === null,
               }"
               blank
