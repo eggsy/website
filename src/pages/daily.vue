@@ -20,7 +20,7 @@
                   ? `https://youtu.be/${getSelectedSong.youtube}/`
                   : false
               "
-              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 text-center py-2 px-4 text-gray-900 items-center justify-center overflow-hidden select-none dark:(bg-gray-800 text-gray-100)"
+              class="rounded cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 text-center py-2 px-4 text-gray-900 text-gray-100 items-center justify-center overflow-hidden select-none"
               :class="{
                 'hover:bg-gray-200 dark:hover:bg-gray-700':
                   $fetchState.pending === false && $fetchState.error === null,
@@ -151,7 +151,7 @@
         </div>
 
         <div
-          v-else-if="getLyrics"
+          v-else-if="typeof getLyrics === 'object' && getLyrics.length > 0"
           class="space-y-2 top-4 right-4 bottom-4 left-4 absolute overflow-y-auto scrollbar"
         >
           <p
@@ -178,8 +178,11 @@
           </p>
         </div>
 
-        <div v-else>
-          <h3 class="text-lg text-gray-900 dark:text-gray-100">No lyrics...</h3>
+        <div
+          v-else
+          class="flex h-full items-center justify-center"
+        >
+          <h3 class="text-lg text-gray-700 dark:text-gray-300">No lyrics...</h3>
         </div>
       </div>
     </div>
@@ -321,10 +324,10 @@ export default Vue.extend({
     },
     /**
      * Returns lyrics in array format if they were fetched from the API.
-     * @returns {string[] | false} Array of lyrics.
+     * @returns {string[] | boolean} Array of lyrics.
      */
-    getLyrics(): string[] {
-      return this.selected?.metadata?.lyrics || []
+    getLyrics(): string[] | boolean {
+      return this.selected?.metadata?.lyrics || false
     },
   },
 })
