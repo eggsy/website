@@ -1,5 +1,11 @@
 <template>
   <div class="space-y-6 py-4">
+    <BlogNotification v-if="isThereNoSongToday === true" type="warning">
+      There's no song for today, check back later or wait for the next day until
+      I find some time to add new songs! You can listen to the older ones if you
+      wish to!
+    </BlogNotification>
+
     <div class="grid gap-6 sm:grid-cols-2">
       <div class="space-y-4">
         <SkeletonLoader
@@ -178,10 +184,7 @@
           </p>
         </div>
 
-        <div
-          v-else
-          class="flex h-full items-center justify-center"
-        >
+        <div v-else class="flex h-full items-center justify-center">
           <h3 class="text-lg text-gray-700 dark:text-gray-300">No lyrics...</h3>
         </div>
       </div>
@@ -228,7 +231,9 @@
 
 <script lang="ts">
 import Vue from "vue"
-import { Song, SongMetadata } from "../plugins/Firebase"
+
+/* Import types */
+import type { Song, SongMetadata } from "../plugins/Firebase"
 
 export default Vue.extend({
   data() {
@@ -248,7 +253,7 @@ export default Vue.extend({
       iframeLoaded: false,
       today: new Date(),
       selected,
-      songs: [],
+      songs: [] as Song[],
     }
   },
   fetchOnServer: false,
@@ -284,7 +289,6 @@ export default Vue.extend({
   computed: {
     /**
      * Returns the selected song's ID, if none present, returns a fireplace video ID instead.
-     * @returns {string} The video ID.
      */
     getSelectedSong(): { youtube: string; spotify: string | null } {
       const { url, spotifyUrl } = this.selected
@@ -296,37 +300,44 @@ export default Vue.extend({
     },
     /**
      * Returns the metadata of the selected song.
-     * @returns {object} The song metadata.
      */
     getSelectedSongMetadata(): SongMetadata {
       return this.selected?.metadata
     },
     /**
+     * Return boolean if there's no selected song for today.
+     */
+    isThereNoSongToday(): boolean {
+      const today = this.$moment().format("DD/MM/YYYY")
+      const latestSongDate = this.$moment(this.songs[0]?.date).format(
+        "DD/MM/YYYY"
+      )
+
+      if (today !== latestSongDate) return true
+      else return false
+    },
+    /**
      * Returns the selected song's title.
-     * @returns {string} Title of the selected song.
      */
     getSelectedTitle(): string {
       return this.selected?.metadata?.title || "Unknown"
     },
     /**
      * Returns the selected song's date in locale format.
-     * @returns {string} The locale date string.
      */
     getSelectedDateTitle(): string {
       return this.selected?.date?.toLocaleDateString() || "Unknown"
     },
     /**
      * Returns the array of the songs without the currently selected one in it.
-     * @returns {Object[]} Array of songs without the selected one.
      */
     getSongList(): Song[] {
       return this.songs.filter((song: Song) => song.date !== this.selected.date)
     },
     /**
      * Returns lyrics in array format if they were fetched from the API.
-     * @returns {string[] | boolean} Array of lyrics.
      */
-    getLyrics(): string[] | boolean {
+    getLyrics(): string[] | boolean {
       return this.selected?.metadata?.lyrics || false
     },
   },
