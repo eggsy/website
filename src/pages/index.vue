@@ -324,7 +324,7 @@ export default Vue.extend({
             date: "2017-2018",
           },
           {
-            title: "Adil Karağaaç MTAL",
+            title: "Adil Karaağaç MTAL",
             url: "https://akatl.meb.k12.tr/",
             position: "Automation Systems",
             date: "2014-2018",
