@@ -3,7 +3,6 @@ import { Plugin } from "@nuxt/types"
 /* Interfaces */
 export interface SongMetadata {
   artist?: string | null
-  lyrics?: string[] | null
   thumbnail?: string | null
   title?: string | null
 }
@@ -18,17 +17,17 @@ export interface Song {
 /* Declare modules */
 declare module "vue/types/vue" {
   interface Vue {
-    $getDaily(limit: number): Promise<Song | Song[]>
+    $getDaily(limit: number): Promise<Song[]>
   }
 }
 
 declare module "@nuxt/types" {
   interface NuxtAppOptions {
-    $getDaily(limit: number): Promise<Song | Song[]>
+    $getDaily(limit: number): Promise<Song[]>
   }
 
   interface Context {
-    $getDaily(limit: number): Promise<Song | Song[]>
+    $getDaily(limit: number): Promise<Song[]>
   }
 }
 
