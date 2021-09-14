@@ -179,15 +179,14 @@ export default Vue.extend({
   <div>
     <header
       class="
-        rounded-md flex
-        flex-col-reverse
+        rounded-md
+        flex flex-col-reverse
         bg-gray-200/30
         my-16
         py-10
         px-8
-        items-center
         justify-between
-        md:flex-row
+        md:flex-row md:items-center
         dark:bg-gray-800
       "
     >
@@ -196,9 +195,8 @@ export default Vue.extend({
           <div
             class="
               font-semibold
-              text-2xl
-              text-gray-900
-              md:text-3xl md:text-4xl
+              text-xl text-gray-900
+              md:text-3xl
               dark:text-gray-100
             "
           >
@@ -334,8 +332,7 @@ export default Vue.extend({
         class="
           font-semibold
           mt-4
-          text-xl
-          text-gray-900
+          text-xl text-gray-900
           md:mt-10
           dark:text-gray-100
         "
