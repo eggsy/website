@@ -28,8 +28,6 @@ export default Vue.extend({
         lanyard.activities?.filter((activity) => activity.type !== 4)?.pop() ||
         null
 
-      console.log(filtered)
-
       // Offline
       if (this.lanyard?.discord_status === "offline") return "Offline"
       else if (!filtered) return "Online"
