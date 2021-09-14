@@ -1,92 +1,3 @@
-<template>
-  <SmartLink
-    v-if="type === 'normal'"
-    :title="getPostMeta.title"
-    :href="{
-      name: 'blog-gonderi-slug',
-      params: { slug: getPostMeta.slug },
-    }"
-    class="rounded-lg cursor-pointer space-y-2 bg-gray-200 bg-opacity-40 p-3 transition-shadow hover:shadow-md dark:bg-gray-800"
-  >
-    <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full filter dark:brightness-75" />
-
-    <div class="flex flex-col">
-      <span
-        class="font-medium text-sm leading-tight text-gray-600 uppercase dark:text-gray-400"
-      >
-        {{ getPostMeta.tag }}
-      </span>
-
-      <h2
-        class="font-bold text-lg leading-tight text-gray-800 truncate dark:text-gray-200"
-      >
-        {{ getPostMeta.title }}
-      </h2>
-
-      <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
-        {{ getPostMeta.description }}
-      </p>
-    </div>
-  </SmartLink>
-
-  <SmartLink
-    v-else-if="type === 'text'"
-    :title="getPostMeta.title"
-    :href="{
-      name: 'blog-gonderi-slug',
-      params: { slug: getPostMeta.slug },
-    }"
-    class="rounded-lg cursor-pointer flex space-x-4 bg-gray-200 bg-opacity-40 p-3 transition-shadow items-center hover:shadow-md dark:bg-gray-800"
-  >
-    <SmartImage
-      :src="getPostMeta.image"
-      class="rounded flex-shrink-0 h-20 w-24 filter dark:brightness-75"
-    />
-
-    <div class="flex flex-col overflow-x-hidden">
-      <h2
-        class="font-semibold text-lg text-gray-800 truncate dark:text-gray-200"
-      >
-        {{ getPostMeta.title }}
-      </h2>
-
-      <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
-        {{ getPostMeta.description }}
-      </p>
-    </div>
-  </SmartLink>
-
-  <SmartLink
-    v-else-if="type === 'text-only-title'"
-    :title="getPostMeta.title"
-    :href="{
-      name: 'blog-gonderi-slug',
-      params: { slug: getPostMeta.slug },
-    }"
-    class="rounded-lg cursor-pointer flex flex-col bg-gray-200 bg-opacity-40 p-3 transition-shadow hover:shadow-md truncate dark:bg-gray-800"
-  >
-    <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">
-      {{ getPostMeta.title }}
-    </h2>
-
-    <div class="flex space-x-1 items-center">
-      <IconFire
-        v-if="getPostMeta.special"
-        v-tippy="{
-          content: 'Popüler gönderi',
-          placement: 'bottom',
-        }"
-        class="h-5 text-red-600 w-5 dark:text-red-500"
-      />
-
-      <div class="flex space-x-2 text-gray-700 items-center dark:text-gray-400">
-        <IconClock class="h-5 w-5" />
-        <span>{{ getPostDate }}</span>
-      </div>
-    </div>
-  </SmartLink>
-</template>
-
 <script lang="ts">
 import Vue, { PropType } from "vue"
 
@@ -146,3 +57,95 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <SmartLink
+    v-if="type === 'normal'"
+    :title="getPostMeta.title"
+    :href="{
+      name: 'blog-gonderi-slug',
+      params: { slug: getPostMeta.slug },
+    }"
+    class="p-3 space-y-2 transition-shadow bg-gray-200 rounded-lg cursor-pointer  bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+  >
+    <SmartImage
+      :src="getPostMeta.image"
+      class="w-full rounded h-34 filter dark:brightness-75"
+    />
+
+    <div class="flex flex-col">
+      <span
+        class="text-sm font-medium leading-tight text-gray-600 uppercase  dark:text-gray-400"
+      >
+        {{ getPostMeta.tag }}
+      </span>
+
+      <h2
+        class="text-lg font-bold leading-tight text-gray-800 truncate  dark:text-gray-200"
+      >
+        {{ getPostMeta.title }}
+      </h2>
+
+      <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
+        {{ getPostMeta.description }}
+      </p>
+    </div>
+  </SmartLink>
+
+  <SmartLink
+    v-else-if="type === 'text'"
+    :title="getPostMeta.title"
+    :href="{
+      name: 'blog-gonderi-slug',
+      params: { slug: getPostMeta.slug },
+    }"
+    class="flex items-center p-3 space-x-4 transition-shadow bg-gray-200 rounded-lg cursor-pointer  bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+  >
+    <SmartImage
+      :src="getPostMeta.image"
+      class="flex-shrink-0 w-24 h-20 rounded filter dark:brightness-75"
+    />
+
+    <div class="flex flex-col overflow-x-hidden">
+      <h2
+        class="text-lg font-semibold text-gray-800 truncate dark:text-gray-200"
+      >
+        {{ getPostMeta.title }}
+      </h2>
+
+      <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
+        {{ getPostMeta.description }}
+      </p>
+    </div>
+  </SmartLink>
+
+  <SmartLink
+    v-else-if="type === 'text-only-title'"
+    :title="getPostMeta.title"
+    :href="{
+      name: 'blog-gonderi-slug',
+      params: { slug: getPostMeta.slug },
+    }"
+    class="flex flex-col p-3 truncate transition-shadow bg-gray-200 rounded-lg cursor-pointer  bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+  >
+    <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">
+      {{ getPostMeta.title }}
+    </h2>
+
+    <div class="flex items-center space-x-1">
+      <IconFire
+        v-if="getPostMeta.special"
+        v-tippy="{
+          content: 'Popüler gönderi',
+          placement: 'bottom',
+        }"
+        class="w-5 h-5 text-red-600 dark:text-red-500"
+      />
+
+      <div class="flex items-center space-x-2 text-gray-700 dark:text-gray-400">
+        <IconClock class="w-5 h-5" />
+        <span>{{ getPostDate }}</span>
+      </div>
+    </div>
+  </SmartLink>
+</template>

@@ -1,9 +1,3 @@
-<template>
-  <div class="notification" :class="type">
-    <slot />
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -17,6 +11,12 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <div class="notification" :class="type">
+    <slot />
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .notification {

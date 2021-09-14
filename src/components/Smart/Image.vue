@@ -1,34 +1,3 @@
-<template>
-  <div
-    :style="
-      loaded === true && {
-        backgroundImage: `url('${getBackgroundUrl}')`,
-        backgroundPosition: 'center',
-        backgroundSize: fit,
-      }
-    "
-    :class="{
-      'bg-gray-100 animate-pulse dark:bg-gray-700 bg-no-repeat':
-        loaded === false,
-    }"
-    :smart-image="true"
-    :title="title"
-  >
-    <img
-      :src="getBackgroundUrl || src"
-      :alt="alt || title || 'image'"
-      :width="width"
-      :height="height"
-      class="invisible"
-      @error="
-        error = true
-        loaded = true
-      "
-      @load="loaded = true"
-    />
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -105,3 +74,34 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <div
+    :style="
+      loaded === true && {
+        backgroundImage: `url('${getBackgroundUrl}')`,
+        backgroundPosition: 'center',
+        backgroundSize: fit,
+      }
+    "
+    :class="{
+      'bg-gray-100 animate-pulse dark:bg-gray-700 bg-no-repeat':
+        loaded === false,
+    }"
+    :smart-image="true"
+    :title="title"
+  >
+    <img
+      :src="getBackgroundUrl || src"
+      :alt="alt || title || 'image'"
+      :width="width"
+      :height="height"
+      class="invisible"
+      @error="
+        error = true
+        loaded = true
+      "
+      @load="loaded = true"
+    />
+  </div>
+</template>

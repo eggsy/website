@@ -1,28 +1,3 @@
-<template>
-  <div
-    class="rounded-lg cursor-pointer bg-gray-200 bg-opacity-40 p-4 transition-shadow hover:shadow-md dark:bg-gray-800"
-  >
-    <div class="flex space-x-1 text-gray-900 items-center dark:text-gray-100">
-      <span class="flex-grow space-x-2 truncate">
-        {{ name }}
-      </span>
-
-      <div class="flex space-x-1 items-center">
-        <div class="flex space-x-1 items-center">
-          <span>{{ stars }}</span>
-          <IconStar filled class="h-6 text-yellow-600 w-6" />
-        </div>
-
-        <IconDev :brand="getLanguageIcon" class="h-5 w-5" />
-      </div>
-    </div>
-
-    <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
-      {{ description }}
-    </p>
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -62,3 +37,28 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <div
+    class="p-4 transition-shadow bg-gray-200 rounded-lg cursor-pointer bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+  >
+    <div class="flex items-center space-x-1 text-gray-900 dark:text-gray-100">
+      <span class="flex-grow space-x-2 truncate">
+        {{ name }}
+      </span>
+
+      <div class="flex items-center space-x-1">
+        <div class="flex items-center space-x-1">
+          <span>{{ stars }}</span>
+          <IconStar filled class="w-6 h-6 text-yellow-600" />
+        </div>
+
+        <IconDev :brand="getLanguageIcon" class="w-5 h-5" />
+      </div>
+    </div>
+
+    <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
+      {{ description }}
+    </p>
+  </div>
+</template>

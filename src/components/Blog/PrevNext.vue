@@ -1,34 +1,3 @@
-<template>
-  <div
-    v-if="$fetchState.pending === false && !$fetchState.error"
-    class="grid gap-6 grid-cols-1 sm:grid-cols-2 dark:text-gray-200"
-  >
-    <div>
-      <h4 class="font-medium">Önceki Gönderi</h4>
-
-      <SmartLink v-if="prev" :href="`/blog/gonderi/${prev.slug}`">
-        <h5>
-          {{ prev.title }}
-        </h5>
-      </SmartLink>
-
-      <h5 v-else class="line-through">Daha Eski Bir Gönderi Yok</h5>
-    </div>
-
-    <div class="text-right">
-      <h4 class="font-medium">Sonraki Gönderi</h4>
-
-      <SmartLink v-if="next" :href="`/blog/gonderi/${next.slug}`">
-        <h5>
-          {{ next.title }}
-        </h5>
-      </SmartLink>
-
-      <h5 v-else class="line-through">Daha Yeni Bir Gönderi Yok</h5>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -66,6 +35,37 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <div
+    v-if="$fetchState.pending === false && !$fetchState.error"
+    class="grid grid-cols-1 gap-6 sm:grid-cols-2 dark:text-gray-200"
+  >
+    <div>
+      <h4 class="font-medium">Önceki Gönderi</h4>
+
+      <SmartLink v-if="prev" :href="`/blog/gonderi/${prev.slug}`">
+        <h5>
+          {{ prev.title }}
+        </h5>
+      </SmartLink>
+
+      <h5 v-else class="line-through">Daha Eski Bir Gönderi Yok</h5>
+    </div>
+
+    <div class="text-right">
+      <h4 class="font-medium">Sonraki Gönderi</h4>
+
+      <SmartLink v-if="next" :href="`/blog/gonderi/${next.slug}`">
+        <h5>
+          {{ next.title }}
+        </h5>
+      </SmartLink>
+
+      <h5 v-else class="line-through">Daha Yeni Bir Gönderi Yok</h5>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 div {

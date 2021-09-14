@@ -1,213 +1,3 @@
-<template>
-  <div>
-    <header
-      class="flex flex-col-reverse items-center justify-between px-8 py-10 my-16 rounded-md bg-gray-200/30 md:flex-row dark:bg-gray-800"
-    >
-      <div class="md:w-8/12">
-        <div class="space-y-2">
-          <div
-            class="text-2xl font-semibold text-gray-900 md:text-3xl md:text-4xl dark:text-gray-100"
-          >
-            <h1>Self taught</h1>
-            <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
-          </div>
-
-          <p class="text-gray-800 dark:text-gray-200">
-            Hi there, my name is Abdulbaki, I am from Turkey and I am a self
-            taught web developer. I build complex web apps using
-            <SmartLink href="https://vuejs.org/" class="description-link" blank>
-              Vue.js</SmartLink
-            >,
-            <SmartLink
-              href="https://nuxtjs.org/"
-              class="description-link"
-              blank
-            >
-              Nuxt.js</SmartLink
-            >
-            and
-            <SmartLink
-              href="https://windicss.org/"
-              class="description-link"
-              blank
-            >
-              Windi CSS</SmartLink
-            >.
-          </p>
-        </div>
-
-        <Status class="mt-4" />
-      </div>
-
-      <div class="w-40 h-40 mb-4 rounded-full md:mb-0">
-        <SmartImage
-          src="/assets/images/memoji.png"
-          class="w-40 h-40 rounded-full"
-        />
-      </div>
-    </header>
-
-    <section id="projects">
-      <h2 class="mt-10 text-2xl font-semibold text-gray-900 dark:text-gray-100">
-        Projects I currently work on
-      </h2>
-
-      <div class="mt-2 grid gap-2 md:(gap-4 grid-cols-3)">
-        <div
-          v-for="(project, index) in getProjects.featured"
-          :key="`project-featured-${index}`"
-        >
-          <SmartLink
-            v-if="project.to || project.href"
-            :href="project.to || project.href"
-            title="Click to visit this project"
-            :blank="!!project.href"
-          >
-            <CardProject
-              :title="project.title"
-              :description="project.description"
-              :image="project.image"
-              class="h-full"
-            />
-          </SmartLink>
-
-          <CardProject
-            v-else
-            :title="project.title"
-            :description="project.description"
-            :image="project.image"
-            class="h-full"
-          />
-        </div>
-      </div>
-
-      <div class="mt-2 grid gap-2 md:(mt-4 gap-4 grid-cols-2)">
-        <SmartLink
-          v-for="(project, index) in getProjects.rest"
-          :key="`project-rest-${index}`"
-          :href="project.to"
-        >
-          <CardProject
-            :title="project.title"
-            :description="project.description"
-            class="h-full"
-          />
-        </SmartLink>
-      </div>
-    </section>
-
-    <section
-      id="experiences"
-      class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2)"
-    >
-      <div>
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
-          Experience
-        </h3>
-
-        <div class="grid gap-2 mt-4">
-          <CardExperience
-            v-for="(experience, index) in experiences.jobs"
-            :key="`experience-job-${index}`"
-            :title="experience.title"
-            :url="experience.url"
-            :date="experience.date"
-            :position="experience.position"
-          />
-        </div>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
-          Education
-        </h3>
-
-        <div class="grid gap-2 mt-4">
-          <CardExperience
-            v-for="(experience, index) in experiences.education"
-            :key="`experience-education-${index}`"
-            :title="experience.title"
-            :url="experience.url"
-            :date="experience.date"
-            :position="experience.position"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section id="technologies" class="mt-6">
-      <h3
-        class="mt-4 text-xl font-semibold text-gray-900 md:mt-10 dark:text-gray-100"
-      >
-        Technologies I use
-      </h3>
-
-      <div class="grid grid-cols-2 gap-2 mt-4 sm:grid-cols-3 md:grid-cols-4">
-        <CardSkill
-          v-for="(skill, index) in skills"
-          :key="`skill-${index}`"
-          :title="skill"
-        />
-      </div>
-    </section>
-
-    <section id="repositories" class="mt-6">
-      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
-        My GitHub repositories
-      </h2>
-
-      <div class="mt-4">
-        <div
-          v-if="$fetchState.pending"
-          class="grid grid-cols-1 gap-2 md:grid-cols-2"
-        >
-          <SkeletonLoader
-            v-for="item in 8"
-            :key="`repo-skeleton-${item}`"
-            type="repository"
-          />
-        </div>
-
-        <div
-          v-else-if="$fetchState.error"
-          class="text-gray-900 dark:text-gray-100"
-        >
-          Couldn't load GitHub repositories.
-        </div>
-
-        <div
-          v-else-if="repos.length > 0"
-          class="grid grid-cols-1 gap-2 md:grid-cols-2"
-        >
-          <SmartLink
-            v-for="(repo, index) in repos"
-            :key="`repo-${index}`"
-            :href="repo.html_url"
-            title="Click here to visit this repository"
-            blank
-          >
-            <CardRepository
-              :name="repo.name"
-              :language="repo.language"
-              :stars="repo.stargazers_count"
-              :description="repo.description"
-              class="h-full"
-            />
-          </SmartLink>
-        </div>
-      </div>
-    </section>
-
-    <section id="socials" class="mt-6">
-      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
-        Follow me
-      </h2>
-
-      <Socials class="mt-2" />
-    </section>
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -268,7 +58,8 @@ export default Vue.extend({
         },
         {
           title: "is-inside.me",
-          description: "Free image and file uploading service for uploaders like ShareX!",
+          description:
+            "Free image and file uploading service for uploaders like ShareX!",
           to: "/projects/is-inside-me",
         },
       ] as Project[],
@@ -346,7 +137,7 @@ export default Vue.extend({
         "Firebase",
         "WordPress",
         "PHP",
-        "React.js"
+        "React.js",
       ],
     }
   },
@@ -383,6 +174,240 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <div>
+    <header
+      class="
+        rounded-md flex
+        flex-col-reverse
+        bg-gray-200/30
+        my-16
+        py-10
+        px-8
+        items-center
+        justify-between
+        md:flex-row
+        dark:bg-gray-800
+      "
+    >
+      <div class="md:w-8/12">
+        <div class="space-y-2">
+          <div
+            class="
+              font-semibold
+              text-2xl
+              text-gray-900
+              md:text-3xl md:text-4xl
+              dark:text-gray-100
+            "
+          >
+            <h1>Self taught</h1>
+            <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
+          </div>
+
+          <p class="text-gray-800 dark:text-gray-200">
+            Hi there, my name is Abdulbaki, I am from Turkey and I am a self
+            taught web developer. I build complex web apps using
+            <SmartLink href="https://vuejs.org/" class="description-link" blank>
+              Vue.js</SmartLink
+            >,
+            <SmartLink
+              href="https://nuxtjs.org/"
+              class="description-link"
+              blank
+            >
+              Nuxt.js</SmartLink
+            >
+            and
+            <SmartLink
+              href="https://windicss.org/"
+              class="description-link"
+              blank
+            >
+              Windi CSS</SmartLink
+            >.
+          </p>
+        </div>
+
+        <Status class="mt-4" />
+      </div>
+
+      <div class="rounded-full h-40 mb-4 w-40 md:mb-0">
+        <SmartImage
+          src="/assets/images/memoji.png"
+          class="rounded-full h-40 w-40"
+        />
+      </div>
+    </header>
+
+    <section id="projects">
+      <h2 class="font-semibold mt-10 text-2xl text-gray-900 dark:text-gray-100">
+        Projects I currently work on
+      </h2>
+
+      <div class="mt-2 grid gap-2 md:(gap-4 grid-cols-3) ">
+        <div
+          v-for="(project, index) in getProjects.featured"
+          :key="`project-featured-${index}`"
+        >
+          <SmartLink
+            v-if="project.to || project.href"
+            :href="project.to || project.href"
+            title="Click to visit this project"
+            :blank="!!project.href"
+          >
+            <CardProject
+              :title="project.title"
+              :description="project.description"
+              :image="project.image"
+              class="h-full"
+            />
+          </SmartLink>
+
+          <CardProject
+            v-else
+            :title="project.title"
+            :description="project.description"
+            :image="project.image"
+            class="h-full"
+          />
+        </div>
+      </div>
+
+      <div class="mt-2 grid gap-2 md:(mt-4 gap-4 grid-cols-2) ">
+        <SmartLink
+          v-for="(project, index) in getProjects.rest"
+          :key="`project-rest-${index}`"
+          :href="project.to"
+        >
+          <CardProject
+            :title="project.title"
+            :description="project.description"
+            class="h-full"
+          />
+        </SmartLink>
+      </div>
+    </section>
+
+    <section
+      id="experiences"
+      class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2) "
+    >
+      <div>
+        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
+          Experience
+        </h3>
+
+        <div class="mt-4 grid gap-2">
+          <CardExperience
+            v-for="(experience, index) in experiences.jobs"
+            :key="`experience-job-${index}`"
+            :title="experience.title"
+            :url="experience.url"
+            :date="experience.date"
+            :position="experience.position"
+          />
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
+          Education
+        </h3>
+
+        <div class="mt-4 grid gap-2">
+          <CardExperience
+            v-for="(experience, index) in experiences.education"
+            :key="`experience-education-${index}`"
+            :title="experience.title"
+            :url="experience.url"
+            :date="experience.date"
+            :position="experience.position"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="technologies" class="mt-6">
+      <h3
+        class="
+          font-semibold
+          mt-4
+          text-xl
+          text-gray-900
+          md:mt-10
+          dark:text-gray-100
+        "
+      >
+        Technologies I use
+      </h3>
+
+      <div class="mt-4 grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        <CardSkill
+          v-for="(skill, index) in skills"
+          :key="`skill-${index}`"
+          :title="skill"
+        />
+      </div>
+    </section>
+
+    <section id="repositories" class="mt-6">
+      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
+        My GitHub repositories
+      </h2>
+
+      <div class="mt-4">
+        <div
+          v-if="$fetchState.pending"
+          class="grid gap-2 grid-cols-1 md:grid-cols-2"
+        >
+          <SkeletonLoader
+            v-for="item in 8"
+            :key="`repo-skeleton-${item}`"
+            type="repository"
+          />
+        </div>
+
+        <div
+          v-else-if="$fetchState.error"
+          class="text-gray-900 dark:text-gray-100"
+        >
+          Couldn't load GitHub repositories.
+        </div>
+
+        <div
+          v-else-if="repos.length > 0"
+          class="grid gap-2 grid-cols-1 md:grid-cols-2"
+        >
+          <SmartLink
+            v-for="(repo, index) in repos"
+            :key="`repo-${index}`"
+            :href="repo.html_url"
+            title="Click here to visit this repository"
+            blank
+          >
+            <CardRepository
+              :name="repo.name"
+              :language="repo.language"
+              :stars="repo.stargazers_count"
+              :description="repo.description"
+              class="h-full"
+            />
+          </SmartLink>
+        </div>
+      </div>
+    </section>
+
+    <section id="socials" class="mt-6">
+      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
+        Follow me
+      </h2>
+
+      <Socials class="mt-2" />
+    </section>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .description-link {

@@ -1,3 +1,27 @@
+<script lang="ts">
+import Vue, { PropType } from "vue"
+
+export default Vue.extend({
+  props: {
+    type: {
+      type: String as PropType<"repository" | "iframe" | "song" | "block">,
+      required: false,
+      default: "block",
+    },
+    iframeUrl: {
+      type: String,
+      required: false,
+      default: null,
+    },
+  },
+  data() {
+    return {
+      itemLoaded: false,
+    }
+  },
+})
+</script>
+
 <template>
   <!-- Repository Card -->
   <div
@@ -40,10 +64,31 @@
   <!-- Song Card -->
   <div
     v-else-if="type === 'song'"
-    class="rounded-lg cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 py-2 px-4 transition-shadow items-center select-none hover:shadow-md dark:bg-gray-800"
+    class="
+      rounded-lg
+      cursor-pointer
+      flex
+      space-x-2
+      bg-gray-200 bg-opacity-40
+      py-2
+      px-4
+      transition-shadow
+      items-center
+      select-none
+      dark:bg-gray-800
+      hover:shadow-md
+    "
   >
     <div
-      class="rounded-md bg-gray-200 flex-shrink-0 h-16 animate-pulse w-16 dark:bg-gray-700"
+      class="
+        rounded-md
+        bg-gray-200
+        flex-shrink-0
+        h-16
+        animate-pulse
+        w-16
+        dark:bg-gray-700
+      "
     />
 
     <div class="flex-grow space-y-1">
@@ -63,27 +108,3 @@
     class="rounded bg-gray-100 animate-pulse dark:bg-gray-800"
   />
 </template>
-
-<script lang="ts">
-import Vue, { PropType } from "vue"
-
-export default Vue.extend({
-  props: {
-    type: {
-      type: String as PropType<"repository" | "iframe" | "song" | "block">,
-      required: false,
-      default: "block",
-    },
-    iframeUrl: {
-      type: String,
-      required: false,
-      default: null,
-    },
-  },
-  data() {
-    return {
-      itemLoaded: false,
-    }
-  },
-})
-</script>

@@ -1,292 +1,3 @@
-<template>
-  <div class="space-y-2 mt-4">
-    <!-- Custom Status Presence will read the data from here -->
-    <div id="object" class="text-gray-900 hidden dark:text-gray-100">
-      {{ getPresenceData }}
-    </div>
-
-    <div class="space-y-6">
-      <div class="space-y-4">
-        <BlogNotification v-if="presence.installed === false" type="danger">
-          You need to install the Custom Status presence from the PreMiD Store
-          to be able to use this page.
-          <SmartLink
-            href="https://premid.app/store/presences/Custom%20Status"
-            class="text-blue-200"
-            blank
-            >Click here</SmartLink
-          >
-          to visit the store.
-        </BlogNotification>
-
-        <BlogNotification type="warning" class="sm:hidden">
-          Are you on mobile? If you are you should know that PreMiD doesn't work
-          on mobile, so you can't use this page in any way.
-        </BlogNotification>
-
-        <CardDiscord
-          :small-image-text="presence.smallImageText"
-          :large-image="presence.largeImageKey"
-          :small-image="presence.smallImageKey"
-          :timestamp="presence.timestamp"
-          :details="presence.details"
-          :state="presence.state"
-          :buttons="getButtons"
-          class="shadow-lg"
-        />
-      </div>
-
-      <div class="space-y-4 mt-4 gap-4 sm:(grid space-y-0 grid-cols-2)">
-        <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            Details (upper text)
-          </h3>
-
-          <input
-            v-model="presence.details"
-            type="text"
-            placeholder="Something nice"
-            class="w-full"
-          />
-        </div>
-
-        <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            State (lower text)
-          </h3>
-
-          <input
-            v-model="presence.state"
-            type="text"
-            placeholder="This is neat!"
-            class="w-full"
-          />
-        </div>
-
-        <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            Large Image
-          </h3>
-          <select
-            v-model="presence.largeImageKey"
-            class="bg-white w-full dark:bg-gray-700"
-          >
-            <option selected>PreMiD</option>
-            <optgroup
-              v-for="(category, index) in getImages.large"
-              :key="`large-group-${index}`"
-              :label="category.name"
-            >
-              <option
-                v-for="(item, i) of category.items.sort((a, b) =>
-                  a.name.localeCompare(b.name)
-                )"
-                :key="`large-option-${i}`"
-              >
-                {{ item.name }}
-              </option>
-            </optgroup>
-          </select>
-        </div>
-
-        <div class="space-y-2">
-          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-            Small Image
-          </h3>
-          <select
-            v-model="presence.smallImageKey"
-            class="bg-white w-full dark:bg-gray-700"
-          >
-            <option selected>None</option>
-            <optgroup
-              v-for="(category, index) in getImages.small"
-              :key="`small-group-${index}`"
-              :label="category.name"
-            >
-              <option
-                v-for="(item, i) of category.items.sort((a, b) =>
-                  a.name.localeCompare(b.name)
-                )"
-                :key="`small-image-${i}`"
-              >
-                {{ item.name }}
-              </option>
-            </optgroup>
-          </select>
-        </div>
-
-        <div
-          v-if="presence.smallImageKey !== 'None'"
-          class="space-y-2 w-full col-span-2"
-        >
-          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-            Small Image Text
-          </h3>
-
-          <input
-            v-model="presence.smallImageText"
-            type="text"
-            class="w-full"
-            placeholder="[EMPTY]"
-          />
-        </div>
-
-        <div class="space-y-4 col-span-2">
-          <div>
-            <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-              Buttons
-            </h3>
-
-            <p class="text-gray-600 dark:text-gray-300">
-              You can't click your own buttons from your Discord profile. If
-              they appear here, they should also be working for others, blame
-              Discord.
-            </p>
-          </div>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="space-y-2">
-              <input
-                v-model="presence.buttons[0].label"
-                type="text"
-                class="w-full"
-                placeholder="Visit This Cool Website"
-              />
-
-              <input
-                v-model="presence.buttons[0].url"
-                type="text"
-                class="w-full"
-                placeholder="https://eggsy.xyz"
-              />
-            </div>
-
-            <div class="space-y-2">
-              <input
-                v-model="presence.buttons[1].label"
-                type="text"
-                class="w-full"
-                placeholder="Visit PreMiD"
-              />
-
-              <input
-                v-model="presence.buttons[1].url"
-                type="text"
-                class="w-full"
-                placeholder="https://premid.app"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-2 col-span-2">
-          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-            Timestamps
-          </h3>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div
-              class="timestamp dark:text-gray-200"
-              :class="{
-                'active text-white dark:text-gray-100':
-                  presence.timestamp.start.enabled === true,
-              }"
-              @click="toggleTimestamp('elapsed')"
-            >
-              Show Time Elapsed
-            </div>
-
-            <div
-              class="cursor-default timestamp"
-              :class="{
-                active: presence.timestamp.end.enabled === true,
-              }"
-            >
-              <span
-                class="dark:text-gray-200"
-                :class="{
-                  'text-white dark:text-gray-100':
-                    presence.timestamp.end.enabled === true,
-                }"
-                >Time To:
-              </span>
-              <input
-                v-model="presence.timestamp.end.value"
-                type="time"
-                @input="endTimestampChange"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <section class="space-y-6">
-        <div>
-          <h2
-            class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
-          >
-            Consider Donating!
-          </h2>
-
-          <p class="text-gray-700 dark:text-gray-200">
-            If you want to support my work and make me create better systems in
-            the future, you can donate me through Patreon, please visit
-            <SmartLink
-              :href="{ name: 'donate' }"
-              class="font-medium hover:underline"
-            >
-              my donate page
-            </SmartLink>
-            for more information.
-          </p>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-2">
-          <div>
-            <h2
-              class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
-            >
-              How does it work?
-            </h2>
-            <p class="text-gray-700 dark:text-gray-200">
-              When you add our Presence from Presence Store which is on
-              <SmartLink
-                href="https://premid.app/store/presences/Custom%20Status"
-                title="PreMiD Store"
-                blank
-                >this page</SmartLink
-              >, you will be able to use this page. You just have to set your
-              settings and PreMiD will show those settings on your profile just
-              like in the preview you see up here.
-            </p>
-          </div>
-
-          <div>
-            <h2
-              class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
-            >
-              It's not showing anything!?
-            </h2>
-
-            <p class="text-gray-700 dark:text-gray-200">
-              If the system isn't working or it isn't displaying anything on
-              your profile, it's most likely about you. Please check
-              <SmartLink
-                href="https://premid.app/store/presences/Custom%20Status"
-                title="PreMiD Docs"
-                blank
-                >Troubleshooting Documentation</SmartLink
-              >
-              and see if those steps fixes your issue. If nothing works out, you
-              can always find me on PreMiD's Discord server.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -558,18 +269,317 @@ export default Vue.extend({
 })
 </script>
 
+<template>
+  <div class="space-y-2 mt-4">
+    <!-- Custom Status Presence will read the data from here -->
+    <div id="object" class="text-gray-900 hidden dark:text-gray-100">
+      {{ getPresenceData }}
+    </div>
+
+    <div class="space-y-6">
+      <div class="space-y-4">
+        <BlogNotification v-if="presence.installed === false" type="danger">
+          You need to install the Custom Status presence from the PreMiD Store
+          to be able to use this page.
+          <SmartLink
+            href="https://premid.app/store/presences/Custom%20Status"
+            class="text-blue-200"
+            blank
+            >Click here</SmartLink
+          >
+          to visit the store.
+        </BlogNotification>
+
+        <BlogNotification type="warning" class="sm:hidden">
+          Are you on mobile? If you are you should know that PreMiD doesn't work
+          on mobile, so you can't use this page in any way.
+        </BlogNotification>
+
+        <CardDiscord
+          :small-image-text="presence.smallImageText"
+          :large-image="presence.largeImageKey"
+          :small-image="presence.smallImageKey"
+          :timestamp="presence.timestamp"
+          :details="presence.details"
+          :state="presence.state"
+          :buttons="getButtons"
+          class="shadow-lg"
+        />
+      </div>
+
+      <div class="space-y-4 mt-4 gap-4 sm:(grid space-y-0 grid-cols-2) ">
+        <div class="space-y-2">
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">
+            Details (upper text)
+          </h3>
+
+          <input
+            v-model="presence.details"
+            type="text"
+            placeholder="Something nice"
+            class="w-full"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">
+            State (lower text)
+          </h3>
+
+          <input
+            v-model="presence.state"
+            type="text"
+            placeholder="This is neat!"
+            class="w-full"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">
+            Large Image
+          </h3>
+          <select
+            v-model="presence.largeImageKey"
+            class="bg-white w-full dark:bg-gray-700"
+          >
+            <option selected>PreMiD</option>
+            <optgroup
+              v-for="(category, index) in getImages.large"
+              :key="`large-group-${index}`"
+              :label="category.name"
+            >
+              <option
+                v-for="(item, i) of category.items.sort((a, b) =>
+                  a.name.localeCompare(b.name)
+                )"
+                :key="`large-option-${i}`"
+              >
+                {{ item.name }}
+              </option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
+            Small Image
+          </h3>
+          <select
+            v-model="presence.smallImageKey"
+            class="bg-white w-full dark:bg-gray-700"
+          >
+            <option selected>None</option>
+            <optgroup
+              v-for="(category, index) in getImages.small"
+              :key="`small-group-${index}`"
+              :label="category.name"
+            >
+              <option
+                v-for="(item, i) of category.items.sort((a, b) =>
+                  a.name.localeCompare(b.name)
+                )"
+                :key="`small-image-${i}`"
+              >
+                {{ item.name }}
+              </option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div
+          v-if="presence.smallImageKey !== 'None'"
+          class="space-y-2 w-full col-span-2"
+        >
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
+            Small Image Text
+          </h3>
+
+          <input
+            v-model="presence.smallImageText"
+            type="text"
+            class="w-full"
+            placeholder="[EMPTY]"
+          />
+        </div>
+
+        <div class="space-y-4 col-span-2">
+          <div>
+            <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
+              Buttons
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-300">
+              You can't click your own buttons from your Discord profile. If
+              they appear here, they should also be working for others, blame
+              Discord.
+            </p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="space-y-2">
+              <input
+                v-model="presence.buttons[0].label"
+                type="text"
+                class="w-full"
+                placeholder="Visit This Cool Website"
+              />
+
+              <input
+                v-model="presence.buttons[0].url"
+                type="text"
+                class="w-full"
+                placeholder="https://eggsy.xyz"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <input
+                v-model="presence.buttons[1].label"
+                type="text"
+                class="w-full"
+                placeholder="Visit PreMiD"
+              />
+
+              <input
+                v-model="presence.buttons[1].url"
+                type="text"
+                class="w-full"
+                placeholder="https://premid.app"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2 col-span-2">
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
+            Timestamps
+          </h3>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div
+              class="timestamp dark:text-gray-200"
+              :class="{
+                'active text-white dark:text-gray-100':
+                  presence.timestamp.start.enabled === true,
+              }"
+              @click="toggleTimestamp('elapsed')"
+            >
+              Show Time Elapsed
+            </div>
+
+            <div
+              class="cursor-default timestamp"
+              :class="{
+                active: presence.timestamp.end.enabled === true,
+              }"
+            >
+              <span
+                class="dark:text-gray-200"
+                :class="{
+                  'text-white dark:text-gray-100':
+                    presence.timestamp.end.enabled === true,
+                }"
+                >Time To:
+              </span>
+              <input
+                v-model="presence.timestamp.end.value"
+                type="time"
+                @input="endTimestampChange"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="space-y-6">
+        <div>
+          <h2
+            class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
+          >
+            Consider Donating!
+          </h2>
+
+          <p class="text-gray-700 dark:text-gray-200">
+            If you want to support my work and make me create better systems in
+            the future, you can donate me through Patreon, please visit
+            <SmartLink
+              :href="{ name: 'donate' }"
+              class="font-medium hover:underline"
+            >
+              my donate page
+            </SmartLink>
+            for more information.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <div>
+            <h2
+              class="
+                font-semibold
+                text-lg text-gray-800
+                block
+                dark:text-gray-100
+              "
+            >
+              How does it work?
+            </h2>
+            <p class="text-gray-700 dark:text-gray-200">
+              When you add our Presence from Presence Store which is on
+              <SmartLink
+                href="https://premid.app/store/presences/Custom%20Status"
+                title="PreMiD Store"
+                blank
+                >this page</SmartLink
+              >, you will be able to use this page. You just have to set your
+              settings and PreMiD will show those settings on your profile just
+              like in the preview you see up here.
+            </p>
+          </div>
+
+          <div>
+            <h2
+              class="
+                font-semibold
+                text-lg text-gray-800
+                block
+                dark:text-gray-100
+              "
+            >
+              It's not showing anything!?
+            </h2>
+
+            <p class="text-gray-700 dark:text-gray-200">
+              If the system isn't working or it isn't displaying anything on
+              your profile, it's most likely about you. Please check
+              <SmartLink
+                href="https://premid.app/store/presences/Custom%20Status"
+                title="PreMiD Docs"
+                blank
+                >Troubleshooting Documentation</SmartLink
+              >
+              and see if those steps fixes your issue. If nothing works out, you
+              can always find me on PreMiD's Discord server.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</template>
+
 <style lang="scss" scoped>
 input,
 select {
-  @apply rounded-md ring-2 focus:ring-4 focus:outline-none ring-gray-300 ring-opacity-25 px-4 py-2 dark:(bg-gray-700 ring-gray-800 text-gray-200);
+  @apply rounded-md py-2 px-4 ring-2 ring-gray-300 ring-opacity-25 dark:(bg-gray-700 ring-gray-800 text-gray-200) focus:outline-none focus:ring-4 ;
 
   &[type="time"] {
-    @apply px-2 py-px;
+    @apply py-px px-2;
   }
 }
 
 .timestamp {
-  @apply rounded-md p-2 text-center select-none ring-2 ring-gray-200 ring-opacity-25 bg-white dark:(bg-gray-700 ring-transparent);
+  @apply bg-white rounded-md text-center p-2 ring-2 ring-gray-200 ring-opacity-25 select-none dark:(bg-gray-700 ring-transparent) ;
 
   &:not(.cursor-default) {
     @apply cursor-pointer;
@@ -585,6 +595,6 @@ select {
 }
 
 a {
-  @apply text-blue-500 hover:(text-blue-600 underline);
+  @apply text-blue-500 hover:(text-blue-600 underline) ;
 }
 </style>

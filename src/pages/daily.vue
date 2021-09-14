@@ -1,110 +1,3 @@
-<template>
-  <div class="py-4 space-y-6">
-    <BlogNotification v-if="isThereNoSongToday === true" type="warning">
-      There's no song for today, check back later or wait for the next day until
-      I find some time to add new songs! You can listen to the older ones if you
-      wish to!
-    </BlogNotification>
-
-    <div class="grid gap-6 sm:grid-cols-2">
-      <div class="space-y-4">
-        <SkeletonLoader
-          type="iframe"
-          :iframe-url="
-            $fetchState.pending === false &&
-            `https://www.youtube.com/embed/${getSelectedSong.youtube}`
-          "
-          class="w-full h-full"
-        />
-      </div>
-
-      <div class="space-y-2">
-        <div class="p-4 rounded-md bg-gray-200/50 dark:bg-gray-800">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-            Title
-          </h3>
-
-          <SkeletonLoader
-            v-if="$fetchState.pending || $fetchState.error"
-            class="w-2/4 h-6 bg-gray-300 dark:bg-gray-700"
-          />
-
-          <span v-else class="text-gray-700 truncate dark:text-gray-300">
-            {{ getSelectedTitle }}
-          </span>
-        </div>
-
-        <div class="p-4 rounded-md bg-gray-200/50 dark:bg-gray-800">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-            Artist
-          </h3>
-
-          <SkeletonLoader
-            v-if="$fetchState.pending || $fetchState.error"
-            class="w-1/4 h-6 bg-gray-300 dark:bg-gray-700"
-          />
-
-          <span v-else class="text-gray-700 truncate dark:text-gray-300">
-            {{ getSelectedSongMetadata.artist || "Unknown" }}
-          </span>
-        </div>
-
-        <div class="p-4 rounded-md bg-gray-200/50 dark:bg-gray-800">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-            Date
-          </h3>
-
-          <SkeletonLoader
-            v-if="$fetchState.pending || $fetchState.error"
-            class="w-2/4 h-6 bg-gray-300 dark:bg-gray-700"
-          />
-
-          <span v-else class="text-gray-700 truncate dark:text-gray-300">
-            {{ getSelectedDateTitle }}
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
-        Older Songs
-      </h3>
-
-      <div class="grid gap-2 mt-2 sm:grid-cols-2 md:grid-cols-3">
-        <template v-if="$fetchState.pending === true">
-          <SkeletonLoader
-            v-for="item in 9"
-            :key="`skeleton-song-${item}`"
-            type="song"
-          />
-        </template>
-
-        <div
-          v-else-if="$fetchState.error"
-          class="text-gray-900 sm:col-span-2 md:col-span-3 dark:text-gray-100"
-        >
-          Something went wrong while fetching songs from Firebase.
-        </div>
-
-        <template v-else>
-          <CardSong
-            v-for="(song, index) in getSongList"
-            :key="`song-${index}`"
-            :title="song.metadata.title"
-            :date="song.date"
-            :thumbnail="
-              song.metadata.thumbnail || 'http://via.placeholder.com/75'
-            "
-            class="overflow-x-hidden"
-            @click.native="selected = song"
-          />
-        </template>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -212,6 +105,113 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <div class="space-y-6 py-4">
+    <BlogNotification v-if="isThereNoSongToday === true" type="warning">
+      There's no song for today, check back later or wait for the next day until
+      I find some time to add new songs! You can listen to the older ones if you
+      wish to!
+    </BlogNotification>
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div class="space-y-4">
+        <SkeletonLoader
+          type="iframe"
+          :iframe-url="
+            $fetchState.pending === false &&
+            `https://www.youtube.com/embed/${getSelectedSong.youtube}`
+          "
+          class="h-full w-full"
+        />
+      </div>
+
+      <div class="space-y-2">
+        <div class="rounded-md bg-gray-200/50 p-4 dark:bg-gray-800">
+          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+            Title
+          </h3>
+
+          <SkeletonLoader
+            v-if="$fetchState.pending || $fetchState.error"
+            class="bg-gray-300 h-6 w-2/4 dark:bg-gray-700"
+          />
+
+          <span v-else class="text-gray-700 truncate dark:text-gray-300">
+            {{ getSelectedTitle }}
+          </span>
+        </div>
+
+        <div class="rounded-md bg-gray-200/50 p-4 dark:bg-gray-800">
+          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+            Artist
+          </h3>
+
+          <SkeletonLoader
+            v-if="$fetchState.pending || $fetchState.error"
+            class="bg-gray-300 h-6 w-1/4 dark:bg-gray-700"
+          />
+
+          <span v-else class="text-gray-700 truncate dark:text-gray-300">
+            {{ getSelectedSongMetadata.artist || "Unknown" }}
+          </span>
+        </div>
+
+        <div class="rounded-md bg-gray-200/50 p-4 dark:bg-gray-800">
+          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+            Date
+          </h3>
+
+          <SkeletonLoader
+            v-if="$fetchState.pending || $fetchState.error"
+            class="bg-gray-300 h-6 w-2/4 dark:bg-gray-700"
+          />
+
+          <span v-else class="text-gray-700 truncate dark:text-gray-300">
+            {{ getSelectedDateTitle }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
+        Older Songs
+      </h3>
+
+      <div class="mt-2 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+        <template v-if="$fetchState.pending === true">
+          <SkeletonLoader
+            v-for="item in 9"
+            :key="`skeleton-song-${item}`"
+            type="song"
+          />
+        </template>
+
+        <div
+          v-else-if="$fetchState.error"
+          class="text-gray-900 sm:col-span-2 md:col-span-3 dark:text-gray-100"
+        >
+          Something went wrong while fetching songs from Firebase.
+        </div>
+
+        <template v-else>
+          <CardSong
+            v-for="(song, index) in getSongList"
+            :key="`song-${index}`"
+            :title="song.metadata.title"
+            :date="song.date"
+            :thumbnail="
+              song.metadata.thumbnail || 'http://via.placeholder.com/75'
+            "
+            class="overflow-x-hidden"
+            @click.native="selected = song"
+          />
+        </template>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .ring {

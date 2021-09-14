@@ -1,613 +1,3 @@
-<template>
-  <div class="pt-6">
-    <div class="space-y-8">
-      <div>
-        <h1 class="font-semibold text-xl">Presence Metadata Creator</h1>
-        <p>
-          Create a metadata.json file for your amazing and new PreMiD service
-          with an easy to use and free graphical user interface! Worry. You will
-          still need to code the presence to get it working! Machines can't do
-          everything 😅
-        </p>
-      </div>
-
-      <div class="space-y-6 mt-2">
-        <!-- Author Information -->
-        <div>
-          <h2 class="font-medium text-lg">Author Information</h2>
-
-          <div class="mt-1 grid gap-3 sm:grid-cols-2">
-            <input
-              v-model="service.author.name"
-              class="input"
-              placeholder="Your Discord username, without the #tag"
-            />
-
-            <input
-              v-model="service.author.id"
-              class="input"
-              placeholder="Your Discord ID"
-            />
-          </div>
-        </div>
-
-        <!-- Service Information -->
-        <div>
-          <h2 class="font-medium text-lg">Service Information</h2>
-
-          <div class="mt-1 grid gap-3 sm:grid-cols-2">
-            <input
-              v-model="service.name"
-              class="input"
-              placeholder="Name of the service"
-            />
-
-            <select v-model="service.category.selected" class="input">
-              <option value="Select a category" selected disabled>
-                Select a category
-              </option>
-
-              <option
-                v-for="(option, index) in service.category.options"
-                :key="`category-option-${index}`"
-                :value="option"
-              >
-                {{ option }}
-              </option>
-            </select>
-
-            <input
-              v-model="service.logo"
-              class="input"
-              placeholder="Logo of the service, 512x512 is recommended"
-            />
-
-            <input
-              v-model="service.thumbnail"
-              class="input"
-              placeholder="Thumbnail of the service, usually a screenshot of the service"
-            />
-          </div>
-
-          <div class="mt-3 grid gap-3 grid-cols-2">
-            <div class="relative">
-              <input
-                readonly
-                class="w-full input"
-                placeholder="Service color"
-                :value="service.color"
-                @click="$refs.color.click()"
-              />
-
-              <input
-                ref="color"
-                v-model="service.color"
-                class="top-0 right-0 bottom-0 left-0 absolute invisible"
-                type="color"
-                placeholder="Service color"
-              />
-            </div>
-
-            <input
-              v-model="service.version"
-              class="input"
-              placeholder="Service version"
-            />
-          </div>
-
-          <div class="mt-3 grid gap-3 sm:grid-cols-3">
-            <!-- URLs -->
-            <div
-              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
-            >
-              <input
-                v-model="service.url.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700 text-gray-200)"
-                placeholder="URL(s) of the service"
-                @keyup.enter="addItem('url')"
-              />
-
-              <!-- List -->
-              <div class="h-4/5 overflow-y-auto scrollbar">
-                <div
-                  class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
-                  :class="{
-                    'h-full flex justify-center items-center':
-                      service.url.list.length === 0,
-                  }"
-                >
-                  <div
-                    v-for="(url, index) in service.url.list"
-                    :key="`url-${index}`"
-                    class="flex space-x-4 items-center"
-                  >
-                    <span class="flex-grow truncate">
-                      {{ url }}
-                    </span>
-
-                    <IconX
-                      title="Click to remove this URL"
-                      @click.native="removeItem(url, 'url')"
-                    />
-                  </div>
-
-                  <div
-                    v-if="service.url.list.length === 0"
-                    class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                  >
-                    Enter URL and hit enter
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tags -->
-            <div
-              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
-            >
-              <input
-                v-model="service.tags.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700 text-gray-200)"
-                placeholder="Tags for the service"
-                @keyup.enter="addItem('tag')"
-              />
-
-              <!-- List -->
-              <div class="h-4/5 overflow-y-auto scrollbar">
-                <div
-                  class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
-                  :class="
-                    service.tags.list.length === 0 &&
-                    'h-full flex justify-center items-center'
-                  "
-                >
-                  <div
-                    v-for="(tag, index) in service.tags.list"
-                    :key="`tag-${index}`"
-                    class="flex space-x-4 items-center"
-                  >
-                    <span class="flex-grow truncate">
-                      {{ tag }}
-                    </span>
-
-                    <IconX
-                      title="Click to remove this tag"
-                      @click.native="removeItem(tag, 'tag')"
-                    />
-                  </div>
-
-                  <div
-                    v-if="service.tags.list.length === 0"
-                    class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                  >
-                    Enter tag name and hit enter
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Descriptions -->
-            <div
-              class="rounded-md bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
-            >
-              <div class="h-full space-y-2">
-                <div class="h-1/3">
-                  <input
-                    v-model="service.description.inputs.langCode"
-                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700
-                      text-gray-200)"
-                    placeholder="Language code, e.g. en"
-                    @keyup.enter="$refs.descriptionInput.focus()"
-                  />
-
-                  <input
-                    ref="descriptionInput"
-                    v-model="service.description.inputs.content"
-                    class="h-1/2 w-full py-2 px-4 focus:outline-none dark:(bg-gray-700 text-gray-200)"
-                    placeholder="Localized description"
-                    @keyup.enter="addItem('description')"
-                  />
-                </div>
-
-                <!-- List -->
-                <div class="h-2/3 overflow-y-auto scrollbar">
-                  <div
-                    class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
-                    :class="{
-                      'h-full flex justify-center items-center':
-                        service.description.list.length === 0,
-                    }"
-                  >
-                    <div
-                      v-for="(description, index) in service.description.list"
-                      :key="`description-${index}`"
-                      class="flex space-x-4 items-center"
-                    >
-                      <div class="flex-grow overflow-x-hidden">
-                        <span class="truncate">
-                          {{ description.langCode }}
-                        </span>
-
-                        <p class="text-xs line-clamp-2">
-                          {{ description.content }}
-                        </p>
-                      </div>
-
-                      <IconX
-                        @click.native="
-                          removeItem(description.langCode, 'description')
-                        "
-                      />
-                    </div>
-
-                    <div
-                      v-if="service.description.list.length === 0"
-                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                    >
-                      Fill the inputs and hit enter
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Additional Settings -->
-        <div>
-          <div>
-            <h2 class="font-medium text-lg">
-              Additional Settings
-              <span
-                class="cursor-pointer font-normal text-sm hover:underline"
-                @click="additionalSettings = !additionalSettings"
-              >
-                {{ additionalSettings ? "hide" : "show" }}
-              </span>
-            </h2>
-
-            <p>
-              Settings under this title are not necessary, only fill these if
-              you know what you are doing, otherwise, you can just skip this
-              section.
-            </p>
-          </div>
-
-          <transition name="fade" mode="out-in">
-            <div v-if="additionalSettings === true" class="space-y-4 mt-4">
-              <div class="grid gap-3 sm:grid-cols-2">
-                <input
-                  v-model="service.regexp.url"
-                  class="input"
-                  placeholder="URL regex"
-                />
-
-                <input
-                  v-model="service.regexp.iframe"
-                  class="input"
-                  placeholder="Iframe regex"
-                />
-              </div>
-
-              <div class="grid gap-x-3 gap-y-2 sm:grid-cols-3">
-                <button
-                  v-tippy="{
-                    content: 'To be able to read data from iframe sources',
-                    placement: 'top',
-                  }"
-                  class="text-white transition input"
-                  :class="
-                    service.iframe === true ? 'bg-green-500' : 'bg-red-600'
-                  "
-                  @click="service.iframe = !service.iframe"
-                >
-                  {{ service.iframe ? "Disable" : "Enable" }} Iframe Support
-                </button>
-
-                <button
-                  v-tippy="{
-                    content:
-                      'Small warning icon that will take place next to your Presence on Store',
-                    placement: 'top',
-                  }"
-                  class="text-white transition input"
-                  :class="
-                    service.warning === true ? 'bg-green-500' : 'bg-red-600'
-                  "
-                  @click="service.warning = !service.warning"
-                >
-                  {{ service.warning ? "Disable" : "Enable" }} Warning Icon
-                </button>
-
-                <button
-                  v-tippy="{
-                    content:
-                      'Required permission to be able to read Console entries',
-                    placement: 'top',
-                  }"
-                  class="text-white transition input"
-                  :class="
-                    service.readLogs === true ? 'bg-green-500' : 'bg-red-600'
-                  "
-                  @click="service.readLogs = !service.readLogs"
-                >
-                  {{ service.readLogs ? "Disable" : "Enable" }} Read Logs
-                </button>
-              </div>
-
-              <div class="rounded-md ring grid sm:grid-cols-2">
-                <div
-                  class="rounded-tl-md rounded-bl-md h-full bg-gray-100 ring dark:bg-gray-800"
-                >
-                  <input
-                    v-model="service.contributors.inputs.name"
-                    class="rounded-none rounded-tl-md h-1/2 w-full ring-0 input"
-                    placeholder="Contributor name"
-                    @keyup.enter="$refs.contributorsIdInput.focus()"
-                  />
-
-                  <input
-                    ref="contributorsIdInput"
-                    v-model="service.contributors.inputs.id"
-                    class="rounded-none rounded-bl-md h-1/2 w-full ring-0 input"
-                    placeholder="Contributor ID"
-                    @keyup.enter="addItem('contributor')"
-                  />
-                </div>
-
-                <div
-                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-gray-800"
-                >
-                  <div
-                    class="flex h-full mx-auto space-x-6 px-4 items-center overflow-x-auto scrollbar"
-                    :class="{
-                      'flex items-center justify-center w-full':
-                        service.contributors.list.length === 0,
-                      'py-2': service.contributors.list.length > 0,
-                    }"
-                  >
-                    <div
-                      v-for="(contributor, index) in service.contributors.list"
-                      :key="`contributor-${index}`"
-                      class="flex space-x-2 flex-shrink-0 text-gray-900 items-center truncate dark:text-gray-100"
-                    >
-                      <span class="flex-shrink-0">{{ contributor.name }}</span>
-                      <IconX
-                        title="Click to remove this tag"
-                        @click.native="
-                          removeItem(contributor.id, 'contributor')
-                        "
-                      />
-                    </div>
-
-                    <div
-                      v-if="service.contributors.list.length === 0"
-                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                    >
-                      Fill the inputs and hit enter
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="rounded-md ring grid sm:grid-cols-2">
-                <div
-                  class="rounded-tl-md rounded-bl-md bg-gray-100 dark:bg-gray-800"
-                >
-                  <input
-                    v-model="service.altnames.input"
-                    class="rounded-none rounded-tl-md rounded-bl-md w-full ring-0 input"
-                    placeholder="Alternative name(s), e.g. 精靈寶可夢 (Pokémon)"
-                    @keyup.enter="addItem('altname')"
-                  />
-                </div>
-
-                <div
-                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-gray-800"
-                >
-                  <div
-                    class="flex h-full mx-auto space-x-6 px-4 items-center overflow-x-auto scrollbar"
-                    :class="{
-                      'flex items-center justify-center w-full':
-                        service.contributors.list.length === 0,
-                      'py-2': service.altnames.list.length > 0,
-                    }"
-                  >
-                    <div
-                      v-for="(altname, index) in service.altnames.list"
-                      :key="`altname-${index}`"
-                      class="flex space-x-2 flex-shrink-0 text-gray-900 items-center truncate dark:text-gray-100"
-                    >
-                      <span class="flex-shrink-0">{{ altname }}</span>
-                      <IconX
-                        title="Click to remove this alternative name"
-                        @click.native="removeItem(altname, 'altname')"
-                      />
-                    </div>
-
-                    <div
-                      v-if="service.altnames.list.length === 0"
-                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                    >
-                      Enter a name and hit enter
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="space-y-2 text-sm">
-                <p>
-                  <strong class="font-medium">P.S.</strong> You can't configure
-                  Presence Settings with this tool. You have to take a look at
-                  the docs from this point. I am not able to produce it since
-                  there are many possibilities and more to be added in the
-                  future. It's best if you just follow the Documentation.
-                </p>
-
-                <p>
-                  🐛 If you wish to report a bug, a feature request or contact
-                  me in general, you can visit my website's GitHub repository
-                  and leave an issue.
-                </p>
-
-                <p>
-                  🎉 If you liked my work, please consider donating to see more
-                  tools like this. Visit
-                  <SmartLink
-                    :href="{ name: 'donate' }"
-                    class="font-medium underline"
-                    >donation</SmartLink
-                  >
-                  page for more information.
-                </p>
-              </div>
-            </div>
-          </transition>
-
-          <div
-            class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4)"
-          >
-            <div
-              class="flex space-x-2 items-center justify-center control-button"
-              @click="resultWindow = true"
-            >
-              <IconCog class="h-5 w-5 no-style" />
-              <span>Generate</span>
-            </div>
-
-            <div
-              class="control-button"
-              :class="{ 'cursor-not-allowed': importLoading === true }"
-              @click="importFromStore"
-            >
-              <IconSync
-                v-if="importLoading === true"
-                class="mx-auto h-6 animate-spin w-6 no-style"
-              />
-
-              <div v-else class="flex space-x-2 items-center justify-center">
-                <IconInbox class="h-5 w-5 no-style" />
-                <span>Import From Store</span>
-              </div>
-            </div>
-
-            <div
-              class="flex space-x-2 items-center justify-center control-button"
-              @click="
-                {
-                  service = initialService
-                }
-              "
-            >
-              <IconX class="h-5 w-5 no-style" />
-              <span>Clear</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      v-if="resultWindow === true"
-      class="bg-black bg-opacity-50 top-0 right-0 bottom-0 left-0 fixed hidden sm:block"
-      @click="resultWindow = false"
-    />
-
-    <transition name="slide-left" mode="out-in">
-      <div
-        v-show="resultWindow === true"
-        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-gray-800"
-      >
-        <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
-          <div class="space-y-1">
-            <div
-              class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
-            >
-              <IconCog class="h-5 w-5 no-style" />
-              <h2 class="font-semibold text-lg">Metadata Result</h2>
-            </div>
-
-            <p class="text-gray-800 dark:text-gray-200">
-              The result of your metadata.json, you can see your issues, and
-              download your config from this window. Make sure to fill every and
-              each required input correctly before doing anything!
-            </p>
-          </div>
-
-          <div class="space-y-1">
-            <div
-              class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
-            >
-              <IconExclamation class="h-5 w-5 no-style" />
-              <h2 class="font-semibold text-lg">Errors</h2>
-            </div>
-
-            <BlogNotification v-if="getMetadata.error === false" type="success">
-              No issues/errors found. You're good to go!
-            </BlogNotification>
-
-            <div v-else class="grid gap-1 sm:grid-cols-2">
-              <BlogNotification
-                v-for="(error, index) of getMetadata.errors"
-                :key="`error-${index}`"
-                :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
-                type="danger"
-              >
-                {{ error }}
-              </BlogNotification>
-            </div>
-          </div>
-
-          <div class="space-y-1">
-            <div class="flex items-center justify-between">
-              <div
-                class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
-              >
-                <IconFire class="h-5 w-5 no-style" />
-                <h2 class="font-semibold text-lg">Your Metadata File</h2>
-              </div>
-            </div>
-
-            <!-- eslint-disable vue/no-v-html -->
-            <pre
-              v-if="getMetadata.error === false"
-              class="rounded-md h-96 shadow w-full overflow-y-auto language-json scrollbar"
-              v-html="getHighlightedJson"
-            />
-
-            <span v-else class="text-gray-800 dark:text-gray-200">
-              You have to fix the errors before you can access the metadata
-              JSON.
-            </span>
-          </div>
-
-          <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center)">
-            <a
-              v-if="getMetadata.error === false"
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300"
-              download="metadata.json"
-              :href="`data:text/json;charset=utf-8,${encodeURIComponent(
-                JSON.stringify(getMetadata.result, null, 2)
-              )}`"
-            >
-              <IconInbox class="h-5 w-5 no-style" />
-              <span>Download</span>
-            </a>
-
-            <div
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300"
-              @click="resultWindow = false"
-            >
-              <IconX class="h-5 w-5 no-style" />
-              <span>Close</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition>
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -1037,6 +427,831 @@ export default Vue.extend({
 })
 </script>
 
+<template>
+  <div class="pt-6">
+    <div class="space-y-8">
+      <div>
+        <h1 class="font-semibold text-xl">Presence Metadata Creator</h1>
+        <p>
+          Create a metadata.json file for your amazing and new PreMiD service
+          with an easy to use and free graphical user interface! Worry. You will
+          still need to code the presence to get it working! Machines can't do
+          everything 😅
+        </p>
+      </div>
+
+      <div class="space-y-6 mt-2">
+        <!-- Author Information -->
+        <div>
+          <h2 class="font-medium text-lg">Author Information</h2>
+
+          <div class="mt-1 grid gap-3 sm:grid-cols-2">
+            <input
+              v-model="service.author.name"
+              class="input"
+              placeholder="Your Discord username, without the #tag"
+            />
+
+            <input
+              v-model="service.author.id"
+              class="input"
+              placeholder="Your Discord ID"
+            />
+          </div>
+        </div>
+
+        <!-- Service Information -->
+        <div>
+          <h2 class="font-medium text-lg">Service Information</h2>
+
+          <div class="mt-1 grid gap-3 sm:grid-cols-2">
+            <input
+              v-model="service.name"
+              class="input"
+              placeholder="Name of the service"
+            />
+
+            <select v-model="service.category.selected" class="input">
+              <option value="Select a category" selected disabled>
+                Select a category
+              </option>
+
+              <option
+                v-for="(option, index) in service.category.options"
+                :key="`category-option-${index}`"
+                :value="option"
+              >
+                {{ option }}
+              </option>
+            </select>
+
+            <input
+              v-model="service.logo"
+              class="input"
+              placeholder="Logo of the service, 512x512 is recommended"
+            />
+
+            <input
+              v-model="service.thumbnail"
+              class="input"
+              placeholder="Thumbnail of the service, usually a screenshot of the service"
+            />
+          </div>
+
+          <div class="mt-3 grid gap-3 grid-cols-2">
+            <div class="relative">
+              <input
+                readonly
+                class="w-full input"
+                placeholder="Service color"
+                :value="service.color"
+                @click="$refs.color.click()"
+              />
+
+              <input
+                ref="color"
+                v-model="service.color"
+                class="top-0 right-0 bottom-0 left-0 absolute invisible"
+                type="color"
+                placeholder="Service color"
+              />
+            </div>
+
+            <input
+              v-model="service.version"
+              class="input"
+              placeholder="Service version"
+            />
+          </div>
+
+          <div class="mt-3 grid gap-3 sm:grid-cols-3">
+            <!-- URLs -->
+            <div
+              class="
+                rounded-md
+                space-y-2
+                bg-gray-100
+                h-56
+                ring
+                overflow-y-hidden
+                dark:bg-gray-800
+              "
+            >
+              <input
+                v-model="service.url.input"
+                class="
+                  rounded-tl-md rounded-tr-md
+                  h-1/5
+                  w-full
+                  py-2
+                  px-4
+                  dark:(bg-gray-700
+                  text-gray-200)
+                  focus:outline-none
+                  "
+                placeholder="URL(s) of the service"
+                @keyup.enter="addItem('url')"
+              />
+
+              <!-- List -->
+              <div class="h-4/5 overflow-y-auto scrollbar">
+                <div
+                  class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
+                  :class="{
+                    'h-full flex justify-center items-center':
+                      service.url.list.length === 0,
+                  }"
+                >
+                  <div
+                    v-for="(url, index) in service.url.list"
+                    :key="`url-${index}`"
+                    class="flex space-x-4 items-center"
+                  >
+                    <span class="flex-grow truncate">
+                      {{ url }}
+                    </span>
+
+                    <IconX
+                      title="Click to remove this URL"
+                      @click.native="removeItem(url, 'url')"
+                    />
+                  </div>
+
+                  <div
+                    v-if="service.url.list.length === 0"
+                    class="
+                      text-sm text-center text-gray-500
+                      select-none
+                      dark:text-gray-400
+                    "
+                  >
+                    Enter URL and hit enter
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div
+              class="
+                rounded-md
+                space-y-2
+                bg-gray-100
+                h-56
+                ring
+                overflow-y-hidden
+                dark:bg-gray-800
+              "
+            >
+              <input
+                v-model="service.tags.input"
+                class="
+                  rounded-tl-md rounded-tr-md
+                  h-1/5
+                  w-full
+                  py-2
+                  px-4
+                  dark:(bg-gray-700
+                  text-gray-200)
+                  focus:outline-none
+                  "
+                placeholder="Tags for the service"
+                @keyup.enter="addItem('tag')"
+              />
+
+              <!-- List -->
+              <div class="h-4/5 overflow-y-auto scrollbar">
+                <div
+                  class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
+                  :class="
+                    service.tags.list.length === 0 &&
+                    'h-full flex justify-center items-center'
+                  "
+                >
+                  <div
+                    v-for="(tag, index) in service.tags.list"
+                    :key="`tag-${index}`"
+                    class="flex space-x-4 items-center"
+                  >
+                    <span class="flex-grow truncate">
+                      {{ tag }}
+                    </span>
+
+                    <IconX
+                      title="Click to remove this tag"
+                      @click.native="removeItem(tag, 'tag')"
+                    />
+                  </div>
+
+                  <div
+                    v-if="service.tags.list.length === 0"
+                    class="
+                      text-sm text-center text-gray-500
+                      select-none
+                      dark:text-gray-400
+                    "
+                  >
+                    Enter tag name and hit enter
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Descriptions -->
+            <div
+              class="
+                rounded-md
+                bg-gray-100
+                h-56
+                ring
+                overflow-y-hidden
+                dark:bg-gray-800
+              "
+            >
+              <div class="h-full space-y-2">
+                <div class="h-1/3">
+                  <input
+                    v-model="service.description.inputs.langCode"
+                    class="
+                      rounded-tl-md rounded-tr-md
+                      h-1/2
+                      w-full
+                      py-2
+                      px-4
+                      dark:(bg-gray-700
+                      text-gray-200)
+                      focus:outline-none
+                      "
+                    placeholder="Language code, e.g. en"
+                    @keyup.enter="$refs.descriptionInput.focus()"
+                  />
+
+                  <input
+                    ref="descriptionInput"
+                    v-model="service.description.inputs.content"
+                    class="
+                      h-1/2
+                      w-full
+                      py-2
+                      px-4
+                      dark:(bg-gray-700
+                      text-gray-200)
+                      focus:outline-none
+                      "
+                    placeholder="Localized description"
+                    @keyup.enter="addItem('description')"
+                  />
+                </div>
+
+                <!-- List -->
+                <div class="h-2/3 overflow-y-auto scrollbar">
+                  <div
+                    class="space-y-1 px-2 pb-4 text-gray-800 dark:text-gray-200"
+                    :class="{
+                      'h-full flex justify-center items-center':
+                        service.description.list.length === 0,
+                    }"
+                  >
+                    <div
+                      v-for="(description, index) in service.description.list"
+                      :key="`description-${index}`"
+                      class="flex space-x-4 items-center"
+                    >
+                      <div class="flex-grow overflow-x-hidden">
+                        <span class="truncate">
+                          {{ description.langCode }}
+                        </span>
+
+                        <p class="text-xs line-clamp-2">
+                          {{ description.content }}
+                        </p>
+                      </div>
+
+                      <IconX
+                        @click.native="
+                          removeItem(description.langCode, 'description')
+                        "
+                      />
+                    </div>
+
+                    <div
+                      v-if="service.description.list.length === 0"
+                      class="
+                        text-sm text-center text-gray-500
+                        select-none
+                        dark:text-gray-400
+                      "
+                    >
+                      Fill the inputs and hit enter
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Settings -->
+        <div>
+          <div>
+            <h2 class="font-medium text-lg">
+              Additional Settings
+              <span
+                class="cursor-pointer font-normal text-sm hover:underline"
+                @click="additionalSettings = !additionalSettings"
+              >
+                {{ additionalSettings ? "hide" : "show" }}
+              </span>
+            </h2>
+
+            <p>
+              Settings under this title are not necessary, only fill these if
+              you know what you are doing, otherwise, you can just skip this
+              section.
+            </p>
+          </div>
+
+          <transition name="fade" mode="out-in">
+            <div v-if="additionalSettings === true" class="space-y-4 mt-4">
+              <div class="grid gap-3 sm:grid-cols-2">
+                <input
+                  v-model="service.regexp.url"
+                  class="input"
+                  placeholder="URL regex"
+                />
+
+                <input
+                  v-model="service.regexp.iframe"
+                  class="input"
+                  placeholder="Iframe regex"
+                />
+              </div>
+
+              <div class="grid gap-x-3 gap-y-2 sm:grid-cols-3">
+                <button
+                  v-tippy="{
+                    content: 'To be able to read data from iframe sources',
+                    placement: 'top',
+                  }"
+                  class="text-white transition input"
+                  :class="
+                    service.iframe === true ? 'bg-green-500' : 'bg-red-600'
+                  "
+                  @click="service.iframe = !service.iframe"
+                >
+                  {{ service.iframe ? "Disable" : "Enable" }} Iframe Support
+                </button>
+
+                <button
+                  v-tippy="{
+                    content:
+                      'Small warning icon that will take place next to your Presence on Store',
+                    placement: 'top',
+                  }"
+                  class="text-white transition input"
+                  :class="
+                    service.warning === true ? 'bg-green-500' : 'bg-red-600'
+                  "
+                  @click="service.warning = !service.warning"
+                >
+                  {{ service.warning ? "Disable" : "Enable" }} Warning Icon
+                </button>
+
+                <button
+                  v-tippy="{
+                    content:
+                      'Required permission to be able to read Console entries',
+                    placement: 'top',
+                  }"
+                  class="text-white transition input"
+                  :class="
+                    service.readLogs === true ? 'bg-green-500' : 'bg-red-600'
+                  "
+                  @click="service.readLogs = !service.readLogs"
+                >
+                  {{ service.readLogs ? "Disable" : "Enable" }} Read Logs
+                </button>
+              </div>
+
+              <div class="rounded-md ring grid sm:grid-cols-2">
+                <div
+                  class="
+                    rounded-tl-md rounded-bl-md
+                    h-full
+                    bg-gray-100
+                    ring
+                    dark:bg-gray-800
+                  "
+                >
+                  <input
+                    v-model="service.contributors.inputs.name"
+                    class="rounded-none rounded-tl-md h-1/2 w-full ring-0 input"
+                    placeholder="Contributor name"
+                    @keyup.enter="$refs.contributorsIdInput.focus()"
+                  />
+
+                  <input
+                    ref="contributorsIdInput"
+                    v-model="service.contributors.inputs.id"
+                    class="rounded-none rounded-bl-md h-1/2 w-full ring-0 input"
+                    placeholder="Contributor ID"
+                    @keyup.enter="addItem('contributor')"
+                  />
+                </div>
+
+                <div
+                  class="
+                    rounded-tr-md rounded-br-md
+                    space-y-2
+                    bg-gray-100
+                    overflow-y-hidden
+                    dark:bg-gray-800
+                  "
+                >
+                  <div
+                    class="
+                      flex
+                      h-full
+                      mx-auto
+                      space-x-6
+                      px-4
+                      items-center
+                      overflow-x-auto
+                      scrollbar
+                    "
+                    :class="{
+                      'flex items-center justify-center w-full':
+                        service.contributors.list.length === 0,
+                      'py-2': service.contributors.list.length > 0,
+                    }"
+                  >
+                    <div
+                      v-for="(contributor, index) in service.contributors.list"
+                      :key="`contributor-${index}`"
+                      class="
+                        flex
+                        space-x-2
+                        flex-shrink-0
+                        text-gray-900
+                        items-center
+                        truncate
+                        dark:text-gray-100
+                      "
+                    >
+                      <span class="flex-shrink-0">{{ contributor.name }}</span>
+                      <IconX
+                        title="Click to remove this tag"
+                        @click.native="
+                          removeItem(contributor.id, 'contributor')
+                        "
+                      />
+                    </div>
+
+                    <div
+                      v-if="service.contributors.list.length === 0"
+                      class="
+                        text-sm text-center text-gray-500
+                        select-none
+                        dark:text-gray-400
+                      "
+                    >
+                      Fill the inputs and hit enter
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-md ring grid sm:grid-cols-2">
+                <div
+                  class="
+                    rounded-tl-md rounded-bl-md
+                    bg-gray-100
+                    dark:bg-gray-800
+                  "
+                >
+                  <input
+                    v-model="service.altnames.input"
+                    class="
+                      rounded-none rounded-tl-md rounded-bl-md
+                      w-full
+                      ring-0
+                      input
+                    "
+                    placeholder="Alternative name(s), e.g. 精靈寶可夢 (Pokémon)"
+                    @keyup.enter="addItem('altname')"
+                  />
+                </div>
+
+                <div
+                  class="
+                    rounded-tr-md rounded-br-md
+                    space-y-2
+                    bg-gray-100
+                    overflow-y-hidden
+                    dark:bg-gray-800
+                  "
+                >
+                  <div
+                    class="
+                      flex
+                      h-full
+                      mx-auto
+                      space-x-6
+                      px-4
+                      items-center
+                      overflow-x-auto
+                      scrollbar
+                    "
+                    :class="{
+                      'flex items-center justify-center w-full':
+                        service.contributors.list.length === 0,
+                      'py-2': service.altnames.list.length > 0,
+                    }"
+                  >
+                    <div
+                      v-for="(altname, index) in service.altnames.list"
+                      :key="`altname-${index}`"
+                      class="
+                        flex
+                        space-x-2
+                        flex-shrink-0
+                        text-gray-900
+                        items-center
+                        truncate
+                        dark:text-gray-100
+                      "
+                    >
+                      <span class="flex-shrink-0">{{ altname }}</span>
+                      <IconX
+                        title="Click to remove this alternative name"
+                        @click.native="removeItem(altname, 'altname')"
+                      />
+                    </div>
+
+                    <div
+                      v-if="service.altnames.list.length === 0"
+                      class="
+                        text-sm text-center text-gray-500
+                        select-none
+                        dark:text-gray-400
+                      "
+                    >
+                      Enter a name and hit enter
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2 text-sm">
+                <p>
+                  <strong class="font-medium">P.S.</strong> You can't configure
+                  Presence Settings with this tool. You have to take a look at
+                  the docs from this point. I am not able to produce it since
+                  there are many possibilities and more to be added in the
+                  future. It's best if you just follow the Documentation.
+                </p>
+
+                <p>
+                  🐛 If you wish to report a bug, a feature request or contact
+                  me in general, you can visit my website's GitHub repository
+                  and leave an issue.
+                </p>
+
+                <p>
+                  🎉 If you liked my work, please consider donating to see more
+                  tools like this. Visit
+                  <SmartLink
+                    :href="{ name: 'donate' }"
+                    class="font-medium underline"
+                    >donation</SmartLink
+                  >
+                  page for more information.
+                </p>
+              </div>
+            </div>
+          </transition>
+
+          <div
+            class="
+              flex-wrap
+              space-y-2
+              mt-4
+              items-center
+              sm:(flex
+              space-y-0 space-x-4)
+              "
+          >
+            <div
+              class="flex space-x-2 items-center justify-center control-button"
+              @click="resultWindow = true"
+            >
+              <IconCog class="h-5 w-5 no-style" />
+              <span>Generate</span>
+            </div>
+
+            <div
+              class="control-button"
+              :class="{ 'cursor-not-allowed': importLoading === true }"
+              @click="importFromStore"
+            >
+              <IconSync
+                v-if="importLoading === true"
+                class="mx-auto h-6 animate-spin w-6 no-style"
+              />
+
+              <div v-else class="flex space-x-2 items-center justify-center">
+                <IconInbox class="h-5 w-5 no-style" />
+                <span>Import From Store</span>
+              </div>
+            </div>
+
+            <div
+              class="flex space-x-2 items-center justify-center control-button"
+              @click="
+                {
+                  service = initialService
+                }
+              "
+            >
+              <IconX class="h-5 w-5 no-style" />
+              <span>Clear</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      v-if="resultWindow === true"
+      class="
+        bg-black bg-opacity-50
+        top-0
+        right-0
+        bottom-0
+        left-0
+        fixed
+        hidden
+        sm:block
+      "
+      @click="resultWindow = false"
+    />
+
+    <transition name="slide-left" mode="out-in">
+      <div
+        v-show="resultWindow === true"
+        class="
+          min-h-full
+          bg-gray-100
+          top-0
+          right-0
+          bottom-0
+          fixed
+          overflow-y-auto
+          scrollbar
+          sm:(ml-auto
+          shadow-md
+          w-8/12)
+          dark:bg-gray-800
+          "
+      >
+        <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
+          <div class="space-y-1">
+            <div
+              class="
+                flex
+                space-x-2
+                text-gray-900
+                items-center
+                dark:text-gray-100
+              "
+            >
+              <IconCog class="h-5 w-5 no-style" />
+              <h2 class="font-semibold text-lg">Metadata Result</h2>
+            </div>
+
+            <p class="text-gray-800 dark:text-gray-200">
+              The result of your metadata.json, you can see your issues, and
+              download your config from this window. Make sure to fill every and
+              each required input correctly before doing anything!
+            </p>
+          </div>
+
+          <div class="space-y-1">
+            <div
+              class="
+                flex
+                space-x-2
+                text-gray-900
+                items-center
+                dark:text-gray-100
+              "
+            >
+              <IconExclamation class="h-5 w-5 no-style" />
+              <h2 class="font-semibold text-lg">Errors</h2>
+            </div>
+
+            <BlogNotification v-if="getMetadata.error === false" type="success">
+              No issues/errors found. You're good to go!
+            </BlogNotification>
+
+            <div v-else class="grid gap-1 sm:grid-cols-2">
+              <BlogNotification
+                v-for="(error, index) of getMetadata.errors"
+                :key="`error-${index}`"
+                :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
+                type="danger"
+              >
+                {{ error }}
+              </BlogNotification>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <div
+                class="
+                  flex
+                  space-x-2
+                  text-gray-900
+                  items-center
+                  dark:text-gray-100
+                "
+              >
+                <IconFire class="h-5 w-5 no-style" />
+                <h2 class="font-semibold text-lg">Your Metadata File</h2>
+              </div>
+            </div>
+
+            <!-- eslint-disable vue/no-v-html -->
+            <pre
+              v-if="getMetadata.error === false"
+              class="
+                rounded-md
+                h-96
+                shadow
+                w-full
+                overflow-y-auto
+                language-json
+                scrollbar
+              "
+              v-html="getHighlightedJson"
+            />
+
+            <span v-else class="text-gray-800 dark:text-gray-200">
+              You have to fix the errors before you can access the metadata
+              JSON.
+            </span>
+          </div>
+
+          <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center) ">
+            <a
+              v-if="getMetadata.error === false"
+              class="
+                flex
+                space-x-2
+                bg-gray-200
+                items-center
+                justify-center
+                control-button
+                no-background
+                sm:w-max
+                dark:(bg-gray-700
+                hover:bg-gray-600)
+                hover:bg-gray-300 "
+              download="metadata.json"
+              :href="`data:text/json;charset=utf-8,${encodeURIComponent(
+                JSON.stringify(getMetadata.result, null, 2)
+              )}`"
+            >
+              <IconInbox class="h-5 w-5 no-style" />
+              <span>Download</span>
+            </a>
+
+            <div
+              class="
+                flex
+                space-x-2
+                bg-gray-200
+                items-center
+                justify-center
+                control-button
+                no-background
+                sm:w-max
+                dark:(bg-gray-700
+                hover:bg-gray-600)
+                hover:bg-gray-300 "
+              @click="resultWindow = false"
+            >
+              <IconX class="h-5 w-5 no-style" />
+              <span>Close</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+</template>
+
 <style lang="scss" scoped>
 h1,
 h2 {
@@ -1049,10 +1264,10 @@ p,
 }
 
 .control-button {
-  @apply px-4 py-2 rounded text-gray-900 select-none dark:text-gray-100 ring-1 ring-gray-200 dark:ring-gray-700;
+  @apply rounded py-2 px-4 ring-1 ring-gray-200 text-gray-900 select-none dark:ring-gray-700 dark:text-gray-100;
 
   &:not(.no-background) {
-    @apply bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700;
+    @apply bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700;
   }
 
   &:not(.cursor-not-allowed) {
@@ -1061,11 +1276,11 @@ p,
 }
 
 svg:not(.no-style) {
-  @apply flex-shrink-0 w-6 h-6 p-1 bg-gray-200 rounded-full cursor-pointer dark:(bg-gray-800 hover:bg-gray-700) hover:bg-gray-300;
+  @apply rounded-full cursor-pointer bg-gray-200 flex-shrink-0 h-6 p-1 w-6 dark:(bg-gray-800 hover:bg-gray-700) hover:bg-gray-300 ;
 }
 
 .input {
-  @apply px-4 py-2 focus:outline-none dark:(bg-gray-700 text-gray-200);
+  @apply py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none ;
 
   &:not(.rounded-none) {
     @apply rounded-md;

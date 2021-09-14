@@ -1,3 +1,43 @@
+<script lang="ts">
+import Vue from "vue"
+
+/* Interfaces */
+import type { IsInsideMe } from "~/@types/runtimeConfig"
+
+export default Vue.extend({
+  head() {
+    const title = "is-inside.me"
+    const description =
+      "Free to use file service for ShareX, KShare and MagicCap-like apps! Create an account and get started!"
+
+    return {
+      title,
+      meta: this.$prepareMeta({
+        title,
+        description,
+        keywords: "is-inside.me",
+        url: "https://eggsy.xyz/projects/is-inside-me",
+      }),
+      link: [
+        {
+          rel: "canonical",
+          href: "https://eggsy.xyz/projects/is-inside-me",
+        },
+      ],
+    }
+  },
+  computed: {
+    /**
+     * Returns the project link from runtime config.
+     * @returns {IsInsideMe}
+     */
+    getLink(): IsInsideMe {
+      return this.$config.links.isInsideMe
+    },
+  },
+})
+</script>
+
 <template>
   <div class="space-y-6 py-6">
     <div class="space-y-4 sm:w-9/12">
@@ -52,7 +92,7 @@
         />
       </div>
 
-      <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0)">
+      <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0) ">
         <SmartLink :href="getLink.website" class="button" blank>
           <IconLink class="h-6 w-6" />
           <span>Visit Website</span>
@@ -67,48 +107,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue"
-
-/* Interfaces */
-import type { IsInsideMe } from "~/@types/runtimeConfig"
-
-export default Vue.extend({
-  head() {
-    const title = "is-inside.me"
-    const description =
-      "Free to use file service for ShareX, KShare and MagicCap-like apps! Create an account and get started!"
-
-    return {
-      title,
-      meta: this.$prepareMeta({
-        title,
-        description,
-        keywords: "is-inside.me",
-        url: "https://eggsy.xyz/projects/is-inside-me",
-      }),
-      link: [
-        {
-          rel: "canonical",
-          href: "https://eggsy.xyz/projects/is-inside-me",
-        },
-      ],
-    }
-  },
-  computed: {
-    /**
-     * Returns the project link from runtime config.
-     * @returns {IsInsideMe}
-     */
-    getLink(): IsInsideMe {
-      return this.$config.links.isInsideMe
-    },
-  },
-})
-</script>
-
 <style lang="scss" scoped>
 .button {
-  @apply flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 dark:(ring-gray-700 bg-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-200 sm:w-max;
+  @apply rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(ring-gray-700 bg-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-200 ;
 }
 </style>

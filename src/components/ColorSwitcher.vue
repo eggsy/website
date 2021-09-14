@@ -1,17 +1,3 @@
-<template>
-  <div
-    class="rounded-full cursor-pointer bg-gray-100 p-2 text-gray-900 select-none focus:outline-none hover:shadow-md dark:(bg-gray-800 text-gray-100)"
-    @click="switchTheme"
-  >
-    <IconSun
-      v-if="getSelectedTheme === 'light'"
-      class="h-5 w-5"
-    />
-
-    <IconMoon v-else class="h-5 w-5" />
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -36,3 +22,14 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <div
+    class="rounded-full cursor-pointer bg-gray-100 p-2 text-gray-900 select-none focus:outline-none hover:shadow-md dark:(bg-gray-800 text-gray-100)"
+    @click="switchTheme"
+  >
+    <IconSun v-if="getSelectedTheme === 'light'" class="w-5 h-5" />
+
+    <IconMoon v-else class="w-5 h-5" />
+  </div>
+</template>

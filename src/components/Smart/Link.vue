@@ -1,29 +1,3 @@
-<template>
-  <!-- Internal URL -->
-  <nuxt-link
-    v-if="
-      href &&
-      ((isInternalPage === true && external === false) || internal === true)
-    "
-    :to="href"
-    :target="blank && '_blank'"
-    :title="title"
-  >
-    <slot />
-  </nuxt-link>
-
-  <!-- External URL -->
-  <a
-    v-else
-    :href="href && (utm === false ? href : getUtmLink)"
-    :target="blank && '_blank'"
-    rel="noreferrer noopener"
-    :title="title"
-  >
-    <slot />
-  </a>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
@@ -91,3 +65,29 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <!-- Internal URL -->
+  <nuxt-link
+    v-if="
+      href &&
+      ((isInternalPage === true && external === false) || internal === true)
+    "
+    :to="href"
+    :target="blank && '_blank'"
+    :title="title"
+  >
+    <slot />
+  </nuxt-link>
+
+  <!-- External URL -->
+  <a
+    v-else
+    :href="href && (utm === false ? href : getUtmLink)"
+    :target="blank && '_blank'"
+    rel="noreferrer noopener"
+    :title="title"
+  >
+    <slot />
+  </a>
+</template>

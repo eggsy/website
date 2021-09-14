@@ -1,44 +1,3 @@
-<template>
-  <div class="space-y-4 py-8">
-    <div>
-      <h1 class="text-2xl text-gray-900 dark:text-gray-100">
-        Something bad happened...
-      </h1>
-
-      <p class="text-lg text-gray-700 dark:text-gray-300">Maybe this'd help:</p>
-    </div>
-
-    <div
-      class="rounded flex flex-col space-y-4 bg-gray-200 py-2 px-4 whitespace-normal dark:(bg-gray-800 text-gray-200)"
-    >
-      <div class="flex flex-col">
-        <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
-        <code>{{ getErrorMeta.title }}</code>
-      </div>
-
-      <div class="flex flex-col">
-        <h3 class="font-semibold text-gray-800 dark:text-gray-200">
-          Description:
-        </h3>
-        <code>{{ getErrorMeta.description }}</code>
-      </div>
-
-      <div class="flex flex-col">
-        <h3 class="font-semibold text-gray-800 dark:text-gray-200">Details:</h3>
-        <code>{{ JSON.stringify(error) }}</code>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap space-x-2">
-      <button title="Click to go back" @click="$router.back()">Go Back</button>
-
-      <button title="Click to refresh the page" @click="refresh">
-        Refresh Page
-      </button>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import Vue, { PropType } from "vue"
 
@@ -117,8 +76,59 @@ export default Vue.extend({
 })
 </script>
 
+<template>
+  <div class="space-y-4 py-8">
+    <div>
+      <h1 class="text-2xl text-gray-900 dark:text-gray-100">
+        Something bad happened...
+      </h1>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300">Maybe this'd help:</p>
+    </div>
+
+    <div
+      class="
+        rounded
+        flex flex-col
+        space-y-4
+        bg-gray-200
+        py-2
+        px-4
+        whitespace-normal
+        dark:(bg-gray-800
+        text-gray-200)
+        "
+    >
+      <div class="flex flex-col">
+        <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
+        <code>{{ getErrorMeta.title }}</code>
+      </div>
+
+      <div class="flex flex-col">
+        <h3 class="font-semibold text-gray-800 dark:text-gray-200">
+          Description:
+        </h3>
+        <code>{{ getErrorMeta.description }}</code>
+      </div>
+
+      <div class="flex flex-col">
+        <h3 class="font-semibold text-gray-800 dark:text-gray-200">Details:</h3>
+        <code>{{ JSON.stringify(error) }}</code>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap space-x-2">
+      <button title="Click to go back" @click="$router.back()">Go Back</button>
+
+      <button title="Click to refresh the page" @click="refresh">
+        Refresh Page
+      </button>
+    </div>
+  </div>
+</template>
+
 <style lang="scss" scoped>
 button {
-  @apply px-4 py-2 bg-gray-200 rounded text-gray-900 cursor-pointer select-none dark:(bg-gray-700 text-gray-100 hover:bg-gray-800) hover:bg-gray-300 focus:outline-none;
+  @apply rounded cursor-pointer bg-gray-200 py-2 px-4 text-gray-900 select-none dark:(bg-gray-700 text-gray-100 hover:bg-gray-800) hover:bg-gray-300 focus:outline-none ;
 }
 </style>

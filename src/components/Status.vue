@@ -1,29 +1,11 @@
-<template>
-  <SkeletonLoader
-    v-if="
-      finished === false ||
-      !getStatusDetails ||
-      Object.keys(lanyard).length === 0
-    "
-    class="h-[17.5px] w-6/12"
-  />
-
-  <div
-    v-else
-    class="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300"
-  >
-    <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
-    <div class="text-sm leading-tight truncate" :title="getStatusDetails">
-      {{ getStatusDetails }}
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import Vue from "vue"
 
 /* Interfaces */
-import type { LanyardData, Activity } from "@eggsydev/vue-lanyard/@types/lanyard"
+import type {
+  LanyardData,
+  Activity,
+} from "@eggsydev/vue-lanyard/@types/lanyard"
 
 export default Vue.extend({
   data() {
@@ -127,3 +109,31 @@ export default Vue.extend({
   },
 })
 </script>
+
+<template>
+  <SkeletonLoader
+    v-if="
+      finished === false ||
+      !getStatusDetails ||
+      Object.keys(lanyard).length === 0
+    "
+    class="h-[17.5px] w-6/12"
+  />
+
+  <div
+    v-else
+    class="
+      rounded-md
+      flex
+      space-x-2
+      text-gray-700
+      items-center
+      dark:text-gray-300
+    "
+  >
+    <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
+    <div class="text-sm leading-tight truncate" :title="getStatusDetails">
+      {{ getStatusDetails }}
+    </div>
+  </div>
+</template>
