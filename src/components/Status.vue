@@ -1,7 +1,7 @@
 <script lang="ts">
 import Vue from "vue"
 
-/* Interfaces */
+/* Import types */
 import type {
   LanyardData,
   Activity,
@@ -28,6 +28,8 @@ export default Vue.extend({
         lanyard.activities?.filter((activity) => activity.type !== 4)?.pop() ||
         null
 
+      console.log(filtered)
+
       // Offline
       if (this.lanyard?.discord_status === "offline") return "Offline"
       else if (!filtered) return "Online"
@@ -37,23 +39,17 @@ export default Vue.extend({
           filtered.state?.replace("📁 ", "")?.split(" | ")?.[0] || "a file"
         return `Editing ${replaced} in Visual Studio Code`
       }
+      // Netflix
+      else if (filtered.name === "Netflix" && filtered.details) {
+        return `Watching ${filtered.details} on Netflix`
+      }
       // YouTube Music
-      else if (
-        filtered.name === "YouTube Music" &&
-        filtered.details &&
-        filtered.state
-      ) {
-        const song = filtered.details || "something"
-        return `Listening to ${song} on YouTube Music`
+      else if (filtered.name === "YouTube Music" && filtered.details) {
+        return `Listening to ${filtered.details} on YouTube Music`
       }
       // YouTube
-      else if (
-        filtered.name === "YouTube" &&
-        filtered.details &&
-        filtered.state
-      ) {
-        const name = filtered.details || "a video"
-        return `Watching ${name} on YouTube`
+      else if (filtered.name === "YouTube" && filtered.details) {
+        return `Watching ${filtered.details} on YouTube`
       }
       // Default values
       else
