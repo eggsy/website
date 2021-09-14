@@ -1,8 +1,10 @@
 <template>
   <div>
-    <header class="flex flex-col-reverse py-24 md:(items-center flex-row)">
+    <header
+      class="flex flex-col-reverse items-center justify-between px-8 py-10 my-16 rounded-md bg-gray-200/30 md:flex-row dark:bg-gray-800"
+    >
       <div class="md:w-8/12">
-        <div class="space-y-px">
+        <div class="space-y-2">
           <div
             class="text-2xl font-semibold text-gray-900 md:text-3xl md:text-4xl dark:text-gray-100"
           >
@@ -12,8 +14,7 @@
 
           <p class="text-gray-800 dark:text-gray-200">
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
-            taught web developer. I recently started building complex web apps
-            using
+            taught web developer. I build complex web apps using
             <SmartLink href="https://vuejs.org/" class="description-link" blank>
               Vue.js</SmartLink
             >,
@@ -35,13 +36,13 @@
           </p>
         </div>
 
-        <Status class="mt-2" />
+        <Status class="mt-4" />
       </div>
 
-      <div class="flex flex-shrink-0 mb-8 md:(justify-end mb-0 w-4/12)">
+      <div class="w-40 h-40 mb-4 rounded-full md:mb-0">
         <SmartImage
-          src="/assets/images/irl_image.webp"
-          class="rounded-full h-40 ring-black ring-4 ring-opacity-5 w-40 dark:(ring-white ring-opacity-5)"
+          src="/assets/images/memoji.png"
+          class="w-40 h-40 rounded-full"
         />
       </div>
     </header>
@@ -267,7 +268,7 @@ export default Vue.extend({
         },
         {
           title: "is-inside.me",
-          description: "Free image and file uploading service for ShareX!",
+          description: "Free image and file uploading service for uploaders like ShareX!",
           to: "/projects/is-inside-me",
         },
       ] as Project[],
@@ -283,13 +284,13 @@ export default Vue.extend({
             title: "TruckersMP",
             url: "https://truckersmp.com/user/1648033",
             position: "Communitiy Moderator & Translator",
-            date: "2020-",
+            date: "2020-2021",
           },
           {
             title: "WA Web+ Extension",
             url: "https://wawplus.com",
             position: "Translator",
-            date: "2020-2021"
+            date: "2020-2021",
           },
           {
             title: "Batakköylü Düğün Salonu",
@@ -345,6 +346,7 @@ export default Vue.extend({
         "Firebase",
         "WordPress",
         "PHP",
+        "React.js"
       ],
     }
   },
