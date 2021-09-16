@@ -122,7 +122,7 @@ export default Vue.extend({
             $fetchState.pending === false &&
             `https://www.youtube.com/embed/${getSelectedSong.youtube}`
           "
-          class="h-full w-full"
+          class="h-[45vh] w-full md:h-full"
         />
       </div>
 
