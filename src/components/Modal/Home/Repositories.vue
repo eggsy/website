@@ -1,0 +1,108 @@
+<script lang="ts">
+import { PropType } from "vue"
+
+/* Import types */
+import type { Repository } from "@/types/Response/GitHub"
+
+export default {
+  props: {
+    value: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    repos: {
+      type: Array as PropType<Repository[]>,
+      required: true,
+      default: [],
+    },
+  },
+  data() {
+    return { test: "hello" }
+  },
+  computed: {
+    getGithubProfile() {
+      this.$config.social.github
+    },
+  },
+  methods: {
+    closeModal() {
+      this.$emit("input", false)
+    },
+  },
+}
+</script>
+
+<template>
+  <transition name="fade" mode="in-out">
+    <div v-show="value === true">
+      <div class="bg-black bg-opacity-25 inset-0 fixed overflow-y-auto">
+        <div
+          class="
+            flex
+            mx-auto
+            max-h-screen
+            inset-0
+            fixed
+            items-center
+            justify-center
+            overflow-y-auto
+            md:w-6/8
+          "
+        >
+          <div
+            class="
+              rounded-lg
+              flex flex-col
+              space-y-6
+              bg-gray-100
+              shadow-lg
+              p-10
+            "
+          >
+            <div class="space-y-6">
+              <h3 class="text-2xl">All Repositories</h3>
+
+              <div
+                class="max-h-[50vh] grid gap-4 overflow-y-auto md:grid-cols-3"
+              >
+                <CardRepository
+                  v-for="(repo, _) in repos"
+                  :key="_"
+                  :name="repo.name"
+                  :language="repo.language"
+                  :stars="repo.stargazers_count"
+                  :description="repo.description"
+                />
+              </div>
+            </div>
+
+            <div
+              class="space-y-2 items-center md:flex md:(space-x-4 space-y-0) "
+            >
+              <button @click="closeModal()">Close</button>
+
+              <a
+                class="flex space-x-2 button items-center justify-center"
+                rel="noreferrer"
+                title="Click to visit my GitHub profile"
+                target="_blank"
+                :href="getGithubProfile"
+              >
+                <IconBrand brand="github" class="h-6 w-6" />
+                <span>See Them on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</template>
+
+<style scoped>
+button,
+.button {
+  @apply rounded-lg cursor-pointer font-medium bg-gray-200 text-black w-full py-2 px-8 transition-colors select-none md:w-max hover:bg-gray-300 focus:outline-none;
+}
+</style>

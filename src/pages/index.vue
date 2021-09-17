@@ -27,6 +27,7 @@ interface ExperienceObject {
 export default Vue.extend({
   data() {
     return {
+      showModal: false,
       repos: [] as Repository[],
       projects: [
         {
@@ -178,12 +179,27 @@ export default Vue.extend({
 <template>
   <div>
     <header
-      class="flex flex-col-reverse justify-between px-8 py-10 my-16 rounded-md  bg-gray-200/30 md:flex-row md:items-center dark:bg-gray-800"
+      class="
+        rounded-md
+        flex flex-col-reverse
+        bg-gray-200/30
+        my-16
+        py-10
+        px-8
+        justify-between
+        md:flex-row md:items-center
+        dark:bg-gray-800
+      "
     >
       <div class="md:w-8/12">
         <div class="space-y-2">
           <div
-            class="text-xl font-semibold text-gray-900  md:text-3xl dark:text-gray-100"
+            class="
+              font-semibold
+              text-xl text-gray-900
+              md:text-3xl
+              dark:text-gray-100
+            "
           >
             <h1>Self taught</h1>
             <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
@@ -216,16 +232,16 @@ export default Vue.extend({
         <Status class="mt-4" />
       </div>
 
-      <div class="w-40 h-40 mb-4 rounded-full md:mb-0">
+      <div class="rounded-full h-40 mb-4 w-40 md:mb-0">
         <SmartImage
           src="/assets/images/memoji.png"
-          class="w-40 h-40 rounded-full"
+          class="rounded-full h-40 w-40"
         />
       </div>
     </header>
 
     <section id="projects">
-      <h2 class="mt-10 text-2xl font-semibold text-gray-900 dark:text-gray-100">
+      <h2 class="font-semibold mt-10 text-2xl text-gray-900 dark:text-gray-100">
         Projects I currently work on
       </h2>
 
@@ -278,11 +294,11 @@ export default Vue.extend({
       class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2) "
     >
       <div>
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
           Experience
         </h3>
 
-        <div class="grid gap-2 mt-4">
+        <div class="mt-4 grid gap-2">
           <CardExperience
             v-for="(experience, index) in experiences.jobs"
             :key="`experience-job-${index}`"
@@ -295,11 +311,11 @@ export default Vue.extend({
       </div>
 
       <div>
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
           Education
         </h3>
 
-        <div class="grid gap-2 mt-4">
+        <div class="mt-4 grid gap-2">
           <CardExperience
             v-for="(experience, index) in experiences.education"
             :key="`experience-education-${index}`"
@@ -314,12 +330,18 @@ export default Vue.extend({
 
     <section id="technologies" class="mt-6">
       <h3
-        class="mt-4 text-xl font-semibold text-gray-900  md:mt-10 dark:text-gray-100"
+        class="
+          font-semibold
+          mt-4
+          text-xl text-gray-900
+          md:mt-10
+          dark:text-gray-100
+        "
       >
         Technologies I use
       </h3>
 
-      <div class="grid grid-cols-2 gap-2 mt-4 sm:grid-cols-3 md:grid-cols-4">
+      <div class="mt-4 grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
         <CardSkill
           v-for="(skill, index) in skills"
           :key="`skill-${index}`"
@@ -329,17 +351,17 @@ export default Vue.extend({
     </section>
 
     <section id="repositories" class="mt-6">
-      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
         My GitHub repositories
       </h2>
 
       <div class="mt-4">
         <div
           v-if="$fetchState.pending"
-          class="grid grid-cols-1 gap-2 md:grid-cols-2"
+          class="grid gap-2 grid-cols-1 md:grid-cols-2"
         >
           <SkeletonLoader
-            v-for="item in 8"
+            v-for="item in 6"
             :key="`repo-skeleton-${item}`"
             type="repository"
           />
@@ -354,10 +376,10 @@ export default Vue.extend({
 
         <div
           v-else-if="repos.length > 0"
-          class="grid grid-cols-1 gap-2 md:grid-cols-2"
+          class="grid gap-2 grid-cols-1 md:grid-cols-2"
         >
           <SmartLink
-            v-for="(repo, index) in repos"
+            v-for="(repo, index) in repos.slice(0, 6)"
             :key="`repo-${index}`"
             :href="repo.html_url"
             title="Click here to visit this repository"
@@ -372,16 +394,34 @@ export default Vue.extend({
             />
           </SmartLink>
         </div>
+
+        <button
+          v-if="$fetchState.pending === false"
+          class="
+            flex
+            space-x-2
+            mt-2
+            text-gray-300
+            items-center
+            hover:text-gray-600
+            focus:outline-none
+          "
+          @click="showModal = true"
+        >
+          Show all {{ repos.length }} repositories
+        </button>
       </div>
     </section>
 
     <section id="socials" class="mt-6">
-      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
         Follow me
       </h2>
 
       <Socials class="mt-2" />
     </section>
+
+    <ModalHomeRepositories v-model="showModal" :repos="repos" />
   </div>
 </template>
 
