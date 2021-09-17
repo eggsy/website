@@ -9,7 +9,7 @@ export default Vue.extend({
       default: "block",
     },
     iframeUrl: {
-      type: String,
+      type: [String, Boolean],
       required: false,
       default: null,
     },
