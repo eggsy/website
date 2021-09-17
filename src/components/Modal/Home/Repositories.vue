@@ -17,9 +17,6 @@ export default {
       default: [],
     },
   },
-  data() {
-    return { test: "hello" }
-  },
   computed: {
     getGithubProfile() {
       this.$config.social.github
