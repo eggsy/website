@@ -63,14 +63,19 @@ export default {
               <div
                 class="max-h-[50vh] grid gap-4 overflow-y-auto md:grid-cols-3"
               >
-                <CardRepository
-                  v-for="(repo, _) in repos"
-                  :key="_"
-                  :name="repo.name"
-                  :language="repo.language"
-                  :stars="repo.stargazers_count"
-                  :description="repo.description"
-                />
+                <SmartLink
+                  v-for="(repo, index) in repos"
+                  :key="`repo-${index}`"
+                  :href="repo.html_url"
+                  title="Click here to visit this repository"
+                  blank
+                >
+                  <CardRepository
+                    :name="repo.name"
+                    :language="repo.language"
+                    :stars="repo.stargazers_count"
+                    :description="repo.description"
+                /></SmartLink>
               </div>
             </div>
 
@@ -79,16 +84,15 @@ export default {
             >
               <button @click="closeModal()">Close</button>
 
-              <a
+              <SmartLink
                 class="flex space-x-2 button items-center justify-center"
-                rel="noreferrer"
-                title="Click to visit my GitHub profile"
-                target="_blank"
                 :href="getGithubProfile"
+                title="Click to visit my GitHub profile"
+                blank
               >
                 <IconBrand brand="github" class="h-6 w-6" />
                 <span>See Them on GitHub</span>
-              </a>
+              </SmartLink>
             </div>
           </div>
         </div>
