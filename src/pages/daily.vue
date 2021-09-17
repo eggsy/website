@@ -114,7 +114,7 @@ export default Vue.extend({
       wish to!
     </BlogNotification>
 
-    <div class="grid gap-6 sm:grid-cols-2">
+    <div class="space-y-6 gap-6 grid-cols-2 md:space-y-0 md:grid">
       <div class="space-y-4">
         <SkeletonLoader
           type="iframe"
@@ -126,8 +126,8 @@ export default Vue.extend({
         />
       </div>
 
-      <div class="space-y-2">
-        <div class="rounded-md bg-gray-200/50 p-4 dark:bg-gray-800">
+      <div class="space-y-2 w-full">
+        <div class="rounded-md bg-gray-200/50 p-4 truncate dark:bg-gray-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
             Title
           </h3>
@@ -142,7 +142,7 @@ export default Vue.extend({
           </span>
         </div>
 
-        <div class="rounded-md bg-gray-200/50 p-4 dark:bg-gray-800">
+        <div class="rounded-md bg-gray-200/50 p-4 truncate dark:bg-gray-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
             Artist
           </h3>
@@ -157,7 +157,7 @@ export default Vue.extend({
           </span>
         </div>
 
-        <div class="rounded-md bg-gray-200/50 p-4 dark:bg-gray-800">
+        <div class="rounded-md bg-gray-200/50 p-4 truncate dark:bg-gray-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
             Date
           </h3>
