@@ -61,7 +61,14 @@ export default {
               <h3 class="text-2xl">All Repositories</h3>
 
               <div
-                class="max-h-[50vh] grid gap-4 overflow-y-auto md:grid-cols-3"
+                class="
+                  max-h-[50vh]
+                  grid
+                  py-1
+                  gap-4
+                  overflow-y-auto
+                  md:grid-cols-3
+                "
               >
                 <SmartLink
                   v-for="(repo, index) in repos"
@@ -75,7 +82,8 @@ export default {
                     :language="repo.language"
                     :stars="repo.stargazers_count"
                     :description="repo.description"
-                /></SmartLink>
+                  />
+                </SmartLink>
               </div>
             </div>
 
