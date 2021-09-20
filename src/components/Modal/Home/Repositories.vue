@@ -55,10 +55,11 @@ export default {
               bg-gray-100
               shadow-lg
               p-10
+              dark:bg-gray-900
             "
           >
             <div class="space-y-6">
-              <h3 class="text-2xl">All Repositories</h3>
+              <h3 class="text-2xl dark:text-white">All Repositories</h3>
 
               <div
                 class="
@@ -112,6 +113,6 @@ export default {
 <style scoped>
 button,
 .button {
-  @apply rounded-lg cursor-pointer font-medium bg-gray-200 text-black w-full py-2 px-8 transition-colors select-none md:w-max hover:bg-gray-300 focus:outline-none;
+  @apply rounded-lg cursor-pointer font-medium bg-gray-200 text-black w-full py-2 px-8 transition-colors select-none md:w-max dark:(bg-gray-800 text-white) hover:bg-gray-300 focus:outline-none dark:hover:bg-gray-700 ;
 }
 </style>

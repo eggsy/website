@@ -376,9 +376,10 @@ export default Vue.extend({
             space-x-2
             mt-2
             text-gray-300
-            items-center
+            items-center dark:text-gray-600
             hover:text-gray-600
             focus:outline-none
+            dark:hover:text-gray-400
           "
           @click="showModal = true"
         >
