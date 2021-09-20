@@ -89,31 +89,41 @@ export default Vue.extend({
     <div
       class="
         rounded
-        flex flex-col
         space-y-4
         bg-gray-200
-        py-2
-        px-4
-        whitespace-normal
+        p-4
+        items-center
+        md:(flex
+        space-y-0 space-x-4)
         dark:(bg-gray-800
-        text-gray-200)
-        "
+        text-gray-200) "
     >
-      <div class="flex flex-col">
-        <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
-        <code>{{ getErrorMeta.title }}</code>
+      <div>
+        <SmartImage
+          :src="`https://http.cat/${error.statusCode}.jpg`"
+          class="rounded md:h-50 md:w-50"
+        />
       </div>
 
-      <div class="flex flex-col">
-        <h3 class="font-semibold text-gray-800 dark:text-gray-200">
-          Description:
-        </h3>
-        <code>{{ getErrorMeta.description }}</code>
-      </div>
+      <div class="space-y-4 whitespace-normal">
+        <div class="flex flex-col">
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
+          <code>{{ getErrorMeta.title }}</code>
+        </div>
 
-      <div class="flex flex-col">
-        <h3 class="font-semibold text-gray-800 dark:text-gray-200">Details:</h3>
-        <code>{{ JSON.stringify(error) }}</code>
+        <div class="flex flex-col">
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200">
+            Description:
+          </h3>
+          <code>{{ getErrorMeta.description }}</code>
+        </div>
+
+        <div class="flex flex-col">
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200">
+            Details:
+          </h3>
+          <code>{{ JSON.stringify(error) }}</code>
+        </div>
       </div>
     </div>
 
