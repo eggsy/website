@@ -19,13 +19,11 @@ export default Vue.extend({
 <template>
   <div
     class="
-      bg-gray-200
+      bg-gray-200/50
       w-full
       py-4
       text-gray-900
-      dark:(bg-gray-800
-      text-gray-100)
-      "
+      dark:(bg-gray-800 text-gray-100) "
   >
     <div class="mx-auto w-11/12 sm:w-9/12 md:w-7/12">
       <div
