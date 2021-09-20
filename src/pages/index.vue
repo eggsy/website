@@ -31,13 +31,6 @@ export default Vue.extend({
       repos: [] as Repository[],
       projects: [
         {
-          title: "Discord Templates",
-          description:
-            "Create your own kingdom with our diverse range of Discord templates!",
-          image: "https://i.vgy.me/jbf1UB.jpg",
-          href: "https://discords.com/templates",
-        },
-        {
           title: "PreMiD",
           description:
             "PreMiD is a simple, configurable utility that allows you to show what you're doing on the web in your Discord now playing status.",
@@ -67,10 +60,16 @@ export default Vue.extend({
       experiences: {
         jobs: [
           {
+            title: "Discord Templates",
+            url: "https://discords.com/templates",
+            position: "Web Developer & Co-Founder",
+            date: "2020-2021",
+          },
+          {
             title: "IZM Game Studios",
             url: "https://izmgamestudios.com",
             position: "Solution Partner",
-            date: "2020-",
+            date: "2020-2021",
           },
           {
             title: "TruckersMP",
@@ -104,6 +103,12 @@ export default Vue.extend({
           },
         ],
         education: [
+          {
+            title: "Goce Delchev University",
+            url: "https://www.ugd.edu.mk/",
+            position: "Erasmus+ Student",
+            date: "2021-",
+          },
           {
             title: "Muş Alparslan University",
             url: "http://alparslan.edu.tr/",
@@ -158,20 +163,6 @@ export default Vue.extend({
   },
   head: {
     title: "Home",
-  },
-  computed: {
-    /**
-     * Slices the first three projects and creates an object with them, and the rest.
-     * @returns {{featured: Project[], rest: Project[]}} The projects object.
-     */
-    getProjects(): { featured: Project[]; rest: Project[] } {
-      const projects = this.projects
-
-      return {
-        featured: projects?.slice(0, 3) || [],
-        rest: projects?.slice(3) || [],
-      }
-    },
   },
 })
 </script>
@@ -245,11 +236,8 @@ export default Vue.extend({
         Projects I currently work on
       </h2>
 
-      <div class="mt-2 grid gap-2 md:(gap-4 grid-cols-3) ">
-        <div
-          v-for="(project, index) in getProjects.featured"
-          :key="`project-featured-${index}`"
-        >
+      <div class="mt-2 grid gap-2 md:(gap-4 grid-cols-2) ">
+        <div v-for="(project, index) in projects" :key="`project-${index}`">
           <SmartLink
             v-if="project.to || project.href"
             :href="project.to || project.href"
@@ -272,20 +260,6 @@ export default Vue.extend({
             class="h-full"
           />
         </div>
-      </div>
-
-      <div class="mt-2 grid gap-2 md:(mt-4 gap-4 grid-cols-2) ">
-        <SmartLink
-          v-for="(project, index) in getProjects.rest"
-          :key="`project-rest-${index}`"
-          :href="project.to"
-        >
-          <CardProject
-            :title="project.title"
-            :description="project.description"
-            class="h-full"
-          />
-        </SmartLink>
       </div>
     </section>
 
