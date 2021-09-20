@@ -6,7 +6,7 @@ export default Vue.extend({
     title: {
       type: String,
       required: false,
-      default: "",
+      default: null,
     },
     image: {
       type: String,
@@ -16,7 +16,7 @@ export default Vue.extend({
     description: {
       type: String,
       required: false,
-      default: "",
+      default: null,
     },
   },
 })
@@ -24,14 +24,30 @@ export default Vue.extend({
 
 <template>
   <div
-    class="transition-shadow bg-gray-200 rounded-lg cursor-pointer bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+    class="
+      rounded-lg
+      cursor-pointer
+      bg-gray-200/50
+      transition-shadow
+      dark:bg-gray-800
+      hover:shadow-md
+    "
+    :class="{ flex: image && (title || description) }"
   >
-    <SmartImage v-if="image" :src="image" class="rounded-tl rounded-tr" />
+    <SmartImage
+      v-if="image"
+      :src="image"
+      :class="
+        image && (title || description)
+          ? 'w-1/3 flex-shrink-0 rounded-tl rounded-bl'
+          : 'rounded'
+      "
+    />
 
     <div v-if="title || description" class="p-4">
       <h3
         v-if="title"
-        class="text-lg font-medium text-gray-900 truncate dark:text-gray-100"
+        class="font-medium text-lg text-gray-700 truncate dark:text-gray-100"
         :title="title"
       >
         {{ title }}
@@ -39,7 +55,7 @@ export default Vue.extend({
 
       <p
         v-if="description"
-        class="text-gray-700 line-clamp-2 dark:text-gray-300"
+        class="text-gray-500 line-clamp-2 dark:text-gray-300"
       >
         {{ description }}
       </p>
