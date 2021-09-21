@@ -149,7 +149,12 @@ export default Vue.extend({
   },
   fetchOnServer: false,
   async fetch() {
-    const filter = ["eggsy", "DBM", "eggsywashere.github.io"]
+    const filter = [
+      "eggsy",
+      "DBM",
+      "eggsywashere.github.io",
+      "bu-saatte-cekilir-mi",
+    ]
 
     const repos: Repository[] = (
       await this.$axios.get(
@@ -376,7 +381,8 @@ export default Vue.extend({
             space-x-2
             mt-2
             text-gray-300
-            items-center dark:text-gray-600
+            items-center
+            dark:text-gray-600
             hover:text-gray-600
             focus:outline-none
             dark:hover:text-gray-400
