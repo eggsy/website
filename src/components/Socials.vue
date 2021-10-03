@@ -9,6 +9,14 @@ interface Link {
 }
 
 export default Vue.extend({
+  data() {
+    return {
+      pageLoaded: false,
+    }
+  },
+  mounted() {
+    this.pageLoaded = true
+  },
   computed: {
     /**
      * Returns social links in public runtime config.
@@ -72,7 +80,7 @@ export default Vue.extend({
 
     <SmartLink
       title="Send me an e-mail!"
-      :href="`mailto:${$config.social.email}`"
+      :href="pageLoaded ? `mailto:${$config.social.email}` : false"
       :utm="false"
       class="
         rounded-full
