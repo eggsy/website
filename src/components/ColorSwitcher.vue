@@ -25,7 +25,24 @@ export default Vue.extend({
 
 <template>
   <div
-    class="rounded-full cursor-pointer bg-gray-100 p-2 text-gray-900 select-none focus:outline-none hover:shadow-md dark:(bg-gray-800 text-gray-100)"
+    class="
+      rounded-full
+      cursor-pointer
+      bg-gray-100
+      p-2
+      text-gray-900
+      select-none
+      transition-all
+      duration-100
+      focus:outline-none
+      hover:(dark:bg-gray-100
+      dark:text-gray-900
+      light:bg-gray-800
+      text-gray-100
+      shadow-md)
+      dark:(bg-gray-800
+      text-gray-100)
+    "
     @click="switchTheme"
   >
     <IconSun v-if="getSelectedTheme === 'light'" class="w-5 h-5" />

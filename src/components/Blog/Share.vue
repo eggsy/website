@@ -154,6 +154,6 @@ export default Vue.extend({
 
 <style scoped>
 div.button {
-  @apply w-12 h-12 p-2 rounded-full cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 transition-shadow dark:bg-gray-800 hover:shadow-md;
+  @apply w-12 h-12 p-2 rounded-full cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 transition-all transform duration-100 dark:bg-gray-800 hover:(shadow-md scale-103);
 }
 </style>

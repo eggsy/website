@@ -188,7 +188,7 @@ export default Vue.extend({
         </template>
       </div>
 
-      <div class="mt-14 grid gap-14 md:(gap-4 grid-cols-2) ">
+      <div class="mt-14 grid gap-14 md:(gap-4 grid-cols-2)">
         <div
           class="flex flex-col space-y-2 overflow-x-hidden md:overflow-visible"
         >
@@ -296,12 +296,13 @@ export default Vue.extend({
               items-center
               justify-center
               select-none
+              transition-colors
+              duration-100
               dark:(bg-gray-800
               ring-gray-800
               text-gray-100
-              hover:bg-gray-700)
-              hover:bg-gray-300
-              "
+              hover:bg-gray-700) hover:bg-gray-300
+            "
             :class="{
               'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
             }"
@@ -361,9 +362,8 @@ export default Vue.extend({
             dark:(bg-gray-800
             ring-gray-700
             text-gray-100
-            hover:bg-gray-700)
-            hover:bg-gray-200
-            "
+            hover:bg-gray-700) hover:bg-gray-200
+          "
         >
           <IconHome class="h-6 w-6" />
           <span>Bloga Dön</span>
