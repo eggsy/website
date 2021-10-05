@@ -45,12 +45,9 @@ export default Vue.extend({
       cursor-pointer
       bg-gray-200/40
       p-4
-      transition-all
-      transform
-      duration-100
+      transition-shadow
       dark:bg-gray-800
-      hover:(shadow-md
-      scale-102)
+      hover:shadow-md
     "
   >
     <div class="flex space-x-1 text-gray-700 items-center dark:text-gray-200">

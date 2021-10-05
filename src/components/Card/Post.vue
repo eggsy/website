@@ -69,15 +69,12 @@ export default Vue.extend({
     class="
       p-3
       space-y-2
-      transition-all
-      transform
-      duration-100
+      transition-shadow
       bg-gray-200
       rounded-lg
       cursor-pointer
       bg-opacity-40
-      hover:(shadow-md
-      scale-102)
+      hover:shadow-md
       dark:bg-gray-800
     "
   >
@@ -131,15 +128,12 @@ export default Vue.extend({
       items-center
       p-3
       space-x-4
-      transition-all
-      transform
-      duration-100
+      transition-shadow
       bg-gray-200
       rounded-lg
       cursor-pointer
       bg-opacity-40
-      hover:(shadow-md
-      scale-102)
+      hover:shadow-md
       dark:bg-gray-800
     "
   >
@@ -172,15 +166,12 @@ export default Vue.extend({
       flex flex-col
       p-3
       truncate
-      transition-all
-      transform
-      duration-100
+      transition-shadow
       bg-gray-200
       rounded-lg
       cursor-pointer
       bg-opacity-40
-      hover:(shadow-md
-      scale-102)
+      hover:shadow-md
       dark:bg-gray-800
     "
   >

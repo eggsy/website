@@ -65,7 +65,7 @@ export default {
                 class="
                   max-h-[50vh]
                   grid
-                  p-1
+                  px-1
                   gap-4
                   overflow-y-auto
                   md:grid-cols-3
