@@ -297,7 +297,6 @@ export default Vue.extend({
               justify-center
               select-none
               transition-colors
-              duration-100
               dark:(bg-gray-800
               ring-gray-800
               text-gray-100

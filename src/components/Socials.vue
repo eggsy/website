@@ -66,7 +66,6 @@ export default Vue.extend({
         rounded-full
         ring-transparent ring-[6px]
         transition-all
-        duration-100
         dark:(hover:bg-gray-700
         hover:ring-gray-700) hover:(bg-gray-200
         ring-gray-200)
@@ -86,7 +85,6 @@ export default Vue.extend({
         rounded-full
         ring-transparent ring-[6px]
         transition-all
-        duration-100
         dark:(hover:bg-gray-700
         hover:ring-gray-700) hover:(bg-gray-200
         ring-gray-200)

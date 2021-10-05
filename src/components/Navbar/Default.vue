@@ -103,7 +103,6 @@ export default Vue.extend({
               px-2
               text-gray-800
               transition-colors
-              duration-100
               dark:(text-gray-200
               hover:bg-gray-700) hover:bg-gray-100
             "

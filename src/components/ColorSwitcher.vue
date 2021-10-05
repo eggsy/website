@@ -33,7 +33,6 @@ export default Vue.extend({
       text-gray-900
       select-none
       transition-all
-      duration-100
       focus:outline-none
       hover:(dark:bg-gray-100
       dark:text-gray-900
