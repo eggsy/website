@@ -12,6 +12,7 @@ const Modules: NuxtOptionsModule[] = [
   "@nuxtjs/robots",
   ["@nuxtjs/pwa", pwa],
   ["@nuxt/content", content],
+  "@nuxtjs/feed",
   ["@nuxtjs/sitemap", sitemap],
   ["@nuxtjs/firebase", firebase],
   ["nuxt-webfontloader", webfontloader],
