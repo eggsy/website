@@ -89,7 +89,7 @@ export default {
             </div>
 
             <div
-              class="space-y-2 items-center md:flex md:(space-x-4 space-y-0) "
+              class="space-y-2 items-center md:flex md:(space-x-4 space-y-0)"
             >
               <button @click="closeModal()">Close</button>
 
@@ -113,6 +113,6 @@ export default {
 <style scoped>
 button,
 .button {
-  @apply rounded-lg cursor-pointer font-medium bg-gray-200 text-black w-full py-2 px-8 transition-colors select-none md:w-max dark:(bg-gray-800 text-white) hover:bg-gray-300 focus:outline-none dark:hover:bg-gray-700 ;
+  @apply rounded-lg cursor-pointer font-medium bg-gray-200 text-black w-full py-2 px-8 transition-colors select-none md:w-max dark:(bg-gray-800 text-white) hover:bg-gray-300 focus:outline-none dark:hover:bg-gray-700;
 }
 </style>

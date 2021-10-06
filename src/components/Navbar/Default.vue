@@ -78,7 +78,14 @@ export default Vue.extend({
         <SmartLink :href="{ name: 'index' }" class="flex-shrink-0 w-10 h-10">
           <SmartImage
             src="/assets/icons/icon.svg"
-            class="transition-transform bg-gray-100 rounded-md  ring-black ring-2 ring-opacity-5 sm:transform hover:-rotate-6"
+            class="
+              transition-transform
+              bg-gray-100
+              rounded-md
+              ring-black ring-2 ring-opacity-5
+              sm:transform
+              hover:-rotate-6
+            "
             width="100"
             height="100"
             title="EGGSY's Website"
@@ -95,6 +102,7 @@ export default Vue.extend({
               py-1
               px-2
               text-gray-800
+              transition-colors
               dark:(text-gray-200
               hover:bg-gray-700) hover:bg-gray-100
             "
@@ -114,10 +122,28 @@ export default Vue.extend({
           <transition name="fade" mode="out-in">
             <div
               v-show="mobileMenu === true"
-              class="absolute z-20 p-4 space-y-4 bg-gray-200 rounded-md shadow-lg  -top-1 -right-1 -left-1 dark:bg-gray-800"
+              class="
+                absolute
+                z-20
+                p-4
+                space-y-4
+                bg-gray-200
+                rounded-md
+                shadow-lg
+                -top-1
+                -right-1
+                -left-1
+                dark:bg-gray-800
+              "
             >
               <div
-                class="flex items-center justify-between text-gray-900  dark:text-gray-100"
+                class="
+                  flex
+                  items-center
+                  justify-between
+                  text-gray-900
+                  dark:text-gray-100
+                "
               >
                 <h3 class="text-lg font-medium">Menu</h3>
 
@@ -149,7 +175,17 @@ export default Vue.extend({
 
               <div class="flex items-center">
                 <div
-                  class="flex items-center justify-center w-1/2 py-2 space-x-2 text-gray-800  rounded-tl-md rounded-bl-md dark:text-gray-200"
+                  class="
+                    flex
+                    items-center
+                    justify-center
+                    w-1/2
+                    py-2
+                    space-x-2
+                    text-gray-800
+                    rounded-tl-md rounded-bl-md
+                    dark:text-gray-200
+                  "
                   :class="{
                     'bg-gray-300 dark:bg-gray-700':
                       getSelectedTheme !== 'light',

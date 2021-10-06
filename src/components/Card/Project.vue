@@ -28,8 +28,8 @@ export default Vue.extend({
       rounded-lg
       cursor-pointer
       bg-gray-200/50
-      transition-shadow
       dark:bg-gray-800
+      transition-shadow
       hover:shadow-md
     "
     :class="{ flex: image && (title || description) }"
