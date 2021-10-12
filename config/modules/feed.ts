@@ -20,11 +20,15 @@ const Feed = () => {
 
     articles.forEach((article: any) => {
       const url = `${baseUrlArticles}/gonderi/${article.slug}`
+      const postImagesPath = `https://eggsy.xyz/assets/images/posts`
 
       feed.addItem({
         title: article.title,
         slug: article.slug,
         link: url,
+        image: article.image
+          ? `${postImagesPath}/${article.image}`
+          : `${postImagesPath}/${url.split("/").at(-1)}.jpg`,
         date: new Date(article.createdAt),
         description: article.description,
         content: article.summary,
