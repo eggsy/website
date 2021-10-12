@@ -26,11 +26,11 @@ export default Vue.extend({
      */
     getDateText(): string {
       if (
-        this.$moment(this.date).format("DD/MM/YYYY") ===
-        this.$moment().format("DD/MM/YYYY")
+        this.$moment(this.date).utcOffset(3).format("DD/MM/YYYY") ===
+        this.$moment().utcOffset(3).format("DD/MM/YYYY")
       )
         return "Today's Song"
-      else return this.$moment(this.date).format("DD/MM/YYYY")
+      else return this.$moment(this.date).utcOffset(3).format("DD/MM/YYYY")
     },
   },
 })
@@ -38,23 +38,36 @@ export default Vue.extend({
 
 <template>
   <div
-    class="flex items-center px-4 py-2 space-x-2 transition-shadow bg-gray-200 rounded-lg cursor-pointer select-none  bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+    class="
+      rounded-lg
+      cursor-pointer
+      flex
+      space-x-2
+      bg-gray-200 bg-opacity-40
+      py-2
+      px-4
+      transition-shadow
+      items-center
+      select-none
+      dark:bg-gray-800
+      hover:shadow-md
+    "
   >
-    <div class="flex-shrink-0 rounded-md">
+    <div class="rounded-md flex-shrink-0">
       <SmartImage
         :src="thumbnail"
         fit="outside"
-        class="w-16 h-16 max-w-full max-h-full rounded-md"
+        class="rounded-md max-w-full max-h-full h-16 w-16"
         width="64"
         height="64"
       />
     </div>
 
     <div class="truncate">
-      <div class="flex items-center space-x-1">
+      <div class="flex space-x-1 items-center">
         <IconStar
           v-if="getDateText.startsWith('Today')"
-          class="flex-shrink-0 w-4 h-4 text-gray-900 dark:text-gray-100"
+          class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-gray-100"
         />
 
         <span class="flex-shrink-0 text-sm text-gray-600 dark:text-gray-300">
@@ -63,7 +76,15 @@ export default Vue.extend({
       </div>
 
       <h3
-        class="flex-shrink-0 text-lg font-semibold leading-tight text-gray-900 truncate  dark:text-gray-100"
+        class="
+          font-semibold
+          flex-shrink-0
+          text-lg
+          leading-tight
+          text-gray-900
+          truncate
+          dark:text-gray-100
+        "
       >
         {{ title }}
       </h3>

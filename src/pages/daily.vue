@@ -76,10 +76,10 @@ export default Vue.extend({
      * Return boolean if there's no selected song for today.
      */
     isThereNoSongToday(): boolean {
-      const today = this.$moment().format("DD/MM/YYYY")
-      const latestSongDate = this.$moment(this.songs[0]?.date).format(
-        "DD/MM/YYYY"
-      )
+      const today = this.$moment().utcOffset(3).format("DD/MM/YYYY")
+      const latestSongDate = this.$moment(this.songs[0]?.date)
+        .utcOffset(3)
+        .format("DD/MM/YYYY")
 
       if (today !== latestSongDate) return true
       else return false
@@ -94,7 +94,10 @@ export default Vue.extend({
      * Returns the selected song's date in locale format.
      */
     getSelectedDateTitle(): string {
-      return this.selected?.date?.toLocaleDateString() || "Unknown"
+      return (
+        this.$moment(this.selected?.date).utcOffset(3).format("DD/MM/YYYY") ||
+        "Unknown"
+      )
     },
     /**
      * Returns the array of the songs without the currently selected one in it.

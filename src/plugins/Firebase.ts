@@ -32,7 +32,7 @@ declare module "@nuxt/types" {
 }
 
 /* Plugin */
-const Firebase: Plugin = ({ $fire }, inject) => {
+const Firebase: Plugin = ({ $fire, $moment }, inject) => {
   /**
    * Fetch the daily song from Firebase.
    * @param {number} [limit=1] The limit of the values to return. If none present, will return one URL in string format.
@@ -44,14 +44,19 @@ const Firebase: Plugin = ({ $fire }, inject) => {
     const docs: Song[] = []
 
     await ref
-      .where("date", "<=", new Date())
+      .where("date", "<=", $moment().utcOffset(3).toDate())
       .orderBy("date", "desc")
       .limit(limit)
       .get()
       .then((snapshots) => {
         snapshots.forEach((snapshot) => {
           const { date, url, metadata, spotifyUrl } = snapshot.data()
-          docs.push({ date: date.toDate(), url, metadata, spotifyUrl })
+          docs.push({
+            date: $moment(date.toDate()).utcOffset(3).toDate(),
+            url,
+            metadata,
+            spotifyUrl,
+          })
         })
       })
 
