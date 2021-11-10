@@ -168,30 +168,20 @@ export default Vue.extend({
 <template>
   <div class="pt-6">
     <div v-if="getFilteredPosts === false">
-      <h3
-        class="font-semibold space-x-2 text-lg text-gray-900 dark:text-gray-100"
-      >
-        Son gönderiler
-      </h3>
+      <h3 class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100">Son gönderiler</h3>
 
-      <div class="mt-2 grid gap-2 md:grid-cols-3">
+      <div class="grid gap-2 mt-2 md:grid-cols-3">
         <template v-if="isFetchPending">
           <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
         </template>
 
         <template v-else>
-          <CardPost
-            v-for="(post, index) in posts.latest"
-            :key="`latest-${index}`"
-            :post="post"
-          />
+          <CardPost v-for="(post, index) in posts.latest" :key="`latest-${index}`" :post="post" />
         </template>
       </div>
 
       <div class="mt-14 grid gap-14 md:(gap-4 grid-cols-2)">
-        <div
-          class="flex flex-col space-y-2 overflow-x-hidden md:overflow-visible"
-        >
+        <div class="flex flex-col space-y-2 overflow-x-hidden md:overflow-visible">
           <SmartLink
             :href="{
               name: 'blog',
@@ -200,10 +190,10 @@ export default Vue.extend({
               },
             }"
             title="Discord etiketli gönderileri gör"
-            class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
+            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
           >
-            <IconBrand brand="discord" class="h-6 w-6" />
-            <h3 class="font-semibold text-lg">Discord</h3>
+            <IconBrand brand="discord" class="w-6 h-6" />
+            <h3 class="text-lg font-semibold">Discord</h3>
           </SmartLink>
 
           <template v-if="isFetchPending">
@@ -220,9 +210,7 @@ export default Vue.extend({
           </template>
         </div>
 
-        <div
-          class="flex flex-col space-y-2 overflow-x-hidden md:overflow-visible"
-        >
+        <div class="flex flex-col space-y-2 overflow-x-hidden md:overflow-visible">
           <SmartLink
             :href="{
               name: 'blog',
@@ -231,10 +219,10 @@ export default Vue.extend({
               },
             }"
             title="Linux etiketli gönderileri gör"
-            class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
+            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
           >
-            <IconDev brand="linux" class="h-6 w-6" />
-            <h3 class="font-semibold text-lg">Linux</h3>
+            <IconDev brand="linux" class="w-6 h-6" />
+            <h3 class="text-lg font-semibold">Linux</h3>
           </SmartLink>
 
           <template v-if="isFetchPending">
@@ -254,17 +242,10 @@ export default Vue.extend({
 
       <div class="mt-16">
         <h3
-          class="
-            font-semibold
-            space-x-2
-            text-lg text-gray-900
-            dark:text-gray-100
-          "
-        >
-          Diğer gönderiler
-        </h3>
+          class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
+        >Diğer gönderiler</h3>
 
-        <div class="mt-4 grid gap-3 md:grid-cols-3">
+        <div class="grid gap-3 mt-4 md:grid-cols-3">
           <template v-if="isFetchPending">
             <SkeletonLoader v-for="i in 18" :key="i" type="repository" />
           </template>
@@ -279,62 +260,30 @@ export default Vue.extend({
           </template>
         </div>
 
-        <div class="flex flex-wrap space-x-2 mt-4 items-center justify-center">
+        <div class="flex flex-wrap items-center justify-center mt-4 space-x-2">
           <div
             v-for="page in getTotalPages"
             :key="`pagination-${page}`"
-            class="
-              rounded-full
-              cursor-pointer
-              flex
-              font-medium
-              bg-gray-200
-              h-10
-              ring-1 ring-gray-300
-              text-gray-900
-              w-10
-              items-center
-              justify-center
-              select-none
-              transition-colors
-              dark:(bg-gray-800
-              ring-gray-800
-              text-gray-100
-              hover:bg-gray-700) hover:bg-gray-300
-            "
+            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none transition-colors dark:(bg-gray-800 ring-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-300"
             :class="{
               'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
             }"
             @click="pagination = page - 1"
-          >
-            {{ page }}
-          </div>
+          >{{ page }}</div>
         </div>
       </div>
     </div>
 
     <div v-else-if="typeof getFilteredPosts === 'object'">
-      <div
-        v-if="isFetchPending === false && getFilteredPosts.length === 0"
-        class="space-y-4"
-      >
+      <div v-if="isFetchPending === false && getFilteredPosts.length === 0" class="space-y-4">
         <h2
-          class="
-            font-semibold
-            text-2xl text-gray-900
-            md:text-4xl
-            dark:text-gray-100
-          "
-        >
-          Aramanıza uygun herhangi bir gönderi bulunamadı.
-        </h2>
+          class="text-2xl font-semibold text-gray-900 md:text-4xl dark:text-gray-100"
+        >Aramanıza uygun herhangi bir gönderi bulunamadı.</h2>
 
         <div class="md:w-4/6">
-          <h3 class="text-lg text-gray-900 dark:text-gray-100">
-            Deneyebileceğiniz yöntemler:
-          </h3>
+          <h3 class="text-lg text-gray-900 dark:text-gray-100">Deneyebileceğiniz yöntemler:</h3>
 
-          <ul class="list-disc pl-4 text-gray-700 dark:text-gray-300">
+          <ul class="pl-4 text-gray-700 list-disc dark:text-gray-300">
             <li>Aramanızda anahtar kelimeler kullanmayı deneyin.</li>
             <li>Etiketler kullanmayı deneyin.</li>
             <li>
@@ -346,25 +295,9 @@ export default Vue.extend({
 
         <SmartLink
           :href="{ name: 'blog' }"
-          class="
-            rounded
-            flex
-            space-x-2
-            bg-gray-100
-            py-2
-            px-4
-            ring-1 ring-gray-200
-            text-gray-900
-            items-center
-            justify-center
-            md:w-max
-            dark:(bg-gray-800
-            ring-gray-700
-            text-gray-100
-            hover:bg-gray-700) hover:bg-gray-200
-          "
+          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200"
         >
-          <IconHome class="h-6 w-6" />
+          <IconHome class="w-6 h-6" />
           <span>Bloga Dön</span>
         </SmartLink>
       </div>
