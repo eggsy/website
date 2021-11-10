@@ -1,4 +1,5 @@
 export interface Post {
+  header?: string
   slug?: string
   description?: string
   title?: string
