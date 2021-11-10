@@ -124,248 +124,191 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    v-if="$fetchState.pending"
-    class="
-      flex
-      font-semibold
-      h-screen
-      space-x-2
-      -mt-10
-      text-2xl text-gray-900
-      items-center
-      justify-center
-      overflow-hidden
-      select-none
-      dark:text-gray-100
-    "
-  >
-    <IconSync class="h-8 animate-spin w-8" />
-    <h3>Gönderi yükleniyor...</h3>
-  </div>
+  <transition name="fade">
+    <LoadersContent
+      v-if="$fetchState.pending === true || $fetchState.error !== null"
+      :error="$fetchState.pending === false && $fetchState.error !== null"
+    />
 
-  <div
-    v-else-if="$fetchState.error"
-    class="
-      flex
-      h-screen
-      -mt-10
-      text-gray-900
-      items-center
-      justify-center
-      overflow-hidden
-      select-none
-      dark:text-gray-100
-    "
-  >
-    <div class="space-y-2">
-      <div
-        class="
-          flex
-          font-semibold
-          space-x-2
-          text-2xl
-          items-center
-          justify-center
-        "
-      >
-        <IconTimes class="h-8 w-8" />
-        <h3>Gönderi yüklenemedi.</h3>
-      </div>
+    <div v-else class="space-x-6 pt-14">
+      <div class="mx-auto w-full">
+        <article>
+          <header class="space-y-4 text-center mb-12 sm:(text-left pr-16) ">
+            <div class="space-y-2">
+              <h1
+                class="
+                  font-semibold
+                  text-gray-900 text-2xl
+                  block
+                  sm:text-4xl
+                  dark:text-gray-100
+                "
+              >
+                {{ post.title }}
+              </h1>
 
-      <small class="text-sm">Büyük ihtimalle gönderi henüz blogumda yok</small>
+              <p class="dark:text-gray-100">
+                {{ post.description }}
+              </p>
+            </div>
 
-      <div class="flex justify-center">
-        <SmartLink
-          href="/blog"
-          class="
-            rounded-md
-            bg-gray-700
-            py-2
-            px-4
-            text-gray-200
-            hover:bg-gray-800
-          "
-          title="bloga dön"
-        >
-          Bloga Dön
-        </SmartLink>
-      </div>
-    </div>
-  </div>
-
-  <div v-else class="space-x-6 pt-14">
-    <div class="mx-auto w-full">
-      <article>
-        <header class="space-y-4 text-center mb-12 sm:(text-left pr-16) ">
-          <div class="space-y-2">
-            <h1
+            <div
               class="
-                font-semibold
-                text-gray-900 text-2xl
-                block
-                sm:text-4xl
-                dark:text-gray-100
+                flex
+                space-x-2
+                items-center
+                justify-center
+                whitespace-nowrap
+                sm:justify-start
+                dark:text-gray-300
               "
             >
-              {{ post.title }}
-            </h1>
+              <div
+                class="
+                  rounded-lg
+                  flex
+                  space-x-1
+                  bg-gray-100
+                  py-1
+                  px-2
+                  pl-2
+                  text-gray-800
+                  items-center
+                  dark:(bg-gray-700
+                  text-gray-300)
+                  "
+              >
+                <IconClock class="h-4 w-4" />
+                <div>{{ getReadingTime }} dakika okuma</div>
+              </div>
 
-            <p class="dark:text-gray-100">
-              {{ post.description }}
-            </p>
-          </div>
+              <div
+                class="
+                  rounded-lg
+                  flex
+                  space-x-1
+                  bg-gray-100
+                  py-1
+                  px-2
+                  pl-2
+                  text-gray-800
+                  items-center
+                  dark:(bg-gray-700
+                  text-gray-300)
+                  "
+              >
+                <IconCalendar class="h-4 w-4" />
+                <div>{{ getReadableDate }}</div>
+              </div>
+            </div>
+          </header>
 
-          <div
-            class="
-              flex
-              space-x-2
-              items-center
-              justify-center
-              whitespace-nowrap
-              sm:justify-start
-              dark:text-gray-300
-            "
-          >
+          <div class="mt-4">
             <div
-              class="
-                rounded-lg
-                flex
-                space-x-1
-                bg-gray-100
-                py-1
-                px-2
-                pl-2
-                text-gray-800
-                items-center
-                dark:(bg-gray-700
-                text-gray-300)
-                "
+              class="text-right -ml-20 top-4 sticky hidden float-left md:block"
             >
-              <IconClock class="h-4 w-4" />
-              <div>{{ getReadingTime }} dakika okuma</div>
+              <BlogShare
+                type="vertical"
+                :title="post.title"
+                :path="$route.path"
+              />
             </div>
 
-            <div
-              class="
-                rounded-lg
-                flex
-                space-x-1
-                bg-gray-100
-                py-1
-                px-2
-                pl-2
-                text-gray-800
-                items-center
-                dark:(bg-gray-700
-                text-gray-300)
-                "
+            <nuxt-content :document="post" />
+          </div>
+        </article>
+
+        <Disqus
+          :title="post.title"
+          :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
+          :identifier="`/blog/gonderi/${post.slug}`"
+          :slug="post.slug"
+          lang="tr"
+          class="mt-10"
+        />
+
+        <div class="space-y-10 mt-10">
+          <BlogPrevNext :current-slug="post.slug" />
+
+          <div>
+            <h3
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
             >
-              <IconCalendar class="h-4 w-4" />
-              <div>{{ getReadableDate }}</div>
+              Yazıyı paylaş
+            </h3>
+
+            <BlogShare :title="post.title" :path="$route.path" />
+          </div>
+
+          <div v-if="getTags.length > 0">
+            <h3
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
+            >
+              Etiketler
+            </h3>
+
+            <div class="flex flex-wrap space-x-2">
+              <SmartLink
+                v-for="(tag, index) in getTags"
+                :key="`tag-${index}`"
+                :href="{
+                  name: 'blog',
+                  query: {
+                    etiket: tag,
+                  },
+                }"
+                class="
+                  rounded-lg
+                  bg-gray-200 bg-opacity-40
+                  text-center
+                  py-1
+                  px-2
+                  transition-shadow
+                  text-gray-800
+                  truncate
+                  dark:(bg-gray-800
+                  text-gray-200)
+                  hover:shadow-md
+                  "
+              >
+                {{ tag }}
+              </SmartLink>
             </div>
           </div>
-        </header>
 
-        <div class="mt-4">
-          <div
-            class="text-right -ml-20 top-4 sticky hidden float-left md:block"
-          >
-            <BlogShare
-              type="vertical"
-              :title="post.title"
-              :path="$route.path"
-            />
-          </div>
-
-          <nuxt-content :document="post" />
-        </div>
-      </article>
-
-      <Disqus
-        :title="post.title"
-        :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
-        :identifier="`/blog/gonderi/${post.slug}`"
-        :slug="post.slug"
-        lang="tr"
-        class="mt-10"
-      />
-
-      <div class="space-y-10 mt-10">
-        <BlogPrevNext :current-slug="post.slug" />
-
-        <div>
-          <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">
-            Yazıyı paylaş
-          </h3>
-
-          <BlogShare :title="post.title" :path="$route.path" />
-        </div>
-
-        <div v-if="getTags.length > 0">
-          <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">
-            Etiketler
-          </h3>
-
-          <div class="flex flex-wrap space-x-2">
-            <SmartLink
-              v-for="(tag, index) in getTags"
-              :key="`tag-${index}`"
-              :href="{
-                name: 'blog',
-                query: {
-                  etiket: tag,
-                },
-              }"
-              class="
-                rounded-lg
-                bg-gray-200 bg-opacity-40
-                text-center
-                py-1
-                px-2
-                transition-shadow
-                text-gray-800
-                truncate
-                dark:(bg-gray-800
-                text-gray-200)
-                hover:shadow-md
-                "
+          <div v-if="getRelatedPosts.length > 0">
+            <h3
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
             >
-              {{ tag }}
-            </SmartLink>
-          </div>
-        </div>
+              Bunlar da hoşunuza gidebilir
+            </h3>
 
-        <div v-if="getRelatedPosts.length > 0">
-          <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">
-            Bunlar da hoşunuza gidebilir
-          </h3>
-
-          <div class="grid gap-2 sm:grid-cols-3">
-            <SmartLink
-              v-for="(relatedPost, index) in getRelatedPosts"
-              :key="`related-${index}`"
-              :href="`/blog/gonderi/${relatedPost.slug}`"
-              class="
-                rounded-lg
-                bg-gray-200 bg-opacity-40
-                text-center
-                p-4
-                transition-shadow
-                text-gray-800
-                truncate
-                dark:(bg-gray-800
-                text-gray-200)
-                hover:shadow-md
-                "
-            >
-              {{ relatedPost.title }}
-            </SmartLink>
+            <div class="grid gap-2 sm:grid-cols-3">
+              <SmartLink
+                v-for="(relatedPost, index) in getRelatedPosts"
+                :key="`related-${index}`"
+                :href="`/blog/gonderi/${relatedPost.slug}`"
+                class="
+                  rounded-lg
+                  bg-gray-200 bg-opacity-40
+                  text-center
+                  p-4
+                  transition-shadow
+                  text-gray-800
+                  truncate
+                  dark:(bg-gray-800
+                  text-gray-200)
+                  hover:shadow-md
+                  "
+              >
+                {{ relatedPost.title }}
+              </SmartLink>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <style lang="scss">
