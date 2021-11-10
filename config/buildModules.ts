@@ -8,7 +8,6 @@ import googleAnalytics from "./modules/googleAnalytics"
 import typescriptBuild from "./modules/typescriptBuild"
 
 const BuildModules: NuxtOptionsModule[] = [
-  // "nuxt-vite", Disabled due to errors with the new Vite version
   "@nuxtjs/moment",
   ["@nuxt/image", image],
   ["nuxt-windicss", windicss],
