@@ -1,6 +1,7 @@
 ---
 title: Dizi Önerilerim
 description: Son 2 yılda izlediğim tüm yabancı dizileri, kısa açıklamaları ve 10 üzerinden puanlamalarıyla birlikte sizlerle paylaştığım gönderi. Ayrıca, her yeni dizi bitirdiğimde, bu listeyi de güncelleyeceğim.
+header: https://i.imgur.com/YNu5eL1.jpg
 tags:
   - dizi
   - video
@@ -10,103 +11,9 @@ special: true
 
 Bu yazı, aynı blogdaki günlük müzik özelliği gibi, botta en sevdiğim özelliklerden birisi olan "etiket sistemi" olarak adlandırdığım, sizin belirlediğiniz bir etiket ile istediğiniz bir şeyi not almanızı sağlayan güzelim o komuttu. O komut sayesinde dizi önerilerimi sorulduğunda neredeyse her sunucuda kolayca gösterebiliyor ve kimseyi uğraştırmamış oluyordum. Bugün bir dizi daha bitirdikten sonra "neden bunu bloga yazmayayım?" dedim, üstelik daha fazla açıklama olur ve burası da boş kalmaz 😅 Daha fazla uzatmadan direkt olarak aşağıdaki puanlama listesine geçebilir, eğer isterseniz listenin altına inerek listedeki sırasına göre yazdığım tüm diziler hakkında ne düşündüğümü bulabilir ve dizilerin hepsinin yayınlanan resmî fragmanlarına ulaşabilirsiniz. Ayrıca, bu gönderi, yeni bir dizi önerim olduğunda güncellenecektir. O yüzden takipte kalın!
 
-Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂 <span class="cursor-default border-blue-300 border-b-2 hover:border-blue-900">Altı mavi ile çizili olan dizilerin yeni eklendiğini unutmayın.</span>
+Dizi açıklamalarına geçmeden önce neden listedeki dizilerin hepsinin puanının en az 8 olduğu hakkında & kısa bir bilgi vermek gerektiğini düşünüyorum; bunlar benim bir başkasını önerisiyle veya zamanında çok popüler olduğunu düşündüğüm ve muhabbetlerden geri kalmamak için izlediğim diziler, kısacası, önüme gelen her diziyi izlemiyorum, ya öneriliyordur ya da çok popülerdir, bu yüzden en az puanın 8 olması kafanızı karıştırmasın. Bazen 8 verdiğim için üzülüyorum bu dizilere 😂 <span class="border-b-2 border-blue-300 cursor-default hover:border-blue-900">Altı mavi ile çizili olan dizilerin yeni eklendiğini unutmayın.</span>
 
-<div class="mb-6 grid gap-2 lg:grid-cols-2">
-    <blog-rating rating="10" platform="Netflix" seasons="3" status="2">
-      <a href="#daredevil">Daredevil</a>
-    </blog-rating>
-    <blog-rating rating="10" platform="Netflix" seasons="1">
-      <a href="#love-death--robots">Love, Death & Robots</a>
-    </blog-rating>
-    <blog-rating rating="10" platform="Fox" seasons="5" status="1">
-      <a href="#prison-break">Prison Break</a>
-    </blog-rating>
-    <blog-rating rating="9.5" platform="Netflix" seasons="3">
-      <a href="#élite">Élite</a>
-    </blog-rating>
-    <blog-rating rating="9.5" platform="Netflix" seasons="5">
-      <a href="#the-witcher">The Witcher</a>
-    </blog-rating>
-    <blog-rating rating="9.5" platform="Amazon Prime" seasons="5">
-      <a href="#the-boys">The Boys</a>
-    </blog-rating>
-    <blog-rating rating="9.5" platform="Netflix" seasons="5" status="1">
-      <a href="#rise-of-empires-ottoman">Rise of Empires: Ottoman</a>
-    </blog-rating>
-    <blog-rating rating="9.5" platform="Disney+" seasons="5">
-      <a href="#the-mandalorian">The Mandalorian</a>
-    </blog-rating>
-    <blog-rating rating="9.5" platform="Netflix" seasons="4">
-      <a href="#la-casa-de-papel">La Casa de Papel</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="2">
-      <a href="#sex-education">Sex Education</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="1">
-      <a href="#locke--key">Locke & Key</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="4">
-      <a href="#stranger-things">Stranger Things</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Apple TV+" seasons="1">
-      <a href="#see">See</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="BBC" seasons="4" status="1">
-      <a href="#sherlock">Sherlock</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="2" :isnew="true">
-      <a href="#lupin">Lupin</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="TNT" seasons="2">
-      <a href="#snowpiercer">Snowpiercer</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="1" status="1">
-      <a href="#the-haunting-of-bly-manor">The Haunting of Bly Manor</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="1" status="1" :isnew="true">
-      <a href="#when-they-see-us">When They See Us</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="2" status="1">
-      <a href="#sense8">Sense8</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="4" status="1">
-      <a href="#chilling-adventures-of-sabrina">Chilling Adventures of Sabrina</a>
-    </blog-rating>
-    <blog-rating rating="9.0" platform="Netflix" seasons="2" status="2">
-      <a href="#altered-carbon">Altered Carbon</a>
-    </blog-rating>
-    <blog-rating rating="8.9" platform="Netflix" seasons="1" status="1">
-      <a href="#the-queens-gambit">The Queen's Gambit</a>
-    </blog-rating>
-    <blog-rating rating="8.5" platform="Netflix" seasons="1">
-      <a href="#aşk-101">Aşk 101</a>
-    </blog-rating>
-    <blog-rating rating="8.5" platform="Netflix" seasons="2">
-      <a href="#the-order">The Order</a>
-    </blog-rating>
-    <blog-rating rating="8.5" platform="Netflix" seasons="6" status="1">
-      <a href="#bojack-horseman">BoJack Horseman</a>
-    </blog-rating>
-    <blog-rating rating="8.5" platform="Adult Swim" seasons="4">
-      <a href="#rick-and-morty">Rick and Morty</a>
-    </blog-rating>
-    <blog-rating rating="8.5" platform="Netflix" seasons="2">
-      <a href="#lost-in-space">Lost in Space</a>
-    </blog-rating>
-    <blog-rating rating="8.0" platform="Netflix" seasons="1" status="1">
-      <a href="#the-haunting-of-hill-house">The Haunting of Hill House</a>
-    </blog-rating>
-    <blog-rating rating="8.0" platform="Netflix" seasons="2">
-      <a href="#you">You</a>
-    </blog-rating>
-    <blog-rating rating="8.0" platform="Netflix" seasons="5">
-      <a href="#lucifer">Lucifer</a>
-    </blog-rating>
-    <blog-rating rating="8.0" platform="Netflix" seasons="2">
-      <a href="#the-umbrella-academy">The Umbrella Academy</a>
-    </blog-rating>
-</div>
+<blog-sections-ratings></blog-sections-ratings>
 
 ### Daredevil
 

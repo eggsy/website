@@ -1,6 +1,7 @@
 ---
 title: PreMiD Nasıl Kullanılır?
 description: İnternet sitelerinde yaptığınız, izlediğiniz veya dinlediğiniz aktiviteleri Discord profilinize yansıtan PreMiD nasıl kullanılır?
+header: https://i.imgur.com/J4L9Wbz.jpg
 tags:
   - premid
   - discord

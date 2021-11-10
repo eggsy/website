@@ -1,6 +1,7 @@
 ---
-title: Okul Günlükleri - Podcast
+title: "Okul Günlükleri: Podcast"
 description: Yeni serimin ilk bölümünde, Oral Communication Skills dersinde bize verilen Podcast görevi hakkında yaşadığım deneyimi anlatacağım.
+header: https://i.imgur.com/gIfUx1R.jpg
 tags:
   - okul
   - eğitim

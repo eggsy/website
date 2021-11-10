@@ -1,6 +1,7 @@
 ---
-title: Okul Günlükleri - Giriş
+title: "Okul Günlükleri: Giriş"
 description: Eğitim gördüğüm okulda aldığımız derslerde ilgimi çeken konuları, kullanılan yöntemleri detaylarıyla paylaşacağım serinin giriş bölümü.
+header: https://i.imgur.com/HmpbEuO.jpg
 tags:
   - okul
   - eğitim

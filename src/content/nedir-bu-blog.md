@@ -1,6 +1,7 @@
 ---
 title: Nedir Bu Blog? Nereden Çıktı Şimdi?
 description: Bundan sonra gönderilerimi paylaşacağım blogumun hayata geliş hikâyesi. Oldukça zorlu bir yoldan geçti ancak sonunda her şeyiyle servise hazır! Yeni blogumuzu siz de inceleyin!
+header: https://i.imgur.com/Nj1ZGdP.jpg
 tags:
   - blog
   - site

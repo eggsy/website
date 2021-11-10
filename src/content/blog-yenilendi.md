@@ -1,6 +1,7 @@
 ---
 title: Blog Yenilendi!
 description: Gönderilerime daha rahat ve hızlı ulaşabilesiniz diye blogumu baştan aşağıya yeniledim ve seveceğiniz birkaç özellik ekledim!
+header: https://i.imgur.com/Nj1ZGdP.jpg
 tags:
   - blog
   - site

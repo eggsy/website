@@ -2,6 +2,7 @@
 title: Sitem Artık Açık Kaynak!
 description: Yaklaşık bir buçuk yıldır yönettiğim ve içerik girdiğim, sürekli geliştirip bir süre önce Vue'ya geçirdiğim sitemi açık kaynak olarak GitHub üzerinde paylaştım!
 createdAt: 2020-11-01T18:08:08.507Z
+header: https://i.imgur.com/Rmslq6B.jpg
 tags:
   - haber
   - site

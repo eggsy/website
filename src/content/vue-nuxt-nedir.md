@@ -4,6 +4,7 @@ description: Kendi internet sitemin ve katkıda bulunduğum tüm projelerinde ku
 tags:
   - vue
   - nuxt
+  - frontend
 createdAt: 2020-05-04T21:37:39.798Z
 ---
 

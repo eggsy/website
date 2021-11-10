@@ -1,6 +1,7 @@
 ---
 title: Neler Dönüyor?
 description: Bu site ne? Neden yeni bir site yapıyorum? Sitemin geleceği için ne gibi kararlar alacağım? Hepsini bu yazıda açıklıyorum!
+header: https://i.imgur.com/Nj1ZGdP.jpg
 tags:
   - blog
   - site

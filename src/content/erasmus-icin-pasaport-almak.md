@@ -1,6 +1,7 @@
 ---
 title: Erasmus+ İçin Pasaport Almak
 description: Erasmus+ adaylarının kafasını kurcalayan en büyük sorulardan biri pasaport almayı bu yazımda anlatacağım.
+header: https://i.imgur.com/D4VQPhP.jpg
 tags:
   - okul
   - eğitim
