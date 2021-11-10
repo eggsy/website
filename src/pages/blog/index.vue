@@ -15,6 +15,8 @@ export default Vue.extend({
         linux: [] as Post[],
         rest: [] as Post[],
       },
+      categories: ["Discord", "Linux", "Eğitim", "Frontend", "Site"],
+      selectedCategory: "Discord"
     }
   },
   async fetch() {
@@ -76,6 +78,23 @@ export default Vue.extend({
     }
   },
   computed: {
+    getCategoryResults() {
+      const { posts } = this;
+
+      const allPosts = posts.rest.concat(
+        posts.discord,
+        posts.linux,
+      )
+
+      const filtered = allPosts.filter((post: Post) => post?.tags?.includes(this.selectedCategory?.toLowerCase()))
+
+      return [...new Set(filtered.sort((a: Post, b: Post) => {
+        if (!a?.createdAt || !b?.createdAt) return 0;
+        else if (a.createdAt > b.createdAt) return -1
+        else if (a.createdAt < b.createdAt) return 1
+        else return 0
+      }))]
+    },
     /**
      * Checks if fetch state is pending or error.
      * @returns {boolean}
@@ -168,7 +187,7 @@ export default Vue.extend({
 <template>
   <div class="pt-6">
     <div v-if="getFilteredPosts === false">
-      <h3 class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100">Son gönderiler</h3>
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Son gönderiler</h3>
 
       <div class="grid gap-2 mt-2 md:grid-cols-3">
         <template v-if="isFetchPending">
@@ -180,70 +199,33 @@ export default Vue.extend({
         </template>
       </div>
 
-      <div class="mt-14 grid gap-14 md:(gap-4 grid-cols-2)">
-        <div class="flex flex-col space-y-2 overflow-x-hidden md:overflow-visible">
-          <SmartLink
-            :href="{
-              name: 'blog',
-              query: {
-                etiket: 'discord',
-              },
-            }"
-            title="Discord etiketli gönderileri gör"
-            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
-          >
-            <IconBrand brand="discord" class="w-6 h-6" />
-            <h3 class="text-lg font-semibold">Discord</h3>
-          </SmartLink>
-
-          <template v-if="isFetchPending">
-            <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
-          </template>
-
-          <template v-else>
-            <CardPost
-              v-for="(post, index) in posts.discord"
-              :key="`discord-${index}`"
-              :post="post"
-              type="text"
-            />
-          </template>
+      <!-- Test -->
+      <div class="mt-20 space-y-6">
+        <div class="flex space-x-4 overflow-x-auto">
+          <div
+            v-for="text in categories"
+            :key="text"
+            class="px-6 py-1 text-gray-600 transition-colors rounded-lg cursor-pointer select-none dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+            :class="selectedCategory === text && 'bg-gray-100 dark:bg-gray-800'"
+            :title="selectedCategory === text && `Tüm ${text} gönderilirini gör`"
+            @click="selectedCategory !== text ? selectedCategory = text : $router.push({ query: { etiket: text.toLowerCase() } })"
+          >{{ text }}</div>
         </div>
 
-        <div class="flex flex-col space-y-2 overflow-x-hidden md:overflow-visible">
-          <SmartLink
-            :href="{
-              name: 'blog',
-              query: {
-                etiket: 'linux',
-              },
-            }"
-            title="Linux etiketli gönderileri gör"
-            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
-          >
-            <IconDev brand="linux" class="w-6 h-6" />
-            <h3 class="text-lg font-semibold">Linux</h3>
-          </SmartLink>
-
-          <template v-if="isFetchPending">
-            <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
-          </template>
-
-          <template v-else>
-            <CardPost
-              v-for="(post, index) in posts.linux"
-              :key="`linux-${index}`"
-              :post="post"
-              type="text"
-            />
-          </template>
+        <div
+          class="overflow-y-auto space-y-4 flex flex-col sm:(grid grid-cols-2 max-h-full gap-4 space-y-0) max-h-50vh"
+        >
+          <CardPost
+            v-for="(post, index) in getCategoryResults"
+            :key="`${selectedCategory}-${index}`"
+            :post="post"
+            type="text"
+          />
         </div>
       </div>
 
       <div class="mt-16">
-        <h3
-          class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
-        >Diğer gönderiler</h3>
+        <h3 class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100">Tüm gönderiler</h3>
 
         <div class="grid gap-3 mt-4 md:grid-cols-3">
           <template v-if="isFetchPending">
