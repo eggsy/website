@@ -5,7 +5,7 @@ export default Vue.extend({
   props: {
     src: {
       type: String,
-      required: true,
+      required: false,
       default: null,
     },
     title: {
@@ -51,7 +51,7 @@ export default Vue.extend({
      * @returns {string}
      */
     getBackgroundUrl(): string {
-      if (this.error === true) return "/icon.png"
+      if (this.error === true || !this.src) return "/icon.png"
 
       const { format, height, width, fit, src } = this
 
@@ -72,11 +72,18 @@ export default Vue.extend({
       else return this.$img(src, options)
     },
   },
+  methods: {
+    handleError() {
+      this.error = true;
+      this.loaded = true;
+    }
+  }
 })
 </script>
 
 <template>
   <div
+    v-if="src"
     :style="
       loaded === true && {
         backgroundImage: `url('${getBackgroundUrl}')`,
@@ -97,10 +104,8 @@ export default Vue.extend({
       :width="width"
       :height="height"
       class="invisible"
-      @error="
-        error = true
-        loaded = true
-      "
+      loading="lazy"
+      @error="handleError"
       @load="loaded = true"
     />
   </div>
