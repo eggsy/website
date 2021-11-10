@@ -34,7 +34,6 @@
       "@nuxt/image",
       /* Additional types */
       "@types/prismjs",
-      "vite/client",
     ],
     "typeRoots": [
       "./@types"
