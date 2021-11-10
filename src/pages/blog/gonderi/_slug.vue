@@ -130,9 +130,9 @@ export default Vue.extend({
       :error="$fetchState.pending === false && $fetchState.error !== null"
     />
 
-    <div v-else class="pt-4 space-x-6">
-      <div class="w-full mx-auto" :class="post.header && 'space-y-10'">
-        <div class="relative min-h-16">
+    <div v-else class="space-x-6 pt-4">
+      <div class="mx-auto w-full" :class="post.header && 'space-y-10'">
+        <div class="min-h-16 relative">
           <SmartImage
             v-if="post.header"
             :src="post.header"
@@ -140,31 +140,31 @@ export default Vue.extend({
           />
 
           <div
-            class="absolute left-0 flex items-center justify-center space-x-2 text-white select-none bottom-2 whitespace-nowrap sm:justify-start"
+            class="flex space-x-2 text-white right-0 bottom-2 left-0 absolute items-center justify-center select-none whitespace-nowrap sm:justify-start"
           >
             <div
-              class="flex items-center py-1 space-x-1 rounded-md backdrop-filter backdrop-blur-lg"
+              class="rounded-md flex space-x-1 py-1 items-center backdrop-filter backdrop-blur-lg"
               :class="!post.header ? 'pl-0 pr-2 text-gray-500 dark:text-gray-400' : 'px-2'"
             >
-              <IconClock class="w-4 h-4" />
+              <IconClock class="h-4 w-4" />
               <div>{{ getReadingTime }} dakika okuma</div>
             </div>
 
             <div
-              class="flex items-center px-2 py-1 space-x-1 rounded-md backdrop-filter backdrop-blur-lg"
+              class="rounded-md flex space-x-1 py-1 px-2 items-center backdrop-filter backdrop-blur-lg"
               :class="!post.header && 'text-gray-500 dark:text-gray-400'"
             >
-              <IconCalendar class="w-4 h-4" />
+              <IconCalendar class="h-4 w-4" />
               <div>{{ getReadableDate }}</div>
             </div>
           </div>
         </div>
 
         <article>
-          <header class="space-y-4 text-center mb-12 sm:(text-left pr-16)">
+          <header class="space-y-4 text-center mb-12 sm:(text-left pr-16) ">
             <div class="space-y-2">
               <h1
-                class="block text-2xl font-semibold text-gray-900 sm:text-4xl dark:text-gray-100"
+                class="font-semibold text-2xl text-gray-900 block sm:text-4xl dark:text-gray-100"
               >{{ post.title }}</h1>
 
               <p class="dark:text-gray-100">{{ post.description }}</p>
@@ -172,7 +172,7 @@ export default Vue.extend({
           </header>
 
           <div class="mt-4">
-            <div class="sticky hidden float-left -ml-20 text-right top-4 md:block">
+            <div class="text-right -ml-20 top-4 sticky hidden float-left md:block">
               <BlogShare type="vertical" :title="post.title" :path="$route.path" />
             </div>
 
@@ -189,17 +189,17 @@ export default Vue.extend({
           class="mt-10"
         />
 
-        <div class="mt-10 space-y-10">
+        <div class="space-y-10 mt-10">
           <BlogPrevNext :current-slug="post.slug" />
 
           <div>
-            <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">Yazıyı paylaş</h3>
+            <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">Yazıyı paylaş</h3>
 
             <BlogShare :title="post.title" :path="$route.path" />
           </div>
 
           <div v-if="getTags.length > 0">
-            <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">Etiketler</h3>
+            <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">Etiketler</h3>
 
             <div class="flex flex-wrap space-x-2">
               <SmartLink
@@ -211,14 +211,14 @@ export default Vue.extend({
                     etiket: tag,
                   },
                 }"
-                class="rounded-lg bg-gray-200 bg-opacity-40 text-center py-1 px-2 transition-shadow text-gray-800 truncate dark:(bg-gray-800 text-gray-200) hover:shadow-md"
+                class="rounded-lg bg-gray-200 bg-opacity-40 text-center py-1 px-2 transition-shadow text-gray-800 truncate dark:(bg-gray-800 text-gray-200) hover:shadow-md "
               >{{ tag }}</SmartLink>
             </div>
           </div>
 
           <div v-if="getRelatedPosts.length > 0">
             <h3
-              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
             >Bunlar da hoşunuza gidebilir</h3>
 
             <div class="grid gap-2 sm:grid-cols-3">
@@ -226,7 +226,7 @@ export default Vue.extend({
                 v-for="(relatedPost, index) in getRelatedPosts"
                 :key="`related-${index}`"
                 :href="`/blog/gonderi/${relatedPost.slug}`"
-                class="rounded-lg bg-gray-200 bg-opacity-40 text-center p-4 transition-shadow text-gray-800 truncate dark:(bg-gray-800 text-gray-200) hover:shadow-md"
+                class="rounded-lg bg-gray-200 bg-opacity-40 text-center p-4 transition-shadow text-gray-800 truncate dark:(bg-gray-800 text-gray-200) hover:shadow-md "
               >{{ relatedPost.title }}</SmartLink>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default Vue.extend({
 
   /* Paragraphs */
   p {
-    @apply text-gray-800 leading-relaxed dark:text-gray-300;
+    @apply leading-relaxed text-gray-800 dark:text-gray-300;
 
     &.text-center {
       @apply flex justify-center;
@@ -271,7 +271,7 @@ export default Vue.extend({
     }
 
     code {
-      @apply font-sans bg-gray-100 text-fuchsia-600 py-px px-2 dark:bg-gray-700;
+      @apply font-sans bg-gray-100 py-px px-2 text-fuchsia-600 dark:bg-gray-700;
     }
 
     &:not(:last-child) {
