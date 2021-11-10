@@ -59,6 +59,7 @@ html {
     @include scrollbar("true", "false");
   }
 }
+
 /* Create a class for other elements */
 .scrollbar {
   @include scrollbar("false", "true");
