@@ -66,51 +66,21 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="
-      p-3
-      space-y-2
-      transition-shadow
-      bg-gray-200
-      rounded-lg
-      cursor-pointer
-      bg-opacity-40
-      hover:shadow-md
-      dark:bg-gray-800
-    "
+    class="p-3 space-y-2 transition-shadow bg-gray-200 rounded-lg cursor-pointer bg-opacity-40 hover:shadow-md dark:bg-gray-800"
   >
     <SmartImage
       :src="getPostMeta.image"
       class="w-full rounded h-34 filter dark:brightness-75"
     />
 
-    <div class="flex flex-col">
-      <span
-        class="
-          text-sm
-          font-medium
-          leading-tight
-          text-gray-600
-          uppercase
-          dark:text-gray-400
-        "
-      >
-        {{ getPostMeta.tag }}
-      </span>
-
+    <div class="flex flex-col space-y-1">
       <h2
-        class="
-          text-lg
-          font-bold
-          leading-tight
-          text-gray-800
-          truncate
-          dark:text-gray-200
-        "
+        class="text-lg font-bold leading-tight text-gray-700 truncate dark:text-gray-200"
       >
         {{ getPostMeta.title }}
       </h2>
 
-      <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
+      <p class="text-gray-500 line-clamp-2 dark:text-gray-300">
         {{ getPostMeta.description }}
       </p>
     </div>
@@ -123,19 +93,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="
-      flex
-      items-center
-      p-3
-      space-x-4
-      transition-shadow
-      bg-gray-200
-      rounded-lg
-      cursor-pointer
-      bg-opacity-40
-      hover:shadow-md
-      dark:bg-gray-800
-    "
+    class="flex items-center p-3 space-x-4 transition-shadow bg-gray-200 rounded-lg cursor-pointer bg-opacity-40 hover:shadow-md dark:bg-gray-800"
   >
     <SmartImage
       :src="getPostMeta.image"
@@ -162,18 +120,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="
-      flex flex-col
-      p-3
-      truncate
-      transition-shadow
-      bg-gray-200
-      rounded-lg
-      cursor-pointer
-      bg-opacity-40
-      hover:shadow-md
-      dark:bg-gray-800
-    "
+    class="flex flex-col p-3 truncate transition-shadow bg-gray-200 rounded-lg cursor-pointer bg-opacity-40 hover:shadow-md dark:bg-gray-800"
   >
     <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">
       {{ getPostMeta.title }}
