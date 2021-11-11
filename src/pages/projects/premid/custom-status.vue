@@ -553,7 +553,7 @@ export default Vue.extend({
               If the system isn't working or it isn't displaying anything on
               your profile, it's most likely about you. Please check
               <SmartLink
-                href="https://premid.app/store/presences/Custom%20Status"
+                href="https://docs.premid.app/troubleshooting"
                 title="PreMiD Docs"
                 blank
                 >Troubleshooting Documentation</SmartLink
