@@ -1,4 +1,4 @@
-import { Plugin } from "@nuxt/types"
+import type { Plugin } from "@nuxt/types"
 
 /* Interfaces */
 export interface SongMetadata {
