@@ -200,8 +200,6 @@ export default Vue.extend({
   mounted() {
     this.setupMutationObserver()
     this.setSavedData()
-
-
   },
   watch: {
     "presence": {
