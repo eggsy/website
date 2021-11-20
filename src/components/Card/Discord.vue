@@ -295,4 +295,7 @@ export default Vue.extend({
       </div>
     </div>
   </div>
+
+  <!-- Skeleton load -->
+  <div v-else class="rounded-md bg-[#6c82cf] h-[12.5rem] w-full animate-pulse" />
 </template>
