@@ -57,6 +57,9 @@ export default Vue.extend({
     const href = `https://eggsy.xyz${this.$route?.path}`
 
     return {
+      bodyAttrs: {
+        class: "overflow-x-hidden",
+      },
       title,
       link: [
         {
@@ -136,7 +139,7 @@ export default Vue.extend({
           <SmartImage
             v-if="post.header"
             :src="post.header"
-            class="h-60 -mx-[4.25vw] filter sm:-mx-[20.75vw] dark:brightness-75"
+            class="h-60 -mx-[4.25vw] filter md:-mx-[20.75vw] dark:brightness-75"
           />
 
           <div

@@ -247,6 +247,7 @@ export default Vue.extend({
         >
           <div class="flex-shrink-0 h-32 w-32 relative">
             <SmartImage
+              v-if="getImages.largeImage"
               :src="getImages.largeImage"
               class="rounded-xl"
               alt="large image"
@@ -261,6 +262,7 @@ export default Vue.extend({
                 placement: 'top',
               }"
               :src="getImages.smallImage"
+              alt="small image"
               class="rounded-full bg-[#6c82cf] -right-2 -bottom-2 ring-4 ring-[#6c82cf] w-9 box-border absolute focus:outline-none"
             />
           </div>
