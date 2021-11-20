@@ -13,13 +13,7 @@ export default Vue.extend({
           status: 2,
           anchor: "#daredevil",
         },
-        {
-          name: "Love, Death & Robots",
-          rating: 10,
-          platform: "Netflix",
-          seasons: 2,
-          anchor: "#love-death--robots",
-        },
+
         {
           name: "Prison Break",
           rating: 10,
@@ -27,6 +21,20 @@ export default Vue.extend({
           seasons: 5,
           status: 1,
           anchor: "#prison-break",
+        },
+        {
+          name: "Arcane",
+          rating: 10,
+          platform: "Netflix",
+          seasons: 1,
+          anchor: "#arcane",
+        },
+        {
+          name: "Love, Death & Robots",
+          rating: 10,
+          platform: "Netflix",
+          seasons: 2,
+          anchor: "#love-death--robots",
         },
         {
           name: "Élite",
@@ -244,7 +252,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="grid gap-2 mb-6 lg:grid-cols-2">
+  <div class="mb-6 grid gap-2 lg:grid-cols-2">
     <BlogRating
       v-for="item in ratings"
       :key="item.name"
