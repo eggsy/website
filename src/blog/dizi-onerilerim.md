@@ -81,7 +81,7 @@ Fazla anlatmaya gerek yok, aslında çok geç bitirdiğim bu dizi, hepimizin "ş
 
 ### Loki
 
-Kötü, veya kötü olduğunu düşündüğünüz bir karakterin filmini kim yapabilir? Tabii ki Marvel! Üstelik bunu öyle de güzel yapar ki, artık karakterin diğer filmlerde yaptığı kötülükleri unutur ve o karaktere sempati bağlarsınız. Evrende çok sık rastlanmasa da Loki, bunlardan biri. İzledikçe hoşunuza gidecek ve sezon sonunda bir sonraki sezonda ne olacağını asla tahmin edemeyeceğiniz bir dizi. Kendinizi "Loki izlemeye gerek yok" diye avutsanız bile emin olun dizinin içerisinde karakter hakkında birçok şey öğreneceksiniz. Kararınızı vermek için [buradan](https://youtu.be/nW948Va-l10) fragmanı izleyebilirsiniz.
+Kötü, veya kötü olduğunu düşündüğünüz bir karakterin serisini kim yapabilir? Tabii ki Marvel! Üstelik bunu öyle de güzel yapar ki, artık karakterin diğer filmlerde yaptığı kötülükleri unutur ve o karaktere sempati bağlarsınız. Evrende çok sık rastlanmasa da Loki, bunlardan biri. İzledikçe hoşunuza gidecek ve sezon sonunda bir sonraki sezonda ne olacağını asla tahmin edemeyeceğiniz bir dizi. Kendinizi "Loki izlemeye gerek yok" diye avutsanız bile emin olun dizinin içerisinde karakter hakkında birçok şey öğreneceksiniz. Kararınızı vermek için [buradan](https://youtu.be/nW948Va-l10) fragmanı izleyebilirsiniz.
 
 ### Lupin
 
@@ -101,7 +101,7 @@ Marvel'ın filmlerinde "şöyle değil de, böyle olsaydı ne olurdu" dediğiniz
 
 ### When They See Us
 
-Diziyi izlerken (eğer açıklamasını öncesinde okumadıysanız) "acaba bu dizi gerçek hikayeden mi alıntı?" diye düşünüp durduğunuz, finalinde ise tam Netflix'inizi kapatmadan önce çıkan filmdeki karakterlerin gerçek halleri, filmin konusunun sonrasında hayatlarına nasıl devam ettiklerini okuyunca yaşadığınız aydınlanma sonrası izlediğiniz dizinin çok daha anlam kazanması hissini yaşatan bir dizi... Sadece 4 bölümden oluşan, dizinin geçtiği tarihte bile hükümetlerin ne derece kara yüzlerinin olabileceğini bizlere gösteren, suçsuz yere çocuk yaştaki 5 kişiyi, kanunlara uymadan, zorlayarak, işlemedikleri bir suçu kabul etmelerini sağlayıp yıllarca hapis tutan gerçek bir hikayeyi konu alıyor. Karakterlerin havası, konunun karamsarlığı ve "bu kadarı da olmaz artık" dedirten sahneleriyle dolu bu dizinin fragmanına [buradan](https://youtu.be/YyoSErErnCE) ulaşabailirsiniz.
+Diziyi izlerken (eğer açıklamasını öncesinde okumadıysanız) "acaba bu dizi gerçek hikayeden mi alıntı?" diye düşünüp durduğunuz, finalinde ise tam Netflix'inizi kapatmadan önce çıkan dizideki karakterlerin gerçek halleri, dizinin konusunun sonrasında hayatlarına nasıl devam ettiklerini okuyunca yaşadığınız aydınlanma sonrası izlediğiniz dizinin çok daha anlam kazanması hissini yaşatan bir dizi... Sadece 4 bölümden oluşan, dizinin geçtiği tarihte bile hükümetlerin ne derece kara yüzlerinin olabileceğini bizlere gösteren, suçsuz yere çocuk yaştaki 5 kişiyi, kanunlara uymadan, zorlayarak, işlemedikleri bir suçu kabul etmelerini sağlayıp yıllarca hapis tutan gerçek bir hikayeyi konu alıyor. Karakterlerin havası, konunun karamsarlığı ve "bu kadarı da olmaz artık" dedirten sahneleriyle dolu bu dizinin fragmanına [buradan](https://youtu.be/YyoSErErnCE) ulaşabailirsiniz.
 
 ### Sense8
 
