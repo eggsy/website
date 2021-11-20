@@ -27,6 +27,7 @@ export default Vue.extend({
           rating: 10,
           platform: "Netflix",
           seasons: 1,
+          isNew: true,
           anchor: "#arcane",
         },
         {
@@ -117,11 +118,18 @@ export default Vue.extend({
           anchor: "#sherlock",
         },
         {
+          name: "Loki",
+          rating: 9,
+          platform: "Disney+",
+          seasons: 1,
+          isNew: true,
+          anchor: "#loki",
+        },
+        {
           name: "Lupin",
           rating: 9,
           platform: "Netflix",
           seasons: 2,
-          isNew: true,
           anchor: "#lupin",
         },
         {
@@ -140,12 +148,19 @@ export default Vue.extend({
           anchor: "#the-haunting-of-bly-manor",
         },
         {
+          name: "What If...?",
+          rating: 9,
+          platform: "Disney+",
+          seasons: 1,
+          isNew: true,
+          anchor: "#what-if",
+        },
+        {
           name: "When They See Us",
           rating: 9,
           platform: "Netflix",
           seasons: 1,
           status: 1,
-          isNew: true,
           anchor: "#when-they-see-us",
         },
         {

@@ -79,6 +79,10 @@ Apple'ın çıkmadan önce ismini neredeyse ülkenin her yerinde, takip ettiğim
 
 Fazla anlatmaya gerek yok, aslında çok geç bitirdiğim bu dizi, hepimizin "şerlok usman aga" karakterinden bildiği "şerlok"un ta kendisi. Detektif olan Sherlock'un kafası hayal edebileceğinizden çok daha farklı ve gelişmiş bir şekilde çalıştığı için polislerin hatta ülkenin sahip olduğu en iyi detektiflerin bile çözemeyeceği davalarda çok işe yarıyor. Bölümleri ve sezon sayısı fazla, sezon içerisindeki bölümleri kısa olan bu muhteşem diziyi de kesinlikle izleyin. Fragmanı için [burayı](https://youtu.be/xK7S9mrFWL4) elleyebilirsiniz.
 
+### Loki
+
+Kötü, veya kötü olduğunu düşündüğünüz bir karakterin filmini kim yapabilir? Tabii ki Marvel! Üstelik bunu öyle de güzel yapar ki, artık karakterin diğer filmlerde yaptığı kötülükleri unutur ve o karaktere sempati bağlarsınız. Evrende çok sık rastlanmasa da Loki, bunlardan biri. İzledikçe hoşunuza gidecek ve sezon sonunda bir sonraki sezonda ne olacağını asla tahmin edemeyeceğiniz bir dizi. Kendinizi "Loki izlemeye gerek yok" diye avutsanız bile emin olun dizinin içerisinde karakter hakkında birçok şey öğreneceksiniz. Kararınızı vermek için [buradan](https://youtu.be/nW948Va-l10) fragmanı izleyebilirsiniz.
+
 ### Lupin
 
 Şimdiye kadar izlememenin getirdiği pişmanlık, fakat yeni sezonun çıkmış olması, Türkiye'de birinci sırada olması ve benim boş vaktime denk gelmesi üzerine bu pişmanlığın azalması ile izlemeye başladığım, kendimi alamadığım Fransız bir yapım. Sayesinde bir yandan Fransızca ve Türkçe'deki ortak kelimeleri bulduğum, bir kenara not ettiğim bu dizideki "Sherlock havası" da -her ne kadar Sherlock dizisi kadar iyi olmasa da- bana onun kadar heyecan yaşatıyor, ve bu dizi de neredeyse Sherlock kadar kaliteli bir hikayeye sahip bir Netflix dizisi. Sherlock'u sevdiyseniz bu diziyi sevmemeninizin, bunu sevdiyseniz de Sherlock'u sevmemeninizin ihtimali yok. Her iki seriyi de bir an önce izlemenizi tavsiye ediyorum, ilk adımı [buradan](https://youtu.be/ga0iTWXCGa0) fragmanı izleyerek yapabilirsiniz.
@@ -90,6 +94,10 @@ Konusu ilginç ve devamının gelmeyeceğini, devam etse nereye kadar edebilece�
 ### The Haunting of Bly Manor
 
 Son zamanlarda izleyerek beni içine çeken, bir sonraki bölümü bir an önce izleme şehvetini bana tekrar yaşatan bu dizi, ilk sezonu The Haunting of Hill House ile beni her ne kadar fazla etkilememiş olsa da bu sezonu ile inanılmaz bir geri dönüş yaptıklarını düşünüyorum. Korku dizisi olmasına rağmen her bölümde "sıçratan sahneler" veya sürekli hakim bir karanlık tema işlenmemesi, yeri gelince güzel güneşli günlerin ve çimenlerde oynayan çocukların hikayelerinin anlatılması, bilindik korkutma yöntemleri ile değil, dram ile karışık bir şekilde işlenen gerilim/korku ile işlenerek ortaya inanılmaz bir sezon ortaya çıkması diziye her türlü açıdan bir anlam katmış. Hikayesi bir anlatıcının sesi ile işlenen, orta bölümlerde hikayenin tamamına hakim olduğunuz ve finalinde de "ters köşe" olduğunuz bir hikâye ile sizleri bekleyen bu diziyi izlemenizi tavsiye ederim. İsterseniz fragmanı [buradan](https://youtu.be/NHWKpXV404M) izleyebilirsiniz.
+
+### What If...?
+
+Marvel'ın filmlerinde "şöyle değil de, böyle olsaydı ne olurdu" dediğiniz yerlerden en ilgi çekici olanları seri hâline getiren bu animasyon serisinde merak ettiğiniz birkaç "paralel evrende" neler olduğunu görebilecek ve başarılı yazılmış senaryosu ile sezonun sonlarına doğru kendinizi hikayeye kaptıracaksınız. Yemek yerken, boş vaktiniz varken izleyebileceğiniz bu seri her ne kadar çerezlik olsa da benim gibi bir o kadar da merak uyandırıcı olduğunu düşünüyorsanız [buradan](https://youtu.be/x9D0uUKJ5KI) fragmanını inceleyebilir ve kendi kararınızı verebilirsiniz.
 
 ### When They See Us
 
