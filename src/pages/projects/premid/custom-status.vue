@@ -202,7 +202,7 @@ export default Vue.extend({
     this.setSavedData()
   },
   watch: {
-    "presence": {
+    presence: {
       deep: true,
       handler() {
         localStorage.setItem("presenceData", JSON.stringify(this.presence))
@@ -399,7 +399,7 @@ export default Vue.extend({
           <div>
             <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">Buttons</h3>
 
-            <p class="text-gray-600 dark:text-gray-300">
+            <p class="text-sm text-gray-400 dark:text-gray-300">
               You can't click your own buttons from your Discord profile. If
               they appear here, they should also be working for others, blame
               Discord.
@@ -482,7 +482,8 @@ export default Vue.extend({
           <p class="text-gray-700 dark:text-gray-200">
             If you want to support my work and make me create better systems in
             the future, you can donate me through Patreon, please visit
-            <SmartLink :href="{ name: 'donate' }" class="font-medium hover:underline">my donate page</SmartLink>for more information.
+            <SmartLink :href="{ name: 'donate' }" class="font-medium hover:underline">my donate page</SmartLink>
+            {{ "" }} for more information.
           </p>
         </div>
 
