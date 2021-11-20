@@ -20,11 +20,11 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .notification {
-  @apply p-4 space-y-2 border-l-4 dark:text-gray-100;
+  @apply space-y-2 border-l-4 p-4 dark:text-gray-100;
 
   /* Background colors for types */
   &.information {
-    @apply border-blue-500 bg-blue-600 text-blue-700;
+    @apply bg-blue-600 border-blue-500 text-blue-700;
 
     p,
     p strong {
@@ -33,7 +33,7 @@ export default Vue.extend({
   }
 
   &.warning {
-    @apply border-yellow-500 bg-yellow-500 text-yellow-700;
+    @apply bg-yellow-500 border-yellow-500 text-yellow-700;
 
     p,
     p strong {
@@ -42,7 +42,7 @@ export default Vue.extend({
   }
 
   &.danger {
-    @apply border-red-500 bg-red-500 text-red-700;
+    @apply bg-red-500 border-red-500 text-red-700;
 
     p,
     p strong {
@@ -51,7 +51,7 @@ export default Vue.extend({
   }
 
   &.success {
-    @apply border-green-500 bg-green-500 text-green-700;
+    @apply bg-green-500 border-green-500 text-green-700;
 
     p,
     p strong {
@@ -73,7 +73,7 @@ export default Vue.extend({
 
   /* Other stlings */
   a {
-    @apply text-blue-500 font-medium hover:underline;
+    @apply font-medium text-blue-500 hover:underline;
   }
 }
 </style>
