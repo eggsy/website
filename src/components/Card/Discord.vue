@@ -56,6 +56,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      componentReady: false,
       timers: {
         elapsed: {
           instance: null as NodeJS.Timeout | null,
@@ -67,6 +68,9 @@ export default Vue.extend({
         },
       },
     }
+  },
+  mounted() {
+    this.componentReady = true
   },
   computed: {
     /**
@@ -234,7 +238,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="rounded-md bg-[#6c82cf] w-full py-4 px-6 overflow-x-hidden">
+  <div v-if="componentReady" class="rounded-md bg-[#6c82cf] w-full py-4 px-6 overflow-x-hidden">
     <div class="pt-2">
       <h1 class="font-bold text-xs text-white uppercase dark:text-gray-100">Playing a game</h1>
 
@@ -247,7 +251,6 @@ export default Vue.extend({
         >
           <div class="flex-shrink-0 h-32 w-32 relative">
             <SmartImage
-              v-if="getImages.largeImage"
               :src="getImages.largeImage"
               class="rounded-xl"
               alt="large image"
