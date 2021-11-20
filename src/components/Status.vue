@@ -31,6 +31,13 @@ export default Vue.extend({
       // Offline
       if (this.lanyard?.discord_status === "offline") return "Offline"
       else if (!filtered) return "Online"
+      // Spotify
+      else if (filtered.name === "Spotify" && !!lanyard.spotify) {
+        const { song, artist } = lanyard.spotify || {}
+        const firstArtist = artist?.split("; ")?.[0];
+
+        return `Listening to **${song}** by **${firstArtist || 'someone'}**`
+      }
       // Visual Studio Code
       else if (filtered.name === "Visual Studio Code") {
         const replaced =
@@ -39,11 +46,11 @@ export default Vue.extend({
       }
       // Netflix
       else if (filtered.name === "Netflix" && filtered.details) {
-        return `Watching ${filtered.details} on Netflix`
+        return `Watching **${filtered.details}** on **Netflix**`
       }
       // YouTube Music
       else if (filtered.name === "YouTube Music" && filtered.details) {
-        return `Listening to ${filtered.details} on YouTube Music`
+        return `Listening to **${filtered.details}** on **YouTube Music**`
       }
       // YouTube
       else if (filtered.name === "YouTube" && filtered.details) {
@@ -61,6 +68,12 @@ export default Vue.extend({
           default:
             return "Online"
         }
+    },
+    /**
+     * Replaces only markdown-like "**" and wraps content into HTML strong element.
+     */
+    getSafeHtml(): string {
+      return this.getStatusDetails.replace(/\*\*(.*?)\*\*/gm, "<strong>$1</strong>")
     },
     /**
      * Returns Discord status colors.
@@ -116,6 +129,17 @@ export default Vue.extend({
 
   <div v-else class="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300">
     <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
-    <div class="text-sm leading-tight truncate" :title="getStatusDetails">{{ getStatusDetails }}</div>
+
+    <div
+      class="text-sm leading-tight truncate"
+      :title="getStatusDetails.replaceAll('**', '')"
+      v-html="getSafeHtml"
+    />
   </div>
 </template>
+
+<style scoped>
+div >>> strong {
+  @apply font-bold text-gray-900 dark:text-gray-100;
+}
+</style>
