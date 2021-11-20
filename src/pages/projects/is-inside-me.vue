@@ -49,13 +49,16 @@ export default Vue.extend({
           which everyone can signup for free and start uploading their images,
           videos or files! You can set and start using is-inside.me with desktop
           apps like
-          <SmartLink href="https://getsharex.com/" class="font-medium hover:underline" blank>ShareX</SmartLink>(Windows),
+          <SmartLink href="https://getsharex.com/" class="font-medium hover:underline" blank>ShareX</SmartLink>
+          {{ "" }} (Windows),
           <SmartLink
             href="https://github.com/ArsenArsen/KShare/"
             class="font-medium hover:underline"
             blank
-          >KShare</SmartLink>(Linux),
-          <SmartLink href="https://magiccap.me/" class="font-medium hover:underline" blank>MagicCap</SmartLink>(Linux, Mac) or your favourite screen capturing tool that supports
+          >KShare</SmartLink>
+          {{ "" }} (Linux),
+          <SmartLink href="https://magiccap.me/" class="font-medium hover:underline" blank>MagicCap</SmartLink>
+          {{ "" }} (Linux, Mac) or your favourite screen capturing tool that supports
           custom uploaders!
         </p>
       </header>

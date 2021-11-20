@@ -318,7 +318,8 @@ export default Vue.extend({
             href="https://premid.app/store/presences/Custom%20Status"
             class="text-blue-200"
             blank
-          >Click here</SmartLink>to visit the store.
+          >Click here</SmartLink>
+          {{ "" }} to visit the store.
         </BlogNotification>
 
         <BlogNotification type="warning" class="sm:hidden">
@@ -516,7 +517,8 @@ export default Vue.extend({
                 href="https://docs.premid.app/troubleshooting"
                 title="PreMiD Docs"
                 blank
-              >Troubleshooting Documentation</SmartLink>and see if those steps fixes your issue. If nothing works out, you
+              >Troubleshooting Documentation</SmartLink>
+              {{ "" }} and see if those steps fixes your issue. If nothing works out, you
               can always find me on PreMiD's Discord server.
             </p>
           </div>

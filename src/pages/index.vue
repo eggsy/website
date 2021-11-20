@@ -190,7 +190,8 @@ export default Vue.extend({
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
             taught web developer. I build complex web apps using
             <SmartLink href="https://vuejs.org/" class="description-link" blank>Vue.js</SmartLink>,
-            <SmartLink href="https://nuxtjs.org/" class="description-link" blank>Nuxt.js</SmartLink>and
+            <SmartLink href="https://nuxtjs.org/" class="description-link" blank>Nuxt.js</SmartLink>
+            {{ "" }} and
             <SmartLink href="https://windicss.org/" class="description-link" blank>Windi CSS</SmartLink>.
           </p>
         </div>

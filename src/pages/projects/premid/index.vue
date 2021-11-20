@@ -58,7 +58,8 @@ export default Vue.extend({
               Welcome to the landing page of my PreMiD tools! From here, you can
               access the tools that I've created for PreMiD for free. If you
               like my work, please consider following me on social media and
-              <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donate</SmartLink>if you liked my work.
+              <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donate</SmartLink>
+              {{ "" }} if you liked my work.
             </p>
             <p class="text-gray-800 dark:text-gray-200">
               PreMiD is a simple, configurable utility that allows you to show

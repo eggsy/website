@@ -819,7 +819,7 @@ export default Vue.extend({
                 <p>
                   🎉 If you liked my work, please consider donating to see more
                   tools like this. Visit
-                  <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donation</SmartLink>page for more information.
+                  <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donation</SmartLink>{{ "" }} page for more information.
                 </p>
               </div>
             </div>
