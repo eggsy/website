@@ -44,18 +44,7 @@ export default Vue.extend({
     </transition>
 
     <!-- Nuxt component -->
-    <Nuxt
-      class="
-        container
-        mx-auto
-        min-h-screen
-        pb-8
-        w-11/12
-        sm:(pb-10
-        w-9/12)
-        md:w-7/12
-        "
-    />
+    <Nuxt class="container mx-auto min-h-screen pb-8 w-11/12 sm:(pb-10 w-9/12) md:w-7/12 " />
 
     <!-- Footer -->
     <Footer />
@@ -64,20 +53,7 @@ export default Vue.extend({
     <div class="bg-indigo-700 w-full py-1 dark:bg-indigo-900" />
 
     <!-- Go to top button -->
-    <div
-      class="
-        flex
-        space-x-2
-        mr-6
-        mb-4
-        right-0
-        bottom-0
-        z-50
-        fixed
-        items-center
-        sm:space-x-4
-      "
-    >
+    <div class="flex space-x-2 mr-6 mb-4 right-0 bottom-0 z-50 fixed items-center sm:space-x-4">
       <GoTop />
     </div>
   </div>

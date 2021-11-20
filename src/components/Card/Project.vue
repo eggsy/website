@@ -24,14 +24,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="
-      rounded-lg
-      cursor-pointer
-      bg-gray-200/50
-      dark:bg-gray-800
-      transition-shadow
-      hover:shadow-md
-    "
+    class="rounded-lg cursor-pointer bg-gray-200/50 transition-shadow dark:bg-gray-800 hover:shadow-md"
     :class="{ flex: image && (title || description) }"
   >
     <SmartImage
@@ -49,16 +42,9 @@ export default Vue.extend({
         v-if="title"
         class="font-medium text-lg text-gray-700 truncate dark:text-gray-100"
         :title="title"
-      >
-        {{ title }}
-      </h3>
+      >{{ title }}</h3>
 
-      <p
-        v-if="description"
-        class="text-gray-500 line-clamp-2 dark:text-gray-300"
-      >
-        {{ description }}
-      </p>
+      <p v-if="description" class="text-gray-500 line-clamp-2 dark:text-gray-300">{{ description }}</p>
     </div>
   </div>
 </template>

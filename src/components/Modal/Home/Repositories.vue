@@ -36,42 +36,15 @@ export default {
     <div v-show="value === true">
       <div class="bg-black bg-opacity-25 inset-0 fixed overflow-y-auto">
         <div
-          class="
-            flex
-            mx-auto
-            max-h-screen
-            inset-0
-            fixed
-            items-center
-            justify-center
-            overflow-y-auto
-            md:w-6/8
-          "
+          class="flex mx-auto max-h-screen inset-0 fixed items-center justify-center overflow-y-auto md:w-6/8"
         >
           <div
-            class="
-              rounded-lg
-              flex flex-col
-              space-y-6
-              bg-gray-100
-              shadow-lg
-              p-10
-              dark:bg-gray-900
-            "
+            class="rounded-lg flex flex-col space-y-6 bg-gray-100 shadow-lg p-10 dark:bg-gray-900"
           >
             <div class="space-y-6">
               <h3 class="text-2xl dark:text-white">All Repositories</h3>
 
-              <div
-                class="
-                  max-h-[50vh]
-                  grid
-                  py-1
-                  gap-4
-                  overflow-y-auto
-                  md:grid-cols-3
-                "
-              >
+              <div class="max-h-[50vh] grid py-1 gap-4 overflow-y-auto md:grid-cols-3">
                 <SmartLink
                   v-for="(repo, index) in repos"
                   :key="`repo-${index}`"
@@ -89,9 +62,7 @@ export default {
               </div>
             </div>
 
-            <div
-              class="space-y-2 items-center md:flex md:(space-x-4 space-y-0) "
-            >
+            <div class="space-y-2 items-center md:flex md:(space-x-4 space-y-0) ">
               <button @click="closeModal()">Close</button>
 
               <SmartLink

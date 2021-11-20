@@ -175,53 +175,23 @@ export default Vue.extend({
 <template>
   <div>
     <header
-      class="
-        rounded-md
-        flex flex-col-reverse
-        bg-gray-200/30
-        my-16
-        py-10
-        px-8
-        justify-between
-        md:flex-row md:items-center
-        dark:bg-gray-800
-      "
+      class="rounded-md flex flex-col-reverse bg-gray-200/30 my-16 py-10 px-8 justify-between md:flex-row md:items-center dark:bg-gray-800"
     >
       <div class="md:w-8/12">
         <div class="space-y-2">
-          <div
-            class="
-              font-semibold
-              text-xl text-gray-900
-              md:text-3xl
-              dark:text-gray-100
-            "
-          >
+          <div class="font-semibold text-xl text-gray-900 md:text-3xl dark:text-gray-100">
             <h1>Self taught</h1>
-            <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
+            <h1>
+              <span class="text-blue-600">Full-stack</span> web developer
+            </h1>
           </div>
 
           <p class="text-gray-800 dark:text-gray-200">
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
             taught web developer. I build complex web apps using
-            <SmartLink href="https://vuejs.org/" class="description-link" blank>
-              Vue.js</SmartLink
-            >,
-            <SmartLink
-              href="https://nuxtjs.org/"
-              class="description-link"
-              blank
-            >
-              Nuxt.js</SmartLink
-            >
-            and
-            <SmartLink
-              href="https://windicss.org/"
-              class="description-link"
-              blank
-            >
-              Windi CSS</SmartLink
-            >.
+            <SmartLink href="https://vuejs.org/" class="description-link" blank>Vue.js</SmartLink>,
+            <SmartLink href="https://nuxtjs.org/" class="description-link" blank>Nuxt.js</SmartLink>and
+            <SmartLink href="https://windicss.org/" class="description-link" blank>Windi CSS</SmartLink>.
           </p>
         </div>
 
@@ -229,17 +199,14 @@ export default Vue.extend({
       </div>
 
       <div class="rounded-full h-40 mb-4 w-40 md:mb-0">
-        <SmartImage
-          src="/assets/images/memoji.png"
-          class="rounded-full h-40 w-40"
-        />
+        <SmartImage src="/assets/images/memoji.png" class="rounded-full h-40 w-40" />
       </div>
     </header>
 
     <section id="projects">
-      <h2 class="font-semibold mt-10 text-2xl text-gray-900 dark:text-gray-100">
-        Projects I currently work on
-      </h2>
+      <h2
+        class="font-semibold mt-10 text-2xl text-gray-900 dark:text-gray-100"
+      >Projects I currently work on</h2>
 
       <div class="mt-2 grid gap-2 md:(gap-4 grid-cols-2) ">
         <div v-for="(project, index) in projects" :key="`project-${index}`">
@@ -268,14 +235,9 @@ export default Vue.extend({
       </div>
     </section>
 
-    <section
-      id="experiences"
-      class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2) "
-    >
+    <section id="experiences" class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2) ">
       <div>
-        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
-          Experience
-        </h3>
+        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">Experience</h3>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
@@ -290,9 +252,7 @@ export default Vue.extend({
       </div>
 
       <div>
-        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">
-          Education
-        </h3>
+        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">Education</h3>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
@@ -309,54 +269,30 @@ export default Vue.extend({
 
     <section id="technologies" class="mt-6">
       <h3
-        class="
-          font-semibold
-          mt-4
-          text-xl text-gray-900
-          md:mt-10
-          dark:text-gray-100
-        "
-      >
-        Technologies I use
-      </h3>
+        class="font-semibold mt-4 text-xl text-gray-900 md:mt-10 dark:text-gray-100"
+      >Technologies I use</h3>
 
       <div class="mt-4 grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-        <CardSkill
-          v-for="(skill, index) in skills"
-          :key="`skill-${index}`"
-          :title="skill"
-        />
+        <CardSkill v-for="(skill, index) in skills" :key="`skill-${index}`" :title="skill" />
       </div>
     </section>
 
     <section id="repositories" class="mt-6">
-      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
-        My GitHub repositories
-      </h2>
+      <h2
+        class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100"
+      >My GitHub repositories</h2>
 
       <div class="mt-4">
-        <div
-          v-if="$fetchState.pending"
-          class="grid gap-2 grid-cols-1 md:grid-cols-2"
-        >
-          <SkeletonLoader
-            v-for="item in 6"
-            :key="`repo-skeleton-${item}`"
-            type="repository"
-          />
+        <div v-if="$fetchState.pending" class="grid gap-2 grid-cols-1 md:grid-cols-2">
+          <SkeletonLoader v-for="item in 6" :key="`repo-skeleton-${item}`" type="repository" />
         </div>
 
         <div
           v-else-if="$fetchState.error"
           class="text-gray-900 dark:text-gray-100"
-        >
-          Couldn't load GitHub repositories.
-        </div>
+        >Couldn't load GitHub repositories.</div>
 
-        <div
-          v-else-if="repos.length > 0"
-          class="grid gap-2 grid-cols-1 md:grid-cols-2"
-        >
+        <div v-else-if="repos.length > 0" class="grid gap-2 grid-cols-1 md:grid-cols-2">
           <SmartLink
             v-for="(repo, index) in repos.slice(0, 6)"
             :key="`repo-${index}`"
@@ -376,28 +312,14 @@ export default Vue.extend({
 
         <button
           v-if="$fetchState.pending === false"
-          class="
-            flex
-            space-x-2
-            mt-2
-            text-gray-300
-            items-center
-            dark:text-gray-600
-            hover:text-gray-600
-            focus:outline-none
-            dark:hover:text-gray-400
-          "
+          class="flex space-x-2 mt-2 text-gray-300 items-center dark:text-gray-600 hover:text-gray-600 focus:outline-none dark:hover:text-gray-400"
           @click="showModal = true"
-        >
-          Show all {{ repos.length }} repositories
-        </button>
+        >Show all {{ repos.length }} repositories</button>
       </div>
     </section>
 
     <section id="socials" class="mt-6">
-      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">
-        Follow me
-      </h2>
+      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">Follow me</h2>
 
       <Socials class="mt-2" />
     </section>

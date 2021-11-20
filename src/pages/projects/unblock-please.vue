@@ -42,9 +42,7 @@ export default Vue.extend({
   <div class="space-y-6 py-6">
     <div class="space-y-4 sm:w-9/12">
       <header class="space-y-2">
-        <h2 class="font-bold text-2xl text-gray-900 dark:text-gray-100">
-          Unblock Please
-        </h2>
+        <h2 class="font-bold text-2xl text-gray-900 dark:text-gray-100">Unblock Please</h2>
 
         <p class="text-gray-800 dark:text-gray-200">
           Free to use Chrome extension to unblock Imgur and Pastebin. Some
@@ -59,10 +57,7 @@ export default Vue.extend({
       <div class="grid gap-4 grid-cols-2 sm:grid-cols-3">
         <CardProject image="https://i.vgy.me/OIMc81.png" />
 
-        <CardProject
-          image="https://i.vgy.me/Lw6rn5.png"
-          class="hidden sm:block"
-        />
+        <CardProject image="https://i.vgy.me/Lw6rn5.png" class="hidden sm:block" />
 
         <CardProject image="https://i.vgy.me/X10Uid.png" />
       </div>

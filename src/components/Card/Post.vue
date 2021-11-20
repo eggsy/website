@@ -18,7 +18,7 @@ export default Vue.extend({
     post: {
       type: Object as PropType<Post>,
       required: true,
-      default: () => {},
+      default: () => { },
     },
     type: {
       type: String,
@@ -66,23 +66,16 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="p-3 space-y-2 transition-shadow bg-gray-200 rounded-lg cursor-pointer bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+    class="rounded-lg cursor-pointer space-y-2 bg-gray-200 bg-opacity-40 p-3 transition-shadow dark:bg-gray-800 hover:shadow-md"
   >
-    <SmartImage
-      :src="getPostMeta.image"
-      class="w-full rounded h-34 filter dark:brightness-75"
-    />
+    <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full filter dark:brightness-75" />
 
     <div class="flex flex-col space-y-1">
       <h2
-        class="text-lg font-bold leading-tight text-gray-700 truncate dark:text-gray-200"
-      >
-        {{ getPostMeta.title }}
-      </h2>
+        class="font-bold text-lg leading-tight text-gray-700 truncate dark:text-gray-200"
+      >{{ getPostMeta.title }}</h2>
 
-      <p class="text-gray-500 line-clamp-2 dark:text-gray-300">
-        {{ getPostMeta.description }}
-      </p>
+      <p class="text-gray-500 line-clamp-2 dark:text-gray-300">{{ getPostMeta.description }}</p>
     </div>
   </SmartLink>
 
@@ -93,23 +86,19 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="flex items-center p-3 space-x-4 transition-shadow bg-gray-200 rounded-lg cursor-pointer bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+    class="rounded-lg cursor-pointer flex space-x-4 bg-gray-200 bg-opacity-40 p-3 transition-shadow items-center dark:bg-gray-800 hover:shadow-md"
   >
     <SmartImage
       :src="getPostMeta.image"
-      class="flex-shrink-0 w-24 h-20 rounded filter dark:brightness-75"
+      class="rounded flex-shrink-0 h-20 w-24 filter dark:brightness-75"
     />
 
     <div class="flex flex-col overflow-x-hidden">
       <h2
-        class="text-lg font-semibold text-gray-800 truncate dark:text-gray-200"
-      >
-        {{ getPostMeta.title }}
-      </h2>
+        class="font-semibold text-lg text-gray-800 truncate dark:text-gray-200"
+      >{{ getPostMeta.title }}</h2>
 
-      <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
-        {{ getPostMeta.description }}
-      </p>
+      <p class="text-gray-700 line-clamp-2 dark:text-gray-300">{{ getPostMeta.description }}</p>
     </div>
   </SmartLink>
 
@@ -120,24 +109,22 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="flex flex-col p-3 truncate transition-shadow bg-gray-200 rounded-lg cursor-pointer bg-opacity-40 hover:shadow-md dark:bg-gray-800"
+    class="rounded-lg cursor-pointer flex flex-col bg-gray-200 bg-opacity-40 p-3 transition-shadow truncate dark:bg-gray-800 hover:shadow-md"
   >
-    <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">
-      {{ getPostMeta.title }}
-    </h2>
+    <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">{{ getPostMeta.title }}</h2>
 
-    <div class="flex items-center space-x-1">
+    <div class="flex space-x-1 items-center">
       <IconFire
         v-if="getPostMeta.special"
         v-tippy="{
           content: 'Popüler gönderi',
           placement: 'bottom',
         }"
-        class="w-5 h-5 text-red-600 dark:text-red-500"
+        class="h-5 text-red-600 w-5 dark:text-red-500"
       />
 
-      <div class="flex items-center space-x-2 text-gray-700 dark:text-gray-400">
-        <IconClock class="w-5 h-5" />
+      <div class="flex space-x-2 text-gray-700 items-center dark:text-gray-400">
+        <IconClock class="h-5 w-5" />
         <span>{{ getPostDate }}</span>
       </div>
     </div>

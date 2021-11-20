@@ -114,20 +114,8 @@ export default Vue.extend({
     class="h-[17.5px] w-6/12"
   />
 
-  <div
-    v-else
-    class="
-      rounded-md
-      flex
-      space-x-2
-      text-gray-700
-      items-center
-      dark:text-gray-300
-    "
-  >
+  <div v-else class="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300">
     <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
-    <div class="text-sm leading-tight truncate" :title="getStatusDetails">
-      {{ getStatusDetails }}
-    </div>
+    <div class="text-sm leading-tight truncate" :title="getStatusDetails">{{ getStatusDetails }}</div>
   </div>
 </template>

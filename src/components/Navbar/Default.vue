@@ -73,42 +73,25 @@ export default Vue.extend({
 
 <template>
   <nav class="w-full">
-    <div class="container relative w-11/12 mx-auto sm:w-9/12 md:w-7/12">
+    <div class="container mx-auto w-11/12 relative sm:w-9/12 md:w-7/12">
       <div class="flex items-center justify-between">
-        <SmartLink :href="{ name: 'index' }" class="flex-shrink-0 w-10 h-10">
+        <SmartLink :href="{ name: 'index' }" class="flex-shrink-0 h-10 w-10">
           <SmartImage
             src="/assets/icons/icon.svg"
-            class="
-              transition-transform
-              bg-gray-100
-              rounded-md
-              ring-black ring-2 ring-opacity-5
-              sm:transform
-              hover:-rotate-6
-            "
+            class="rounded-md bg-gray-100 ring-black transition-transform ring-2 ring-opacity-5 sm:transform hover:-rotate-6"
             width="100"
             height="100"
             title="EGGSY's Website"
           />
         </SmartLink>
 
-        <div class="hidden space-x-2 sm:flex sm:items-center">
+        <div class="space-x-2 hidden sm:flex sm:items-center">
           <SmartLink
             v-for="(link, index) in getCurrentRouteLinks"
             :key="`link-${index}`"
             :href="link.to"
-            class="
-              rounded
-              py-1
-              px-2
-              text-gray-800
-              transition-colors
-              dark:(text-gray-200
-              hover:bg-gray-700) hover:bg-gray-100
-            "
-          >
-            {{ link.title }}
-          </SmartLink>
+            class="rounded py-1 px-2 transition-colors text-gray-800 dark:(text-gray-200 hover:bg-gray-700) hover:bg-gray-100 "
+          >{{ link.title }}</SmartLink>
 
           <ColorSwitcher />
         </div>
@@ -116,39 +99,19 @@ export default Vue.extend({
         <!-- Mobile Navbar -->
         <div class="block sm:hidden">
           <div @click="mobileMenu = !mobileMenu">
-            <IconMenu class="w-8 h-8 text-gray-900 dark:text-gray-100" />
+            <IconMenu class="h-8 text-gray-900 w-8 dark:text-gray-100" />
           </div>
 
           <transition name="fade" mode="out-in">
             <div
               v-show="mobileMenu === true"
-              class="
-                absolute
-                z-20
-                p-4
-                space-y-4
-                bg-gray-200
-                rounded-md
-                shadow-lg
-                -top-1
-                -right-1
-                -left-1
-                dark:bg-gray-800
-              "
+              class="rounded-md space-y-4 bg-gray-200 shadow-lg p-4 -top-1 -right-1 -left-1 z-20 absolute dark:bg-gray-800"
             >
-              <div
-                class="
-                  flex
-                  items-center
-                  justify-between
-                  text-gray-900
-                  dark:text-gray-100
-                "
-              >
-                <h3 class="text-lg font-medium">Menu</h3>
+              <div class="flex text-gray-900 items-center justify-between dark:text-gray-100">
+                <h3 class="font-medium text-lg">Menu</h3>
 
                 <div @click="mobileMenu = false">
-                  <IconX class="w-6 h-6" />
+                  <IconX class="h-6 w-6" />
                 </div>
               </div>
 
@@ -157,35 +120,13 @@ export default Vue.extend({
                   v-for="(link, index) in getCurrentRouteLinks"
                   :key="`link-${index}`"
                   :href="link.to"
-                  class="
-                    rounded-md
-                    flex
-                    bg-gray-300
-                    py-2
-                    px-4
-                    text-gray-800
-                    justify-center
-                    dark:(bg-gray-700
-                    text-gray-200)
-                  "
-                >
-                  {{ link.title }}
-                </SmartLink>
+                  class="rounded-md flex bg-gray-300 py-2 px-4 text-gray-800 justify-center dark:(bg-gray-700 text-gray-200) "
+                >{{ link.title }}</SmartLink>
               </div>
 
               <div class="flex items-center">
                 <div
-                  class="
-                    flex
-                    items-center
-                    justify-center
-                    w-1/2
-                    py-2
-                    space-x-2
-                    text-gray-800
-                    rounded-tl-md rounded-bl-md
-                    dark:text-gray-200
-                  "
+                  class="rounded-tl-md rounded-bl-md flex space-x-2 py-2 text-gray-800 w-1/2 items-center justify-center dark:text-gray-200"
                   :class="{
                     'bg-gray-300 dark:bg-gray-700':
                       getSelectedTheme !== 'light',
@@ -194,31 +135,19 @@ export default Vue.extend({
                   }"
                   @click="switchTheme('light')"
                 >
-                  <IconSun class="w-6 h-6" />
+                  <IconSun class="h-6 w-6" />
                   <span>Light</span>
                 </div>
 
                 <div
-                  class="
-                    rounded-tr-md rounded-br-md
-                    flex
-                    space-x-2
-                    bg-gray-300
-                    py-2
-                    text-gray-800
-                    w-1/2
-                    items-center
-                    justify-center
-                    dark:(text-gray-200
-                    bg-gray-700)
-                  "
+                  class="rounded-tr-md rounded-br-md flex space-x-2 bg-gray-300 py-2 text-gray-800 w-1/2 items-center justify-center dark:(text-gray-200 bg-gray-700) "
                   :class="{
                     'bg-gray-300 dark:bg-gray-700': getSelectedTheme !== 'dark',
                     'bg-gray-400 dark:bg-gray-900': getSelectedTheme === 'dark',
                   }"
                   @click="switchTheme('dark')"
                 >
-                  <IconMoon class="w-6 h-6" />
+                  <IconMoon class="h-6 w-6" />
                   <span>Dark</span>
                 </div>
               </div>

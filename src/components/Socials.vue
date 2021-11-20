@@ -62,33 +62,16 @@ export default Vue.extend({
       :href="social.url"
       :utm="false"
       blank
-      class="
-        rounded-full
-        ring-transparent ring-[6px]
-        transition-all
-        dark:(hover:bg-gray-700
-        hover:ring-gray-700) hover:(bg-gray-200
-        ring-gray-200)
-      "
+      class="rounded-full ring-transparent transition-all ring-[6px] dark:(hover:bg-gray-700 hover:ring-gray-700) hover:(bg-gray-200 ring-gray-200) "
     >
-      <IconBrand
-        :brand="social.icon"
-        class="h-8 text-gray-800 w-8 dark:text-gray-200"
-      />
+      <IconBrand :brand="social.icon" class="h-8 text-gray-800 w-8 dark:text-gray-200" />
     </SmartLink>
 
     <SmartLink
       title="Send me an e-mail!"
       :href="pageLoaded ? `mailto:${$config.social.email}` : false"
       :utm="false"
-      class="
-        rounded-full
-        ring-transparent ring-[6px]
-        transition-all
-        dark:(hover:bg-gray-700
-        hover:ring-gray-700) hover:(bg-gray-200
-        ring-gray-200)
-      "
+      class="rounded-full ring-transparent transition-all ring-[6px] dark:(hover:bg-gray-700 hover:ring-gray-700) hover:(bg-gray-200 ring-gray-200) "
     >
       <IconAt class="h-8 text-gray-800 w-8 dark:text-gray-200" />
     </SmartLink>

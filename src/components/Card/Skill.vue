@@ -13,9 +13,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    class="flex items-center space-x-2 overflow-hidden text-gray-900  dark:text-gray-100"
-  >
+  <div class="flex space-x-2 text-gray-900 items-center overflow-hidden dark:text-gray-100">
     <IconDev :brand="title" class="flex-shrink-0 h-7 w-7" />
     <span class="truncate">{{ title }}</span>
   </div>

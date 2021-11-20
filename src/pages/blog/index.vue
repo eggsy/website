@@ -187,9 +187,9 @@ export default Vue.extend({
 <template>
   <div class="pt-6">
     <div v-if="getFilteredPosts === false">
-      <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Son gönderiler</h3>
+      <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Son gönderiler</h3>
 
-      <div class="grid gap-2 mt-2 md:grid-cols-3">
+      <div class="mt-2 grid gap-2 md:grid-cols-3">
         <template v-if="isFetchPending">
           <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
         </template>
@@ -200,12 +200,12 @@ export default Vue.extend({
       </div>
 
       <!-- Test -->
-      <div class="mt-20 space-y-6">
+      <div class="space-y-6 mt-20">
         <div class="flex space-x-4 overflow-x-auto">
           <div
             v-for="text in categories"
             :key="text"
-            class="px-6 py-1 text-gray-600 transition-colors rounded-lg cursor-pointer select-none dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+            class="rounded-lg cursor-pointer py-1 px-6 transition-colors text-gray-600 select-none dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
             :class="selectedCategory === text && 'bg-gray-100 dark:bg-gray-800'"
             :title="selectedCategory === text && `Tüm ${text} gönderilirini gör`"
             @click="selectedCategory !== text ? selectedCategory = text : $router.push({ query: { etiket: text.toLowerCase() } })"
@@ -213,7 +213,7 @@ export default Vue.extend({
         </div>
 
         <div
-          class="overflow-y-auto space-y-4 flex flex-col sm:(grid grid-cols-2 max-h-full gap-4 space-y-0) max-h-50vh"
+          class="flex flex-col space-y-4 max-h-50vh overflow-y-auto sm:(grid grid-cols-2 max-h-full gap-4 space-y-0) "
         >
           <CardPost
             v-for="(post, index) in getCategoryResults"
@@ -225,9 +225,9 @@ export default Vue.extend({
       </div>
 
       <div class="mt-16">
-        <h3 class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100">Tüm gönderiler</h3>
+        <h3 class="font-semibold space-x-2 text-lg text-gray-900 dark:text-gray-100">Tüm gönderiler</h3>
 
-        <div class="grid gap-3 mt-4 md:grid-cols-3">
+        <div class="mt-4 grid gap-3 md:grid-cols-3">
           <template v-if="isFetchPending">
             <SkeletonLoader v-for="i in 18" :key="i" type="repository" />
           </template>
@@ -242,11 +242,11 @@ export default Vue.extend({
           </template>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center mt-4 space-x-2">
+        <div class="flex flex-wrap space-x-2 mt-4 items-center justify-center">
           <div
             v-for="page in getTotalPages"
             :key="`pagination-${page}`"
-            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none transition-colors dark:(bg-gray-800 ring-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-300"
+            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 transition-colors ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-gray-800 ring-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-300 "
             :class="{
               'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
             }"
@@ -259,13 +259,13 @@ export default Vue.extend({
     <div v-else-if="typeof getFilteredPosts === 'object'">
       <div v-if="isFetchPending === false && getFilteredPosts.length === 0" class="space-y-4">
         <h2
-          class="text-2xl font-semibold text-gray-900 md:text-4xl dark:text-gray-100"
+          class="font-semibold text-2xl text-gray-900 md:text-4xl dark:text-gray-100"
         >Aramanıza uygun herhangi bir gönderi bulunamadı.</h2>
 
         <div class="md:w-4/6">
           <h3 class="text-lg text-gray-900 dark:text-gray-100">Deneyebileceğiniz yöntemler:</h3>
 
-          <ul class="pl-4 text-gray-700 list-disc dark:text-gray-300">
+          <ul class="list-disc pl-4 text-gray-700 dark:text-gray-300">
             <li>Aramanızda anahtar kelimeler kullanmayı deneyin.</li>
             <li>Etiketler kullanmayı deneyin.</li>
             <li>
@@ -277,9 +277,9 @@ export default Vue.extend({
 
         <SmartLink
           :href="{ name: 'blog' }"
-          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200"
+          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200 "
         >
-          <IconHome class="w-6 h-6" />
+          <IconHome class="h-6 w-6" />
           <span>Bloga Dön</span>
         </SmartLink>
       </div>

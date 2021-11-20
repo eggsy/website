@@ -373,8 +373,8 @@ export default Vue.extend({
         this.service.settings = metadata.settings || []
         this.service.category.selected = metadata.category
           ? `${metadata.category?.[0]?.toUpperCase()}${metadata.category
-              ?.slice(1)
-              ?.toLowerCase()}`
+            ?.slice(1)
+            ?.toLowerCase()}`
           : "Select a category"
 
         this.service.logo = metadata.logo || ""
@@ -452,11 +452,7 @@ export default Vue.extend({
               placeholder="Your Discord username, without the #tag"
             />
 
-            <input
-              v-model="service.author.id"
-              class="input"
-              placeholder="Your Discord ID"
-            />
+            <input v-model="service.author.id" class="input" placeholder="Your Discord ID" />
           </div>
         </div>
 
@@ -465,24 +461,16 @@ export default Vue.extend({
           <h2 class="font-medium text-lg">Service Information</h2>
 
           <div class="mt-1 grid gap-3 sm:grid-cols-2">
-            <input
-              v-model="service.name"
-              class="input"
-              placeholder="Name of the service"
-            />
+            <input v-model="service.name" class="input" placeholder="Name of the service" />
 
             <select v-model="service.category.selected" class="input">
-              <option value="Select a category" selected disabled>
-                Select a category
-              </option>
+              <option value="Select a category" selected disabled>Select a category</option>
 
               <option
                 v-for="(option, index) in service.category.options"
                 :key="`category-option-${index}`"
                 :value="option"
-              >
-                {{ option }}
-              </option>
+              >{{ option }}</option>
             </select>
 
             <input
@@ -517,38 +505,17 @@ export default Vue.extend({
               />
             </div>
 
-            <input
-              v-model="service.version"
-              class="input"
-              placeholder="Service version"
-            />
+            <input v-model="service.version" class="input" placeholder="Service version" />
           </div>
 
           <div class="mt-3 grid gap-3 sm:grid-cols-3">
             <!-- URLs -->
             <div
-              class="
-                rounded-md
-                space-y-2
-                bg-gray-100
-                h-56
-                ring
-                overflow-y-hidden
-                dark:bg-gray-800
-              "
+              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
             >
               <input
                 v-model="service.url.input"
-                class="
-                  rounded-tl-md rounded-tr-md
-                  h-1/5
-                  w-full
-                  py-2
-                  px-4
-                  dark:(bg-gray-700
-                  text-gray-200)
-                  focus:outline-none
-                  "
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none "
                 placeholder="URL(s) of the service"
                 @keyup.enter="addItem('url')"
               />
@@ -567,54 +534,26 @@ export default Vue.extend({
                     :key="`url-${index}`"
                     class="flex space-x-4 items-center"
                   >
-                    <span class="flex-grow truncate">
-                      {{ url }}
-                    </span>
+                    <span class="flex-grow truncate">{{ url }}</span>
 
-                    <IconX
-                      title="Click to remove this URL"
-                      @click.native="removeItem(url, 'url')"
-                    />
+                    <IconX title="Click to remove this URL" @click.native="removeItem(url, 'url')" />
                   </div>
 
                   <div
                     v-if="service.url.list.length === 0"
-                    class="
-                      text-sm text-center text-gray-500
-                      select-none
-                      dark:text-gray-400
-                    "
-                  >
-                    Enter URL and hit enter
-                  </div>
+                    class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                  >Enter URL and hit enter</div>
                 </div>
               </div>
             </div>
 
             <!-- Tags -->
             <div
-              class="
-                rounded-md
-                space-y-2
-                bg-gray-100
-                h-56
-                ring
-                overflow-y-hidden
-                dark:bg-gray-800
-              "
+              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
             >
               <input
                 v-model="service.tags.input"
-                class="
-                  rounded-tl-md rounded-tr-md
-                  h-1/5
-                  w-full
-                  py-2
-                  px-4
-                  dark:(bg-gray-700
-                  text-gray-200)
-                  focus:outline-none
-                  "
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none "
                 placeholder="Tags for the service"
                 @keyup.enter="addItem('tag')"
               />
@@ -633,55 +572,26 @@ export default Vue.extend({
                     :key="`tag-${index}`"
                     class="flex space-x-4 items-center"
                   >
-                    <span class="flex-grow truncate">
-                      {{ tag }}
-                    </span>
+                    <span class="flex-grow truncate">{{ tag }}</span>
 
-                    <IconX
-                      title="Click to remove this tag"
-                      @click.native="removeItem(tag, 'tag')"
-                    />
+                    <IconX title="Click to remove this tag" @click.native="removeItem(tag, 'tag')" />
                   </div>
 
                   <div
                     v-if="service.tags.list.length === 0"
-                    class="
-                      text-sm text-center text-gray-500
-                      select-none
-                      dark:text-gray-400
-                    "
-                  >
-                    Enter tag name and hit enter
-                  </div>
+                    class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                  >Enter tag name and hit enter</div>
                 </div>
               </div>
             </div>
 
             <!-- Descriptions -->
-            <div
-              class="
-                rounded-md
-                bg-gray-100
-                h-56
-                ring
-                overflow-y-hidden
-                dark:bg-gray-800
-              "
-            >
+            <div class="rounded-md bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800">
               <div class="h-full space-y-2">
                 <div class="h-1/3">
                   <input
                     v-model="service.description.inputs.langCode"
-                    class="
-                      rounded-tl-md rounded-tr-md
-                      h-1/2
-                      w-full
-                      py-2
-                      px-4
-                      dark:(bg-gray-700
-                      text-gray-200)
-                      focus:outline-none
-                      "
+                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none "
                     placeholder="Language code, e.g. en"
                     @keyup.enter="$refs.descriptionInput.focus()"
                   />
@@ -689,15 +599,7 @@ export default Vue.extend({
                   <input
                     ref="descriptionInput"
                     v-model="service.description.inputs.content"
-                    class="
-                      h-1/2
-                      w-full
-                      py-2
-                      px-4
-                      dark:(bg-gray-700
-                      text-gray-200)
-                      focus:outline-none
-                      "
+                    class="h-1/2 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none "
                     placeholder="Localized description"
                     @keyup.enter="addItem('description')"
                   />
@@ -718,13 +620,9 @@ export default Vue.extend({
                       class="flex space-x-4 items-center"
                     >
                       <div class="flex-grow overflow-x-hidden">
-                        <span class="truncate">
-                          {{ description.langCode }}
-                        </span>
+                        <span class="truncate">{{ description.langCode }}</span>
 
-                        <p class="text-xs line-clamp-2">
-                          {{ description.content }}
-                        </p>
+                        <p class="text-xs line-clamp-2">{{ description.content }}</p>
                       </div>
 
                       <IconX
@@ -736,14 +634,8 @@ export default Vue.extend({
 
                     <div
                       v-if="service.description.list.length === 0"
-                      class="
-                        text-sm text-center text-gray-500
-                        select-none
-                        dark:text-gray-400
-                      "
-                    >
-                      Fill the inputs and hit enter
-                    </div>
+                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                    >Fill the inputs and hit enter</div>
                   </div>
                 </div>
               </div>
@@ -759,9 +651,7 @@ export default Vue.extend({
               <span
                 class="cursor-pointer font-normal text-sm hover:underline"
                 @click="additionalSettings = !additionalSettings"
-              >
-                {{ additionalSettings ? "hide" : "show" }}
-              </span>
+              >{{ additionalSettings ? "hide" : "show" }}</span>
             </h2>
 
             <p>
@@ -774,17 +664,9 @@ export default Vue.extend({
           <transition name="fade" mode="out-in">
             <div v-if="additionalSettings === true" class="space-y-4 mt-4">
               <div class="grid gap-3 sm:grid-cols-2">
-                <input
-                  v-model="service.regexp.url"
-                  class="input"
-                  placeholder="URL regex"
-                />
+                <input v-model="service.regexp.url" class="input" placeholder="URL regex" />
 
-                <input
-                  v-model="service.regexp.iframe"
-                  class="input"
-                  placeholder="Iframe regex"
-                />
+                <input v-model="service.regexp.iframe" class="input" placeholder="Iframe regex" />
               </div>
 
               <div class="grid gap-x-3 gap-y-2 sm:grid-cols-3">
@@ -798,9 +680,7 @@ export default Vue.extend({
                     service.iframe === true ? 'bg-green-500' : 'bg-red-600'
                   "
                   @click="service.iframe = !service.iframe"
-                >
-                  {{ service.iframe ? "Disable" : "Enable" }} Iframe Support
-                </button>
+                >{{ service.iframe ? "Disable" : "Enable" }} Iframe Support</button>
 
                 <button
                   v-tippy="{
@@ -813,9 +693,7 @@ export default Vue.extend({
                     service.warning === true ? 'bg-green-500' : 'bg-red-600'
                   "
                   @click="service.warning = !service.warning"
-                >
-                  {{ service.warning ? "Disable" : "Enable" }} Warning Icon
-                </button>
+                >{{ service.warning ? "Disable" : "Enable" }} Warning Icon</button>
 
                 <button
                   v-tippy="{
@@ -828,21 +706,11 @@ export default Vue.extend({
                     service.readLogs === true ? 'bg-green-500' : 'bg-red-600'
                   "
                   @click="service.readLogs = !service.readLogs"
-                >
-                  {{ service.readLogs ? "Disable" : "Enable" }} Read Logs
-                </button>
+                >{{ service.readLogs ? "Disable" : "Enable" }} Read Logs</button>
               </div>
 
               <div class="rounded-md ring grid sm:grid-cols-2">
-                <div
-                  class="
-                    rounded-tl-md rounded-bl-md
-                    h-full
-                    bg-gray-100
-                    ring
-                    dark:bg-gray-800
-                  "
-                >
+                <div class="rounded-tl-md rounded-bl-md h-full bg-gray-100 ring dark:bg-gray-800">
                   <input
                     v-model="service.contributors.inputs.name"
                     class="rounded-none rounded-tl-md h-1/2 w-full ring-0 input"
@@ -860,25 +728,10 @@ export default Vue.extend({
                 </div>
 
                 <div
-                  class="
-                    rounded-tr-md rounded-br-md
-                    space-y-2
-                    bg-gray-100
-                    overflow-y-hidden
-                    dark:bg-gray-800
-                  "
+                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-gray-800"
                 >
                   <div
-                    class="
-                      flex
-                      h-full
-                      mx-auto
-                      space-x-6
-                      px-4
-                      items-center
-                      overflow-x-auto
-                      scrollbar
-                    "
+                    class="flex h-full mx-auto space-x-6 px-4 items-center overflow-x-auto scrollbar"
                     :class="{
                       'flex items-center justify-center w-full':
                         service.contributors.list.length === 0,
@@ -888,15 +741,7 @@ export default Vue.extend({
                     <div
                       v-for="(contributor, index) in service.contributors.list"
                       :key="`contributor-${index}`"
-                      class="
-                        flex
-                        space-x-2
-                        flex-shrink-0
-                        text-gray-900
-                        items-center
-                        truncate
-                        dark:text-gray-100
-                      "
+                      class="flex space-x-2 flex-shrink-0 text-gray-900 items-center truncate dark:text-gray-100"
                     >
                       <span class="flex-shrink-0">{{ contributor.name }}</span>
                       <IconX
@@ -909,59 +754,27 @@ export default Vue.extend({
 
                     <div
                       v-if="service.contributors.list.length === 0"
-                      class="
-                        text-sm text-center text-gray-500
-                        select-none
-                        dark:text-gray-400
-                      "
-                    >
-                      Fill the inputs and hit enter
-                    </div>
+                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                    >Fill the inputs and hit enter</div>
                   </div>
                 </div>
               </div>
 
               <div class="rounded-md ring grid sm:grid-cols-2">
-                <div
-                  class="
-                    rounded-tl-md rounded-bl-md
-                    bg-gray-100
-                    dark:bg-gray-800
-                  "
-                >
+                <div class="rounded-tl-md rounded-bl-md bg-gray-100 dark:bg-gray-800">
                   <input
                     v-model="service.altnames.input"
-                    class="
-                      rounded-none rounded-tl-md rounded-bl-md
-                      w-full
-                      ring-0
-                      input
-                    "
+                    class="rounded-none rounded-tl-md rounded-bl-md w-full ring-0 input"
                     placeholder="Alternative name(s), e.g. 精靈寶可夢 (Pokémon)"
                     @keyup.enter="addItem('altname')"
                   />
                 </div>
 
                 <div
-                  class="
-                    rounded-tr-md rounded-br-md
-                    space-y-2
-                    bg-gray-100
-                    overflow-y-hidden
-                    dark:bg-gray-800
-                  "
+                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-gray-800"
                 >
                   <div
-                    class="
-                      flex
-                      h-full
-                      mx-auto
-                      space-x-6
-                      px-4
-                      items-center
-                      overflow-x-auto
-                      scrollbar
-                    "
+                    class="flex h-full mx-auto space-x-6 px-4 items-center overflow-x-auto scrollbar"
                     :class="{
                       'flex items-center justify-center w-full':
                         service.contributors.list.length === 0,
@@ -971,15 +784,7 @@ export default Vue.extend({
                     <div
                       v-for="(altname, index) in service.altnames.list"
                       :key="`altname-${index}`"
-                      class="
-                        flex
-                        space-x-2
-                        flex-shrink-0
-                        text-gray-900
-                        items-center
-                        truncate
-                        dark:text-gray-100
-                      "
+                      class="flex space-x-2 flex-shrink-0 text-gray-900 items-center truncate dark:text-gray-100"
                     >
                       <span class="flex-shrink-0">{{ altname }}</span>
                       <IconX
@@ -990,14 +795,8 @@ export default Vue.extend({
 
                     <div
                       v-if="service.altnames.list.length === 0"
-                      class="
-                        text-sm text-center text-gray-500
-                        select-none
-                        dark:text-gray-400
-                      "
-                    >
-                      Enter a name and hit enter
-                    </div>
+                      class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
+                    >Enter a name and hit enter</div>
                   </div>
                 </div>
               </div>
@@ -1020,27 +819,13 @@ export default Vue.extend({
                 <p>
                   🎉 If you liked my work, please consider donating to see more
                   tools like this. Visit
-                  <SmartLink
-                    :href="{ name: 'donate' }"
-                    class="font-medium underline"
-                    >donation</SmartLink
-                  >
-                  page for more information.
+                  <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donation</SmartLink>page for more information.
                 </p>
               </div>
             </div>
           </transition>
 
-          <div
-            class="
-              flex-wrap
-              space-y-2
-              mt-4
-              items-center
-              sm:(flex
-              space-y-0 space-x-4)
-              "
-          >
+          <div class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4) ">
             <div
               class="flex space-x-2 items-center justify-center control-button"
               @click="resultWindow = true"
@@ -1083,48 +868,18 @@ export default Vue.extend({
 
     <div
       v-if="resultWindow === true"
-      class="
-        bg-black bg-opacity-50
-        top-0
-        right-0
-        bottom-0
-        left-0
-        fixed
-        hidden
-        sm:block
-      "
+      class="bg-black bg-opacity-50 top-0 right-0 bottom-0 left-0 fixed hidden sm:block"
       @click="resultWindow = false"
     />
 
     <transition name="slide-left" mode="out-in">
       <div
         v-show="resultWindow === true"
-        class="
-          min-h-full
-          bg-gray-100
-          top-0
-          right-0
-          bottom-0
-          fixed
-          overflow-y-auto
-          scrollbar
-          sm:(ml-auto
-          shadow-md
-          w-8/12)
-          dark:bg-gray-800
-          "
+        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-gray-800 "
       >
         <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
           <div class="space-y-1">
-            <div
-              class="
-                flex
-                space-x-2
-                text-gray-900
-                items-center
-                dark:text-gray-100
-              "
-            >
+            <div class="flex space-x-2 text-gray-900 items-center dark:text-gray-100">
               <IconCog class="h-5 w-5 no-style" />
               <h2 class="font-semibold text-lg">Metadata Result</h2>
             </div>
@@ -1137,22 +892,15 @@ export default Vue.extend({
           </div>
 
           <div class="space-y-1">
-            <div
-              class="
-                flex
-                space-x-2
-                text-gray-900
-                items-center
-                dark:text-gray-100
-              "
-            >
+            <div class="flex space-x-2 text-gray-900 items-center dark:text-gray-100">
               <IconExclamation class="h-5 w-5 no-style" />
               <h2 class="font-semibold text-lg">Errors</h2>
             </div>
 
-            <BlogNotification v-if="getMetadata.error === false" type="success">
-              No issues/errors found. You're good to go!
-            </BlogNotification>
+            <BlogNotification
+              v-if="getMetadata.error === false"
+              type="success"
+            >No issues/errors found. You're good to go!</BlogNotification>
 
             <div v-else class="grid gap-1 sm:grid-cols-2">
               <BlogNotification
@@ -1160,23 +908,13 @@ export default Vue.extend({
                 :key="`error-${index}`"
                 :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
                 type="danger"
-              >
-                {{ error }}
-              </BlogNotification>
+              >{{ error }}</BlogNotification>
             </div>
           </div>
 
           <div class="space-y-1">
             <div class="flex items-center justify-between">
-              <div
-                class="
-                  flex
-                  space-x-2
-                  text-gray-900
-                  items-center
-                  dark:text-gray-100
-                "
-              >
+              <div class="flex space-x-2 text-gray-900 items-center dark:text-gray-100">
                 <IconFire class="h-5 w-5 no-style" />
                 <h2 class="font-semibold text-lg">Your Metadata File</h2>
               </div>
@@ -1185,15 +923,7 @@ export default Vue.extend({
             <!-- eslint-disable vue/no-v-html -->
             <pre
               v-if="getMetadata.error === false"
-              class="
-                rounded-md
-                h-96
-                shadow
-                w-full
-                overflow-y-auto
-                language-json
-                scrollbar
-              "
+              class="rounded-md h-96 shadow w-full overflow-y-auto language-json scrollbar"
               v-html="getHighlightedJson"
             />
 
@@ -1206,18 +936,7 @@ export default Vue.extend({
           <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center) ">
             <a
               v-if="getMetadata.error === false"
-              class="
-                flex
-                space-x-2
-                bg-gray-200
-                items-center
-                justify-center
-                control-button
-                no-background
-                sm:w-max
-                dark:(bg-gray-700
-                hover:bg-gray-600)
-                hover:bg-gray-300 "
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300 "
               download="metadata.json"
               :href="`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(getMetadata.result, null, 2)
@@ -1228,18 +947,7 @@ export default Vue.extend({
             </a>
 
             <div
-              class="
-                flex
-                space-x-2
-                bg-gray-200
-                items-center
-                justify-center
-                control-button
-                no-background
-                sm:w-max
-                dark:(bg-gray-700
-                hover:bg-gray-600)
-                hover:bg-gray-300 "
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300 "
               @click="resultWindow = false"
             >
               <IconX class="h-5 w-5 no-style" />

@@ -133,8 +133,8 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="flex items-center space-x-2 truncate">
-    <div class="flex items-center flex-shrink-0 space-x-1">
+  <div class="flex space-x-2 items-center truncate">
+    <div class="flex space-x-1 flex-shrink-0 items-center">
       <!-- Channel Icon -->
       <IconChannel
         v-tippy="{
@@ -142,7 +142,7 @@ export default Vue.extend({
           placement: 'top',
         }"
         :platform="getPlatformInfo.platform"
-        class="flex-shrink-0 w-6 h-6 p-1 rounded-full focus:outline-none"
+        class="rounded-full flex-shrink-0 h-6 p-1 w-6 focus:outline-none"
         :class="getPlatformInfo.classes"
       />
 
@@ -153,7 +153,7 @@ export default Vue.extend({
           content: getStatusInfo.title,
           placement: 'top',
         }"
-        class="flex-shrink-0 w-6 h-6 p-1 rounded-full focus:outline-none"
+        class="rounded-full flex-shrink-0 h-6 p-1 w-6 focus:outline-none"
         :class="getStatusInfo.classes"
       />
 
@@ -163,58 +163,19 @@ export default Vue.extend({
           content: `${seasons} sezon`,
           placement: 'top',
         }"
-        class="
-          rounded-md
-          cursor-default
-          flex
-          font-medium
-          bg-gray-200
-          flex-shrink-0
-          text-sm
-          p-1
-          text-gray-700
-          w-10
-          items-center
-          justify-center
-          focus:outline-none
-          dark:(text-gray-200
-          bg-gray-800)
-        "
-      >
-        {{ seasons }} S
-      </div>
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-gray-800) focus:outline-none "
+      >{{ seasons }} S</div>
 
       <div
         v-tippy="{
           content: `${rating}/${max} puan`,
           placement: 'top',
         }"
-        class="
-          rounded-md
-          cursor-default
-          flex
-          font-medium
-          bg-gray-200
-          flex-shrink-0
-          text-sm
-          p-1
-          text-gray-700
-          w-12
-          items-center
-          justify-center
-          focus:outline-none
-          dark:(bg-gray-800
-          text-gray-200)
-        "
-      >
-        {{ rating }} P
-      </div>
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-gray-800 text-gray-200) focus:outline-none "
+      >{{ rating }} P</div>
     </div>
 
-    <div
-      class="text-gray-900 truncate dark:text-gray-100"
-      :class="{ new: isnew }"
-    >
+    <div class="text-gray-900 truncate dark:text-gray-100" :class="{ new: isnew }">
       <slot></slot>
     </div>
   </div>
@@ -222,7 +183,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 a {
-  @apply dark:(border-gray-700 hover:border-gray-100) border-gray-300 hover:border-gray-900 border-b;
+  @apply border-b border-gray-300 dark:(border-gray-700 hover:border-gray-100) hover:border-gray-900 ;
 }
 
 .new a {

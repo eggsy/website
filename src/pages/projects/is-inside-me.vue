@@ -42,36 +42,20 @@ export default Vue.extend({
   <div class="space-y-6 py-6">
     <div class="space-y-4 sm:w-9/12">
       <header class="space-y-2">
-        <h2 class="font-bold text-2xl text-gray-900 dark:text-gray-100">
-          is-inside.me
-        </h2>
+        <h2 class="font-bold text-2xl text-gray-900 dark:text-gray-100">is-inside.me</h2>
 
         <p class="text-gray-800 dark:text-gray-200">
           Website that was created by me and Tresmos. It is a custom uploader
           which everyone can signup for free and start uploading their images,
           videos or files! You can set and start using is-inside.me with desktop
           apps like
-          <SmartLink
-            href="https://getsharex.com/"
-            class="font-medium hover:underline"
-            blank
-            >ShareX</SmartLink
-          >
-          (Windows),
+          <SmartLink href="https://getsharex.com/" class="font-medium hover:underline" blank>ShareX</SmartLink>(Windows),
           <SmartLink
             href="https://github.com/ArsenArsen/KShare/"
             class="font-medium hover:underline"
             blank
-            >KShare</SmartLink
-          >
-          (Linux),
-          <SmartLink
-            href="https://magiccap.me/"
-            class="font-medium hover:underline"
-            blank
-            >MagicCap</SmartLink
-          >
-          (Linux, Mac) or your favourite screen capturing tool that supports
+          >KShare</SmartLink>(Linux),
+          <SmartLink href="https://magiccap.me/" class="font-medium hover:underline" blank>MagicCap</SmartLink>(Linux, Mac) or your favourite screen capturing tool that supports
           custom uploaders!
         </p>
       </header>

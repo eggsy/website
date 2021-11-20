@@ -38,20 +38,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="
-      rounded-lg
-      cursor-pointer
-      flex
-      space-x-2
-      bg-gray-200 bg-opacity-40
-      py-2
-      px-4
-      transition-shadow
-      items-center
-      select-none
-      dark:bg-gray-800
-      hover:shadow-md
-    "
+    class="rounded-lg cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 py-2 px-4 transition-shadow items-center select-none dark:bg-gray-800 hover:shadow-md"
   >
     <div class="rounded-md flex-shrink-0">
       <SmartImage
@@ -70,24 +57,12 @@ export default Vue.extend({
           class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-gray-100"
         />
 
-        <span class="flex-shrink-0 text-sm text-gray-600 dark:text-gray-300">
-          {{ getDateText }}
-        </span>
+        <span class="flex-shrink-0 text-sm text-gray-600 dark:text-gray-300">{{ getDateText }}</span>
       </div>
 
       <h3
-        class="
-          font-semibold
-          flex-shrink-0
-          text-lg
-          leading-tight
-          text-gray-900
-          truncate
-          dark:text-gray-100
-        "
-      >
-        {{ title }}
-      </h3>
+        class="font-semibold flex-shrink-0 text-lg leading-tight text-gray-900 truncate dark:text-gray-100"
+      >{{ title }}</h3>
     </div>
   </div>
 </template>

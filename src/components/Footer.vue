@@ -17,33 +17,16 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    class="
-      bg-gray-200/50
-      w-full
-      py-4
-      text-gray-900
-      dark:(bg-gray-800 text-gray-100) "
-  >
+  <div class="bg-gray-200/50 w-full py-4 text-gray-900 dark:(bg-gray-800 text-gray-100) ">
     <div class="mx-auto w-11/12 sm:w-9/12 md:w-7/12">
       <div
-        class="
-          space-y-4
-          text-center
-          items-center
-          justify-between
-          sm:(flex
-          space-y-0 space-x-6
-          text-left)
-          "
+        class="space-y-4 text-center items-center justify-between sm:(flex space-y-0 space-x-6 text-left) "
       >
         <SmartLink
           href="https://github.com/eggsy/website"
           class="text-center sm:truncate hover:underline"
           blank
-        >
-          {{ getLocalizedNotice }}
-        </SmartLink>
+        >{{ getLocalizedNotice }}</SmartLink>
 
         <Socials
           v-if="$route.name !== 'index'"
