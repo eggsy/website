@@ -2,6 +2,7 @@ import { IContentOptions } from "@nuxt/content/types/index"
 
 const Content: IContentOptions = {
   liveEdit: false,
+  dir: "blog",
   markdown: {
     prism: {
       theme: "prism-themes/themes/prism-dracula.css",
