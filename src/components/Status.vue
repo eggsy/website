@@ -125,6 +125,7 @@ export default Vue.extend({
       Object.keys(lanyard).length === 0
     "
     class="h-[17.5px] w-6/12"
+    :class="$route.path === '/' && 'bg-gray-200 dark:bg-gray-700'"
   />
 
   <div v-else class="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300">
