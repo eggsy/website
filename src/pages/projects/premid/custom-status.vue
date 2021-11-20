@@ -19,6 +19,7 @@ export default Vue.extend({
   data() {
     return {
       observer: null as any,
+      presenceChecked: false,
       presence: {
         installed: true,
         largeImageKey: "PreMiD",
@@ -204,8 +205,11 @@ export default Vue.extend({
   watch: {
     presence: {
       deep: true,
+      immediate: false,
       handler() {
-        localStorage.setItem("presenceData", JSON.stringify(this.presence))
+        if (this.presenceChecked === true) {
+          localStorage.setItem("presenceData", JSON.stringify(this.presence))
+        }
       },
     },
   },
@@ -216,23 +220,28 @@ export default Vue.extend({
     setSavedData() {
       const data = localStorage.getItem("presenceData");
 
-      if (!data) return;
+      if (!data) {
+        this.presenceChecked = true;
+      } else {
 
-      const jsonData = JSON.parse(data)
-      const timestamps = jsonData.timestamp
+        const jsonData = JSON.parse(data)
+        const timestamps = jsonData.timestamp
 
-      this.presence = {
-        ...jsonData,
-        timestamp: {
-          start: {
-            enabled: timestamps.start.enabled,
-            value: timestamps.start.enabled ? Date.now() : null,
+        this.presence = {
+          ...jsonData,
+          timestamp: {
+            start: {
+              enabled: timestamps.start.enabled,
+              value: timestamps.start.enabled ? Date.now() : null,
+            },
+            end: {
+              enabled: false,
+              value: null,
+            },
           },
-          end: {
-            enabled: false,
-            value: null,
-          },
-        },
+        }
+
+        this.presenceChecked = true;
       }
     },
     /**
