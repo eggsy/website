@@ -13,6 +13,7 @@ interface ImageCategory {
 /* Import image lists */
 import largeImages from "@/assets/files/premid/largeImages"
 import smallImages from "@/assets/files/premid/smallImages"
+import { PresenceMetadata } from "~/src/types/PreMiD"
 
 export default Vue.extend({
   data() {
@@ -106,11 +107,11 @@ export default Vue.extend({
 
       try {
         if (isFirstButton) isUrl.first = !!new URL(firstButton?.url)
-      } catch (_) {}
+      } catch (_) { }
 
       try {
         if (isSecondButton) isUrl.second = !!new URL(secondButton?.url)
-      } catch (_) {}
+      } catch (_) { }
 
       const buttonsArray = []
 
@@ -198,8 +199,44 @@ export default Vue.extend({
   },
   mounted() {
     this.setupMutationObserver()
+    this.setSavedData()
+
+
+  },
+  watch: {
+    "presence": {
+      deep: true,
+      handler() {
+        localStorage.setItem("presenceData", JSON.stringify(this.presence))
+      },
+    },
   },
   methods: {
+    /**
+     * Checks if there's a saved data in localStorage and sets it to the Vue data.
+     */
+    setSavedData() {
+      const data = localStorage.getItem("presenceData");
+
+      if (!data) return;
+
+      const jsonData = JSON.parse(data)
+      const timestamps = jsonData.timestamp
+
+      this.presence = {
+        ...jsonData,
+        timestamp: {
+          start: {
+            enabled: timestamps.start.enabled,
+            value: Date.now(),
+          },
+          end: {
+            enabled: false,
+            value: null,
+          },
+        },
+      }
+    },
     /**
      * Turns on and off a timestamp value.
      * @param {elapsed|left} option
@@ -272,9 +309,7 @@ export default Vue.extend({
 <template>
   <div class="space-y-2 mt-4">
     <!-- Custom Status Presence will read the data from here -->
-    <div id="object" class="text-gray-900 hidden dark:text-gray-100">
-      {{ getPresenceData }}
-    </div>
+    <div id="object" class="text-gray-900 hidden dark:text-gray-100">{{ getPresenceData }}</div>
 
     <div class="space-y-6">
       <div class="space-y-4">
@@ -285,9 +320,7 @@ export default Vue.extend({
             href="https://premid.app/store/presences/Custom%20Status"
             class="text-blue-200"
             blank
-            >Click here</SmartLink
-          >
-          to visit the store.
+          >Click here</SmartLink>to visit the store.
         </BlogNotification>
 
         <BlogNotification type="warning" class="sm:hidden">
@@ -309,39 +342,20 @@ export default Vue.extend({
 
       <div class="space-y-4 mt-4 gap-4 sm:(grid space-y-0 grid-cols-2) ">
         <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            Details (upper text)
-          </h3>
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">Details (upper text)</h3>
 
-          <input
-            v-model="presence.details"
-            type="text"
-            placeholder="Something nice"
-            class="w-full"
-          />
+          <input v-model="presence.details" type="text" placeholder="Something nice" class="w-full" />
         </div>
 
         <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            State (lower text)
-          </h3>
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">State (lower text)</h3>
 
-          <input
-            v-model="presence.state"
-            type="text"
-            placeholder="This is neat!"
-            class="w-full"
-          />
+          <input v-model="presence.state" type="text" placeholder="This is neat!" class="w-full" />
         </div>
 
         <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            Large Image
-          </h3>
-          <select
-            v-model="presence.largeImageKey"
-            class="bg-white w-full dark:bg-gray-700"
-          >
+          <h3 class="font-medium text-gray-700 dark:text-gray-100">Large Image</h3>
+          <select v-model="presence.largeImageKey" class="bg-white w-full dark:bg-gray-700">
             <option selected>PreMiD</option>
             <optgroup
               v-for="(category, index) in getImages.large"
@@ -353,21 +367,14 @@ export default Vue.extend({
                   a.name.localeCompare(b.name)
                 )"
                 :key="`large-option-${i}`"
-              >
-                {{ item.name }}
-              </option>
+              >{{ item.name }}</option>
             </optgroup>
           </select>
         </div>
 
         <div class="space-y-2">
-          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-            Small Image
-          </h3>
-          <select
-            v-model="presence.smallImageKey"
-            class="bg-white w-full dark:bg-gray-700"
-          >
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">Small Image</h3>
+          <select v-model="presence.smallImageKey" class="bg-white w-full dark:bg-gray-700">
             <option selected>None</option>
             <optgroup
               v-for="(category, index) in getImages.small"
@@ -379,34 +386,20 @@ export default Vue.extend({
                   a.name.localeCompare(b.name)
                 )"
                 :key="`small-image-${i}`"
-              >
-                {{ item.name }}
-              </option>
+              >{{ item.name }}</option>
             </optgroup>
           </select>
         </div>
 
-        <div
-          v-if="presence.smallImageKey !== 'None'"
-          class="space-y-2 w-full col-span-2"
-        >
-          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-            Small Image Text
-          </h3>
+        <div v-if="presence.smallImageKey !== 'None'" class="space-y-2 w-full col-span-2">
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">Small Image Text</h3>
 
-          <input
-            v-model="presence.smallImageText"
-            type="text"
-            class="w-full"
-            placeholder="[EMPTY]"
-          />
+          <input v-model="presence.smallImageText" type="text" class="w-full" placeholder="[EMPTY]" />
         </div>
 
         <div class="space-y-4 col-span-2">
           <div>
-            <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-              Buttons
-            </h3>
+            <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">Buttons</h3>
 
             <p class="text-gray-600 dark:text-gray-300">
               You can't click your own buttons from your Discord profile. If
@@ -451,9 +444,7 @@ export default Vue.extend({
         </div>
 
         <div class="space-y-2 col-span-2">
-          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-            Timestamps
-          </h3>
+          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">Timestamps</h3>
 
           <div class="grid gap-4 sm:grid-cols-2">
             <div
@@ -463,9 +454,7 @@ export default Vue.extend({
                   presence.timestamp.start.enabled === true,
               }"
               @click="toggleTimestamp('elapsed')"
-            >
-              Show Time Elapsed
-            </div>
+            >Show Time Elapsed</div>
 
             <div
               class="cursor-default timestamp"
@@ -479,13 +468,8 @@ export default Vue.extend({
                   'text-white dark:text-gray-100':
                     presence.timestamp.end.enabled === true,
                 }"
-                >Time To:
-              </span>
-              <input
-                v-model="presence.timestamp.end.value"
-                type="time"
-                @input="endTimestampChange"
-              />
+              >Time To:</span>
+              <input v-model="presence.timestamp.end.value" type="time" @input="endTimestampChange" />
             </div>
           </div>
         </div>
@@ -495,43 +479,27 @@ export default Vue.extend({
         <div>
           <h2
             class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
-          >
-            Consider Donating!
-          </h2>
+          >Consider Donating!</h2>
 
           <p class="text-gray-700 dark:text-gray-200">
             If you want to support my work and make me create better systems in
             the future, you can donate me through Patreon, please visit
-            <SmartLink
-              :href="{ name: 'donate' }"
-              class="font-medium hover:underline"
-            >
-              my donate page
-            </SmartLink>
-            for more information.
+            <SmartLink :href="{ name: 'donate' }" class="font-medium hover:underline">my donate page</SmartLink>for more information.
           </p>
         </div>
 
         <div class="grid gap-6 md:grid-cols-2">
           <div>
             <h2
-              class="
-                font-semibold
-                text-lg text-gray-800
-                block
-                dark:text-gray-100
-              "
-            >
-              How does it work?
-            </h2>
+              class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
+            >How does it work?</h2>
             <p class="text-gray-700 dark:text-gray-200">
               When you add our Presence from Presence Store which is on
               <SmartLink
                 href="https://premid.app/store/presences/Custom%20Status"
                 title="PreMiD Store"
                 blank
-                >this page</SmartLink
-              >, you will be able to use this page. You just have to set your
+              >this page</SmartLink>, you will be able to use this page. You just have to set your
               settings and PreMiD will show those settings on your profile just
               like in the preview you see up here.
             </p>
@@ -539,15 +507,8 @@ export default Vue.extend({
 
           <div>
             <h2
-              class="
-                font-semibold
-                text-lg text-gray-800
-                block
-                dark:text-gray-100
-              "
-            >
-              It's not showing anything!?
-            </h2>
+              class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
+            >It's not showing anything!?</h2>
 
             <p class="text-gray-700 dark:text-gray-200">
               If the system isn't working or it isn't displaying anything on
@@ -556,9 +517,7 @@ export default Vue.extend({
                 href="https://docs.premid.app/troubleshooting"
                 title="PreMiD Docs"
                 blank
-                >Troubleshooting Documentation</SmartLink
-              >
-              and see if those steps fixes your issue. If nothing works out, you
+              >Troubleshooting Documentation</SmartLink>and see if those steps fixes your issue. If nothing works out, you
               can always find me on PreMiD's Discord server.
             </p>
           </div>
