@@ -226,7 +226,7 @@ export default Vue.extend({
         timestamp: {
           start: {
             enabled: timestamps.start.enabled,
-            value: Date.now(),
+            value: timestamps.start.enabled ? Date.now() : null,
           },
           end: {
             enabled: false,
