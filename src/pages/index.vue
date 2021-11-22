@@ -48,12 +48,14 @@ export default Vue.extend({
           title: "Unblock Please",
           description:
             "Unblock Imgur and Pastebin access using secure proxies!",
+          image: "https://i.imgur.com/1NxPOjN.png",
           to: "/projects/unblock-please",
         },
         {
           title: "is-inside.me",
           description:
             "Free image and file uploading service for uploaders like ShareX!",
+          image: "https://i.imgur.com/68IChiq.png",
           to: "/projects/is-inside-me",
         },
       ] as Project[],
