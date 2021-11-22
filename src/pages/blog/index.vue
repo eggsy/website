@@ -189,7 +189,7 @@ export default Vue.extend({
     <div v-if="getFilteredPosts === false">
       <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Son gönderiler</h3>
 
-      <div class="mt-2 grid gap-2 md:grid-cols-3">
+      <div class="mt-2 grid gap-4 md:grid-cols-3">
         <template v-if="isFetchPending">
           <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
         </template>
