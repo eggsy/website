@@ -146,7 +146,7 @@ Aslında hiç sevmediğim bir unsur olan _x bölümden sonra heyecanlanan dizi_ 
 
 ### You
 
-"Sen"... Başrolde saplantılı bir âşık, size bir sevginin neler yaptırabileceğini gösterme konusunda ısrarcı. İzlerken "acaba ben olsam da böyle mi yapardım" dedirten bu aşk dizisi, kitapçı bir arkadaşımızın gece gündüz güzel kızlarla alemlere akmasından ziyade bir de 2 sezon boyunca 3 farklı kıza âşık olmasını ele alıyor. Ama bu sırada yaşanan _hiç beklemeyeceğiniz_ olaylar diziyi gerçekten ilgi çekici ve güzel kılıyor. Fragmanına & [buradan](https://youtu.be/srx7fSBwvF4) ulaşabilirsiniz.
+"Sen"... Başrolde saplantılı bir âşık, size bir sevginin neler yaptırabileceğini gösterme konusunda ısrarcı. İzlerken "acaba ben olsam da böyle mi yapardım" dedirten bu aşk dizisi, kitapçı bir arkadaşımızın gece gündüz güzel kızlarla alemlere akmasından ziyade bir de 2 sezon boyunca 3 farklı kıza âşık olmasını ele alıyor. Ama bu sırada yaşanan _hiç beklemeyeceğiniz_ olaylar diziyi gerçekten ilgi çekici ve güzel kılıyor. Fragmanına [buradan](https://youtu.be/srx7fSBwvF4) ulaşabilirsiniz.
 
 ### Lucifer
 
