@@ -112,9 +112,11 @@ export default Vue.extend({
 <template>
   <div class="space-y-6 py-4">
     <BlogNotification v-if="isThereNoSongToday === true" type="warning">
-      There's no song for today, check back later or wait for the next day until
-      I find some time to add new songs! You can listen to the older ones if you
-      wish to!
+      <p>
+        There's no song for today, check back later or wait for the next day until
+        I find some time to add new songs! You can listen to the older ones if you
+        wish to!
+      </p>
     </BlogNotification>
 
     <div class="space-y-6 gap-6 grid-cols-2 md:space-y-0 md:grid">
