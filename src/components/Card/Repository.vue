@@ -40,9 +40,9 @@ export default Vue.extend({
 
 <template>
   <div
-    class="rounded-lg cursor-pointer bg-gray-200/40 p-4 transition-shadow dark:bg-gray-800 hover:shadow-md"
+    class="rounded-lg cursor-pointer p-4 transition-colors hover:bg-gray-200/40 dark:hover:bg-gray-800/40"
   >
-    <div class="flex space-x-1 text-gray-700 items-center dark:text-gray-200">
+    <div class="flex space-x-1 text-gray-600 items-center dark:text-gray-200">
       <span class="flex-grow space-x-2 truncate">{{ name }}</span>
 
       <div class="flex space-x-1 items-center">
@@ -55,6 +55,6 @@ export default Vue.extend({
       </div>
     </div>
 
-    <p class="text-gray-500 line-clamp-2 dark:text-gray-400">{{ description }}</p>
+    <p class="text-gray-400 line-clamp-2 dark:text-gray-400">{{ description }}</p>
   </div>
 </template>

@@ -24,7 +24,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="rounded-lg cursor-pointer bg-gray-200/50 transition-shadow dark:bg-gray-800 hover:shadow-md"
+    class="rounded-lg cursor-pointer transition-colors hover:bg-gray-200/40 dark:hover:bg-gray-800/40"
     :class="{ flex: image && (title || description) }"
   >
     <SmartImage
@@ -32,7 +32,7 @@ export default Vue.extend({
       :src="image"
       :class="
         image && (title || description)
-          ? 'w-1/3 flex-shrink-0 rounded-tl rounded-bl'
+          ? 'w-1/3 flex-shrink-0 rounded-tl rounded-bl h-28'
           : 'rounded'
       "
     />
