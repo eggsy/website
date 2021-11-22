@@ -132,7 +132,7 @@ export default Vue.extend({
       </div>
 
       <div class="space-y-2 w-full">
-        <div class="rounded-md bg-gray-200/50 p-4 truncate dark:bg-gray-800">
+        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-gray-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Title</h3>
 
           <SkeletonLoader
@@ -143,7 +143,7 @@ export default Vue.extend({
           <span v-else class="text-gray-700 truncate dark:text-gray-300">{{ getSelectedTitle }}</span>
         </div>
 
-        <div class="rounded-md bg-gray-200/50 p-4 truncate dark:bg-gray-800">
+        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-gray-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Artist</h3>
 
           <SkeletonLoader
@@ -157,7 +157,7 @@ export default Vue.extend({
           >{{ getSelectedSongMetadata.artist || "Unknown" }}</span>
         </div>
 
-        <div class="rounded-md bg-gray-200/50 p-4 truncate dark:bg-gray-800">
+        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-gray-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Date</h3>
 
           <SkeletonLoader
@@ -173,7 +173,7 @@ export default Vue.extend({
     <div>
       <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">Older Songs</h3>
 
-      <div class="mt-2 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+      <div class="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
         <template v-if="$fetchState.pending === true">
           <SkeletonLoader v-for="item in 9" :key="`skeleton-song-${item}`" type="song" />
         </template>
