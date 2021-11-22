@@ -119,7 +119,7 @@ const trackId = await spotifyToYoutube("1r9xUipOqoNwggBpENDsvJ")
 Bu kimliği (ID) nasıl aldığımız ise oldukça basit, örnek bir şarkı bağlantısını ele aldığınızda bağlantının içerisindeki karmaşık duran kısım şarkının kimliği oluyor. Bir Spotify bağlantısından ID'yi ayrıştırmak için bir fonksiyon da oluşturabilirsiniz.
 
 ```js [index.js]
-function idAyrictirici(url) {
+function idAyristirici(url) {
   return new URL(url).pathname.split("/")[2]
 }
 
@@ -131,7 +131,7 @@ console.log(
 Böyle bir fonksiyona da sahip olduktan sonra herhangi bir Spotify URL'sinden artık YouTube bağlantısını alabileceksiniz. Son olarak yazdıklarımızın tamamını birleştirip gerekli düzenlemeleri yaptığımızda ise şöyle bir dosya bizi karşılayacaktır.
 
 ```js [index.js]
-// Modülleri içe aktar (ES tarzında)
+// Modülleri içe aktar
 const SpotifyWebApi = require("spotify-web-api-node")
 const SpotifyToYoutube = require("spotify-to-youtube")
 
@@ -161,14 +161,14 @@ async function main() {
   const trackId = await spotifyToYoutube(
     // Kendi yaptığımız Spotify bağlantısından ID'yi ayrıştırıcı
     // fonksiyonunu kullanarak ID'yi al
-    idAyrictirici("https://open.spotify.com/track/1r9xUipOqoNwggBpENDsvJ")
+    idAyristirici("https://open.spotify.com/track/1r9xUipOqoNwggBpENDsvJ")
   )
 
   // Sonucu YouTube bağlantısı olarak döndür
   return `https://youtu.be/${trackId}`
 }
 
-function idAyrictirici(url) {
+function idAyristirici(url) {
   return new URL(url).pathname.split("/")[2]
 }
 ```
