@@ -46,6 +46,7 @@
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@types/prismjs": "^1.16.6",
+    "@vue/runtime-dom": "^3.2.22",
     "core-js": "^3.19.1",
     "firebase": "9.4.0",
     "nuxt": "^2.15.8",
