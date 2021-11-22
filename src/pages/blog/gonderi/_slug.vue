@@ -313,7 +313,7 @@ export default Vue.extend({
     }
 
     pre {
-      @apply rounded-md py-4 px-6;
+      @apply rounded-none py-4 px-6;
     }
   }
 
