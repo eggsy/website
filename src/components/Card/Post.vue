@@ -66,13 +66,13 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer space-y-2 bg-gray-200 bg-opacity-40 p-3 transition-shadow dark:bg-gray-800 hover:shadow-md"
+    class="rounded-lg cursor-pointer space-y-2 transform transition-transform overflow-hidden sm:hover:-translate-y-1"
   >
     <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full filter dark:brightness-75" />
 
     <div class="flex flex-col space-y-1">
       <h2
-        class="font-bold text-lg leading-tight text-gray-700 truncate dark:text-gray-200"
+        class="font-bold text-lg leading-tight text-gray-700 truncate dark:text-gray-200 hover:underline "
       >{{ getPostMeta.title }}</h2>
 
       <p class="text-gray-500 line-clamp-2 dark:text-gray-300">{{ getPostMeta.description }}</p>
@@ -86,7 +86,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer flex space-x-4 bg-gray-200 bg-opacity-40 p-3 transition-shadow items-center dark:bg-gray-800 hover:shadow-md"
+    class="rounded-lg cursor-pointer flex space-x-4 p-3 transition-colors items-center hover:bg-gray-200/40 dark:hover:bg-gray-800/40"
   >
     <SmartImage
       :src="getPostMeta.image"
@@ -109,7 +109,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer flex flex-col bg-gray-200 bg-opacity-40 p-3 transition-shadow truncate dark:bg-gray-800 hover:shadow-md"
+    class="rounded-lg cursor-pointer flex flex-col p-3 transition-colors truncate hover:bg-gray-200/40 dark:hover:bg-gray-800/40"
   >
     <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">{{ getPostMeta.title }}</h2>
 
