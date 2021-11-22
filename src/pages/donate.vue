@@ -33,6 +33,12 @@ export default Vue.extend({
           iban: "8664721806",
           revealed: false,
         },
+        {
+          image: "https://i.vgy.me/UCiozk.png",
+          name: "PayPal",
+          iban: "@eggsydev",
+          revealed: false
+        }
       ],
     }
   },
