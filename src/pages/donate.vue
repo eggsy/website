@@ -20,7 +20,6 @@ export default Vue.extend({
           iban: "TR96 0011 1000 0000 0086 7646 98",
           revealed: false,
         },
-
         {
           image: "https://i.vgy.me/9e6pkz.png",
           name: "Denizbank",
