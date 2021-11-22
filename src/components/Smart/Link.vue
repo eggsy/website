@@ -84,7 +84,7 @@ export default Vue.extend({
   <a
     v-else
     :href="href && (utm === false ? href : getUtmLink)"
-    :target="blank && '_blank'"
+    :target="blank ? '_blank' : ''"
     rel="noreferrer noopener"
     :title="title"
   >

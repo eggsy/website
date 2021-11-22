@@ -207,7 +207,7 @@ export default Vue.extend({
             :key="text"
             class="rounded-lg cursor-pointer py-1 px-6 transition-colors text-gray-600 select-none dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
             :class="selectedCategory === text && 'bg-gray-100 dark:bg-gray-800'"
-            :title="selectedCategory === text && `Tüm ${text} gönderilirini gör`"
+            :title="selectedCategory === text ? `Tüm ${text} gönderilirini gör` : ''"
             @click="selectedCategory !== text ? selectedCategory = text : $router.push({ query: { etiket: text.toLowerCase() } })"
           >{{ text }}</div>
         </div>
