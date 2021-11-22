@@ -167,10 +167,10 @@ export default Vue.extend({
           <header class="space-y-4 text-center mb-12 sm:(text-left pr-16) ">
             <div class="space-y-2">
               <h1
-                class="font-semibold text-2xl text-gray-900 block sm:text-4xl dark:text-gray-100"
+                class="font-semibold text-2xl text-gray-900 block sm:text-4xl dark:text-gray-50"
               >{{ post.title }}</h1>
 
-              <p class="dark:text-gray-100">{{ post.description }}</p>
+              <p class="text-gray-500">{{ post.description }}</p>
             </div>
           </header>
 
@@ -240,6 +240,17 @@ export default Vue.extend({
 </template>
 
 <style lang="scss">
+/* Mixins */
+@mixin code {
+  @apply font-sans bg-blue-100 py-px px-1 text-blue-600 dark:(bg-blue-900 bg-opacity-50 text-blue-400) ;
+
+  &::before,
+  &::after {
+    content: "`";
+  }
+}
+
+/* Nuxt Content */
 .nuxt-content {
   /* Headings */
   h1,
@@ -274,7 +285,7 @@ export default Vue.extend({
     }
 
     code {
-      @apply font-sans bg-gray-100 py-px px-2 text-fuchsia-600 dark:bg-gray-700;
+      @include code;
     }
 
     &:not(:last-child) {
@@ -311,6 +322,14 @@ export default Vue.extend({
   ul {
     @apply text-gray-800 dark:text-gray-300;
 
+    li a {
+      @apply text-blue-700 dark:text-blue-400 hover:underline;
+    }
+
+    li code {
+      @include code;
+    }
+
     li:not(:last-child) {
       @apply mb-1;
     }
@@ -319,7 +338,7 @@ export default Vue.extend({
   ol {
     @apply list-decimal pl-4;
 
-    &:not(:last-child) {
+    li:not(:last-child) {
       @apply mb-5;
     }
   }
