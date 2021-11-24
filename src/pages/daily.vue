@@ -76,9 +76,17 @@ export default Vue.extend({
      * Return boolean if there's no selected song for today.
      */
     isThereNoSongToday(): boolean {
-      const today = this.$moment().utcOffset(3).format("DD/MM/YYYY")
+      const formatter = new Intl.DateTimeFormat([], {
+        timeZone: "Europe/Istanbul",
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+      })
+
+      const formattedDate = formatter.format(new Date())
+
+      const today = this.$moment(formattedDate, "MM/DD/YYYY").format("DD/MM/YYYY")
       const latestSongDate = this.$moment(this.songs[0]?.date)
-        .utcOffset(3)
         .format("DD/MM/YYYY")
 
       if (today !== latestSongDate) return true
@@ -95,7 +103,7 @@ export default Vue.extend({
      */
     getSelectedDateTitle(): string {
       return (
-        this.$moment(this.selected?.date).utcOffset(3).format("DD/MM/YYYY") ||
+        this.$moment(this.selected?.date).format("DD/MM/YYYY") ||
         "Unknown"
       )
     },

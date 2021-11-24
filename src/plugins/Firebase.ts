@@ -43,16 +43,26 @@ const Firebase: Plugin = ({ $fire, $moment }, inject) => {
 
     const docs: Song[] = []
 
+    const formatter = new Intl.DateTimeFormat([], {
+      timeZone: "Europe/Istanbul",
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+    })
+
+    const formattedDate = formatter.format(new Date())
+
     await ref
-      .where("date", "<=", $moment().utcOffset(3).toDate())
+      .where("date", "<=", $moment(formattedDate, "MM/DD/YYYY").toDate())
       .orderBy("date", "desc")
       .limit(limit)
       .get()
-      .then((snapshots) => {
-        snapshots.forEach((snapshot) => {
+      .then((snapshots: any) => {
+        snapshots.forEach((snapshot: any) => {
           const { date, url, metadata, spotifyUrl } = snapshot.data()
+
           docs.push({
-            date: $moment(date.toDate()).utcOffset(3).toDate(),
+            date: $moment(date.toDate()).toDate(),
             url,
             metadata,
             spotifyUrl,
