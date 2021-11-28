@@ -53,7 +53,7 @@ const Firebase: Plugin = ({ $fire, $moment }, inject) => {
     const formattedDate = formatter.format(new Date())
 
     await ref
-      .where("date", "<=", $moment(formattedDate, "MM/DD/YYYY").toDate())
+      .where("date", "<=", $moment(formattedDate).toDate())
       .orderBy("date", "desc")
       .limit(limit)
       .get()

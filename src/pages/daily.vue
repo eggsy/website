@@ -85,7 +85,7 @@ export default Vue.extend({
 
       const formattedDate = formatter.format(new Date())
 
-      const today = this.$moment(formattedDate, "MM/DD/YYYY").format("DD/MM/YYYY")
+      const today = this.$moment(formattedDate).format("DD/MM/YYYY")
       const latestSongDate = this.$moment(this.songs[0]?.date)
         .format("DD/MM/YYYY")
 

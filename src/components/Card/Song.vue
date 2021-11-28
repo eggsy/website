@@ -36,7 +36,7 @@ export default Vue.extend({
 
       if (
         this.$moment(this.date).format("DD/MM/YYYY") ===
-        this.$moment(formattedDate, "MM/DD/YYYY").format("DD/MM/YYYY")
+        this.$moment(formattedDate).format("DD/MM/YYYY")
       )
         return "Today's Song"
       else return this.$moment(this.date).format("DD/MM/YYYY")
