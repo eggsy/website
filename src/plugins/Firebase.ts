@@ -15,24 +15,9 @@ export interface Song {
 }
 
 /* Declare modules */
-declare module "vue/types/vue" {
-  interface Vue {
-    $getDaily(limit: number): Promise<Song[]>
-  }
-}
-
-declare module "@nuxt/types" {
-  interface NuxtAppOptions {
-    $getDaily(limit: number): Promise<Song[]>
-  }
-
-  interface Context {
-    $getDaily(limit: number): Promise<Song[]>
-  }
-}
 
 /* Plugin */
-const Firebase: Plugin = ({ $fire, $moment }, inject) => {
+const Firebase: Plugin = ({ $fire, $moment_tz }, inject) => {
   /**
    * Fetch the daily song from Firebase.
    * @param {number} [limit=1] The limit of the values to return. If none present, will return one URL in string format.
@@ -43,17 +28,8 @@ const Firebase: Plugin = ({ $fire, $moment }, inject) => {
 
     const docs: Song[] = []
 
-    const formatter = new Intl.DateTimeFormat([], {
-      timeZone: "Europe/Istanbul",
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-    })
-
-    const formattedDate = formatter.format(new Date())
-
     await ref
-      .where("date", "<=", $moment(formattedDate).toDate())
+      .where("date", "<=", $moment_tz().tz("Europe/Istanbul").toDate())
       .orderBy("date", "desc")
       .limit(limit)
       .get()
@@ -62,7 +38,7 @@ const Firebase: Plugin = ({ $fire, $moment }, inject) => {
           const { date, url, metadata, spotifyUrl } = snapshot.data()
 
           docs.push({
-            date: $moment(date.toDate()).toDate(),
+            date: $moment_tz(date.toDate()).toDate(),
             url,
             metadata,
             spotifyUrl,

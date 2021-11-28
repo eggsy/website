@@ -25,18 +25,9 @@ export default Vue.extend({
      * @returns {string} The title "Today's Song" or formatted date.
      */
     getDateText(): string {
-      const formatter = new Intl.DateTimeFormat([], {
-        timeZone: "Europe/Istanbul",
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-      })
-
-      const formattedDate = formatter.format(new Date())
-
       if (
         this.$moment(this.date).format("DD/MM/YYYY") ===
-        this.$moment(formattedDate).format("DD/MM/YYYY")
+        this.$moment_tz().tz("Europe/Istanbul").format("DD/MM/YYYY")
       )
         return "Today's Song"
       else return this.$moment(this.date).format("DD/MM/YYYY")

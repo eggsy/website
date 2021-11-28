@@ -78,16 +78,7 @@ export default Vue.extend({
     isThereNoSongToday(): boolean {
       if (!this.songs?.[0]?.date) return false;
 
-      const formatter = new Intl.DateTimeFormat([], {
-        timeZone: "Europe/Istanbul",
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-      })
-
-      const formattedDate = formatter.format(new Date())
-
-      const today = this.$moment(formattedDate).format("DD/MM/YYYY")
+      const today = this.$moment_tz().tz("Europe/Istanbul").format("DD/MM/YYYY")
       const latestSongDate = this.$moment(this.songs[0]?.date)
         .format("DD/MM/YYYY")
 
