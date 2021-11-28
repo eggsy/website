@@ -76,6 +76,8 @@ export default Vue.extend({
      * Return boolean if there's no selected song for today.
      */
     isThereNoSongToday(): boolean {
+      if (!this.songs?.[0]?.date) return false;
+
       const formatter = new Intl.DateTimeFormat([], {
         timeZone: "Europe/Istanbul",
         year: "numeric",
