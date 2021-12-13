@@ -95,72 +95,8 @@ export default Vue.extend({
           />
         </SmartLink>
 
-        <div class="space-x-2 hidden sm:flex sm:items-center">
+        <div class="flex space-x-2 items-center">
           <ColorSwitcher />
-        </div>
-
-        <!-- Mobile Navbar -->
-        <div class="block sm:hidden">
-          <div @click="mobileMenu = !mobileMenu">
-            <IconMenu class="h-8 text-gray-900 w-8 dark:text-gray-100" />
-          </div>
-
-          <transition name="fade" mode="out-in">
-            <div
-              v-show="mobileMenu === true"
-              class="rounded-md space-y-4 bg-gray-200 shadow-lg p-4 -top-1 -right-1 -left-1 z-20 absolute dark:bg-neutral-800"
-            >
-              <div
-                class="flex text-gray-900 items-center justify-between dark:text-gray-100"
-              >
-                <h3 class="font-medium text-lg">Menu</h3>
-
-                <div @click="mobileMenu = false">
-                  <IconX class="h-6 w-6" />
-                </div>
-              </div>
-
-              <div class="space-y-2">
-                <SmartLink
-                  v-for="(link, index) in getCurrentRouteLinks"
-                  :key="`link-${index}`"
-                  :href="link.to"
-                  class="rounded-md flex bg-gray-300 py-2 px-4 text-gray-800 justify-center dark:(bg-neutral-700 text-gray-200) "
-                  >{{ link.title }}</SmartLink
-                >
-              </div>
-
-              <div class="flex items-center">
-                <div
-                  class="rounded-tl-md rounded-bl-md flex space-x-2 py-2 text-gray-800 w-1/2 items-center justify-center dark:text-gray-200"
-                  :class="{
-                    'bg-gray-300 dark:bg-neutral-700':
-                      getSelectedTheme !== 'light',
-                    'bg-gray-400 dark:bg-neutral-900':
-                      getSelectedTheme === 'light',
-                  }"
-                  @click="switchTheme('light')"
-                >
-                  <IconSun class="h-6 w-6" />
-                  <span>Light</span>
-                </div>
-
-                <div
-                  class="rounded-r-md flex space-x-2 bg-gray-300 py-2 text-gray-800 w-1/2 items-center justify-center dark:(text-gray-200 bg-neutral-700) "
-                  :class="{
-                    'bg-gray-300 dark:bg-neutral-700':
-                      getSelectedTheme !== 'dark',
-                    'bg-gray-400 dark:bg-neutral-900':
-                      getSelectedTheme === 'dark',
-                  }"
-                  @click="switchTheme('dark')"
-                >
-                  <IconMoon class="h-6 w-6" />
-                  <span>Dark</span>
-                </div>
-              </div>
-            </div>
-          </transition>
         </div>
       </div>
     </div>
