@@ -29,7 +29,7 @@ export default Vue.extend({
 
 <template>
   <div class="text-gray-500 overflow-hidden dark:text-neutral-700">
-    <div class="flex items-center justify-between">
+    <div class="flex space-x-2 items-center justify-between">
       <SmartLink
         :href="url"
         class="text-gray-800 dark:text-neutral-200 hover:underline"
