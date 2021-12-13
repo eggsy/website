@@ -42,7 +42,7 @@ export default Vue.extend({
     class="grid gap-6 grid-cols-1 sm:grid-cols-2 dark:text-gray-200"
   >
     <div>
-      <h4 class="font-medium">Önceki Gönderi</h4>
+      <h4 lang="tr">Önceki Gönderi</h4>
 
       <SmartLink v-if="prev" :href="`/blog/gonderi/${prev.slug}`">
         <h5>{{ prev.title }}</h5>
@@ -52,7 +52,7 @@ export default Vue.extend({
     </div>
 
     <div class="text-right">
-      <h4 class="font-medium">Sonraki Gönderi</h4>
+      <h4 lang="tr">Sonraki Gönderi</h4>
 
       <SmartLink v-if="next" :href="`/blog/gonderi/${next.slug}`">
         <h5>{{ next.title }}</h5>
@@ -70,11 +70,11 @@ div {
   }
 
   h4 {
-    @apply font-medium text-lg text-gray-900 block dark:text-gray-100;
+    @apply font-medium text-lg text-gray-400 uppercase block dark:text-neutral-700;
   }
 
   h5 {
-    @apply font-light text-xl text-gray-700 truncate dark:text-gray-300;
+    @apply font-light text-xl text-gray-700 truncate dark:text-neutral-300;
   }
 }
 </style>
