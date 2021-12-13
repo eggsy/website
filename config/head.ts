@@ -71,7 +71,7 @@ const Head: NuxtOptionsHead = {
     {
       hid: "theme-color",
       name: "theme-color",
-      content: "#111827",
+      content: "#171717",
     },
   ].map((i) => {
     // @ts-ignore-next-line
