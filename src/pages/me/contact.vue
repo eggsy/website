@@ -23,6 +23,14 @@ export default Vue.extend({
       }),
     }
   },
+  data() {
+    return {
+      pageLoaded: false,
+    }
+  },
+  mounted() {
+    this.pageLoaded = true
+  },
   computed: {
     getLinks(): Link[] {
       const social = this.$config.social
@@ -76,6 +84,19 @@ export default Vue.extend({
         </template>
 
         {{ contact.description }}
+      </Card>
+
+      <Card
+        title="Email"
+        :href="pageLoaded ? `mailto:${$config.social.email}` : false"
+        icon="IconAt"
+        :utm="false"
+      >
+        <template #icon>
+          <IconAt class="h-8 w-8" />
+        </template>
+
+        Send me an email!
       </Card>
     </div>
   </div>
