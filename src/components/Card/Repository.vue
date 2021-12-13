@@ -16,6 +16,15 @@ export default Vue.extend({
       type: [String, Number],
       required: true,
     },
+    top: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    license: {
+      type: String,
+      required: false,
+    },
     description: {
       type: String,
       required: true,
@@ -39,22 +48,47 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    class="rounded-lg cursor-pointer p-4 transition-colors hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
-  >
-    <div class="flex space-x-1 text-gray-600 items-center dark:text-gray-200">
-      <span class="flex-grow space-x-2 truncate">{{ name }}</span>
+  <div>
+    <div
+      class="rounded-lg cursor-pointer h-full p-4 transition-colors text-gray-500 relative dark:text-neutral-500 hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
+      :class="{
+        'bg-gray-200/40 dark:bg-neutral-800/40': top,
+      }"
+    >
+      <div>
+        <h3 class="text-gray-800 truncate dark:text-neutral-400">
+          <span class="text-neutral-700">eggsy/</span>{{ name }}
+        </h3>
 
-      <div class="flex space-x-1 items-center">
-        <div class="flex space-x-1 items-center">
+        <p class="text-gray-500 line-clamp-2 dark:text-neutral-500">
+          {{ description }}
+        </p>
+      </div>
+
+      <div class="mt-4">
+        <div class="flex items-center justify-between">
+          <span>Stars:</span>
           <span>{{ stars }}</span>
-          <IconStar filled class="h-6 text-yellow-600 w-6" />
         </div>
 
-        <IconDev :brand="getLanguageIcon" class="h-5 w-5" />
+        <div class="flex items-center justify-between">
+          <span>Language:</span>
+          <IconDev :brand="getLanguageIcon" class="h-5 w-5" />
+        </div>
+
+        <div v-if="license" class="flex items-center justify-between">
+          <span>License:</span>
+          <span>{{ license }}</span>
+        </div>
+      </div>
+
+      <div
+        v-if="top === true"
+        class="-top-3 -right-3 absolute"
+        title="Top repository"
+      >
+        <IconStar filled class="h-8 text-yellow-600 w-8" />
       </div>
     </div>
-
-    <p class="text-gray-400 line-clamp-2 dark:text-gray-400">{{ description }}</p>
   </div>
 </template>
