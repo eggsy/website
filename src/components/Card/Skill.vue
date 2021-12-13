@@ -13,10 +13,11 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    class="flex space-x-2 text-gray-900  items-center overflow-hidden dark:text-neutral-200"
-  >
-    <IconDev :brand="title" class="flex-shrink-0 h-7 w-7" />
+  <Card>
+    <template #icon>
+      <IconDev :brand="title" class="flex-shrink-0 h-7 w-7" />
+    </template>
+
     <span class="truncate">{{ title }}</span>
-  </div>
+  </Card>
 </template>
