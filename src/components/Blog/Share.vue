@@ -83,37 +83,37 @@ export default Vue.extend({
 
 <template>
   <div v-if="type === 'vertical'" class="grid gap-2 grid-cols-1">
-    <div class="button" @click="share('twitter')">
+    <Button rounded @click.native="share('twitter')">
       <IconBrand brand="twitter" class="text-[#1DA1F2]" />
-    </div>
+    </Button>
 
-    <div class="button" @click="share('telegram')">
+    <Button rounded @click.native="share('telegram')">
       <IconBrand brand="telegram" class="text-[#2EAADE]" />
-    </div>
+    </Button>
 
-    <div class="button" @click="share('whatsapp')">
+    <Button rounded @click.native="share('whatsapp')">
       <IconBrand brand="whatsapp" class="text-[#25D366]" />
-    </div>
+    </Button>
 
-    <div class="button" @click="share('url')">
+    <Button rounded @click.native="share('url')">
       <IconCheck v-if="copied === true" class="text-green-500" />
       <IconLink v-else class="text-gray-800 dark:text-gray-200" />
-    </div>
+    </Button>
   </div>
 
   <div v-else class="grid gap-4 grid-cols-1 sm:grid-cols-3">
     <div class="flex space-x-2 items-center">
-      <div class="button" @click="share('twitter')">
+      <Button rounded @click.native="share('twitter')">
         <IconBrand brand="twitter" class="text-[#1DA1F2]" />
-      </div>
+      </Button>
 
-      <div class="button" @click="share('telegram')">
+      <Button rounded @click.native="share('telegram')">
         <IconBrand brand="telegram" class="text-[#2EAADE]" />
-      </div>
+      </Button>
 
-      <div class="button" @click="share('url')">
+      <Button rounded @click.native="share('whatsapp')">
         <IconBrand brand="whatsapp" class="text-[#25D366]" />
-      </div>
+      </Button>
     </div>
 
     <div
@@ -128,11 +128,14 @@ export default Vue.extend({
         readonly
         :value="`https://eggsy.xyz${path}`"
         class="rounded-md w-full p-3 ring-1 ring-opacity-25 ring-gray-800 sm:py-3 sm:px-4 dark:(bg-neutral-800 text-gray-100) focus:outline-none "
-        @click="share('url')"
+        @click.native="share('url')"
       />
 
       <transition name="fade">
-        <div v-if="copied === true" class="rounded-full bg-green-500 p-1 right-2 absolute">
+        <div
+          v-if="copied === true"
+          class="rounded-full bg-green-500 p-1 right-2 absolute"
+        >
           <IconCheck class="h-5 text-gray-100 w-5" />
         </div>
       </transition>
@@ -141,7 +144,7 @@ export default Vue.extend({
 </template>
 
 <style scoped>
-div.button {
-  @apply rounded-full cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 h-12 p-2 transition-shadow w-12 dark:bg-neutral-800 hover:shadow-md;
+.btn svg {
+  @apply h-8 w-8;
 }
 </style>
