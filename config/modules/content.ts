@@ -5,7 +5,7 @@ const Content: IContentOptions = {
   dir: "blog",
   markdown: {
     prism: {
-      theme: "prism-themes/themes/prism-dracula.css",
+      theme: "prism-themes/themes/prism-one-dark.css",
     },
     /* @ts-ignore-next-line */
     remarkExternalLinks: {
