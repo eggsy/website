@@ -70,7 +70,7 @@ export default Vue.extend({
   >
     <SmartImage
       :src="getPostMeta.image"
-      class="rounded h-34 w-full filter dark:brightness-75"
+      class="rounded h-40 w-full filter dark:brightness-75"
     />
 
     <div class="flex flex-col space-y-1">

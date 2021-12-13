@@ -284,14 +284,17 @@ export default Vue.extend({
   h1,
   h2,
   h3 {
-    @apply font-semibold mb-2 text-gray-900 dark:text-gray-200 hover:underline;
+    @apply font-bold mb-2 text-gray-900 dark:text-gray-200 hover:underline;
   }
 
   h1 {
-    @apply text-xl;
+    @apply text-3xl;
   }
 
-  h2,
+  h2 {
+    @apply text-2xl;
+  }
+
   h3 {
     @apply text-lg;
   }
@@ -305,7 +308,7 @@ export default Vue.extend({
     }
 
     strong {
-      @apply font-medium text-gray-900 dark:text-gray-200;
+      @apply font-bold text-gray-900 dark:text-gray-200;
     }
 
     a {
@@ -321,9 +324,18 @@ export default Vue.extend({
     }
   }
 
+  /* Block quotes */
+  blockquote {
+    @apply rounded-md bg-gray-100 ml-0 w-full py-2 px-4 md:w-max dark:bg-neutral-800;
+  }
+
   /* Smart image */
   div[smart-image] {
-    @apply rounded mx-auto max-w-full mb-5 w-max;
+    @apply rounded mx-auto max-w-full mb-7 w-max;
+
+    &.caption {
+      @apply mb-12;
+    }
   }
 
   /* Ratings */

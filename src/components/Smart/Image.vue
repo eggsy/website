@@ -38,6 +38,11 @@ export default Vue.extend({
       required: false,
       default: null,
     },
+    caption: {
+      type: String,
+      required: false,
+      default: null,
+    },
   },
   data() {
     return {
@@ -74,10 +79,10 @@ export default Vue.extend({
   },
   methods: {
     handleError() {
-      this.error = true;
-      this.loaded = true;
-    }
-  }
+      this.error = true
+      this.loaded = true
+    },
+  },
 })
 </script>
 
@@ -85,22 +90,26 @@ export default Vue.extend({
   <div
     v-if="src"
     :style="
-      loaded === true && {
-        backgroundImage: `url('${getBackgroundUrl}')`,
-        backgroundPosition: 'center',
-        backgroundSize: fit,
-      }
+      loaded === true
+        ? {
+            backgroundImage: `url('${getBackgroundUrl}')`,
+            backgroundPosition: 'center',
+            backgroundSize: fit,
+          }
+        : {}
     "
+    class="relative"
     :class="{
       'bg-gray-100 animate-pulse dark:bg-neutral-700 bg-no-repeat':
         loaded === false,
+      caption: caption,
     }"
     :smart-image="true"
-    :title="title"
+    :title="title || caption"
   >
     <img
       :src="getBackgroundUrl || src"
-      :alt="alt || title || 'image'"
+      :alt="alt || caption || title || 'image'"
       :width="width"
       :height="height"
       class="invisible"
@@ -108,5 +117,12 @@ export default Vue.extend({
       @error="handleError"
       @load="loaded = true"
     />
+
+    <span
+      v-if="caption"
+      class="flex text-sm right-0 -bottom-6 left-0 text-neutral-500 absolute justify-center"
+    >
+      {{ caption }}
+    </span>
   </div>
 </template>
