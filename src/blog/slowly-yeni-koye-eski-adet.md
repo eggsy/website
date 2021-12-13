@@ -60,15 +60,3 @@ Uygulamanın güzellikleri saymakla bitmiyor. Ücretsiz pul kazanabileceğiniz b
 ### Beğendiniz mi?
 
 Sonuç olarak, bir süredir bu uygulamada zaman geçiriyor ve yukarıda saydığım her şeyi deneyimliyorum. Eğer sizin de ilginizi çektiyse uygulamayı telefonunuza indirebilir, kullanmaya başlayabilirsiniz. Uygulama Türkçe dahil birçok dili destekliyor, eğer isterseniz bilgisayarınızı bağlayıp benim yaptığım gibi bilgisayardan da mektuplaşabiliyorsunuz. Tamamen size kalmış!
-
-<div class="flex flex-wrap space-x-4">
-  <smart-link href="https://play.google.com/store/apps/details?id=com.slowlyapp" class="flex items-center px-4 py-2 space-x-2 text-gray-900 transition-shadow bg-gray-100 rounded dark:bg-gray-800 dark:text-gray-100 hover:shadow-md" blank>
-    <icon-dev brand="PlayStore" class="w-5 h-5"></icon-dev>
-    <span>Play Store</span>
-  </smart-link>
-
-  <smart-link href="https://apps.apple.com/app/slowly/id1199811908" class="flex items-center px-4 py-2 space-x-2 text-gray-900 transition-shadow bg-gray-100 rounded dark:bg-gray-800 dark:text-gray-100 hover:shadow-md" blank>
-    <icon-dev brand="AppStore" class="w-5 h-5"></icon-dev>
-    <span>App Store</span>
-  </smart-link>
-</div>
