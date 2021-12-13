@@ -54,9 +54,9 @@ export default Vue.extend({
       'bg-gray-200/40 dark:bg-neutral-800/40': top,
     }"
   >
-    <div>
-      <h3 class="text-gray-800 truncate dark:text-neutral-400">
-        <span class="text-neutral-700">eggsy/</span>{{ name }}
+    <div class="space-y-2">
+      <h3 class="text-gray-700 truncate dark:text-neutral-400">
+        <span class="text-gray-400 dark:text-neutral-700">eggsy/</span>{{ name }}
       </h3>
 
       <p class="text-gray-500 line-clamp-2 dark:text-neutral-500">
