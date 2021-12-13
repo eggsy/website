@@ -109,7 +109,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="space-y-12 py-4">
+  <div class="space-y-12 my-10">
     <BlogNotification v-if="isThereNoSongToday === true" type="warning">
       <p>
         There's no song for today, check back later or wait for the next day

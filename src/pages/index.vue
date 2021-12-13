@@ -319,7 +319,7 @@ export default Vue.extend({
         Technologies I use
       </h3>
 
-      <div class="mt-4 grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+      <div class="mt-4 grid gap-2 sm:grid-cols-3 md:grid-cols-4">
         <CardSkill
           v-for="(skill, index) in skills"
           :key="`skill-${index}`"
