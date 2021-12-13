@@ -131,6 +131,39 @@ export default Vue.extend({
           },
         ],
       } as ExperienceObject,
+      cards: [
+        {
+          title: "Repositories",
+          description: "Want to see my code? Check out my GitHub!",
+          href: "/me/repos",
+        },
+        {
+          title: "Goals",
+          description:
+            "Want to know what I'm working on now and in the future?",
+          href: "/me/goals",
+        },
+        {
+          title: "Contact",
+          description: "Want to get in touch? Send me a message!",
+          href: "/me/contact",
+        },
+        {
+          title: "Blog",
+          description: "Want to read my Turkish stories?",
+          href: "/blog",
+        },
+        {
+          title: "Daily Songs",
+          description: "Want to listen to my daily songs?",
+          href: "/daily",
+        },
+        {
+          title: "Donate",
+          description: "Want to support me and my work?",
+          href: "/donate",
+        },
+      ],
       skills: [
         "JavaScript",
         "HTML5",
@@ -149,25 +182,6 @@ export default Vue.extend({
       ],
     }
   },
-  fetchOnServer: false,
-  async fetch() {
-    const filter = [
-      "eggsy",
-      "DBM",
-      "eggsywashere.github.io",
-      "bu-saatte-cekilir-mi",
-    ]
-
-    const repos: Repository[] = (
-      await this.$axios.get(
-        "https://api.github.com/users/eggsy/repos?per_page=100"
-      )
-    ).data
-
-    this.repos = repos
-      ?.filter((repo) => repo.fork === false && !filter.includes(repo.name))
-      ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count)
-  },
   head: {
     title: "Home",
   },
@@ -175,26 +189,35 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div>
+  <div class="space-y-14 mb-10">
     <header
       class="rounded-md flex flex-col-reverse bg-gray-200/30 my-16 py-10 px-8 justify-between md:flex-row md:items-center dark:bg-neutral-800/40"
     >
       <div class="md:w-8/12">
         <div class="space-y-2">
-          <div class="font-semibold text-xl text-gray-900 md:text-3xl dark:text-gray-100">
+          <div
+            class="font-semibold text-xl text-gray-900 md:text-3xl dark:text-neutral-200"
+          >
             <h1>Self taught</h1>
-            <h1>
-              <span class="text-blue-600">Full-stack</span> web developer
-            </h1>
+            <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
           </div>
 
           <p class="text-gray-800 dark:text-gray-200">
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
             taught web developer. I build complex web apps using
-            <SmartLink href="https://vuejs.org/" class="description-link" blank>Vue.js</SmartLink>,
-            <SmartLink href="https://nuxtjs.org/" class="description-link" blank>Nuxt.js</SmartLink>
+            <SmartLink href="https://vuejs.org/" class="description-link" blank
+              >Vue.js</SmartLink
+            >,
+            <SmartLink href="https://nuxtjs.org/" class="description-link" blank
+              >Nuxt.js</SmartLink
+            >
             {{ "" }} and
-            <SmartLink href="https://windicss.org/" class="description-link" blank>Windi CSS</SmartLink>.
+            <SmartLink
+              href="https://windicss.org/"
+              class="description-link"
+              blank
+              >Windi CSS</SmartLink
+            >.
           </p>
         </div>
 
@@ -202,45 +225,60 @@ export default Vue.extend({
       </div>
 
       <div class="rounded-full h-40 mb-4 w-40 md:mb-0">
-        <SmartImage src="/assets/images/memoji.png" class="rounded-full h-40 w-40" />
+        <SmartImage
+          src="/assets/images/memoji.png"
+          class="rounded-full h-40 w-40"
+        />
       </div>
     </header>
 
+    <section id="cards" class="my-16 grid gap-4 md:grid-cols-3">
+      <Card
+        v-for="(card, index) in cards"
+        :key="`card-${index}`"
+        :title="card.title"
+        :href="card.href"
+      >
+        {{ card.description }}
+      </Card>
+    </section>
+
     <section id="projects">
       <h2
-        class="font-semibold mt-10 text-2xl text-gray-900 dark:text-gray-100"
-      >Projects I currently work on</h2>
+        class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
+      >
+        Projects I currently work on
+      </h2>
 
-      <div class="mt-2 grid gap-2 md:(gap-4 grid-cols-2) ">
-        <div v-for="(project, index) in projects" :key="`project-${index}`">
-          <SmartLink
-            v-if="project.to || project.href"
-            :href="project.to || project.href"
-            title="Click to visit this project"
-            :blank="!!project.href"
-          >
-            <CardProject
-              :title="project.title"
-              :description="project.description"
-              :image="project.image"
-              class="h-full"
-            />
-          </SmartLink>
+      <div class="mt-4 grid gap-2 md:(gap-4 grid-cols-2) ">
+        <Card
+          v-for="(project, index) in projects"
+          :key="`project-${index}`"
+          :href="project.to || project.href"
+          :title="project.title"
+          :description="project.description"
+          :blank="!!project.href"
+          class="h-full"
+        >
+          {{ project.description }}
 
-          <CardProject
-            v-else
-            :title="project.title"
-            :description="project.description"
-            :image="project.image"
-            class="h-full"
-          />
-        </div>
+          <template #icon v-if="project.image">
+            <SmartImage :src="project.image" class="rounded-full h-16 w-16" />
+          </template>
+        </Card>
       </div>
     </section>
 
-    <section id="experiences" class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2) ">
+    <section
+      id="experiences"
+      class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2) "
+    >
       <div>
-        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">Experience</h3>
+        <h3
+          class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
+        >
+          Experience
+        </h3>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
@@ -255,7 +293,11 @@ export default Vue.extend({
       </div>
 
       <div>
-        <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">Education</h3>
+        <h3
+          class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
+        >
+          Education
+        </h3>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
@@ -272,62 +314,19 @@ export default Vue.extend({
 
     <section id="technologies" class="mt-6">
       <h3
-        class="font-semibold mt-4 text-xl text-gray-900 md:mt-10 dark:text-gray-100"
-      >Technologies I use</h3>
+        class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
+      >
+        Technologies I use
+      </h3>
 
       <div class="mt-4 grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-        <CardSkill v-for="(skill, index) in skills" :key="`skill-${index}`" :title="skill" />
+        <CardSkill
+          v-for="(skill, index) in skills"
+          :key="`skill-${index}`"
+          :title="skill"
+        />
       </div>
     </section>
-
-    <section id="repositories" class="mt-6">
-      <h2
-        class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100"
-      >My GitHub repositories</h2>
-
-      <div class="mt-4">
-        <div v-if="$fetchState.pending" class="grid gap-2 grid-cols-1 md:grid-cols-2">
-          <SkeletonLoader v-for="item in 6" :key="`repo-skeleton-${item}`" type="repository" />
-        </div>
-
-        <div
-          v-else-if="$fetchState.error"
-          class="text-gray-900 dark:text-gray-100"
-        >Couldn't load GitHub repositories.</div>
-
-        <div v-else-if="repos.length > 0" class="grid gap-2 grid-cols-1 md:grid-cols-2">
-          <SmartLink
-            v-for="(repo, index) in repos.slice(0, 6)"
-            :key="`repo-${index}`"
-            :href="repo.html_url"
-            title="Click here to visit this repository"
-            blank
-          >
-            <CardRepository
-              :name="repo.name"
-              :language="repo.language"
-              :stars="repo.stargazers_count"
-              :description="repo.description"
-              class="h-full"
-            />
-          </SmartLink>
-        </div>
-
-        <button
-          v-if="$fetchState.pending === false"
-          class="flex space-x-2 mt-2 text-neutral-300 items-center dark:(text-neutral-600 hover:text-neutral-400) hover:text-neutral-600 focus:outline-none "
-          @click="showModal = true"
-        >Show all {{ repos.length }} repositories</button>
-      </div>
-    </section>
-
-    <section id="socials" class="mt-6">
-      <h2 class="font-semibold mt-10 text-xl text-gray-900 dark:text-gray-100">Follow me</h2>
-
-      <Socials class="mt-2" />
-    </section>
-
-    <ModalHomeRepositories v-model="showModal" :repos="repos" />
   </div>
 </template>
 
