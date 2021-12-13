@@ -2,8 +2,8 @@
 $gray-200: rgb(229, 231, 235);
 $gray-300: rgb(209, 213, 219);
 
-$gray-700: rgb(55, 65, 81);
-$gray-800: rgb(31, 41, 55);
+$neutral-700: #404040;
+$neutral-800: #262626;
 
 /* Scrollbar mixin */
 @mixin scrollbar($isdark, $iselement) {
@@ -11,8 +11,8 @@ $gray-800: rgb(31, 41, 55);
 
   /* Don't set background to elements */
   @if $isdark == "true" and $iselement == "false" {
-    /* @apply bg-gray-700; */
-    background-color: $gray-700;
+    /* @apply bg-neutral-700; */
+    background-color: $neutral-700;
   } @else if $isdark == "false" and $iselement == "false" {
     /* @apply bg-gray-300; */
     background-color: $gray-300;
@@ -30,12 +30,12 @@ $gray-800: rgb(31, 41, 55);
 
     @if $isdark == "true" {
       &-thumb {
-        /* @apply bg-gray-700; */
-        background-color: $gray-700;
+        /* @apply bg-neutral-700; */
+        background-color: $neutral-700;
       }
       &-track {
-        /* @apply bg-gray-800; */
-        background-color: $gray-800;
+        /* @apply bg-neutral-800; */
+        background-color: $neutral-800;
       }
     } @else {
       &-thumb {

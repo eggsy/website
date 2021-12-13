@@ -90,7 +90,7 @@ export default Vue.extend({
             v-for="(link, index) in getCurrentRouteLinks"
             :key="`link-${index}`"
             :href="link.to"
-            class="rounded py-1 px-2 transition-colors text-gray-800 dark:(text-gray-200 hover:bg-gray-700) hover:bg-gray-100 "
+            class="rounded py-1 px-2 transition-colors text-gray-800 dark:(text-gray-200 hover:bg-neutral-700) hover:bg-gray-100 "
           >{{ link.title }}</SmartLink>
 
           <ColorSwitcher />
@@ -105,7 +105,7 @@ export default Vue.extend({
           <transition name="fade" mode="out-in">
             <div
               v-show="mobileMenu === true"
-              class="rounded-md space-y-4 bg-gray-200 shadow-lg p-4 -top-1 -right-1 -left-1 z-20 absolute dark:bg-gray-800"
+              class="rounded-md space-y-4 bg-gray-200 shadow-lg p-4 -top-1 -right-1 -left-1 z-20 absolute dark:bg-neutral-800"
             >
               <div class="flex text-gray-900 items-center justify-between dark:text-gray-100">
                 <h3 class="font-medium text-lg">Menu</h3>
@@ -120,7 +120,7 @@ export default Vue.extend({
                   v-for="(link, index) in getCurrentRouteLinks"
                   :key="`link-${index}`"
                   :href="link.to"
-                  class="rounded-md flex bg-gray-300 py-2 px-4 text-gray-800 justify-center dark:(bg-gray-700 text-gray-200) "
+                  class="rounded-md flex bg-gray-300 py-2 px-4 text-gray-800 justify-center dark:(bg-neutral-700 text-gray-200) "
                 >{{ link.title }}</SmartLink>
               </div>
 
@@ -128,9 +128,9 @@ export default Vue.extend({
                 <div
                   class="rounded-tl-md rounded-bl-md flex space-x-2 py-2 text-gray-800 w-1/2 items-center justify-center dark:text-gray-200"
                   :class="{
-                    'bg-gray-300 dark:bg-gray-700':
+                    'bg-gray-300 dark:bg-neutral-700':
                       getSelectedTheme !== 'light',
-                    'bg-gray-400 dark:bg-gray-900':
+                    'bg-gray-400 dark:bg-neutral-900':
                       getSelectedTheme === 'light',
                   }"
                   @click="switchTheme('light')"
@@ -140,10 +140,10 @@ export default Vue.extend({
                 </div>
 
                 <div
-                  class="rounded-tr-md rounded-br-md flex space-x-2 bg-gray-300 py-2 text-gray-800 w-1/2 items-center justify-center dark:(text-gray-200 bg-gray-700) "
+                  class="rounded-tr-md rounded-br-md flex space-x-2 bg-gray-300 py-2 text-gray-800 w-1/2 items-center justify-center dark:(text-gray-200 bg-neutral-700) "
                   :class="{
-                    'bg-gray-300 dark:bg-gray-700': getSelectedTheme !== 'dark',
-                    'bg-gray-400 dark:bg-gray-900': getSelectedTheme === 'dark',
+                    'bg-gray-300 dark:bg-neutral-700': getSelectedTheme !== 'dark',
+                    'bg-gray-400 dark:bg-neutral-900': getSelectedTheme === 'dark',
                   }"
                   @click="switchTheme('dark')"
                 >

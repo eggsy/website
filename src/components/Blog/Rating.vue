@@ -83,7 +83,7 @@ export default Vue.extend({
           classes = "text-gray-100 bg-black"
           break
         default:
-          classes = "bg-gray-200 dark:bg-gray-800"
+          classes = "bg-gray-200 dark:bg-neutral-800"
           break
       }
 
@@ -125,7 +125,7 @@ export default Vue.extend({
         // @ts-ignore-next-line
         title: statusObject[Number(this.status)] || statusObject[0],
         classes:
-          "text-gray-700 dark:text-gray-200 bg-gray-200 dark:bg-gray-800",
+          "text-gray-700 dark:text-gray-200 bg-gray-200 dark:bg-neutral-800",
       }
     },
   },
@@ -163,7 +163,7 @@ export default Vue.extend({
           content: `${seasons} sezon`,
           placement: 'top',
         }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-gray-800) focus:outline-none "
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-neutral-800) focus:outline-none "
       >{{ seasons }} S</div>
 
       <div
@@ -171,7 +171,7 @@ export default Vue.extend({
           content: `${rating}/${max} puan`,
           placement: 'top',
         }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-gray-800 text-gray-200) focus:outline-none "
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-neutral-800 text-gray-200) focus:outline-none "
       >{{ rating }} P</div>
     </div>
 

@@ -86,7 +86,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer flex space-x-4 p-3 transition-colors items-center hover:bg-gray-200/40 dark:hover:bg-gray-800/40"
+    class="rounded-lg cursor-pointer flex space-x-4 p-3 transition-colors items-center hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
     <SmartImage
       :src="getPostMeta.image"
@@ -109,7 +109,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer flex flex-col p-3 transition-colors truncate hover:bg-gray-200/40 dark:hover:bg-gray-800/40"
+    class="rounded-lg cursor-pointer flex flex-col p-3 transition-colors truncate hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
     <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">{{ getPostMeta.title }}</h2>
 

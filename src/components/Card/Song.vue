@@ -38,7 +38,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="rounded-lg cursor-pointer flex space-x-2 py-2 px-4 transition-colors items-center select-none hover:bg-gray-200/40 dark:hover:bg-gray-800/40"
+    class="rounded-lg cursor-pointer flex space-x-2 py-2 px-4 transition-colors items-center select-none hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
     <div class="rounded-md flex-shrink-0">
       <SmartImage

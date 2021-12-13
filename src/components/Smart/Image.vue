@@ -92,7 +92,7 @@ export default Vue.extend({
       }
     "
     :class="{
-      'bg-gray-100 animate-pulse dark:bg-gray-700 bg-no-repeat':
+      'bg-gray-100 animate-pulse dark:bg-neutral-700 bg-no-repeat':
         loaded === false,
     }"
     :smart-image="true"

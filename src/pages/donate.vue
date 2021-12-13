@@ -120,12 +120,12 @@ export default Vue.extend({
             :key="`account-${index}`"
             class="flex h-full items-center"
           >
-            <div class="rounded-tl rounded-bl bg-gray-200/75 dark:bg-gray-800">
+            <div class="rounded-tl rounded-bl bg-gray-200/75 dark:bg-neutral-800">
               <SmartImage :src="account.image" class="h-24 w-24" />
             </div>
 
             <div
-              class="rounded-tr rounded-br flex h-full bg-gray-200/50 w-full pl-4 items-center dark:bg-gray-700"
+              class="rounded-tr rounded-br flex h-full bg-gray-200/50 w-full pl-4 items-center dark:bg-neutral-800"
             >
               <div>
                 <h3 class="font-medium text-gray-900 dark:text-gray-100">{{ account.name }}</h3>

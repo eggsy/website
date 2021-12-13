@@ -40,7 +40,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="rounded-lg cursor-pointer p-4 transition-colors hover:bg-gray-200/40 dark:hover:bg-gray-800/40"
+    class="rounded-lg cursor-pointer p-4 transition-colors hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
     <div class="flex space-x-1 text-gray-600 items-center dark:text-gray-200">
       <span class="flex-grow space-x-2 truncate">{{ name }}</span>

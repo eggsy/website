@@ -133,23 +133,23 @@ export default Vue.extend({
       </div>
 
       <div class="space-y-2 w-full">
-        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-gray-800">
+        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Title</h3>
 
           <SkeletonLoader
             v-if="$fetchState.pending || $fetchState.error"
-            class="bg-gray-300 h-6 w-2/4 dark:bg-gray-700"
+            class="bg-gray-300 h-6 w-2/4 dark:bg-neutral-700"
           />
 
           <span v-else class="text-gray-700 truncate dark:text-gray-300">{{ getSelectedTitle }}</span>
         </div>
 
-        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-gray-800">
+        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Artist</h3>
 
           <SkeletonLoader
             v-if="$fetchState.pending || $fetchState.error"
-            class="bg-gray-300 h-6 w-1/4 dark:bg-gray-700"
+            class="bg-gray-300 h-6 w-1/4 dark:bg-neutral-700"
           />
 
           <span
@@ -158,12 +158,12 @@ export default Vue.extend({
           >{{ getSelectedSongMetadata.artist || "Unknown" }}</span>
         </div>
 
-        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-gray-800">
+        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
           <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Date</h3>
 
           <SkeletonLoader
             v-if="$fetchState.pending || $fetchState.error"
-            class="bg-gray-300 h-6 w-2/4 dark:bg-gray-700"
+            class="bg-gray-300 h-6 w-2/4 dark:bg-neutral-700"
           />
 
           <span v-else class="text-gray-700 truncate dark:text-gray-300">{{ getSelectedDateTitle }}</span>

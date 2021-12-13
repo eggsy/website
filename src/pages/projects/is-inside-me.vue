@@ -96,6 +96,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .button {
-  @apply rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(ring-gray-700 bg-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-200 ;
+  @apply rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(ring-neutral-700 bg-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-200 ;
 }
 </style>

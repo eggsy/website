@@ -511,11 +511,11 @@ export default Vue.extend({
           <div class="mt-3 grid gap-3 sm:grid-cols-3">
             <!-- URLs -->
             <div
-              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
+              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-neutral-800"
             >
               <input
                 v-model="service.url.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none "
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none "
                 placeholder="URL(s) of the service"
                 @keyup.enter="addItem('url')"
               />
@@ -549,11 +549,11 @@ export default Vue.extend({
 
             <!-- Tags -->
             <div
-              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800"
+              class="rounded-md space-y-2 bg-gray-100 h-56 ring overflow-y-hidden dark:bg-neutral-800"
             >
               <input
                 v-model="service.tags.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none "
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none "
                 placeholder="Tags for the service"
                 @keyup.enter="addItem('tag')"
               />
@@ -586,12 +586,12 @@ export default Vue.extend({
             </div>
 
             <!-- Descriptions -->
-            <div class="rounded-md bg-gray-100 h-56 ring overflow-y-hidden dark:bg-gray-800">
+            <div class="rounded-md bg-gray-100 h-56 ring overflow-y-hidden dark:bg-neutral-800">
               <div class="h-full space-y-2">
                 <div class="h-1/3">
                   <input
                     v-model="service.description.inputs.langCode"
-                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none "
+                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none "
                     placeholder="Language code, e.g. en"
                     @keyup.enter="$refs.descriptionInput.focus()"
                   />
@@ -599,7 +599,7 @@ export default Vue.extend({
                   <input
                     ref="descriptionInput"
                     v-model="service.description.inputs.content"
-                    class="h-1/2 w-full py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none "
+                    class="h-1/2 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none "
                     placeholder="Localized description"
                     @keyup.enter="addItem('description')"
                   />
@@ -675,7 +675,7 @@ export default Vue.extend({
                     content: 'To be able to read data from iframe sources',
                     placement: 'top',
                   }"
-                  class="text-white transition input"
+                  class="text-white transition input no-bg"
                   :class="
                     service.iframe === true ? 'bg-green-500' : 'bg-red-600'
                   "
@@ -688,7 +688,7 @@ export default Vue.extend({
                       'Small warning icon that will take place next to your Presence on Store',
                     placement: 'top',
                   }"
-                  class="text-white transition input"
+                  class="text-white transition input no-bg"
                   :class="
                     service.warning === true ? 'bg-green-500' : 'bg-red-600'
                   "
@@ -701,7 +701,7 @@ export default Vue.extend({
                       'Required permission to be able to read Console entries',
                     placement: 'top',
                   }"
-                  class="text-white transition input"
+                  class="text-white transition input no-bg"
                   :class="
                     service.readLogs === true ? 'bg-green-500' : 'bg-red-600'
                   "
@@ -710,7 +710,9 @@ export default Vue.extend({
               </div>
 
               <div class="rounded-md ring grid sm:grid-cols-2">
-                <div class="rounded-tl-md rounded-bl-md h-full bg-gray-100 ring dark:bg-gray-800">
+                <div
+                  class="rounded-tl-md rounded-bl-md h-full bg-gray-100 ring dark:bg-neutral-800"
+                >
                   <input
                     v-model="service.contributors.inputs.name"
                     class="rounded-none rounded-tl-md h-1/2 w-full ring-0 input"
@@ -728,7 +730,7 @@ export default Vue.extend({
                 </div>
 
                 <div
-                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-gray-800"
+                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-neutral-800"
                 >
                   <div
                     class="flex h-full mx-auto space-x-6 px-4 items-center overflow-x-auto scrollbar"
@@ -761,7 +763,7 @@ export default Vue.extend({
               </div>
 
               <div class="rounded-md ring grid sm:grid-cols-2">
-                <div class="rounded-tl-md rounded-bl-md bg-gray-100 dark:bg-gray-800">
+                <div class="rounded-tl-md rounded-bl-md bg-gray-100 dark:bg-neutral-800">
                   <input
                     v-model="service.altnames.input"
                     class="rounded-none rounded-tl-md rounded-bl-md w-full ring-0 input"
@@ -771,7 +773,7 @@ export default Vue.extend({
                 </div>
 
                 <div
-                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-gray-800"
+                  class="rounded-tr-md rounded-br-md space-y-2 bg-gray-100 overflow-y-hidden dark:bg-neutral-800"
                 >
                   <div
                     class="flex h-full mx-auto space-x-6 px-4 items-center overflow-x-auto scrollbar"
@@ -819,7 +821,8 @@ export default Vue.extend({
                 <p>
                   🎉 If you liked my work, please consider donating to see more
                   tools like this. Visit
-                  <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donation</SmartLink>{{ "" }} page for more information.
+                  <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donation</SmartLink>
+                  {{ "" }} page for more information.
                 </p>
               </div>
             </div>
@@ -875,7 +878,7 @@ export default Vue.extend({
     <transition name="slide-left" mode="out-in">
       <div
         v-show="resultWindow === true"
-        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-gray-800 "
+        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-neutral-800 "
       >
         <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
           <div class="space-y-1">
@@ -936,7 +939,7 @@ export default Vue.extend({
           <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center) ">
             <a
               v-if="getMetadata.error === false"
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300 "
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300 "
               download="metadata.json"
               :href="`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(getMetadata.result, null, 2)
@@ -947,7 +950,7 @@ export default Vue.extend({
             </a>
 
             <div
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-gray-700 hover:bg-gray-600) hover:bg-gray-300 "
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300 "
               @click="resultWindow = false"
             >
               <IconX class="h-5 w-5 no-style" />
@@ -972,10 +975,10 @@ p,
 }
 
 .control-button {
-  @apply rounded py-2 px-4 ring-1 ring-gray-200 text-gray-900 select-none dark:ring-gray-700 dark:text-gray-100;
+  @apply rounded py-2 px-4 transition-colors text-gray-900 select-none dark:text-gray-100;
 
   &:not(.no-background) {
-    @apply bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700;
+    @apply bg-gray-100 dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-200 ;
   }
 
   &:not(.cursor-not-allowed) {
@@ -984,26 +987,30 @@ p,
 }
 
 svg:not(.no-style) {
-  @apply rounded-full cursor-pointer bg-gray-200 flex-shrink-0 h-6 p-1 w-6 dark:(bg-gray-800 hover:bg-gray-700) hover:bg-gray-300 ;
+  @apply rounded-full cursor-pointer bg-gray-200 flex-shrink-0 h-6 p-1 w-6 dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300 ;
 }
 
 .input {
-  @apply py-2 px-4 dark:(bg-gray-700 text-gray-200) focus:outline-none ;
+  @apply py-2 px-4 dark:text-gray-200 focus:outline-none;
+
+  &:not(.no-bg) {
+    @apply bg-gray-200/40 dark:bg-neutral-700;
+  }
 
   &:not(.rounded-none) {
     @apply rounded-md;
   }
 
   &:not(.ring-0) {
-    @apply ring-2 ring-gray-300 ring-opacity-25 dark:ring-gray-800 focus:ring-4;
+    @apply ring-offset-gray-100 ring-gray-200 ring-offset-2 dark:(ring-neutral-800 ring-offset-neutral-900) focus:ring-1 ;
   }
 }
 
-.ring {
-  @apply ring-2 ring-gray-300 dark:ring-gray-700;
+pre[class*="language-"] {
+  @apply bg-neutral-900;
+}
 
-  &:not(.no-opacity) {
-    @apply ring-opacity-25;
-  }
+.ring {
+  @apply ring-1 ring-offset-2 ring-offset-gray-100 ring-gray-200 dark:(ring-neutral-800 ring-offset-neutral-900) ;
 }
 </style>

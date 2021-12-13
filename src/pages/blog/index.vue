@@ -205,8 +205,8 @@ export default Vue.extend({
           <div
             v-for="text in categories"
             :key="text"
-            class="rounded-lg cursor-pointer py-1 px-6 transition-colors text-gray-600 select-none dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-            :class="selectedCategory === text && 'bg-gray-100 dark:bg-gray-800'"
+            class="rounded-lg cursor-pointer py-1 px-6 transition-colors text-gray-600 select-none dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-neutral-800"
+            :class="selectedCategory === text && 'bg-gray-100 dark:bg-neutral-800'"
             :title="selectedCategory === text ? `Tüm ${text} gönderilirini gör` : ''"
             @click="selectedCategory !== text ? selectedCategory = text : $router.push({ query: { etiket: text.toLowerCase() } })"
           >{{ text }}</div>
@@ -246,9 +246,9 @@ export default Vue.extend({
           <div
             v-for="page in getTotalPages"
             :key="`pagination-${page}`"
-            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 transition-colors ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-gray-800 ring-gray-800 text-gray-100 hover:bg-gray-700) hover:bg-gray-300 "
+            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 transition-colors ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-neutral-800 ring-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-300 "
             :class="{
-              'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
+              'bg-gray-300 dark:bg-neutral-700': pagination + 1 === page,
             }"
             @click="pagination = page - 1"
           >{{ page }}</div>
@@ -277,7 +277,7 @@ export default Vue.extend({
 
         <SmartLink
           :href="{ name: 'blog' }"
-          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-gray-800 ring-gray-700 text-gray-100 hover:bg-gray-700) hover:bg-gray-200 "
+          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-neutral-800 ring-gray-700 text-gray-100 hover:bg-neutral-700) hover:bg-gray-200 "
         >
           <IconHome class="h-6 w-6" />
           <span>Bloga Dön</span>

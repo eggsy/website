@@ -72,16 +72,16 @@ export default Vue.extend({
 
       <div class="flex space-x-2 items-center justify-end sm:space-x-4">
         <div
-          class="rounded-lg flex space-x-2 bg-gray-100 text-gray-500 w-2/3 items-center md:w-full dark:bg-gray-800"
+          class="rounded-lg flex space-x-2 bg-gray-100 text-gray-500 w-2/3 items-center md:w-full dark:bg-neutral-800"
           :class="{
-            'ring-2 ring-gray-300 dark:ring-gray-700': inputFocused === true,
+            'ring-2 ring-gray-300 dark:ring-neutral-700': inputFocused === true,
           }"
         >
           <input
             id="search"
             v-model="input"
             placeholder="Gönderi ara..."
-            class="rounded-tl-lg rounded-bl-lg bg-gray-100 w-full py-1.5 px-3 placeholder-gray-500 appearance-none dark:bg-gray-800 focus:outline-none"
+            class="rounded-tl-lg rounded-bl-lg bg-gray-100 w-full py-1.5 px-3 placeholder-gray-500 appearance-none dark:bg-neutral-800 focus:outline-none"
             @focus="inputFocused = true"
             @blur="inputFocused = false"
             @keydown.enter="search"

@@ -127,7 +127,7 @@ export default Vue.extend({
         ref="share-url"
         readonly
         :value="`https://eggsy.xyz${path}`"
-        class="rounded-md w-full p-3 ring-1 ring-opacity-25 ring-gray-800 sm:py-3 sm:px-4 dark:(bg-gray-800 text-gray-100) focus:outline-none "
+        class="rounded-md w-full p-3 ring-1 ring-opacity-25 ring-gray-800 sm:py-3 sm:px-4 dark:(bg-neutral-800 text-gray-100) focus:outline-none "
         @click="share('url')"
       />
 
@@ -142,6 +142,6 @@ export default Vue.extend({
 
 <style scoped>
 div.button {
-  @apply rounded-full cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 h-12 p-2 transition-shadow w-12 dark:bg-gray-800 hover:shadow-md;
+  @apply rounded-full cursor-pointer flex space-x-2 bg-gray-200 bg-opacity-40 h-12 p-2 transition-shadow w-12 dark:bg-neutral-800 hover:shadow-md;
 }
 </style>

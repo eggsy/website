@@ -363,7 +363,7 @@ export default Vue.extend({
 
         <div class="space-y-2">
           <h3 class="font-medium text-gray-700 dark:text-gray-100">Large Image</h3>
-          <select v-model="presence.largeImageKey" class="bg-white w-full dark:bg-gray-700">
+          <select v-model="presence.largeImageKey" class="bg-white w-full dark:bg-neutral-700">
             <option selected>PreMiD</option>
             <optgroup
               v-for="(category, index) in getImages.large"
@@ -382,7 +382,7 @@ export default Vue.extend({
 
         <div class="space-y-2">
           <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">Small Image</h3>
-          <select v-model="presence.smallImageKey" class="bg-white w-full dark:bg-gray-700">
+          <select v-model="presence.smallImageKey" class="bg-white w-full dark:bg-neutral-700">
             <option selected>None</option>
             <optgroup
               v-for="(category, index) in getImages.small"
@@ -540,7 +540,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 input,
 select {
-  @apply rounded-md py-2 px-4 ring-2 ring-gray-300 ring-opacity-25 dark:(bg-gray-700 ring-gray-800 text-gray-200) focus:outline-none focus:ring-4 ;
+  @apply rounded-md bg-gray-200/40 py-2 px-4 ring-gray-200 ring-offset-2 ring-offset-gray-100 dark:(bg-neutral-700 text-gray-200 ring-offset-neutral-900 ring-neutral-700) focus:outline-none focus:(ring-1) ;
 
   &[type="time"] {
     @apply py-px px-2;
@@ -548,7 +548,7 @@ select {
 }
 
 .timestamp {
-  @apply bg-white rounded-md text-center p-2 ring-2 ring-gray-200 ring-opacity-25 select-none dark:(bg-gray-700 ring-transparent) ;
+  @apply bg-white rounded-md text-center p-2 ring-1 ring-gray-200 ring-offset-gray-100 ring-offset-2 select-none dark:(bg-neutral-700 ring-neutral-700 ring-offset-neutral-900) ;
 
   &:not(.cursor-default) {
     @apply cursor-pointer;
