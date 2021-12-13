@@ -10,7 +10,7 @@ tags:
 createdAt: 11/22/2021
 ---
 
-Eğer yakın zamnada benim gibi YouTube (veya başka bir) müzik sağlayıcısından Spotify'a geçiş yaptıysanız YouTube'da dinlediğiniz şarkıyı arkadaşlarınızla paylaşmanın biraz daha kolay olduğunu düşünüyor olabilirsiniz. Peki size Spotify'a geçseniz bile müziklerinizi paylaşmadan önce Node.js ile Spotify bağlantılarınızdan YouTube bağlantılarına ulaşabileceğinizi söylesem?
+Eğer yakın zamanda benim gibi YouTube (veya başka bir) müzik sağlayıcısından Spotify'a geçiş yaptıysanız YouTube'da dinlediğiniz şarkıyı arkadaşlarınızla paylaşmanın biraz daha kolay olduğunu düşünüyor olabilirsiniz. Peki size Spotify'a geçseniz bile müziklerinizi paylaşmadan önce Node.js ile Spotify bağlantılarınızdan YouTube bağlantılarına ulaşabileceğinizi söylesem?
 
 <blog-notification title="Ben nerede ihtiyaç duyuyorum?">
 
