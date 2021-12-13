@@ -5,7 +5,7 @@ export default Vue.extend({
   props: {
     // String
     href: {
-      type: String,
+      type: [String, Object],
       required: false,
       default: null,
     },
