@@ -76,11 +76,12 @@ export default Vue.extend({
      * Return boolean if there's no selected song for today.
      */
     isThereNoSongToday(): boolean {
-      if (!this.songs?.[0]?.date) return false;
+      if (!this.songs?.[0]?.date) return false
 
       const today = this.$moment_tz().tz("Europe/Istanbul").format("DD/MM/YYYY")
-      const latestSongDate = this.$moment(this.songs[0]?.date)
-        .format("DD/MM/YYYY")
+      const latestSongDate = this.$moment(this.songs[0]?.date).format(
+        "DD/MM/YYYY"
+      )
 
       if (today !== latestSongDate) return true
       else return false
@@ -95,10 +96,7 @@ export default Vue.extend({
      * Returns the selected song's date in locale format.
      */
     getSelectedDateTitle(): string {
-      return (
-        this.$moment(this.selected?.date).format("DD/MM/YYYY") ||
-        "Unknown"
-      )
+      return this.$moment(this.selected?.date).format("DD/MM/YYYY") || "Unknown"
     },
     /**
      * Returns the array of the songs without the currently selected one in it.
@@ -111,12 +109,12 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="space-y-6 py-4">
+  <div class="space-y-12 py-4">
     <BlogNotification v-if="isThereNoSongToday === true" type="warning">
       <p>
-        There's no song for today, check back later or wait for the next day until
-        I find some time to add new songs! You can listen to the older ones if you
-        wish to!
+        There's no song for today, check back later or wait for the next day
+        until I find some time to add new songs! You can listen to the older
+        ones if you wish to!
       </p>
     </BlogNotification>
 
@@ -134,55 +132,74 @@ export default Vue.extend({
 
       <div class="space-y-2 w-full">
         <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
-          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Title</h3>
+          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+            Title
+          </h3>
 
           <SkeletonLoader
             v-if="$fetchState.pending || $fetchState.error"
             class="bg-gray-300 h-6 w-2/4 dark:bg-neutral-700"
           />
 
-          <span v-else class="text-gray-700 truncate dark:text-gray-300">{{ getSelectedTitle }}</span>
+          <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
+            getSelectedTitle
+          }}</span>
         </div>
 
         <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
-          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Artist</h3>
+          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+            Artist
+          </h3>
 
           <SkeletonLoader
             v-if="$fetchState.pending || $fetchState.error"
             class="bg-gray-300 h-6 w-1/4 dark:bg-neutral-700"
           />
 
-          <span
-            v-else
-            class="text-gray-700 truncate dark:text-gray-300"
-          >{{ getSelectedSongMetadata.artist || "Unknown" }}</span>
+          <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
+            getSelectedSongMetadata.artist || "Unknown"
+          }}</span>
         </div>
 
         <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
-          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Date</h3>
+          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+            Date
+          </h3>
 
           <SkeletonLoader
             v-if="$fetchState.pending || $fetchState.error"
             class="bg-gray-300 h-6 w-2/4 dark:bg-neutral-700"
           />
 
-          <span v-else class="text-gray-700 truncate dark:text-gray-300">{{ getSelectedDateTitle }}</span>
+          <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
+            getSelectedDateTitle
+          }}</span>
         </div>
       </div>
     </div>
 
-    <div>
-      <h3 class="font-semibold text-xl text-gray-900 dark:text-gray-100">Older Songs</h3>
+    <div class="space-y-4">
+      <h3
+        class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
+      >
+        Older Songs
+      </h3>
 
-      <div class="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+      <div class="grid gap-2 sm:grid-cols-2 md:grid-cols-3">
         <template v-if="$fetchState.pending === true">
-          <SkeletonLoader v-for="item in 9" :key="`skeleton-song-${item}`" type="song" />
+          <SkeletonLoader
+            v-for="item in 9"
+            :key="`skeleton-song-${item}`"
+            type="song"
+          />
         </template>
 
         <div
           v-else-if="$fetchState.error"
           class="text-gray-900 sm:col-span-2 md:col-span-3 dark:text-gray-100"
-        >Something went wrong while fetching songs from Firebase.</div>
+        >
+          Something went wrong while fetching songs from Firebase.
+        </div>
 
         <template v-else>
           <CardSong
@@ -201,9 +218,3 @@ export default Vue.extend({
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.ring {
-  @apply ring-2 ring-opacity-75 ring-gray-300 dark:ring-transparent;
-}
-</style>

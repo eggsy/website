@@ -29,12 +29,16 @@ export default Vue.extend({
 
 <template>
   <div class="overflow-hidden">
-    <SmartLink :href="url" class="text-gray-800 dark:text-gray-100 hover:underline" blank>
+    <SmartLink
+      :href="url"
+      class="text-gray-800 dark:text-neutral-200 hover:underline"
+      blank
+    >
       <h3 class="text-lg">{{ title }}</h3>
     </SmartLink>
 
     <div
-      class="flex space-x-2 divide-x-2 divide-gray-300 text-sm text-gray-500 items-center dark:(divide-gray-700 text-gray-400) "
+      class="flex space-x-2 divide-x-2 divide-gray-300 text-sm text-gray-500 items-center dark:(divide-neutral-700 text-neutral-500) "
     >
       <div class="flex space-x-2 flex-shrink-0 items-center">
         <IconClock class="h-4 w-4" />

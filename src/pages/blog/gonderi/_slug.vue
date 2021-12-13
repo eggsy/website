@@ -147,7 +147,11 @@ export default Vue.extend({
           >
             <div
               class="rounded-md flex space-x-1 py-1 items-center backdrop-filter backdrop-blur-lg"
-              :class="!post.header ? 'pl-0 pr-2 text-gray-500 dark:text-gray-400' : 'px-2'"
+              :class="
+                !post.header
+                  ? 'pl-0 pr-2 text-gray-500 dark:text-gray-400'
+                  : 'px-2'
+              "
             >
               <IconClock class="h-4 w-4" />
               <div>{{ getReadingTime }} dakika okuma</div>
@@ -167,16 +171,24 @@ export default Vue.extend({
           <header class="space-y-4 text-center mb-12 sm:(text-left pr-16) ">
             <div class="space-y-2">
               <h1
-                class="font-semibold text-2xl text-gray-900 block sm:text-4xl dark:text-gray-50"
-              >{{ post.title }}</h1>
+                class="font-semibold text-2xl text-gray-700 block sm:text-4xl dark:text-neutral-300"
+              >
+                {{ post.title }}
+              </h1>
 
-              <p class="text-gray-500">{{ post.description }}</p>
+              <p class="text-neutral-500">{{ post.description }}</p>
             </div>
           </header>
 
           <div class="mt-4">
-            <div class="text-right -ml-20 top-4 sticky hidden float-left md:block">
-              <BlogShare type="vertical" :title="post.title" :path="$route.path" />
+            <div
+              class="text-right -ml-20 top-4 sticky hidden float-left md:block"
+            >
+              <BlogShare
+                type="vertical"
+                :title="post.title"
+                :path="$route.path"
+              />
             </div>
 
             <nuxt-content :document="post" />
@@ -196,16 +208,24 @@ export default Vue.extend({
           <BlogPrevNext :current-slug="post.slug" />
 
           <div>
-            <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">Yazıyı paylaş</h3>
+            <h3
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
+            >
+              Yazıyı paylaş
+            </h3>
 
             <BlogShare :title="post.title" :path="$route.path" />
           </div>
 
           <div v-if="getTags.length > 0">
-            <h3 class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100">Etiketler</h3>
+            <h3
+              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
+            >
+              Etiketler
+            </h3>
 
             <div class="flex flex-wrap space-x-2">
-              <SmartLink
+              <Button
                 v-for="(tag, index) in getTags"
                 :key="`tag-${index}`"
                 :href="{
@@ -214,23 +234,28 @@ export default Vue.extend({
                     etiket: tag,
                   },
                 }"
-                class="rounded-lg bg-gray-200 bg-opacity-40 text-center py-1 px-2 transition-shadow text-gray-800 truncate dark:(bg-gray-800 text-gray-200) hover:shadow-md "
-              >{{ tag }}</SmartLink>
+                elevated
+                tight
+              >
+                {{ tag }}
+              </Button>
             </div>
           </div>
 
           <div v-if="getRelatedPosts.length > 0">
             <h3
               class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
-            >Bunlar da hoşunuza gidebilir</h3>
+            >
+              Bunlar da hoşunuza gidebilir
+            </h3>
 
             <div class="grid gap-2 sm:grid-cols-3">
-              <SmartLink
+              <Card
                 v-for="(relatedPost, index) in getRelatedPosts"
                 :key="`related-${index}`"
                 :href="`/blog/gonderi/${relatedPost.slug}`"
-                class="rounded-lg bg-gray-200 bg-opacity-40 text-center p-4 transition-shadow text-gray-800 truncate dark:(bg-gray-800 text-gray-200) hover:shadow-md "
-              >{{ relatedPost.title }}</SmartLink>
+                :title="relatedPost.title"
+              />
             </div>
           </div>
         </div>

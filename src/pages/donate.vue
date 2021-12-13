@@ -36,8 +36,8 @@ export default Vue.extend({
           image: "https://i.vgy.me/UCiozk.png",
           name: "PayPal",
           iban: "@eggsydev",
-          revealed: false
-        }
+          revealed: false,
+        },
       ],
     }
   },
@@ -77,42 +77,45 @@ export default Vue.extend({
 
 <template>
   <div class="py-4">
-    <div class="space-y-6 sm:w-9/12">
-      <header class="space-y-4">
-        <div class="space-y-1">
-          <h1 class="font-semibold text-2xl text-gray-900 sm:text-3xl dark:text-gray-100">Donate</h1>
+    <div class="space-y-12 text-gray-500 sm:w-9/12 dark:text-neutral-700">
+      <header class="space-y-2 my-12">
+        <h1 class="text-gray-700 text-4xl dark:text-neutral-300">Donate</h1>
 
-          <div class="space-y-2 text-gray-800 dark:text-gray-200">
-            <p>
-              If you like my projects and/or what I do and you want to
-              contribute, make me happy, you can donate to me with the
-              information on this page! Thank you ♥
-            </p>
+        <p>
+          If you like my projects and/or what I do and you want to contribute,
+          make me happy, you can donate to me with the information on this page!
+          Thank you ♥
+        </p>
 
-            <p>
-              <small class="text-sm">P.S. Use the name "Abdulbaki Dursun" on your transactions.</small>
-            </p>
-          </div>
-        </div>
+        <p class="text-xs">
+          P.S. Use "<span class="underline">Abdulbaki Dursun</span>" as the name
+          of your transactions.
+        </p>
       </header>
 
       <section class="space-y-4">
-        <h2 class="text-lg text-gray-900 dark:text-gray-100">Support Me On</h2>
+        <h2 class="text-lg text-gray-400 uppercase dark:text-neutral-700">
+          Support Me On
+        </h2>
 
         <div class="grid gap-4">
-          <SmartLink :href="getSponsorLinks.patreon" class="w-max" blank>
-            <div
-              class="rounded cursor-pointer flex space-x-2 bg-[#FF424D] py-2 px-4 items-center hover:bg-opacity-95"
-            >
-              <SmartImage src="https://i.vgy.me/qxpY9T.png" class="rounded h-7 w-7" />
-              <span class="text-white">Become a Patron</span>
-            </div>
-          </SmartLink>
+          <Button variant="patreon" :href="getSponsorLinks.patreon" blank>
+            <template #icon>
+              <SmartImage
+                src="https://i.vgy.me/qxpY9T.png"
+                class="rounded h-7 w-7"
+              />
+            </template>
+
+            Become a Patron
+          </Button>
         </div>
       </section>
 
       <section class="space-y-4">
-        <h2 class="text-lg text-gray-900 dark:text-gray-100">My Accounts</h2>
+        <h2 class="text-lg text-gray-400 uppercase dark:text-neutral-700">
+          My Accounts
+        </h2>
 
         <div class="grid gap-4">
           <div
@@ -120,7 +123,9 @@ export default Vue.extend({
             :key="`account-${index}`"
             class="flex h-full items-center"
           >
-            <div class="rounded-tl rounded-bl bg-gray-200/75 dark:bg-neutral-800">
+            <div
+              class="rounded-tl rounded-bl bg-gray-200/75 dark:bg-neutral-800"
+            >
               <SmartImage :src="account.image" class="h-24 w-24" />
             </div>
 
@@ -128,18 +133,24 @@ export default Vue.extend({
               class="rounded-tr rounded-br flex h-full bg-gray-200/50 w-full pl-4 items-center dark:bg-neutral-800"
             >
               <div>
-                <h3 class="font-medium text-gray-900 dark:text-gray-100">{{ account.name }}</h3>
+                <h3
+                  class="font-medium text-lg text-gray-900 dark:text-neutral-300"
+                >
+                  {{ account.name }}
+                </h3>
 
                 <span
                   v-if="account.revealed == true"
-                  class="text-gray-800 dark:text-gray-200"
-                >{{ account.iban }}</span>
+                  class="text-gray-800 dark:text-neutral-500"
+                  >{{ account.iban }}</span
+                >
 
                 <span
                   v-else
-                  class="cursor-pointer text-gray-800 underline dark:text-gray-200"
+                  class="cursor-pointer text-gray-800 dark:text-neutral-500 hover:underline"
                   @click="account.revealed = true"
-                >Click to reveal</span>
+                  >Click to reveal</span
+                >
               </div>
             </div>
           </div>

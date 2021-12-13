@@ -38,7 +38,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="rounded-lg cursor-pointer flex space-x-2 py-2 px-4 transition-colors items-center select-none hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
+    class="rounded-lg cursor-pointer flex space-x-3 p-2 transition-colors items-center select-none hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
     <div class="rounded-md flex-shrink-0">
       <SmartImage
@@ -50,19 +50,24 @@ export default Vue.extend({
       />
     </div>
 
-    <div class="truncate">
-      <div class="flex space-x-1 items-center">
+    <div class="space-y-1 truncate">
+      <h3
+        class="font-semibold flex-shrink-0 leading-tight text-gray-700 truncate dark:text-neutral-300"
+      >
+        {{ title }}
+      </h3>
+
+      <div class="flex space-x-1 items-center dark:text-neutral-700">
         <IconStar
           v-if="getDateText.startsWith('Today')"
-          class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-gray-100"
+          class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-neutral-700"
         />
 
-        <span class="flex-shrink-0 text-sm text-gray-600 dark:text-gray-300">{{ getDateText }}</span>
+        <span
+          class="flex-shrink-0 text-sm text-gray-600 dark:text-neutral-700"
+          >{{ getDateText }}</span
+        >
       </div>
-
-      <h3
-        class="font-semibold flex-shrink-0 text-lg leading-tight text-gray-900 truncate dark:text-gray-100"
-      >{{ title }}</h3>
     </div>
   </div>
 </template>

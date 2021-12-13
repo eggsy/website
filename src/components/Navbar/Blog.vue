@@ -60,7 +60,10 @@ export default Vue.extend({
     <div
       class="container flex mx-auto space-x-4 text-gray-200 w-11/12 items-center justify-between sm:(px-0 w-9/12) md:w-7/12 "
     >
-      <SmartLink :href="{ name: getTargetRoute.name }" class="flex-shrink-0 h-10 w-10">
+      <SmartLink
+        :href="{ name: getTargetRoute.name }"
+        class="flex-shrink-0 h-10 w-10"
+      >
         <SmartImage
           src="/assets/icons/icon.svg"
           class="rounded-md bg-gray-100 ring-black transition-transform ring-2 ring-opacity-5 sm:transform hover:-rotate-6"
@@ -74,7 +77,8 @@ export default Vue.extend({
         <div
           class="rounded-lg flex space-x-2 bg-gray-100 text-gray-500 w-2/3 items-center md:w-full dark:bg-neutral-800"
           :class="{
-            'ring-2 ring-gray-300 dark:ring-neutral-700': inputFocused === true,
+            'ring-1 ring-offset-2 ring-offset-gray-50 ring-gray-300 dark:(ring-offset-neutral-900 ring-neutral-700)':
+              inputFocused === true,
           }"
         >
           <input

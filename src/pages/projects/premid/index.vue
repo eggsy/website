@@ -48,42 +48,38 @@ export default Vue.extend({
 
 <template>
   <div class="py-4">
-    <div class="space-y-6 sm:w-9/12">
-      <header class="space-y-4">
-        <div class="space-y-1">
-          <h1 class="font-semibold text-2xl text-gray-900 sm:text-3xl dark:text-gray-100">PreMiD</h1>
+    <div class="space-y-6 text-gray-500 sm:w-9/12 dark:text-neutral-700">
+      <header class="space-y-2 my-12">
+        <h1 class="text-gray-700 text-4xl dark:text-neutral-300">PreMiD</h1>
 
-          <div class="space-y-2">
-            <p class="text-gray-800 dark:text-gray-200">
-              Welcome to the landing page of my PreMiD tools! From here, you can
-              access the tools that I've created for PreMiD for free. If you
-              like my work, please consider following me on social media and
-              <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donate</SmartLink>
-              {{ "" }} if you liked my work.
-            </p>
-            <p class="text-gray-800 dark:text-gray-200">
-              PreMiD is a simple, configurable utility that allows you to show
-              what you're doing on the web in your Discord now playing status.
-            </p>
-          </div>
-        </div>
+        <p>
+          PreMiD is a simple, configurable utility that allows you to show what
+          you're doing on the web in your Discord now playing status.
+        </p>
       </header>
 
       <section class="grid gap-4 sm:grid-cols-2">
-        <SmartLink v-for="(page, index) in pages" :key="`page-${index}`" :href="page.url">
-          <CardProject :title="page.title" :description="page.description" />
-        </SmartLink>
+        <Card
+          v-for="(page, index) in pages"
+          :key="`page-${index}`"
+          :title="page.title"
+          :href="page.url"
+        >
+          {{ page.description }}
+        </Card>
       </section>
 
       <section class="space-y-4">
-        <SmartLink
-          href="https://premid.app/"
-          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 transition-colors text-gray-900 items-center justify-center sm:w-max dark:(bg-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-200 "
-          blank
-        >
-          <IconDev brand="premid" class="h-6 text-gray-800 w-6 dark:text-gray-200" />
-          <span>Visit PreMiD</span>
-        </SmartLink>
+        <Button href="https://premid.app" blank>
+          <template #icon>
+            <IconDev
+              brand="premid"
+              class="h-6 text-gray-700 w-6 dark:text-neutral-300"
+            />
+          </template>
+
+          Visit PreMiD
+        </Button>
       </section>
     </div>
   </div>

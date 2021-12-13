@@ -40,45 +40,48 @@ export default Vue.extend({
 
 <template>
   <div class="space-y-6 py-6">
-    <div class="space-y-4 sm:w-9/12">
-      <header class="space-y-2">
-        <h2 class="font-bold text-2xl text-gray-900 dark:text-gray-100">Unblock Please</h2>
+    <div class="space-y-4 text-gray-500 sm:w-9/12 dark:text-neutral-700">
+      <header class="space-y-2 my-12">
+        <h1 class="text-gray-700 text-4xl dark:text-neutral-300">
+          Unblock Please
+        </h1>
 
-        <p class="text-gray-800 dark:text-gray-200">
-          Free to use Chrome extension to unblock Imgur and Pastebin. Some
-          countries or ISPs block access to these services but these both
-          services are the leaders of their concepts. You are most likely to
-          face with an Imgur or Pastebin link but can't open it because it is
-          blocked. With Unblock Please, you can
-          <i>legally</i> access these two services easily!
+        <p>
+          Free to use Chrome extension to unblock Imgur and Pastebin bans by
+          ISPs, countries, etc.
         </p>
       </header>
 
-      <div class="grid gap-4 grid-cols-2 sm:grid-cols-3">
-        <CardProject image="https://i.vgy.me/OIMc81.png" />
+      <div class="flex gap-4">
+        <SmartImage
+          src="https://i.vgy.me/OIMc81.png"
+          class="rounded-md h-32 w-32"
+        />
 
-        <CardProject image="https://i.vgy.me/Lw6rn5.png" class="hidden sm:block" />
+        <SmartImage
+          src="https://i.vgy.me/X10Uid.png"
+          class="rounded-md h-32 w-32"
+        />
 
-        <CardProject image="https://i.vgy.me/X10Uid.png" />
+        <SmartImage
+          src="https://i.vgy.me/Lw6rn5.png"
+          class="rounded-md h-32 w-32 hidden sm:block"
+        />
       </div>
     </div>
 
     <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0) ">
-      <SmartLink :href="getLink.webstore" class="button" blank>
-        <IconInbox class="h-6 w-6" />
+      <Button :href="getLink.webstore" icon="IconInbox" blank>
         <span>Install to Chrome</span>
-      </SmartLink>
+      </Button>
 
-      <SmartLink :href="getLink.github" class="button" blank>
-        <IconBrand brand="github" class="h-6 w-6" />
+      <Button :href="getLink.github" blank>
+        <template #icon>
+          <IconBrand brand="github" class="h-6 w-6" />
+        </template>
+
         <span>Source Code</span>
-      </SmartLink>
+      </Button>
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.button {
-  @apply rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(bg-gray-800 hover:bg-neutral-700 ring-gray-700 text-gray-100) hover:bg-gray-200 ;
-}
-</style>

@@ -35,7 +35,7 @@ export default Vue.extend({
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-neutral-900">
     <!-- Colored top bar -->
-    <div class="bg-indigo-700 w-full py-1 dark:bg-neutral-700" />
+    <div class="bg-indigo-500 w-full py-1 dark:bg-neutral-700" />
 
     <!-- Navbar -->
     <transition name="fade" mode="out-in">
@@ -50,7 +50,7 @@ export default Vue.extend({
     <Footer />
 
     <!-- Colored bottom bar -->
-    <div class="bg-indigo-700 w-full py-1 dark:bg-neutral-700" />
+    <div class="bg-indigo-500 w-full py-1 dark:bg-neutral-700" />
 
     <!-- Go to top button -->
     <div class="flex space-x-2 mr-6 mb-4 right-0 bottom-0 z-50 fixed items-center sm:space-x-4">

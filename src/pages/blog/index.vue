@@ -16,7 +16,7 @@ export default Vue.extend({
         rest: [] as Post[],
       },
       categories: ["Discord", "Linux", "Eğitim", "Frontend", "Site"],
-      selectedCategory: "Discord"
+      selectedCategory: "Discord",
     }
   },
   async fetch() {
@@ -79,21 +79,24 @@ export default Vue.extend({
   },
   computed: {
     getCategoryResults() {
-      const { posts } = this;
+      const { posts } = this
 
-      const allPosts = posts.rest.concat(
-        posts.discord,
-        posts.linux,
+      const allPosts = posts.rest.concat(posts.discord, posts.linux)
+
+      const filtered = allPosts.filter((post: Post) =>
+        post?.tags?.includes(this.selectedCategory?.toLowerCase())
       )
 
-      const filtered = allPosts.filter((post: Post) => post?.tags?.includes(this.selectedCategory?.toLowerCase()))
-
-      return [...new Set(filtered.sort((a: Post, b: Post) => {
-        if (!a?.createdAt || !b?.createdAt) return 0;
-        else if (a.createdAt > b.createdAt) return -1
-        else if (a.createdAt < b.createdAt) return 1
-        else return 0
-      }))]
+      return [
+        ...new Set(
+          filtered.sort((a: Post, b: Post) => {
+            if (!a?.createdAt || !b?.createdAt) return 0
+            else if (a.createdAt > b.createdAt) return -1
+            else if (a.createdAt < b.createdAt) return 1
+            else return 0
+          })
+        ),
+      ]
     },
     /**
      * Checks if fetch state is pending or error.
@@ -187,7 +190,9 @@ export default Vue.extend({
 <template>
   <div class="pt-6">
     <div v-if="getFilteredPosts === false">
-      <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Son gönderiler</h3>
+      <h3 class="font-semibold text-lg text-gray-700 dark:text-neutral-300">
+        Son gönderiler
+      </h3>
 
       <div class="mt-2 grid gap-4 md:grid-cols-3">
         <template v-if="isFetchPending">
@@ -195,7 +200,11 @@ export default Vue.extend({
         </template>
 
         <template v-else>
-          <CardPost v-for="(post, index) in posts.latest" :key="`latest-${index}`" :post="post" />
+          <CardPost
+            v-for="(post, index) in posts.latest"
+            :key="`latest-${index}`"
+            :post="post"
+          />
         </template>
       </div>
 
@@ -206,10 +215,20 @@ export default Vue.extend({
             v-for="text in categories"
             :key="text"
             class="rounded-lg cursor-pointer py-1 px-6 transition-colors text-gray-600 select-none dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-neutral-800"
-            :class="selectedCategory === text && 'bg-gray-100 dark:bg-neutral-800'"
-            :title="selectedCategory === text ? `Tüm ${text} gönderilirini gör` : ''"
-            @click="selectedCategory !== text ? selectedCategory = text : $router.push({ query: { etiket: text.toLowerCase() } })"
-          >{{ text }}</div>
+            :class="
+              selectedCategory === text && 'bg-gray-100 dark:bg-neutral-800'
+            "
+            :title="
+              selectedCategory === text ? `Tüm ${text} gönderilirini gör` : ''
+            "
+            @click="
+              selectedCategory !== text
+                ? (selectedCategory = text)
+                : $router.push({ query: { etiket: text.toLowerCase() } })
+            "
+          >
+            {{ text }}
+          </div>
         </div>
 
         <div
@@ -225,7 +244,11 @@ export default Vue.extend({
       </div>
 
       <div class="mt-16">
-        <h3 class="font-semibold space-x-2 text-lg text-gray-900 dark:text-gray-100">Tüm gönderiler</h3>
+        <h3
+          class="font-semibold space-x-2 text-lg text-gray-900 dark:text-gray-100"
+        >
+          Tüm gönderiler
+        </h3>
 
         <div class="mt-4 grid gap-3 md:grid-cols-3">
           <template v-if="isFetchPending">
@@ -251,19 +274,28 @@ export default Vue.extend({
               'bg-gray-300 dark:bg-neutral-700': pagination + 1 === page,
             }"
             @click="pagination = page - 1"
-          >{{ page }}</div>
+          >
+            {{ page }}
+          </div>
         </div>
       </div>
     </div>
 
     <div v-else-if="typeof getFilteredPosts === 'object'">
-      <div v-if="isFetchPending === false && getFilteredPosts.length === 0" class="space-y-4">
+      <div
+        v-if="isFetchPending === false && getFilteredPosts.length === 0"
+        class="space-y-4"
+      >
         <h2
           class="font-semibold text-2xl text-gray-900 md:text-4xl dark:text-gray-100"
-        >Aramanıza uygun herhangi bir gönderi bulunamadı.</h2>
+        >
+          Aramanıza uygun herhangi bir gönderi bulunamadı.
+        </h2>
 
         <div class="md:w-4/6">
-          <h3 class="text-lg text-gray-900 dark:text-gray-100">Deneyebileceğiniz yöntemler:</h3>
+          <h3 class="text-lg text-gray-900 dark:text-gray-100">
+            Deneyebileceğiniz yöntemler:
+          </h3>
 
           <ul class="list-disc pl-4 text-gray-700 dark:text-gray-300">
             <li>Aramanızda anahtar kelimeler kullanmayı deneyin.</li>

@@ -40,26 +40,30 @@ export default Vue.extend({
 
 <template>
   <div class="space-y-6 py-6">
-    <div class="space-y-4 sm:w-9/12">
-      <header class="space-y-2">
-        <h2 class="font-bold text-2xl text-gray-900 dark:text-gray-100">is-inside.me</h2>
+    <div class="space-y-8 text-gray-500 sm:w-9/12 dark:text-neutral-700">
+      <header class="space-y-2 my-12">
+        <h1 class="text-gray-700 text-4xl dark:text-neutral-300">
+          is-inside.me
+        </h1>
 
-        <p class="text-gray-800 dark:text-gray-200">
-          Website that was created by me and Tresmos. It is a custom uploader
-          which everyone can signup for free and start uploading their images,
-          videos or files! You can set and start using is-inside.me with desktop
-          apps like
-          <SmartLink href="https://getsharex.com/" class="font-medium hover:underline" blank>ShareX</SmartLink>
-          {{ "" }} (Windows),
+        <p>
+          Website that was created by me and Tresmos. Free sign up file service.
+          Upload images, videos, files and more!
+          <SmartLink href="https://getsharex.com/" class="underline" blank
+            >ShareX</SmartLink
+          >
+          (Windows),
           <SmartLink
             href="https://github.com/ArsenArsen/KShare/"
-            class="font-medium hover:underline"
+            class="underline"
             blank
-          >KShare</SmartLink>
-          {{ "" }} (Linux),
-          <SmartLink href="https://magiccap.me/" class="font-medium hover:underline" blank>MagicCap</SmartLink>
-          {{ "" }} (Linux, Mac) or your favourite screen capturing tool that supports
-          custom uploaders!
+            >KShare</SmartLink
+          >
+          (Linux) and
+          <SmartLink href="https://magiccap.me/" class="underline" blank
+            >MagicCap</SmartLink
+          >
+          (Linux, Mac) compatible!
         </p>
       </header>
 
@@ -68,34 +72,26 @@ export default Vue.extend({
           src="https://i.vgy.me/iXYvCp.jpg"
           height="150"
           width="150"
-          class="rounded-md ring-2 ring-gray-200 dark:ring-gray-800"
+          class="rounded-md"
         />
 
         <SmartImage
           src="https://i.vgy.me/zEQpUG.jpg"
           height="150"
           width="150"
-          class="rounded-md ring-2 ring-gray-200 dark:ring-gray-800"
+          class="rounded-md"
         />
       </div>
 
       <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0) ">
-        <SmartLink :href="getLink.website" class="button" blank>
-          <IconLink class="h-6 w-6" />
-          <span>Visit Website</span>
-        </SmartLink>
+        <Button :href="getLink.website" icon="IconLink" blank>
+          Visit Website
+        </Button>
 
-        <SmartLink :href="getLink.faq" class="button" blank>
-          <IconQuestion class="h-6 w-6" />
-          <span>View FAQ</span>
-        </SmartLink>
+        <Button :href="getLink.website" icon="IconQuestion" blank>
+          View FAQ
+        </Button>
       </div>
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.button {
-  @apply rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center sm:w-max dark:(ring-neutral-700 bg-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-200 ;
-}
-</style>

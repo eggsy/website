@@ -18,7 +18,7 @@ export default Vue.extend({
     post: {
       type: Object as PropType<Post>,
       required: true,
-      default: () => { },
+      default: () => {},
     },
     type: {
       type: String,
@@ -68,14 +68,21 @@ export default Vue.extend({
     }"
     class="rounded-lg cursor-pointer space-y-2 transform transition-transform overflow-hidden sm:hover:-translate-y-1"
   >
-    <SmartImage :src="getPostMeta.image" class="rounded h-34 w-full filter dark:brightness-75" />
+    <SmartImage
+      :src="getPostMeta.image"
+      class="rounded h-34 w-full filter dark:brightness-75"
+    />
 
     <div class="flex flex-col space-y-1">
       <h2
-        class="font-bold text-lg leading-tight text-gray-700 truncate dark:text-gray-200 hover:underline "
-      >{{ getPostMeta.title }}</h2>
+        class="font-bold text-lg leading-tight text-gray-700 truncate dark:text-gray-200 hover:underline"
+      >
+        {{ getPostMeta.title }}
+      </h2>
 
-      <p class="text-gray-500 line-clamp-2 dark:text-gray-300">{{ getPostMeta.description }}</p>
+      <p class="text-neutral-500 line-clamp-2">
+        {{ getPostMeta.description }}
+      </p>
     </div>
   </SmartLink>
 
@@ -96,9 +103,13 @@ export default Vue.extend({
     <div class="flex flex-col overflow-x-hidden">
       <h2
         class="font-semibold text-lg text-gray-800 truncate dark:text-gray-200"
-      >{{ getPostMeta.title }}</h2>
+      >
+        {{ getPostMeta.title }}
+      </h2>
 
-      <p class="text-gray-700 line-clamp-2 dark:text-gray-300">{{ getPostMeta.description }}</p>
+      <p class="text-neutral-500 line-clamp-2">
+        {{ getPostMeta.description }}
+      </p>
     </div>
   </SmartLink>
 
@@ -111,7 +122,9 @@ export default Vue.extend({
     }"
     class="rounded-lg cursor-pointer flex flex-col p-3 transition-colors truncate hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
-    <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">{{ getPostMeta.title }}</h2>
+    <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">
+      {{ getPostMeta.title }}
+    </h2>
 
     <div class="flex space-x-1 items-center">
       <IconFire
