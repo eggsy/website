@@ -47,6 +47,7 @@ export default Vue.extend({
       'p-4': tight === false,
       'items-center justify-between flex space-x-2': $slots.icon,
     }"
+    v-bind="href ? $attrs : false"
   >
     <div class="line-clamp-2">
       <h2 class="font-semibold text-gray-700 truncate dark:text-neutral-100">
