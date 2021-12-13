@@ -5,7 +5,6 @@ export default Vue.extend({
   name: "SmartLink",
   props: {
     href: {
-      type: [String, Object, Boolean],
       required: true,
       default: "",
     },
