@@ -1,6 +1,6 @@
 <script lang="ts">
 import Vue from "vue"
-import { getPageBlocks, NotionRenderer } from "../../../../vue-notion"
+import { getPageBlocks, NotionRenderer } from "vue-notion"
 
 export default Vue.extend({
   components: {
