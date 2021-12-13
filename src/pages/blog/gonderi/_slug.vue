@@ -204,12 +204,13 @@ export default Vue.extend({
           class="mt-10"
         />
 
-        <div class="space-y-10 mt-10">
+        <div class="space-y-12 mt-10">
           <BlogPrevNext :current-slug="post.slug" />
 
+          <!-- Share -->
           <div>
             <h3
-              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
+              class="font-medium text-lg mb-1 text-gray-400 uppercase dark:text-neutral-700"
             >
               Yazıyı paylaş
             </h3>
@@ -217,9 +218,10 @@ export default Vue.extend({
             <BlogShare :title="post.title" :path="$route.path" />
           </div>
 
+          <!-- Tags -->
           <div v-if="getTags.length > 0">
             <h3
-              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
+              class="font-medium text-lg mb-1 text-gray-400 uppercase dark:text-neutral-700"
             >
               Etiketler
             </h3>
@@ -242,6 +244,7 @@ export default Vue.extend({
             </div>
           </div>
 
+          <!-- Related posts -->
           <div v-if="getRelatedPosts.length > 0">
             <h3
               class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
