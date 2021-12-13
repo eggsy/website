@@ -33,29 +33,29 @@ export default Vue.extend({
         {
           title: "PreMiD",
           description:
-            "PreMiD is a simple, configurable utility that allows you to show what you're doing on the web in your Discord now playing status.",
-          image: "https://i.vgy.me/rhHgcJ.jpg",
+            "Simple, configurable utility that allows you to show what you're doing on the web in your Discord now playing status.",
+          image: "https://i.imgur.com/FjH28LQ.png",
           to: "/projects/premid",
         },
         {
           title: "This Website",
           description:
-            "The website where you can learn more and more about me!",
-          image: "https://i.vgy.me/sAQScm.jpg",
+            "My personal website, blog, goals, daily songs and much more!",
+          image: "https://i.imgur.com/OcOBblH.png",
           to: "/",
         },
         {
           title: "Unblock Please",
           description:
             "Unblock Imgur and Pastebin access using secure proxies!",
-          image: "https://i.imgur.com/1NxPOjN.png",
+          image: "https://i.imgur.com/1LI4TKG.png",
           to: "/projects/unblock-please",
         },
         {
           title: "is-inside.me",
           description:
             "Free image and file uploading service for uploaders like ShareX!",
-          image: "https://i.imgur.com/68IChiq.png",
+          image: "https://i.imgur.com/1QBTTFx.png",
           to: "/projects/is-inside-me",
         },
       ] as Project[],
