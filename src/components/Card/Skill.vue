@@ -13,11 +13,9 @@ export default Vue.extend({
 </script>
 
 <template>
-  <Card>
+  <Card :title="title">
     <template #icon>
       <IconDev :brand="title" class="flex-shrink-0 h-7 w-7" />
     </template>
-
-    <span class="truncate">{{ title }}</span>
   </Card>
 </template>
