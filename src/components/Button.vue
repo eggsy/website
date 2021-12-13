@@ -49,7 +49,7 @@ export default Vue.extend({
   <SmartLink
     :href="href"
     :blank="blank"
-    class="rounded flex space-x-2 transition-colors btn items-center justify-center sm:w-max"
+    class="rounded cursor-pointer flex space-x-2 transition-colors btn items-center justify-center sm:w-max"
     :class="{
       // Variants
       'bg-[#FF424D] bg-opacity-100 text-white hover:(bg-[#FF424D] bg-opacity-50)':
