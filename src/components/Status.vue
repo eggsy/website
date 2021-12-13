@@ -128,7 +128,7 @@ export default Vue.extend({
     :class="$route.path === '/' && 'bg-gray-200 dark:bg-neutral-700'"
   />
 
-  <div v-else class="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300">
+  <div v-else class="rounded-md flex space-x-2 text-neutral-500 items-center">
     <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
 
     <div
@@ -141,6 +141,6 @@ export default Vue.extend({
 
 <style scoped>
 div >>> strong {
-  @apply font-bold text-gray-900 dark:text-gray-100;
+  @apply font-bold text-neutral-700 dark:text-neutral-200;
 }
 </style>
