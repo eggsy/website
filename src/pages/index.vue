@@ -202,7 +202,7 @@ export default Vue.extend({
             <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
           </div>
 
-          <p class="text-gray-800 dark:text-gray-200">
+          <p class="text-neutral-500">
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
             taught web developer. I build complex web apps using
             <SmartLink href="https://vuejs.org/" class="description-link" blank
