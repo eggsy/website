@@ -332,6 +332,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .description-link {
-  @apply border-gray-500 border-b-2 border-opacity-50 hover:border-opacity-75;
+  @apply border-neutral-500 border-b-2 border-opacity-50 hover:border-opacity-75;
 }
 </style>
