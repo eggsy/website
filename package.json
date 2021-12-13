@@ -2,7 +2,7 @@
   "name": "eggsy-website",
   "description": "EGGSY's personal website made in TypeScript, Nuxt.js and Windi/Tailwind CSS",
   "license": "MIT",
-  "version": "4.0.0",
+  "version": "4.5.0",
   "homepage": "https://eggsy.xyz",
   "readme": "https://github.com/eggsy/website#readme",
   "author": {
