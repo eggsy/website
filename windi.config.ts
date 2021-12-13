@@ -3,6 +3,7 @@ import defaultTheme from "windicss/defaultTheme"
 
 /* Plugins */
 import lineClamp from "windicss/plugin/line-clamp"
+import typography from "windicss/plugin/typography"
 
 export default defineConfig({
   darkMode: "class",
@@ -27,5 +28,10 @@ export default defineConfig({
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
     },
   },
-  plugins: [lineClamp],
+  plugins: [
+    lineClamp,
+    typography({
+      dark: true,
+    }),
+  ],
 })
