@@ -48,47 +48,45 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div>
+  <div
+    class="rounded-lg cursor-pointer h-full p-4 transition-colors text-gray-500 focusRing relative dark:text-neutral-500 hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
+    :class="{
+      'bg-gray-200/40 dark:bg-neutral-800/40': top,
+    }"
+  >
+    <div>
+      <h3 class="text-gray-800 truncate dark:text-neutral-400">
+        <span class="text-neutral-700">eggsy/</span>{{ name }}
+      </h3>
+
+      <p class="text-gray-500 line-clamp-2 dark:text-neutral-500">
+        {{ description }}
+      </p>
+    </div>
+
+    <div class="mt-4">
+      <div class="flex items-center justify-between">
+        <span>Stars:</span>
+        <span>{{ stars }}</span>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <span>Language:</span>
+        <IconDev :brand="getLanguageIcon" class="h-5 w-5" />
+      </div>
+
+      <div v-if="license" class="flex items-center justify-between">
+        <span>License:</span>
+        <span>{{ license }}</span>
+      </div>
+    </div>
+
     <div
-      class="rounded-lg cursor-pointer h-full p-4 transition-colors text-gray-500 relative dark:text-neutral-500 hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
-      :class="{
-        'bg-gray-200/40 dark:bg-neutral-800/40': top,
-      }"
+      v-if="top === true"
+      class="-top-3 -right-3 absolute"
+      title="Top repository"
     >
-      <div>
-        <h3 class="text-gray-800 truncate dark:text-neutral-400">
-          <span class="text-neutral-700">eggsy/</span>{{ name }}
-        </h3>
-
-        <p class="text-gray-500 line-clamp-2 dark:text-neutral-500">
-          {{ description }}
-        </p>
-      </div>
-
-      <div class="mt-4">
-        <div class="flex items-center justify-between">
-          <span>Stars:</span>
-          <span>{{ stars }}</span>
-        </div>
-
-        <div class="flex items-center justify-between">
-          <span>Language:</span>
-          <IconDev :brand="getLanguageIcon" class="h-5 w-5" />
-        </div>
-
-        <div v-if="license" class="flex items-center justify-between">
-          <span>License:</span>
-          <span>{{ license }}</span>
-        </div>
-      </div>
-
-      <div
-        v-if="top === true"
-        class="-top-3 -right-3 absolute"
-        title="Top repository"
-      >
-        <IconStar filled class="h-8 text-yellow-600 w-8" />
-      </div>
+      <IconStar filled class="h-8 text-yellow-600 w-8" />
     </div>
   </div>
 </template>

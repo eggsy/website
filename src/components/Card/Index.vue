@@ -35,7 +35,8 @@ export default Vue.extend({
   },
   data() {
     return {
-      classes: "rounded-md overflow-x-hidden transition-colors cursor-pointer",
+      classes:
+        "rounded-md focusRing overflow-x-hidden transition-colors cursor-pointer",
     }
   },
 })
