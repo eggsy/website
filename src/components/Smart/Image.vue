@@ -53,7 +53,6 @@ export default Vue.extend({
   computed: {
     /**
      * Optimizes images and returns optimized image URL.
-     * @returns {string}
      */
     getBackgroundUrl(): string {
       if (this.error === true || !this.src) return "/icon.png"
@@ -120,7 +119,7 @@ export default Vue.extend({
 
     <span
       v-if="caption"
-      class="flex text-sm right-0 -bottom-6 left-0 text-neutral-500 absolute justify-center"
+      class="mx-8 text-center inset-x-0 -bottom-8 text-neutral-400 truncate absolute"
     >
       {{ caption }}
     </span>
