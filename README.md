@@ -1,7 +1,7 @@
 ## 🔥 My Personal Website
 
 <p align="center">
-  <img src="/demo/featuring.jpg" />
+  <img src="/demo.jpg" />
 </p>
 
 <p align="center">
