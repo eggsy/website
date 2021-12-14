@@ -18,7 +18,7 @@ export default Vue.extend({
       default: null,
     },
     href: {
-      type: String,
+      type: [String, Object, Boolean],
       required: false,
       default: null,
     },
