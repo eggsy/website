@@ -16,7 +16,7 @@ const Content: IContentOptions = {
       [
         "remark-autolink-headings",
         {
-          behavior: "wrap",
+          behavior: "append",
         },
       ],
     ],

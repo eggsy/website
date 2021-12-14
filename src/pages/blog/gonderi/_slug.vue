@@ -284,7 +284,18 @@ export default Vue.extend({
   h1,
   h2,
   h3 {
-    @apply font-bold mb-2 text-gray-900 dark:text-gray-200 hover:underline;
+    @apply font-bold mb-2 transition-all text-gray-900 dark:text-gray-200;
+
+    &:hover {
+      a .icon.icon-link {
+        @apply text-neutral-500 hover:text-neutral-200;
+
+        &::before {
+          content: "#";
+          @apply text-lg pl-2 transition-colors;
+        }
+      }
+    }
   }
 
   h1 {
