@@ -95,7 +95,7 @@ Gezimizde gördüğümüz en güzel tarihi yerlerden birisi olan Kotor şehri, P
 
 Kotor'da da ücretsiz yürüyüş turuna katılmak istedik fakat tur görevlisine mesaj attığımda bizim gideceğimiz gün turun olmadığını belirtti. Tamamen doğaçlama bir şekilde gezmemiz gerekecekti. Nereleri gezebileceğimizi sorduğumda zaten gidecek olduğumuz Kotor Old Town yani Kotor Tarihi Şehrini gezmemiz gerektiğini söyledi. Burada tırmanması 30-45 dakika arası değişen San Giovanni kalesi bulunuyor. İlk olarak tarihi şehri biraz gezip hediyelik eşya aldıktan sonra yanlışlıkla bulduğumuz kale tırmanış merdivenlerini bulduk. Bizi başka bir yere götürdüğünü düşünerek tırmanmaya devam ederken merdivenlerin sonunun gelmediğini fark edince daha sonra tırmanmayı planladığımız kaleye tırmandığımızı fark ettik. Bu bir sorun değildi, tırmanmak eğlenceliydi ve her molada Kotor'un inanılmaz manzarasına hayran kalıyorduk.
 
-<smart-image src="https://i.imgur.com/jbNaefP.jpg" class="h-120" caption="Kendi çekimim Kotor manzarası"></smart-image>
+<smart-image src="https://i.imgur.com/jbNaefP.jpg" class="h-120" caption="Kalenin tepesinden Kotor manzarası"></smart-image>
 
 Kalenin en üstündeki manzara inanılmazdı. Bizim dışımızda da tırmanan ve tepede manzaranın tadını çıkaran birçok insan vardı. Onlar gibi biz de biraz soluklanmak için oturduk. Yol üstünde gördüğümüz tüm harabeleri, uçurumları ve duvarları inceleyerek geldik, bu yüzden biraz uzun sürdü tırmanması, ama her birimiz bu deneyimi çok beğendik.
 
