@@ -49,7 +49,7 @@ Teleferik çıkışından 10 dakikalık yürüme mesafesinde bulunan [BunkArt 1]
 
 Ertesi gün de şehir merkezinde bulunan, daha küçük versiyonu olan [BunkArt 2](https://g.page/Bunkart2)'yi ziyaret ettik. Diğerine göre çok daha küçük olsa da oldukça etkileyici odalara ve ayrıntılara sahip bir sığınaktı bu da. Bir sığınağa 500 Lek verdik fakat eğer ilk sığınağa girerken her iki sığınağa girmek için bilet alırsanız ikinci biletle beraber **toplamda 800 Lek** ödüyorsunuz, biz de böyle yaptık, üstelik ikinci bileti istediğiniz zaman kullanabiliyorsunuz, biz ertesi gün kullandık. Böylece 800 Lek'e her iki sığınağı da ziyaret etmiş olduk.
 
-### Şehir Merkezi
+### Tirana Şehir Merkezi
 
 Yılbaşı döneminde gittiğimiz için Tiran'a girer girmez karşımıza yılbaşı süsleri, sokak aydınlatmaları, çam ağaçları ve birçok ışık saçan binalarla karşılaştık. İskenderbey adı verilen meydana devasa bir yılbaşı ağacı dikilmiş, etrafına da lunapark kurulmuştu. Aynı zamanda burada kültür müzesinden, eski bir polis evine ve opera binasına kadar birçok tarihi yerler de bulunuyordu. Biz son günümüzde buraları da gezdik fakat yılbaşı ağacının altında ve lunaparkta geçirdiğimiz eğlenceli dakikalar pahabiçilemezdi.
 
@@ -65,7 +65,7 @@ Arnavutluk'ta yaptığımız gibi benim yine aklımda işlem ücreti kesmeyen bi
 
 Daha ilginç bir hikaye ise, Karadağ'ın Avrupa Birliği'nde olmamasına rağmen para birimi olarak Euro kullanmasıydı. Bu demek oluyor ki, bu ülke Euro basmıyor, Avrupa Birliği ile bir anlaşması bulunmaması rağmen böyle bir şey yapabiliyordu. Anlaşılan buna göz yumuluyordu fakat gezimizin amacı bunu sorgulamak olmadığı için bu bilgiyi kenara atıp devam ettik.
 
-### Şehir Merkezi
+### Podgorica Şehir Merkezi
 
 Karadağ, kesinlikle başkenti veya şehir merkezleri ile ünlü bir ülke değil. Tam aksine, köyleri, tarihi yerleri, doğal güzellikleri, dağları ve deniziyle meşhur. Coğrafi konum olarak Adriyatik Denizi'ne kıyısı olan bu ülkede Podgorica gibi bir yerde kalmak her ne kadar mantıklı olmasa da biz doğaçlama ilerlediğimiz için böyle bir karar almıştık.
 
