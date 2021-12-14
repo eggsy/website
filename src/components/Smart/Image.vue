@@ -119,7 +119,7 @@ export default Vue.extend({
 
     <span
       v-if="caption"
-      class="mx-8 text-center inset-x-0 -bottom-8 text-neutral-400 truncate absolute"
+      class="mx-8 text-center text-sm inset-x-0 -bottom-7 text-neutral-400 truncate absolute"
     >
       {{ caption }}
     </span>
