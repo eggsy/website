@@ -16,12 +16,12 @@ interface Status {
 export default Vue.extend({
   props: {
     rating: {
-      type: String,
+      type: [String, Number],
       required: true,
       default: "0",
     },
     max: {
-      type: String,
+      type: [String, Number],
       required: false,
       default: "10",
     },
@@ -36,12 +36,12 @@ export default Vue.extend({
       default: null,
     },
     status: {
-      type: String,
+      type: [String, Number],
       required: false,
       default: "0",
     },
     seasons: {
-      type: String,
+      type: [String, Number],
       required: false,
       default: null,
     },
@@ -164,7 +164,9 @@ export default Vue.extend({
           placement: 'top',
         }"
         class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-neutral-800) focus:outline-none "
-      >{{ seasons }} S</div>
+      >
+        {{ seasons }} S
+      </div>
 
       <div
         v-tippy="{
@@ -172,10 +174,15 @@ export default Vue.extend({
           placement: 'top',
         }"
         class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-neutral-800 text-gray-200) focus:outline-none "
-      >{{ rating }} P</div>
+      >
+        {{ rating }} P
+      </div>
     </div>
 
-    <div class="text-gray-900 truncate dark:text-gray-100" :class="{ new: isnew }">
+    <div
+      class="text-gray-900 truncate dark:text-gray-100"
+      :class="{ new: isnew }"
+    >
       <slot></slot>
     </div>
   </div>
@@ -183,10 +190,10 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 a {
-  @apply border-b border-gray-300 dark:(border-gray-700 hover:border-gray-100) hover:border-gray-900 ;
+  @apply border-b border-gray-300 transition-colors dark:(border-gray-700 hover:border-gray-100) hover:border-gray-900 ;
 }
 
 .new a {
-  @apply border-blue-300 border-b-2 hover:border-blue-900;
+  @apply border-blue-500 border-b-2  hover:border-blue-800;
 }
 </style>
