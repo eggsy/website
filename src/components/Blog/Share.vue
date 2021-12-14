@@ -128,7 +128,7 @@ export default Vue.extend({
         readonly
         :value="`https://eggsy.xyz${path}`"
         class="rounded-md w-full p-3 transition-colors sm:py-3 sm:px-4 dark:(hover:bg-neutral-800 bg-neutral-900 text-gray-100) focus:outline-none "
-        @click.native="share('url')"
+        @click="share('url')"
       />
 
       <transition name="fade">
