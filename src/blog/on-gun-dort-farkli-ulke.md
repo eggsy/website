@@ -187,7 +187,7 @@ Burayı görmenin yanı sıra burada bulunan birçok Amerikan turist ile de diya
 
 Tekne turunun devamında ise [Ostrovo](https://goo.gl/maps/pwR5xQRG52dEjrMw7) adı verilen bir restoranın bulunduğu kısımda durduk. Burada teknemiz 2 saatlik mola verdi. İsteyenler muhteşem göl manzarasına karşı yemek yiyebilir, bir şeyler içebilir veya buradaki alanı gezebilirdi.
 
-<smart-image src="https://i.imgur.com/lLoZxtE.jpg" class="h-90"></smart-image>
+<smart-image src="https://i.imgur.com/lLoZxtE.jpg" class="h-90" caption="Ostrovo restoran girişi"></smart-image>
 
 Yemekleri garip bir şekilde şehir merkezinden ucuz olan bu restoran, aynı zamanda çok da lezzetli bir mutfağa sahipti. Burada bir şeyler atıştırdıktan sonra restoranın yukarısında bulunan [St. Naum Manasatırına](https://goo.gl/maps/w7GVTkcYGuzVyYuh8) tırmandık. Burada tavuş kuşları ve ilk defa gördüğüm beyaz tavuş kuşları bile vardı.
 
