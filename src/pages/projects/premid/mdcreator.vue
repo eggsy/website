@@ -374,13 +374,42 @@ export default Vue.extend({
       if (!input) return
 
       this.importLoading = true
-      const api = `https://api.premid.app/v2/presences/${encodeURI(input)}`
 
       try {
-        const data: Premid = (await this.$axios.get(api)).data
-        if (data.error !== undefined || !data.metadata) return
+        const { data } = await this.$axios.post(`https://api.premid.app/v3/`, {
+          query: `
+              query {
+                presences(service: "${encodeURI(input)}", limit: 1) {
+                  metadata {
+                    service,
+                    author {id, name},
+                    version,
+                    settings {id},
+                    category,
+                    logo,
+                    thumbnail,
+                    color,
+                    tags,
+                    contributors {id, name},
+                    altnames,
+                    description,
+                    regExp,
+                    url,
+                    iframeRegExp,
+                    readLogs,
+                    warning,
+                  }
+                }
+              }
+            `,
+        })
 
-        const metadata = data?.metadata
+        const metadata = data?.data?.presences[0]?.metadata
+
+        if (!metadata) {
+          this.importLoading = false
+          return
+        }
 
         this.service.name = metadata.service
         this.service.author = metadata.author
