@@ -21,7 +21,7 @@ It is my website that I use daily, so I had to include everything that I needed.
 Website features many custom built systems, integrations and pages!
 
 - ✅ Sections for a freelancer!
-  - Projects, experiences, skills, GitHub repositories, and social media accounts.
+  - Projects, goals, experiences, skills, GitHub repositories, and contact page.
 - ✅ Static blog!
   - Completely static, no API needed, Nuxt.js Content blog ready to go!
 - ✅ Firebase integration!
@@ -34,10 +34,9 @@ Website features many custom built systems, integrations and pages!
   - No CSS used! The website is done without touching CSS (except some transitions and directives)
 - ✅ Written in TypeScript, so you know what you're doing!
   - Intellisense, module prop auto-completion and all that juicy TS craziness!
-- ✅ Uses Vite (`nuxt-vite`)!
-  - So you don't have to worry about your CPU, build time or HMR even if we have TypeScript and lots of stuff in this project! It's just fast!
-- ✅ Over 15+ custom components!
+- ✅ Over 20+ custom components!
   - Smart components.
+  - Beautiful Cards and Skeleton Loaders.
   - Custom props, styles, and classes!
 
 ### 🔧 Getting Started
@@ -80,6 +79,8 @@ That's all you have to do if you're not going to need Firebase integration! Don'
 
 ### ❓ What has changed?
 
+> In (package.json) version 4.5.0, I changed almost every dark colors and reworked on the whole project fixing some type issues, typos in blog posts, design and structure of the files. I created separate pages for Repositories, Contact and Goals.
+
 > In (package.json) version 4.0.0, I've worked on each page and component to make them compatible with [Vite](https://vitejs.dev/), which is an upcoming and blazing fast tool for Nuxt! You'll feel the difference!
 
 > In (package.json) version 3.0.0, I moved and rewrote everything in TypeScript. Now it's using TypeScript for more powerful stuff!
@@ -89,22 +90,6 @@ That's all you have to do if you're not going to need Firebase integration! Don'
 If you are wondering what has changed and what are the differences from the old version; I can only say: "EVERYTHING!"
 
 You can take a look at [old.eggsy.xyz](https://old.eggsy.xyz) and compare it yourself 😂 You can already say UI is a lot nicer and there are some additional pages in this new one! But I also had to remove some features, including my whole API for "Overlay Creator" (it's still available under the `old.eggsy.xyz` domain but you won't be able to access it anymore from the main domain).
-
-<p align="center">
-  <img src="/demo/old-vs-new1.jpg" />
-</p>
-
-<p align="center">
-  <img src="/demo/old-vs-new2.jpg" />
-</p>
-
-<p align="center">
-  <img src="/demo/old-vs-new3.jpg" />
-</p>
-
-<p align="center">
-  <img src="/demo/old-vs-new4.jpg" title="No page lol" />
-</p>
 
 ### 🙏 Thanks
 
