@@ -379,10 +379,10 @@ export default Vue.extend({
       this.importLoading = true
 
       try {
-        const { data } = await this.$axios.post(`https://api.premid.app/v3/`, {
+        const { data } = (await this.$axios.post(`https://api.premid.app/v3/`, {
           query: `
               query {
-                presences(service: "${encodeURI(input)}", limit: 1) {
+                presences(service: "${input}", limit: 1) {
                   metadata {
                     service,
                     author {id, name},
@@ -399,13 +399,16 @@ export default Vue.extend({
                     regExp,
                     url,
                     iframeRegExp,
+                    iframe,
                     readLogs,
                     warning,
                   }
                 }
               }
             `,
-        })
+        })) as {
+          data: { data: { presences: { metadata: PresenceMetadata }[] } }
+        }
 
         const metadata = data?.data?.presences[0]?.metadata
 
@@ -413,6 +416,8 @@ export default Vue.extend({
           this.importLoading = false
           return
         }
+
+        this.resetService()
 
         this.service.name = metadata.service
         this.service.author = metadata.author
@@ -439,6 +444,7 @@ export default Vue.extend({
         this.service.regexp.url = metadata.regExp || null
         this.service.regexp.iframe = metadata.iFrameRegExp || null
 
+        this.service.iframe = metadata.iframe || false
         this.service.readLogs = metadata.readLogs || false
         this.service.warning = metadata.warning || false
 
@@ -470,6 +476,28 @@ export default Vue.extend({
         })
 
       return inLocaleDataFormat
+    },
+    /**
+     * Resets all values in the service object.
+     */
+    resetService() {
+      this.service = this.initialService
+
+      // I have to manually reset these for some reason
+      this.service.url.list = []
+      this.service.tags.list = []
+      this.service.description.list = []
+      this.service.contributors.list = []
+      this.service.altnames.list = []
+
+      this.service.category.selected = "Select a category"
+
+      this.service.regexp.iframe = null
+      this.service.regexp.url = null
+
+      this.service.iframe = false
+      this.service.warning = false
+      this.service.readLogs = false
     },
   },
 })
@@ -962,11 +990,7 @@ export default Vue.extend({
 
             <div
               class="flex space-x-2 items-center justify-center control-button"
-              @click="
-                {
-                  service = initialService
-                }
-              "
+              @click="resetService"
             >
               <IconX class="h-5 w-5 no-style" />
               <span>Clear</span>
