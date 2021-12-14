@@ -79,6 +79,7 @@ export default Vue.extend({
     const service = Object.assign({}, initialService)
 
     return {
+      lastSchemaUrl: "https://schemas.premid.app/metadata/1.5",
       additionalSettings: false,
       importLoading: false,
       resultWindow: false,
@@ -166,7 +167,7 @@ export default Vue.extend({
 
       if (errors.length === 0) {
         object = {
-          $schema: "https://schemas.premid.app/metadata/1.3",
+          $schema: this.lastSchemaUrl,
           service: service.name,
           author: service.author,
           category: service.category.selected.toLowerCase(),
@@ -220,6 +221,21 @@ export default Vue.extend({
         "json"
       )
     },
+  },
+  fetchOnServer: false,
+  async fetch() {
+    // Fetch latest schema version and update the lastSchemaUrl
+    const versions: { name: string }[] = (
+      await this.$axios.get(
+        "https://api.github.com/repos/PreMiD/Schemas/contents/schemas/metadata"
+      )
+    ).data
+
+    const filteredVersions = versions
+      .filter((c) => c.name?.endsWith(".json"))
+      .map((c) => c.name?.replace(".json", ""))
+
+    this.lastSchemaUrl = `https://schemas.premid.app/metadata/${filteredVersions?.pop()}`
   },
   methods: {
     /**
@@ -373,8 +389,8 @@ export default Vue.extend({
         this.service.settings = metadata.settings || []
         this.service.category.selected = metadata.category
           ? `${metadata.category?.[0]?.toUpperCase()}${metadata.category
-            ?.slice(1)
-            ?.toLowerCase()}`
+              ?.slice(1)
+              ?.toLowerCase()}`
           : "Select a category"
 
         this.service.logo = metadata.logo || ""
@@ -452,7 +468,11 @@ export default Vue.extend({
               placeholder="Your Discord username, without the #tag"
             />
 
-            <input v-model="service.author.id" class="input" placeholder="Your Discord ID" />
+            <input
+              v-model="service.author.id"
+              class="input"
+              placeholder="Your Discord ID"
+            />
           </div>
         </div>
 
@@ -461,16 +481,24 @@ export default Vue.extend({
           <h2 class="font-medium text-lg">Service Information</h2>
 
           <div class="mt-1 grid gap-3 sm:grid-cols-2">
-            <input v-model="service.name" class="input" placeholder="Name of the service" />
+            <input
+              v-model="service.name"
+              class="input"
+              placeholder="Name of the service"
+            />
 
             <select v-model="service.category.selected" class="input">
-              <option value="Select a category" selected disabled>Select a category</option>
+              <option value="Select a category" selected disabled>
+                Select a category
+              </option>
 
               <option
                 v-for="(option, index) in service.category.options"
                 :key="`category-option-${index}`"
                 :value="option"
-              >{{ option }}</option>
+              >
+                {{ option }}
+              </option>
             </select>
 
             <input
@@ -505,7 +533,11 @@ export default Vue.extend({
               />
             </div>
 
-            <input v-model="service.version" class="input" placeholder="Service version" />
+            <input
+              v-model="service.version"
+              class="input"
+              placeholder="Service version"
+            />
           </div>
 
           <div class="mt-3 grid gap-3 sm:grid-cols-3">
@@ -536,13 +568,18 @@ export default Vue.extend({
                   >
                     <span class="flex-grow truncate">{{ url }}</span>
 
-                    <IconX title="Click to remove this URL" @click.native="removeItem(url, 'url')" />
+                    <IconX
+                      title="Click to remove this URL"
+                      @click.native="removeItem(url, 'url')"
+                    />
                   </div>
 
                   <div
                     v-if="service.url.list.length === 0"
                     class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                  >Enter URL and hit enter</div>
+                  >
+                    Enter URL and hit enter
+                  </div>
                 </div>
               </div>
             </div>
@@ -574,19 +611,26 @@ export default Vue.extend({
                   >
                     <span class="flex-grow truncate">{{ tag }}</span>
 
-                    <IconX title="Click to remove this tag" @click.native="removeItem(tag, 'tag')" />
+                    <IconX
+                      title="Click to remove this tag"
+                      @click.native="removeItem(tag, 'tag')"
+                    />
                   </div>
 
                   <div
                     v-if="service.tags.list.length === 0"
                     class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                  >Enter tag name and hit enter</div>
+                  >
+                    Enter tag name and hit enter
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- Descriptions -->
-            <div class="rounded-md bg-gray-100 h-56 ring overflow-y-hidden dark:bg-neutral-800">
+            <div
+              class="rounded-md bg-gray-100 h-56 ring overflow-y-hidden dark:bg-neutral-800"
+            >
               <div class="h-full space-y-2">
                 <div class="h-1/3">
                   <input
@@ -622,7 +666,9 @@ export default Vue.extend({
                       <div class="flex-grow overflow-x-hidden">
                         <span class="truncate">{{ description.langCode }}</span>
 
-                        <p class="text-xs line-clamp-2">{{ description.content }}</p>
+                        <p class="text-xs line-clamp-2">
+                          {{ description.content }}
+                        </p>
                       </div>
 
                       <IconX
@@ -635,7 +681,9 @@ export default Vue.extend({
                     <div
                       v-if="service.description.list.length === 0"
                       class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                    >Fill the inputs and hit enter</div>
+                    >
+                      Fill the inputs and hit enter
+                    </div>
                   </div>
                 </div>
               </div>
@@ -651,7 +699,8 @@ export default Vue.extend({
               <span
                 class="cursor-pointer font-normal text-sm hover:underline"
                 @click="additionalSettings = !additionalSettings"
-              >{{ additionalSettings ? "hide" : "show" }}</span>
+                >{{ additionalSettings ? "hide" : "show" }}</span
+              >
             </h2>
 
             <p>
@@ -664,9 +713,17 @@ export default Vue.extend({
           <transition name="fade" mode="out-in">
             <div v-if="additionalSettings === true" class="space-y-4 mt-4">
               <div class="grid gap-3 sm:grid-cols-2">
-                <input v-model="service.regexp.url" class="input" placeholder="URL regex" />
+                <input
+                  v-model="service.regexp.url"
+                  class="input"
+                  placeholder="URL regex"
+                />
 
-                <input v-model="service.regexp.iframe" class="input" placeholder="Iframe regex" />
+                <input
+                  v-model="service.regexp.iframe"
+                  class="input"
+                  placeholder="Iframe regex"
+                />
               </div>
 
               <div class="grid gap-x-3 gap-y-2 sm:grid-cols-3">
@@ -680,7 +737,9 @@ export default Vue.extend({
                     service.iframe === true ? 'bg-green-500' : 'bg-red-600'
                   "
                   @click="service.iframe = !service.iframe"
-                >{{ service.iframe ? "Disable" : "Enable" }} Iframe Support</button>
+                >
+                  {{ service.iframe ? "Disable" : "Enable" }} Iframe Support
+                </button>
 
                 <button
                   v-tippy="{
@@ -693,7 +752,9 @@ export default Vue.extend({
                     service.warning === true ? 'bg-green-500' : 'bg-red-600'
                   "
                   @click="service.warning = !service.warning"
-                >{{ service.warning ? "Disable" : "Enable" }} Warning Icon</button>
+                >
+                  {{ service.warning ? "Disable" : "Enable" }} Warning Icon
+                </button>
 
                 <button
                   v-tippy="{
@@ -706,7 +767,9 @@ export default Vue.extend({
                     service.readLogs === true ? 'bg-green-500' : 'bg-red-600'
                   "
                   @click="service.readLogs = !service.readLogs"
-                >{{ service.readLogs ? "Disable" : "Enable" }} Read Logs</button>
+                >
+                  {{ service.readLogs ? "Disable" : "Enable" }} Read Logs
+                </button>
               </div>
 
               <div class="rounded-md ring grid sm:grid-cols-2">
@@ -757,13 +820,17 @@ export default Vue.extend({
                     <div
                       v-if="service.contributors.list.length === 0"
                       class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                    >Fill the inputs and hit enter</div>
+                    >
+                      Fill the inputs and hit enter
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div class="rounded-md ring grid sm:grid-cols-2">
-                <div class="rounded-tl-md rounded-bl-md bg-gray-100 dark:bg-neutral-800">
+                <div
+                  class="rounded-tl-md rounded-bl-md bg-gray-100 dark:bg-neutral-800"
+                >
                   <input
                     v-model="service.altnames.input"
                     class="rounded-none rounded-tl-md rounded-bl-md w-full ring-0 input"
@@ -798,7 +865,9 @@ export default Vue.extend({
                     <div
                       v-if="service.altnames.list.length === 0"
                       class="text-sm text-center text-gray-500 select-none dark:text-gray-400"
-                    >Enter a name and hit enter</div>
+                    >
+                      Enter a name and hit enter
+                    </div>
                   </div>
                 </div>
               </div>
@@ -821,14 +890,20 @@ export default Vue.extend({
                 <p>
                   🎉 If you liked my work, please consider donating to see more
                   tools like this. Visit
-                  <SmartLink :href="{ name: 'donate' }" class="font-medium underline">donation</SmartLink>
+                  <SmartLink
+                    :href="{ name: 'donate' }"
+                    class="font-medium underline"
+                    >donation</SmartLink
+                  >
                   {{ "" }} page for more information.
                 </p>
               </div>
             </div>
           </transition>
 
-          <div class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4) ">
+          <div
+            class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4) "
+          >
             <div
               class="flex space-x-2 items-center justify-center control-button"
               @click="resultWindow = true"
@@ -882,7 +957,9 @@ export default Vue.extend({
       >
         <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
           <div class="space-y-1">
-            <div class="flex space-x-2 text-gray-900 items-center dark:text-gray-100">
+            <div
+              class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
+            >
               <IconCog class="h-5 w-5 no-style" />
               <h2 class="font-semibold text-lg">Metadata Result</h2>
             </div>
@@ -895,15 +972,16 @@ export default Vue.extend({
           </div>
 
           <div class="space-y-1">
-            <div class="flex space-x-2 text-gray-900 items-center dark:text-gray-100">
+            <div
+              class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
+            >
               <IconExclamation class="h-5 w-5 no-style" />
               <h2 class="font-semibold text-lg">Errors</h2>
             </div>
 
-            <BlogNotification
-              v-if="getMetadata.error === false"
-              type="success"
-            >No issues/errors found. You're good to go!</BlogNotification>
+            <BlogNotification v-if="getMetadata.error === false" type="success"
+              >No issues/errors found. You're good to go!</BlogNotification
+            >
 
             <div v-else class="grid gap-1 sm:grid-cols-2">
               <BlogNotification
@@ -911,13 +989,16 @@ export default Vue.extend({
                 :key="`error-${index}`"
                 :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
                 type="danger"
-              >{{ error }}</BlogNotification>
+                >{{ error }}</BlogNotification
+              >
             </div>
           </div>
 
           <div class="space-y-1">
             <div class="flex items-center justify-between">
-              <div class="flex space-x-2 text-gray-900 items-center dark:text-gray-100">
+              <div
+                class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
+              >
                 <IconFire class="h-5 w-5 no-style" />
                 <h2 class="font-semibold text-lg">Your Metadata File</h2>
               </div>
