@@ -191,7 +191,13 @@ export default Vue.extend({
               />
             </div>
 
-            <nuxt-content :document="post" />
+            <div
+              class="text-left -mr-14 top-4 sticky hidden float-right md:block"
+            >
+              <BlogReadingIndicator selector=".nuxt-content" />
+            </div>
+
+            <NuxtContent :document="post" />
           </div>
         </article>
 
@@ -209,22 +215,14 @@ export default Vue.extend({
 
           <!-- Share -->
           <div>
-            <h3
-              class="font-medium text-lg mb-1 text-gray-400 uppercase dark:text-neutral-700"
-            >
-              Yazıyı paylaş
-            </h3>
+            <Title>Yazıyı paylaş</Title>
 
             <BlogShare :title="post.title" :path="$route.path" />
           </div>
 
           <!-- Tags -->
           <div v-if="getTags.length > 0">
-            <h3
-              class="font-medium text-lg mb-1 text-gray-400 uppercase dark:text-neutral-700"
-            >
-              Etiketler
-            </h3>
+            <Title>Etiketler</Title>
 
             <div class="flex flex-wrap space-x-2">
               <Button
@@ -246,11 +244,7 @@ export default Vue.extend({
 
           <!-- Related posts -->
           <div v-if="getRelatedPosts.length > 0">
-            <h3
-              class="font-medium text-lg mb-1 text-gray-900 dark:text-gray-100"
-            >
-              Bunlar da hoşunuza gidebilir
-            </h3>
+            <Title>Bunlar da hoşunuza gidebilir</Title>
 
             <div class="grid gap-2 sm:grid-cols-3">
               <Card
