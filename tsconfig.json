@@ -3,11 +3,7 @@
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": [
-      "ESNext",
-      "ESNext.AsyncIterable",
-      "DOM"
-    ],
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
@@ -15,12 +11,8 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./src/*"
-      ]
+      "~/*": ["./*"],
+      "@/*": ["./src/*"]
     },
     "types": [
       "@types/node",
@@ -30,16 +22,13 @@
       "@nuxtjs/firebase",
       "@nuxtjs/axios",
       "@nuxtjs/moment",
+      "nuxt-windicss",
       "@nuxtjs/color-mode",
       "@nuxt/image",
       /* Additional types */
-      "@types/prismjs",
+      "@types/prismjs"
     ],
-    "typeRoots": [
-      "./@types"
-    ]
+    "typeRoots": ["./@types"]
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
