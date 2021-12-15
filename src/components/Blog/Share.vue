@@ -6,7 +6,7 @@ export default Vue.extend({
     type: {
       type: String,
       required: false,
-      default: "normal",
+      default: "horizontal",
     },
     title: {
       type: String,
@@ -82,7 +82,12 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div v-if="type === 'vertical'" class="grid gap-2 grid-cols-1">
+  <div
+    class="flex flex-wrap gap-2"
+    :class="{
+      'flex-col': type === 'vertical',
+    }"
+  >
     <Button rounded @click.native="share('twitter')">
       <IconBrand brand="twitter" class="text-[#1DA1F2]" />
     </Button>
@@ -99,47 +104,13 @@ export default Vue.extend({
       <IconCheck v-if="copied === true" class="text-green-500" />
       <IconLink v-else class="text-gray-800 dark:text-gray-200" />
     </Button>
-  </div>
 
-  <div v-else class="grid gap-4 grid-cols-1 sm:grid-cols-3">
-    <div class="flex space-x-2 items-center">
-      <Button rounded @click.native="share('twitter')">
-        <IconBrand brand="twitter" class="text-[#1DA1F2]" />
-      </Button>
-
-      <Button rounded @click.native="share('telegram')">
-        <IconBrand brand="telegram" class="text-[#2EAADE]" />
-      </Button>
-
-      <Button rounded @click.native="share('whatsapp')">
-        <IconBrand brand="whatsapp" class="text-[#25D366]" />
-      </Button>
-    </div>
-
-    <div
-      v-tippy="{
-        content: 'Kopyalandı!',
-        trigger: 'click',
-      }"
-      class="flex space-x-2 relative items-center sm:col-span-2"
-    >
-      <input
-        ref="share-url"
-        readonly
-        :value="`https://eggsy.xyz${path}`"
-        class="rounded-md w-full p-3 transition-colors sm:py-3 sm:px-4 dark:(hover:bg-neutral-800 bg-neutral-900 text-gray-100) focus:outline-none "
-        @click="share('url')"
-      />
-
-      <transition name="fade">
-        <div
-          v-if="copied === true"
-          class="rounded-full bg-green-500 p-1 right-2 absolute"
-        >
-          <IconCheck class="h-5 text-gray-100 w-5" />
-        </div>
-      </transition>
-    </div>
+    <input
+      ref="share-url"
+      readonly
+      :value="`https://eggsy.xyz${path}`"
+      class="hidden"
+    />
   </div>
 </template>
 
