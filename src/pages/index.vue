@@ -244,11 +244,7 @@ export default Vue.extend({
     </section>
 
     <section id="projects">
-      <h2
-        class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
-      >
-        Projects I currently work on
-      </h2>
+      <Title>Projects I currently work on</Title>
 
       <div class="mt-4 grid gap-2 md:(gap-4 grid-cols-2) ">
         <Card
@@ -274,11 +270,7 @@ export default Vue.extend({
       class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2) "
     >
       <div>
-        <h3
-          class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
-        >
-          Experience
-        </h3>
+        <Title>Experience</Title>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
@@ -293,11 +285,7 @@ export default Vue.extend({
       </div>
 
       <div>
-        <h3
-          class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
-        >
-          Education
-        </h3>
+        <Title>Education</Title>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
@@ -313,11 +301,7 @@ export default Vue.extend({
     </section>
 
     <section id="technologies" class="mt-6">
-      <h3
-        class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
-      >
-        Technologies I use
-      </h3>
+      <Title>Technologies I use</Title>
 
       <div class="mt-4 grid gap-2 sm:grid-cols-3 md:grid-cols-4">
         <CardSkill

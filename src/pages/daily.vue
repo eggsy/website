@@ -179,11 +179,7 @@ export default Vue.extend({
     </div>
 
     <div class="space-y-4">
-      <h3
-        class="font-bold text-xl text-gray-400 uppercase dark:text-neutral-700"
-      >
-        Older Songs
-      </h3>
+      <Title>Older Songs</Title>
 
       <div class="grid gap-2 sm:grid-cols-2 md:grid-cols-3">
         <template v-if="$fetchState.pending === true">
