@@ -1,19 +1,5 @@
 <script lang="ts">
 import Vue from "vue"
-import Goals from "./goals.vue"
-
-export default Vue.extend({
-  name: "Repositories",
-  extends: Goals,
-  data() {
-    return {
-      repositories: [],
-    }
-  },
-})
-</script>
-<script lang="ts">
-import Vue from "vue"
 
 // Import type
 import type { Repository } from "~/src/types/Response/GitHub"
@@ -82,7 +68,6 @@ export default Vue.extend({
           v-for="(repo, index) in repos"
           :key="`repo-${index}`"
           :href="repo.html_url"
-          title="Click here to visit this repository"
           blank
         >
           <CardRepository
