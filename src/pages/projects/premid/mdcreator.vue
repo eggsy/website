@@ -78,7 +78,7 @@ export default Vue.extend({
     const service = Object.assign({}, initialService)
 
     return {
-      lastSchemaUrl: "https://schemas.premid.app/metadata/1.5",
+      lastSchemaUrl: "https://schemas.premid.app/metadata/1.6",
       additionalSettings: false,
       importLoading: false,
       resultWindow: false,
