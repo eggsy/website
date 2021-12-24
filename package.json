@@ -77,5 +77,6 @@
     "nuxt-windicss": "^2.2.1",
     "prettier": "^2.5.1",
     "sass-loader": "10.1.1"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }

@@ -91,3 +91,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Others
+.yarn
