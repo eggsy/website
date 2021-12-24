@@ -26,28 +26,19 @@ export default Vue.extend({
   },
   fetchOnServer: false,
   async fetch() {
-    /*
-    TODO Replace here with this
-
     const blocks = await getPageBlocks("Goals-a1f6bdceb42040ae87c4b5dfbf49ec6e")
     this.blockMap = blocks
-    */
-
-    this.blockMap = "123"
   },
   computed: {
     /**
      * Returns last edited time.
      */
     getLastEditedTime(): string {
-      if (this.blockMap === "123") return "false"
-      else {
-        const lastMapName = Object.keys(this.blockMap || {})?.[0]
-        const lastMap: any = this.blockMap?.[lastMapName]
-        const lastEditedDate = lastMap?.value?.last_edited_time
+      const lastMapName = Object.keys(this.blockMap || {})?.[0]
+      const lastMap: any = this.blockMap?.[lastMapName]
+      const lastEditedDate = lastMap?.value?.last_edited_time
 
-        return this.$moment(lastEditedDate).format("DD/MM/YYYY HH:mm")
-      }
+      return this.$moment(lastEditedDate).format("DD/MM/YYYY HH:mm")
     },
   },
 })
@@ -57,24 +48,19 @@ export default Vue.extend({
   <div class="mt-2">
     <LoadersContent v-if="blockMap === null" />
 
-    <header
-      v-else-if="true"
-      class="space-y-2 my-12 text-gray-500 dark:text-neutral-700"
-    >
-      <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Goals</h1>
-      <p>🔨 Work in progress...</p>
-    </header>
-
-    <!-- TODO Wait for https://github.com/janniks/vue-notion/pull/63 to be merged and update this page -->
-
     <div v-else class="text-gray-500 dark:text-neutral-700">
       <header class="space-y-2 my-12">
         <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Goals</h1>
         <p>Things that I want to achieve.</p>
         <small class="text-xs" title="Last edited on">
           {{ getLastEditedTime }}
+          <mark v-tippy="{ content: 'This page is still a work in progress' }"
+            >⚠️ WIP ⚠️</mark
+          >
         </small>
       </header>
+
+      <!-- {{ blockMap }} -->
 
       <div class="prose prose-md">
         <NotionRenderer

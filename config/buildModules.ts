@@ -9,7 +9,7 @@ import typescriptBuild from "./modules/typescriptBuild"
 
 const BuildModules: NuxtOptionsModule[] = [
   "@nuxtjs/moment",
-  // "vue-notion/nuxt",
+  "vue-notion/nuxt",
   ["@nuxt/image", image],
   ["nuxt-windicss", windicss],
   ["@nuxtjs/color-mode", colorMode],
