@@ -73,6 +73,7 @@ export default Vue.extend({
 
       /* Return src directly when on SSR to prevent errors */
       if (process.server) return src
+      else if (this.$route.path === "/projects/premid/custom-status") return src
       else return this.$img(src, options)
     },
   },

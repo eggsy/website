@@ -17,6 +17,7 @@ import smallImages from "@/assets/files/premid/smallImages"
 export default Vue.extend({
   data() {
     return {
+      customLargeImage: false,
       observer: null as any,
       presenceChecked: false,
       presence: {
@@ -133,7 +134,7 @@ export default Vue.extend({
      * Checks for everything and appends data to Vue, then renders it in template.
      * @returns {Object|String} An empty object or stringified Discord readable object.
      */
-    getPresenceData() {
+    getPresenceData(): object | string {
       const data = this.presence
       const timestamps = data.timestamp
       const object: Record<string, any> = {}
@@ -207,7 +208,13 @@ export default Vue.extend({
       immediate: false,
       handler() {
         if (this.presenceChecked === true) {
-          localStorage.setItem("presenceData", JSON.stringify(this.presence))
+          localStorage.setItem(
+            "presenceData",
+            JSON.stringify({
+              customLargeImage: this.customLargeImage,
+              presence: this.presence,
+            })
+          )
         }
       },
     },
@@ -223,10 +230,15 @@ export default Vue.extend({
         this.presenceChecked = true
       } else {
         const jsonData = JSON.parse(data)
-        const timestamps = jsonData.timestamp
+
+        // Delete saved data if it's from the previous version
+        if (!jsonData?.presence) return localStorage.removeItem("presenceData")
+
+        const timestamps = jsonData.presence.timestamp
+        this.customLargeImage = jsonData.customLargeImage
 
         this.presence = {
-          ...jsonData,
+          ...jsonData.presence,
           timestamp: {
             start: {
               enabled: timestamps.start.enabled,
@@ -241,6 +253,10 @@ export default Vue.extend({
 
         this.presenceChecked = true
       }
+    },
+    toggleCustomImage() {
+      this.presence.largeImageKey = this.customLargeImage ? "PreMiD" : ""
+      this.customLargeImage = !this.customLargeImage
     },
     /**
      * Turns on and off a timestamp value.
@@ -341,6 +357,7 @@ export default Vue.extend({
           :small-image-text="presence.smallImageText"
           :large-image="presence.largeImageKey"
           :small-image="presence.smallImageKey"
+          :custom-image-url="customLargeImage"
           :timestamp="presence.timestamp"
           :details="presence.details"
           :state="presence.state"
@@ -377,10 +394,28 @@ export default Vue.extend({
         </div>
 
         <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            Large Image
-          </h3>
+          <div class="flex space-x-2 items-center">
+            <h3 class="font-medium text-gray-700 dark:text-gray-100">
+              Large Image
+            </h3>
+
+            <small
+              class="cursor-pointer text-xs opacity-50 hover:underline"
+              @click="toggleCustomImage"
+              >custom</small
+            >
+          </div>
+
+          <input
+            v-if="customLargeImage"
+            v-model="presence.largeImageKey"
+            type="text"
+            class="w-full"
+            placeholder="Type an image url"
+          />
+
           <select
+            v-else
             v-model="presence.largeImageKey"
             class="bg-white w-full dark:bg-neutral-700"
           >

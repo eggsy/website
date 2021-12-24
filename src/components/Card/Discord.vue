@@ -48,6 +48,11 @@ export default Vue.extend({
       required: false,
       default: "[ENTER SOMETHING]",
     },
+    customImageUrl: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     timestamp: {
       type: Object,
       required: false,
@@ -94,9 +99,10 @@ export default Vue.extend({
         .forEach((category) => smallAll.push(...category))
 
       return {
-        largeImage:
-          largeAll.find((item) => item.name === largeImage)?.url ||
-          "https://i.imgur.com/CuVtvKW.png",
+        largeImage: this.customImageUrl
+          ? this.largeImage
+          : largeAll.find((item) => item.name === largeImage)?.url ||
+            "https://i.imgur.com/CuVtvKW.png",
         smallImage:
           smallAll.find((item) => item.name === smallImage)?.url || null,
       }
