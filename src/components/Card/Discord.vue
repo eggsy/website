@@ -96,7 +96,7 @@ export default Vue.extend({
       return {
         largeImage:
           largeAll.find((item) => item.name === largeImage)?.url ||
-          "https://i.vgy.me/NZdome.png",
+          "https://i.imgur.com/CuVtvKW.png",
         smallImage:
           smallAll.find((item) => item.name === smallImage)?.url || null,
       }
@@ -238,9 +238,14 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div v-if="componentReady" class="rounded-md bg-[#6c82cf] w-full py-4 px-6 overflow-x-hidden">
+  <div
+    v-if="componentReady"
+    class="rounded-md bg-[#6c82cf] w-full py-4 px-6 overflow-x-hidden"
+  >
     <div class="pt-2">
-      <h1 class="font-bold text-xs text-white uppercase dark:text-gray-100">Playing a game</h1>
+      <h1 class="font-bold text-xs text-white uppercase dark:text-gray-100">
+        Playing a game
+      </h1>
 
       <div
         class="flex flex-col space-y-3 items-center justify-between overflow-x-hidden md:(space-y-0 space-x-3 flex-row) "
@@ -254,8 +259,8 @@ export default Vue.extend({
               :src="getImages.largeImage"
               class="rounded-xl"
               alt="large image"
-              height="128"
-              width="128"
+              height="256"
+              width="256"
             />
 
             <SmartImage
@@ -266,7 +271,7 @@ export default Vue.extend({
               }"
               :src="getImages.smallImage"
               alt="small image"
-              class="rounded-full bg-[#6c82cf] -right-2 -bottom-2 ring-4 ring-[#6c82cf] w-9 box-border absolute focus:outline-none"
+              class="rounded-full bg-[#6c82cf] -right-2 -bottom-2 ring-4 ring-[#6c82cf] w-9 absolute box-border focus:outline-none"
             />
           </div>
 
@@ -277,19 +282,29 @@ export default Vue.extend({
               <span class="block truncate">{{ getText.details }}</span>
               <span class="block truncate">{{ getText.state }}</span>
 
-              <span v-if="isTimerEnabled === true" class="text-sm block">{{ getTime }}</span>
+              <span v-if="isTimerEnabled === true" class="text-sm block">{{
+                getTime
+              }}</span>
             </div>
           </div>
         </div>
 
-        <div v-if="buttons.length > 0" class="flex flex-col space-y-2 flex-shrink-0 md:w-1/3">
-          <div v-for="(button, index) in buttons" :key="`button-${index}`" class="flex justify-end">
+        <div
+          v-if="buttons.length > 0"
+          class="flex flex-col space-y-2 flex-shrink-0 md:w-1/3"
+        >
+          <div
+            v-for="(button, index) in buttons"
+            :key="`button-${index}`"
+            class="flex justify-end"
+          >
             <SmartLink
               :href="button.url"
               :title="button.url"
               class="border border-white rounded-sm cursor-pointer text-sm text-white py-2 px-4 truncate select-none md:(px-3 py-1) focus:(bg-opacity-10 bg-white) "
               blank
-            >{{ button.label }}</SmartLink>
+              >{{ button.label }}</SmartLink
+            >
           </div>
         </div>
       </div>
@@ -297,5 +312,8 @@ export default Vue.extend({
   </div>
 
   <!-- Skeleton load -->
-  <div v-else class="rounded-md bg-[#6c82cf] h-[12.5rem] w-full animate-pulse" />
+  <div
+    v-else
+    class="rounded-md bg-[#6c82cf] h-[12.5rem] w-full animate-pulse"
+  />
 </template>

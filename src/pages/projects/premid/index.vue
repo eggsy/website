@@ -22,7 +22,7 @@ export default Vue.extend({
   },
   head() {
     const title = "PreMiD"
-    const image = "https://i.vgy.me/NZdome.png"
+    const image = "https://i.imgur.com/CuVtvKW.png"
     const description =
       "Custom tools created for your PreMiD experience! Featuring Custom Status and Metadata Creator for free and fresh UI!"
 

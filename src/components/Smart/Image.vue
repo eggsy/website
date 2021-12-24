@@ -97,11 +97,10 @@ export default Vue.extend({
           }
         : {}
     "
-    class="relative"
     :class="{
       'bg-gray-100 animate-pulse dark:bg-neutral-700 bg-no-repeat':
         loaded === false,
-      caption: caption,
+      'relative caption': caption,
     }"
     :smart-image="true"
     :title="title || caption"

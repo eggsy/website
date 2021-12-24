@@ -88,7 +88,7 @@ export default Vue.extend({
   },
   head() {
     const title = "Presence Metadata Creator"
-    const image = "https://i.vgy.me/NZdome.png"
+    const image = "https://i.imgur.com/CuVtvKW.png"
     const description =
       "Easy and free to use tool to create PreMiD Presence metadata files easily, without even opening your code editor!"
 
