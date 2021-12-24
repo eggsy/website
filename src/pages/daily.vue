@@ -109,7 +109,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="space-y-12 my-10">
+  <div class="space-y-4 my-10">
     <BlogNotification v-if="isThereNoSongToday === true" type="warning">
       <p>
         There's no song for today, check back later or wait for the next day
@@ -118,98 +118,106 @@ export default Vue.extend({
       </p>
     </BlogNotification>
 
-    <div class="space-y-6 gap-6 grid-cols-2 md:space-y-0 md:grid">
-      <div class="space-y-4">
-        <SkeletonLoader
-          type="iframe"
-          :iframe-url="
-            $fetchState.pending === false &&
-            `https://www.youtube.com/embed/${getSelectedSong.youtube}`
-          "
-          class="h-[30vh] w-full md:h-full"
-        />
-      </div>
-
-      <div class="space-y-2 w-full">
-        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
-          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
-            Title
-          </h3>
-
+    <div class="space-y-12">
+      <div class="space-y-6 gap-6 grid-cols-2 md:space-y-0 md:grid">
+        <div class="space-y-4">
           <SkeletonLoader
-            v-if="$fetchState.pending || $fetchState.error"
-            class="bg-gray-300 h-6 w-2/4 dark:bg-neutral-700"
-          />
-
-          <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
-            getSelectedTitle
-          }}</span>
-        </div>
-
-        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
-          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
-            Artist
-          </h3>
-
-          <SkeletonLoader
-            v-if="$fetchState.pending || $fetchState.error"
-            class="bg-gray-300 h-6 w-1/4 dark:bg-neutral-700"
-          />
-
-          <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
-            getSelectedSongMetadata.artist || "Unknown"
-          }}</span>
-        </div>
-
-        <div class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800">
-          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
-            Date
-          </h3>
-
-          <SkeletonLoader
-            v-if="$fetchState.pending || $fetchState.error"
-            class="bg-gray-300 h-6 w-2/4 dark:bg-neutral-700"
-          />
-
-          <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
-            getSelectedDateTitle
-          }}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="space-y-4">
-      <Title>Older Songs</Title>
-
-      <div class="grid gap-2 sm:grid-cols-2 md:grid-cols-3">
-        <template v-if="$fetchState.pending === true">
-          <SkeletonLoader
-            v-for="item in 9"
-            :key="`skeleton-song-${item}`"
-            type="song"
-          />
-        </template>
-
-        <div
-          v-else-if="$fetchState.error"
-          class="text-gray-900 sm:col-span-2 md:col-span-3 dark:text-gray-100"
-        >
-          Something went wrong while fetching songs from Firebase.
-        </div>
-
-        <template v-else>
-          <CardSong
-            v-for="(song, index) in getSongList"
-            :key="`song-${index}`"
-            :title="song.metadata.title"
-            :date="song.date"
-            :thumbnail="
-              song.metadata.thumbnail || 'http://via.placeholder.com/75'
+            type="iframe"
+            :iframe-url="
+              $fetchState.pending === false &&
+              `https://www.youtube.com/embed/${getSelectedSong.youtube}`
             "
-            class="overflow-x-hidden"
-            @click.native="selected = song"
+            class="h-[30vh] w-full md:h-full"
           />
-        </template>
+        </div>
+
+        <div class="space-y-2 w-full">
+          <div
+            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800"
+          >
+            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+              Title
+            </h3>
+
+            <SkeletonLoader
+              v-if="$fetchState.pending || $fetchState.error"
+              class="bg-gray-300 h-6 w-2/4 dark:bg-neutral-700"
+            />
+
+            <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
+              getSelectedTitle
+            }}</span>
+          </div>
+
+          <div
+            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800"
+          >
+            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+              Artist
+            </h3>
+
+            <SkeletonLoader
+              v-if="$fetchState.pending || $fetchState.error"
+              class="bg-gray-300 h-6 w-1/4 dark:bg-neutral-700"
+            />
+
+            <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
+              getSelectedSongMetadata.artist || "Unknown"
+            }}</span>
+          </div>
+
+          <div
+            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800"
+          >
+            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
+              Date
+            </h3>
+
+            <SkeletonLoader
+              v-if="$fetchState.pending || $fetchState.error"
+              class="bg-gray-300 h-6 w-2/4 dark:bg-neutral-700"
+            />
+
+            <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
+              getSelectedDateTitle
+            }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <Title>Older Songs</Title>
+
+        <div class="grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+          <template v-if="$fetchState.pending === true">
+            <SkeletonLoader
+              v-for="item in 9"
+              :key="`skeleton-song-${item}`"
+              type="song"
+            />
+          </template>
+
+          <div
+            v-else-if="$fetchState.error"
+            class="text-gray-900 sm:col-span-2 md:col-span-3 dark:text-gray-100"
+          >
+            Something went wrong while fetching songs from Firebase.
+          </div>
+
+          <template v-else>
+            <CardSong
+              v-for="(song, index) in getSongList"
+              :key="`song-${index}`"
+              :title="song.metadata.title"
+              :date="song.date"
+              :thumbnail="
+                song.metadata.thumbnail || 'http://via.placeholder.com/75'
+              "
+              class="overflow-x-hidden"
+              @click.native="selected = song"
+            />
+          </template>
+        </div>
       </div>
     </div>
   </div>
