@@ -16,6 +16,6 @@ Bu yenilik aynı zamanda eklentinin artık birden fazla site için çalışabile
 
 Görüntü açısından büyük herhangi bir değişiklik almasa da, desteklediği iki site için açıp kapatma ayarı olması gerektiği için eklenti penceresinin en alt kısmında bir yenilik yapmam gerekti. Bu yeniliği de aşağıdaki resimden görebilirsiniz.
 
-<smart-image src="https://the-person-under-this-message.is-inside.me/ieh9cjGZ.png"></smart-image>
+<smart-image src="https://i.imgur.com/6P0K30m.png"></smart-image>
 
 Görüntü açısından tek yeniliği bu olsa da, isminin değişmesi, arka plan sisteminin değişmesi ve geliştirilmesi eklentiyi çok daha güzel hâle getirdi. Açık kaynak olan bu eklentimi Chrome veya Chrome tabanlı tarayıcınıza eklemek için [buraya](https://chrome.google.com/webstore/detail/lpngbkmgnehdkkobdbieckjpphkohffd) tıklayabilirsiniz.
