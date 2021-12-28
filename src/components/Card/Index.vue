@@ -32,11 +32,15 @@ export default Vue.extend({
       required: false,
       default: false,
     },
+    cursor: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   data() {
     return {
-      classes:
-        "rounded-md focusRing overflow-x-hidden transition-colors cursor-pointer",
+      classes: "rounded-md focusRing overflow-x-hidden transition-colors",
     }
   },
 })
@@ -50,6 +54,7 @@ export default Vue.extend({
       [classes]: true,
       'p-2': tight === true,
       'p-4': tight === false,
+      'cursor-pointer': cursor === true,
       'bg-gray-100 bg-neutral-800/40': elevated === true,
       'hover:bg-gray-100 dark:hover:bg-neutral-800': elevated === false,
       'items-center justify-between flex space-x-2': $slots.icon,

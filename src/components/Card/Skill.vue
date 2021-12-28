@@ -13,7 +13,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <Card :title="title">
+  <Card :title="title" :cursor="false">
     <template #icon>
       <IconDev :brand="title" class="flex-shrink-0 h-7 w-7" />
     </template>
