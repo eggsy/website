@@ -65,6 +65,14 @@ export default Vue.extend({
           >
           (Linux, Mac) compatible!
         </p>
+
+        <BlogNotification type="warning">
+          <p>
+            This project is now discontinued, it has retired after 3 years of
+            service and will no longer accept new users. Thank you for being
+            with us all this time.
+          </p>
+        </BlogNotification>
       </header>
 
       <div class="flex flex-wrap space-x-4">
@@ -84,11 +92,11 @@ export default Vue.extend({
       </div>
 
       <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0) ">
-        <Button :href="getLink.website" icon="IconLink" blank>
+        <Button :href="getLink.website" icon="IconLink" blank disabled elevated>
           Visit Website
         </Button>
 
-        <Button :href="getLink.website" icon="IconQuestion" blank>
+        <Button :href="getLink.website" icon="IconQuestion" blank disabled>
           View FAQ
         </Button>
       </div>

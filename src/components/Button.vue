@@ -40,13 +40,18 @@ export default Vue.extend({
       required: false,
       default: false,
     },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 })
 </script>
 
 <template>
   <SmartLink
-    :href="href"
+    :href="disabled === false && href"
     :blank="blank"
     class="rounded cursor-pointer flex space-x-2 transition-colors btn items-center justify-center sm:w-max"
     :class="{
@@ -63,11 +68,12 @@ export default Vue.extend({
       'rounded-full p-2': rounded === true,
 
       // Rest
+      'line-through': disabled === true,
       'flex items-center space-x-2': $slots.icon,
       'dark:hover:bg-neutral-800 hover:bg-gray-200':
-        variant === 'primary' && elevated === false,
+        variant === 'primary' && elevated === false && disabled === false,
       'bg-gray-200 hover:bg-gray-200/40 dark:(bg-neutral-800 hover:bg-neutral-800/40)':
-        variant === 'primary' && elevated === true,
+        variant === 'primary' && elevated === true && disabled === false,
     }"
   >
     <component :is="icon" v-if="icon && !$slots.icon" class="h-6 w-6" />
