@@ -20,7 +20,7 @@ specifiers:
   '@nuxtjs/sitemap': ^2.4.0
   '@types/prismjs': ^1.16.6
   '@vue/runtime-dom': ^3.2.26
-  core-js: ^3.20.1
+  core-js: ^3.20.2
   dotenv: ^10.0.0
   eslint: ^8.6.0
   eslint-config-prettier: ^8.3.0
@@ -51,7 +51,7 @@ dependencies:
   '@nuxtjs/sitemap': 2.4.0
   '@types/prismjs': 1.16.6
   '@vue/runtime-dom': 3.2.26
-  core-js: 3.20.1
+  core-js: 3.20.2
   firebase: 9.6.1
   moment-timezone: 0.5.34
   nuxt: 2.15.8
@@ -4606,8 +4606,8 @@ packages:
     requiresBuild: true
     dev: false
 
-  /core-js/3.20.1:
-    resolution: {integrity: sha512-btdpStYFQScnNVQ5slVcr858KP0YWYjV16eGJQw8Gg7CWtu/2qNvIM3qVRIR3n1pK2R9NNOrTevbvAYxajwEjg==}
+  /core-js/3.20.2:
+    resolution: {integrity: sha512-nuqhq11DcOAbFBV4zCbKeGbKQsUDRqTX0oqx7AttUBuqe3h20ixsE039QHelbL6P4h+9kytVqyEtyZ6gsiwEYw==}
     requiresBuild: true
     dev: false
 

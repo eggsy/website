@@ -65,7 +65,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="text-gray-500 dark:text-neutral-700">
+  <div class="text-gray-500 dark:text-neutral-600">
     <header class="space-y-2 my-12">
       <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Contact</h1>
       <p>If you have any questions, feel free to contact me.</p>

@@ -77,7 +77,7 @@ export default Vue.extend({
 
 <template>
   <div class="py-4">
-    <div class="space-y-12 text-gray-500 sm:w-9/12 dark:text-neutral-700">
+    <div class="space-y-12 text-gray-500 sm:w-9/12 dark:text-neutral-600">
       <header class="space-y-2 my-12">
         <h1 class="text-gray-700 text-4xl dark:text-neutral-300">Donate</h1>
 
@@ -94,9 +94,7 @@ export default Vue.extend({
       </header>
 
       <section class="space-y-4">
-        <h2 class="text-lg text-gray-400 uppercase dark:text-neutral-700">
-          Support Me On
-        </h2>
+        <Title> Support Me On </Title>
 
         <div class="grid gap-4">
           <Button variant="patreon" :href="getSponsorLinks.patreon" blank>
@@ -113,9 +111,7 @@ export default Vue.extend({
       </section>
 
       <section class="space-y-4">
-        <h2 class="text-lg text-gray-400 uppercase dark:text-neutral-700">
-          My Accounts
-        </h2>
+        <Title> My Accounts </Title>
 
         <div class="grid gap-4">
           <div

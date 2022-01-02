@@ -48,7 +48,7 @@ export default Vue.extend({
   <div class="mt-2">
     <LoadersContent v-if="blockMap === null" />
 
-    <div v-else class="text-gray-500 dark:text-neutral-700">
+    <div v-else class="text-gray-500 dark:text-neutral-600">
       <header class="space-y-2 my-12">
         <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Goals</h1>
         <p>Things that I want to achieve.</p>

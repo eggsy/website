@@ -40,7 +40,7 @@ export default Vue.extend({
 
 <template>
   <div class="space-y-6 py-6">
-    <div class="space-y-4 text-gray-500 sm:w-9/12 dark:text-neutral-700">
+    <div class="space-y-4 text-gray-500 sm:w-9/12 dark:text-neutral-600">
       <header class="space-y-2 my-12">
         <h1 class="text-gray-700 text-4xl dark:text-neutral-300">
           Unblock Please

@@ -57,14 +57,14 @@ export default Vue.extend({
         {{ title }}
       </h3>
 
-      <div class="flex space-x-1 items-center dark:text-neutral-700">
+      <div class="flex space-x-1 items-center dark:text-neutral-600">
         <IconStar
           v-if="getDateText.startsWith('Today')"
-          class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-neutral-700"
+          class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-neutral-600"
         />
 
         <span
-          class="flex-shrink-0 text-sm text-gray-600 dark:text-neutral-700"
+          class="flex-shrink-0 text-sm text-gray-600 dark:text-neutral-600"
           >{{ getDateText }}</span
         >
       </div>
