@@ -2,6 +2,7 @@ import { NuxtOptionsModule } from "@nuxt/types/config/module"
 
 /* Import module options */
 import content from "./modules/content"
+import feed from "./modules/feed"
 import firebase from "./modules/firebase"
 import pwa from "./modules/pwa"
 import sitemap from "./modules/sitemap"
@@ -12,7 +13,7 @@ const Modules: NuxtOptionsModule[] = [
   "@nuxtjs/robots",
   ["@nuxtjs/pwa", pwa],
   ["@nuxt/content", content],
-  "@nuxtjs/feed",
+  ["@nuxtjs/feed", feed],
   ["@nuxtjs/sitemap", sitemap],
   ["@nuxtjs/firebase", firebase],
   ["nuxt-webfontloader", webfontloader],
