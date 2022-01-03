@@ -34,9 +34,9 @@ export default Vue.extend({
       // Spotify
       else if (filtered.name === "Spotify" && !!lanyard.spotify) {
         const { song, artist } = lanyard.spotify || {}
-        const firstArtist = artist?.split("; ")?.[0];
+        const firstArtist = artist?.split("; ")?.[0]
 
-        return `Listening to **${song}** by **${firstArtist || 'someone'}**`
+        return `Listening to **${song}** by **${firstArtist || "someone"}**`
       }
       // Visual Studio Code
       else if (filtered.name === "Visual Studio Code") {
@@ -73,7 +73,10 @@ export default Vue.extend({
      * Replaces only markdown-like "**" and wraps content into HTML strong element.
      */
     getSafeHtml(): string {
-      return this.getStatusDetails.replace(/\*\*(.*?)\*\*/gm, "<strong>$1</strong>")
+      return this.getStatusDetails.replace(
+        /\*\*(.*?)\*\*/gm,
+        "<strong>$1</strong>"
+      )
     },
     /**
      * Returns Discord status colors.
@@ -129,7 +132,18 @@ export default Vue.extend({
   />
 
   <div v-else class="rounded-md flex space-x-2 text-neutral-500 items-center">
-    <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
+    <transition name="fade" mode="out-in">
+      <IconBrand v-if="lanyard.spotify" brand="spotify" class="h-5 w-5" />
+
+      <div
+        v-else
+        v-tippy="{
+          content: 'Discord status',
+          placement: 'bottom',
+        }"
+        :class="`h-5 w-5 rounded-full flex-shrink-0 ${getDiscordStatus}`"
+      />
+    </transition>
 
     <div
       class="text-sm leading-tight truncate"
