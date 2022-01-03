@@ -5,6 +5,7 @@ header: https://i.imgur.com/wDMRZCx.jpg
 tags:
   - ülke
   - uluslararası
+  - erasmus
   - balkanlar
 createdAt: 12/13/2021 21:52
 ---
