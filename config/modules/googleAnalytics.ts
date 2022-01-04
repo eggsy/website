@@ -1,5 +1,7 @@
 import { InstallOptions } from "vue-analytics"
 
-const GoogleAnalytics: InstallOptions = { id: "UA-62051904-3" }
+const GoogleAnalytics: InstallOptions = {
+  id: process.env.GOOGLE_ANALYTICS_ID || "",
+}
 
 export default GoogleAnalytics
