@@ -16,7 +16,7 @@ const Feed = () => {
       link: baseUrlArticles,
     }
 
-    const articles = await $content().fetch()
+    const articles = await $content("blog").fetch()
 
     articles.forEach((article: any) => {
       const url = `${baseUrlArticles}/gonderi/${article.slug}`

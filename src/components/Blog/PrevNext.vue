@@ -2,12 +2,7 @@
 import Vue from "vue"
 
 /* Interfaces */
-import type { IContentDocument } from "@nuxt/content/types/content"
-
-interface Post {
-  title: string
-  slug: string
-}
+import type { FetchReturn } from "@nuxt/content/types/query-builder"
 
 export default Vue.extend({
   props: {
@@ -19,16 +14,16 @@ export default Vue.extend({
   },
   data() {
     return {
-      prev: {} as IContentDocument,
-      next: {} as IContentDocument,
+      prev: {} as FetchReturn,
+      next: {} as FetchReturn,
     }
   },
   async fetch() {
-    const [prev, next] = (await this.$content()
+    const [prev, next] = (await this.$content("blog")
       .only(["title", "slug"])
       .sortBy("createdAt", "asc")
       .surround(this.currentSlug)
-      .fetch()) as IContentDocument[]
+      .fetch()) as FetchReturn[]
 
     this.prev = prev
     this.next = next

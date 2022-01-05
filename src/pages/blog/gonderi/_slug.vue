@@ -17,7 +17,10 @@ export default Vue.extend({
     }
   },
   async fetch() {
-    const post = (await this.$content(this.$route.params.slug).fetch()) as Post
+    const post = (await this.$content(
+      "blog",
+      this.$route.params.slug
+    ).fetch()) as Post
 
     if (!post) this.$router.push("/blog")
     else {
@@ -27,7 +30,7 @@ export default Vue.extend({
         const array = []
 
         for (const key of post.related) {
-          const { title }: any = await this.$content(key)
+          const { title }: any = await this.$content("blog", key)
             .only(["title"])
             .fetch()
 

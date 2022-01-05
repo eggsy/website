@@ -20,27 +20,27 @@ export default Vue.extend({
     }
   },
   async fetch() {
-    const latestPosts: Post[] = await this.$content()
+    const latestPosts: Post[] = await this.$content("blog")
       .sortBy("createdAt", "desc")
       .limit(3)
       .without(["body"])
       .fetch()
 
-    const discordPosts: Post[] = await this.$content()
+    const discordPosts: Post[] = await this.$content("blog")
       .where({ tags: { $contains: "discord" } })
       .sortBy("createdAt", "desc")
       .limit(3)
       .without(["body"])
       .fetch()
 
-    const linuxPosts: Post[] = await this.$content()
+    const linuxPosts: Post[] = await this.$content("blog")
       .where({ tags: { $contains: "linux" } })
       .sortBy("createdAt", "desc")
       .limit(3)
       .without(["body"])
       .fetch()
 
-    let allPosts: Post[] = await this.$content()
+    let allPosts: Post[] = await this.$content("blog")
       .sortBy("createdAt", "desc")
       .skip(3)
       .without(["body"])
@@ -78,7 +78,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    getCategoryResults() {
+    getCategoryResults(): Post[] {
       const { posts } = this
 
       const allPosts = posts.rest.concat(posts.discord, posts.linux)
