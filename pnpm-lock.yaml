@@ -37,7 +37,7 @@ specifiers:
   sass: ^1.45.2
   sass-loader: 10.1.1
   vue-disqus: ^4.0.1
-  vue-notion: ^1.3.4
+  vue-notion: eggsy/vue-notion
   vue-tippy: 4.13.0
 
 dependencies:
@@ -59,7 +59,7 @@ dependencies:
   prism-themes: 1.9.0
   sass: 1.45.2
   vue-disqus: 4.0.1
-  vue-notion: 1.3.4
+  vue-notion: github.com/eggsy/vue-notion/a3c57e9f4c23c15faae0138e51d784e89f3006a7
   vue-tippy: 4.13.0
 
 devDependencies:
@@ -12110,19 +12110,6 @@ packages:
     resolution: {integrity: sha512-ZMjqRpWabMPqPc7gIrG0Nw6vRf1+itwf0Itft7LbMXs2g3Zs/NFmevjZGN1x7K3Q95GmIjWbQZTVerxiBxI+0g==}
     dev: false
 
-  /vue-notion/1.3.4:
-    resolution: {integrity: sha512-v0zuwxUWRH4fsePn9sSc1V4HOrDn5B1Sx2RE02fIP0f8kL507qmp2Nqht/2uOIPCwyjMFQgGXaeL1rStYUVcwQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      prismjs: ^1.22.0
-      vue: ^2.6.14
-    dependencies:
-      cross-fetch: 3.1.4
-      defu: 5.0.0
-      vue-fragment: 1.5.2
-      vue-prism-component: 1.2.0
-    dev: false
-
   /vue-prism-component/1.2.0:
     resolution: {integrity: sha512-0N9CNuQu+36CJpdsZHrhdq7d18oBvjVMjawyKdIr8xuzFWLfdxECZQYbFaYoopPBg3SvkEEMtkhYqdgTQl5Y+A==}
     dev: false
@@ -12620,4 +12607,21 @@ packages:
 
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
+    dev: false
+
+  github.com/eggsy/vue-notion/a3c57e9f4c23c15faae0138e51d784e89f3006a7:
+    resolution: {tarball: https://codeload.github.com/eggsy/vue-notion/tar.gz/a3c57e9f4c23c15faae0138e51d784e89f3006a7}
+    name: vue-notion
+    version: 1.3.2
+    engines: {node: '>=10'}
+    prepare: true
+    requiresBuild: true
+    peerDependencies:
+      prismjs: ^1.22.0
+      vue: ^2.6.14
+    dependencies:
+      cross-fetch: 3.1.4
+      defu: 5.0.0
+      vue-fragment: 1.5.2
+      vue-prism-component: 1.2.0
     dev: false

@@ -54,9 +54,6 @@ export default Vue.extend({
         <p>Things that I want to achieve.</p>
         <small class="text-xs" title="Last edited on">
           {{ getLastEditedTime }}
-          <mark v-tippy="{ content: 'This page is still a work in progress' }"
-            >⚠️ WIP ⚠️</mark
-          >
         </small>
       </header>
 
