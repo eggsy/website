@@ -127,7 +127,7 @@ export default Vue.extend({
       !getStatusDetails ||
       Object.keys(lanyard).length === 0
     "
-    class="h-[17.5px] w-6/12"
+    class="h-5 w-1/2"
     :class="$route.path === '/' && 'bg-gray-200 dark:bg-neutral-700'"
   />
 
