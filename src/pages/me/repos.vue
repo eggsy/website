@@ -76,6 +76,7 @@ export default Vue.extend({
             :stars="repo.stargazers_count"
             :description="repo.description"
             :license="repo.license && repo.license.spdx_id"
+            :top="index === 0"
             class="h-full"
           />
         </SmartLink>
