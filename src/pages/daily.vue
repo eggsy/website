@@ -119,7 +119,7 @@ export default Vue.extend({
     </BlogNotification>
 
     <div class="space-y-12">
-      <div class="space-y-6 gap-6 grid-cols-2 md:space-y-0 md:grid">
+      <div class="space-y-6 gap-6 grid-cols-2 md:space-y-0 md:grid md:px-4">
         <div class="space-y-4">
           <SkeletonLoader
             type="iframe"
@@ -188,7 +188,7 @@ export default Vue.extend({
       <div class="space-y-4">
         <Title>Older Songs</Title>
 
-        <div class="grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+        <div class="grid px-2 gap-2 sm:grid-cols-2 md:grid-cols-3">
           <template v-if="$fetchState.pending === true">
             <SkeletonLoader
               v-for="item in 9"

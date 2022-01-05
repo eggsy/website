@@ -66,7 +66,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer space-y-2 transform transition-transform focusRing overflow-hidden sm:hover:-translate-y-1"
+    class="rounded-lg cursor-pointer space-y-2 transform transition-transform focusRing overflow-hidden md:px-4 sm:hover:-translate-y-1"
   >
     <SmartImage
       :src="getPostMeta.image"
@@ -93,7 +93,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer flex space-x-4 p-3 transition-colors focusRing items-center hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
+    class="rounded-lg cursor-pointer flex space-x-4 p-3 transition-colors focusRing items-center md:px-4 hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
     <SmartImage
       :src="getPostMeta.image"
@@ -120,7 +120,7 @@ export default Vue.extend({
       name: 'blog-gonderi-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="rounded-lg cursor-pointer flex flex-col p-3 transition-colors focusRing truncate hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
+    class="rounded-lg cursor-pointer flex flex-col p-3 px-4 transition-colors focusRing truncate hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
     <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">
       {{ getPostMeta.title }}

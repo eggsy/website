@@ -46,7 +46,7 @@ export default Vue.extend({
 
 <template>
   <div class="text-gray-500 dark:text-neutral-600">
-    <header class="space-y-2 my-12">
+    <header class="space-y-2 my-12 px-4">
       <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Repositories</h1>
       <p>My public projects on GitHub.</p>
     </header>
@@ -76,7 +76,6 @@ export default Vue.extend({
             :stars="repo.stargazers_count"
             :description="repo.description"
             :license="repo.license && repo.license.spdx_id"
-            :top="index === 0"
             class="h-full"
           />
         </SmartLink>

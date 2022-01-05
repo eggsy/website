@@ -25,7 +25,7 @@ export default Vue.extend({
 <template>
   <component
     :is="`h${size}`"
-    class="text-lg text-gray-400 dark:text-neutral-700"
+    class="text-lg px-4 text-gray-400 dark:text-neutral-700"
     :class="{
       'text-2xl': size === '1',
       'text-xl': size === '2',

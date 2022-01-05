@@ -78,7 +78,7 @@ export default Vue.extend({
 <template>
   <div class="py-4">
     <div class="space-y-12 text-gray-500 sm:w-9/12 dark:text-neutral-600">
-      <header class="space-y-2 my-12">
+      <header class="space-y-2 my-12 px-4">
         <h1 class="text-gray-700 text-4xl dark:text-neutral-300">Donate</h1>
 
         <p>
@@ -96,24 +96,27 @@ export default Vue.extend({
       <section class="space-y-4">
         <Title> Support Me On </Title>
 
-        <div class="grid gap-4">
-          <Button variant="patreon" :href="getSponsorLinks.patreon" blank>
-            <template #icon>
-              <SmartImage
-                src="https://i.vgy.me/qxpY9T.png"
-                class="rounded h-7 w-7"
-              />
-            </template>
+        <Button
+          variant="patreon"
+          :href="getSponsorLinks.patreon"
+          class="mx-4"
+          blank
+        >
+          <template #icon>
+            <SmartImage
+              src="https://i.vgy.me/qxpY9T.png"
+              class="rounded h-7 w-7"
+            />
+          </template>
 
-            Become a Patron
-          </Button>
-        </div>
+          Become a Patron
+        </Button>
       </section>
 
       <section class="space-y-4">
         <Title> My Accounts </Title>
 
-        <div class="grid gap-4">
+        <div class="grid px-4 gap-4">
           <div
             v-for="(account, index) in accounts"
             :key="`account-${index}`"

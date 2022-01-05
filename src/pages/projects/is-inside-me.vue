@@ -41,7 +41,7 @@ export default Vue.extend({
 <template>
   <div class="space-y-6 py-6">
     <div class="space-y-8 text-gray-500 sm:w-9/12 dark:text-neutral-600">
-      <header class="space-y-2 my-12">
+      <header class="space-y-2 my-12 md:px-4">
         <h1 class="text-gray-700 text-4xl dark:text-neutral-300">
           is-inside.me
         </h1>
@@ -75,7 +75,7 @@ export default Vue.extend({
         </BlogNotification>
       </header>
 
-      <div class="flex flex-wrap space-x-4">
+      <div class="flex flex-wrap space-x-4 px-4">
         <SmartImage
           src="https://i.vgy.me/iXYvCp.jpg"
           height="150"

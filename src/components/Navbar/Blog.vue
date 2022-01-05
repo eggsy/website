@@ -58,7 +58,7 @@ export default Vue.extend({
 <template>
   <nav class="w-full z-40">
     <div
-      class="container flex mx-auto space-x-4 text-gray-200 w-11/12 items-center justify-between sm:(px-0 w-9/12) md:w-7/12 "
+      class="container flex mx-auto space-x-4 px-4 text-gray-200 w-11/12 items-center justify-between sm:(w-9/12) md:w-7/12 "
     >
       <SmartLink
         :href="{ name: getTargetRoute.name }"

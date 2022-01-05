@@ -190,9 +190,7 @@ export default Vue.extend({
 <template>
   <div class="pt-6">
     <div v-if="getFilteredPosts === false">
-      <h3 class="font-semibold text-lg text-gray-700 dark:text-neutral-300">
-        Son gönderiler
-      </h3>
+      <Title> Son gönderiler </Title>
 
       <div class="mt-2 grid gap-4 md:grid-cols-3">
         <template v-if="isFetchPending">
@@ -210,7 +208,7 @@ export default Vue.extend({
 
       <!-- Test -->
       <div class="space-y-6 mt-20">
-        <div class="flex space-x-4 overflow-x-auto">
+        <div class="flex space-x-4 px-4 overflow-x-auto">
           <div
             v-for="text in categories"
             :key="text"
@@ -232,7 +230,7 @@ export default Vue.extend({
         </div>
 
         <div
-          class="flex flex-col space-y-4 max-h-50vh overflow-y-auto sm:(grid grid-cols-2 max-h-full gap-4 space-y-0) "
+          class="flex flex-col space-y-4 max-h-50vh overflow-y-auto sm:(grid grid-cols-2 max-h-full gap-4 space-y-0)"
         >
           <CardPost
             v-for="(post, index) in getCategoryResults"
@@ -244,11 +242,7 @@ export default Vue.extend({
       </div>
 
       <div class="mt-16">
-        <h3
-          class="font-semibold space-x-2 text-lg text-gray-900 dark:text-gray-100"
-        >
-          Tüm gönderiler
-        </h3>
+        <Title> Tüm gönderiler </Title>
 
         <div class="mt-4 grid gap-3 md:grid-cols-3">
           <template v-if="isFetchPending">
@@ -269,7 +263,7 @@ export default Vue.extend({
           <div
             v-for="page in getTotalPages"
             :key="`pagination-${page}`"
-            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 transition-colors ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-neutral-800 ring-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-300 "
+            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 transition-colors ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-neutral-800 ring-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-300"
             :class="{
               'bg-gray-300 dark:bg-neutral-700': pagination + 1 === page,
             }"
@@ -309,7 +303,7 @@ export default Vue.extend({
 
         <SmartLink
           :href="{ name: 'blog' }"
-          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-neutral-800 ring-gray-700 text-gray-100 hover:bg-neutral-700) hover:bg-gray-200 "
+          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-neutral-800 ring-gray-700 text-gray-100 hover:bg-neutral-700) hover:bg-gray-200"
         >
           <IconHome class="h-6 w-6" />
           <span>Bloga Dön</span>
