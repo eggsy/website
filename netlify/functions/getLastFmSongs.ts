@@ -23,7 +23,7 @@ const handler: Handler = async (event) => {
     ]
 
     // Origin for CORS
-    const origin = event.rawUrl.includes("localhost")
+    const origin = event.headers?.["origin"]?.includes("localhost")
       ? "http://localhost:3000"
       : "https://eggsy.xyz"
 
