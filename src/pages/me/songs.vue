@@ -47,11 +47,12 @@ export default Vue.extend({
   },
   fetchOnServer: false,
   async fetch() {
-    const { data: songs }: { data: LastFmResponse } = await this.$axios(
+    const url =
       process.env.NODE_ENV === "production"
-        ? "/.netlify/functions/getLastFmSongs"
+        ? "https://eggsy.xyz/.netlify/functions/getLastFmSongs"
         : "http://localhost:8888/.netlify/functions/getLastFmSongs"
-    )
+
+    const { data: songs }: { data: LastFmResponse } = await this.$axios(url)
 
     this.lastFm = songs
   },

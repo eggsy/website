@@ -5,7 +5,7 @@ import LastFMTyped from "lastfm-typed"
 const LASTFM_API_KEY = process.env.LASTFM_API_KEY
 const username = "eggsywashere"
 
-const handler: Handler = async (event) => {
+const handler: Handler = async () => {
   if (!LASTFM_API_KEY)
     return {
       statusCode: 401,
@@ -23,9 +23,10 @@ const handler: Handler = async (event) => {
     ]
 
     // Origin for CORS
-    const origin = event.headers?.["origin"]?.includes("localhost")
-      ? "http://localhost:3000"
-      : "https://eggsy.xyz"
+    const origin =
+      process.env.NODE_ENV === "production"
+        ? "https://eggsy.xyz"
+        : "http://localhost:3000"
 
     // Map track function
     const mapTrack = (track: any) => {
