@@ -7,6 +7,7 @@ import typography from "windicss/plugin/typography"
 
 export default defineConfig({
   darkMode: "class",
+  safelist: ["rounded-full"],
   theme: {
     extend: {
       colors: {
