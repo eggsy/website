@@ -131,39 +131,53 @@ export default Vue.extend({
           },
         ],
       } as ExperienceObject,
-      cards: [
-        {
-          title: "Repositories",
-          description: "Want to see my code? Check out my GitHub!",
-          href: "/me/repos",
-        },
-        {
-          title: "Goals",
-          description:
-            "Want to know what I'm working on now and in the future?",
-          href: "/me/goals",
-        },
-        {
-          title: "Contact",
-          description: "Want to get in touch? Send me a message!",
-          href: "/me/contact",
-        },
-        {
-          title: "Blog",
-          description: "Want to read my Turkish stories?",
-          href: "/blog",
-        },
-        {
-          title: "Daily Songs",
-          description: "Want to listen to my daily songs?",
-          href: "/daily",
-        },
-        {
-          title: "Donate",
-          description: "Want to support me and my work?",
-          href: "/donate",
-        },
-      ],
+      cards: {
+        me: [
+          {
+            title: "Repositories",
+            description:
+              "Want to see my code and public repositories? Check out this page!",
+            href: "/me/repos",
+          },
+          {
+            title: "Goals",
+            description:
+              "Want to know what I'm working on now and in the future?",
+            href: "/me/goals",
+          },
+          {
+            title: "Songs",
+            description:
+              "Trust your taste? See my favourite songs and recently played ones!",
+            href: "/me/songs",
+          },
+          {
+            title: "Contact",
+            description:
+              "Need help with anything? Want to get in touch? Send me a message!",
+            href: "/me/contact",
+          },
+        ],
+        pages: [
+          {
+            title: "Blog",
+            description:
+              "What is better than a Turkish blog? Are you here to read them?",
+            href: "/blog",
+          },
+          {
+            title: "Daily Songs",
+            description:
+              "Trust me. I only put quality songs. Want to check them out?",
+            href: "/daily",
+          },
+          {
+            title: "Donate",
+            description: "Money. You have? Want to share? Here. Share with me.",
+            href: "/donate",
+          },
+        ],
+      },
       skills: [
         "JavaScript",
         "HTML5",
@@ -232,15 +246,34 @@ export default Vue.extend({
       </div>
     </header>
 
-    <section id="cards" class="my-16 grid gap-4 md:grid-cols-3">
-      <Card
-        v-for="(card, index) in cards"
-        :key="`card-${index}`"
-        :title="card.title"
-        :href="card.href"
-      >
-        {{ card.description }}
-      </Card>
+    <section id="me" class="my-16">
+      <Title>Me</Title>
+
+      <div class="mt-4 grid gap-4 md:grid-cols-2">
+        <Card
+          v-for="(card, index) in cards.me"
+          :key="`card-m-${index}`"
+          :title="card.title"
+          :href="card.href"
+        >
+          {{ card.description }}
+        </Card>
+      </div>
+    </section>
+
+    <section id="pages" class="my-16">
+      <Title>Pages</Title>
+
+      <div class="mt-4 grid gap-4 md:grid-cols-2">
+        <Card
+          v-for="(card, index) in cards.pages"
+          :key="`card-p-${index}`"
+          :title="card.title"
+          :href="card.href"
+        >
+          {{ card.description }}
+        </Card>
+      </div>
     </section>
 
     <section id="projects">
