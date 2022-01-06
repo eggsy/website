@@ -4,6 +4,7 @@ specifiers:
   '@babel/core': ^7.16.7
   '@babel/eslint-parser': ^7.16.5
   '@eggsydev/vue-lanyard': ^1.1.3
+  '@netlify/functions': ^0.10.0
   '@nuxt/content': 1.15.1
   '@nuxt/image': ^0.6.0
   '@nuxt/types': ^2.15.8
@@ -28,6 +29,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.2.0
   firebase: ^9.6.1
+  lastfm-typed: ^2.0.1
   moment-timezone: ^0.5.34
   nuxt: ^2.15.8
   nuxt-webfontloader: ^1.1.0
@@ -42,6 +44,7 @@ specifiers:
 
 dependencies:
   '@eggsydev/vue-lanyard': 1.1.3
+  '@netlify/functions': 0.10.0
   '@nuxt/content': 1.15.1_sass@1.45.2
   '@nuxtjs/axios': 5.13.6
   '@nuxtjs/feed': 2.0.0
@@ -53,13 +56,14 @@ dependencies:
   '@vue/runtime-dom': 3.2.26
   core-js: 3.20.2
   firebase: 9.6.1
+  lastfm-typed: 2.0.1
   moment-timezone: 0.5.34
   nuxt: 2.15.8
   nuxt-webfontloader: 1.1.0
   prism-themes: 1.9.0
   sass: 1.45.2
   vue-disqus: 4.0.1
-  vue-notion: github.com/eggsy/vue-notion/a3c57e9f4c23c15faae0138e51d784e89f3006a7
+  vue-notion: github.com/eggsy/vue-notion/c7bc77ed00ad10ebc14f794d0abbef8c468eef22
   vue-tippy: 4.13.0
 
 devDependencies:
@@ -1992,6 +1996,13 @@ packages:
     resolution: {integrity: sha512-u2VH/4h4kZww23bak5I/oRai8VqIZCSuqiLbuSHpYXHB9Na5E9KNazh59prgUyvMzfooY7XKiHejbKVxFoAEOQ==}
     dev: false
 
+  /@netlify/functions/0.10.0:
+    resolution: {integrity: sha512-NNFADTPnokuoMY1OUhaXlE/Jrzk5lHOl1uB4L/8pw1UJ/CaectZJACMExijbJnqaKIhOQG0WmbBQUh1lgnK/Qg==}
+    engines: {node: '>=8.3.0'}
+    dependencies:
+      is-promise: 4.0.0
+    dev: false
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -2257,11 +2268,11 @@ packages:
       ipx: 0.8.0
     dev: true
 
-  /@nuxt/kit-edge/3.0.0-27338323.1e98259:
-    resolution: {integrity: sha512-lABruok/JkKOoEJNpkZ2M6YMSKBgOaWAyWjDq+Ekk4Ga/FZgok+epTcN3cQBOP/MpH3PXsM2L3zdM8DoEMxeug==}
+  /@nuxt/kit-edge/3.0.0-27356801.e9128f3:
+    resolution: {integrity: sha512-hGiqZydtMiK+UhHBsdD0WC+fHeI3xyJixhY2rNPGwFrzdeTrbUy8YH451SbRPOJ8TS0RYQ+cUT6JfMr0YTpnfg==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0}
     dependencies:
-      '@nuxt/schema': /@nuxt/schema-edge/3.0.0-27338323.1e98259
+      '@nuxt/schema': /@nuxt/schema-edge/3.0.0-27356801.e9128f3
       consola: 2.15.3
       defu: 5.0.0
       dotenv: 10.0.0
@@ -2299,8 +2310,8 @@ packages:
       node-fetch: 2.6.6
     dev: false
 
-  /@nuxt/schema-edge/3.0.0-27338323.1e98259:
-    resolution: {integrity: sha512-TV8HMFEkD2cMLnsYBE0+wQcOSwElw6SW4rnDOFoDhHI61GeflpGZOfXLQRJS2FLAyMv/QVeBHdd+PWWOxDqGgA==}
+  /@nuxt/schema-edge/3.0.0-27356801.e9128f3:
+    resolution: {integrity: sha512-LOi5OLFzxrHL7t/a7sn2+fnkNN8y9ipnLG6l6McI+vEuzXi11YeHCYt7PmoqqySXx411hd6lISmYd/aZzBgYkg==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0}
     dependencies:
       create-require: 1.1.1
@@ -7384,6 +7395,10 @@ packages:
       isobject: 3.0.1
     dev: false
 
+  /is-promise/4.0.0:
+    resolution: {integrity: sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==}
+    dev: false
+
   /is-regex/1.1.4:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
     engines: {node: '>= 0.4'}
@@ -7715,6 +7730,13 @@ packages:
     dependencies:
       lodash: 4.17.21
       webpack-sources: 1.4.3
+    dev: false
+
+  /lastfm-typed/2.0.1:
+    resolution: {integrity: sha512-f7VqcPNw3GSvMYDmYsJFH/R95XwbQ/daLy4Q7AVB7iSDZ6ZEyu+mnbvJVRP2Lcgd0EWY4bj2FHCRJ4TMOuM4SQ==}
+    dependencies:
+      cross-fetch: 3.1.4
+      typed-emitter: 1.4.0
     dev: false
 
   /launch-editor-middleware/2.3.0:
@@ -8768,7 +8790,7 @@ packages:
   /nuxt-windicss/2.2.2:
     resolution: {integrity: sha512-4tvzk9d2TUFxloty187D+wmO8ZNAvpSmRJ5HQO3/AvZdMMhAl4gomXR9fCgFKQe7Fxcj9nIKNInOx8TWowjiqA==}
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge/3.0.0-27338323.1e98259
+      '@nuxt/kit': /@nuxt/kit-edge/3.0.0-27356801.e9128f3
       '@windicss/plugin-utils': 1.6.1
       consola: 2.15.3
       defu: 5.0.0
@@ -11678,6 +11700,10 @@ packages:
       mime-types: 2.1.34
     dev: false
 
+  /typed-emitter/1.4.0:
+    resolution: {integrity: sha512-weBmoo3HhpKGgLBOYwe8EB31CzDFuaK7CCL+axXhUYhn4jo6DSkHnbefboCF5i4DQ2aMFe0C/FdTWcPdObgHyg==}
+    dev: false
+
   /typedarray-to-buffer/3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
     dependencies:
@@ -12609,10 +12635,10 @@ packages:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: false
 
-  github.com/eggsy/vue-notion/a3c57e9f4c23c15faae0138e51d784e89f3006a7:
-    resolution: {tarball: https://codeload.github.com/eggsy/vue-notion/tar.gz/a3c57e9f4c23c15faae0138e51d784e89f3006a7}
+  github.com/eggsy/vue-notion/c7bc77ed00ad10ebc14f794d0abbef8c468eef22:
+    resolution: {tarball: https://codeload.github.com/eggsy/vue-notion/tar.gz/c7bc77ed00ad10ebc14f794d0abbef8c468eef22}
     name: vue-notion
-    version: 1.3.2
+    version: 1.3.4
     engines: {node: '>=10'}
     prepare: true
     requiresBuild: true
