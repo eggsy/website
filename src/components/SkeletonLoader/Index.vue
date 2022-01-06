@@ -32,6 +32,9 @@ export default Vue.extend({
   <!-- Song Card -->
   <SkeletonLoaderSong v-else-if="type === 'song'" />
 
+  <!-- LastFm Card -->
+  <SkeletonLoaderLastfm v-else-if="type === 'lastfm'" />
+
   <!-- Block -->
   <div
     v-else-if="type === 'block'"
