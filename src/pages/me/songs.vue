@@ -30,7 +30,7 @@ export default Vue.extend({
   head() {
     const title = "My Songs"
     const description =
-      "My most listened, favourite and recetly played songs on Last FM!"
+      "Songs that I recently listened and the songs that I listened most as well as some more information from Last.fm, all of that information is on this page!"
 
     return {
       title,
