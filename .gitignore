@@ -94,3 +94,4 @@ sw.*
 
 # Others
 .yarn
+.netlify
