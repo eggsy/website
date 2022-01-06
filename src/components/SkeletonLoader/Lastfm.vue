@@ -13,9 +13,6 @@ export default Vue.extend({
 <template>
   <div
     class="rounded-md flex space-x-4 p-4 transition-colors focusRing overflow-x-hidden items-center"
-    :class="{
-      'justify-between': plays !== false,
-    }"
   >
     <div class="flex space-x-4 w-full items-center">
       <SkeletonLoader class="rounded-md flex-shrink-0 h-16 w-16" />
