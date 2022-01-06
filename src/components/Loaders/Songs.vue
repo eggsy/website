@@ -9,7 +9,7 @@
 
           <div class="flex space-x-2 w-full justify-end items-center">
             <SkeletonLoader class="h-5 w-1/2" />
-            <SkeletonLoader class="rounded-full h-6 w-6" />
+            <SkeletonLoader class="h-6 w-6 !rounded-full" />
           </div>
         </div>
 
@@ -19,7 +19,7 @@
 
           <div class="flex space-x-2 w-full justify-end items-center">
             <SkeletonLoader class="h-5 w-1/3" />
-            <SkeletonLoader class="rounded-full h-6 w-6" />
+            <SkeletonLoader class="h-6 w-6 !rounded-full" />
           </div>
         </div>
 
@@ -29,7 +29,7 @@
 
           <div class="flex space-x-2 w-full justify-end items-center">
             <SkeletonLoader class="h-5 w-1/4" />
-            <SkeletonLoader class="rounded-full h-6 w-6" />
+            <SkeletonLoader class="h-6 w-6 !rounded-full" />
           </div>
         </div>
       </div>
