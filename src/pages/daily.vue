@@ -110,7 +110,7 @@ export default Vue.extend({
 
 <template>
   <div class="space-y-4 my-10">
-    <BlogNotification v-if="isThereNoSongToday === true" type="warning">
+    <BlogNotification v-if="isThereNoSongToday === true" type="warning" class="mx-4">
       <p>
         There's no song for today, check back later or wait for the next day
         until I find some time to add new songs! You can listen to the older
