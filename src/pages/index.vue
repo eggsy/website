@@ -9,7 +9,7 @@ interface Project {
   description: string
   href?: string
   to?: string
-  image?: string
+  icon?: string
 }
 
 interface Experience {
@@ -32,31 +32,31 @@ export default Vue.extend({
       projects: [
         {
           title: "PreMiD",
+          to: "/projects/premid",
           description:
             "Simple, configurable utility that allows you to show what you're doing on the web in your Discord now playing status.",
-          image: "https://i.imgur.com/FjH28LQ.png",
-          to: "/projects/premid",
+          icon: "PreMiD",
         },
         {
           title: "This Website",
+          to: "/",
           description:
             "My personal website, blog, goals, daily songs and much more!",
-          image: "https://i.imgur.com/OcOBblH.png",
-          to: "/",
+          icon: "website",
         },
         {
           title: "Unblock Please",
+          to: "/projects/unblock-please",
           description:
             "Unblock Imgur and Pastebin access using secure proxies!",
-          image: "https://i.imgur.com/1LI4TKG.png",
-          to: "/projects/unblock-please",
+          icon: "UnblockPlease",
         },
         {
           title: "is-inside.me",
+          to: "/projects/is-inside-me",
           description:
             "Free image and file uploading service for uploaders like ShareX!",
-          image: "https://i.imgur.com/1QBTTFx.png",
-          to: "/projects/is-inside-me",
+          icon: "IsInsideMe",
         },
       ] as Project[],
       experiences: {
@@ -291,8 +291,11 @@ export default Vue.extend({
         >
           {{ project.description }}
 
-          <template #icon v-if="project.image">
-            <SmartImage :src="project.image" class="rounded-full h-16 w-16" />
+          <template #icon v-if="project.icon">
+            <IconDev
+              :brand="project.icon"
+              class="rounded-full bg-gray-100 h-14 p-2 text-neutral-500 w-14 dark:(bg-neutral-800 text-white) "
+            />
           </template>
         </Card>
       </div>
