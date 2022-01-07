@@ -16,7 +16,7 @@ const handler: Handler = async () => {
 
     const [info, topTracks, recentTracks] = [
       await lastFm.user.getInfo(username),
-      await lastFm.user.getTopTracks(username, { limit: 6 }),
+      await lastFm.user.getTopTracks(username, { limit: 6, period: "7day" }),
       await lastFm.user.getRecentTracks(username, {
         limit: 15,
       }),
