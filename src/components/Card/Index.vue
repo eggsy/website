@@ -55,7 +55,7 @@ export default Vue.extend({
       'p-2': tight === true,
       'p-4': tight === false,
       'cursor-pointer': cursor === true,
-      'bg-gray-100 bg-neutral-800/40': elevated === true,
+      'bg-gray-100 dark:bg-neutral-800/40': elevated === true,
       'hover:bg-gray-100 dark:hover:bg-neutral-800': elevated === false,
       'items-center justify-between flex space-x-2': $slots.icon,
     }"
@@ -72,7 +72,7 @@ export default Vue.extend({
     </div>
 
     <div v-if="$slots.icon" class="flex-shrink-0">
-      <slot name="icon" class="h-8 w-8" />
+      <slot name="icon" />
     </div>
   </component>
 </template>
