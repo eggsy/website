@@ -119,7 +119,7 @@ export default Vue.extend({
     </BlogNotification>
 
     <div class="space-y-12">
-      <div class="space-y-6 gap-6 grid-cols-2 md:space-y-0 md:grid md:px-4">
+      <div class="space-y-6 px-4 gap-6 grid-cols-2 md:space-y-0 md:grid">
         <div class="space-y-4">
           <SkeletonLoader
             type="iframe"
