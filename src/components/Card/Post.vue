@@ -26,6 +26,11 @@ export default Vue.extend({
       default: "normal",
     },
   },
+  data() {
+    return {
+      hovered: false,
+    }
+  },
   computed: {
     /**
      * Returns post meta safely.
@@ -59,32 +64,48 @@ export default Vue.extend({
 </script>
 
 <template>
-  <SmartLink
+  <div
     v-if="type === 'normal'"
-    :title="getPostMeta.title"
-    :href="{
-      name: 'blog-gonderi-slug',
-      params: { slug: getPostMeta.slug },
-    }"
-    class="rounded-lg cursor-pointer space-y-2 transform transition-transform focusRing overflow-hidden md:px-4 sm:hover:-translate-y-1"
+    @mouseover="hovered = true"
+    @mouseleave="hovered = false"
   >
-    <SmartImage
-      :src="getPostMeta.image"
-      class="rounded h-40 w-full filter dark:brightness-75"
-    />
+    <SmartLink
+      :title="getPostMeta.title"
+      :href="{
+        name: 'blog-gonderi-slug',
+        params: { slug: getPostMeta.slug },
+      }"
+      class="rounded-lg cursor-pointer space-y-2 focusRing overflow-hidden"
+    >
+      <div class="relative">
+        <SmartImage
+          :src="getPostMeta.image"
+          class="rounded h-40 w-full filter dark:brightness-75"
+        />
 
-    <div class="flex flex-col space-y-1">
-      <h2
-        class="font-bold text-lg leading-tight text-gray-700 truncate dark:text-gray-200 hover:underline"
-      >
-        {{ getPostMeta.title }}
-      </h2>
+        <transition name="fade" mode="out-in">
+          <div
+            v-show="hovered"
+            class="flex bg-black/50 inset-0 absolute items-center justify-center"
+          >
+            <IconLink class="h-6 text-white w-6" />
+          </div>
+        </transition>
+      </div>
 
-      <p class="text-neutral-500 line-clamp-2">
-        {{ getPostMeta.description }}
-      </p>
-    </div>
-  </SmartLink>
+      <div class="flex flex-col space-y-1">
+        <h2
+          class="font-bold text-lg leading-tight text-gray-700 truncate dark:text-gray-200 hover:underline"
+        >
+          {{ getPostMeta.title }}
+        </h2>
+
+        <p class="text-neutral-500 line-clamp-2">
+          {{ getPostMeta.description }}
+        </p>
+      </div>
+    </SmartLink>
+  </div>
 
   <SmartLink
     v-else-if="type === 'text'"
