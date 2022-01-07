@@ -8,7 +8,7 @@ export interface SongMetadata {
 }
 
 export interface Song {
-  date: Date | null
+  date: Date | any
   url: string | null
   spotifyUrl?: string | null
   metadata: SongMetadata
@@ -27,15 +27,18 @@ const Firebase: Plugin = ({ $fire, $moment_tz }, inject) => {
     const ref = $fire.firestore.collection("dailySongs")
 
     const docs: Song[] = []
+    const date = $moment_tz().tz("Europe/Istanbul").toDate()
+
+    console.log(date)
 
     await ref
-      .where("date", "<=", $moment_tz().tz("Europe/Istanbul").toDate())
+      .where("date", "<=", date)
       .orderBy("date", "desc")
       .limit(limit)
       .get()
-      .then((snapshots: any) => {
-        snapshots.forEach((snapshot: any) => {
-          const { date, url, metadata, spotifyUrl } = snapshot.data()
+      .then((snapshots) => {
+        snapshots.forEach((snapshot) => {
+          const { date, url, metadata, spotifyUrl } = snapshot.data() as Song
 
           docs.push({
             date: $moment_tz(date.toDate()).toDate(),
