@@ -146,7 +146,7 @@ export default Vue.extend({
           />
 
           <div
-            class="flex space-x-2 text-white right-0 bottom-2 left-0 absolute items-center justify-center select-none whitespace-nowrap sm:justify-start"
+            class="flex flex-wrap space-x-2 text-white px-4 right-0 bottom-2 left-0 absolute items-center justify-center select-none whitespace-nowrap sm:justify-start"
           >
             <div
               class="rounded-md flex space-x-1 py-1 items-center backdrop-filter backdrop-blur-lg"
@@ -170,7 +170,7 @@ export default Vue.extend({
           </div>
         </div>
 
-        <article>
+        <article class="px-4">
           <header class="space-y-4 text-center mb-12 sm:(text-left pr-16) ">
             <div class="space-y-2">
               <h1
@@ -210,22 +210,35 @@ export default Vue.extend({
           :identifier="`/blog/gonderi/${post.slug}`"
           :slug="post.slug"
           lang="tr"
-          class="mt-10"
+          class="mt-10 px-4"
         />
 
-        <div class="space-y-12 mt-10">
+        <div class="space-y-12 mt-10 px-4">
+          <!-- Related posts -->
+          <div v-if="getRelatedPosts.length > 0" class="space-y-2">
+            <Title :padding="false">Benzer İçerikler</Title>
+
+            <div class="grid gap-4 sm:grid-cols-4">
+              <CardPost
+                v-for="(relatedPost, index) in getRelatedPosts"
+                :key="`related-${index}`"
+                :post="relatedPost"
+              />
+            </div>
+          </div>
+
           <BlogPrevNext :current-slug="post.slug" />
 
           <!-- Share -->
-          <div>
-            <Title>Yazıyı paylaş</Title>
+          <div class="space-y-2">
+            <Title :padding="false">Yazıyı paylaş</Title>
 
             <BlogShare :title="post.title" :path="$route.path" />
           </div>
 
           <!-- Tags -->
-          <div v-if="getTags.length > 0">
-            <Title>Etiketler</Title>
+          <div v-if="getTags.length > 0" class="space-y-2">
+            <Title :padding="false">Etiketler</Title>
 
             <div class="flex flex-wrap space-x-2">
               <Button
@@ -242,20 +255,6 @@ export default Vue.extend({
               >
                 {{ tag }}
               </Button>
-            </div>
-          </div>
-
-          <!-- Related posts -->
-          <div v-if="getRelatedPosts.length > 0">
-            <Title>Bunlar da hoşunuza gidebilir</Title>
-
-            <div class="grid gap-2 sm:grid-cols-3">
-              <Card
-                v-for="(relatedPost, index) in getRelatedPosts"
-                :key="`related-${index}`"
-                :href="`/blog/gonderi/${relatedPost.slug}`"
-                :title="relatedPost.title"
-              />
             </div>
           </div>
         </div>
