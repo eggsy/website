@@ -205,20 +205,28 @@ export default Vue.extend({
 <template>
   <div class="space-y-14 mb-10">
     <header
-      class="rounded-md flex flex-col-reverse bg-gray-200/30 my-16 mx-4 py-10 px-8 justify-between md:flex-row md:items-center dark:bg-neutral-800/40"
+      class="rounded-md flex flex-col-reverse my-16 mx-4 py-10 justify-between md:flex-row md:items-center"
     >
       <div class="md:w-8/12">
         <div class="space-y-2">
           <div
-            class="font-semibold text-xl text-gray-900 md:text-3xl dark:text-neutral-200"
+            class="font-semibold text-xl text-neutral-700 md:text-3xl dark:text-neutral-200"
           >
             <h1>Self taught</h1>
-            <h1><span class="text-blue-600">Full-stack</span> web developer</h1>
+            <h1>
+              <SmartLink
+                href="https://www.w3schools.com/whatis/whatis_fullstack.asp"
+                class="cursor-help border-b-2 border-blue-700 text-blue-700 dark:border-neutral-500 dark:text-neutral-500"
+                blank
+                >Full-stack</SmartLink
+              >
+              web developer
+            </h1>
           </div>
 
           <p class="text-neutral-500">
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
-            taught web developer. I build complex web apps using
+            taught web developer. I build complex web apps using tools like
             <SmartLink href="https://vuejs.org/" class="description-link" blank
               >Vue.js</SmartLink
             >,
