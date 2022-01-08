@@ -155,6 +155,6 @@ export default Vue.extend({
 
 <style scoped>
 div >>> strong {
-  @apply font-bold text-neutral-700 dark:text-neutral-200;
+  @apply font-semibold text-neutral-700 dark:text-neutral-200;
 }
 </style>

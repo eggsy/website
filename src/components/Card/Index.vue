@@ -62,7 +62,7 @@ export default Vue.extend({
     v-bind="href ? $attrs : false"
   >
     <div class="line-clamp-2">
-      <h2 class="font-semibold text-gray-700 truncate dark:text-neutral-100">
+      <h2 class="font-medium text-gray-700 truncate dark:text-neutral-100">
         {{ title }}
       </h2>
 

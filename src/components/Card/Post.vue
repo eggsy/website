@@ -96,7 +96,7 @@ export default Vue.extend({
 
       <div class="flex flex-col space-y-1">
         <h2
-          class="font-bold text-lg leading-tight text-gray-700 truncate dark:text-gray-200 hover:underline"
+          class="font-medium text-lg leading-tight text-gray-700 truncate dark:text-gray-200 hover:underline"
         >
           {{ getPostMeta.title }}
         </h2>
@@ -124,7 +124,7 @@ export default Vue.extend({
 
     <div class="flex flex-col overflow-x-hidden">
       <h2
-        class="font-semibold text-lg text-gray-800 truncate dark:text-gray-200"
+        class="font-medium text-lg text-gray-800 truncate dark:text-gray-200"
       >
         {{ getPostMeta.title }}
       </h2>
@@ -144,7 +144,7 @@ export default Vue.extend({
     }"
     class="rounded-lg cursor-pointer flex flex-col p-3 px-4 transition-colors focusRing truncate hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
   >
-    <h2 class="text-lg text-gray-800 truncate dark:text-gray-200">
+    <h2 class="font-medium text-lg text-gray-800 truncate dark:text-gray-200">
       {{ getPostMeta.title }}
     </h2>
 

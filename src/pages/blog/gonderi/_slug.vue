@@ -174,7 +174,7 @@ export default Vue.extend({
           <header class="space-y-4 text-center mb-12 sm:(text-left pr-16) ">
             <div class="space-y-2">
               <h1
-                class="font-semibold text-2xl text-gray-700 block sm:text-4xl dark:text-neutral-300"
+                class="font-bold text-2xl text-gray-700 block sm:text-4xl dark:text-neutral-300"
               >
                 {{ post.title }}
               </h1>
@@ -238,7 +238,7 @@ export default Vue.extend({
 
           <!-- Tags -->
           <div v-if="getTags.length > 0" class="space-y-2">
-            <Title :padding="false">Etiketler</Title>
+            <Title :padding="false" lang="tr">Etiketler</Title>
 
             <div class="flex flex-wrap space-x-2">
               <Button
@@ -280,7 +280,7 @@ export default Vue.extend({
   h1,
   h2,
   h3 {
-    @apply font-bold mb-2 transition-all text-gray-900 dark:text-gray-200;
+    @apply font-semibold mb-2 transition-all text-gray-900 dark:text-gray-200;
 
     &:hover {
       a .icon.icon-link {

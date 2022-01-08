@@ -27,10 +27,10 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .notification {
-  @apply space-y-2 border-l-4 p-4 dark:text-gray-100;
+  @apply rounded-md space-y-2 border-l-4 p-4 dark:text-gray-100;
 
   h1 {
-    @apply font-bold text-lg hover:no-underline;
+    @apply font-semibold text-lg hover:no-underline;
   }
 
   /* Background colors for types */

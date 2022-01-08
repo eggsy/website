@@ -278,15 +278,15 @@ export default Vue.extend({
     <div v-else-if="typeof getFilteredPosts === 'object'">
       <div
         v-if="isFetchPending === false && getFilteredPosts.length === 0"
-        class="space-y-4"
+        class="space-y-10 mt-8"
       >
-        <h2
-          class="font-semibold text-2xl text-gray-900 md:text-4xl dark:text-gray-100"
+        <h1
+          class="font-semibold px-4 text-2xl text-gray-900 md:text-4xl dark:text-gray-100"
         >
           Aramanıza uygun herhangi bir gönderi bulunamadı.
-        </h2>
+        </h1>
 
-        <div class="md:w-4/6">
+        <div class="px-4 md:w-4/6">
           <h3 class="text-lg text-gray-900 dark:text-gray-100">
             Deneyebileceğiniz yöntemler:
           </h3>
@@ -301,22 +301,26 @@ export default Vue.extend({
           </ul>
         </div>
 
-        <SmartLink
-          :href="{ name: 'blog' }"
-          class="rounded flex space-x-2 bg-gray-100 py-2 px-4 ring-1 ring-gray-200 text-gray-900 items-center justify-center md:w-max dark:(bg-neutral-800 ring-gray-700 text-gray-100 hover:bg-neutral-700) hover:bg-gray-200 "
-        >
-          <IconHome class="h-6 w-6" />
+        <Button :href="{ name: 'blog' }">
+          <template #icon>
+            <IconHome class="h-6 w-6" />
+          </template>
+
           <span>Bloga Dön</span>
-        </SmartLink>
+        </Button>
       </div>
 
-      <div v-else class="space-y-2">
-        <CardPost
-          v-for="(post, index) in getFilteredPosts"
-          :key="`linux-${index}`"
-          :post="post"
-          type="text"
-        />
+      <div v-else class="space-y-2 mt-8">
+        <Title>Arama sonuçları:</Title>
+
+        <div class="space-y-2">
+          <CardPost
+            v-for="(post, index) in getFilteredPosts"
+            :key="`linux-${index}`"
+            :post="post"
+            type="text"
+          />
+        </div>
       </div>
     </div>
   </div>
