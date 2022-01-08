@@ -64,7 +64,10 @@ export default Vue.extend({
       </div>
     </div>
 
-    <div v-if="plays" class="rounded-full font-bold flex-shrink-0 text-sm p-2">
+    <div
+      v-if="plays"
+      class="rounded-full font-semibold flex-shrink-0 text-sm p-2"
+    >
       {{ plays }} plays
     </div>
   </SmartLink>
