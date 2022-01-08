@@ -11,7 +11,7 @@ export default Vue.extend({
       blockMap: null,
     }
   },
-  head() {
+  head(): any {
     const title = "Goals"
     const description =
       "Goals that I want to achieve in the future such as habits, hobbies, knowledge and more."
@@ -46,7 +46,7 @@ export default Vue.extend({
 
 <template>
   <div class="mt-2">
-    <LoadersContent v-if="blockMap === null" />
+    <LoadersGoals v-if="true || blockMap === null" />
 
     <div v-else class="px-4 text-gray-500 dark:text-neutral-600">
       <header class="space-y-2 my-12">
@@ -57,14 +57,11 @@ export default Vue.extend({
         </small>
       </header>
 
-      <!-- {{ blockMap }} -->
-
       <div class="prose prose-md">
         <NotionRenderer
           class="notion"
           :unofficial="true"
           :blockMap="blockMap"
-          todo
         />
       </div>
     </div>
