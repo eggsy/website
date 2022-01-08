@@ -68,6 +68,7 @@ export default Vue.extend({
     v-if="type === 'normal'"
     @mouseover="hovered = true"
     @mouseleave="hovered = false"
+    class="overflow-hidden"
   >
     <SmartLink
       :title="getPostMeta.title"
@@ -75,7 +76,7 @@ export default Vue.extend({
         name: 'blog-gonderi-slug',
         params: { slug: getPostMeta.slug },
       }"
-      class="rounded-lg cursor-pointer space-y-2 focusRing overflow-hidden"
+      class="rounded-lg cursor-pointer space-y-2 focusRing"
     >
       <div class="relative">
         <SmartImage
