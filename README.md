@@ -28,6 +28,8 @@ Website features many custom built systems, integrations and pages!
   - My "Daily Song" page fetches data from Firebase to display the today's song! It's all statically generated on client!
 - ✅ Real-time Discord profile data using [Lanyard API](https://github.com/Phineas/lanyard/)!
   - You can see what you're editing, watching or listening on your website.
+- ✅ Last.fm API to display your top tracks and recently played songs on a [page](https://eggsy.xyz/me/songs)!
+  - To use this, I use a Netlify function, this requires an additional step (read below).
 - ✅ Designed with Windi CSS!
   - Windi introduces a JIT engine, a fast Tailwind compiler and many more stuff like variant grouping etc.!
   - Clean, beautiful, fast, and responsive UI!
@@ -60,6 +62,8 @@ If you aren't already using `pnpm`, I recommend pnpm because it is faster and ru
   - To build and compile:
     - With pnpm: `pnpm generate` (or `pnpm build`)
     - With NPM: `npm run generate` or (`npm run build`)
+
+> If you are going to use the Last.fm Netlify function in `.netlify/functions`, you need to install the `netlify-cli` module globally to your system (via `pnpm install -g netlify-cli`) and run the project with `netlify dev` instead of the commands above.
 
 If you are wondering about **how to host it on free/paid static hosting services** like (Netlify, Vercel etc.), you can refer to [Nuxt.js docs](https://nuxtjs.org/docs/2.x/deployment/netlify-deployment). My project is hosted on [Netlify](https://netlify.com).
 
