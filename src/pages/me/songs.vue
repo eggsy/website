@@ -131,7 +131,7 @@ export default Vue.extend({
       </div>
 
       <div>
-        <Title class="mb-4">Top Songs</Title>
+        <Title class="mb-4">Top Songs (last 7 days)</Title>
 
         <div class="grid gap-2 md:grid-cols-2">
           <CardLastFm
