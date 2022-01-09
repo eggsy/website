@@ -334,7 +334,7 @@ export default Vue.extend({
       {{ getPresenceData }}
     </div>
 
-    <div class="space-y-6">
+    <div class="space-y-12 px-4">
       <div class="space-y-4">
         <BlogNotification v-if="presence.installed === false" type="danger">
           You need to install the Custom Status presence from the PreMiD Store
@@ -348,7 +348,7 @@ export default Vue.extend({
           {{ "" }} to visit the store.
         </BlogNotification>
 
-        <BlogNotification type="warning" class="sm:hidden">
+        <BlogNotification type="warning" class="md:hidden">
           Are you on mobile? If you are you should know that PreMiD doesn't work
           on mobile, so you can't use this page in any way.
         </BlogNotification>
@@ -366,11 +366,11 @@ export default Vue.extend({
         />
       </div>
 
-      <div class="space-y-4 mt-4 gap-4 sm:(grid space-y-0 grid-cols-2) ">
+      <div
+        class="space-y-4 mt-4 gap-x-4 gap-y-8 md:(grid space-y-0 grid-cols-2) "
+      >
         <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            Details (upper text)
-          </h3>
+          <Title :padding="false"> Details (upper text) </Title>
 
           <input
             v-model="presence.details"
@@ -381,9 +381,7 @@ export default Vue.extend({
         </div>
 
         <div class="space-y-2">
-          <h3 class="font-medium text-gray-700 dark:text-gray-100">
-            State (lower text)
-          </h3>
+          <Title :padding="false"> State (lower text) </Title>
 
           <input
             v-model="presence.state"
@@ -394,16 +392,17 @@ export default Vue.extend({
         </div>
 
         <div class="space-y-2">
-          <div class="flex space-x-2 items-center">
-            <h3 class="font-medium text-gray-700 dark:text-gray-100">
-              Large Image
-            </h3>
+          <div class="flex space-x-2 items-center justify-between">
+            <Title :padding="false"> Large Image </Title>
 
-            <small
-              class="cursor-pointer text-xs opacity-50 hover:underline"
+            <div
+              class="cursor-pointer flex space-x-1 transition-colors text-neutral-700/40 items-center dark:text-gray-100/40 hover:text-opacity-100 focus:outline-none"
               @click="toggleCustomImage"
-              >custom</small
             >
+              <span class="text-sm">custom</span>
+
+              <IconSync class="h-5 w-5 focus:outline-none" />
+            </div>
           </div>
 
           <input
@@ -438,9 +437,8 @@ export default Vue.extend({
         </div>
 
         <div class="space-y-2">
-          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-            Small Image
-          </h3>
+          <Title :padding="false"> Small Image </Title>
+
           <select
             v-model="presence.smallImageKey"
             class="bg-white w-full dark:bg-neutral-700"
@@ -481,9 +479,7 @@ export default Vue.extend({
 
         <div class="space-y-4 col-span-2">
           <div>
-            <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-              Buttons
-            </h3>
+            <Title :padding="false"> Buttons </Title>
 
             <p class="text-sm text-gray-400 dark:text-gray-300">
               You can't click your own buttons from your Discord profile. If
@@ -492,7 +488,7 @@ export default Vue.extend({
             </p>
           </div>
 
-          <div class="grid gap-4 sm:grid-cols-2">
+          <div class="grid gap-4 md:grid-cols-2">
             <div class="space-y-2">
               <input
                 v-model="presence.buttons[0].label"
@@ -528,11 +524,9 @@ export default Vue.extend({
         </div>
 
         <div class="space-y-2 col-span-2">
-          <h3 class="font-medium w-full text-gray-700 dark:text-gray-100">
-            Timestamps
-          </h3>
+          <Title :padding="false"> Timestamps </Title>
 
-          <div class="grid gap-4 sm:grid-cols-2">
+          <div class="grid gap-4 md:grid-cols-2">
             <div
               class="timestamp dark:text-gray-200"
               :class="{
@@ -568,13 +562,9 @@ export default Vue.extend({
         </div>
       </div>
 
-      <section class="space-y-6">
+      <section class="space-y-12">
         <div>
-          <h2
-            class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
-          >
-            Consider Donating!
-          </h2>
+          <Title :padding="false"> Consider Donating! </Title>
 
           <p class="text-gray-700 dark:text-gray-200">
             If you want to support my work and make me create better systems in
@@ -590,11 +580,8 @@ export default Vue.extend({
 
         <div class="grid gap-6 md:grid-cols-2">
           <div>
-            <h2
-              class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
-            >
-              How does it work?
-            </h2>
+            <Title :padding="false"> How does it work? </Title>
+
             <p class="text-gray-700 dark:text-gray-200">
               When you add our Presence from Presence Store which is on
               <SmartLink
@@ -609,11 +596,7 @@ export default Vue.extend({
           </div>
 
           <div>
-            <h2
-              class="font-semibold text-lg text-gray-800 block dark:text-gray-100"
-            >
-              It's not showing anything!?
-            </h2>
+            <Title :padding="false"> It's not showing anything!? </Title>
 
             <p class="text-gray-700 dark:text-gray-200">
               If the system isn't working or it isn't displaying anything on
