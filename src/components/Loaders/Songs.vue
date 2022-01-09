@@ -1,5 +1,5 @@
 <template>
-  <main class="space-y-12">
+  <main class="space-y-20">
     <div>
       <Title class="mb-4">Details</Title>
 
@@ -36,7 +36,7 @@
     </div>
 
     <div>
-      <Title class="mb-4">Top Songs</Title>
+      <Title class="mb-4">Top Songs (last 7 days)</Title>
 
       <div class="grid gap-2 md:grid-cols-2">
         <SkeletonLoader v-for="top in 6" :key="top" type="lastfm" />
