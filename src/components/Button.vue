@@ -15,6 +15,11 @@ export default Vue.extend({
     },
 
     // Boolean
+    block: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     tight: {
       type: Boolean,
       required: false,
@@ -53,12 +58,12 @@ export default Vue.extend({
   <SmartLink
     :href="disabled === false && href"
     :blank="blank"
-    class="cursor-pointer flex space-x-2 transition-colors btn items-center justify-center sm:w-max"
+    class="cursor-pointer flex space-x-2 transition-colors btn items-center justify-center"
     :class="{
       // Variants
-      'bg-[#FF424D] bg-opacity-100 text-white hover:(bg-[#FF424D] bg-opacity-75)':
-        variant === 'patreon',
-      'text-gray-700 dark:text-neutral-400': variant !== 'patreon',
+      [variant === 'patreon'
+        ? 'bg-[#FF424D] bg-opacity-100 text-white hover:(bg-[#FF424D] bg-opacity-75)'
+        : 'text-gray-700 dark:text-neutral-400']: true,
 
       // Tightness
       'px-2 py-1': rounded === false && tight === true,
@@ -67,6 +72,9 @@ export default Vue.extend({
       // Borders
       rounded: rounded === false,
       'rounded-full p-2': rounded === true,
+
+      // Width
+      'sm:w-max': block === false,
 
       // Rest
       'line-through': disabled === true,
