@@ -83,6 +83,8 @@ That's all you have to do if you're not going to need Firebase integration! Don'
 
 ### ❓ What has changed?
 
+> In (package.json) version 5.0.0, in addition to latest changes, I made lots of layout changes and added more pages such as Songs and did some improvements on all the pages. Changed some components design and added paddings all over so it doesn't look weird with the titles.
+
 > In (package.json) version 4.5.0, I changed almost every dark colors and reworked on the whole project fixing some type issues, typos in blog posts, design and structure of the files. I created separate pages for Repositories, Contact and Goals.
 
 > In (package.json) version 4.0.0, I've worked on each page and component to make them compatible with [Vite](https://vitejs.dev/), which is an upcoming and blazing fast tool for Nuxt! You'll feel the difference!
