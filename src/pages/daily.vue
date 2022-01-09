@@ -110,7 +110,11 @@ export default Vue.extend({
 
 <template>
   <div class="space-y-4 my-10">
-    <BlogNotification v-if="isThereNoSongToday === true" type="warning" class="mx-4">
+    <BlogNotification
+      v-if="isThereNoSongToday === true"
+      type="warning"
+      class="mx-4"
+    >
       <p>
         There's no song for today, check back later or wait for the next day
         until I find some time to add new songs! You can listen to the older
@@ -133,11 +137,9 @@ export default Vue.extend({
 
         <div class="space-y-2 w-full">
           <div
-            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800"
+            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800/40"
           >
-            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
-              Title
-            </h3>
+            <Title :padding="false"> Title </Title>
 
             <SkeletonLoader
               v-if="$fetchState.pending || $fetchState.error"
@@ -150,11 +152,9 @@ export default Vue.extend({
           </div>
 
           <div
-            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800"
+            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800/40"
           >
-            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
-              Artist
-            </h3>
+            <Title :padding="false"> Artist </Title>
 
             <SkeletonLoader
               v-if="$fetchState.pending || $fetchState.error"
@@ -167,11 +167,9 @@ export default Vue.extend({
           </div>
 
           <div
-            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800"
+            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800/40"
           >
-            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">
-              Date
-            </h3>
+            <Title :padding="false"> Date </Title>
 
             <SkeletonLoader
               v-if="$fetchState.pending || $fetchState.error"
