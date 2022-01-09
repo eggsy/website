@@ -1,15 +1,3 @@
-<script lang="ts">
-import Vue from "vue"
-
-export default Vue.extend({
-  computed: {
-    getRandomItem(): string {
-      return ["w-2/12", "w-3/12", "w-2/5"][Math.floor(Math.random() * 3)]
-    },
-  },
-})
-</script>
-
 <template>
   <div class="space-y-12 px-4 text-gray-500 dark:text-neutral-600">
     <header class="space-y-2 my-12">
@@ -31,7 +19,7 @@ export default Vue.extend({
             <SkeletonLoader class="h-5 w-5" />
             <SkeletonLoader
               class="h-5"
-              :class="inline % 2 === 0 ? getRandomItem : 'w-1/5'"
+              :class="inline % 2 === 0 ? 'w-3/12' : 'w-1/5'"
             />
           </div>
         </div>
