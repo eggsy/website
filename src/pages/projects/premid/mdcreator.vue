@@ -509,8 +509,9 @@ export default Vue.extend({
 <template>
   <div class="pt-6">
     <div class="space-y-8">
-      <div>
-        <h1 class="font-semibold text-xl">Presence Metadata Creator</h1>
+      <div class="py-8 px-4">
+        <Title size="2" :padding="false">Presence Metadata Creator</Title>
+
         <p>
           Create a metadata.json file for your amazing and new PreMiD service
           with an easy to use and free graphical user interface! Worry. You will
@@ -519,10 +520,10 @@ export default Vue.extend({
         </p>
       </div>
 
-      <div class="space-y-6 mt-2">
+      <div class="space-y-12 mt-2">
         <!-- Author Information -->
-        <div>
-          <h2 class="font-medium text-lg">Author Information</h2>
+        <div class="px-4">
+          <Title :padding="false">Author Information</Title>
 
           <div class="mt-1 grid gap-3 sm:grid-cols-2">
             <input
@@ -540,8 +541,8 @@ export default Vue.extend({
         </div>
 
         <!-- Service Information -->
-        <div>
-          <h2 class="font-medium text-lg">Service Information</h2>
+        <div class="px-4">
+          <Title :padding="false">Service Information</Title>
 
           <div class="mt-1 grid gap-3 sm:grid-cols-2">
             <input
@@ -755,16 +756,16 @@ export default Vue.extend({
         </div>
 
         <!-- Additional Settings -->
-        <div>
-          <div>
-            <h2 class="font-medium text-lg">
+        <div class="space-y-8">
+          <div class="px-4">
+            <Title :padding="false">
               Additional Settings
               <span
                 class="cursor-pointer font-normal text-sm hover:underline"
                 @click="additionalSettings = !additionalSettings"
                 >{{ additionalSettings ? "hide" : "show" }}</span
               >
-            </h2>
+            </Title>
 
             <p>
               Settings under this title are not necessary, only fill these if
@@ -774,7 +775,7 @@ export default Vue.extend({
           </div>
 
           <transition name="fade" mode="out-in">
-            <div v-if="additionalSettings === true" class="space-y-4 mt-4">
+            <div v-if="additionalSettings === true" class="space-y-6 mt-4 px-4">
               <div class="grid gap-3 sm:grid-cols-2">
                 <input
                   v-model="service.regexp.url"
@@ -790,49 +791,41 @@ export default Vue.extend({
               </div>
 
               <div class="grid gap-x-3 gap-y-2 sm:grid-cols-3">
-                <button
+                <Button
                   v-tippy="{
                     content: 'To be able to read data from iframe sources',
                     placement: 'top',
                   }"
-                  class="text-white transition input no-bg"
-                  :class="
-                    service.iframe === true ? 'bg-green-500' : 'bg-red-600'
-                  "
-                  @click="service.iframe = !service.iframe"
+                  block
+                  :elevated="service.iframe"
+                  @click.native="service.iframe = !service.iframe"
                 >
                   {{ service.iframe ? "Disable" : "Enable" }} Iframe Support
-                </button>
+                </Button>
 
-                <button
+                <Button
                   v-tippy="{
                     content:
                       'Small warning icon that will take place next to your Presence on Store',
-                    placement: 'top',
                   }"
-                  class="text-white transition input no-bg"
-                  :class="
-                    service.warning === true ? 'bg-green-500' : 'bg-red-600'
-                  "
-                  @click="service.warning = !service.warning"
+                  block
+                  :elevated="service.warning"
+                  @click.native="service.warning = !service.warning"
                 >
                   {{ service.warning ? "Disable" : "Enable" }} Warning Icon
-                </button>
+                </Button>
 
-                <button
+                <Button
                   v-tippy="{
                     content:
                       'Required permission to be able to read Console entries',
-                    placement: 'top',
                   }"
-                  class="text-white transition input no-bg"
-                  :class="
-                    service.readLogs === true ? 'bg-green-500' : 'bg-red-600'
-                  "
-                  @click="service.readLogs = !service.readLogs"
+                  block
+                  :elevated="service.readLogs"
+                  @click.native="service.readLogs = !service.readLogs"
                 >
                   {{ service.readLogs ? "Disable" : "Enable" }} Read Logs
-                </button>
+                </Button>
               </div>
 
               <div class="rounded-md ring grid sm:grid-cols-2">
@@ -935,7 +928,7 @@ export default Vue.extend({
                 </div>
               </div>
 
-              <div class="space-y-2 text-sm">
+              <div class="space-y-4 text-sm">
                 <p>
                   <strong class="font-medium">P.S.</strong> You can't configure
                   Presence Settings with this tool. You have to take a look at
@@ -967,37 +960,19 @@ export default Vue.extend({
           <div
             class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4) "
           >
-            <div
-              class="flex space-x-2 items-center justify-center control-button"
-              @click="resultWindow = true"
-            >
-              <IconCog class="h-5 w-5 no-style" />
-              <span>Generate</span>
-            </div>
+            <Button icon="IconCog" @click.native="resultWindow = true">
+              Generate
+            </Button>
 
-            <div
-              class="control-button"
-              :class="{ 'cursor-not-allowed': importLoading === true }"
-              @click="importFromStore"
+            <Button
+              icon="IconInbox"
+              :disabled="importLoading === true"
+              @click.native="importFromStore"
             >
-              <IconSync
-                v-if="importLoading === true"
-                class="mx-auto h-6 animate-spin w-6 no-style"
-              />
+              {{ importLoading ? "Importing..." : "Import From Store" }}
+            </Button>
 
-              <div v-else class="flex space-x-2 items-center justify-center">
-                <IconInbox class="h-5 w-5 no-style" />
-                <span>Import From Store</span>
-              </div>
-            </div>
-
-            <div
-              class="flex space-x-2 items-center justify-center control-button"
-              @click="resetService"
-            >
-              <IconX class="h-5 w-5 no-style" />
-              <span>Clear</span>
-            </div>
+            <Button icon="IconX" @click.native="resetService"> Clear </Button>
           </div>
         </div>
       </div>
@@ -1014,14 +989,12 @@ export default Vue.extend({
         v-show="resultWindow === true"
         class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-neutral-800 "
       >
-        <div class="space-y-8 p-4 sm:p-10 sm:w-10/12">
-          <div class="space-y-1">
-            <div
-              class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
-            >
+        <div class="space-y-8 p-2 sm:(py-10 px-8) sm:w-10/12 ">
+          <div class="space-y-1 px-4">
+            <Title :padding="false" class="flex space-x-2 items-center">
               <IconCog class="h-5 w-5 no-style" />
-              <h2 class="font-semibold text-lg">Metadata Result</h2>
-            </div>
+              <span>Metadata Result</span>
+            </Title>
 
             <p class="text-gray-800 dark:text-gray-200">
               The result of your metadata.json, you can see your issues, and
@@ -1030,13 +1003,11 @@ export default Vue.extend({
             </p>
           </div>
 
-          <div class="space-y-1">
-            <div
-              class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
-            >
+          <div class="space-y-1 px-4">
+            <Title :padding="false" class="flex space-x-2 items-center">
               <IconExclamation class="h-5 w-5 no-style" />
-              <h2 class="font-semibold text-lg">Errors</h2>
-            </div>
+              <span>Errors</span>
+            </Title>
 
             <BlogNotification v-if="getMetadata.error === false" type="success"
               >No issues/errors found. You're good to go!</BlogNotification
@@ -1053,15 +1024,11 @@ export default Vue.extend({
             </div>
           </div>
 
-          <div class="space-y-1">
-            <div class="flex items-center justify-between">
-              <div
-                class="flex space-x-2 text-gray-900 items-center dark:text-gray-100"
-              >
-                <IconFire class="h-5 w-5 no-style" />
-                <h2 class="font-semibold text-lg">Your Metadata File</h2>
-              </div>
-            </div>
+          <div class="space-y-1 px-4">
+            <Title :padding="false" class="flex space-x-2 items-center">
+              <IconFire class="h-5 w-5 no-style" />
+              <span>Your Metadata File </span>
+            </Title>
 
             <!-- eslint-disable vue/no-v-html -->
             <pre
@@ -1104,11 +1071,6 @@ export default Vue.extend({
 </template>
 
 <style lang="scss" scoped>
-h1,
-h2 {
-  @apply text-gray-900 dark:text-gray-100;
-}
-
 p,
 .span {
   @apply text-gray-800 dark:text-gray-200;
