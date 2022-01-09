@@ -46,7 +46,7 @@ export default Vue.extend({
 
 <template>
   <div class="mt-2">
-    <LoadersGoals v-if="true || blockMap === null" />
+    <LoadersGoals v-if="blockMap === null" />
 
     <div v-else class="px-4 text-gray-500 dark:text-neutral-600">
       <header class="space-y-2 my-12">
