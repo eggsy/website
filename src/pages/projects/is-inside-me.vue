@@ -92,11 +92,11 @@ export default Vue.extend({
       </div>
 
       <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0) ">
-        <Button :href="getLink.website" icon="IconLink" blank disabled elevated>
+        <Button :href="getLink.website" icon="IconLink" blank>
           Visit Website
         </Button>
 
-        <Button :href="getLink.website" icon="IconQuestion" blank disabled>
+        <Button :href="getLink.website" icon="IconQuestion" blank>
           View FAQ
         </Button>
       </div>
