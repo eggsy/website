@@ -81,7 +81,7 @@ export default Vue.extend({
 
     <slot v-else name="icon" />
 
-    <span>
+    <span v-if="$slots.default">
       <slot />
     </span>
   </SmartLink>
