@@ -246,10 +246,10 @@ export default Vue.extend({
 <template>
   <div
     v-if="componentReady"
-    class="rounded-md bg-[#6c82cf] w-full py-4 px-6 overflow-x-hidden"
+    class="rounded-md bg-[#6c82cf] w-full py-4 px-6 overflow-x-hidden dark:bg-neutral-800/40"
   >
     <div class="pt-2">
-      <h1 class="font-bold text-xs text-white uppercase dark:text-gray-100">
+      <h1 class="font-semibold text-xs text-white uppercase dark:text-gray-100">
         Playing a game
       </h1>
 
@@ -282,7 +282,7 @@ export default Vue.extend({
           </div>
 
           <div class="text-gray-100 overflow-x-hidden">
-            <h1 class="font-semibold text-xl text-white block">{{ title }}</h1>
+            <h1 class="font-medium text-xl text-white block">{{ title }}</h1>
 
             <div class="leading-tight">
               <span class="block truncate">{{ getText.details }}</span>

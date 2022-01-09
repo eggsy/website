@@ -52,7 +52,7 @@ export default Vue.extend({
 
     <div class="space-y-1 truncate">
       <h3
-        class="font-semibold flex-shrink-0 leading-tight text-gray-700 truncate dark:text-neutral-300"
+        class="font-medium flex-shrink-0 leading-tight text-gray-700 truncate dark:text-neutral-300"
       >
         {{ title }}
       </h3>

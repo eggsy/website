@@ -315,7 +315,7 @@ export default Vue.extend({
     }
 
     strong {
-      @apply font-bold text-gray-900 dark:text-gray-200;
+      @apply font-semibold text-gray-900 dark:text-gray-200;
     }
 
     a {
