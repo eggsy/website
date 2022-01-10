@@ -58,7 +58,7 @@
     "prism-themes": "^1.9.0",
     "sass": "^1.47.0",
     "vue-disqus": "^4.0.1",
-    "vue-notion": "eggsy/vue-notion",
+    "vue-notion": "github:eggsy/vue-notion",
     "vue-tippy": "4.13.0"
   },
   "devDependencies": {
