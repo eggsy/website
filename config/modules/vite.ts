@@ -2,6 +2,8 @@ import type { UserConfig } from "vite"
 
 const moduleConfig = {
   experimentWarning: false,
+  build: false,
+  ssr: false,
 }
 
 // Excluding the following modules from optimizing since they don't include a CJS file and already don't get optimized in the bundle.

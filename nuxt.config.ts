@@ -17,7 +17,7 @@ import feed from "./config/modules/feed"
 import { NuxtConfig } from "@nuxt/types"
 
 // Constants
-const isDev = process.env.NODE_ENV !== "production"
+const isDev = process.env.NODE_ENV === "development"
 
 const Config: NuxtConfig = {
   // Constant options
