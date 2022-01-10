@@ -230,7 +230,7 @@ export default Vue.extend({
         </div>
 
         <div
-          class="flex flex-col space-y-4 max-h-50vh overflow-y-auto sm:(grid grid-cols-2 max-h-full gap-4 space-y-0) "
+          class="flex flex-col space-y-4 max-h-50vh overflow-y-auto md:(overflow-y-visible grid grid-cols-2 max-h-full gap-4 space-y-0) "
         >
           <CardPost
             v-for="(post, index) in getCategoryResults"
