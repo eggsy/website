@@ -18,9 +18,7 @@ const handler: Handler = async () => {
       await lastFm.user.getInfo(username),
       await lastFm.user.getTopTracks(username, { limit: 6, period: "7day" }),
       await lastFm.user.getTopArtists(username, { limit: 4, period: "7day" }),
-      await lastFm.user.getRecentTracks(username, {
-        limit: 15,
-      }),
+      await lastFm.user.getRecentTracks(username, { limit: 15 }),
     ]
 
     // Origin for CORS
@@ -64,7 +62,7 @@ const handler: Handler = async () => {
     // Formatted user info
     const formattedUserInfo = {
       name: info.name,
-      image: info.image.find((image) => image.size === "large")?.url || "",
+      image: info.image.find((image) => image.size === "large")?.url,
       url: info.url,
       totalPlays: info.playcount,
       registered: info.registered,
