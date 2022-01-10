@@ -43,7 +43,7 @@ export default Vue.extend({
       else if (filtered.name === "Visual Studio Code") {
         const replaced =
           filtered.state?.replace("📁 ", "")?.split(" | ")?.[0] || "a file"
-        return `Editing ${replaced} in Visual Studio Code`
+        return `Editing **${replaced}** in **Visual Studio Code**`
       }
       // Netflix
       else if (filtered.name === "Netflix" && filtered.details) {
