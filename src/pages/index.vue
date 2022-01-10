@@ -246,10 +246,10 @@ export default Vue.extend({
         <Status class="mt-4" />
       </div>
 
-      <div class="rounded-full h-40 mb-4 w-40 md:mb-0">
+      <div class="rounded-full mb-4 md:mb-0">
         <SmartImage
           src="/assets/images/memoji.png"
-          class="rounded-full h-40 w-40"
+          class="rounded-full h-30 w-30 md:h-40 md:w-40"
         />
       </div>
     </header>
