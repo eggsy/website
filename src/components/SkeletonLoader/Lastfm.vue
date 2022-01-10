@@ -12,7 +12,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="rounded-md flex space-x-4 p-4 transition-colors focusRing overflow-x-hidden items-center"
+    class="rounded-md flex space-x-4 p-4 transition-colors focus-ring overflow-x-hidden items-center"
   >
     <div class="flex space-x-4 w-full items-center">
       <SkeletonLoader class="rounded-md flex-shrink-0 h-16 w-16" />

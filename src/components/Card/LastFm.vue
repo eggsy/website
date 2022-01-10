@@ -37,7 +37,7 @@ export default Vue.extend({
   <SmartLink
     :href="url"
     :title="name"
-    class="rounded-md flex space-x-4 p-4 transition-colors focusRing overflow-x-hidden items-center hover:bg-gray-100 dark:hover:bg-neutral-800"
+    class="rounded-md flex space-x-4 p-4 transition-colors focus-ring overflow-x-hidden items-center hover:bg-gray-100 dark:hover:bg-neutral-800"
     :class="{
       'justify-between': plays !== null,
     }"

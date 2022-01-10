@@ -29,7 +29,7 @@ export default defineConfig({
     },
   },
   shortcuts: {
-    focusRing:
+    "focus-ring":
       "ring-offset-2 light:(ring-offset-gray-50 ring-gray-300) focus:outline-none focus:ring-1 dark:focus:(ring-offset-neutral-900 ring-neutral-800)",
   },
   plugins: [

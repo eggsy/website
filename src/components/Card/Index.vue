@@ -40,7 +40,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      classes: "rounded-md focusRing overflow-x-hidden transition-colors",
+      classes: "rounded-md focus-ring overflow-x-hidden transition-colors",
     }
   },
 })
