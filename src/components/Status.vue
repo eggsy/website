@@ -139,7 +139,7 @@ export default Vue.extend({
   />
 
   <div v-else class="rounded-md flex space-x-2 text-neutral-500 items-center">
-    <transition name="fade" mode="out-in">
+    <template>
       <IconBrand v-if="lanyard.spotify" brand="spotify" class="h-5 w-5" />
 
       <div
@@ -150,7 +150,7 @@ export default Vue.extend({
         }"
         :class="`h-5 w-5 rounded-full flex-shrink-0 ${getDiscordStatus}`"
       />
-    </transition>
+    </template>
 
     <transition name="fade" mode="out-in">
       <div
