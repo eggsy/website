@@ -136,19 +136,19 @@ export default Vue.extend({
           {
             title: "Repositories",
             description:
-              "Want to see my code and public repositories? Check out this page!",
+              "Want to see and/or contribute to my code and public repositories?",
             href: "/me/repos",
           },
           {
             title: "Goals",
             description:
-              "Want to know what I'm working on now and in the future?",
+              "Want to know what I'm working on now and what I'll in the future?",
             href: "/me/goals",
           },
           {
             title: "Songs",
             description:
-              "Trust your taste? See my favourite songs and recently played ones!",
+              "Trust your taste? Compare your favourite songs and artists with mine!",
             href: "/me/songs",
           },
           {
@@ -162,18 +162,19 @@ export default Vue.extend({
           {
             title: "Blog",
             description:
-              "What is better than a Turkish blog? Are you here to read them?",
+              "My Turkish stories about real-life, programming, development and more!",
             href: "/blog",
           },
           {
             title: "Daily Songs",
             description:
-              "Trust me. I only put quality songs. Want to check them out?",
+              "Fresh, cool and great song recommendations from me each day!",
             href: "/daily",
           },
           {
             title: "Donate",
-            description: "Money. You have? Want to share? Here. Share with me.",
+            description:
+              "Want to support me and my projects so that I can create better stuff in the future?",
             href: "/donate",
           },
         ],
