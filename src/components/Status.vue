@@ -119,7 +119,7 @@ export default Vue.extend({
         This is done so the transition in template can switch between two different
         elements to create a smooth transition.
       */
-      if (Object.keys(this.lanyard).length !== 0) this.newData = !this.newData
+      this.newData = !this.newData
 
       this.finished = true
     })
