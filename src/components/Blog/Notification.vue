@@ -12,7 +12,7 @@ export default Vue.extend({
       type: String,
       required: false,
       default: "",
-    }
+    },
   },
 })
 </script>

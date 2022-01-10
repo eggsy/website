@@ -260,7 +260,7 @@ export default Vue.extend({
           seasons: 2,
           anchor: "#the-umbrella-academy",
         },
-      ].sort((a, b) => b.rating - a.rating)
+      ].sort((a, b) => b.rating - a.rating),
     }
   },
 })
