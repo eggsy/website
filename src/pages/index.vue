@@ -216,7 +216,7 @@ export default Vue.extend({
             <h1>Self taught</h1>
             <h1>
               <SmartLink
-                href="https://www.w3schools.com/whatis/whatis_fullstack.asp"
+                href="https://www.w3schools.com/whatis/whatis_fullstack_js.asp"
                 class="cursor-help border-b-2 border-blue-700 text-blue-700 dark:border-neutral-500 dark:text-neutral-500"
                 blank
                 >Full-stack</SmartLink
