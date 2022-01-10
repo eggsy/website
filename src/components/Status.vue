@@ -11,6 +11,7 @@ export default Vue.extend({
   data() {
     return {
       finished: false,
+      newData: false,
       lanyard: {} as LanyardData,
       socket: null as WebSocket | null,
     }
@@ -114,6 +115,8 @@ export default Vue.extend({
       if (type === "INIT_STATE" || type === "PRESENCE_UPDATE")
         this.lanyard = status || {}
 
+      if (Object.keys(this.lanyard).length !== 0) this.newData = !this.newData
+
       this.finished = true
     })
   },
@@ -145,11 +148,23 @@ export default Vue.extend({
       />
     </transition>
 
-    <div
-      class="text-sm leading-tight truncate"
-      :title="getStatusDetails.replaceAll('**', '')"
-      v-html="getSafeHtml"
-    />
+    <transition name="fade" mode="out-in">
+      <div
+        v-if="newData === false"
+        key="notNewData"
+        class="text-sm leading-tight truncate"
+        :title="getStatusDetails.replaceAll('**', '')"
+        v-html="getSafeHtml"
+      />
+
+      <div
+        v-else
+        key="newData"
+        class="text-sm leading-tight truncate"
+        :title="getStatusDetails.replaceAll('**', '')"
+        v-html="getSafeHtml"
+      />
+    </transition>
   </div>
 </template>
 
