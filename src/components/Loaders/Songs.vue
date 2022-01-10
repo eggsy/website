@@ -44,6 +44,14 @@
     </div>
 
     <div>
+      <Title class="mb-4">Top Artists (last 7 days)</Title>
+
+      <div class="grid gap-2 md:grid-cols-2">
+        <SkeletonLoader v-for="top in 4" :key="top" type="lastfm" />
+      </div>
+    </div>
+
+    <div>
       <Title class="mb-4">Recent Songs</Title>
 
       <div class="grid gap-2 md:grid-cols-2">

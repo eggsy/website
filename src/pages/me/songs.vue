@@ -5,7 +5,7 @@ import Vue from "vue"
 interface LastFmUser {
   name: string
   registered: number
-  totalPLays: number
+  totalPlays: number
   image: string
   url: string
 }
@@ -20,10 +20,18 @@ interface LastFmSong {
   nowPlaying: boolean
 }
 
+interface LastFmArtist {
+  name: string
+  plays: number
+  image: string
+  url: string
+}
+
 interface LastFmResponse {
   user: LastFmUser
   topTracks: LastFmSong[]
   recentSongs: LastFmSong[]
+  topArtists: LastFmArtist[]
 }
 
 export default Vue.extend({
@@ -143,6 +151,21 @@ export default Vue.extend({
             :now-playing="song.nowPlaying"
             :plays="song.plays"
             :url="song.url"
+          />
+        </div>
+      </div>
+
+      <div>
+        <Title class="mb-4">Top Artists (last 7 days)</Title>
+
+        <div class="grid gap-2 md:grid-cols-2">
+          <CardLastFm
+            v-for="artist of lastFm.topArtists"
+            :key="artist.name"
+            :name="artist.name"
+            :plays="artist.plays"
+            :image="artist.image"
+            :url="artist.url"
           />
         </div>
       </div>

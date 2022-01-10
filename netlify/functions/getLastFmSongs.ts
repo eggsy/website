@@ -14,9 +14,10 @@ const handler: Handler = async () => {
   try {
     const lastFm = new LastFMTyped(LASTFM_API_KEY)
 
-    const [info, topTracks, recentTracks] = [
+    const [info, topTracks, topArtists, recentTracks] = [
       await lastFm.user.getInfo(username),
       await lastFm.user.getTopTracks(username, { limit: 6, period: "7day" }),
+      await lastFm.user.getTopArtists(username, { limit: 4, period: "7day" }),
       await lastFm.user.getRecentTracks(username, {
         limit: 15,
       }),
@@ -47,6 +48,19 @@ const handler: Handler = async () => {
       return object
     }
 
+    // Map artist function
+    const mapArtist = (artist: any) => {
+      const object: any = {
+        name: artist.name,
+        image: artist.image.find((image: any) => image.size === "large")?.url,
+        url: artist.url,
+      }
+
+      artist.playcount ? (object.plays = artist.playcount) : null
+
+      return object
+    }
+
     // Formatted user info
     const formattedUserInfo = {
       name: info.name,
@@ -69,6 +83,7 @@ const handler: Handler = async () => {
         user: formattedUserInfo,
         recentTracks: recentTracks?.tracks?.map(mapTrack) || [],
         topTracks: topTracks?.tracks?.map(mapTrack) || [],
+        topArtists: topArtists?.artists?.map(mapArtist) || [],
       }),
     }
   } catch (error: any) {

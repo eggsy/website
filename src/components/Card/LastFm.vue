@@ -9,7 +9,8 @@ export default Vue.extend({
     },
     artist: {
       type: String,
-      required: true,
+      required: false,
+      default: null,
     },
     url: {
       type: String,
@@ -60,7 +61,7 @@ export default Vue.extend({
         <span class="text-neutral-700 truncate dark:text-neutral-400">{{
           name
         }}</span>
-        <span class="text-xs truncate">by {{ artist }}</span>
+        <span v-if="artist" class="text-xs truncate">by {{ artist }}</span>
       </div>
     </div>
 
