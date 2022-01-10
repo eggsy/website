@@ -1,4 +1,4 @@
-/* Import base config */
+// Base config
 import buildModules from "./config/buildModules"
 import components from "./config/components"
 import generate from "./config/generate"
@@ -9,19 +9,24 @@ import modules from "./config/modules"
 import plugins from "./config/plugins"
 import publicRuntimeConfig from "./config/publicRuntimeConfig"
 
-/* Import specific module options */
+// Specific module options
 import vite from "./config/modules/vite"
 import feed from "./config/modules/feed"
 
-/* Types */
+// Type
 import { NuxtConfig } from "@nuxt/types"
+
+// Constants
+const isDev = process.env.NODE_ENV !== "production"
 
 const Config: NuxtConfig = {
   // Constant options
   rootDir: "./",
   srcDir: "src",
   target: "static",
-  ssr: true,
+
+  // Disabling server-side rendering on development mode because Vite module currently doesn't work when SSR is enabled. This might cause some issues and/or hydration errors but will be effective enough to help you develop easier.
+  ssr: isDev ? false : true,
 
   // Imported options
   head,
