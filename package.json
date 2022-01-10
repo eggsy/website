@@ -34,7 +34,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
-    "lint": "yarn lint:js"
+    "lint": "pnpm lint:js"
   },
   "dependencies": {
     "@eggsydev/vue-lanyard": "^1.1.3",
