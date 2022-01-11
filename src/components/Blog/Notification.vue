@@ -14,6 +14,11 @@ export default Vue.extend({
       default: "",
     },
   },
+  computed: {
+    isDefaultSlotEmpty(): boolean {
+      return this.$slots.default?.length === 0 || !this.$slots.default?.[0]?.tag
+    },
+  },
 })
 </script>
 
@@ -21,7 +26,10 @@ export default Vue.extend({
   <div class="notification" :class="type">
     <h1 v-if="title">{{ title }}</h1>
 
-    <slot />
+    <slot v-if="!isDefaultSlotEmpty" />
+    <p v-else>
+      <slot />
+    </p>
   </div>
 </template>
 
