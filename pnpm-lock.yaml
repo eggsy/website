@@ -22,7 +22,7 @@ specifiers:
   '@types/prismjs': ^1.16.6
   '@vue/runtime-dom': ^3.2.26
   core-js: ^3.20.2
-  dotenv: ^10.0.0
+  dotenv: ^11.0.0
   eslint: ^8.6.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-nuxt: ^3.1.0
@@ -78,7 +78,7 @@ devDependencies:
   '@nuxtjs/eslint-config-typescript': 8.0.0_eslint@8.6.0
   '@nuxtjs/google-analytics': 2.4.0
   '@nuxtjs/moment': 1.6.1
-  dotenv: 10.0.0
+  dotenv: 11.0.0
   eslint: 8.6.0
   eslint-config-prettier: 8.3.0_eslint@8.6.0
   eslint-plugin-nuxt: 3.1.0_eslint@8.6.0
@@ -2222,14 +2222,14 @@ packages:
       ipx: 0.8.0
     dev: true
 
-  /@nuxt/kit-edge/3.0.0-27356801.e9128f3:
-    resolution: {integrity: sha512-hGiqZydtMiK+UhHBsdD0WC+fHeI3xyJixhY2rNPGwFrzdeTrbUy8YH451SbRPOJ8TS0RYQ+cUT6JfMr0YTpnfg==}
+  /@nuxt/kit-edge/3.0.0-27365509.a2e2e04:
+    resolution: {integrity: sha512-iUpD5crHmdY6dnAKMbNNTFCEJVnOmLxLwfztY8wE58QjZnTSoe/gB1rj6h2s92e7xA/T5zuq3XQcFNrNzTPCtA==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0}
     dependencies:
-      '@nuxt/schema': /@nuxt/schema-edge/3.0.0-27356801.e9128f3
+      '@nuxt/schema': /@nuxt/schema-edge/3.0.0-27365509.a2e2e04
       consola: 2.15.3
       defu: 5.0.0
-      dotenv: 10.0.0
+      dotenv: 11.0.0
       globby: 11.1.0
       hash-sum: 2.0.0
       jiti: 1.12.9
@@ -2264,8 +2264,8 @@ packages:
       node-fetch: 2.6.6
     dev: false
 
-  /@nuxt/schema-edge/3.0.0-27356801.e9128f3:
-    resolution: {integrity: sha512-LOi5OLFzxrHL7t/a7sn2+fnkNN8y9ipnLG6l6McI+vEuzXi11YeHCYt7PmoqqySXx411hd6lISmYd/aZzBgYkg==}
+  /@nuxt/schema-edge/3.0.0-27365509.a2e2e04:
+    resolution: {integrity: sha512-KTzx+EQY1tUqiPiVONfhU18ecC1BxCnyEpXZXkXuj5mMZEfTfaGd1YGv7ssU0C5q18uZayZbemE5cMP+O/xWSg==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0}
     dependencies:
       create-require: 1.1.1
@@ -5616,9 +5616,9 @@ packages:
       is-obj: 2.0.0
     dev: false
 
-  /dotenv/10.0.0:
-    resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
-    engines: {node: '>=10'}
+  /dotenv/11.0.0:
+    resolution: {integrity: sha512-Fp/b504Y5W+e+FpCxTFMUZ7ZEQkQYF0rx+KZtmwixJxGQbLHrhCwo3FjZgNC8vIfrSi29PABNbMoCGD9YoiXbQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /dotenv/9.0.2:
@@ -9394,7 +9394,7 @@ packages:
   /nuxt-windicss/2.2.2:
     resolution: {integrity: sha512-4tvzk9d2TUFxloty187D+wmO8ZNAvpSmRJ5HQO3/AvZdMMhAl4gomXR9fCgFKQe7Fxcj9nIKNInOx8TWowjiqA==}
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge/3.0.0-27356801.e9128f3
+      '@nuxt/kit': /@nuxt/kit-edge/3.0.0-27365509.a2e2e04
       '@windicss/plugin-utils': 1.6.2
       consola: 2.15.3
       defu: 5.0.0
