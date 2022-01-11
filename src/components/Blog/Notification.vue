@@ -16,7 +16,7 @@ export default Vue.extend({
   },
   computed: {
     isDefaultSlotEmpty(): boolean {
-      return this.$slots.default?.length === 0 || !this.$slots.default?.[0]?.tag
+      return !this.$slots.default?.some((item) => item.tag)
     },
   },
 })
