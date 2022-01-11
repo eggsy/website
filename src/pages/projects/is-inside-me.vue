@@ -67,11 +67,9 @@ export default Vue.extend({
         </p>
 
         <BlogNotification type="warning">
-          <p>
-            This project is now discontinued, it has retired after 3 years of
-            service and will no longer accept new users. Thank you for being
-            with us all this time.
-          </p>
+          This project is now discontinued, it has retired after 3 years of
+          service and will no longer accept new users. Thank you for being with
+          us all this time.
         </BlogNotification>
       </header>
 

@@ -115,11 +115,9 @@ export default Vue.extend({
       type="warning"
       class="mx-4"
     >
-      <p>
-        There's no song for today, check back later or wait for the next day
-        until I find some time to add new songs! You can listen to the older
-        ones if you wish to!
-      </p>
+      There's no song for today, check back later or wait for the next day until
+      I find some time to add new songs! You can listen to the older ones if you
+      wish to!
     </BlogNotification>
 
     <div class="space-y-12">

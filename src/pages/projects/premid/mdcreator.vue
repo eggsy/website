@@ -1009,9 +1009,9 @@ export default Vue.extend({
               <span>Errors</span>
             </Title>
 
-            <BlogNotification v-if="getMetadata.error === false" type="success"
-              >No issues/errors found. You're good to go!</BlogNotification
-            >
+            <BlogNotification v-if="getMetadata.error === false" type="success">
+              No issues/errors found. You're good to go!
+            </BlogNotification>
 
             <div v-else class="grid gap-1 sm:grid-cols-2">
               <BlogNotification
@@ -1019,8 +1019,9 @@ export default Vue.extend({
                 :key="`error-${index}`"
                 :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
                 type="danger"
-                >{{ error }}</BlogNotification
               >
+                {{ error }}
+              </BlogNotification>
             </div>
           </div>
 
