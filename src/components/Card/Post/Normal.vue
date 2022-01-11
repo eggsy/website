@@ -1,10 +1,13 @@
 <script lang="ts">
-import Vue from "vue"
+import Vue, { PropType } from "vue"
+
+// Import type
+import type { PostMeta } from "./Index.vue"
 
 export default Vue.extend({
   props: {
     meta: {
-      type: Object,
+      type: Object as PropType<PostMeta>,
       required: true,
       default: () => {},
     },
@@ -19,6 +22,7 @@ export default Vue.extend({
 
 <template>
   <div
+    v-if="meta"
     class="overflow-hidden"
     @mouseover="hovered = true"
     @mouseleave="hovered = false"

@@ -1,17 +1,19 @@
 <script lang="ts">
-import Vue from "vue"
+import Vue, { PropType } from "vue"
+// Import type
+import type { PostMeta } from "./Index.vue"
 
 export default Vue.extend({
   props: {
     meta: {
-      type: Object,
+      type: Object as PropType<PostMeta>,
       required: true,
       default: () => {},
     },
   },
   computed: {
-    getPostDate(): string {
-      if (!this.meta.date) return null
+    getPostDate(): string | null {
+      if (!this.meta || !this.meta.date) return null
       return this.$getReadableDate(this.meta.date)
     },
   },
@@ -20,6 +22,7 @@ export default Vue.extend({
 
 <template>
   <SmartLink
+    v-if="meta"
     :title="meta.title"
     :href="{
       name: 'blog-gonderi-slug',
