@@ -34,7 +34,8 @@ export default Vue.extend({
 </template>
 
 <style lang="scss" scoped>
-.notification {
+.notification,
+.nuxt-content .notification {
   @apply rounded-md space-y-2 border-l-4 p-4 dark:text-gray-100;
 
   h1 {
