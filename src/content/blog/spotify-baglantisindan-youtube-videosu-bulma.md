@@ -12,11 +12,7 @@ createdAt: 11/22/2021
 
 Eğer yakın zamanda benim gibi YouTube (veya başka bir) müzik sağlayıcısından Spotify'a geçiş yaptıysanız YouTube'da dinlediğiniz şarkıyı arkadaşlarınızla paylaşmanın biraz daha kolay olduğunu düşünüyor olabilirsiniz. Peki size Spotify'a geçseniz bile müziklerinizi paylaşmadan önce Node.js ile Spotify bağlantılarınızdan YouTube bağlantılarına ulaşabileceğinizi söylesem?
 
-<blog-notification title="Ben nerede ihtiyaç duyuyorum?">
-
-Bu sitede bulunan [Günlük Müzik](https://eggsy.xyz/daily) sayfasında herkesin dinleyebilmesi için müzikleri YouTube üzerinden paylaşıyorum. Spotify'a geçince oraya Spotify koymam, birçok kişi için can sıkıcı olabilirdi fakat GitHub'da bulunan [firestore-checker](https://github.com/eggsy/firestore-checker) projemi buna göre düzenleyip artık Spotify bağlantılarını YouTube'a dönüştürüp siteme müzikleri eklemeye devam edebiliyorum!
-
-</blog-notification>
+<blog-notification title="Ben nerede ihtiyaç duyuyorum?">Bu sitede bulunan [Günlük Müzik](https://eggsy.xyz/daily) sayfasında herkesin dinleyebilmesi için müzikleri YouTube üzerinden paylaşıyorum. Spotify'a geçince oraya Spotify koymam, birçok kişi için can sıkıcı olabilirdi fakat GitHub'da bulunan [firestore-checker](https://github.com/eggsy/firestore-checker) projemi buna göre düzenleyip artık Spotify bağlantılarını YouTube'a dönüştürüp siteme müzikleri eklemeye devam edebiliyorum!</blog-notification>
 
 ### İhtiyacınız olanlar
 
@@ -37,11 +33,7 @@ Dosyayı oluşturduktan sonra kullandığınız terminalden `cd /Klasörünüzü
 
 Modülleri yüklemek için `npm install modul-ismi` komutunu terminalinize girebilirsiniz. Eğer `yarn` paket yöneticisini kullanıyorsanız `yarn add modul-ismi` komutunu da kullanabilirsiniz.
 
-<blog-notification type="warning">
-
-Bu işlemleri herhangi bir modül kullanmadan, tamamen kendi kodunuzu yazarakta gerçekleştirebilirsiniz fakat bu yazının bu işlemlerin tüm ayrıntılara girmeyerek, kolay yoldan size bu işlemi göstermesi hedefiyle bu modülleri kullanacağınızı unutmayın.
-
-</blog-notification>
+<blog-notification type="warning">Bu işlemleri herhangi bir modül kullanmadan, tamamen kendi kodunuzu yazarakta gerçekleştirebilirsiniz fakat bu yazının bu işlemlerin tüm ayrıntılara girmeyerek, kolay yoldan size bu işlemi göstermesi hedefiyle bu modülleri kullanacağınızı unutmayın.</blog-notification>
 
 ### Kodu yazmaya giriş
 
@@ -94,11 +86,7 @@ Bu kod ise Spotify API'a bir istek gönderecek ve oradan bize bir erişim anahta
 
 Şimdi ise `spotify-to-youtube` modülünü kullanmaya geçebiliriz. Bu modül yukarıda belirttiğimiz Spotify bilgilerimizi kullanarak Spotify'dan şarkı bilgisini alacak ve bu şarkıyı YouTube'da aratacak.
 
-<blog-notification type="warning">
-
-Sizin bildiğiniz veya ortada bu işlemleri yapmak için farklı, hatta daha iyi modüller olabilir, ben işimi hemen görecek bir modül aradığım için ilk karşıma çıkan ve sorunsuz çıkan bu iki modülü kullanarak bu işi hallediyorum, size de bunları tarif edeceğim. Bu modülleri kullanmayacak olsanız bile bu yazıyı okuyup birkaç fikir edinebilirsiniz, veya farklı modüller ile yolunuza devam edebilirsiniz.
-
-</blog-notification>
+<blog-notification type="warning">Sizin bildiğiniz veya ortada bu işlemleri yapmak için farklı, hatta daha iyi modüller olabilir, ben işimi hemen görecek bir modül aradığım için ilk karşıma çıkan ve sorunsuz çıkan bu iki modülü kullanarak bu işi hallediyorum, size de bunları tarif edeceğim. Bu modülleri kullanmayacak olsanız bile bu yazıyı okuyup birkaç fikir edinebilirsiniz, veya farklı modüller ile yolunuza devam edebilirsiniz.</blog-notification>
 
 Şimdi ise bu modülden bir örnek (instance) oluşturuyoruz, burada yapacağınız tek şey daha önce belirttiğimiz `spotifyApi` değişkenini referans olarak göstermek.
 
