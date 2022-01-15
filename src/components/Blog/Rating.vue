@@ -163,7 +163,7 @@ export default Vue.extend({
           content: `${seasons} sezon`,
           placement: 'top',
         }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-neutral-800) focus:outline-none "
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-neutral-800) focus:outline-none"
       >
         {{ seasons }} S
       </div>
@@ -173,7 +173,7 @@ export default Vue.extend({
           content: `${rating}/${max} puan`,
           placement: 'top',
         }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-neutral-800 text-gray-200) focus:outline-none "
+        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-12 items-center justify-center dark:(bg-neutral-800 text-gray-200) focus:outline-none"
       >
         {{ rating }} P
       </div>
@@ -190,7 +190,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 a {
-  @apply border-b border-gray-300 transition-colors dark:(border-gray-700 hover:border-gray-100) hover:border-gray-900 ;
+  @apply border-b border-gray-300 transition-colors dark:(border-gray-700 hover:border-gray-100) hover:border-gray-900;
 }
 
 .new a {

@@ -28,15 +28,15 @@ Her şey. Eski siteyi biliyor, veya daha önce kullandıysanız aradaki farkın 
 
 Blogda yaptığım yazı sistemi değişikliğinden sonra sitemin açık kaynak olması ve benim çalışma alanımın rahatlaması üzerine sürekli olarak siteme yaptığım eklemelere bir süre ara verip **sitemi tamamen baştan yazma kararı aldım** 😅 Bunu da yukarıda kısaca bahsettiğim Tailwind CSS, Nuxt.js, Firebase ve Netlify ile gerçekleştirdim. Şu an gördüğünüz bu site, herhangi bir Node.js sunucusuna ihtiyaç duymadan, normal bir CDN servisinde çalışabilir durumda.
 
-### Ana Sayfa Yenilendi!
+### Ana Sayfa Yenilendi
 
 Buraya gelirken yol üzerinde uğramadıysanız ana sayfaya da bir bakın derim. Sürekli içime karamsarlık veren eski sitemin ana sayfası yerine artık kendim hakkında daha fazla bilgi veren, eğitim aldığım yerleri, görev yaptığım firmaları ve çok daha fazlasını belirten [yeni ana sayfayı](/) ziyaret etmeyi unutmayın!
 
-### Blog Yenilendi!
+### Blog Yenilendi
 
 Bu yazıyı okurken bu inanılmaz değişimi sizin de farkettiğinizi umuyorum. Eskiden Vuetify kullanarak yaptığım blogumun görüntüsü gün geçtikçe hoşuma gitmemeye ve bir "blog" havası vermemeye başladığı için blogumdan yavaşça soğumaya başlıyordum... Ta ki Tailwind CSS ile tanışmam ve aklıma yeni bir blog arayüzü fikri gelene kadar. Şu anda yazıyı okuduğunuz sayfa, [blogun ana sayfası](/blog) ve bloga ait her yer baştan aşağı yenilendi!
 
-### Yeni Günlük Müzik Sayfası!
+### Yeni Günlük Müzik Sayfası
 
 Node.js sunucusunun beni üzen en büyük tarafı, sunucu taraflı (gelen HTTP isteğine cevap verilmeden) kullanıcıyı başka bir yönlendirmeyi sağlamamın mümkün olmadığıydı. Daha önce sitemi bu şekilde tasarlamamın nedeni, blog yazılarını paylaşınca Discord ve diğer platformlar üzerinde ön izleme çıkmasını istememdi. Bunun mümkün olmadığını düşünüyordum ancak birtakım araştırmalardan sonra mümkün olduğunu, derlenirken tüm gönderilerin çekilip sayfanın oluşturulduğunu ve istediğim sonucu elde edebildiğimi öğrendikten sonra bu tür yönlendirmeyi Günlük Müzik sistemi için feda etmem fazla sürmedi...
 

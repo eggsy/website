@@ -13,7 +13,6 @@ export default Vue.extend({
           status: 2,
           anchor: "#daredevil",
         },
-
         {
           name: "Prison Break",
           rating: 10,

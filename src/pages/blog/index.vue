@@ -230,7 +230,7 @@ export default Vue.extend({
         </div>
 
         <div
-          class="flex flex-col space-y-4 max-h-50vh overflow-y-auto md:(overflow-y-visible grid grid-cols-2 max-h-full gap-4 space-y-0) "
+          class="flex flex-col space-y-4 max-h-50vh overflow-y-auto md:(overflow-y-visible grid grid-cols-2 max-h-full gap-4 space-y-0)"
         >
           <CardPost
             v-for="(post, index) in getCategoryResults"
@@ -263,7 +263,7 @@ export default Vue.extend({
           <div
             v-for="page in getTotalPages"
             :key="`pagination-${page}`"
-            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 transition-colors ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-neutral-800 ring-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-300 "
+            class="rounded-full cursor-pointer flex font-medium bg-gray-200 h-10 transition-colors ring-1 ring-gray-300 text-gray-900 w-10 items-center justify-center select-none dark:(bg-neutral-800 ring-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-300"
             :class="{
               'bg-gray-300 dark:bg-neutral-700': pagination + 1 === page,
             }"

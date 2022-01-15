@@ -30,24 +30,11 @@ interface LastFmArtist {
 interface LastFmResponse {
   user: LastFmUser
   topTracks: LastFmSong[]
-  recentSongs: LastFmSong[]
+  recentTracks: LastFmSong[]
   topArtists: LastFmArtist[]
 }
 
 export default Vue.extend({
-  head() {
-    const title = "My Songs"
-    const description =
-      "Songs that I recently listened and the songs that I listened most as well as some more information from Last.fm, all of that information is on this page!"
-
-    return {
-      title,
-      meta: this.$prepareMeta({
-        title,
-        description,
-      }),
-    }
-  },
   data() {
     return {
       lastFm: {} as LastFmResponse,
@@ -63,6 +50,19 @@ export default Vue.extend({
     const { data: songs }: { data: LastFmResponse } = await this.$axios(url)
 
     this.lastFm = songs
+  },
+  head() {
+    const title = "My Songs"
+    const description =
+      "Songs that I recently listened and the songs that I listened most as well as some more information from Last.fm, all of that information is on this page!"
+
+    return {
+      title,
+      meta: this.$prepareMeta({
+        title,
+        description,
+      }),
+    }
   },
 })
 </script>

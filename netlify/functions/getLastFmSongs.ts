@@ -41,7 +41,7 @@ const handler: Handler = async () => {
         nowPlaying: track.nowplaying,
       }
 
-      track.playcount ? (object.plays = track.playcount) : null
+      if (track.playcount) object.plays = track.playcount
 
       return object
     }
@@ -54,7 +54,7 @@ const handler: Handler = async () => {
         url: artist.url,
       }
 
-      artist.playcount ? (object.plays = artist.playcount) : null
+      if (artist.playcount) object.plays = artist.playcount
 
       return object
     }

@@ -10,6 +10,11 @@ interface Link {
 }
 
 export default Vue.extend({
+  data() {
+    return {
+      pageLoaded: false,
+    }
+  },
   head() {
     const title = "Contact"
     const description =
@@ -22,14 +27,6 @@ export default Vue.extend({
         description,
       }),
     }
-  },
-  data() {
-    return {
-      pageLoaded: false,
-    }
-  },
-  mounted() {
-    this.pageLoaded = true
   },
   computed: {
     getLinks(): Link[] {
@@ -60,6 +57,9 @@ export default Vue.extend({
 
       return array
     },
+  },
+  mounted() {
+    this.pageLoaded = true
   },
 })
 </script>

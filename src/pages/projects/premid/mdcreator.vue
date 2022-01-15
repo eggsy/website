@@ -2,7 +2,7 @@
 import Vue from "vue"
 
 /* Import third-party modules */
-import Prism from "prismjs"
+import { highlight, languages } from "prismjs"
 import "prism-themes/themes/prism-coldark-dark.css"
 
 /* Interfaces */
@@ -85,6 +85,24 @@ export default Vue.extend({
       initialService,
       service,
     }
+  },
+  fetchOnServer: false,
+  async fetch() {
+    // Fetch latest schema version and update the lastSchemaUrl
+    const versions: { name: string }[] = (
+      await this.$axios.get(
+        "https://api.github.com/repos/PreMiD/Schemas/contents/schemas/metadata"
+      )
+    ).data
+
+    const filteredVersions = versions
+      .filter((c) => c.name?.endsWith(".json"))
+      .map((c) => c.name?.replace(".json", ""))
+
+    const lastSchemaVersion = filteredVersions?.pop()
+
+    if (lastSchemaVersion)
+      this.lastSchemaUrl = `https://schemas.premid.app/metadata/${lastSchemaVersion}`
   },
   head() {
     const title = "Presence Metadata Creator"
@@ -218,30 +236,12 @@ export default Vue.extend({
      * @returns {string} Highlighted strings as HTML elements.
      */
     getHighlightedJson(): string {
-      return Prism.highlight(
+      return highlight(
         JSON.stringify(this.getMetadata.result, null, 2),
-        Prism.languages.javascript,
+        languages.javascript,
         "json"
       )
     },
-  },
-  fetchOnServer: false,
-  async fetch() {
-    // Fetch latest schema version and update the lastSchemaUrl
-    const versions: { name: string }[] = (
-      await this.$axios.get(
-        "https://api.github.com/repos/PreMiD/Schemas/contents/schemas/metadata"
-      )
-    ).data
-
-    const filteredVersions = versions
-      .filter((c) => c.name?.endsWith(".json"))
-      .map((c) => c.name?.replace(".json", ""))
-
-    const lastSchemaVersion = filteredVersions?.pop()
-
-    if (lastSchemaVersion)
-      this.lastSchemaUrl = `https://schemas.premid.app/metadata/${lastSchemaVersion}`
   },
   methods: {
     /**
@@ -382,7 +382,7 @@ export default Vue.extend({
       this.importLoading = true
 
       try {
-        const { data } = (await this.$axios.post(`https://api.premid.app/v3/`, {
+        const { data } = (await this.$axios.post("https://api.premid.app/v3/", {
           query: `
               query {
                 presences(service: "${input}", limit: 1) {
@@ -611,7 +611,7 @@ export default Vue.extend({
             >
               <input
                 v-model="service.url.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none "
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none"
                 placeholder="URL(s) of the service"
                 @keyup.enter="addItem('url')"
               />
@@ -654,7 +654,7 @@ export default Vue.extend({
             >
               <input
                 v-model="service.tags.input"
-                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none "
+                class="rounded-tl-md rounded-tr-md h-1/5 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none"
                 placeholder="Tags for the service"
                 @keyup.enter="addItem('tag')"
               />
@@ -699,7 +699,7 @@ export default Vue.extend({
                 <div class="h-1/3">
                   <input
                     v-model="service.description.inputs.langCode"
-                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none "
+                    class="rounded-tl-md rounded-tr-md h-1/2 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none"
                     placeholder="Language code, e.g. en"
                     @keyup.enter="$refs.descriptionInput.focus()"
                   />
@@ -707,7 +707,7 @@ export default Vue.extend({
                   <input
                     ref="descriptionInput"
                     v-model="service.description.inputs.content"
-                    class="h-1/2 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none "
+                    class="h-1/2 w-full py-2 px-4 dark:(bg-neutral-700 text-gray-200) focus:outline-none"
                     placeholder="Localized description"
                     @keyup.enter="addItem('description')"
                   />
@@ -958,7 +958,7 @@ export default Vue.extend({
           </transition>
 
           <div
-            class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4) "
+            class="flex-wrap space-y-2 mt-4 items-center sm:(flex space-y-0 space-x-4)"
           >
             <Button icon="IconCog" @click.native="resultWindow = true">
               Generate
@@ -987,9 +987,9 @@ export default Vue.extend({
     <transition name="slide-left" mode="out-in">
       <div
         v-show="resultWindow === true"
-        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-neutral-800 "
+        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-neutral-800"
       >
-        <div class="space-y-8 p-2 sm:(py-10 px-8) sm:w-10/12 ">
+        <div class="space-y-8 p-2 sm:(py-10 px-8) sm:w-10/12">
           <div class="space-y-1 px-4">
             <Title :padding="false" class="flex space-x-2 items-center">
               <IconCog class="h-5 w-5 no-style" />
@@ -1044,10 +1044,10 @@ export default Vue.extend({
             </span>
           </div>
 
-          <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center) ">
+          <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center)">
             <a
               v-if="getMetadata.error === false"
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300 "
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300"
               download="metadata.json"
               :href="`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(getMetadata.result, null, 2)
@@ -1058,7 +1058,7 @@ export default Vue.extend({
             </a>
 
             <div
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300 "
+              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300"
               @click="resultWindow = false"
             >
               <IconX class="h-5 w-5 no-style" />
@@ -1081,7 +1081,7 @@ p,
   @apply rounded py-2 px-4 transition-colors text-gray-900 select-none dark:text-gray-100;
 
   &:not(.no-background) {
-    @apply bg-gray-100 dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-200 ;
+    @apply bg-gray-100 dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-200;
   }
 
   &:not(.cursor-not-allowed) {
@@ -1090,7 +1090,7 @@ p,
 }
 
 svg:not(.no-style) {
-  @apply rounded-full cursor-pointer bg-gray-200 flex-shrink-0 h-6 p-1 w-6 dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300 ;
+  @apply rounded-full cursor-pointer bg-gray-200 flex-shrink-0 h-6 p-1 w-6 dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300;
 }
 
 .input {
@@ -1105,7 +1105,7 @@ svg:not(.no-style) {
   }
 
   &:not(.ring-0) {
-    @apply ring-offset-gray-100 ring-gray-200 ring-offset-2 dark:(ring-neutral-800 ring-offset-neutral-900) focus:ring-1 ;
+    @apply ring-offset-gray-100 ring-gray-200 ring-offset-2 dark:(ring-neutral-800 ring-offset-neutral-900) focus:ring-1;
   }
 }
 
@@ -1114,6 +1114,6 @@ pre[class*="language-"] {
 }
 
 .ring {
-  @apply ring-1 ring-offset-2 ring-offset-gray-100 ring-gray-200 dark:(ring-neutral-800 ring-offset-neutral-900) ;
+  @apply ring-1 ring-offset-2 ring-offset-gray-100 ring-gray-200 dark:(ring-neutral-800 ring-offset-neutral-900);
 }
 </style>

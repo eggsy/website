@@ -15,11 +15,11 @@ Manjaro'dan bahsetmek için öncelikle Linux'un ne olduğundan bahsetmem gerekli
 
 Linux, Windows ve macOS dışında kullanabileceğiniz, birçok geliştirici ve "üst düzey sistem kullanıcıları" tarafından bilinen/kullanılan bir işletim sistemidir. Bu işletim sistemi hızlı olması ve sistemi kullanmanızda size rakiplerine göre çok daha fazla olanak sağladığı için Windows ve macOS'e güzel bir alternatiftir.
 
-Linux, Windows veya macOS gibi "kapalı kaynak" değil, tamamen açık kaynak, serbestçe düzenlemeler yapabileceğiniz Linus Torvalds tarafından yapılmış bir işletim sistemidir. Linux, açık kaynak olması dolayısıyla bize birçok platform ve yazılımda olanak sağlar. Örneğin, Google'ın geliştirdiği Android, Linux üzerine kurulmuş mobil bir işletim sistemidir. Etrafta bu kadar fazla farklı arayüze sahip Android'in olmasının sebebi, Linux'un açık kaynak olmasıdır. 1991 yılında yayınlanan Linux sisteminde, Linux çekirdeği ve [GNU araçları](https://tr.wikipedia.org/wiki/GNU_Tasar%C4%B1s%C4%B1) birleştirildiği zaman ortaya çıkan "tam" bir işletim sistemine "Linux dağıtımı" denir. Açık kaynak olmasından dolayı bu projenin yüzlerce dağıtımı vardır. Bu dağıtımlar belli şirketler tarafından yapılabilir veya bilen birkaç geliştirici ile istediğiniz sistemi ortaya koyabilirsiniz.
+Linux, Windows veya macOS gibi "kapalı kaynak" değil, tamamen açık kaynak, serbestçe düzenlemeler yapabileceğiniz Linus Torvalds tarafından yapılmış bir işletim sistemidir. Linux, açık kaynak olması dolayısıyla bize birçok platform ve yazılımda olanak sağlar. Örneğin, Google'ın geliştirdiği Android, Linux üzerine kurulmuş mobil bir işletim sistemidir. Etrafta bu kadar fazla farklı arayüze sahip Android'in olmasının sebebi, Linux'un açık kaynak olmasıdır. 1991 yılında yayınlanan Linux sisteminde, Linux çekirdeği ve [GNU araçları](https://tr.wikipedia.org/wiki/GNU_Tasar%C4%B1s%C4%B1) birleştirildiği zaman ortaya çıkan "tam" bir işletim sistemine "Linux dağıtımı" denir. Açık kaynak olmasından dolayı bu projenin yüzlerce dağıtımı vardır. Bu dağıtımlar belli şirketler tarafından yapılabilir veya bilen birkaç geliştirici ile istediğiniz sistemi ortaya koyabilirsiniz.
 
 Linux, aynı zamanda Windows'un veya bilgisayarınızda bulunan ana işletim sistemi her neyse onun yanına kurulabilir başlatma menüsünden bir disk bölümüne yüklü olan işletim sistemini seçerek başlatabilirsiniz. Bu her Linux için geçerlidir, bu özelliği bulunmayan Linux dağıtımları da bulunuyor ancak bunlar çok az bilindik, kimsenin kullanmadığı dağıtımlar olmakla beraber biraz uğraş ile aslında onları da istediğiniz kıvama getirebiliyorsunuz. Yani, bir bilgisayarda herhangi bir Linux dağıtımını, diğer işletim sisteminizi bozmadan çalıştırabilir ve kullanabilirsiniz.
 
-Türkiye'den de TÜBİTAK'ın geliştirdiği Linux dağıtımı olan Pardus, [Debian](https://tr.wikipedia.org/wiki/Debian) adında başka bir Linux dağıtımı üzerine kurulmuş bir dağıtımdır. Devlet destekli olduğundan dolayı okullardaki akıllı tahtalarda, devlet dairelerinde ve birçok devlet makinesinde bu sistem kullanılmaktadır.
+Türkiye'den de TÜBİTAK'ın geliştirdiği Linux dağıtımı olan Pardus, [Debian](https://tr.wikipedia.org/wiki/Debian) adında başka bir Linux dağıtımı üzerine kurulmuş bir dağıtımdır. Devlet destekli olduğundan dolayı okullardaki akıllı tahtalarda, devlet dairelerinde ve birçok devlet makinesinde bu sistem kullanılmaktadır.
 
 ### Arayüzler (masaüstü ortamları) nedir?
 
@@ -39,7 +39,7 @@ Linux'un ise temelde hiçbir görsel arayüzü yoktur. Bu da insanların Discord
 - Pantheon
 - Budgie
 
-Bunlar hakkında daha fazla bilgiyi Vikipedi ve internet üzerinde arayarak edinebilir, resimlere ve videolarına bakarak inceleyebilirsiniz. **Unutmayın!** Bunlar dağıtım değil, neredeyse her Linux dağıtımında görebileceğiniz (görmeseniz bile gerekli işlemlerden sonra ayarlayıp kullanabileceğiniz) masaüstü ortamlarıdır. Yani, bunlar kendi başlarına bir sistem çalıştıramaz, sadece varsayılan sisteminize grafiksel işlevlik katar.
+Bunlar hakkında daha fazla bilgiyi Vikipedi ve internet üzerinde arayarak edinebilir, resimlere ve videolarına bakarak inceleyebilirsiniz. **Unutmayın!** Bunlar dağıtım değil, neredeyse her Linux dağıtımında görebileceğiniz (görmeseniz bile gerekli işlemlerden sonra ayarlayıp kullanabileceğiniz) masaüstü ortamlarıdır. Yani, bunlar kendi başlarına bir sistem çalıştıramaz, sadece varsayılan sisteminize grafiksel işlevlik katar.
 
 ### Peki, Manjaro nedir?
 
@@ -58,7 +58,7 @@ Arch'ı kullanırken güncellemelere veda edin! Diğer sistemlerin ve dağıtım
 
 ### Peki Manjaro'nun avantajları nelerdir?
 
-Manjaro, yukarıda okuduğunuz her şeye erişebilir ve daha fazlasını da yapabilir. Manjaro, Arch tabanlı bir dağıtım olduğu için size her türlü özelleştirmeyi ve güzelliği sunabilir. Manjaro, aynı zamanda sizlere neredeyse tüm masaüstü ortamlarını kullanmanıza olanak sağlar. Bu sayede Arch'ı bir masaüstü ortamı ile kullanabilirsiniz. Manjaro, Octopi ve pacman ile sistem güncellemelerini hallederken yanında gelen varsayılan uygulamaların yanı sıra bunlara ek olarak sisteme kendilerinin dahil ettiği `mhwd` Manjaro Ayar Yönetimi gibi birçok araç ile gelir. **MHWD (Manjaro Hardware Detection)** bilgisayarınızın tüm donanımını tarar ve size en uygun sürücüleri listeler. Siz de bunların arasından seçim yapabilir veya MHWD'nin otomatik yükleme aracını kullanarak sisteminiz için en uygun sürücüleri yükleyebilirsiniz.
+Manjaro, yukarıda okuduğunuz her şeye erişebilir ve daha fazlasını da yapabilir. Manjaro, Arch tabanlı bir dağıtım olduğu için size her türlü özelleştirmeyi ve güzelliği sunabilir. Manjaro, aynı zamanda sizlere neredeyse tüm masaüstü ortamlarını kullanmanıza olanak sağlar. Bu sayede Arch'ı bir masaüstü ortamı ile kullanabilirsiniz. Manjaro, Octopi ve pacman ile sistem güncellemelerini hallederken yanında gelen varsayılan uygulamaların yanı sıra bunlara ek olarak sisteme kendilerinin dahil ettiği `mhwd` Manjaro Ayar Yönetimi gibi birçok araç ile gelir. **MHWD (Manjaro Hardware Detection)** bilgisayarınızın tüm donanımını tarar ve size en uygun sürücüleri listeler. Siz de bunların arasından seçim yapabilir veya MHWD'nin otomatik yükleme aracını kullanarak sisteminiz için en uygun sürücüleri yükleyebilirsiniz.
 
 <smart-image src="https://i.imgur.com/V88QfCu.png"></smart-image>
 

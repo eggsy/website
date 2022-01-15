@@ -24,6 +24,7 @@ export default Vue.extend({
     license: {
       type: String,
       required: false,
+      default: null,
     },
     description: {
       type: String,

@@ -33,13 +33,13 @@ Eğer fark ettiyseniz mektupların geldiği konum, kişinin lokasyonu hakkında 
 
 Eğer sizi sıkça bir ülkeden rahatsız ediyorlarsa (ki kız profillerinin Türkiye'den aldığı rahatsız edici mesajları az da olsa tahmin edebiliyorum) uygulama ayarlarından sizi eşleştirmesinin istemediğiniz ülkeleri, konuları veya kişileri seçebiliyorsunuz.
 
-### Sadece mesajlaşma değil, size Dünyayı da öğretiyor!
+### Sadece mesajlaşma değil, size Dünyayı da öğretiyor
 
 Karşı tarafa mektup gönderecekken ilk gördüğünüz şey ülkesi. Bundan sonra hemen peşine kişinin yaşadığı yerdeki hava durumu geliyor. Sadece buradan bile bir konu açabilirsiniz! Kişilerin profilinde güncel hava durumları, kişinin yaşı, ilgi alanları, dil bilgileri, mektubun kaç saatte ulaştığı, uzaklık gibi bilgiler yer alıyor. Eğer kişinin ülkesinin üzerine tıklarsanız da size o ülke hakkında bilgiler veriyor. Ülkenin nüfusunu, km2 şeklinde boyutunu, bölgesini, dilini ve para birimine kadar bilgi veriyor. Sadece bu şekilde bile size mesaj atan kişilerin ülkeleri hakkında birçok fikre ve bilgiye sahip olabiliyorsunuz.
 
 Bunun yanı sıra uygulamanın ana ekranında başka kullanıcıların SLOWLY kullanırken yaşadığı anıları anlattıkları yazıları okuyabiliyor, SLOWLY yetkilerinin özel olarak paylaştığı "World Explorer" aracı ile sürekli karşınıza gezilecek, görülecek yerleri getiriyor. Başka yer görmek istiyorsanız "sonraki durak" tuşuna basıp başka bir yerin konumunu, resimlerini ve hakkında bilgileri görebiliyorsunuz.
 
-### Bu kadar mı? Hayır! Pul mağazası!
+### Bu kadar mı? Hayır! Pul mağazası
 
 Sanırım uygulamada en çok sevdiğim şeylerden birisi de bu. Uygulamada bir pul mağazası bulunuyor. Yani buradan alacağınız pulları mektuplarınıza iliştirip karşı tarafa gönderebiliyor ve karşı tarafın da görmesini sağlayabiliyorsunuz. Bu sistem şöyle işliyor, sizin kayıt olduğunuz ülkeye göre belli başlı birkaç tane pul veriyor. Örneğin, Türkiye'den kayıt olan bir kişiye şu pulları ücretsiz olarak veriyor uygulama:
 
@@ -51,7 +51,7 @@ Bunların dışında marketten alacağınız tüm pullar, SLOWLY para birimiyle 
 
 Resimde gördüğünüz gibi, bizim varlığından bile haberimiz olmayan bir "Arı Günü" için ücretsiz pul veriyor SLOWLY. Bu pulu da bir sonraki mektubunuza yapıştırabiliyor ve karşı tarafa gönderebiliyorsunuz. Bu şekilde hem yeni günler öğreniyor, hem de renkli pullara sahip oluyorsunuz.
 
-### Başarımlar!
+### Başarımlar
 
 Uygulamanın güzellikleri saymakla bitmiyor. Ücretsiz pul kazanabileceğiniz bir başka yöntem ise başarımları gerçekleştirmek. Uygulamada birçok başarım bulunuyor. Bu başarımlar "Android'den Giriş Yap" başarımından başlayıp "1000 Adet Mektup Al/Gönder" başarımına kadar gidiyor! Bu başarımları yaptığınızda ise uygulama size bir bildirim atıyor ve yeni bir pulunuz oluyor. Örneğin, aşağıdaki resimde, benimle eşleşen kişilerin bulunduğu kıtalardan mektup aldığım için bana verdiği pullar bulunuyor. Dünyanın her kıtasından mektup alınca da başka bir pul veriyor.
 

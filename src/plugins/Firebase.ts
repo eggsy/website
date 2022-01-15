@@ -17,7 +17,7 @@ export interface Song {
 /* Declare modules */
 
 /* Plugin */
-const Firebase: Plugin = ({ $fire, $moment_tz }, inject) => {
+const Firebase: Plugin = ({ $fire, $momentTz }, inject) => {
   /**
    * Fetch the daily song from Firebase.
    * @param {number} [limit=1] The limit of the values to return. If none present, will return one URL in string format.
@@ -27,7 +27,7 @@ const Firebase: Plugin = ({ $fire, $moment_tz }, inject) => {
     const ref = $fire.firestore.collection("dailySongs")
 
     const docs: Song[] = []
-    const date = $moment_tz().tz("Europe/Istanbul").toDate()
+    const date = $momentTz().tz("Europe/Istanbul").toDate()
 
     console.log(date)
 
@@ -41,7 +41,7 @@ const Firebase: Plugin = ({ $fire, $moment_tz }, inject) => {
           const { date, url, metadata, spotifyUrl } = snapshot.data() as Song
 
           docs.push({
-            date: $moment_tz(date.toDate()).toDate(),
+            date: $momentTz(date.toDate()).toDate(),
             url,
             metadata,
             spotifyUrl,

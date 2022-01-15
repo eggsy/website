@@ -1,5 +1,6 @@
 <script lang="ts">
 import Vue from "vue"
+// @ts-ignore-next-line
 import { getPageBlocks, NotionRenderer } from "vue-notion"
 
 export default Vue.extend({
@@ -10,6 +11,11 @@ export default Vue.extend({
     return {
       blockMap: null,
     }
+  },
+  fetchOnServer: false,
+  async fetch() {
+    const blocks = await getPageBlocks("Goals-a1f6bdceb42040ae87c4b5dfbf49ec6e")
+    this.blockMap = blocks
   },
   head(): any {
     const title = "Goals"
@@ -23,11 +29,6 @@ export default Vue.extend({
         description,
       }),
     }
-  },
-  fetchOnServer: false,
-  async fetch() {
-    const blocks = await getPageBlocks("Goals-a1f6bdceb42040ae87c4b5dfbf49ec6e")
-    this.blockMap = blocks
   },
   computed: {
     /**
@@ -61,7 +62,7 @@ export default Vue.extend({
         <NotionRenderer
           class="notion"
           :unofficial="true"
-          :blockMap="blockMap"
+          :block-map="blockMap"
         />
       </div>
     </div>

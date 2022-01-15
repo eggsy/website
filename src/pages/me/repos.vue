@@ -10,18 +10,6 @@ export default Vue.extend({
       repos: [] as Repository[],
     }
   },
-  head() {
-    const title = "GitHub Repositories"
-    const description = "My public projects hosted on GitHub."
-
-    return {
-      title,
-      meta: this.$prepareMeta({
-        title,
-        description,
-      }),
-    }
-  },
   fetchOnServer: false,
   async fetch() {
     const filter = [
@@ -40,6 +28,18 @@ export default Vue.extend({
     this.repos = repos
       ?.filter((repo) => repo.fork === false && !filter.includes(repo.name))
       ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count)
+  },
+  head() {
+    const title = "GitHub Repositories"
+    const description = "My public projects hosted on GitHub."
+
+    return {
+      title,
+      meta: this.$prepareMeta({
+        title,
+        description,
+      }),
+    }
   },
 })
 </script>

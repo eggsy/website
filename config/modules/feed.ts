@@ -44,8 +44,8 @@ const Feed = () => {
 
   return Object.values(feedFormats).map(({ file, type }) => ({
     path: `${file}`,
-    type: type,
     create: createFeedArticles,
+    type,
   }))
 }
 

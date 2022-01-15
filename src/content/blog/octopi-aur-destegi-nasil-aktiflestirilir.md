@@ -11,11 +11,11 @@ related:
   - manjaro-nedir
 ---
 
-Eğer AUR'un ne olduğunu, bilmiyorsanız [bu gönderiyi](/blog/gonderi/manjaro-nedir) de okumanızı tavsiye ediyorum. Bu sayfada sadece başlıkta belirtilen AUR desteğini aktifleştirme anlatılacaktır.
+Eğer AUR'un ne olduğunu, bilmiyorsanız [bu gönderiyi](/blog/gonderi/manjaro-nedir) de okumanızı tavsiye ediyorum. Bu sayfada sadece başlıkta belirtilen AUR desteğini aktifleştirme anlatılacaktır.
 
 Octopi'de AUR desteğinin birçok yolu vardır ancak herhangi birini kullanabilmek için öncelikle belli bir paketi yüklemeli ve daha sonra bunun üzerinden işlemlerinizi yapmalısınız. Bu paketin adı `pacaur`'dur ve Manjaro'nun depolarında varsayılan olarak AUR'a erişebileceğiniz tek paket budur. Daha sonra bu paketi kullanarak AUR depolarından daha gelişmiş, daha kolay AUR aracılarını indirip kurabilirsiniz ancak her halükarda öncelikle bu paketi kurmak zorundasınız.
 
-Paketi kurmak için öncelikle Octopi uygulamasını açın ve arama yerine `pacaur` yazın. Daha sonra çıkan tek sonuca sağ tıklayın ve "Yükle" seçeneğini seçin. Octopi ve birçok paket yöneticisi, bunu seçtikten sonra içerisindeki listeye yüklenecek paketleri listeler ve siz onaylayana kadar orada bekletir. Bu sayede birden çok paketi çok rahat bir şekilde kurabilirsiniz. Onaylamak için ise yukarıdaki tik işaretine basmalısınız.
+Paketi kurmak için öncelikle Octopi uygulamasını açın ve arama yerine `pacaur` yazın. Daha sonra çıkan tek sonuca sağ tıklayın ve "Yükle" seçeneğini seçin. Octopi ve birçok paket yöneticisi, bunu seçtikten sonra içerisindeki listeye yüklenecek paketleri listeler ve siz onaylayana kadar orada bekletir. Bu sayede birden çok paketi çok rahat bir şekilde kurabilirsiniz. Onaylamak için ise yukarıdaki tik işaretine basmalısınız.
 
 <smart-image src="https://i.imgur.com/8ZheGnb.png"></smart-image>
 

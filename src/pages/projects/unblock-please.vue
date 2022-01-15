@@ -70,7 +70,7 @@ export default Vue.extend({
       </div>
     </div>
 
-    <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0) ">
+    <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0)">
       <Button :href="getLink.webstore" icon="IconInbox" blank>
         <span>Install to Chrome</span>
       </Button>

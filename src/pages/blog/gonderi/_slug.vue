@@ -171,7 +171,7 @@ export default Vue.extend({
         </div>
 
         <article class="px-4">
-          <header class="space-y-4 text-center mb-12 sm:(text-left pr-16) ">
+          <header class="space-y-4 text-center mb-12 sm:(text-left pr-16)">
             <div class="space-y-2">
               <h1
                 class="font-bold text-2xl text-gray-700 block sm:text-4xl dark:text-neutral-300"
@@ -266,7 +266,7 @@ export default Vue.extend({
 <style lang="scss">
 /* Mixins */
 @mixin code {
-  @apply font-sans bg-blue-100 py-px px-1 text-blue-600 dark:(bg-blue-900 bg-opacity-50 text-blue-400) ;
+  @apply font-sans bg-blue-100 py-px px-1 text-blue-600 dark:(bg-blue-900 bg-opacity-50 text-blue-400);
 
   &::before,
   &::after {

@@ -1,6 +1,10 @@
 <script lang="ts">
 import Vue from "vue"
 
+/* Import image lists */
+import largeImages from "@/assets/files/premid/largeImages"
+import smallImages from "@/assets/files/premid/smallImages"
+
 /* Interfaces */
 interface ImageCategory {
   name: string
@@ -9,10 +13,6 @@ interface ImageCategory {
     url: string
   }[]
 }
-
-/* Import image lists */
-import largeImages from "@/assets/files/premid/largeImages"
-import smallImages from "@/assets/files/premid/smallImages"
 
 export default Vue.extend({
   data() {
@@ -195,13 +195,6 @@ export default Vue.extend({
       else return JSON.stringify(object)
     },
   },
-  beforeDestroy() {
-    this.observer.disconnect()
-  },
-  mounted() {
-    this.setupMutationObserver()
-    this.setSavedData()
-  },
   watch: {
     presence: {
       deep: true,
@@ -218,6 +211,13 @@ export default Vue.extend({
         }
       },
     },
+  },
+  beforeDestroy() {
+    this.observer.disconnect()
+  },
+  mounted() {
+    this.setupMutationObserver()
+    this.setSavedData()
   },
   methods: {
     /**
@@ -367,7 +367,7 @@ export default Vue.extend({
       </div>
 
       <div
-        class="space-y-4 mt-4 gap-x-4 gap-y-8 md:(grid space-y-0 grid-cols-2) "
+        class="space-y-4 mt-4 gap-x-4 gap-y-8 md:(grid space-y-0 grid-cols-2)"
       >
         <div class="space-y-2">
           <Title :padding="false"> Details (upper text) </Title>
@@ -620,7 +620,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 input,
 select {
-  @apply rounded-md bg-gray-200/40 py-2 px-4 ring-gray-200 ring-offset-2 ring-offset-gray-100 dark:(bg-neutral-700 text-gray-200 ring-offset-neutral-900 ring-neutral-700) focus:outline-none focus:(ring-1) ;
+  @apply rounded-md bg-gray-200/40 py-2 px-4 ring-gray-200 ring-offset-2 ring-offset-gray-100 dark:(bg-neutral-700 text-gray-200 ring-offset-neutral-900 ring-neutral-700) focus:outline-none focus:(ring-1);
 
   &[type="time"] {
     @apply py-px px-2;
@@ -628,7 +628,7 @@ select {
 }
 
 .timestamp {
-  @apply bg-white rounded-md text-center p-2 ring-1 ring-gray-200 ring-offset-gray-100 ring-offset-2 select-none dark:(bg-neutral-700 ring-neutral-700 ring-offset-neutral-900) ;
+  @apply bg-white rounded-md text-center p-2 ring-1 ring-gray-200 ring-offset-gray-100 ring-offset-2 select-none dark:(bg-neutral-700 ring-neutral-700 ring-offset-neutral-900);
 
   &:not(.cursor-default) {
     @apply cursor-pointer;
@@ -644,6 +644,6 @@ select {
 }
 
 a {
-  @apply text-blue-500 hover:(text-blue-600 underline) ;
+  @apply text-blue-500 hover:(text-blue-600 underline);
 }
 </style>

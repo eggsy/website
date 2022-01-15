@@ -1,4 +1,4 @@
-import { IContentOptions } from "@nuxt/content/types/index"
+import type { IContentOptions } from "@nuxt/content/types/index"
 
 const Content: IContentOptions = {
   liveEdit: false,

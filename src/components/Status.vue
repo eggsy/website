@@ -139,18 +139,16 @@ export default Vue.extend({
   />
 
   <div v-else class="rounded-md flex space-x-2 text-neutral-500 items-center">
-    <template>
-      <IconBrand v-if="lanyard.spotify" brand="spotify" class="h-5 w-5" />
+    <IconBrand v-if="lanyard.spotify" brand="spotify" class="h-5 w-5" />
 
-      <div
-        v-else
-        v-tippy="{
-          content: 'Discord status',
-          placement: 'bottom',
-        }"
-        :class="`h-5 w-5 rounded-full flex-shrink-0 ${getDiscordStatus}`"
-      />
-    </template>
+    <div
+      v-else
+      v-tippy="{
+        content: 'Discord status',
+        placement: 'bottom',
+      }"
+      :class="`h-5 w-5 rounded-full flex-shrink-0 ${getDiscordStatus}`"
+    />
 
     <transition name="fade" mode="out-in">
       <div

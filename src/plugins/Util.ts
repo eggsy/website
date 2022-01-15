@@ -6,7 +6,7 @@ import getReadingTime from "./Utils/getReadingTime"
 import prepareMeta from "./Utils/prepareMeta"
 
 /* Export and inject plugin */
-const Util: Plugin = ({}, inject) => {
+const Util: Plugin = (_, inject) => {
   inject("getReadableDate", getReadableDate)
   inject("getReadingTime", getReadingTime)
   inject("prepareMeta", prepareMeta)

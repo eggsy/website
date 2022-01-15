@@ -4,15 +4,6 @@ module.exports = {
     browser: true,
     node: true,
   },
-  parser: "vue-eslint-parser",
-  parserOptions: {
-    parser: "@babel/eslint-parser",
-    sourceType: "module",
-    requireConfigFile: false,
-    babelOptions: {
-      presets: ["@nuxt/babel-preset-app"],
-    },
-  },
   extends: [
     "@nuxtjs",
     "@nuxtjs/eslint-config-typescript",

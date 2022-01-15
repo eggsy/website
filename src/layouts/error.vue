@@ -79,13 +79,15 @@ export default Vue.extend({
 <template>
   <div class="space-y-4 py-8">
     <div>
-      <h1 class="text-2xl text-gray-900 dark:text-gray-100">Something bad happened...</h1>
+      <h1 class="text-2xl text-gray-900 dark:text-gray-100">
+        Something bad happened...
+      </h1>
 
       <p class="text-lg text-gray-700 dark:text-gray-300">Maybe this'd help:</p>
     </div>
 
     <div
-      class="rounded space-y-4 bg-gray-200 p-4 items-center md:(flex space-y-0 space-x-4) dark:(bg-neutral-800 text-gray-200) "
+      class="rounded space-y-4 bg-gray-200 p-4 items-center md:(flex space-y-0 space-x-4) dark:(bg-neutral-800 text-gray-200)"
     >
       <div>
         <SmartImage
@@ -101,12 +103,16 @@ export default Vue.extend({
         </div>
 
         <div class="flex flex-col">
-          <h3 class="font-semibold text-gray-800 dark:text-gray-200">Description:</h3>
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200">
+            Description:
+          </h3>
           <code>{{ getErrorMeta.description }}</code>
         </div>
 
         <div class="flex flex-col">
-          <h3 class="font-semibold text-gray-800 dark:text-gray-200">Details:</h3>
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200">
+            Details:
+          </h3>
           <code>{{ JSON.stringify(error) }}</code>
         </div>
       </div>
@@ -115,13 +121,15 @@ export default Vue.extend({
     <div class="flex flex-wrap space-x-2">
       <button title="Click to go back" @click="$router.back()">Go Back</button>
 
-      <button title="Click to refresh the page" @click="refresh">Refresh Page</button>
+      <button title="Click to refresh the page" @click="refresh">
+        Refresh Page
+      </button>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 button {
-  @apply rounded cursor-pointer bg-gray-200 py-2 px-4 transition-colors text-gray-900 select-none dark:(bg-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-300 focus:outline-none ;
+  @apply rounded cursor-pointer bg-gray-200 py-2 px-4 transition-colors text-gray-900 select-none dark:(bg-neutral-800 text-gray-100 hover:bg-neutral-700) hover:bg-gray-300 focus:outline-none;
 }
 </style>

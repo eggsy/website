@@ -16,13 +16,13 @@ Bir önceki yazım olan [Okul Günlükleri - Giriş](/blog/gonderi/okul-gunlukle
 
 Yeni dönem başladığında yayınlanan müfredat belgesinde gördüğümüz, daha sonra da öğretmenimiz Y. Ö.'nün bize açıkladığı bu konunun Podcast kaydı yapmak olduğunu öğrendikten sonra kafamda hemen bir şeyler kurmaya başlamıştım. Daha önce yüzlerce, belki binlerce ses kaydı dinlemiş, binlerce İngilizce konuşulan videolar izlemiş, oyunlar oynamış ve onlarca yabancının bir arada olduğu topluluklarda yer almış, az da olsa Podcastler dinleme fırsatını bulmuştum. Aslında gayet basit olan bu konu, biraz üzerine düştüğünüzde sizi oldukça zorlayabilecek seviyelere kadar tırmanabilen, grup halinde yaptığınız için tek bir hatanızın veya eksiğinizin bile bütün grubunuza yansıyabileceği bir görev.
 
-### Nasıl başladık?
+### Nasıl Başladık?
 
 İlk olarak öğretmenimizin bize görevi tanıtması ile konuya giriş yaptık. Gidişatı ve neler yapacağımızı bize anlatan Y. Ö., bizlere gerekli kaynakları vermiş, işimize yarayacak birçok tüyo vermişti. Bunların en başında, Spotify tarafından yapılan, Podcast kaydetmek, düzenlemek ve yayımlamak için birebir uygulama olan Anchor'u bize önermesi vardı. Bu programı ilk bölümümüzü kaydederken deneyimlediğimiz için bir Podcast kaydetmek istiyorsanız kesinlikle bu programı kullanmanız gerektiğini düşünüyorum. Hızlıca toplu kayıtlar alabilir, düzenlemeler yapabilir, ses efektleri, giriş ve çıkış sesleri ekleyebilir, Google Podcasts, Spotify, Breaker gibi birçok farklı Podcast platformunda ücretsiz bir şekilde paylaşabilirsiniz.
 
 Bunların yanı sıra, yazılıma olan merakımın farkında olan Y. Ö., beni, grubumun bu uygulama ile ilgili bir sorusu veya sorunu olduğunda danışılabilecek öğrenci olarak göstermesi ise beni gururlandıran başka bir durum olmuştu.
 
-### Kayıt planı
+### Kayıt Planı
 
 Bir Podcast kaydetmenin ilk adımı, Podcast içerisinde konuşacağınız ana konunun belirlenmesi, Podcast'iniz bir seri şeklinde olacaksa bölümünüzün konusu, katılımcılar, özet ve birebir olmamak üzere hazırlanmış bir senaryonun bulunduğu bir plan dokümanı hazırlamaktır. Bunların hepsini de bize sunan Y. Ö., Google Classroom üzerinden bize ulaştırdığı dosyayı doldurmamız için bize 1 haftalık zaman dilimi verdi. Anlaşılan gidişat, 1 hafta bölüm planı, 1 hafta kayıt ve bunu 6 hafta boyunca tekrar ederek gidecekti. Böylece her hafta kayıt almayacağımızı anlamıştık.
 
@@ -46,7 +46,7 @@ Bu işlemlerin sonunda yukarıdaki hâlini alan kayıt planımızın devamında 
   ></smart-image>
 </div>
 
-### Kayıt haftası
+### Kayıt Haftası
 
 Grup olarak hepimiz bu yorumdan sonra daha da heyecanlanmıştık. Çünkü öğretmenimizin bizden beklentisi artmıştı. Onu yüzüstü bırakamazdık. Bunu grup olarak aramızda tartışarak zamanımız dolmadan önce birkaç taktik ürettik. Kayıt sırasında bu taktikleri kullanacaktık.
 
@@ -54,7 +54,7 @@ Pazar günü teslim edeceğimiz ödevimizin süresi dolmadan önce kayıt yapaca
 
 Kayıt saati olan 20.00'den 15 dakika önce, ufak bir işim çıktı ve kaydı ertelemek zorunda kaldık. Aslında ertelemek değil, 15 dakika içerisinde biteceğini düşündüğüm bir iş olduğu için fazla kafaya takmamıştık ancak ben tekrar müsait olduğumda saat neredeyse 20.10 olmuştu. Diğerleri beni bekliyordu, veya ben öyle sanıyordum 😂 Gruptaki diğer erkek olan Y. beklemekten sıkılmış ve oyuna girmişti. Grubumuzun lideri F.'nin de önemli bir işi çıktığından dolayı kayıt 20.40 saatine ertelenmiş oldu. Sonunda kayda başladık...
 
-### Üç, iki, bir, kayıt!
+### Üç, İki, Bir, Kayıt
 
 Anchor, bağlantıyı paylaştığınızda biri katılır katılmaz hemen kayda geçiyordu. Bu yüzden arkadaşlarımı olabildiğince çabuk girmelerini söyledim, yoksa bana düzenlemek için daha fazla kısım çıkacaktı 😂 İki arkadaşım da kayıt odasına girdiklerinde önce seslerimizi kontrol ederken, havadan sudan konuşurken, gülüp eğlenirken kaydın süresinin 20 dakikalara ulaştığını gördük, ve henüz konuya bile giriş yapmamıştık... Hepimiz çekiniyor ve kimse başlamak istemiyordu. Fakat önümüzde hazır bir senaryo vardı ve bu senaryoya göre başlayacak olan kişi grubumuzun lideri, ve bu haftanın lideri olan F. olacaktı. Bir süre daha zaman çaldıktan ve "şu zamanda başlayalım"ı 4 farklı zaman için söylemiş, ancak hiçbirinde başlayamamış olmamız dolayısıyla zaman gitgide ilerliyordu.
 
@@ -66,7 +66,7 @@ Senaryomuzu okurken birbirimizin birçok telaffuz hatasını fark ettik. Hepimiz
 
 Hatasız okumamız sonrasında ufak tefek hataları tekrar belirttik ve asıl kayda geçtik. Asıl kayıt, aralarda sessiz kısımlar hariç kesme olmayan, 6 dakika uzunluğunda bir kayıt oldu. Ben bir yandan sıramı beklerken veya konuşurken elimdeki kâğıt ve kalem ile süre tutuyor ve kaydın 5 dakikayı geçeceğinden emin oluyordum. Ona göre de kendi satırlarımın hızını ayarlıyor, gereken yerlerde yavaşlıyor ve yeni şeyler ekliyordum 😅 Kaydımız bittiğinde elimdeki kağıtta 6 adet çizgi vardı, bu da kaydımızın 6 dakikayı geçtiği anlamına geliyordu.
 
-### Kayıt sonrası
+### Kayıt Sonrası
 
 Kayıt bittiğinde saatimiz 22.40 civarını gösteriyordu. Ertesi gün teslim edilecek bir ödevimiz vardı. Ben de bu yazıyı gece 2'de yazdığım gibi, yine geç saatlere doğru Podcast'imizin düzenlemesi üzerinde çalışmaya başladım. Daha önce bahsettiğim kayıt sırasında attığım çizgilerin yanında ayrıca kayda ne zaman başladığımızın da zaman damgası yer alıyordu. Böylece kaydın kaçıncı dakikasında asıl kayda başladığımızı kolayca bulabilecektim. Anchor uygulamasının editöründen bu kısmı buldum ve kaydı bitirene kadarki kısmı kestim. Daha sonra kesilmiş bu kısmı kaydettim ve ne olur ne olmaz diye telefonuma bu dosyayı indirerek bir yedeğini aldım.
 
@@ -74,11 +74,11 @@ Bu kesilmiş 6 dakikalık kaydın içerisinde de kesmeler yapacak ve parçalara 
 
 İnce ayrıntılara önem verdiğim gibi, burada da elimden geldiğince ödevimize değer vermiş ve tüm detayları elle girmiştim. [Figma](https://www.figma.com/?utm_source=eggsy.xyz) üzerinden Podcast'imiz ve bölümleri için özel kapak fotoğrafları tasarlamış, bunları yüklemiş ve bölümümüzü yayınlamıştım. Saat tam olarak 00.00'ı gösterdiğinde Podcast'imizin bağlantısını grubuma atıp arkadaşlarıma fikirlerini sormuştum.
 
-### Fikir farklılıkları, üstesinden gelmemiz
+### Fikir Farklılıkları, Üstesinden Gelmemiz
 
 Grubumuzun lideri kaydı dinledikten sonra müziklerin ve ses efektlerinin yetersizliğinden bahsetti. Bu durumda hem fikirdik fakat zamanımızın kısıtlı olması, uygulamanın bize verdiği sesler arasında bizi tam olarak tatmin edecek sesler olmaması dolayısıyla daha fazla ekleyememiş, yine de varolan efektleri yeterli olarak bulduğumu belirttim. Eğer isterse kendisinin de bir göz atmasını ve uygun bulduğu sesi bana söylemesini söyledim. Bir süre sonra kendisi de sesleri kontrol etti ve uygun bir şey bulamadığını söyledi. Kapanış için bir müzik bulmak istedik, bulamadık. İşi de daha fazla uzatıp kafamızı bulandırmak istemedik. Her ne kadar liderimiz tatmin olmamış olsa da gruptaki diğer arkadaşım ve ben onu kafalayarak kaydın iyi olduğunu, yeterli olacağını, bu haftaki sonuçtan sonra kendimizi daha da geliştireceğimizi anlattık.
 
-### Ödev sonuçlandı
+### Ödev Sonuçlandı
 
 Ödevi göndermiş, ve iki gün sonra sonucunu almıştık. Öğretmenimiz bizden güzel bir performans bekliyordu. Sanırım öyle de olmuştu ki bana Telegram üzerinden böyle bir mesaj attı:
 

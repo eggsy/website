@@ -21,12 +21,12 @@ Resimde de gördüğünüz gibi aramamıza rağmen ekranımıza hiçbir şey gel
 
 <smart-image src="https://i.imgur.com/8wNBX15.png"></smart-image>
 
-Resimde de gördüğünüz gibi AUR depolarında sadece Discord değil, birçok farklı paket ve sürümler mevcut. Eğer `discord` paketini listede görmüyorsanız biraz aşağı kaydırabilirsiniz. Aynı zamanda eğer Discord Canary'i kullanmak istiyorsanız, aşağıdaki paketi yükleyebilirsiniz.
+Resimde de gördüğünüz gibi AUR depolarında sadece Discord değil, birçok farklı paket ve sürümler mevcut. Eğer `discord` paketini listede görmüyorsanız biraz aşağı kaydırabilirsiniz. Aynı zamanda eğer Discord Canary'i kullanmak istiyorsanız, aşağıdaki paketi yükleyebilirsiniz.
 
 Yükleme işlemini başlatmak için daha önce `pacaur` yüklemesinde anlatıldığı gibi yüklemek istediğimiz pakete sağ tıklıyoruz ve "Yükle" seçeneğini seçiyoruz. Öncekinden farklı olarak AUR paketlerinin yükleme işlemi Octopi içerisinde değil, bir konsol penceresinde yapılacaktır. Bu yüzden sakin olun ve sadece yüklemenin bitmesini bekleyin. Eğer önceki yazıda belirtilen 2 ayarı kapatmadıysanız size birkaç soru sorabilir. Bu sorular Türkçe olacağından anlayacağınızı düşünüyoruz ve devam ediyoruz.
 
 <smart-image src="https://i.imgur.com/F0SzMEc.png"></smart-image>
 
-Yükleme tamamlandıktan sonra aynı pacaur paketinde olduğu gibi paketin solunda gördüğünüz simge yeşil olacaktır ve paketin yüklendiğini doğrulayacaktır. Artık uygulamayı başlatmak için isterseniz uygulama menünüzü, isterseniz de KDE'nin `ALT` + `F2` yöntemini kullanarak çalıştırabilirsiniz.
+Yükleme tamamlandıktan sonra aynı `pacaur` paketinde olduğu gibi paketin solunda gördüğünüz simge yeşil olacaktır ve paketin yüklendiğini doğrulayacaktır. Artık uygulamayı başlatmak için isterseniz uygulama menünüzü, isterseniz de KDE'nin `ALT` + `F2` yöntemini kullanarak çalıştırabilirsiniz.
 
 <smart-image src="https://i.imgur.com/ewFhuVY.png"></smart-image>

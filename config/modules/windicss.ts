@@ -1,7 +1,7 @@
 import { resolve } from "path"
-import { UserOptions } from "@windicss/plugin-utils"
+import { NuxtWindiOptions } from "nuxt-windicss/dist/"
 
-const windicss: UserOptions = {
+const windicss: NuxtWindiOptions = {
   config: resolve("windi.config.ts"),
 }
 
