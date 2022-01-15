@@ -1,11 +1,11 @@
 <script lang="ts">
-import Vue from "vue"
+import Vue, { PropType } from "vue"
 
 export default Vue.extend({
   name: "SmartLink",
   props: {
     href: {
-      type: [String, Object, Boolean],
+      type: [] as PropType<any>,
       required: true,
       default: "",
     },

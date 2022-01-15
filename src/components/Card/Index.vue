@@ -1,5 +1,5 @@
 <script lang="ts">
-import Vue from "vue"
+import Vue, { PropType } from "vue"
 
 export default Vue.extend({
   props: {
@@ -18,7 +18,7 @@ export default Vue.extend({
       default: null,
     },
     href: {
-      type: [String, Object, Boolean],
+      type: [] as PropType<any>,
       required: false,
       default: null,
     },
