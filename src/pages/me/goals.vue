@@ -53,6 +53,7 @@ export default Vue.extend({
       <header class="space-y-2 my-12">
         <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Goals</h1>
         <p>Things that I want to achieve.</p>
+
         <small class="text-xs" title="Last edited on">
           {{ getLastEditedTime }}
         </small>
