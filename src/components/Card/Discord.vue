@@ -51,14 +51,14 @@ export default Vue.extend({
       default: "[ENTER SOMETHING]",
     },
     customImageUrl: {
-      type: Boolean,
+      type: Object as PropType<{ small: string; large: string }>,
       required: false,
-      default: false,
+      default: () => ({ small: "", large: "" }),
     },
     timestamp: {
       type: Object,
       required: false,
-      default: () => {},
+      default: () => ({}),
     },
   },
   data() {
@@ -98,12 +98,13 @@ export default Vue.extend({
         .forEach((category) => smallAll.push(...category))
 
       return {
-        largeImage: this.customImageUrl
-          ? this.largeImage
+        largeImage: this.customImageUrl.large
+          ? largeImage
           : largeAll.find((item) => item.name === largeImage)?.url ||
             "https://i.imgur.com/CuVtvKW.png",
-        smallImage:
-          smallAll.find((item) => item.name === smallImage)?.url || null,
+        smallImage: this.customImageUrl.small
+          ? smallImage
+          : smallAll.find((item) => item.name === smallImage)?.url || null,
       }
     },
     /**
@@ -274,13 +275,14 @@ export default Vue.extend({
 
             <SmartImage
               v-if="getImages.smallImage"
+              :key="getImages.smallImage"
               v-tippy="{
                 content: getText.small,
                 placement: 'top',
               }"
               :src="getImages.smallImage"
               alt="small image"
-              class="rounded-full bg-[#6c82cf] -right-2 -bottom-2 ring-4 ring-[#6c82cf] w-9 absolute box-border dark:(bg-transparent ring-transparent) focus:outline-none"
+              class="rounded-full bg-[#6c82cf] h-9 -right-2 -bottom-2 ring-4 ring-[#6c82cf] w-9 overflow-y-hidden absolute box-border dark:(bg-transparent ring-transparent) focus:outline-none"
             />
           </div>
 
@@ -310,7 +312,7 @@ export default Vue.extend({
             <SmartLink
               :href="button.url"
               :title="button.url"
-              class="border border-white rounded-sm cursor-pointer text-sm text-white py-2 px-4 truncate select-none md:(px-3 py-1) focus:(bg-opacity-10 bg-white)"
+              class="border rounded-sm cursor-pointer border-white/40 text-sm py-2 px-4 transition-colors text-gray-300 truncate select-none md:(px-3 py-1) hover:(text-white border-white) focus:(bg-opacity-10 bg-white)"
               blank
               >{{ button.label }}</SmartLink
             >

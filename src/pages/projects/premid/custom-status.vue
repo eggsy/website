@@ -18,6 +18,7 @@ export default Vue.extend({
   data() {
     return {
       customLargeImage: false,
+      customSmallImage: false,
       observer: null as any,
       presenceChecked: false,
       presence: {
@@ -205,6 +206,7 @@ export default Vue.extend({
             "presenceData",
             JSON.stringify({
               customLargeImage: this.customLargeImage,
+              customSmallImage: this.customSmallImage,
               presence: this.presence,
             })
           )
@@ -236,6 +238,7 @@ export default Vue.extend({
 
         const timestamps = jsonData.presence.timestamp
         this.customLargeImage = jsonData.customLargeImage
+        this.customSmallImage = jsonData.customSmallImage
 
         this.presence = {
           ...jsonData.presence,
@@ -254,9 +257,14 @@ export default Vue.extend({
         this.presenceChecked = true
       }
     },
-    toggleCustomImage() {
-      this.presence.largeImageKey = this.customLargeImage ? "PreMiD" : ""
-      this.customLargeImage = !this.customLargeImage
+    toggleCustomImage(type: "large" | "small"): void {
+      if (type === "large") {
+        this.presence.largeImageKey = this.customLargeImage ? "PreMiD" : ""
+        this.customLargeImage = !this.customLargeImage
+      } else {
+        this.presence.smallImageKey = this.customSmallImage ? "None" : ""
+        this.customSmallImage = !this.customSmallImage
+      }
     },
     /**
      * Turns on and off a timestamp value.
@@ -357,7 +365,10 @@ export default Vue.extend({
           :small-image-text="presence.smallImageText"
           :large-image="presence.largeImageKey"
           :small-image="presence.smallImageKey"
-          :custom-image-url="customLargeImage"
+          :custom-image-url="{
+            large: customLargeImage,
+            small: customSmallImage,
+          }"
           :timestamp="presence.timestamp"
           :details="presence.details"
           :state="presence.state"
@@ -367,7 +378,7 @@ export default Vue.extend({
       </div>
 
       <div
-        class="space-y-4 mt-4 gap-x-4 gap-y-8 md:(grid space-y-0 grid-cols-2)"
+        class="space-y-4 mt-4 gap-x-4 gap-y-8 md:(grid space-y-0 grid-cols-2) "
       >
         <div class="space-y-2">
           <Title :padding="false"> Details (upper text) </Title>
@@ -397,7 +408,7 @@ export default Vue.extend({
 
             <div
               class="cursor-pointer flex space-x-1 transition-colors text-neutral-700/40 items-center dark:text-gray-100/40 hover:text-opacity-100 focus:outline-none"
-              @click="toggleCustomImage"
+              @click="toggleCustomImage('large')"
             >
               <span class="text-sm">custom</span>
 
@@ -437,9 +448,29 @@ export default Vue.extend({
         </div>
 
         <div class="space-y-2">
-          <Title :padding="false"> Small Image </Title>
+          <div class="flex space-x-2 items-center justify-between">
+            <Title :padding="false"> Small Image </Title>
+
+            <div
+              class="cursor-pointer flex space-x-1 transition-colors text-neutral-700/40 items-center dark:text-gray-100/40 hover:text-opacity-100 focus:outline-none"
+              @click="toggleCustomImage('small')"
+            >
+              <span class="text-sm">custom</span>
+
+              <IconSync class="h-5 w-5 focus:outline-none" />
+            </div>
+          </div>
+
+          <input
+            v-if="customSmallImage"
+            v-model="presence.smallImageKey"
+            type="text"
+            class="w-full"
+            placeholder="Type an image url"
+          />
 
           <select
+            v-else
             v-model="presence.smallImageKey"
             class="bg-white w-full dark:bg-neutral-700"
           >
@@ -620,7 +651,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 input,
 select {
-  @apply rounded-md bg-gray-200/40 py-2 px-4 ring-gray-200 ring-offset-2 ring-offset-gray-100 dark:(bg-neutral-700 text-gray-200 ring-offset-neutral-900 ring-neutral-700) focus:outline-none focus:(ring-1);
+  @apply rounded-md bg-gray-200/40 py-2 px-4 ring-gray-200 ring-offset-2 ring-offset-gray-100 dark:(bg-neutral-700 text-gray-200 ring-offset-neutral-900 ring-neutral-700) focus:outline-none focus:(ring-1) ;
 
   &[type="time"] {
     @apply py-px px-2;
@@ -628,7 +659,7 @@ select {
 }
 
 .timestamp {
-  @apply bg-white rounded-md text-center p-2 ring-1 ring-gray-200 ring-offset-gray-100 ring-offset-2 select-none dark:(bg-neutral-700 ring-neutral-700 ring-offset-neutral-900);
+  @apply bg-white rounded-md text-center p-2 ring-1 ring-gray-200 ring-offset-gray-100 ring-offset-2 select-none dark:(bg-neutral-700 ring-neutral-700 ring-offset-neutral-900) ;
 
   &:not(.cursor-default) {
     @apply cursor-pointer;
@@ -644,6 +675,6 @@ select {
 }
 
 a {
-  @apply text-blue-500 hover:(text-blue-600 underline);
+  @apply text-blue-500 hover:(text-blue-600 underline) ;
 }
 </style>
