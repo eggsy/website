@@ -57,7 +57,7 @@ export default Vue.extend({
         </small>
       </header>
 
-      <div class="prose prose-md">
+      <div class="max-w-full prose prose-md">
         <NotionRenderer
           class="notion"
           :unofficial="true"
