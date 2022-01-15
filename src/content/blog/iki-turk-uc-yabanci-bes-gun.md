@@ -86,10 +86,10 @@ Vapur ile muhteşem boğaz manzaralı 30 dakikalık yolumuzda arkadaşlarımıza
 
 Üsküdar'a vardığımızda oradan Çamlıca Kulesi'ni bulmamız zor olmadı, fakat, Çamlıca Kulesi'nden Çamlıca Kulesini bulmamız daha zor oldu. Kule dibimizde olmasına rağmen bir türlü girişini bulamıyor, yağmurlu ve kapalı bir günde çamurların arasından kulenin girişini arıyorduk. Anlaşılan kulenin kullanılmadığı için kapatılan arka girişine gelmiştik. Diğer tarafa geçmemiz gerekti. Uzun süren yolculuk sonucu havaalanı seviyesinde güvenlik kontrolünden, çanta kontrolünden geçtik ve içeri girebildik. Rezervasyon saatimiz çok az da olsa geçmişti. Girişi bulduğumuzda sanki 30 TL değil de, 3000 TL ödemişiz gibi hissetmiştik. Devasa bir lobi, masalarda oturan insanlar, kibar konuşması ile bizim gibi elinde hediyelik ve çay poşetleriyle gelmiş gençleri utandıran bir adam ve şahane görüntüsü ile gözlerimiz kamaşmıştı. Bir süredir burayı gitmeyi istiyordum, bugüne nasip olmuştu.
 
-<div class="md:flex md:space-x-2">
-  <smart-image src="https://i.imgur.com/swvvmmm.jpg" class="h-150 !md:w-1/2" caption="Çamlıca Kulesi, yakından."></smart-image>
-  <smart-image src="https://i.imgur.com/LgACYl0.jpg" class="h-150 !md:w-1/2" caption="Çamlıca kulesi, gece."></smart-image>
-</div>
+<blog-image-container>
+  <smart-image src="https://i.imgur.com/swvvmmm.jpg" class="h-150" caption="Çamlıca Kulesi, yakından."></smart-image>
+  <smart-image src="https://i.imgur.com/LgACYl0.jpg" class="h-150" caption="Çamlıca kulesi, gece."></smart-image>
+</blog-image-container>
 
 Seyir terasından İstanbul'un her iki yakasını da muhteşem bir şekilde görebiliyorduk. Üstelik rezervasyonu ve yemek saatimizi şehri hem gündüz, hem de gece görebilecek şekilde ayarlamıştık. Yemekten sonra tekrar seyir terasını inip İstanbul'u bir de gece görecektik. Çok heyecanlıydık. Gündüz görüntüsü zaten harikulade idi, hepimiz hayran kalmıştık.
 
@@ -109,10 +109,10 @@ Yine bir buluşma planı yaptık. İlk defa bugün uyuya kalmış ve bir saat ka
 
 Girdiğimiz restoran İstiklal Caddesi'nde, bir apartmanın en üst katındaydı. Manzarası tam caddenin Taksim tarafına giderkenki kıvrımının oraya bakıyordu. Harika bir manzaraydı. Türkiye'den uzak olduğumuzda özlediğimiz Türk insanının ve esnafının sıcaklığını uzun zaman sonra tekrar hissetmeye başlamıştık, bu dükkandaki ağabey de arkadaşlarımın yabancı olduğunu öğrenince "O zaman içli köftemizin de tadına baksınlar, ben size birer tane getireceğim, buranın içli köftesi meşhurdur." diyerek mantı öncesi bize birer içli köfte verdi. Yanında çay, su, yine ücretsizdi, sunum çok başarılı, manzara zaten kendi başına bambaşkaydı.
 
-<div class="md:flex md:space-x-2">
-  <smart-image src="https://i.imgur.com/DNorEaW.jpg" class="h-160 !md:w-1/2"></smart-image>
-  <smart-image src="https://i.imgur.com/0JArm2u.jpg" class="h-160 !md:w-1/2"></smart-image>
-</div>
+<blog-image-container>
+  <smart-image src="https://i.imgur.com/DNorEaW.jpg" class="h-160"></smart-image>
+  <smart-image src="https://i.imgur.com/0JArm2u.jpg" class="h-160"></smart-image>
+</blog-image-container>
 
 Harika iki lezzet daha denedikten sonra yine ilk gün yaptığımız gibi tramvay durağına doğru yürüdük ve turun saatine yetişmek için aceleyle ilk tramvaya bindik. Tur Sultanahmet'in orada başlayacaktı ve buradan camileri gezerek Mısır Çarşısına kadar devam edecekti. Tramvaydan inince sarı şemsiyeli birini bulmamız gerekiyordu. Neredeyse 15 dakika kadar gecikmiştik bu yüzden emin değildik yakalayabileceğimizden, fakat işte oradaydı. Yanında 5-6 kişi bulunan, sarı şemsiyeli bir tur rehberiydi bu. Yanına gittiğimizde tam zamanında geldiğimizden bahsetti ve kısa süre sonra tura başladık.
 
