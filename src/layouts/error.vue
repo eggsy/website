@@ -77,7 +77,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="space-y-4 py-8">
+  <div class="space-y-4 py-8 px-4">
     <div>
       <h1 class="text-2xl text-gray-900 dark:text-gray-100">
         Something bad happened...
