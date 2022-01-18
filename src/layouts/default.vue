@@ -45,7 +45,7 @@ export default Vue.extend({
 
     <!-- Nuxt component -->
     <Nuxt
-      class="container mx-auto min-h-screen pb-8 w-11/12 sm:(pb-10 w-9/12) md:w-7/12"
+      class="container mx-auto min-h-screen pb-8 w-11/12 sm:(pb-10 w-9/12) md:w-7/12 "
     />
 
     <!-- Footer -->
@@ -54,11 +54,10 @@ export default Vue.extend({
     <!-- Colored bottom bar -->
     <div class="bg-indigo-500 w-full py-1 dark:bg-neutral-700" />
 
+    <!-- Command Palette -->
+    <CommandPalette />
+
     <!-- Go to top button -->
-    <div
-      class="flex space-x-2 mr-6 mb-4 right-0 bottom-0 z-50 fixed items-center sm:space-x-4"
-    >
-      <GoTop />
-    </div>
+    <GoTop />
   </div>
 </template>
