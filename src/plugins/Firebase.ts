@@ -29,8 +29,6 @@ const Firebase: Plugin = ({ $fire, $momentTz }, inject) => {
     const docs: Song[] = []
     const date = $momentTz().tz("Europe/Istanbul").toDate()
 
-    console.log(date)
-
     await ref
       .where("date", "<=", date)
       .orderBy("date", "desc")
