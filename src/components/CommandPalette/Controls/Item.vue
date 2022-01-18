@@ -63,7 +63,7 @@ export default Vue.extend({
     <Component
       :is="getIconName"
       v-if="loading === false && icon !== null"
-      class="h-5 w-5"
+      class="flex-shrink-0 h-5 w-5"
     />
 
     <!-- eslint-disable-next-line vue/no-v-html -->
