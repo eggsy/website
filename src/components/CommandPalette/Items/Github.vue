@@ -92,7 +92,7 @@ export default Vue.extend({
   },
   methods: {
     getIcon(type: string) {
-      if (type === "star") return "Fork"
+      if (type === "star") return "Star"
       else if (type === "create") return "Check"
       else if (type === "push") return "Branch"
       else if (type === "fork") return "Fork"
