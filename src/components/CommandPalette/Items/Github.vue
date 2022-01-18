@@ -120,7 +120,6 @@ export default Vue.extend({
         <CommandPaletteControlsItem
           :title="repository.value"
           :icon="getIcon(repository.type)"
-          @click.native="$emit('close')"
         />
       </SmartLink>
     </CommandPaletteControls>
