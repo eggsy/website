@@ -53,11 +53,6 @@ export default Vue.extend({
           name: "Pages",
           value: [
             {
-              title: "Home",
-              icon: "Home",
-              href: "/",
-            },
-            {
               title: "Contact",
               icon: "At",
               href: "/me/contact",
@@ -110,8 +105,10 @@ export default Vue.extend({
     */
   watch: {
     isVisible(isVisible: boolean) {
-      if (isVisible) document.body.classList.add("mr-2", "overflow-y-hidden")
-      else document.body.classList.remove("mr-2", "overflow-y-hidden")
+      const keys = ["overflow-y-hidden"]
+
+      if (isVisible) document.body.classList.add(...keys)
+      else document.body.classList.remove(...keys)
     },
   },
 
@@ -187,13 +184,10 @@ export default Vue.extend({
                 <div class="space-y-1">
                   <CommandPaletteControls>
                     <SmartLink
-                      v-for="item in value.value.slice(
-                        value.name === 'Pages' && $route.name === 'index'
-                          ? 1
-                          : 0
-                      )"
+                      v-for="item in value.value"
                       :key="item.title"
                       :href="item.href"
+                      :blank="value.name !== 'Pages'"
                     >
                       <CommandPaletteControlsItem
                         :title="item.title"
