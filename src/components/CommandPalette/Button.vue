@@ -13,7 +13,7 @@ export default Vue.extend({
 <template>
   <Button
     v-tippy="{
-      content: '⌘ + K',
+      content: '⌘/Alt + K',
     }"
     class="hidden md:block"
     rounded
