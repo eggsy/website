@@ -194,7 +194,7 @@ export default Vue.extend({
                       <CommandPaletteControlsItem
                         :title="item.title"
                         :icon="item.icon"
-                        @click.native="toggleVisibility"
+                        @click.native="toggleVisibility()"
                       />
                     </SmartLink>
                   </CommandPaletteControls>
@@ -206,7 +206,8 @@ export default Vue.extend({
               <Component
                 :is="getSelectedItem.component"
                 v-if="!!getSelectedItem"
-                @close="toggleVisibility"
+                :key="getSelectedItem.component"
+                @close="toggleVisibility()"
               />
             </div>
           </div>
