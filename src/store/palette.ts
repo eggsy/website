@@ -25,8 +25,8 @@ class Palette extends VuexModule {
   }
 
   @Mutation
-  toggleVisibility() {
-    this.visible = !this.visible
+  toggleVisibility(value?: boolean) {
+    this.visible = value !== undefined ? value : !this.visible
   }
 }
 

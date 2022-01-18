@@ -130,14 +130,16 @@ export default Vue.extend({
     onKeyDown(event: KeyboardEvent) {
       if ((event.metaKey || event.altKey) && event.key === "k") {
         this.toggleVisibility()
+      } else if (event.key === "Escape") {
+        this.toggleVisibility(false)
       }
     },
     /*
       Toggle the visibility of the palette through the Vuex
       store.
     */
-    toggleVisibility() {
-      this.$store.commit("palette/toggleVisibility")
+    toggleVisibility(value?: boolean) {
+      this.$store.commit("palette/toggleVisibility", value)
     },
   },
 })
