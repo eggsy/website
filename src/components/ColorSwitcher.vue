@@ -24,8 +24,10 @@ export default Vue.extend({
 </script>
 
 <template>
-  <Button rounded elevated @click.native="switchTheme">
-    <IconSun v-if="getSelectedTheme === 'light'" class="h-5 w-5" />
-    <IconMoon v-else class="h-5 w-5" />
-  </Button>
+  <Button
+    rounded
+    elevated
+    :icon="getSelectedTheme === 'light' ? 'Sun' : 'Moon'"
+    @click.native="switchTheme"
+  />
 </template>

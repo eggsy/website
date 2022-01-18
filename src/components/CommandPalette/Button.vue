@@ -15,11 +15,10 @@ export default Vue.extend({
     v-tippy="{
       content: '⌘/Alt + K',
     }"
+    icon="Menu"
     class="hidden md:block"
     rounded
     elevated
     @click.native="togglePalette"
-  >
-    <IconMenu class="h-5 w-5" />
-  </Button>
+  />
 </template>
