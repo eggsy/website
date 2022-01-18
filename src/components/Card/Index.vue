@@ -37,6 +37,11 @@ export default Vue.extend({
       required: false,
       default: true,
     },
+    truncate: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   data() {
     return {
@@ -56,17 +61,21 @@ export default Vue.extend({
       'p-4': tight === false,
       'cursor-pointer': cursor === true,
       'bg-gray-100 dark:bg-neutral-800/40': elevated === true,
-      'hover:bg-gray-100 dark:hover:bg-neutral-800': elevated === false,
+      'hover:bg-gray-100 dark:hover:bg-neutral-800/40': elevated === false,
       'items-center justify-between flex space-x-2': $slots.icon,
     }"
     v-bind="href ? $attrs : false"
   >
-    <div class="line-clamp-2">
+    <div>
       <h2 class="font-medium text-gray-700 truncate dark:text-neutral-100">
         {{ title }}
       </h2>
 
-      <p v-if="$slots.default" class="text-neutral-500 line-clamp-2">
+      <p
+        v-if="$slots.default"
+        class="text-neutral-500"
+        :class="truncate === true && 'line-clamp-2'"
+      >
         <slot />
       </p>
     </div>
