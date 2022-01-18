@@ -52,6 +52,11 @@ export default Vue.extend({
       default: false,
     },
   },
+  computed: {
+    getIconName(): string {
+      return this.icon?.startsWith("Icon") ? this.icon : `Icon${this.icon}`
+    },
+  },
 })
 </script>
 
@@ -86,7 +91,7 @@ export default Vue.extend({
         variant === 'primary' && elevated === true && disabled === false,
     }"
   >
-    <component :is="icon" v-if="icon && !$slots.icon" class="h-6 w-6" />
+    <component :is="getIconName" v-if="icon && !$slots.icon" class="h-5 w-5" />
 
     <slot v-else name="icon" />
 
