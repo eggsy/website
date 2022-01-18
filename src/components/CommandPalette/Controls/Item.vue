@@ -64,6 +64,7 @@ export default Vue.extend({
       :is="getIconName"
       v-if="loading === false && icon !== null"
       class="flex-shrink-0 h-5 w-5"
+      :filled="icon === 'Star'"
     />
 
     <!-- eslint-disable-next-line vue/no-v-html -->
