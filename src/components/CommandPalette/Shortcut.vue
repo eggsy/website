@@ -15,7 +15,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="flex space-x-2 inset-x-0 bottom-8 items-center justify-center fixed"
+    class="flex space-x-2 inset-x-0 bottom-8 dark items-center justify-center fixed"
   >
     <Kbd>{{ key }}</Kbd> <Kbd>K</Kbd>
   </div>
