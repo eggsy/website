@@ -2,62 +2,7 @@
 import Vue from "vue"
 
 export default Vue.extend({
-  data() {
-    return {
-      mobileMenu: false,
-      links: {
-        default: [
-          {
-            title: "Blog",
-            to: "/blog",
-          },
-          {
-            title: "Projects",
-            to: "/#projects",
-          },
-          {
-            title: "Daily",
-            to: "/daily",
-          },
-          {
-            title: "Donate",
-            to: "/donate",
-          },
-        ],
-        premid: [
-          {
-            title: "Home",
-            to: "/projects/premid",
-          },
-          {
-            title: "Custom Status",
-            to: "/projects/premid/custom-status",
-          },
-          {
-            title: "Metadata Creator",
-            to: "/projects/premid/mdcreator",
-          },
-        ],
-      },
-    }
-  },
   computed: {
-    /**
-     * Checks if route has special links and returns the array according to that.
-     * @returns {Array.<{title: string; to: string}>}
-     */
-    getCurrentRouteLinks(): Array<{ title: string; to: string }> {
-      if (this.$route.path.startsWith("/projects/premid"))
-        return this.links.premid
-      else return this.links.default
-    },
-    /**
-     * Returns the selected color mode value.
-     * @returns {string} The color mode as "light" or "dark".
-     */
-    getSelectedTheme(): string {
-      return this.$colorMode.value
-    },
     /**
      * Return target url.
      */
@@ -67,15 +12,6 @@ export default Vue.extend({
       if (path !== "/projects/premid" && path.startsWith("/projects/premid"))
         return "/projects/premid"
       else return "/"
-    },
-  },
-  methods: {
-    /**
-     * Updates the color mode value.
-     * @param {'light'|'dark'} option The color mode option.
-     */
-    switchTheme(option: "light" | "dark") {
-      this.$colorMode.preference = option
     },
   },
 })
@@ -96,6 +32,7 @@ export default Vue.extend({
         </SmartLink>
 
         <div class="flex space-x-2 items-center">
+          <CommandPaletteButton />
           <ColorSwitcher />
         </div>
       </div>
