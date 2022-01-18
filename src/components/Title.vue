@@ -29,13 +29,15 @@ export default Vue.extend({
 
 <template>
   <component
-    :is="`h${size}`"
+    :is="!['sm', 'xs'].includes(size) ? `h${size}` : 'h3'"
     class="text-lg text-gray-400 dark:text-neutral-700"
     :class="{
       'px-4': padding === true,
       'text-2xl': size === '1',
       'text-xl': size === '2',
-      'text-lg': !['1', '2'].includes(size),
+      'text-sm': size === 'sm',
+      'text-xs': size === 'xs',
+      'text-lg': !['1', '2', 'sm', 'xs'].includes(size),
       'font-bold': bold === true,
       'font-medium': bold === false,
       uppercase: uppercase === true,
