@@ -212,12 +212,7 @@ export default Vue.extend({
       </div>
 
       <!-- Floating Button -->
-      <div
-        class="flex space-x-2 inset-x-0 bottom-8 items-center justify-center fixed"
-        @click="toggleVisibility"
-      >
-        <Kbd>⌘</Kbd> <Kbd>K</Kbd>
-      </div>
+      <CommandPaletteShortcut @click.native="toggleVisibility" />
     </div>
   </transition>
 </template>
