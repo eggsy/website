@@ -3,6 +3,32 @@
   Source: https://github.com/PreMiD/Presences/blob/master/@types/premid/index.d.ts
 */
 
+export interface PresenceSetting {
+  id: string
+  /**
+   * Needed for every setting except if you use `multiLanguage`.
+   */
+  title?: string
+  /**
+   * Needed for every setting except if you use `multiLanguage`.
+   */
+  icon?: string
+  if?: Record<string, string | number | boolean>
+  placeholder?: string
+  value?: string | number | boolean
+  values?: Array<string | number | boolean>
+  /**
+   * `false`: default, it disables multi-localization.
+   *
+   * `true`: use this if you are only going to use strings from the `general.json` file, of the  [localization github repo](https://github.com/PreMiD/Localization/tree/master/src/Presence).
+   *
+   * `string`: name of the file, excluding the extension (.json), inside the [localization github repo](https://github.com/PreMiD/Localization/tree/master/src/Presence).
+   *
+   * `Array<string>`: if you are using more than one file, from inside of the [localization github repo](https://github.com/PreMiD/Localization/tree/master/src/Presence), you can specify all the values in an array. Only common languages of all the files will be listed.
+   */
+  multiLanguage?: boolean | string | Array<string>
+}
+
 export interface PresenceMetadata {
   /**
    * Should contain Object with name and id of the presence developer.
@@ -121,30 +147,4 @@ export interface PresenceMetadata {
    * @link https://docs.premid.app/dev/presence/metadata#presence-settings
    */
   settings?: PresenceSetting[]
-}
-
-export interface PresenceSetting {
-  id: string
-  /**
-   * Needed for every setting except if you use `multiLanguage`.
-   */
-  title?: string
-  /**
-   * Needed for every setting except if you use `multiLanguage`.
-   */
-  icon?: string
-  if?: Record<string, string | number | boolean>
-  placeholder?: string
-  value?: string | number | boolean
-  values?: Array<string | number | boolean>
-  /**
-   * `false`: default, it disables multi-localization.
-   *
-   * `true`: use this if you are only going to use strings from the `general.json` file, of the  [localization github repo](https://github.com/PreMiD/Localization/tree/master/src/Presence).
-   *
-   * `string`: name of the file, excluding the extension (.json), inside the [localization github repo](https://github.com/PreMiD/Localization/tree/master/src/Presence).
-   *
-   * `Array<string>`: if you are using more than one file, from inside of the [localization github repo](https://github.com/PreMiD/Localization/tree/master/src/Presence), you can specify all the values in an array. Only common languages of all the files will be listed.
-   */
-  multiLanguage?: boolean | string | Array<string>
 }

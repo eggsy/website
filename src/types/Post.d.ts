@@ -1,3 +1,28 @@
+interface Props {
+  href?: string
+  className?: string[]
+  id?: string
+}
+
+interface Child {
+  type?: string
+  value?: string
+  tag?: string
+  props?: Props
+  children?: Child[]
+}
+
+interface Body {
+  type?: string
+  children?: Child[]
+}
+
+interface Toc {
+  id?: string
+  depth?: number
+  text?: string
+}
+
 export interface Post {
   header?: string
   slug?: string
@@ -15,29 +40,4 @@ export interface Post {
   tags?: string[]
   special?: boolean
   image?: string
-}
-
-interface Body {
-  type?: string
-  children?: Child[]
-}
-
-interface Child {
-  type?: string
-  value?: string
-  tag?: string
-  props?: Props
-  children?: Child[]
-}
-
-interface Props {
-  href?: string
-  className?: string[]
-  id?: string
-}
-
-interface Toc {
-  id?: string
-  depth?: number
-  text?: string
 }
