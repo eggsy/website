@@ -25,7 +25,12 @@ const Config: NuxtConfig = {
   srcDir: "src",
   target: "static",
 
-  // Disabling server-side rendering on development mode because Vite module currently doesn't work when SSR is enabled. This might cause some issues and/or hydration errors but will be effective enough to help you develop easier.
+  /*
+    Disabling server-side rendering on development mode because
+    Vite module currently doesn't work when SSR is enabled. This
+    might cause some issues and/or hydration errors but will be
+    effective enough to help you develop easier.
+  */
   ssr: !isDev,
 
   // Imported options
