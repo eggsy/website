@@ -5,7 +5,8 @@ export default Vue.extend({
   props: {
     title: {
       type: String,
-      required: true,
+      required: false,
+      default: null,
     },
     description: {
       type: String,
@@ -67,7 +68,10 @@ export default Vue.extend({
     v-bind="href ? $attrs : false"
   >
     <div>
-      <h2 class="font-medium text-gray-700 truncate dark:text-neutral-100">
+      <h2
+        v-if="title"
+        class="font-medium text-gray-700 truncate dark:text-neutral-100"
+      >
         {{ title }}
       </h2>
 
