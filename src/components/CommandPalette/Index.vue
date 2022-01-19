@@ -215,7 +215,7 @@ export default Vue.extend({
       </div>
 
       <!-- Floating Button -->
-      <CommandPaletteShortcut @click.native="toggleVisibility" />
+      <CommandPaletteShortcut @click.native="toggleVisibility()" />
     </div>
   </transition>
 </template>
