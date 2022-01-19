@@ -43,14 +43,15 @@ export default Vue.extend({
   <transition name="fade">
     <div
       v-show="isActive"
-      class="flex space-x-2 mr-6 mb-4 right-0 bottom-0 z-50 fixed items-center sm:space-x-4"
+      class="right-6 bottom-4 z-50 fixed items-center md:flex md:space-x-2"
     >
-      <div
-        class="rounded-full cursor-pointer flex bg-gray-200 p-2 text-gray-500 items-center dark:bg-neutral-800 hover:shadow-md"
-        @click="goTop"
-      >
-        <IconChevron up class="h-6 w-6" />
-      </div>
+      <Button rounded elevated @click.native="goTop">
+        <template #icon>
+          <IconChevron up class="h-5 w-5" />
+        </template>
+      </Button>
+
+      <ColorSwitcher class="hidden md:block" />
     </div>
   </transition>
 </template>
