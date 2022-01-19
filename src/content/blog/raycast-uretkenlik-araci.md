@@ -1,7 +1,7 @@
 ---
 title: "Raycast: Geliştiriciler İçin Üretkenlik Aracı"
 description: Mac kullanıcıları ve özellikle geliştiriciler için Spotlight'ınızın yerini alacak ve her işleminizi hızlandıracak bir alternatif olan Raycast ile işlerinizi kolaylaştırın.
-header: https://i.imgur.com/yPxIDlZ.png
+header: https://i.imgur.com/qbcWt2X.jpg
 tags:
   - yazılım
   - üretkenlik
@@ -10,11 +10,17 @@ tags:
 createdAt: 01/19/2022
 related:
   - must-ne-izlediginizi-bilin
+  - premid-nasil-kullanilir
 ---
 
 Raycast, **Mac'iniz** için hızlı, özelleştirilebilen, birçok görevi yerine getirebilen, hesaplamalar yapabilen ve işlerinizi kolaylaştırmak için tasarlanmış eklentiler ile genişletilebilen ekosisteme sahip bir araçtır. Bu araç, macOS'de yüklü gelen [Spotlight](https://developer.apple.com/design/human-interface-guidelines/macos/system-capabilities/search-and-spotlight/) aracının yerini almak için, Spotlight'ın yaptığı şeylere ek olarak birçok farklı şey yapabilen bir araçtır.
 
 Hali hazırda bir Spotlight kullanıcısıysanız, Spotlight'ın işlerinizi, dosya bulmayı, basit işlemler yapmayı ve uygulamaları açmayı ne kadar kolaylaştırdığını biliyorsunuzdur. Raycast ise bunların hepsini alıp, üzerine onlarca özellik ekleyerek, eklentiler ile geliştirilebilir bir ekosistemi sizlere sunuyuyor.
+
+<blog-image-container>
+  <smart-image src="https://i.imgur.com/HSmpI2Y.png" caption="Spotlight arayüzü"></smart-image>
+  <smart-image src="https://i.imgur.com/duO9jUW.png" caption="Raycast arayüzü"></smart-image>
+</blog-image-container>
 
 Raycast'in işleri nasıl kolaylaştırdığını sadece kullanarak anlayabileceğiniz için bu yazıda sadece bu uygulamanın beğendiğim ve her gün sıkça kullandığım birkaç özelliğinden bahsedeceğim. Eğer hemen indirip denemek istiyorsanız [buradan](https://www.raycast.com/) sitesine ulaşabilir ve ücretsiz olarak indirebilirsiniz.
 
