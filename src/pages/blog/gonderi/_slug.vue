@@ -402,6 +402,16 @@ export default Vue.extend({
     }
   }
 
+  /* Keyboard */
+  kbd {
+    @apply rounded-lg cursor-pointer bg-neutral-300 py-1 px-2 transition-colors text-neutral-600 select-none dark:(bg-neutral-800 text-neutral-400 hover:bg-neutral-700) hover:bg-neutral-200;
+  }
+
+  /* Video */
+  video {
+    @apply rounded w-full;
+  }
+
   /* Horizontal line */
   hr {
     @apply border-dashed border-gray-300 my-8 dark:border-gray-700;
