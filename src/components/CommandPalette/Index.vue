@@ -152,7 +152,7 @@ export default Vue.extend({
         class="flex bg-black/60 inset-0 dark fixed items-center justify-center"
       >
         <div
-          class="rounded-lg bg-black/70 mx-auto/40 max-h-[95vh] py-8 px-4 transition-all ease-in-out ring-black/70 ring-4 text-neutral-300 w-6/12 backdrop-filter backdrop-blur-sm md:w-[45rem]"
+          class="rounded-lg bg-black/90 mx-auto/40 max-h-[95vh] py-8 px-4 transition-all ease-in-out ring-black/90 ring-4 text-neutral-300 w-6/12 backdrop-filter backdrop-blur-sm md:w-[45rem]"
         >
           <div class="flex divide-x-1 divide-neutral-800/40">
             <div class="space-y-6 w-3/12 overflow-y-auto">
