@@ -1,5 +1,5 @@
 import type { Plugin } from "@nuxt/types"
-import getTurkeyTime from "./Utils/getTurkishTime"
+import type { Timestamp } from "firebase/firestore"
 
 /* Interfaces */
 export interface SongMetadata {
@@ -9,7 +9,7 @@ export interface SongMetadata {
 }
 
 export interface Song {
-  date: Date | any
+  date: any
   url: string | null
   spotifyUrl?: string | null
   metadata: SongMetadata
@@ -18,7 +18,7 @@ export interface Song {
 /* Declare modules */
 
 /* Plugin */
-const Firebase: Plugin = ({ $fire, $momentTz }, inject) => {
+const Firebase: Plugin = ({ $fire }, inject) => {
   /**
    * Fetch the daily song from Firebase.
    * @param {number} [limit=1] The limit of the values to return. If none present, will return one URL in string format.
@@ -28,24 +28,23 @@ const Firebase: Plugin = ({ $fire, $momentTz }, inject) => {
     const ref = $fire.firestore.collection("dailySongs")
 
     const docs: Song[] = []
-    const date = getTurkeyTime()
 
     await ref
-      .where("date", "<=", date)
+      .where("date", "<=", new Date())
       .orderBy("date", "desc")
       .limit(limit)
       .get()
       .then((snapshots) => {
         snapshots.forEach((snapshot) => {
           const {
-            date: songDate,
+            date: sDate,
             url,
             metadata,
             spotifyUrl,
           } = snapshot.data() as Song
 
           docs.push({
-            date: $momentTz(songDate.toDate()).toDate(),
+            date: (sDate as Timestamp).toDate(),
             url,
             metadata,
             spotifyUrl,

@@ -26,11 +26,11 @@ export default Vue.extend({
      */
     getDateText(): string {
       if (
-        this.$moment(this.date).format("DD/MM/YYYY") ===
-        this.$momentTz().tz("Europe/Istanbul").format("DD/MM/YYYY")
+        this.$moment(this.date).utcOffset(3).format("DD/MM/YYYY") ===
+        this.$moment(this.$getTurkeyTime()).format("DD/MM/YYYY")
       )
         return "Today's Song"
-      else return this.$moment(this.date).format("DD/MM/YYYY")
+      else return this.$moment(this.date).utcOffset(3).format("DD/MM/YYYY")
     },
   },
 })
