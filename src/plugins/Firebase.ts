@@ -1,4 +1,5 @@
 import type { Plugin } from "@nuxt/types"
+import getTurkeyTime from "./Utils/getTurkishTime"
 
 /* Interfaces */
 export interface SongMetadata {
@@ -27,7 +28,7 @@ const Firebase: Plugin = ({ $fire, $momentTz }, inject) => {
     const ref = $fire.firestore.collection("dailySongs")
 
     const docs: Song[] = []
-    const date = $momentTz().tz("Europe/Istanbul").toDate()
+    const date = getTurkeyTime()
 
     await ref
       .where("date", "<=", date)
@@ -36,10 +37,15 @@ const Firebase: Plugin = ({ $fire, $momentTz }, inject) => {
       .get()
       .then((snapshots) => {
         snapshots.forEach((snapshot) => {
-          const { date, url, metadata, spotifyUrl } = snapshot.data() as Song
+          const {
+            date: songDate,
+            url,
+            metadata,
+            spotifyUrl,
+          } = snapshot.data() as Song
 
           docs.push({
-            date: $momentTz(date.toDate()).toDate(),
+            date: $momentTz(songDate.toDate()).toDate(),
             url,
             metadata,
             spotifyUrl,
