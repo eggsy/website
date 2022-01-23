@@ -128,7 +128,12 @@ export default Vue.extend({
       Handle keydown events.
     */
     onKeyDown(event: KeyboardEvent) {
-      if ((event.metaKey || event.altKey) && event.key === "k") {
+      if (
+        (event.metaKey || event.altKey) &&
+        event.key === "k" &&
+        !event.shiftKey &&
+        !event.ctrlKey
+      ) {
         event.preventDefault()
         this.toggleVisibility()
       } else if (event.key === "Escape") {
