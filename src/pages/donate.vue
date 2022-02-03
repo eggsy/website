@@ -122,10 +122,8 @@ export default Vue.extend({
             :key="`account-${index}`"
             class="flex h-full items-center"
           >
-            <div
-              class="rounded-tl rounded-bl bg-gray-200/75 dark:bg-neutral-800"
-            >
-              <SmartImage :src="account.image" class="h-24 w-24" />
+            <div class="rounded-l bg-gray-200/75 dark:bg-neutral-800">
+              <SmartImage :src="account.image" class="rounded-l h-24 w-24" />
             </div>
 
             <div
@@ -141,15 +139,17 @@ export default Vue.extend({
                 <span
                   v-if="account.revealed == true"
                   class="text-gray-800 dark:text-neutral-500"
-                  >{{ account.iban }}</span
                 >
+                  {{ account.iban }}
+                </span>
 
                 <span
                   v-else
                   class="cursor-pointer text-gray-800 dark:text-neutral-500 hover:underline"
                   @click="account.revealed = true"
-                  >Click to reveal</span
                 >
+                  Click to reveal
+                </span>
               </div>
             </div>
           </div>
