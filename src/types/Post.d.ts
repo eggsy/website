@@ -17,7 +17,7 @@ interface Body {
   children?: Child[]
 }
 
-interface Toc {
+export interface Toc {
   id?: string
   depth?: number
   text?: string
