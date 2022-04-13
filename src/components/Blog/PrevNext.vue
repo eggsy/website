@@ -34,7 +34,7 @@ export default Vue.extend({
 <template>
   <div
     v-if="$fetchState.pending === false && !$fetchState.error"
-    class="grid gap-6 grid-cols-1 sm:grid-cols-2 dark:text-gray-200"
+    class="grid gap-6 grid-cols-1 md:grid-cols-2 dark:text-gray-200"
   >
     <div>
       <Title :padding="false" lang="tr">Önceki Gönderi</Title>

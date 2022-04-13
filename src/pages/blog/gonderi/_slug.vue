@@ -218,7 +218,7 @@ export default Vue.extend({
           <div v-if="getRelatedPosts.length > 0" class="space-y-2">
             <Title :padding="false">Benzer İçerikler</Title>
 
-            <div class="grid gap-4 sm:grid-cols-4">
+            <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
               <CardPost
                 v-for="(relatedPost, index) in getRelatedPosts"
                 :key="`related-${index}`"
