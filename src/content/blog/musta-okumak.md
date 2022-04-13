@@ -1,6 +1,6 @@
 ---
 title: Muş'ta Okumak
-description: İstanbul'dan birinin gözünden tamamen yabancı olduğu bir bölge ve şehirde geçirdiği üniversite hayatı ve yaşadığı maceralar.
+description: İstanbul'dan gelen birinin gözünden tamamen yabancı olduğu bir bölge ve şehirde geçirdiği üniversite hayatı ve başından geçen maceralar.
 header: https://i.imgur.com/1LGGG9w.jpg
 tags:
   - eğitim
