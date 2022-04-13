@@ -200,6 +200,8 @@ export default Vue.extend({
               <BlogReadingIndicator selector=".nuxt-content" />
             </div>
 
+            <BlogTableOfContents :toc="post.toc" />
+
             <NuxtContent :document="post" />
           </div>
         </article>
