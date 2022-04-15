@@ -22,7 +22,7 @@ Kendi deneyimlerimden önce şehri tanıtmak, şehir hakkında bir fikrinizin ol
   <smart-image src="https://i.imgur.com/anEBDJz.jpg"></smart-image>
 </blog-image-container>
 
-Muş'un merkezi yukarıda gördüğünüz resimden oluşuyor. İl, Doğu Anadolu bölgesinde bulunuyor, yüz ölçümü 8.023 km², nüfusu ise 411.117 kişiden oluşuyor. Üniversitesi [Muş Alparslan Üniversitesi](https://alparslan.edu.tr)nde yaklaşık 11.000 öğrenci bulunuyor. Bu öğrencilerden birisi de benim. Bu yazıda da bu şehrin bu üniversitesindeki ilk deneyimlerimi anlatacağım.
+Muş'un merkezi yukarıda gördüğünüz resimden oluşuyor. İl, Doğu Anadolu bölgesinde bulunuyor, yüz ölçümü 8.023 km², nüfusu ise 411.117 kişiden oluşuyor. Üniversitesi [Muş Alparslan Üniversitesi](https://alparslan.edu.tr)'nde yaklaşık 11.000 öğrenci bulunuyor. Bu öğrencilerden birisi de benim. Bu yazıda da bu şehrin bu üniversitesindeki ilk deneyimlerimi anlatacağım.
 
 Özetlemek gerekirse İstanbul'dan gelmek ve iki şehir arasındaki farklılıkların göz ardı edilemeyecek kadar büyük olması bazen sorun yaratsa da çoğu zaman bunlardan etkilenmiyorum. Her ne kadar uzaktan gelmiş olsam da İstanbul'da bulunduğum sıralarda da çok sosyal olmadığım, evde oturup size bu blog yazılarını yazmak gibi genelde içinde "bilgisayar ve yazılım" içeren işlerle uğraştığım için İstanbul'un bendeki yeri kısaca oradaki birkaç arkadaşım, olanaklar-imkanlar ve gezecek yerlerin olması. Bunlar dışında beni oraya bağlayan ve "bunsuz yapamam" dediğim pek bir şey yok. Bu yüzden aslında Muş'tayken İstanbul'u aramıyorum diyebilirim. Emin miyim, bu gerçekten böyle mi? Hayır. İstanbul'u özlüyorum fakat Muş'tan da kaçmaya çalışmıyorum. Şimdilik...
 
