@@ -12,31 +12,31 @@ related:
   - okul-gunlukleri
 ---
 
-Yaşadığım yerden bin yüz kilometre uzakta okumanın her ne kadar zorlukları, sorunları ve farklılıkları olsa da burada yaşadığım onlarca macera, tanıştığım güzel insanlar, öğretmenlerim ve edindiğim birçok arkadaşım ile bunların hiçbirini düşünecek vakti bulamıyorum bile. Muş'ta geçirdiğim yaklaşık 2 ay içerisinde neler yaşadığımı merak ediyorsanız, okumaya devam edin.
+Yaşadığım yerden bin yüz kilometre uzakta okumanın her ne kadar zorlukları, sorunları ve farklılıkları olsa da burada yaşadığım onlarca macera, tanıştığım güzel insanlar, öğretmenlerim ve edindiğim birçok arkadaşım ile bunların hiçbirini düşünecek vakti bulamıyorum bile. Muş'ta geçirdiğim yaklaşık 2 ay içerisinde neler yaşadığımı merak ediyorsanız okumaya devam edin.
 
 ## Şehir
 
-Kendi deneyimlerimden önce şehri tanıtmak, şehir hakkında bir fikrinizin olmasını istiyorum. Eğer benim deneyimlerimi okumak için geldiyseniz, [yazının sonraki kısmına atlayabilirsiniz](#kendi-deneyimim).
+Kendi deneyimlerimden önce şehri tanıtmak, şehir hakkında bir fikrinizin olmasını istiyorum. Eğer benim deneyimlerimi okumak için geldiyseniz [yazının sonraki kısmına atlayabilirsiniz](#kendi-deneyimim).
 
 <blog-image-container>
   <smart-image src="https://i.imgur.com/anEBDJz.jpg"></smart-image>
 </blog-image-container>
 
-Muş'un merkezi yukarıda gördüğünüz resimden oluşuyor. İl, Doğu Anadolu bölgesinde bulunuyor, yüzölçümü 8.023 km², nüfusu ise 411.117 kişiden oluşuyor. Üniversitesi [Muş Alparslan Üniversitesi](https://alparslan.edu.tr)'nde yaklaşık 11.000 öğrenci bulunuyor. Bu öğrencilerden birisi de benim. Bu yazıda da bu şehrin bu üniversitesindeki ilk deneyimlerimi anlatacağım.
+Muş'un merkezi yukarıda gördüğünüz resimden oluşuyor. İl, Doğu Anadolu bölgesinde bulunuyor, yüz ölçümü 8.023 km², nüfusu ise 411.117 kişiden oluşuyor. Üniversitesi [Muş Alparslan Üniversitesi](https://alparslan.edu.tr)'nde yaklaşık 11.000 öğrenci bulunuyor. Bu öğrencilerden birisi de benim. Bu yazıda da bu şehrin bu üniversitesindeki ilk deneyimlerimi anlatacağım.
 
-Özetlemek gerekirse, İstanbul'dan gelmek ve iki şehir arasındaki farklılıkların göz ardı edilemeyecek kadar büyük olması bazen sorun yaratsa da çoğu zaman bunlardan etkilenmiyorum. Her ne kadar uzaktan gelmiş olsam da, İstanbul'da bulunduğum sıralarda da çok sosyal olmadığım, evde oturup size bu blog yazılarını yazmak gibi genelde içinde "bilgisayar ve yazılım" içeren işlerle uğraştığım için İstanbul'un bendeki yeri kısaca oradaki birkaç arkadaşım, olanaklar-imkanlar ve gezecek yerlerin olması. Bunlar dışında beni oraya bağlayan ve "bunsuz yapamam" dediğim pek bir şey yok. Bu yüzden aslında Muş'tayken İstanbul'u aramıyorum diyebilirim. Emin miyim, bu gerçekten böyle mi? Hayır. İstanbul'u özlüyorum fakat Muş'tan da kaçmaya çalışmıyorum. Şimdilik...
+Özetlemek gerekirse İstanbul'dan gelmek ve iki şehir arasındaki farklılıkların göz ardı edilemeyecek kadar büyük olması bazen sorun yaratsa da çoğu zaman bunlardan etkilenmiyorum. Her ne kadar uzaktan gelmiş olsam da İstanbul'da bulunduğum sıralarda da çok sosyal olmadığım, evde oturup size bu blog yazılarını yazmak gibi genelde içinde "bilgisayar ve yazılım" içeren işlerle uğraştığım için İstanbul'un bendeki yeri kısaca oradaki birkaç arkadaşım, olanaklar-imkanlar ve gezecek yerlerin olması. Bunlar dışında beni oraya bağlayan ve "bunsuz yapamam" dediğim pek bir şey yok. Bu yüzden aslında Muş'tayken İstanbul'u aramıyorum diyebilirim. Emin miyim, bu gerçekten böyle mi? Hayır. İstanbul'u özlüyorum fakat Muş'tan da kaçmaya çalışmıyorum. Şimdilik...
 
 ### Kültür Farkı
 
-Böyle söyleyince şehrin ve insanlarının her şeyi farklı, hiçbir şekilde İstanbul'a benzemeyen bir memleket gelmesin aklınıza, burası hâlâ Türkiye, ve iki yerin de kültürü de aynı köklere dayanıyor; aynı dili konuşuyor, aynı inancı taşıyoruz. Tabii İstanbul'daki gibi her köşe başında alkollü mekanlar, her toplum ve kesimden insanlar veya turistler bulunmuyor. Üzülerek söylemek gerekirse, bu bölgede kaçınılmaz olan ve özellikle kızlar-kadınlar için abartılmış bir "ahlak" durumu söz konusu benim fikrimce. Nasıl giyindiğiniz, hareketleriniz, konuşmanız, oturuşunuz ve kalkışınız Muş'ta dikkat çekebilir, bunlar benim için bir sorun teşkil etmiyor fakat bu konuda sorun yaşayan birçok uzaktan gelen (benim gibi) tanıdıklarım var. Yine de insanların bir başkasının lafıyla kendi zevklerinden kısmalarını, utanmalarını-çekinmelerini veya bunun kötü bir şey olduğunu düşünmelerini desteklemiyorum, herkes her ne olursa olsun istediği gibi giyinip, istediği gibi davranabilmeli; ama benim için demesi kolay tabii...
+Böyle söyleyince şehrin ve insanlarının her şeyi farklı, hiçbir şekilde İstanbul'a benzemeyen bir memleket gelmesin aklınıza, burası hâlâ Türkiye ve iki yerin de kültürü de aynı köklere dayanıyor; aynı dili konuşuyor, aynı inancı taşıyoruz. Tabii İstanbul'daki gibi her köşe başında alkollü mekanlar, her toplum ve kesimden insanlar veya turistler bulunmuyor. Üzülerek söylemek gerekirse bu bölgede kaçınılmaz olan ve özellikle kızlar-kadınlar için abartılmış bir "ahlak" durumu söz konusu benim fikrimce. Nasıl giyindiğiniz, hareketleriniz, konuşmanız, oturuşunuz ve kalkışınız Muş'ta dikkat çekebilir, bunlar benim için bir sorun teşkil etmiyor fakat bu konuda sorun yaşayan birçok uzaktan gelen (benim gibi) tanıdıklarım var. Yine de insanların bir başkasının lafıyla kendi zevklerinden kısmalarını, utanmalarını-çekinmelerini veya bunun kötü bir şey olduğunu düşünmelerini desteklemiyorum, herkes her ne olursa olsun istediği gibi giyinip istediği gibi davranabilmeli ama benim için demesi kolay tabii...
 
 ### Ulaşım
 
-Biz Erasmus programıyla yurtdışındayken burada okuyan arkadaşlarımın çektikleri en büyük sorun ulaşım idi. Sürekli ulaşım konusunda sıkıntı çektiklerinden, otobüslerin azlığından ve "tıklım tıklım" olmasından bahsediyorlardı. İstanbul'un ulaşımına ve istediğim yere gidebilme rahatlığına alışmış biri olarak burada aslında çok fazla sorun çektiğimi söyleyemem. Doluluk konusunda haklılar, bazen yer olmadığı için bir sonraki, hatta bazen iki sonraki otobüsü beklememiz gerekiyor fakat şimdiye kadar otobüs yüzünden derslere geç kaldığım olmadı. Bu konuda çok bir sorunum yok, ancak çok daha iyileştirilebilir bir yanı bu Muş'un. Bu konuda yapılan bir çalışma olduğuna dair bir bilgim yok, fakat uzun yıllardır böyle olduğunu duyuyorum, yani sanırım böyle devam edecek.
+Biz Erasmus programıyla yurt dışındayken burada okuyan arkadaşlarımın çektikleri en büyük sorun ulaşım idi. Sürekli ulaşım konusunda sıkıntı çektiklerinden, otobüslerin azlığından ve "tıklım tıklım" olmasından bahsediyorlardı. İstanbul'un ulaşımına ve istediğim yere gidebilme rahatlığına alışmış biri olarak burada aslında çok fazla sorun çektiğimi söyleyemem. Doluluk konusunda haklılar, bazen yer olmadığı için bir sonraki hatta bazen iki sonraki otobüsü beklememiz gerekiyor fakat şimdiye kadar otobüs yüzünden derslere geç kaldığım olmadı. Bu konuda çok bir sorunum yok ancak çok daha iyileştirilebilir bir yanı bu Muş'un. Bu konuda yapılan bir çalışma olduğuna dair bir bilgim yok fakat uzun yıllardır böyle olduğunu duyuyorum, yani sanırım böyle devam edecek.
 
 ### Yemekler
 
-Doğu Anadolu'dan bahsedip yemeklerinden bahsetmemek olur mu? Olmaz. Buna canlı canlı şahit oluyorum bir süredir. Batıda yediğim hiçbir yemeğe benzemiyor, eti, hatta mezesi bile alıştığım tadlardan çok farklı.
+Doğu Anadolu'dan bahsedip yemeklerinden bahsetmemek olur mu? Olmaz. Buna canlı canlı şahit oluyorum bir süredir. Batıda yediğim hiçbir yemeğe benzemiyor, eti hatta mezesi bile alıştığım tatlardan çok farklı.
 
 <blog-image-container>
   <smart-image src="https://i.imgur.com/FbJ3aaC.jpg" class="h-[500px]" caption="Masaya sığmayan meze çeşitliliği."></smart-image>
@@ -46,7 +46,7 @@ Muş'tan döndüğümde özleyeceğim sayılı şeylerden birisi kesinlikle yeme
 
 ### Yapılacak Şeyler
 
-Eğer olurda bir gün arkadaşlarınızdan birisi Muş'a gezi düzenleme fikri ortaya atarsa, bu planı gerçekleştiremeseniz bile pek bir şey kaybetmeyeceğinizden emin olabilirsiniz. Henüz her yeri görmemiş olsam da merkezde yapılabilecek şeylerin çoğunu yapmış, bilindik her restoranda yemek yemiş, gençlere yönelik tüm mekanlarda bulunmuş birisi olarak, ilk 2 haftadan sonra Muş'ta yapacağınız yeni bir şey bulunmuyor. Eğer sürekli gezmeye, eğlenmeye, içmeye veya takılmaya ihtiyaç duyuyorsanız Muş size göre olmayabilir. Tabii henüz Malazgirt ve Varto gibi diğer ilçelere gitmemiş olsam da, burada dikkatimi çeken pek bir şey yok. Biz kendimizi eğlendiriyoruz, bu bize yetiyor, eğer burada güzel bir çevre edinemezseniz, buradaki eğitim hayatınız size çok bir şey sunmayacaktır.
+Eğer olur da bir gün arkadaşlarınızdan birisi Muş'a gezi düzenleme fikri ortaya atarsa bu planı gerçekleştiremeseniz bile pek bir şey kaybetmeyeceğinizden emin olabilirsiniz. Henüz her yeri görmemiş olsam da merkezde yapılabilecek şeylerin çoğunu yapmış, bilindik her restoranda yemek yemiş, gençlere yönelik tüm mekanlarda bulunmuş birisi olarak, ilk 2 haftadan sonra Muş'ta yapacağınız yeni bir şey bulunmuyor. Eğer sürekli gezmeye, eğlenmeye, içmeye veya takılmaya ihtiyaç duyuyorsanız Muş size göre olmayabilir. Tabii henüz Malazgirt ve Varto gibi diğer ilçelere gitmemiş olsam da burada dikkatimi çeken pek bir şey yok. Biz kendimizi eğlendiriyoruz, bu bize yetiyor, eğer burada güzel bir çevre edinemezseniz buradaki eğitim hayatınız size çok bir şey sunmayacaktır.
 
 ---
 
