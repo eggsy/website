@@ -68,7 +68,7 @@ Okulun göz bebeği İngilizce Öğretmenliği bölümü, okulun farklı şehirl
   <smart-image src="https://i.imgur.com/e0u9X35.jpg" caption="Birkaç öğretmenim ve arkadaşlarım."></smart-image>
 </blog-image-container>
 
-İkinci sınıf olmama rağmen henüz okuldaki ikinci ayımı tamamlamamış ve sınıf arkadaşlarımla, öğretmenlerimle yeni yüzyüze tanışmış bulunuyorum. İlk yılımı uzaktan eğitimde bitirmiş, ikinci yılımın ilk döneminde ise Erasmus programı ile yurtdışında geçirmiş olduğum için henüz yeniyim buralarda. Fakat yüzyüze tanışmadan bile sevdiğim, saydığım, blogumdaki yazılarda da bahsettiğim ve özellikle Erasmus dönemimde hep yanımda oldukları için minnettarlık duyduğum birçok öğretmenim var burada. Hepsini birbirinden çok seviyor ve yaptıkları işi takdir ediyor, bize harcadıkları emeklerinden dolayı minnettarlık duyuyorum.
+İkinci sınıf olmama rağmen henüz okuldaki ikinci ayımı tamamlamamış ve sınıf arkadaşlarımla, öğretmenlerimle yeni yüzyüze tanışmış bulunuyorum. İlk yılımı uzaktan eğitimde bitirmiş, ikinci yılımın ilk döneminde ise Erasmus programı ile yurt dışında geçirmiş olduğum için henüz yeniyim buralarda. Fakat yüzyüze tanışmadan bile sevdiğim, saydığım, blogumdaki yazılarda da bahsettiğim ve özellikle Erasmus dönemimde hep yanımda oldukları için minnettarlık duyduğum birçok öğretmenim var burada. Hepsini birbirinden çok seviyor ve yaptıkları işi takdir ediyor, bize harcadıkları emeklerinden dolayı minnettarlık duyuyorum.
 
 ### Konaklamamız ve Çetemiz
 
