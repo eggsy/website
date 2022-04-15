@@ -26,7 +26,7 @@ export default Vue.extend({
     class="rounded-md flex flex-col space-y-2 mb-6"
   >
     <div
-      class="cursor-pointer flex font-medium space-x-1 text-sm transition-colors text-gray-500 items-center dark:text-dark-100 hover:text-gray-700 dark:hover:text-white/40"
+      class="cursor-pointer flex font-medium space-x-1 text-sm transition-colors text-gray-500 items-center dark:text-dark-100 hover:text-gray-700 dark:hover:text-white/40 select-none"
       @click="tocToggled = !tocToggled"
     >
       <h1 class="uppercase">Başlıklar</h1>
