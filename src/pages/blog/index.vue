@@ -87,16 +87,14 @@ export default Vue.extend({
         post?.tags?.includes(this.selectedCategory?.toLowerCase())
       )
 
-      return [
-        ...new Set(
-          filtered.sort((a: Post, b: Post) => {
-            if (!a?.createdAt || !b?.createdAt) return 0
-            else if (a.createdAt > b.createdAt) return -1
-            else if (a.createdAt < b.createdAt) return 1
-            else return 0
-          })
-        ),
-      ]
+      const sortFunction = (a: Post, b: Post) => {
+        if (!a?.createdAt || !b?.createdAt) return 0
+        else if (a.createdAt > b.createdAt) return -1
+        else if (a.createdAt < b.createdAt) return 1
+        else return 0
+      }
+
+      return [...new Set([...filtered].sort(sortFunction))]
     },
     /**
      * Checks if fetch state is pending or error.
