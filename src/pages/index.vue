@@ -106,16 +106,16 @@ export default Vue.extend({
         ],
         education: [
           {
-            title: "Goce Delchev University",
-            url: "https://www.ugd.edu.mk/",
-            position: "Erasmus+ Student",
-            date: "2021-",
-          },
-          {
             title: "Muş Alparslan University",
             url: "http://alparslan.edu.tr/",
             position: "English Language Teaching",
             date: "2020-",
+          },
+          {
+            title: "Goce Delchev University",
+            url: "https://www.ugd.edu.mk/",
+            position: "Erasmus+ Student",
+            date: "2021-2022",
           },
           {
             title: "Rotosis Robotics",
