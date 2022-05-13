@@ -155,10 +155,10 @@ export default Vue.extend({
   <transition name="fade" mode="out-in">
     <div v-show="isVisible" class="hidden lg:block">
       <div
-        class="flex bg-black/60 inset-0 dark fixed items-center justify-center"
+        class="flex bg-black/50 inset-0 dark fixed items-center justify-center"
       >
         <div
-          class="rounded-lg bg-black/90 mx-auto/40 max-h-[95vh] py-8 px-4 transition-all ease-in-out ring-black/90 ring-4 text-neutral-300 w-6/12 backdrop-filter backdrop-blur-sm md:w-[45rem]"
+          class="bg-black rounded-xl mx-auto/40 max-h-[95vh] py-8 px-4 transition-all ease-in-out ring-white/10 ring-1 text-neutral-300 w-6/12 backdrop-filter backdrop-blur-sm md:w-[45rem]"
         >
           <div class="flex divide-x-1 divide-neutral-800/40">
             <div class="space-y-6 w-3/12 overflow-y-auto">
