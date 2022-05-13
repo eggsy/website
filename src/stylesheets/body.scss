@@ -2,6 +2,7 @@ html,
 body {
   scroll-behavior: smooth;
   scroll-padding: 16px;
+  scrollbar-gutter: stable;
 }
 
 // Remove blue highlight from mobile users
