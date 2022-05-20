@@ -67,7 +67,7 @@ export default Vue.extend({
     }"
     v-bind="href ? $attrs : false"
   >
-    <div>
+    <div class="overflow-x-hidden">
       <h2
         v-if="title"
         class="font-medium text-gray-700 truncate dark:text-neutral-100"
