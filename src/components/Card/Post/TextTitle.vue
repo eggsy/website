@@ -41,12 +41,14 @@ export default Vue.extend({
           content: 'Popüler gönderi',
           placement: 'bottom',
         }"
-        class="h-5 text-red-600 w-5 dark:text-red-500"
+        class="flex-shrink-0 h-5 text-red-600 w-5 dark:text-red-500"
       />
 
-      <div class="flex space-x-2 text-gray-700 items-center dark:text-gray-400">
-        <IconClock class="h-5 w-5" />
-        <span>{{ getPostDate }}</span>
+      <div
+        class="flex space-x-2 text-gray-700 truncate items-center dark:text-gray-400"
+      >
+        <IconClock class="flex-shrink-0 h-5 w-5" />
+        <span class="truncate">{{ getPostDate }}</span>
       </div>
     </div>
   </SmartLink>
