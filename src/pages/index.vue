@@ -62,6 +62,12 @@ export default Vue.extend({
       experiences: {
         jobs: [
           {
+            title: "Sane Lunatics Theater Play",
+            url: "https://delilerkumpanyasi.com",
+            position: "Web Developer & Social Media Manager",
+            date: "2022-",
+          },
+          {
             title: "Discord Templates",
             url: "https://discords.com/templates",
             position: "Web Developer & Co-Founder",
