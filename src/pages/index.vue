@@ -17,6 +17,7 @@ interface Experience {
   url: string
   position: string
   date: string
+  isHidden?: boolean
 }
 
 interface ExperienceObject {
@@ -28,6 +29,7 @@ export default Vue.extend({
   data() {
     return {
       showModal: false,
+      showExtraExperience: false,
       repos: [] as Repository[],
       projects: [
         {
@@ -78,24 +80,28 @@ export default Vue.extend({
             url: "https://izmgamestudios.com",
             position: "Solution Partner",
             date: "2020-2021",
+            isHidden: true,
           },
           {
             title: "TruckersMP",
             url: "https://truckersmp.com/user/1648033",
             position: "Community Moderator & Translator",
             date: "2020-2021",
+            isHidden: true,
           },
           {
             title: "WA Web+ Extension",
             url: "https://wawplus.com",
             position: "Translator",
             date: "2020-2021",
+            isHidden: true,
           },
           {
             title: "Batakköylü Düğün Salonu",
             url: "https://batakkoylu.netlify.app",
             position: "Web Developer",
             date: "2020-2020",
+            isHidden: true,
           },
           {
             title: "EGGSY's Discord Bot",
@@ -128,6 +134,7 @@ export default Vue.extend({
             url: "https://www.rotosis.com/",
             position: "Intern",
             date: "2017-2018",
+            isHidden: true,
           },
           {
             title: "Adil Karaağaç MTAL",
@@ -233,19 +240,23 @@ export default Vue.extend({
 
           <p class="text-neutral-500">
             Hi there, my name is Abdulbaki, I am from Turkey and I am a self
-            taught web developer. I build complex web apps using tools like
+            taught web developer. I build complex web apps using frameworks such
+            as
             <SmartLink href="https://vuejs.org/" class="description-link" blank
               >Vue.js</SmartLink
             >,
-            <SmartLink href="https://nuxtjs.org/" class="description-link" blank
-              >Nuxt.js</SmartLink
+            <SmartLink
+              href="https://reactjs.org/"
+              class="description-link"
+              blank
+              >React.js</SmartLink
             >
             {{ "" }} and
             <SmartLink
-              href="https://windicss.org/"
+              href="https://tailwindcss.com/"
               class="description-link"
               blank
-              >Windi CSS</SmartLink
+              >Tailwind CSS</SmartLink
             >.
           </p>
         </div>
@@ -321,11 +332,20 @@ export default Vue.extend({
       class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2)"
     >
       <div>
-        <Title>Experience</Title>
+        <div class="flex items-center gap-4 justify-between">
+          <Title>Experience</Title>
+          <button
+            class="text-gray-400 mr-4 text-sm hover:underline dark:text-neutral-700"
+            @click="showExtraExperience = !showExtraExperience"
+          >
+            {{ showExtraExperience ? "show less" : "show more" }}
+          </button>
+        </div>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
             v-for="(experience, index) in experiences.jobs"
+            v-show="experience.isHidden ? showExtraExperience : true"
             :key="`experience-job-${index}`"
             :title="experience.title"
             :url="experience.url"
@@ -336,11 +356,20 @@ export default Vue.extend({
       </div>
 
       <div>
-        <Title>Education</Title>
+        <div class="flex items-center gap-4 justify-between">
+          <Title>Education</Title>
+          <button
+            class="text-gray-400 mr-4 text-sm hover:underline dark:text-neutral-700"
+            @click="showExtraExperience = !showExtraExperience"
+          >
+            {{ showExtraExperience ? "show less" : "show more" }}
+          </button>
+        </div>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
             v-for="(experience, index) in experiences.education"
+            v-show="experience.isHidden ? showExtraExperience : true"
             :key="`experience-education-${index}`"
             :title="experience.title"
             :url="experience.url"
