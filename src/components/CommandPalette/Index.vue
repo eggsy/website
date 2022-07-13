@@ -1,101 +1,129 @@
 <script lang="ts">
 import Vue from "vue"
 
-// Types
-interface Page {
+interface ICategory {
+  id: string
   title: string
-  icon: string
+}
+
+interface IPage {
+  title: string
   href: string
-}
-
-interface Control {
-  name: string
-  title: string
-  component: string
-  icon?: string
-  onSelectEvent?: string
-}
-
-interface Items {
-  name: string
-  value: Page[] | Control[]
+  icon: string
+  iconProps?: {
+    [key: string]: string
+  }
+  category: string
 }
 
 export default Vue.extend({
   data() {
     return {
-      selectedSubMenu: "welcome",
-      items: [
+      search: "",
+      categories: [
+        { id: "pages", title: "Pages" },
+        { id: "me", title: "Me" },
+        { id: "ql", title: "Quick Links" },
+      ] as ICategory[],
+      pages: [
+        /* Pages */
         {
-          name: "Dynamic",
-          value: [
-            {
-              name: "welcome",
-              title: "Welcome",
-              icon: "Star",
-              component: "CommandPaletteItems" + "Welcome",
-            },
-            {
-              name: "blog",
-              title: "Blog",
-              icon: "Inbox",
-              component: "CommandPaletteItems" + "Blog",
-            },
-            {
-              name: "github",
-              title: "GitHub",
-              icon: "Cog",
-              component: "CommandPaletteItems" + "Github",
-            },
-          ],
+          title: "Home",
+          href: "/",
+          icon: "IconHome",
+          category: "pages",
         },
         {
-          name: "Pages",
-          value: [
-            {
-              title: "Contact",
-              icon: "At",
-              href: "/me/contact",
-            },
-            {
-              title: "Donate",
-              icon: "Fire",
-              href: "/donate",
-            },
-            {
-              title: "Repositories",
-              icon: "Cog",
-              href: "/me/repos",
-            },
-          ],
+          title: "Blog",
+          href: "/blog",
+          icon: "IconDocument",
+          category: "pages",
         },
         {
-          name: "Socials",
-          value: [
-            {
-              title: "GitHub",
-              icon: "Link",
-              href: this.$config.social.github,
-            },
-            {
-              title: "Twitter",
-              icon: "Link",
-              href: this.$config.social.twitter,
-            },
-          ],
+          title: "Donate",
+          href: "/donate",
+          icon: "IconDollar",
+          category: "pages",
         },
-      ] as Items[],
+        {
+          title: "Daily Song",
+          href: "/daily",
+          icon: "IconMusicNote",
+          category: "pages",
+        },
+
+        /* Me */
+        {
+          title: "Repositories",
+          href: "/me/repos",
+          icon: "IconBranch",
+          category: "me",
+        },
+        {
+          title: "Goals",
+          href: "/me/goals",
+          icon: "IconCheck",
+          category: "me",
+        },
+        {
+          title: "Songs",
+          href: "/me/songs",
+          icon: "IconStar",
+          category: "me",
+        },
+        {
+          title: "Contact",
+          href: "/me/contact",
+          icon: "IconInbox",
+          category: "me",
+        },
+
+        /* Quick Links */
+        {
+          title: "GitHub",
+          href: "https://github.com/eggsy",
+          icon: "IconBrand",
+          iconProps: {
+            brand: "github",
+          },
+          category: "ql",
+        },
+        {
+          title: "Twitter",
+          href: "https://twitter.com/eggsydev",
+          icon: "IconBrand",
+          iconProps: {
+            brand: "twitter",
+          },
+          category: "ql",
+        },
+      ] as IPage[],
     }
   },
+
   computed: {
-    isVisible(): boolean {
+    isPaletteVisible() {
       return this.$store.state?.palette?.visible || false
     },
-    getSelectedItem(): Control | undefined {
-      const dynamicItems = this.items.find((item) => item.name === "Dynamic")
-        ?.value as Control[]
+    getCategoriesFiltered(): { category: ICategory; pages: IPage[] }[] {
+      const categories = this.categories
+      const items: { category: ICategory; pages: IPage[] }[] = []
 
-      return dynamicItems?.find(({ name }) => name === this.selectedSubMenu)
+      for (const category of categories) {
+        const categoryItems = this.pages.filter(
+          (page) =>
+            page.category === category.id &&
+            (this.search
+              ? page.title?.toLowerCase().includes(this.search?.toLowerCase())
+              : true)
+        )
+
+        if (categoryItems.length > 0) {
+          items.push({ category, pages: categoryItems })
+        }
+      }
+
+      return items
     },
   },
 
@@ -104,7 +132,13 @@ export default Vue.extend({
       when the palette is visible.
     */
   watch: {
-    isVisible(isVisible: boolean) {
+    "$route.fullPath"() {
+      if (this.isPaletteVisible) {
+        this.$store.commit("palette/toggleVisibility", false)
+      }
+    },
+
+    isPaletteVisible(isVisible: boolean) {
       const keys = ["overflow-y-hidden"]
 
       if (isVisible) document.body.classList.add(...keys)
@@ -112,22 +146,20 @@ export default Vue.extend({
     },
   },
 
-  /*
-    Add and remove a keydown event listener to the body element
-    to handle key shortcut.
-  */
   mounted() {
-    window.addEventListener("keydown", this.onKeyDown)
+    window.addEventListener("keydown", this.handleKeyDown)
   },
-  beforeMount() {
-    window.removeEventListener("keydown", this.onKeyDown)
+
+  beforeDestroy() {
+    window.removeEventListener("keydown", this.handleKeyDown)
   },
 
   methods: {
-    /*
-      Handle keydown events.
-    */
-    onKeyDown(event: KeyboardEvent) {
+    toggleVisibility(value?: boolean) {
+      this.$store.commit("palette/toggleVisibility", value)
+    },
+
+    handleKeyDown(event: KeyboardEvent) {
       if (
         (event.metaKey || event.altKey) &&
         event.key === "k" &&
@@ -140,88 +172,85 @@ export default Vue.extend({
         this.toggleVisibility(false)
       }
     },
-    /*
-      Toggle the visibility of the palette through the Vuex
-      store.
-    */
-    toggleVisibility(value?: boolean) {
-      this.$store.commit("palette/toggleVisibility", value)
+
+    changeColorMode() {
+      this.$colorMode.preference =
+        this.$colorMode.value === "dark" ? "light" : "dark"
     },
   },
 })
 </script>
 
 <template>
-  <transition name="fade" mode="out-in">
-    <div v-show="isVisible" class="hidden lg:block">
+  <Transition name="fade" mode="out-in">
+    <div
+      v-show="isPaletteVisible"
+      class="bg-black/70 fixed inset-0 flex min-h-screen min-w-screen z-50 justify-center"
+      @click="() => toggleVisibility(false)"
+    >
       <div
-        class="flex bg-black/50 inset-0 dark fixed items-center justify-center"
+        class="lg:h-1/2 lg:w-1/2 w-full h-full overflow-hidden scrollbar relative lg:rounded-lg lg:mt-24 ring-1 ring-white/10 dark:bg-neutral-900 bg-gray-200 text-neutral-900 dark:text-white"
+        @click="(e) => e.stopPropagation()"
       >
+        <!-- Search bar -->
+        <div class="absolute inset-x-0 top-0 h-10">
+          <div
+            class="absolute pl-3 pointer-events-none inset-0 flex items-center"
+          >
+            <IconSearch class="h-5 w-5 text-neutral-500" />
+          </div>
+
+          <input
+            v-model="search"
+            class="appearance-none pl-10 text-neutral-600 dark:text-white/60 pr-4 placeholder-neutral-500 text-sm focus:outline-none lg:rounded-t-lg w-full h-full bg-gray-300 dark:bg-neutral-800"
+            placeholder="Search"
+          />
+        </div>
+
+        <!-- Content -->
         <div
-          class="bg-black rounded-xl mx-auto/40 max-h-[95vh] py-8 px-4 transition-all ease-in-out ring-white/10 ring-1 text-neutral-300 w-6/12 backdrop-filter backdrop-blur-sm md:w-[45rem]"
+          class="pt-13 space-y-4 pb-3.5 px-1.5 overflow-y-auto h-full text-neutral-600 space-y-1"
         >
-          <div class="flex divide-x-1 divide-neutral-800/40">
-            <div class="space-y-6 w-3/12 overflow-y-auto">
-              <!-- Dynamic -->
-              <div class="space-y-2">
-                <Title size="xs">Dynamic</Title>
+          <div
+            v-for="(item, index) in getCategoriesFiltered"
+            :key="`command-palette-category-${index}`"
+          >
+            <span class="text-xs px-2 font-semibold">
+              {{ item.category.title }}
+            </span>
 
-                <div class="space-y-1">
-                  <CommandPaletteControls
-                    v-for="(value, idx) in items[0].value"
-                    :key="`${value.title}-${idx}`"
-                  >
-                    <CommandPaletteControlsItem
-                      :title="value.title"
-                      :icon="value.icon"
-                      :active="value.name === selectedSubMenu"
-                      @click.native="selectedSubMenu = value.name"
-                    />
-                  </CommandPaletteControls>
-                </div>
-              </div>
-
-              <!-- Pages & Socials -->
-              <div
-                v-for="(value, idx) in items.slice(1)"
-                :key="`${value.name}-${idx}`"
-                class="space-y-2"
-              >
-                <Title size="xs">{{ value.name }}</Title>
-
-                <div class="space-y-1">
-                  <CommandPaletteControls>
-                    <SmartLink
-                      v-for="item in value.value"
-                      :key="item.title"
-                      :href="item.href"
-                      :blank="value.name !== 'Pages'"
-                    >
-                      <CommandPaletteControlsItem
-                        :title="item.title"
-                        :icon="item.icon"
-                        @click.native="toggleVisibility()"
-                      />
-                    </SmartLink>
-                  </CommandPaletteControls>
-                </div>
-              </div>
+            <div>
+              <CommandPaletteItem
+                v-for="(page, idx) in item.pages"
+                :key="`command-palette-page-${idx}`"
+                :title="page.title"
+                :icon="page.icon"
+                :icon-props="page.iconProps"
+                :href="page.href"
+              />
             </div>
+          </div>
 
-            <div class="w-9/12">
-              <Component
-                :is="getSelectedItem.component"
-                v-if="!!getSelectedItem"
-                :key="getSelectedItem.component"
-                @close="toggleVisibility()"
+          <!-- Controls -->
+          <div>
+            <span class="text-xs px-2 font-semibold">Controls</span>
+
+            <div>
+              <CommandPaletteItem
+                title="Toggle Color Mode"
+                icon="IconSun"
+                @click.native="changeColorMode"
+              />
+
+              <CommandPaletteItem
+                title="Close Palette"
+                icon="IconX"
+                @click.native="() => toggleVisibility(false)"
               />
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Floating Button -->
-      <CommandPaletteShortcut @click.native="toggleVisibility()" />
     </div>
-  </transition>
+  </Transition>
 </template>
