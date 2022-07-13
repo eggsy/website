@@ -63,10 +63,14 @@ export default Vue.extend({
       'cursor-pointer': cursor === true,
       'bg-gray-100 dark:bg-neutral-800/40': elevated === true,
       'hover:bg-gray-100 dark:hover:bg-neutral-800/40': elevated === false,
-      'items-center justify-between flex space-x-2': $slots.icon,
+      'items-center flex space-x-4': $slots.icon || $slots['icon-left'],
     }"
     v-bind="href ? $attrs : false"
   >
+    <div v-if="$slots['icon-left']" class="flex-shrink-0">
+      <slot name="icon-left" />
+    </div>
+
     <div class="overflow-x-hidden">
       <h2
         v-if="title"

@@ -14,7 +14,7 @@ export default Vue.extend({
 
 <template>
   <Card :title="title" :cursor="false">
-    <template #icon>
+    <template #icon-left>
       <IconDev :brand="title" class="flex-shrink-0 h-7 w-7" />
     </template>
   </Card>
