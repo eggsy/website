@@ -45,7 +45,7 @@ export default Vue.extend({
 
     <!-- Nuxt component -->
     <Nuxt
-      class="container mx-auto min-h-screen pb-8 w-11/12 sm:(pb-10 w-9/12) md:w-7/12 "
+      class="container mx-auto min-h-screen pb-8 w-11/12 sm:(pb-10 w-9/12) md:w-7/12"
     />
 
     <!-- Footer -->
