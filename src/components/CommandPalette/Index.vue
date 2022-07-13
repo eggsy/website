@@ -170,6 +170,8 @@ export default Vue.extend({
         this.toggleVisibility()
       } else if (event.key === "Escape") {
         this.toggleVisibility(false)
+      } else {
+        this.$refs.searchInput?.focus()
       }
     },
 
@@ -201,6 +203,7 @@ export default Vue.extend({
           </div>
 
           <input
+            ref="searchInput"
             v-model="search"
             class="appearance-none pl-10 text-neutral-600 dark:text-white/60 pr-4 placeholder-neutral-500 text-sm focus:outline-none lg:rounded-t-lg w-full h-full bg-gray-300 dark:bg-neutral-800"
             placeholder="Search"
