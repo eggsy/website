@@ -64,6 +64,7 @@ export default Vue.extend({
       'bg-gray-100 dark:bg-neutral-800/40': elevated === true,
       'hover:bg-gray-100 dark:hover:bg-neutral-800/40': elevated === false,
       'items-center flex space-x-4': $slots.icon || $slots['icon-left'],
+      'justify-between': $slots.icon && !$slots['icon-left'],
     }"
     v-bind="href ? $attrs : false"
   >
