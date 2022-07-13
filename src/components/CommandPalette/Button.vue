@@ -16,7 +16,7 @@ export default Vue.extend({
       content: '⌘/Alt + K',
     }"
     icon="Menu"
-    class="hidden md:block"
+    class="focus:outline-none"
     rounded
     elevated
     @click.native="togglePalette"
