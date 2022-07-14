@@ -105,6 +105,7 @@ export default Vue.extend({
     isPaletteVisible() {
       return this.$store.state?.palette?.visible || false
     },
+
     getCategoriesFiltered(): { category: ICategory; pages: IPage[] }[] {
       const categories = this.categories
       const items: { category: ICategory; pages: IPage[] }[] = []
@@ -161,10 +162,10 @@ export default Vue.extend({
 
     handleKeyDown(event: KeyboardEvent) {
       if (
-        (event.metaKey || event.altKey) &&
+        (event.metaKey || event.ctrlKey) &&
         event.key === "k" &&
         !event.shiftKey &&
-        !event.ctrlKey
+        !event.altKey
       ) {
         event.preventDefault()
         this.toggleVisibility()

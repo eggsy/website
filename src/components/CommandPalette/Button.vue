@@ -13,7 +13,7 @@ export default Vue.extend({
 <template>
   <Button
     v-tippy="{
-      content: '⌘/Alt + K',
+      content: '⌘/Ctrl + K',
     }"
     icon="Menu"
     class="focus:outline-none"
