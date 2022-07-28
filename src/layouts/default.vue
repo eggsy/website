@@ -59,5 +59,8 @@ export default Vue.extend({
 
     <!-- Go to top button -->
     <GoTop />
+
+    <!-- Sponsor Popup -->
+    <SponsorPopup />
   </div>
 </template>
