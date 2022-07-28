@@ -97,9 +97,7 @@ If you are wondering what has changed and what are the differences from the old 
 
 You can take a look at [old.eggsy.xyz](https://old.eggsy.xyz) and compare it yourself 😂 You can already say UI is a lot nicer and there are some additional pages in this new one! But I also had to remove some features, including my whole API for "Overlay Creator" (it's still available under the `old.eggsy.xyz` domain but you won't be able to access it anymore from the main domain).
 
-### 🙏 Thanks
-
-[Nuxt.js](https://nuxtjs.org), [WindiCSS](https://github.com/windicss/windicss), [Tailwind CSS](https://github.com/tailwindcss/tailwindcss), amazing module authors and contributors of this project! Special thanks to my [GitHub sponsors](https://github.com/sponsors/eggsy)!
+### 💖 Sponsors
 
 <p align="center">
   <a href="https://github.com/sponsors/eggsy">
