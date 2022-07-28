@@ -68,8 +68,7 @@ export default Vue.extend({
      * @returns {Sponsor}
      */
     getSponsorLinks(): Sponsor {
-      const sponsor = this.$config.sponsor as Sponsor
-      return sponsor
+      return this.$config.sponsor as Sponsor
     },
   },
 })
@@ -95,6 +94,14 @@ export default Vue.extend({
 
       <section class="space-y-4">
         <Title> Support Me On </Title>
+
+        <Button :href="getSponsorLinks.github" class="mx-4" blank>
+          <template #icon>
+            <IconDev brand="github" />
+          </template>
+
+          GitHub Sponsors
+        </Button>
 
         <Button
           variant="patreon"

@@ -8,6 +8,7 @@ export default {
     email: "eggsydev@gmail.com",
   },
   sponsor: {
+    github: "https://github.com/sponsors/eggsy",
     patreon: "https://www.patreon.com/eggsy/",
   },
   links: {
