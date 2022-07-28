@@ -99,4 +99,10 @@ You can take a look at [old.eggsy.xyz](https://old.eggsy.xyz) and compare it you
 
 ### 🙏 Thanks
 
-[Nuxt.js](https://nuxtjs.org), [WindiCSS](https://github.com/windicss/windicss), [Tailwind CSS](https://github.com/tailwindcss/tailwindcss), amazing module authors and contributors of this project!
+[Nuxt.js](https://nuxtjs.org), [WindiCSS](https://github.com/windicss/windicss), [Tailwind CSS](https://github.com/tailwindcss/tailwindcss), amazing module authors and contributors of this project! Special thanks to my [GitHub sponsors](https://github.com/sponsors/eggsy)!
+
+<p align="center">
+  <a href="https://github.com/sponsors/eggsy">
+    <img src='https://cdn.jsdelivr.net/gh/eggsy/.github/sponsors.svg'/>
+  </a>
+</p>
