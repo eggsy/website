@@ -93,31 +93,37 @@ export default Vue.extend({
       </header>
 
       <section class="space-y-4">
-        <Title> Support Me On </Title>
+        <Title>Support Me On</Title>
 
-        <Button :href="getSponsorLinks.github" class="mx-4" blank>
-          <template #icon>
-            <IconDev brand="github" />
-          </template>
+        <div class="flex flex-wrap gap-4 mx-4">
+          <Button
+            :href="getSponsorLinks.github"
+            class="bg-black/50 w-full lg:w-max"
+            blank
+          >
+            <template #icon>
+              <IconBrand brand="github" class="h-7 text-white w-7" />
+            </template>
 
-          GitHub Sponsors
-        </Button>
+            GitHub Sponsors
+          </Button>
 
-        <Button
-          variant="patreon"
-          :href="getSponsorLinks.patreon"
-          class="mx-4"
-          blank
-        >
-          <template #icon>
-            <SmartImage
-              src="https://i.vgy.me/qxpY9T.png"
-              class="rounded h-7 w-7"
-            />
-          </template>
+          <Button
+            variant="patreon"
+            class="w-full lg:w-max"
+            :href="getSponsorLinks.patreon"
+            blank
+          >
+            <template #icon>
+              <SmartImage
+                src="https://i.vgy.me/qxpY9T.png"
+                class="rounded h-7 w-7"
+              />
+            </template>
 
-          Become a Patron
-        </Button>
+            Become a Patron
+          </Button>
+        </div>
       </section>
 
       <section class="space-y-4">
