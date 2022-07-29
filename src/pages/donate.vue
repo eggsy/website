@@ -127,20 +127,31 @@ export default Vue.extend({
       </section>
 
       <section class="space-y-4">
-        <Title>Sponsors</Title>
+        <a
+          href="https://github.com/sponsors/eggsy"
+          class="flex space-x-2 justify-between mx-4 items-center"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Title class="hover:underline" :padding="false">Sponsors</Title>
+          <IconBrand
+            brand="github"
+            class="h-7 w-7 dark:hover:text-white hover:text-black transition-colors"
+          />
+        </a>
 
         <div class="bg-gray-200/75 dark:bg-neutral-800/50 mx-4 rounded-md p-4">
           <img
             src="https://cdn.jsdelivr.net/gh/eggsy/.github/sponsors.svg"
             alt="sponsors"
             draggable="false"
-            class="w-full h-full"
+            class="w-full h-full object-cover"
           />
         </div>
       </section>
 
       <section class="space-y-4">
-        <Title> My Accounts </Title>
+        <Title>My Accounts</Title>
 
         <div class="grid px-4 gap-4">
           <div
