@@ -12,7 +12,6 @@ const isDev = process.env.NODE_ENV === "development"
 
 const BuildModules: NuxtOptionsModule[] = [
   "@nuxtjs/moment",
-  "vue-notion/nuxt",
   ["@nuxt/image", image],
   ["nuxt-windicss", windicss],
   ["@nuxtjs/color-mode", colorMode],

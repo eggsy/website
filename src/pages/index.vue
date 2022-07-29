@@ -153,12 +153,6 @@ export default Vue.extend({
             href: "/me/repos",
           },
           {
-            title: "Goals",
-            description:
-              "Want to know what I'm working on now and what I'll in the future?",
-            href: "/me/goals",
-          },
-          {
             title: "Songs",
             description:
               "Trust your taste? Compare your favourite songs and artists with mine!",
