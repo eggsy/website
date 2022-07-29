@@ -127,18 +127,17 @@ export default Vue.extend({
       </section>
 
       <section class="space-y-4">
-        <a
+        <SmartLink
           href="https://github.com/sponsors/eggsy"
           class="flex space-x-2 justify-between mx-4 items-center"
-          rel="noreferrer"
-          target="_blank"
+          blank
         >
           <Title :padding="false">Sponsors</Title>
           <IconBrand
             brand="github"
             class="h-7 w-7 dark:hover:text-white hover:text-black transition-colors"
           />
-        </a>
+        </SmartLink>
 
         <div class="bg-gray-200/75 dark:bg-neutral-800/50 mx-4 rounded-md p-4">
           <img
