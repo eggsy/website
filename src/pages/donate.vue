@@ -95,7 +95,7 @@ export default Vue.extend({
       <section class="space-y-4">
         <Title>Support Me On</Title>
 
-        <div class="flex flex-wrap gap-4 mx-4">
+        <div class="flex flex-wrap gap-x-4 gap-y-2 mx-4">
           <Button
             variant="github"
             class="w-full lg:w-max"
