@@ -127,6 +127,19 @@ export default Vue.extend({
       </section>
 
       <section class="space-y-4">
+        <Title>Sponsors</Title>
+
+        <div class="bg-gray-200/75 dark:bg-neutral-800/50 mx-4 rounded-md p-4">
+          <img
+            src="https://cdn.jsdelivr.net/gh/eggsy/.github/sponsors.svg"
+            alt="sponsors"
+            draggable="false"
+            class="w-full h-full"
+          />
+        </div>
+      </section>
+
+      <section class="space-y-4">
         <Title> My Accounts </Title>
 
         <div class="grid px-4 gap-4">
@@ -135,12 +148,12 @@ export default Vue.extend({
             :key="`account-${index}`"
             class="flex h-full items-center"
           >
-            <div class="rounded-l bg-gray-200/75 dark:bg-neutral-800">
+            <div class="rounded-l bg-gray-200/75 dark:bg-neutral-800/50">
               <SmartImage :src="account.image" class="rounded-l h-24 w-24" />
             </div>
 
             <div
-              class="rounded-tr rounded-br flex h-full bg-gray-200/50 w-full pl-4 items-center dark:bg-neutral-800"
+              class="rounded-tr rounded-br flex h-full bg-gray-200/50 w-full pl-4 items-center dark:bg-neutral-800/75"
             >
               <div>
                 <h3
