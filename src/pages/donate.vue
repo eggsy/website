@@ -133,7 +133,7 @@ export default Vue.extend({
           rel="noreferrer"
           target="_blank"
         >
-          <Title class="hover:underline" :padding="false">Sponsors</Title>
+          <Title :padding="false">Sponsors</Title>
           <IconBrand
             brand="github"
             class="h-7 w-7 dark:hover:text-white hover:text-black transition-colors"
