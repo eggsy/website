@@ -5,6 +5,7 @@ const NuxtImage = {
     "https://i.ytimg.com",
     "https://http.cat",
     "https://lastfm.freetls.fastly.net",
+    "https://cdn.jsdelivr.net",
   ],
 }
 
