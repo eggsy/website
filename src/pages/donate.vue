@@ -97,12 +97,16 @@ export default Vue.extend({
 
         <div class="flex flex-wrap gap-4 mx-4">
           <Button
+            variant="github"
+            class="w-full lg:w-max"
             :href="getSponsorLinks.github"
-            class="bg-black/50 w-full lg:w-max"
             blank
           >
             <template #icon>
-              <IconBrand brand="github" class="h-7 text-white w-7" />
+              <IconBrand
+                brand="github"
+                class="h-7 text-black dark:text-white w-7"
+              />
             </template>
 
             GitHub Sponsors
@@ -140,11 +144,9 @@ export default Vue.extend({
         </SmartLink>
 
         <div class="bg-gray-200/75 dark:bg-neutral-800/50 mx-4 rounded-md p-4">
-          <img
+          <SmartImage
             src="https://cdn.jsdelivr.net/gh/eggsy/.github/sponsors.svg"
             alt="sponsors"
-            draggable="false"
-            class="w-full h-full object-cover"
           />
         </div>
       </section>

@@ -32,7 +32,7 @@ export default Vue.extend({
       default: false,
     },
     variant: {
-      type: String as PropType<"primary" | "secondary" | "patreon">,
+      type: String as PropType<"primary" | "secondary" | "patreon" | "github">,
       required: false,
       default: "primary",
     },
@@ -56,6 +56,13 @@ export default Vue.extend({
     getIconName(): string {
       return this.icon?.startsWith("Icon") ? this.icon : `Icon${this.icon}`
     },
+    getVariantClasses(): string {
+      if (this.variant === "patreon")
+        return "bg-[#FF424D] bg-opacity-100 text-white hover:(bg-[#FF424D] bg-opacity-75)"
+      else if (this.variant === "github")
+        return "bg-gray-200 text-black bg-opacity-100 dark:(bg-neutral-800 text-white)  hover:bg-opacity-60"
+      return "text-gray-700 dark:text-neutral-400"
+    },
   },
 })
 </script>
@@ -67,9 +74,7 @@ export default Vue.extend({
     class="cursor-pointer flex space-x-2 transition-colors btn items-center justify-center"
     :class="{
       // Variants
-      [variant === 'patreon'
-        ? 'bg-[#FF424D] bg-opacity-100 text-white hover:(bg-[#FF424D] bg-opacity-75)'
-        : 'text-gray-700 dark:text-neutral-400']: true,
+      [getVariantClasses]: true,
 
       // Tightness
       'px-2 py-1': rounded === false && tight === true,
