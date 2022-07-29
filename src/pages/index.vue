@@ -266,13 +266,13 @@ export default Vue.extend({
       </div>
     </header>
 
-    <section id="me" class="my-16">
-      <Title>Me</Title>
+    <section id="pages" class="my-16">
+      <Title>Pages</Title>
 
       <div class="mt-4 grid gap-4 md:grid-cols-2">
         <Card
-          v-for="(card, index) in cards.me"
-          :key="`card-m-${index}`"
+          v-for="(card, index) in cards.pages"
+          :key="`card-p-${index}`"
           :title="card.title"
           :href="card.href"
         >
@@ -281,13 +281,13 @@ export default Vue.extend({
       </div>
     </section>
 
-    <section id="pages" class="my-16">
-      <Title>Pages</Title>
+    <section id="me" class="my-16">
+      <Title>Me</Title>
 
       <div class="mt-4 grid gap-4 md:grid-cols-2">
         <Card
-          v-for="(card, index) in cards.pages"
-          :key="`card-p-${index}`"
+          v-for="(card, index) in cards.me"
+          :key="`card-m-${index}`"
           :title="card.title"
           :href="card.href"
         >
