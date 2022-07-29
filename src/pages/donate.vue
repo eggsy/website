@@ -152,7 +152,7 @@ export default Vue.extend({
       </section>
 
       <section class="space-y-4">
-        <Title>My Accounts</Title>
+        <Title>Bank Accounts</Title>
 
         <div class="grid px-4 gap-4">
           <div
