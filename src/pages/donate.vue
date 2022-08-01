@@ -195,14 +195,14 @@ export default Vue.extend({
           <template v-else>
             <CardSponsor
               v-for="(item, index) in getSortedSponsors.monthly"
-              :key="`sponsor-${index}`"
+              :key="`sponsor-monthly-${index}`"
               :sponsor="item.sponsor"
               :type="item.tierName"
             />
 
             <CardSponsor
               v-for="(item, index) in getSortedSponsors.oneTime"
-              :key="`sponsor-${index}`"
+              :key="`sponsor-oneTime-${index}`"
               :sponsor="item.sponsor"
               :type="item.tierName"
             />
