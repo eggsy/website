@@ -1,5 +1,5 @@
 /* Interfaces */
-export interface Sponsor {
+export interface SponsorLinks {
   github: string
   patreon: string
 }
@@ -30,7 +30,7 @@ export interface Links {
 declare module "@nuxt/types/config/runtime" {
   interface NuxtRuntimeConfig {
     social: Social
-    sponsor: Sponsor
+    sponsor: SponsorLinks
     links: Links
   }
 }
