@@ -2,11 +2,13 @@
 import Vue from "vue"
 
 /* Interfaces */
-import type { Sponsor } from "~/@types/runtimeConfig"
+import type { SponsorLinks } from "~/@types/runtimeConfig"
+import type { ISponsor } from "@/types/Response/Sponsors"
 
 export default Vue.extend({
   data() {
     return {
+      sponsors: [] as ISponsor[],
       accounts: [
         {
           image: "https://i.vgy.me/QJNSYE.png",
@@ -26,6 +28,8 @@ export default Vue.extend({
           iban: "TR31 0013 4000 0189 9352 2000 01",
           revealed: false,
         },
+
+        /* TODO add this to top instead */
         {
           image: "https://i.vgy.me/R0Jwqn.png",
           name: "Papara",
@@ -40,6 +44,14 @@ export default Vue.extend({
         },
       ],
     }
+  },
+  fetchOnServer: false,
+  async fetch() {
+    const { data } = await this.$axios.get(
+      "https://raw.githubusercontent.com/eggsy/.github/main/sponsors.json"
+    )
+
+    this.sponsors = data
   },
   head() {
     const title = "Donate"
@@ -65,10 +77,26 @@ export default Vue.extend({
   computed: {
     /**
      * Returns the Sponsor object in runtime config.
-     * @returns {Sponsor}
+     * @returns {SponsorLinks}
      */
-    getSponsorLinks(): Sponsor {
-      return this.$config.sponsor as Sponsor
+    getSponsorLinks(): SponsorLinks {
+      return this.$config.sponsor as SponsorLinks
+    },
+
+    getSortedSponsors(): { oneTime: ISponsor[]; monthly: ISponsor[] } {
+      const sponsors = this.sponsors
+
+      const sortByPrice = (a: ISponsor, b: ISponsor) =>
+        b.monthlyDollars - a.monthlyDollars
+
+      return {
+        oneTime: sponsors
+          .filter((sponsor) => sponsor.isOneTime)
+          .sort(sortByPrice),
+        monthly: sponsors
+          .filter((sponsor) => !sponsor.isOneTime)
+          .sort(sortByPrice),
+      }
     },
   },
 })
@@ -87,8 +115,9 @@ export default Vue.extend({
         </p>
 
         <p class="text-xs">
-          P.S. Use "<span class="underline">Abdulbaki Dursun</span>" as the name
-          of your transactions.
+          P.S. Use "<span class="border-b border-black/10 dark:border-white/10"
+            >Abdulbaki Dursun</span
+          >" as the name of your transactions.
         </p>
       </header>
 
@@ -143,11 +172,41 @@ export default Vue.extend({
           />
         </SmartLink>
 
-        <div class="bg-gray-200/75 dark:bg-neutral-800/50 mx-4 rounded-md p-4">
-          <SmartImage
-            src="https://cdn.jsdelivr.net/gh/eggsy/.github/sponsors.svg"
-            alt="sponsors"
-          />
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+          <template v-if="$fetchState.pending">
+            <SkeletonLoader
+              v-for="i in 3"
+              :key="`skeleton-${i}`"
+              class="h-13 rounded-md"
+            />
+          </template>
+
+          <p v-else-if="$fetchState.error !== null">An error occured.</p>
+          <p
+            v-else-if="
+              !$fetchState.pending &&
+              !$fetchState.error &&
+              sponsors.length === 0
+            "
+          >
+            No sponsors yet :(
+          </p>
+
+          <template v-else>
+            <CardSponsor
+              v-for="(item, index) in getSortedSponsors.monthly"
+              :key="`sponsor-${index}`"
+              :sponsor="item.sponsor"
+              :type="item.tierName"
+            />
+
+            <CardSponsor
+              v-for="(item, index) in getSortedSponsors.oneTime"
+              :key="`sponsor-${index}`"
+              :sponsor="item.sponsor"
+              :type="item.tierName"
+            />
+          </template>
         </div>
       </section>
 
