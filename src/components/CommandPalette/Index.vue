@@ -60,12 +60,6 @@ export default Vue.extend({
           category: "me",
         },
         {
-          title: "Goals",
-          href: "/me/goals",
-          icon: "IconCheck",
-          category: "me",
-        },
-        {
           title: "Songs",
           href: "/me/songs",
           icon: "IconStar",
