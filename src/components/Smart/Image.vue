@@ -71,13 +71,19 @@ export default Vue.extend({
       if (height) options.height = parseInt(height)
       if (width) options.width = parseInt(width)
 
-      /* Return src directly when on SSR to prevent errors */
-      if (process.server) return src
-      else if (this.$route.path === "/projects/premid/custom-status") return src
-      else return this.$img(src, options)
+      const proxiedImage = this.getProxifiedImageUrl(src)
+
+      if (this.$route.path === "/projects/premid/custom-status")
+        return proxiedImage
+      else return this.$img(proxiedImage, options)
     },
   },
   methods: {
+    getProxifiedImageUrl(url: string): string {
+      if (url.includes("i.imgur.com"))
+        return `https://proxy.duckduckgo.com/iu/?u=${encodeURIComponent(url)}`
+      else return url
+    },
     handleError() {
       this.error = true
       this.loaded = true
