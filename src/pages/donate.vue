@@ -17,6 +17,12 @@ export default Vue.extend({
           revealed: false,
         },
         {
+          image: "https://i.imgur.com/OgUZMQ1.png",
+          name: "Akbank",
+          iban: "TR72 0004 6000 2088 8000 5070 94",
+          revealed: false,
+        },
+        {
           image: "https://i.vgy.me/l1CN85.png",
           name: "QNB Finansbank",
           iban: "TR96 0011 1000 0000 0086 7646 98",
