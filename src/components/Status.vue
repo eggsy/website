@@ -76,7 +76,7 @@ export default Vue.extend({
     getSafeHtml(): string {
       return this.getStatusDetails.replace(
         /\*\*(.*?)\*\*/gm,
-        "<strong>$1</strong>"
+        "<strong class='font-medium text-neutral-700 dark:text-neutral-200'>$1</strong>"
       )
     },
     /**
@@ -169,9 +169,3 @@ export default Vue.extend({
     </transition>
   </div>
 </template>
-
-<style scoped>
-div >>> strong {
-  @apply font-medium text-neutral-700 dark:text-neutral-200;
-}
-</style>
