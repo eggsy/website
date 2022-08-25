@@ -10,9 +10,10 @@ export default Vue.extend({
       type: Object as () => Sponsor,
       required: true,
     },
-    type: {
-      type: String,
-      required: true,
+    monthly: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
 })
@@ -31,7 +32,9 @@ export default Vue.extend({
 
     <div class="flex overflow-x-hidden flex-col leading-tight">
       <span class="truncate">{{ sponsor.login }}</span>
-      <span class="text-sm opacity-50 truncate">{{ type }}</span>
+      <span class="text-sm opacity-50 truncate">
+        {{ monthly ? "Monthly" : "One time" }}
+      </span>
     </div>
   </SmartLink>
 </template>
