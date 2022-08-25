@@ -11,6 +11,12 @@ export default Vue.extend({
       sponsors: [] as ISponsor[],
       accounts: [
         {
+          image: "https://i.vgy.me/R0Jwqn.png",
+          name: "Papara",
+          iban: "8664721806",
+          revealed: false,
+        },
+        {
           image: "https://i.vgy.me/QJNSYE.png",
           name: "Ziraat Bank",
           iban: "TR 1100 0100 2544 95837917 5001",
@@ -35,19 +41,17 @@ export default Vue.extend({
           revealed: false,
         },
 
-        /* TODO add this to top instead */
-        {
-          image: "https://i.vgy.me/R0Jwqn.png",
-          name: "Papara",
-          iban: "8664721806",
-          revealed: false,
-        },
-        {
-          image: "https://i.vgy.me/UCiozk.png",
-          name: "PayPal",
-          iban: "@eggsydev",
-          revealed: false,
-        },
+        /*
+          Disabling this since my PayPal account
+          is not accepting payments as of now.
+
+          {
+            image: "https://i.vgy.me/UCiozk.png",
+            name: "PayPal",
+            iban: "@eggsydev",
+            revealed: false,
+          },
+        */
       ],
     }
   },
@@ -203,14 +207,13 @@ export default Vue.extend({
               v-for="(item, index) in getSortedSponsors.monthly"
               :key="`sponsor-monthly-${index}`"
               :sponsor="item.sponsor"
-              :type="item.tierName"
+              monthly
             />
 
             <CardSponsor
               v-for="(item, index) in getSortedSponsors.oneTime"
               :key="`sponsor-oneTime-${index}`"
               :sponsor="item.sponsor"
-              :type="item.tierName"
             />
           </template>
         </div>
