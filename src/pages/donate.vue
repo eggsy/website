@@ -136,6 +136,10 @@ export default Vue.extend({
 
         <div class="flex flex-wrap gap-x-4 gap-y-2 mx-4">
           <Button
+            v-tippy="{
+              content: 'Preferred',
+              placement: 'bottom',
+            }"
             variant="github"
             class="w-full lg:w-max"
             :href="getSponsorLinks.github"
@@ -182,40 +186,40 @@ export default Vue.extend({
           />
         </SmartLink>
 
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
-          <template v-if="$fetchState.pending">
+        <div>
+          <transition name="fade" mode="out-in">
             <SkeletonLoader
-              v-for="i in 3"
-              :key="`skeleton-${i}`"
-              class="h-13 rounded-md"
-            />
-          </template>
-
-          <p v-else-if="$fetchState.error !== null">An error occured.</p>
-          <p
-            v-else-if="
-              !$fetchState.pending &&
-              !$fetchState.error &&
-              sponsors.length === 0
-            "
-          >
-            No sponsors yet :(
-          </p>
-
-          <template v-else>
-            <CardSponsor
-              v-for="(item, index) in getSortedSponsors.monthly"
-              :key="`sponsor-monthly-${index}`"
-              :sponsor="item.sponsor"
-              monthly
+              v-if="$fetchState.pending"
+              type="spinner"
+              class="w-full py-4"
             />
 
-            <CardSponsor
-              v-for="(item, index) in getSortedSponsors.oneTime"
-              :key="`sponsor-oneTime-${index}`"
-              :sponsor="item.sponsor"
-            />
-          </template>
+            <p v-else-if="$fetchState.error !== null">An error occured.</p>
+            <p
+              v-else-if="
+                !$fetchState.pending &&
+                !$fetchState.error &&
+                sponsors.length === 0
+              "
+            >
+              No sponsors yet :(
+            </p>
+
+            <div v-else class="grid grid-cols-2 lg:grid-cols-3 gap-2">
+              <CardSponsor
+                v-for="(item, index) in getSortedSponsors.monthly"
+                :key="`sponsor-monthly-${index}`"
+                :sponsor="item.sponsor"
+                monthly
+              />
+
+              <CardSponsor
+                v-for="(item, index) in getSortedSponsors.oneTime"
+                :key="`sponsor-oneTime-${index}`"
+                :sponsor="item.sponsor"
+              />
+            </div>
+          </transition>
         </div>
       </section>
 
