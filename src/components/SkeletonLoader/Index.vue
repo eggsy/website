@@ -4,7 +4,9 @@ import Vue, { PropType } from "vue"
 export default Vue.extend({
   props: {
     type: {
-      type: String as PropType<"repository" | "iframe" | "song" | "block">,
+      type: String as PropType<
+        "repository" | "iframe" | "song" | "block" | "spinner"
+      >,
       required: false,
       default: "block",
     },
@@ -34,6 +36,9 @@ export default Vue.extend({
 
   <!-- LastFm Card -->
   <SkeletonLoaderLastfm v-else-if="type === 'lastfm'" />
+
+  <!-- Spinner -->
+  <SkeletonLoaderSpinner v-else-if="type === 'spinner'" />
 
   <!-- Block -->
   <div
