@@ -5,7 +5,7 @@ export default Vue.extend({
   props: {
     type: {
       type: String as PropType<
-        "repository" | "iframe" | "song" | "block" | "spinner"
+        "repository" | "iframe" | "song" | "block" | "spinner" | "rounded"
       >,
       required: false,
       default: "block",
@@ -43,6 +43,12 @@ export default Vue.extend({
   <!-- Block -->
   <div
     v-else-if="type === 'block'"
-    class="rounded bg-gray-100 animate-pulse dark:bg-neutral-800"
+    class="bg-gray-100 rounded animate-pulse dark:bg-neutral-800"
+  />
+
+  <!-- Rounded -->
+  <div
+    v-else-if="type === 'rounded'"
+    class="bg-gray-100 rounded-full animate-pulse dark:bg-neutral-800"
   />
 </template>
