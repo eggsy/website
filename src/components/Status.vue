@@ -128,18 +128,28 @@ export default Vue.extend({
 </script>
 
 <template>
-  <SkeletonLoader
+  <div
     v-if="
       finished === false ||
       !getStatusDetails ||
       Object.keys(lanyard).length === 0
     "
-    class="h-5 w-1/2"
-    :class="$route.path === '/' && 'bg-gray-200 dark:bg-neutral-700'"
-  />
+    class="flex items-center space-x-2"
+  >
+    <SkeletonLoader
+      class="w-5 h-5"
+      type="rounded"
+      :class="$route.path === '/' && 'bg-gray-200 dark:bg-neutral-700'"
+    />
 
-  <div v-else class="rounded-md flex space-x-2 text-neutral-500 items-center">
-    <IconBrand v-if="lanyard.spotify" brand="spotify" class="h-5 w-5" />
+    <SkeletonLoader
+      class="w-1/2 h-5"
+      :class="$route.path === '/' && 'bg-gray-200 dark:bg-neutral-700'"
+    />
+  </div>
+
+  <div v-else class="flex items-center space-x-2 rounded-md text-neutral-500">
+    <IconBrand v-if="lanyard.spotify" brand="spotify" class="w-5 h-5" />
 
     <div
       v-else
