@@ -51,7 +51,7 @@
     "core-js": "^3.24.0",
     "firebase": "^9.9.1",
     "lastfm-typed": "^2.0.2",
-    "moment-timezone": "^0.5.34",
+    "moment-timezone": "^0.5.35",
     "nuxt": "^2.15.8",
     "nuxt-vite": "^0.3.5",
     "nuxt-webfontloader": "^1.1.0",
