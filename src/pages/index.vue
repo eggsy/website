@@ -187,20 +187,56 @@ export default Vue.extend({
         ],
       },
       skills: [
-        "JavaScript",
-        "HTML5",
-        "Nuxt.js",
-        "Vue.js",
-        "Tailwind CSS",
-        "Windi CSS",
-        "Node.js",
-        "TypeScript",
-        "Sass",
-        "Figma",
-        "Firebase",
-        "WordPress",
-        "PHP",
-        "React.js",
+        {
+          title: "Development",
+          items: [
+            { title: "TypeScript", color: "#3178c620" },
+            { title: "Vue.js", color: "#42b88320" },
+            { title: "React.js", color: "#61dafb20" },
+            { title: "HTML5", color: "#e34c2610" },
+            { title: "Tailwind CSS", color: "#38b2ac20" },
+            { title: "Node.js", color: "#33993320" },
+            { title: "Sass", color: "#CF649A10" },
+          ],
+        },
+        {
+          title: "Apps",
+          items: [
+            {
+              title: "VS Code",
+              iconPack: "IconBrand",
+              color: "#0165A920",
+            },
+            {
+              title: "Raycast",
+              color: "#FF515A20",
+              image: "https://i.imgur.com/NBc0C4j.png",
+            },
+            {
+              title: "Figma",
+              color: "#F24E1E10",
+            },
+          ],
+        },
+        {
+          title: "Services",
+          items: [
+            {
+              title: "GitHub",
+              color: "#e8eaea10",
+              iconPack: "IconBrand",
+            },
+            {
+              title: "Firebase",
+              color: "#FFCA2820",
+            },
+            {
+              title: "Netlify",
+              iconPack: "IconBrand",
+              color: "#00C7B720",
+            },
+          ],
+        },
       ],
     }
   },
@@ -377,12 +413,24 @@ export default Vue.extend({
     <section id="technologies" class="mt-6">
       <Title>Technologies I use</Title>
 
-      <div class="mt-4 grid gap-2 sm:grid-cols-3 md:grid-cols-4">
-        <CardSkill
-          v-for="(skill, index) in skills"
-          :key="`skill-${index}`"
-          :title="skill"
-        />
+      <div class="flex flex-col space-y-6 mt-8">
+        <section v-for="category in skills" :key="category.title">
+          <h5
+            class="border-b border-gray-400/10 dark:border-neutral-600/10 text-gray-400 dark:text-neutral-600/70 text-lg mx-4 mb-4 pb-2 font-medium"
+          >
+            {{ category.title }}
+          </h5>
+
+          <div
+            class="grid px-4 md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-x-2 gap-y-2"
+          >
+            <CardSkill
+              v-for="(skill, index) in category.items"
+              :key="`skill-${index}`"
+              v-bind="skill"
+            />
+          </div>
+        </section>
       </div>
     </section>
   </div>
