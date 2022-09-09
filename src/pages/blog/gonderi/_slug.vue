@@ -83,6 +83,22 @@ export default Vue.extend({
             name: "article:published-time",
             content: post?.createdAt || null,
           },
+          {
+            name: "twitter:label1",
+            content: "Tarih",
+          },
+          {
+            name: "twitter:data1",
+            content: post?.createdAt,
+          },
+          {
+            name: "twitter:label2",
+            content: "Okuma Süresi",
+          },
+          {
+            name: "twitter:data2",
+            content: `${this.getReadingTime} dakika`,
+          },
         ]
       ),
     }
