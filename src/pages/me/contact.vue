@@ -38,6 +38,7 @@ export default Vue.extend({
         github: "Follow me on GitHub!",
         instagram: "Follow me on Instagram!",
         trello: "View my Trello board!",
+        linkedIn: "Connect with me on LinkedIn!",
       }
 
       const array: Link[] = []
