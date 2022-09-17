@@ -39,7 +39,7 @@ export default Vue.extend({
           "Anime",
           "Games",
           "Music",
-          "Socials & Stream",
+          "Socials",
           "Videos",
           "Other",
         ],
