@@ -61,7 +61,8 @@ export default Vue.extend({
      */
     getBackgroundUrl(): string {
       if (this.error === true || !this.src) return "/icon.png"
-      else if (this.optimize === false) return this.src
+      else if (this.optimize === false)
+        return this.getProxifiedImageUrl(this.src)
 
       const { format, height, width, fit, src } = this
 
