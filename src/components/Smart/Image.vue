@@ -92,6 +92,8 @@ export default Vue.extend({
       else return url
     },
     handleError() {
+      if (this.optimize === false) return
+
       this.error = true
       this.loaded = true
     },
