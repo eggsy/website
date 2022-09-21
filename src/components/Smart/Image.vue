@@ -111,6 +111,7 @@ export default Vue.extend({
     }"
     :smart-image="true"
     :title="title || caption"
+    :failed-image-url="error && src"
   >
     <img
       :src="getBackgroundUrl || src"
