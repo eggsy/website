@@ -35,16 +35,6 @@ export default Vue.extend({
       required: false,
       default: null,
     },
-    status: {
-      type: [String, Number],
-      required: false,
-      default: "0",
-    },
-    seasons: {
-      type: [String, Number],
-      required: false,
-      default: null,
-    },
   },
   computed: {
     /**
@@ -92,42 +82,6 @@ export default Vue.extend({
         classes,
       }
     },
-    /**
-     * Checks for each prop and returns an badge array.
-     *
-     * Note: Had to give it `any` type because of a TypeScript error I couldn't fix. Will try and see in time
-     *
-     * @returns {Status}
-     */
-    getStatusInfo(): Status {
-      const statusObject = {
-        0: "Devam Ediyor",
-        1: "Final Yaptı",
-        2: "İptal Edildi",
-      }
-
-      let icon
-
-      switch (Number(this.status)) {
-        case 1:
-          icon = "Stop"
-          break
-        case 2:
-          icon = "X"
-          break
-        default:
-          icon = "Play"
-          break
-      }
-
-      return {
-        component: "Icon" + icon,
-        // @ts-ignore-next-line
-        title: statusObject[Number(this.status)] || statusObject[0],
-        classes:
-          "text-gray-700 dark:text-gray-200 bg-gray-200 dark:bg-neutral-800",
-      }
-    },
   },
 })
 </script>
@@ -145,28 +99,6 @@ export default Vue.extend({
         class="rounded-full flex-shrink-0 h-6 p-1 w-6 focus:outline-none"
         :class="getPlatformInfo.classes"
       />
-
-      <!-- Status Icon -->
-      <component
-        :is="getStatusInfo.component"
-        v-tippy="{
-          content: getStatusInfo.title,
-          placement: 'top',
-        }"
-        class="rounded-full flex-shrink-0 h-6 p-1 w-6 focus:outline-none"
-        :class="getStatusInfo.classes"
-      />
-
-      <div
-        v-if="seasons"
-        v-tippy="{
-          content: `${seasons} sezon`,
-          placement: 'top',
-        }"
-        class="rounded-md cursor-default flex font-medium bg-gray-200 flex-shrink-0 text-sm p-1 text-gray-700 w-10 items-center justify-center dark:(text-gray-200 bg-neutral-800) focus:outline-none"
-      >
-        {{ seasons }} S
-      </div>
 
       <div
         v-tippy="{
