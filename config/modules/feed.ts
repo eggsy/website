@@ -19,7 +19,7 @@ const Feed = () => {
     const articles = await $content("blog").fetch()
 
     articles.forEach((article: any) => {
-      const url = `${baseUrlArticles}/gonderi/${article.slug}`
+      const url = `${baseUrlArticles}/${article.slug}`
 
       const hostName =
         process.env.NODE_ENV === "production"
