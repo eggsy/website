@@ -14,7 +14,7 @@ export default Vue.extend({
       meta: [
         {
           httpEquiv: "refresh",
-          content: `0; url=${redirect}`,
+          content: `0; url=https://eggsy.xyz/blog/${redirect}`,
         },
       ],
     }
