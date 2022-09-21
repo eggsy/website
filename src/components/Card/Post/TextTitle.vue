@@ -25,7 +25,7 @@ export default Vue.extend({
     v-if="meta"
     :title="meta.title"
     :href="{
-      name: 'blog-gonderi-slug',
+      name: 'blog-slug',
       params: { slug: meta.slug },
     }"
     class="rounded-lg cursor-pointer flex flex-col p-3 px-4 transition-colors focus-ring truncate hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"

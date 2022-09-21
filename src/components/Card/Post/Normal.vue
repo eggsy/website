@@ -30,7 +30,7 @@ export default Vue.extend({
     <SmartLink
       :title="meta.title"
       :href="{
-        name: 'blog-gonderi-slug',
+        name: 'blog-slug',
         params: { slug: meta.slug },
       }"
       class="rounded-lg cursor-pointer space-y-2 focus-ring"

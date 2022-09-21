@@ -4,7 +4,7 @@ export default async function () {
 
   const routes = []
   for (const post of posts) {
-    routes.push(`blog/gonderi/${post.slug}`)
+    routes.push(`blog/${post.slug}`, `blog/gonderi/${post.slug}`)
   }
 
   return {
