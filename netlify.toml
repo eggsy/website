@@ -1,9 +1,10 @@
 [[redirects]]
 force = true
-from = "/blog/gonderi/*"
+from = "/blog/gonderi/:slug"
 status = 301
-to = "/blog/:splat"
+to = "/blog/:slug"
 
+[[redirects]]
 force = true
 from = "https://eggsy-tailwind.netlify.app"
 status = 301
