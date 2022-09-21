@@ -200,21 +200,23 @@ export default Vue.extend({
           </header>
 
           <div class="mt-4">
-            <div
-              class="text-right -ml-20 top-4 sticky hidden float-left md:block"
-            >
-              <BlogShare
-                type="vertical"
-                :title="post.title"
-                :path="$route.path"
-              />
-            </div>
+            <template v-if="!post.indicatorsHidden">
+              <div
+                class="text-right z-10 -ml-20 top-4 sticky hidden float-left md:block"
+              >
+                <BlogShare
+                  type="vertical"
+                  :title="post.title"
+                  :path="$route.path"
+                />
+              </div>
 
-            <div
-              class="text-left -mr-14 top-4 sticky hidden float-right md:block"
-            >
-              <BlogReadingIndicator selector=".nuxt-content" />
-            </div>
+              <div
+                class="text-left -mr-14 top-4 z-10 sticky hidden float-right md:block"
+              >
+                <BlogReadingIndicator selector=".nuxt-content" />
+              </div>
+            </template>
 
             <BlogTableOfContents :toc="post.toc" />
 
@@ -371,7 +373,9 @@ export default Vue.extend({
   /* Pre and code block filenames */
 
   .nuxt-content-highlight {
-    @apply mb-5 relative;
+    box-shadow: 0 0 0 100vmax #282c34;
+    clip-path: inset(0 -100vmax);
+    @apply mb-5 relative text-sm;
 
     .filename {
       @apply font-light mt-3 mr-3 text-sm right-0 text-gray-300 z-10 absolute;
