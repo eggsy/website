@@ -109,7 +109,7 @@ Aynı zamanda bunlara yine Raycast ayarlarından kısayollar atayarak tek bir tu
 
 Bu araç ile normal kullanıcılardan ziyade geliştiriciler, yazdıkları scriptleri Raycast'e ekleyerek menüden seçebilir, parametrelere ulaşabilir ve bu parametreleri kullanarak scriptleri ile Raycast'e çıktı verip birçok farklı şey yapabilirler.
 
-<smart-image src="https://i.imgur.com/rJuW4iT.gif"></smart-image>
+<smart-image src="https://i.imgur.com/rJuW4iT.gif" :optimize="false"></smart-image>
 
 Raycast'in resmi sitesinde de belirtildiği gibi bu komutun kullanım alanları tamamen sizin hayal gücünüze bağlıdır, yaptığınız script komutlarını göstererek birçok şeyi kolaylaştırabilirsiniz, tek tuşla gizli dosyaları göstermeye ayarlayabilir, tekrar tek bir tuşla evinizdeki akıllı ışıkları kapatabilir ve böyle birçok işlem gerçekleştirebilirsiniz.
 
