@@ -382,7 +382,7 @@ export default Vue.extend({
     }
 
     pre {
-      @apply rounded-none py-4 px-6;
+      @apply rounded-none py-4 px-0;
     }
   }
 
