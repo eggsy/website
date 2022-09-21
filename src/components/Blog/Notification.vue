@@ -18,7 +18,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="notification" :class="type">
+  <div class="notification text-sm" :class="type">
     <h1 v-if="title">{{ title }}</h1>
 
     <p v-if="!!$slots.default">
@@ -33,7 +33,7 @@ export default Vue.extend({
   @apply rounded-md space-y-2 border-l-4 p-4 dark:text-gray-100;
 
   h1 {
-    @apply font-semibold text-lg hover:no-underline;
+    @apply font-semibold text-base hover:no-underline;
   }
 
   /* Background colors for types */
