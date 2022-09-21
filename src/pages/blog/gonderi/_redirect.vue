@@ -10,11 +10,19 @@ export default Vue.extend({
     const { redirect } = this.$route.params
     if (!redirect) return {}
 
+    const url = `https://eggsy.xyz/blog/${redirect}`
+
     return {
+      link: [
+        {
+          rel: "canonical",
+          href: url,
+        },
+      ],
       meta: [
         {
           httpEquiv: "refresh",
-          content: `0; url=https://eggsy.xyz/blog/${redirect}`,
+          content: `0; url=${url}`,
         },
       ],
     }
