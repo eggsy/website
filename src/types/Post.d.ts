@@ -40,4 +40,5 @@ export interface Post {
   tags?: string[]
   special?: boolean
   image?: string
+  indicatorsHidden?: boolean
 }
