@@ -23,7 +23,7 @@ export default Vue.extend({
   <Transition name="fade" mode="out-in">
     <div
       v-if="viewed === false"
-      class="fixed inset-x-0 w-11/12 p-4 mx-auto space-y-1 rounded-lg shadow-md select-none bottom-4 lg:w-1/4 ring-1 ring-white/10 dark:ring-white/20 ring-black/20 lg:mx-0 lg:left-4 background-when-supports"
+      class="fixed inset-x-0 w-11/12 p-4 mx-auto space-y-1 rounded-lg shadow-md select-none bottom-4 lg:w-1/4 ring-1 ring-white/10 dark:ring-white/20 ring-black/20 lg:mx-0 lg:left-4 background-when-supports z-20"
     >
       <div class="flex items-center justify-between gap-2">
         <SmartLink
