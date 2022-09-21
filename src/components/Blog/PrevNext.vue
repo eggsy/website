@@ -39,7 +39,7 @@ export default Vue.extend({
     <div>
       <Title :padding="false" lang="tr">Önceki Gönderi</Title>
 
-      <SmartLink v-if="prev" :href="`/blog/gonderi/${prev.slug}`">
+      <SmartLink v-if="prev" :href="`/blog/${prev.slug}`">
         <h5>{{ prev.title }}</h5>
       </SmartLink>
 
@@ -49,7 +49,7 @@ export default Vue.extend({
     <div class="text-right">
       <Title :padding="false" lang="tr">Sonraki Gönderi</Title>
 
-      <SmartLink v-if="next" :href="`/blog/gonderi/${next.slug}`">
+      <SmartLink v-if="next" :href="`/blog/${next.slug}`">
         <h5>{{ next.title }}</h5>
       </SmartLink>
 

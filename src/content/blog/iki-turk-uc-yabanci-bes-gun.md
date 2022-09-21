@@ -36,7 +36,7 @@ Benimle kalan arkadaşımın Türkiye'nin yemekleri ile olan ilk teması bu bal�
 
 ### Diğerleri ile İlk Buluşma
 
-İlk gün böyle geçti. Ertesi gün diğer arkadaşlarla Eminönü'nde buluşacak ve Türk kahvaltısını deneyecektik. Diğer projemizden [Discord Templates](/blog/gonderi/discord-server-templates-yayinda) projesinin yöneticilerinden biri olan arkadaşım Can o tarafları daha iyi bildiği için bugün (ve gezi boyunca) ondan yardım alacaktım.
+İlk gün böyle geçti. Ertesi gün diğer arkadaşlarla Eminönü'nde buluşacak ve Türk kahvaltısını deneyecektik. Diğer projemizden [Discord Templates](/blog/discord-server-templates-yayinda) projesinin yöneticilerinden biri olan arkadaşım Can o tarafları daha iyi bildiği için bugün (ve gezi boyunca) ondan yardım alacaktım.
 
 Ona Türk kahvaltısı edilebileceğimiz bir yer önermesini istediğimde beni arayarak bildiği bir yerin ismini ve adresini tarif etti. Diğerleri ile orada buluşma kararı aldık. Yurtdışında hiçbir yerde adam akıllı bulamadığımız Türk kahvaltısını ilk defa denettirecektik arkadaşlarımıza.
 

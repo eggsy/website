@@ -11,7 +11,7 @@ related:
   - octopi-aur-destegi-nasil-aktiflestirilir
 ---
 
-Burada anlatılacak olanlar tamamen aşağıdaki sayfa ile bağlıdır ve o sayfadaki işlemler yapılmadan yapılamayacaktır. Lütfen [bu sayfaya](/blog/gonderi/octopi-aur-destegi-nasil-aktiflestirilir) giderek AUR desteğini aktifleştirin ve bu sayfayı tekrar ziyaret edin.
+Burada anlatılacak olanlar tamamen aşağıdaki sayfa ile bağlıdır ve o sayfadaki işlemler yapılmadan yapılamayacaktır. Lütfen [bu sayfaya](/blog/octopi-aur-destegi-nasil-aktiflestirilir) giderek AUR desteğini aktifleştirin ve bu sayfayı tekrar ziyaret edin.
 
 Discord'u yükleyebilmek için Octopi uygulamasını açmamız ve arama yerine `discord` yazmamız gerekiyor.
 

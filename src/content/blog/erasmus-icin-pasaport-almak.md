@@ -12,7 +12,7 @@ related:
   - okul-gunlukleri-podcast
 ---
 
-Önceki serim "[Okul Günlükleri](/blog/gonderi/okul-gunlukleri)"nde olduğu gibi, bu yazımda da eğitim hakkında bir konuya değineceğim. Bu sefer direkt olarak bana ait bir anıya değil, sizlere yardımcı olacağına inandığım bir deneyimime değineceğim.
+Önceki serim "[Okul Günlükleri](/blog/okul-gunlukleri)"nde olduğu gibi, bu yazımda da eğitim hakkında bir konuya değineceğim. Bu sefer direkt olarak bana ait bir anıya değil, sizlere yardımcı olacağına inandığım bir deneyimime değineceğim.
 
 En başta belirtmek isterim ki burada okuyacağınız şeyler tamamen benim izlediğim yöntemler belirtmektedir. Pasaport işlemlerini gerçekleştirmenin birden fazla yöntemi vardır. Eğer buradaki yöntemler sizin için uygun değilse, lütfen size uygun olan bir yöntem bulup işlemlerinizi ona uyarak gerçekleştirin. Atladığım, yanlış yazdığım yerler olabilir, herhangi bir işlem yapmadan önce iki kez kontrol edin!
 

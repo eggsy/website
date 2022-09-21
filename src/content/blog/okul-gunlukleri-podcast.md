@@ -10,7 +10,7 @@ related:
   - okul-gunlukleri
 ---
 
-Bir önceki yazım olan [Okul Günlükleri - Giriş](/blog/gonderi/okul-gunlukleri) yazısında bahsettiğim okul maceralarımdan ilki, bu yazıda belirtilen, Y. Ö.'nün verdiği Oral Communication Skills (Konuşma Becerileri) dersindeki Podcast görevimiz olacak.
+Bir önceki yazım olan [Okul Günlükleri - Giriş](/blog/okul-gunlukleri) yazısında bahsettiğim okul maceralarımdan ilki, bu yazıda belirtilen, Y. Ö.'nün verdiği Oral Communication Skills (Konuşma Becerileri) dersindeki Podcast görevimiz olacak.
 
 **Podcast**, hepinizin bildiği gibi, sesli anlatım şeklinde sunulan, birçok katılımcının bulunabileceği, belli konu altında kaydedilen bölümler serisine denir. Bizim bu dersteki en büyük amacımız, kelime telaffuzumuzu, anlık konuşma becerimizi geliştirmek ve kendimizi buna hazırlamak. Bu nedenler dolayısıyla haftada bu dersten 2, hatta bazen 3 farklı görev alıyor ve bu görevler genellikle bizim konuşma becerimizi geliştirmek için veriliyor. Okulumuzun ilk döneminde böyle bir görev olmasa da, bunun gibi birçok görev bulunuyordu. Bu görevlerde yapmamız gereken, her hafta değişen bir konu üzerinde 4-5 dakikalık kendimize ait bir ses kaydı ile derse katılım sağlamaktı. Daha önceden belirlenen konular üzerinde videolar izliyor, araştırmalar yapıyor ve daha sonra kendi yorumlarımızı belirtiyorduk. Fakat bu dönem, bu derste, **beni çok heyecanlandıran**, bir o kadar da endişelendiren, grup şeklinde vereceğimiz bir ödev konusunun olmasıydı.
 
