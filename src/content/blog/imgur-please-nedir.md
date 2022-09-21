@@ -10,7 +10,7 @@ related:
   - imgur-please-artik-unblock-please
 ---
 
-<blog-notification type="warning">Imgur Please eklentisi, 01.08.2020 tarihiyle **Unblock Please** adını almış ve sadece Imgur resimlerinin engelini kaldırmakla yetinmeyip aynı zamanda Pastebin engelini de kaldırmaya başlamıştır. Bu gönderi, Imgur Please hakkındadır ve blogdan kaldırılmayacaktır. Unblock Please hakkında güncel ve yeni yazılmış yazıya gitmek için [buraya](/blog/gonderi/imgur-please-artik-unblock-please) tıklayabilirsiniz.</blog-notification>
+<blog-notification type="warning">Imgur Please eklentisi, 01.08.2020 tarihiyle **Unblock Please** adını almış ve sadece Imgur resimlerinin engelini kaldırmakla yetinmeyip aynı zamanda Pastebin engelini de kaldırmaya başlamıştır. Bu gönderi, Imgur Please hakkındadır ve blogdan kaldırılmayacaktır. Unblock Please hakkında güncel ve yeni yazılmış yazıya gitmek için [buraya](/blog/imgur-please-artik-unblock-please) tıklayabilirsiniz.</blog-notification>
 
 Aslında buraya daha önce gelmiş birinin bildiğinden %37.5 emin olduğum, [sitenin girişinde](/) projelerimin olduğu yerde de ismi geçen Imgur Please adlı eklentim hakkında size birkaç bilgi vermek için bu yazıyı yazma gereksinimi duydum.
 

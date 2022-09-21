@@ -115,7 +115,7 @@ Raycast'in resmi sitesinde de belirtildiği gibi bu komutun kullanım alanları 
 
 ## Mağaza
 
-Sadece bu kadar özelliği olduğunu düşündüyseniz, yanıldınız, şimdiden bu yazı oldukça uzun oldu fakat Raycast'i anlatırken Raycast Mağazasını anlatmadan geçemezdim. Bu mağaza, basitçe, **açık-kaynak**, geliştiricilerin hazırladığı eklentilerin olduğu bir mağazadır. Raycast'in içerisinde gelen gömülü özelliklerin yanı sıra Raycast geliştiricilerinin hazırladığı araçlar ve yöntemler ile React kullanarak bu işi bilen herkes kendi eklentisini oluştFurabilir, incelenmesi için ekibe (GitHub üzerinden) yollayabilir, onaylanır onaylanmaz tüm Raycast kullanıcılarının mağazasından ulaşılabilir bir duruma getirebilir. Bu yönteme benzer bir yöntemi biz PreMiD üzerinde de kullanıyoruz, eğer ona da bakmak isterseniz [buraya](/blog/gonderi/premid-nasil-kullanilir) tıklayabilirsiniz.
+Sadece bu kadar özelliği olduğunu düşündüyseniz, yanıldınız, şimdiden bu yazı oldukça uzun oldu fakat Raycast'i anlatırken Raycast Mağazasını anlatmadan geçemezdim. Bu mağaza, basitçe, **açık-kaynak**, geliştiricilerin hazırladığı eklentilerin olduğu bir mağazadır. Raycast'in içerisinde gelen gömülü özelliklerin yanı sıra Raycast geliştiricilerinin hazırladığı araçlar ve yöntemler ile React kullanarak bu işi bilen herkes kendi eklentisini oluştFurabilir, incelenmesi için ekibe (GitHub üzerinden) yollayabilir, onaylanır onaylanmaz tüm Raycast kullanıcılarının mağazasından ulaşılabilir bir duruma getirebilir. Bu yönteme benzer bir yöntemi biz PreMiD üzerinde de kullanıyoruz, eğer ona da bakmak isterseniz [buraya](/blog/premid-nasil-kullanilir) tıklayabilirsiniz.
 
 <smart-image src="https://i.imgur.com/Ort4YDj.jpg"></smart-image>
 
