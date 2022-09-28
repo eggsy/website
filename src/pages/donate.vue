@@ -194,13 +194,14 @@ export default Vue.extend({
               class="w-full py-4"
             />
 
-            <p v-else-if="$fetchState.error !== null">An error occured.</p>
+            <p v-else-if="$fetchState.error" class="mx-4">An error occured.</p>
             <p
               v-else-if="
                 !$fetchState.pending &&
                 !$fetchState.error &&
                 sponsors.length === 0
               "
+              class="mx-4"
             >
               No sponsors yet :(
             </p>
