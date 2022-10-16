@@ -1,5 +1,12 @@
+import { join } from "path"
+import { mkdirSync, existsSync, writeFileSync } from "fs"
+import consola from "consola"
+
 // Types
 import type { NuxtConfig } from "@nuxt/types"
+
+// Functions
+import { generateImage } from "./functions/generateOgImage"
 
 // Base config
 import buildModules from "./config/buildModules"
@@ -43,6 +50,31 @@ const Config: NuxtConfig = {
   modules,
   plugins,
   publicRuntimeConfig,
+
+  hooks: {
+    generate: {
+      async done(generator) {
+        const generateDir = generator.nuxt.options.generate.dir
+        const folderPath = join(generateDir, "./og-images/")
+
+        const { $content } = require("@nuxt/content")
+        const articles = await $content("blog").fetch()
+
+        if (!articles.length) return
+
+        consola.info(`Generationg OG images for ${articles.length} posts.`)
+
+        for (const article of articles) {
+          const { title, description, slug } = article
+          const image = await generateImage({ title, description })
+
+          if (!existsSync(folderPath)) mkdirSync(folderPath)
+
+          writeFileSync(join(folderPath, `./${slug}.png`), image)
+        }
+      },
+    },
+  },
 
   // Modules
   vite,
