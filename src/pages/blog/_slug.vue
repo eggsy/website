@@ -79,6 +79,10 @@ export default Vue.extend({
         },
         [
           {
+            name: "twitter:card",
+            content: "summary_large_image",
+          },
+          {
             name: "article:published-time",
             content: post?.createdAt || null,
           },
