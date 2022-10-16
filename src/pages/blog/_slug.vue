@@ -46,8 +46,7 @@ export default Vue.extend({
   },
   head() {
     const post = this.post as Post
-    const { getPostImage, getTags } = this as {
-      getPostImage: string
+    const { getTags } = this as {
       getTags: string[]
     }
 
@@ -55,9 +54,9 @@ export default Vue.extend({
     const description =
       post.description || "EGGSY'nin blogunda bu yazıyı okumaya davet edildin."
 
-    const image = getPostImage
     const tags = getTags?.join(", ") || title
     const href = `https://eggsy.xyz${this.$route?.path}`
+    const image = `/og-images/${post.slug}.png`
 
     return {
       bodyAttrs: {
