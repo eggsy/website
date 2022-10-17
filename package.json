@@ -73,6 +73,7 @@
     "@nuxtjs/color-mode": "2.1.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/moment": "^1.6.1",
+    "@types/react": "^18.0.21",
     "@types/sharp": "^0.31.0",
     "dotenv": "^16.0.2",
     "nuxt-windicss": "^2.5.1",
