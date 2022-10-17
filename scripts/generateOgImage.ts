@@ -8,12 +8,18 @@ const InterBold = readFileSync("./src/assets/fonts/Inter-Bold.ttf")
 interface IMetaImage {
   title: string
   description: string
+  subtitles?: string[]
 }
 
-export const generateImage = async ({ title, description }: IMetaImage) => {
+export const generateImage = async ({
+  title,
+  description,
+  subtitles,
+}: IMetaImage) => {
   const svg = await satori(
     {
       type: "div",
+      key: 1,
       props: {
         style: {
           height: "100%",
@@ -54,30 +60,22 @@ export const generateImage = async ({ title, description }: IMetaImage) => {
                 props: {
                   style: {
                     display: "flex",
-                    fontSize: 18,
+                    marginTop: 12,
+                    fontSize: 30,
                   },
-                  children: [
-                    {
-                      type: "span",
+                  children: subtitles?.map((item, index) => ({
+                    type: "span",
+                    props: {
                       style: {
-                        marginTop: 8,
-                        marginBottom: 8,
-                        marginLeft: 12,
-                        marginRight: 12,
+                        borderRadius: 12,
+                        padding: "6px 16px",
+                        marginLeft: index === 0 ? 0 : 14,
+                        color: "rgba(0, 0, 0, 0.5)",
+                        backgroundColor: "rgba(0, 0, 0, 0.1)",
                       },
-                      children: "8 dakika okuma",
+                      children: item,
                     },
-                    {
-                      type: "span",
-                      style: {
-                        marginTop: 8,
-                        marginBottom: 8,
-                        marginLeft: 12,
-                        marginRight: 12,
-                      },
-                      children: "14/04/2022",
-                    },
-                  ],
+                  })),
                 },
               },
             ],
