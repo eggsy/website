@@ -26,6 +26,10 @@
       "url": "https://eggsy.xyz/donate"
     },
     {
+      "type": "github",
+      "url": "https://github.com/sponsors/eggsy"
+    },
+    {
       "type": "patreon",
       "url": "https://www.patreon.com/eggsy"
     }
