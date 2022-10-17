@@ -38,14 +38,14 @@ export const generateImage = async ({ title, description }: IMetaImage) => {
               {
                 type: "h1",
                 props: {
-                  style: { fontSize: 50, fontWeight: 600, marginBottom: 0 },
+                  style: { fontSize: 70, fontWeight: 600, marginBottom: 0 },
                   children: title,
                 },
               },
               {
                 type: "p",
                 props: {
-                  style: { fontSize: 30, color: "rgba(0, 0, 0, 0.5)" },
+                  style: { fontSize: 45, color: "rgba(0, 0, 0, 0.5)" },
                   children: description,
                 },
               },

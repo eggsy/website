@@ -6,7 +6,7 @@ import consola from "consola"
 import type { NuxtConfig } from "@nuxt/types"
 
 // Functions
-import { generateImage } from "./functions/generateOgImage"
+import { generateImage } from "./scripts/generateOgImage"
 
 // Base config
 import buildModules from "./config/buildModules"
