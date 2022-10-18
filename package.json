@@ -76,6 +76,7 @@
     "@types/react": "^18.0.21",
     "@types/sharp": "^0.31.0",
     "dotenv": "^16.0.2",
+    "isomorphic-unfetch": "^3.1.0",
     "nuxt-windicss": "^2.5.1",
     "postcss-preset-env": "^7.8.0",
     "prettier": "^2.7.1",
