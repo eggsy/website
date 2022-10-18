@@ -2,6 +2,10 @@ import satori from "satori"
 import { readFileSync } from "fs"
 import sharp from "sharp"
 
+// Polyfill
+import "isomorphic-unfetch"
+
+// Fonts
 const Inter = readFileSync("./src/assets/fonts/Inter-Regular.ttf")
 const InterBold = readFileSync("./src/assets/fonts/Inter-Bold.ttf")
 
@@ -10,6 +14,27 @@ interface IMetaImage {
   description: string
   subtitles?: string[]
 }
+
+const emojis = [
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f4ab.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f636.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f44f.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f973.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/2728.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/2709.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/2600.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f30d.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f4a5.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f525.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f929.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/26a1.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/231b.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/2b50.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f4eb.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f4a1.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f4ad.png",
+  "https://twemoji.maxcdn.com/v/latest/72x72/1f389.png",
+]
 
 export const generateImage = async ({
   title,
@@ -29,6 +54,7 @@ export const generateImage = async ({
           justifyContent: "flex-end",
           backgroundColor: "#fff",
           borderRadius: 24,
+          backgroundImage: "url(https://i.imgur.com/9CddUS8.png)",
         },
         children: {
           type: "div",
@@ -41,6 +67,14 @@ export const generateImage = async ({
               marginBottom: 40,
             },
             children: [
+              {
+                type: "img",
+                props: {
+                  src: emojis[Math.floor(Math.random() * emojis.length)],
+                  height: 80,
+                  width: 80,
+                },
+              },
               {
                 type: "h1",
                 props: {
@@ -63,19 +97,20 @@ export const generateImage = async ({
                     marginTop: 12,
                     fontSize: 30,
                   },
-                  children: subtitles?.map((item, index) => ({
-                    type: "span",
-                    props: {
-                      style: {
-                        borderRadius: 12,
-                        padding: "6px 16px",
-                        marginLeft: index === 0 ? 0 : 14,
-                        color: "rgba(0, 0, 0, 0.5)",
-                        backgroundColor: "rgba(0, 0, 0, 0.1)",
+                  children:
+                    subtitles?.map((item, index) => ({
+                      type: "span",
+                      props: {
+                        style: {
+                          borderRadius: 12,
+                          padding: "6px 16px",
+                          marginLeft: index === 0 ? 0 : 14,
+                          color: "rgba(0, 0, 0, 0.5)",
+                          backgroundColor: "rgba(0, 0, 0, 0.1)",
+                        },
+                        children: item,
                       },
-                      children: item,
-                    },
-                  })),
+                    })) || [],
                 },
               },
             ],
