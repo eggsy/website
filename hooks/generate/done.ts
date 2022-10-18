@@ -24,22 +24,24 @@ export const generateDone = async (generator: any) => {
 
   if (!articles.length) return
 
-  consola.info(`Generationg OG images for ${articles.length} posts.`)
+  consola.info(`Generating OG images for ${articles.length} posts.`)
 
   for (const article of articles) {
-    const { title, description, slug, body, createdAt } = article
+    const { title, description, slug, body, createdAt, tags } = article
 
     const readingTime = getReadingTime(JSON.stringify(body))
     const postDate = formatter.format(new Date(createdAt)).split(".").join("/")
 
-    const image = await generateImage({
+    const metaImage = await generateImage({
       title,
       description,
-      subtitles: [postDate, `${readingTime} dakika okuma`],
+      subtitles: [postDate, `${readingTime} dakika okuma`, `#${tags[0]}`],
     })
 
     if (!existsSync(folderPath)) mkdirSync(folderPath)
 
-    writeFileSync(join(folderPath, `./${slug}.png`), image)
+    writeFileSync(join(folderPath, `./${slug}.png`), metaImage)
   }
+
+  consola.success(`Generated ${articles.length} OG images.`)
 }
