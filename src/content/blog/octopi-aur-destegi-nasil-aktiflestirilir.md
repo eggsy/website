@@ -1,6 +1,6 @@
 ---
 title: Octopi AUR Desteği Nasıl Aktifleştirilir?
-description: Bu gönderide Manjaro'nun grafiksel paket yöneticisi Octopi'de nasıl AUR (Arch User Repository) aktif edileceğini anlatacağım. Bu sayede aklınıza gelebilecek her türlü uygulamayı yükleyebileceksiniz!
+description: Bu gönderide Manjaro'nun paket yöneticisi Octopi'de nasıl AUR (Arch User Repository) aktif edileceğini anlatacağım.
 tags:
   - manjaro
   - linux

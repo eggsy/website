@@ -1,6 +1,6 @@
 ---
 title: Spotify Bağlantısından YouTube Videosu Bulma (Node)
-description: Farklı bir müzik platformundan Spotify'a geçtiyseniz ama bir nedenden ötürü hâlâ öncesinde yapabildiğiniz gibi müziklerin YouTube bağlantılarına ulaşmak istiyorsanız, bu işlemi Node.js ile otomatikleştirebilirsiniz!
+description: Spotify'daki müziklerin YouTube bağlantılarına ulaşmak istiyorsanız, bu işlemi Node.js ile otomatikleştirebilirsiniz!
 header: https://i.imgur.com/JsG6PF1.jpg
 tags:
   - yazılım

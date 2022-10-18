@@ -1,6 +1,6 @@
 ---
 title: "10 Gün, 4 Ülke: Hangi Balkan Ülkesi Daha İyi?"
-description: Geçen hafta çıktığımız Balkan turunda ziyaret ettiğimiz Arnavutluk, Karadağ, Kosova ve Makedonya'da yaşadığımız maceraları anlatıyor ve bunları birbiriyle karşılaştırıyorum.
+description: Yaptığımız Balkan turunda ziyaret ettiğimiz Arnavutluk, Karadağ, Kosova ve Makedonya'da yaşadığımız maceraları anlatıyor ve bunları birbiriyle karşılaştırıyorum.
 header: https://i.imgur.com/wDMRZCx.jpg
 tags:
   - ülke

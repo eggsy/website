@@ -1,6 +1,6 @@
 ---
 title: Dizi Önerilerim
-description: Son 2 yılda izlediğim tüm yabancı dizileri, kısa açıklamaları ve 10 üzerinden puanlamalarıyla birlikte sizlerle paylaştığım gönderi. Ayrıca, her yeni dizi bitirdiğimde, bu listeyi de güncelleyeceğim.
+description: Son 2 yılda izlediğim tüm yabancı dizileri, kısa açıklamaları ve 10 üzerinden puanlamalarıyla birlikte sizlerle paylaştığım gönderi.
 header: https://i.imgur.com/YNu5eL1.jpg
 tags:
   - dizi
