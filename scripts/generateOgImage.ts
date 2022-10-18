@@ -73,6 +73,9 @@ export const generateImage = async ({
                   src: emojis[Math.floor(Math.random() * emojis.length)],
                   height: 80,
                   width: 80,
+                  style: {
+                    marginBottom: 12,
+                  }
                 },
               },
               {
@@ -95,7 +98,7 @@ export const generateImage = async ({
                   style: {
                     display: "flex",
                     marginTop: 12,
-                    fontSize: 30,
+                    fontSize: 35,
                   },
                   children:
                     subtitles?.map((item, index) => ({
