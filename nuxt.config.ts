@@ -49,8 +49,8 @@ const Config: NuxtConfig = {
 
   hooks: {
     generate: {
-      done(generator) {
-        generateDone(generator)
+      async done(generator) {
+        await generateDone(generator)
       },
     },
   },
