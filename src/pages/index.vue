@@ -64,8 +64,8 @@ export default Vue.extend({
       experiences: {
         jobs: [
           {
-            title: "Sane Lunatics Theater Play",
-            url: "https://delilerkumpanyasi.com",
+            title: "EskiYeni Academy Theater",
+            url: "https://eskiyenitiyatro.com",
             position: "Web Developer & Social Media Manager",
             date: "2022-",
           },
