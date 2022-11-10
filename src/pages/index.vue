@@ -64,6 +64,12 @@ export default Vue.extend({
       experiences: {
         jobs: [
           {
+            title: "Google Developer Student Clubs",
+            url: "https://gdsc.community.dev/mus-alparslan-universitesi",
+            position: "Core Team Member",
+            date: "2022-"
+          },
+          {
             title: "EskiYeni Academy Theater",
             url: "https://eskiyenitiyatro.com",
             position: "Web Developer & Social Media Manager",
