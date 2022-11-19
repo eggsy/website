@@ -186,7 +186,7 @@ export default Vue.extend({
       @click="() => toggleVisibility(false)"
     >
       <div
-        class="lg:h-1/2 lg:w-1/2 w-full h-full overflow-hidden scrollbar relative lg:rounded-lg lg:mt-24 ring-1 ring-white/10 dark:bg-neutral-900 bg-gray-200 text-neutral-900 dark:text-white"
+        class="lg:h-1/2 lg:w-1/2 w-full h-full overflow-hidden relative lg:rounded-lg lg:mt-24 ring-1 ring-white/10 dark:bg-neutral-900 bg-gray-200 text-neutral-900 dark:text-white"
         @click="(e) => e.stopPropagation()"
       >
         <!-- Search bar -->
@@ -207,7 +207,7 @@ export default Vue.extend({
 
         <!-- Content -->
         <div
-          class="pt-13 space-y-4 pb-3.5 px-1.5 overflow-y-auto h-full text-neutral-600 space-y-1"
+          class="pt-13 space-y-4 pb-3.5 px-1.5 overflow-y-auto scrollbar h-full text-neutral-600 space-y-1"
         >
           <div
             v-for="(item, index) in getCategoriesFiltered"
