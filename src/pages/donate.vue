@@ -154,22 +154,6 @@ export default Vue.extend({
 
             GitHub Sponsors
           </Button>
-
-          <Button
-            variant="patreon"
-            class="w-full lg:w-max"
-            :href="getSponsorLinks.patreon"
-            blank
-          >
-            <template #icon>
-              <SmartImage
-                src="https://i.vgy.me/qxpY9T.png"
-                class="rounded h-7 w-7"
-              />
-            </template>
-
-            Become a Patron
-          </Button>
         </div>
       </section>
 

@@ -32,7 +32,7 @@ export default Vue.extend({
       default: false,
     },
     variant: {
-      type: String as PropType<"primary" | "secondary" | "patreon" | "github">,
+      type: String as PropType<"primary" | "secondary" | "github">,
       required: false,
       default: "primary",
     },
@@ -57,9 +57,7 @@ export default Vue.extend({
       return this.icon?.startsWith("Icon") ? this.icon : `Icon${this.icon}`
     },
     getVariantClasses(): string {
-      if (this.variant === "patreon")
-        return "bg-[#FF424D] bg-opacity-100 text-white hover:(bg-[#FF424D] bg-opacity-75)"
-      else if (this.variant === "github")
+      if (this.variant === "github")
         return "bg-gray-200 text-black bg-opacity-100 dark:(bg-neutral-800 text-white)  hover:bg-opacity-60"
       return "text-gray-700 dark:text-neutral-400"
     },

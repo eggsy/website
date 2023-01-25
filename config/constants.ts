@@ -10,7 +10,6 @@ export default {
   },
   sponsor: {
     github: "https://github.com/sponsors/eggsy",
-    patreon: "https://www.patreon.com/eggsy/",
   },
   links: {
     unblockPlease: {

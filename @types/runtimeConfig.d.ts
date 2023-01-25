@@ -1,7 +1,6 @@
 /* Interfaces */
 export interface SponsorLinks {
   github: string
-  patreon: string
 }
 
 export interface Social {
