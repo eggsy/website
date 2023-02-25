@@ -18,7 +18,7 @@ Bu yazıyı her ne kadar proje yayınlandıktan birkaç hafta sonra yazıyor ols
 
 Yukarıda kısaca açıklaması verilen bu proje, bildiğiniz büyük Discord bot listeleme siteleri gibi, Discord'un son güncellemelerinde yayınladığı "Sunucu Şablonları" özelliğini temel almaktadır. Bu özellik ile sunucunuzdaki kanalların, rollerin ve bunların ayarlarının bir kopyasını alıp, link ile arkadaşlarınıza atıp onların da tıpkı sizinki gibi bir sunucu oluşturmasını sağlıyordunuz. Bu özellik Discord tarafından ücretsiz ve herhangi bir abonelik (Nitro vs.) gerektirmeden kullanıma sunulduğu için oldukça ilgi görmeyi başarmıştı. Biz de bu fırsatı değerlendirip hemen alan adını alarak çalışmalara başladık...
 
-<smart-image src="https://i.vgy.me/CRABHc.png"></smart-image>
+<smart-image src="https://i.imgur.com/m64yr7b.jpg"></smart-image>
 
 İş bölümleri paylaştırıldıktan sonra herkes kendi kısmını yapmaya başladı ve yaklaşık 2 aylık süren bir çalışma sonrasında eski Eri's Labs Discord sunucusundakileri de sevindiren bir gelişmeyle yeni projemizi duyurduk... Sunucudakiler projeyi sıcak karşıladı ve hemen kendi şablonlarını oluşturarak siteye eklemeye başladılar. Aldığımız geri dönüşlerle sitedeki birkaç hatayı çözüp birkaç yenilik ve özellik ekledik. Birkaç hafta boyunca böyle devam eden serüven şu an hâlâ sorunsuz bir şekilde devam ediyor. Eğer sizinde paylaşmak istediğiniz bir şablonunuz var ve bunu koyacak, herkesin kolayca ulaşabileceği bir yer arıyorsanız sitemize buradan ulaşabilirsiniz.
 Sitenin sizlere sunduğu en güzel özellikler neler?

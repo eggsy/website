@@ -54,17 +54,17 @@ export default Vue.extend({
 
       <div class="flex px-4 gap-4">
         <SmartImage
-          src="https://i.vgy.me/OIMc81.png"
+          src="https://i.imgur.com/orrLJsI.png"
           class="rounded-md h-32 w-32"
         />
 
         <SmartImage
-          src="https://i.vgy.me/X10Uid.png"
+          src="https://i.imgur.com/46e28II.png"
           class="rounded-md h-32 w-32"
         />
 
         <SmartImage
-          src="https://i.vgy.me/Lw6rn5.png"
+          src="https://i.imgur.com/zwTlbxN.png"
           class="rounded-md h-32 w-32 hidden sm:block"
         />
       </div>
