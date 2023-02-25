@@ -66,10 +66,6 @@ Pasaport randevusu için yukarıda da belirttiğim gibi isterseniz e-Devlet üze
 
 e-Devlet hesabınıza giriş yaptıktan sonra alt kısımdaki menüde bulunan "Arama" seçeneğine tıklayın ve çıkan yere "Pasaport" yazın.
 
-<div class="rounded bg-[#111111]">
-  <smart-image src="https://i.vgy.me/8brMgP.png" title="e-Devlet"></smart-image>
-</div>
-
 Çıkan sonuçlardan "Pasaport Başvuru Randevusu" seçeneğini seçin. Açılan ekranın sağ alt kısmında bulunan artı (+) işaretine tıklayın ve sırasıyla şu adımları takip edin:
 
 1. Bilgilendirme metnini okuyun, kutucuğu işaretleyin ve "Devam Et" tuşuna basın.
@@ -78,10 +74,6 @@ e-Devlet hesabınıza giriş yaptıktan sonra alt kısımdaki menüde bulunan "A
 4. Kim için randevu aldığınızı seçin. Kendi adınıza, anne, baba veya (varsa) çocuklarınız adına randevu çıkartabilirsiniz. Erasmus+ adayı olduğunuzu varsayarak bu sayfada sadece "Kendisi" yazan seçeneği seçin.
 5. Bu sayfada ise sizden randevu tarihinizi, saatini ve HES kodunuzu soracaktır. Bu bilgileri doldurun. Eğer HES kodunuz yoksa yine e-Devlet üzerinden HES kodu alabilirsiniz.
 6. Son aşamada ise seçtiğiniz kişiler ve randevu tarihleri listelenecektir. Buradan da isimlerinizin üzerine tıklayarak randevunuzu oluşturabilirsiniz. Bu aşamayı da geçtikten sonra e-Devlet'e kayıtlı numaranıza NVİ'den bir bilgilendirme mesajı gelecektir. Bu mesaj geldiğinde randevunuz başarıyla oluşturulmuş demektir.
-
-<div class="rounded bg-[#111111]">
-  <smart-image src="https://i.vgy.me/WC1jwy.png" title="e-Devlet"></smart-image>
-</div>
 
 Böylelikle pasaport randevunuzu oluşturmuş bulunmaktasınız. Randevu saatinizde tüm belgelerinizle seçtiğiniz Nüfus Müdürlüğüne gitmelisiniz. **Eğer bir e-Devlet hesabınız yoksa bu işlemleri [NVİ](https://randevu.nvi.gov.tr) sitesi üzerinden de kolayca yapabilirsiniz.**
 
@@ -104,10 +96,6 @@ Ziraat Bankası uygulamasını kullanarak izlediğim yolları size göstereceği
 5. Sonraki sayfada satış bedelini göreceksiniz, tek bir seçenek olacağı için o seçeneği seçin.
 6. Daha sonra ücreti ödemek istediğiniz hesabınızı veya kartınızı seçin.
 
-<div class="rounded bg-[#111111]">
-  <smart-image src="https://i.vgy.me/xEPRc9.png" title="Ziraat Bankası işlemleri"></smart-image>
-</div>
-
 Bankanız otomatik olarak belirttiğiniz TCKN'ye sahip vatandaşın adına pasaport defter bedeli transferini gerçekleştirecektir. Daha sonra ödediğinize dair hesap hareketli kısmından **dekontu alıp yazdırmayı unutmayın**.
 
 <hr>
@@ -119,10 +107,6 @@ Bu işlem için de e-Devlet sistemini kullanabilirsiniz. İşlem için herhangi 
 1. e-Devlet hesabınıza giriş yaptıktan sonra alt kısımdaki menüde bulunan "Arama" seçeneğine tıklayın ve çıkan yere "Öğrenci Belgesi" yazın.
 2. Çıkan sonuçlardan "Yükseköğretim Kurulu Başkanlığı" altındaki "Öğrenci Belgesi Sorgulama" seçeneğini seçin.
 3. Açılan sayfada eğitim aldığınız üniversite ve bölümünüz hakkında bilgiler verilecektir. "Belge Oluştur" seçeneğini kullanarak öğrenci belgenizi oluşturabilir ve sonrasında yazdırabilirsiniz.
-
-<div class="rounded bg-[#111111]">
-  <smart-image src="https://i.vgy.me/UgECfC.png" title="e-Devlet Öğrenci Belgesi" ></smart-image>
-</div>
 
 <hr>
 
