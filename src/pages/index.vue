@@ -53,13 +53,6 @@ export default Vue.extend({
             "Unblock Imgur and Pastebin access using secure proxies!",
           icon: "UnblockPlease",
         },
-        {
-          title: "is-inside.me",
-          to: "/projects/is-inside-me",
-          description:
-            "Free image and file uploading service for uploaders like ShareX!",
-          icon: "IsInsideMe",
-        },
       ] as Project[],
       experiences: {
         jobs: [
