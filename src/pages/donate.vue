@@ -11,32 +11,32 @@ export default Vue.extend({
       sponsors: [] as ISponsor[],
       accounts: [
         {
-          image: "https://i.vgy.me/R0Jwqn.png",
+          image: "https://i.imgur.com/cxiXNEb.jpg",
           name: "Papara",
           iban: "8664721806",
           revealed: false,
         },
         {
-          image: "https://i.vgy.me/QJNSYE.png",
+          image: "https://i.imgur.com/Kq2c0SF.jpg",
           name: "Ziraat Bank",
           iban: "TR 1100 0100 2544 95837917 5001",
           revealed: false,
         },
         {
-          image: "https://i.imgur.com/OgUZMQ1.png",
+          image: "https://i.imgur.com/MSdGupc.jpg",
           name: "Akbank",
           iban: "TR72 0004 6000 2088 8000 5070 94",
           revealed: false,
         },
         {
-          image: "https://i.vgy.me/l1CN85.png",
+          image: "https://i.imgur.com/Y0OvRDN.jpg",
           name: "QNB Finansbank",
           iban: "TR96 0011 1000 0000 0086 7646 98",
           revealed: false,
         },
         {
-          image: "https://i.vgy.me/9e6pkz.png",
-          name: "Denizbank",
+          image: "https://i.imgur.com/Z3YKlkF.jpg",
+          name: "DenizBank",
           iban: "TR31 0013 4000 0189 9352 2000 01",
           revealed: false,
         },
