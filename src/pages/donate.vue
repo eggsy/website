@@ -40,18 +40,6 @@ export default Vue.extend({
           iban: "TR31 0013 4000 0189 9352 2000 01",
           revealed: false,
         },
-
-        /*
-          Disabling this since my PayPal account
-          is not accepting payments as of now.
-
-          {
-            image: "https://i.vgy.me/UCiozk.png",
-            name: "PayPal",
-            iban: "@eggsydev",
-            revealed: false,
-          },
-        */
       ],
     }
   },
