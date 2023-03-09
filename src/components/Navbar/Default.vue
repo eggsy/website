@@ -32,7 +32,7 @@ export default Vue.extend({
         </SmartLink>
 
         <div class="flex space-x-2 items-center">
-          <CommandPaletteButton />
+          <OmnibarButton />
           <ColorSwitcher />
         </div>
       </div>
