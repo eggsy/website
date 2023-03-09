@@ -225,7 +225,7 @@ export default Vue.extend({
 
             <BlogTableOfContents :toc="post.toc" />
 
-            <NuxtContent :document="post" />
+            <NuxtContent :document="post" class="max-w-full prose prose-blue" />
           </div>
         </article>
 
@@ -290,101 +290,22 @@ export default Vue.extend({
 </template>
 
 <style lang="scss">
-/* Mixins */
-@mixin code {
-  @apply font-sans bg-blue-100 py-px px-1 text-blue-600 dark:(bg-blue-900 bg-opacity-50 text-blue-400);
-
-  &::before,
-  &::after {
-    content: "`";
-  }
-}
-
-/* Nuxt Content */
 .nuxt-content {
-  /* Headings */
-  h1,
-  h2,
-  h3 {
-    @apply font-semibold mb-2 transition-all text-gray-900 dark:text-gray-200;
-
-    &:hover {
-      a .icon.icon-link {
-        @apply text-neutral-500 hover:text-neutral-200;
-
-        &::before {
-          content: "#";
-          @apply text-lg pl-2 transition-colors;
-        }
-      }
-    }
-  }
-
-  h1 {
-    @apply text-3xl;
-  }
-
-  h2 {
-    @apply text-2xl;
-  }
-
-  h3 {
-    @apply text-lg;
-  }
-
-  /* Paragraphs */
-  p {
-    @apply leading-relaxed text-gray-800 dark:text-gray-300;
-
-    &.text-center {
-      @apply flex justify-center;
-    }
-
-    strong {
-      @apply font-semibold text-gray-900 dark:text-gray-200;
-    }
-
-    a {
-      @apply text-blue-700 dark:text-blue-400 hover:underline;
-    }
-
-    code {
-      @include code;
-    }
-
-    &:not(:last-child) {
-      @apply mb-6;
-    }
-  }
-
-  /* Block quotes */
-  blockquote {
-    @apply rounded-md bg-gray-100 ml-0 w-full py-2 px-4 md:w-max dark:bg-neutral-800;
-  }
-
-  /* Smart image */
-  div[smart-image] {
-    @apply rounded mx-auto max-w-full mb-7 w-max;
-
-    &.caption {
-      @apply mb-12;
-    }
-  }
-
-  /* Ratings */
-  .ratings {
-    @apply space-y-px mb-4 dark:text-gray-300;
-  }
-
-  /* Pre and code block filenames */
-
   .nuxt-content-highlight {
     box-shadow: 0 0 0 100vmax #282c34;
     clip-path: inset(0 -100vmax);
-    @apply mb-5 relative text-sm;
+
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 0 0 0 100vmax #1b1917;
+    }
+
+    @apply mb-5 relative;
 
     .filename {
-      @apply font-light mt-3 mr-3 text-sm right-0 text-gray-300 z-10 absolute;
+      @apply font-light mt-3 mr-3 text-xs right-0 text-white/50 z-10 absolute;
+
+      &:after {
+      }
     }
 
     pre {
@@ -392,62 +313,25 @@ export default Vue.extend({
     }
   }
 
-  /* Ordered and Unordered Lists */
-  ol,
-  ul {
-    @apply text-gray-800 dark:text-gray-300;
-
-    li a {
-      @apply text-blue-700 dark:text-blue-400 hover:underline;
-    }
-
-    li code {
-      @include code;
-    }
-
-    li:not(:last-child) {
-      @apply mb-1;
-    }
-  }
-
   ol {
-    @apply list-decimal pl-4;
-
-    li:not(:last-child) {
-      @apply mb-5;
-    }
+    @apply pl-0;
   }
 
-  ul {
-    @apply list-disc pl-6;
-
-    &:not(:last-child) {
-      @apply mb-5;
-    }
-
-    li::marker {
-      @apply text-gray-600;
-    }
-  }
-
-  /* Keyboard */
-  kbd {
-    @apply rounded-lg cursor-pointer bg-neutral-300 py-1 px-2 transition-colors text-neutral-600 select-none dark:(bg-neutral-800 text-neutral-400 hover:bg-neutral-700) hover:bg-neutral-200;
-  }
-
-  /* Video */
   video {
-    @apply rounded w-full;
+    @apply rounded-lg
   }
 
-  /* Horizontal line */
-  hr {
-    @apply border-dashed border-gray-300 my-8 dark:border-gray-700;
+  kbd {
+    @apply rounded-lg bg-black/10 dark:(bg-white/10 border-white/30) px-2 py-1 text-sm border-b-2 border-black/30 cursor-default;
   }
 
-  /* Notification */
-  .notification {
-    @apply mb-4;
+  code {
+    @apply bg-blue-100 py-px px-1 text-blue-600 dark:(bg-blue-900 bg-opacity-50 text-blue-400);
+
+    &::before,
+    &::after {
+      content: "`";
+    }
   }
 }
 </style>
