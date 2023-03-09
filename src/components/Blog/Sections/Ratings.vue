@@ -219,7 +219,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="mb-6 grid gap-2 lg:grid-cols-2">
+  <div class="grid gap-2 mb-6 lg:grid-cols-2">
     <BlogRating
       v-for="item in ratings"
       :key="item.name"
@@ -231,3 +231,9 @@ export default Vue.extend({
     </BlogRating>
   </div>
 </template>
+
+<style scoped>
+a {
+  @apply text-current font-normal no-underline;
+}
+</style>

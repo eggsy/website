@@ -87,8 +87,8 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="flex space-x-2 items-center truncate">
-    <div class="flex space-x-1 flex-shrink-0 items-center">
+  <div class="flex items-center space-x-2 truncate">
+    <div class="flex items-center flex-shrink-0 space-x-1">
       <!-- Channel Icon -->
       <IconChannel
         v-tippy="{
@@ -96,7 +96,7 @@ export default Vue.extend({
           placement: 'top',
         }"
         :platform="getPlatformInfo.platform"
-        class="rounded-full flex-shrink-0 h-6 p-1 w-6 focus:outline-none"
+        class="flex-shrink-0 w-6 h-6 p-1 rounded-full focus:outline-none"
         :class="getPlatformInfo.classes"
       />
 
@@ -122,7 +122,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 a {
-  @apply border-b border-gray-300 transition-colors dark:(border-gray-700 hover:border-gray-100) hover:border-gray-900;
+  @apply border-b border-black/10 transition-colors dark:(border-white/10 hover:border-white/30) hover:border-black/30;
 }
 
 .new a {
