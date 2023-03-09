@@ -34,11 +34,8 @@ export interface Post {
   dir?: string
   path?: string
   extension?: string
-  createdAt?: Date
+  createdAt?: string
   updatedAt?: Date
-  /* Custom properties */
   tags?: string[]
-  special?: boolean
-  image?: string
   indicatorsHidden?: boolean
 }
