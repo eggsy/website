@@ -11,6 +11,7 @@ export default Vue.extend({
 
       if (path !== "/projects/premid" && path.startsWith("/projects/premid"))
         return "/projects/premid"
+      else if (path.includes("/blog/") && this.$route.params) return "/blog"
       else return "/"
     },
   },
