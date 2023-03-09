@@ -1,7 +1,24 @@
 <script lang="ts">
 import Vue from "vue"
 
+// Types
+import type { Post } from "~/src/types/Post"
+import type { FetchReturn } from "@nuxt/content/types/query-builder"
+
 export default Vue.extend({
+  data() {
+    return {
+      posts: [] as (Post[] & FetchReturn) | (Post[] & FetchReturn)[],
+    }
+  },
+  async fetch() {
+    const posts = await this.$content("blog")
+      .sortBy("createdAt", "desc")
+      .only(["title", "slug"])
+      .fetch<Post[]>()
+
+    this.posts = posts
+  },
   head() {
     let string = "eggsy.xyz"
     if (this.routeIsBlog) string = "eggsy.xyz - blog"
@@ -21,9 +38,6 @@ export default Vue.extend({
     }
   },
   computed: {
-    routeIsBlog(): boolean | undefined {
-      return this.$route.name?.includes("blog")
-    },
     menuActions() {
       return [
         /* Navigation */
@@ -39,9 +53,23 @@ export default Vue.extend({
           section: "Navigation",
           text: "Blog",
           icon: "IconDocument",
-          action: () => {
-            this.$router.push("/blog")
-          },
+          keybindings: ["b"],
+          childActions: [
+            {
+              text: "All Posts",
+              icon: "IconEye",
+              action: () => {
+                this.$router.push("/blog")
+              },
+            },
+            ...this.posts.map((post: Post) => ({
+              text: post.title,
+              icon: "IconDocument",
+              action: () => {
+                this.$router.push(`/blog/${post.slug}`)
+              },
+            })),
+          ],
         },
         {
           section: "Navigation",
@@ -125,11 +153,7 @@ export default Vue.extend({
     <!-- Colored top bar -->
     <div class="bg-indigo-500 w-full py-1 dark:bg-neutral-700" />
 
-    <!-- Navbar -->
-    <transition name="fade" mode="out-in">
-      <NavbarBlog v-if="routeIsBlog" class="pt-4" />
-      <NavbarDefault v-else class="pt-4" />
-    </transition>
+    <Navbar class="pt-4" />
 
     <!-- Nuxt component -->
     <Nuxt
