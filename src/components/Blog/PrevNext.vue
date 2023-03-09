@@ -32,40 +32,42 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    v-if="$fetchState.pending === false && !$fetchState.error"
-    class="grid gap-6 grid-cols-1 md:grid-cols-2 dark:text-gray-200"
-  >
-    <div>
-      <Title :padding="false" lang="tr">Önceki Gönderi</Title>
+  <transition name="fade" mode="out-in">
+    <div
+      v-if="$fetchState.pending === false && !$fetchState.error"
+      class="grid gap-x-4 gap-y-2 grid-cols-1 md:grid-cols-2"
+    >
+      <component
+        :is="prev ? 'SmartLink' : 'div'"
+        :href="prev && `/blog/${prev.slug}`"
+        class="rounded-lg border-[0.1px] p-4 bg-opacity-25 bg-neutral-300 border-neutral-200 dark:(bg-neutral-800/30 border-neutral-800) flex items-center space-x-2 transition-colors dark:text-white/80"
+        :class="
+          !prev
+            ? 'cursor-not-allowed'
+            : 'dark:hover:text-white hover:bg-opacity-40'
+        "
+      >
+        <IconChevron left class="h-4 w-4 flex-shrink-0" />
 
-      <SmartLink v-if="prev" :href="`/blog/${prev.slug}`">
-        <h5>{{ prev.title }}</h5>
-      </SmartLink>
+        <span v-if="prev" class="truncate">{{ prev.title }}</span>
+        <span v-else class="truncate">Eski Gönderi Yok</span>
+      </component>
 
-      <h5 v-else class="line-through">Daha Eski Bir Gönderi Yok</h5>
+      <component
+        :is="next ? 'SmartLink' : 'div'"
+        :href="next && `/blog/${next.slug}`"
+        class="rounded-lg border-[0.1px] p-4 bg-opacity-25 bg-neutral-300 border-neutral-200 dark:(bg-neutral-800/30 select-none border-neutral-800) justify-end flex items-center space-x-2 dark:text-white/80 transition-colors"
+        :class="
+          !next
+            ? 'cursor-not-allowed'
+            : 'dark:hover:text-white hover:bg-opacity-40'
+        "
+      >
+        <span v-if="next" class="truncate">{{ next.title }}</span>
+        <span v-else class="truncate">Yeni Gönderi Yok</span>
+
+        <IconChevron right class="h-4 w-4 flex-shrink-0" />
+      </component>
     </div>
-
-    <div class="text-right">
-      <Title :padding="false" lang="tr">Sonraki Gönderi</Title>
-
-      <SmartLink v-if="next" :href="`/blog/${next.slug}`">
-        <h5>{{ next.title }}</h5>
-      </SmartLink>
-
-      <h5 v-else class="line-through">Daha Yeni Bir Gönderi Yok</h5>
-    </div>
-  </div>
+  </transition>
 </template>
-
-<style lang="scss" scoped>
-div {
-  a {
-    @apply hover:underline;
-  }
-
-  h5 {
-    @apply font-light text-xl text-gray-700 truncate dark:text-neutral-300;
-  }
-}
-</style>
