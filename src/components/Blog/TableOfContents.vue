@@ -32,7 +32,7 @@ export default Vue.extend({
       <h1 class="uppercase">Başlıklar</h1>
       <transition name="fade" mode="out-in">
         <IconChevron
-          v-if="tocToggled === false"
+          v-if="!tocToggled"
           key="'tocToggled'"
           right
           class="h-4 w-4"
