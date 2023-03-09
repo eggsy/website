@@ -25,7 +25,7 @@ Eğer yakın zamanda benim gibi YouTube (veya başka bir) müzik sağlayıcısı
 
 Öncelikle projenizi oluşturacağınız bir klasör oluşturun, bu klasörü VS Code içerisinde açın ve bu klasörün içinde bir `index.js` dosyası oluşturun. Gerekli kodları bu dosyanın içerisine yazacağız.
 
-<smart-image src="https://i.imgur.com/8x5B3Sr.png"></smart-image>
+<smart-figure src="https://i.imgur.com/8x5B3Sr.png"></smart-figure>
 
 Dosyayı oluşturduktan sonra kullandığınız terminalden `cd /Klasörünüzün/Konumu` komutu ile açık olan dizini projenizin klasörü olarak değiştirin. Doğru konuma girdikten sonra şu iki modülü yüklemelisiniz:
 
@@ -42,7 +42,7 @@ Kodu yazmaya başlayabilmek için öncelik bir Spotify geliştirici hesabı olu�
 
 Uygulamayı oluşturduktan sonra aynı sayfadan uygulamanızın isminin olduğu kutucuğa tıklayın ve açılan sayfada hemen göreceğiniz "Client ID" bilgisinin altındaki "Show Client Secret" yazısına basarak o bilgiyi de alın. Bu iki bilgi Spotify'ın API'ı ile bağlantı kurmanızı sağlayacak.
 
-<smart-image src="https://i.imgur.com/Fg2HcNp.png"></smart-image>
+<smart-figure src="https://i.imgur.com/Fg2HcNp.png"></smart-figure>
 
 Bu bilgilere eriştikten sonra buradan gerisi, kullanacağınız modüller sayesinde oldukça basit aslında. Spotify bağlantılarından YouTube videosunu bulan `spotify-to-youtube` modülü, `spotify-web-api-node` modülü ile sizin hesabınızı kullanarak Spotify bağlantısından şarkı ismi ve sanatçı bilgilerini alıp o bilgilere denk gelen YouTube videosunu bulacaktır. Her şeyden önce dosyanın en başında bu iki modülü içe aktarmalısınız ki kod içerisinde kullanabilesiniz.
 

@@ -43,11 +43,11 @@ Bunun yanı sıra uygulamanın ana ekranında başka kullanıcıların SLOWLY ku
 
 Sanırım uygulamada en çok sevdiğim şeylerden birisi de bu. Uygulamada bir pul mağazası bulunuyor. Yani buradan alacağınız pulları mektuplarınıza iliştirip karşı tarafa gönderebiliyor ve karşı tarafın da görmesini sağlayabiliyorsunuz. Bu sistem şöyle işliyor, sizin kayıt olduğunuz ülkeye göre belli başlı birkaç tane pul veriyor. Örneğin, Türkiye'den kayıt olan bir kişiye şu pulları ücretsiz olarak veriyor uygulama:
 
-<smart-image src="https://i.imgur.com/TDj6Cxy.jpeg" title="Lokasyon bazlı pullar"></smart-image>
+<smart-figure src="https://i.imgur.com/TDj6Cxy.jpeg" caption="Lokasyon bazlı pullar"></smart-figure>
 
 Bunların dışında marketten alacağınız tüm pullar, SLOWLY para birimiyle alınıyor. Bu para birimini de gerçek para ile alıyorsunuz fakat bu pulların hiçbir şeye etkisi olmadığı gibi, ücretleri de pek sevecen olmadığı için biraz gereksiz geliyor. Fakat uygulama bu konuda da cimri davranmıyor! Neredeyse her millî, ulusal veya uluslararası bayramlarda, özel günlerde ücretsiz pullar veriyor! Sadece bu şekilde benim pul sayım 3 iken 20'li sayılara çıktı.
 
-<smart-image src="https://i.imgur.com/e4ph288.jpeg" title="Mağazada bedava verilen pul"></smart-image>
+<smart-figure src="https://i.imgur.com/e4ph288.jpeg" caption="Mağazada bedava verilen pul"></smart-figure>
 
 Resimde gördüğünüz gibi, bizim varlığından bile haberimiz olmayan bir "Arı Günü" için ücretsiz pul veriyor SLOWLY. Bu pulu da bir sonraki mektubunuza yapıştırabiliyor ve karşı tarafa gönderebiliyorsunuz. Bu şekilde hem yeni günler öğreniyor, hem de renkli pullara sahip oluyorsunuz.
 
@@ -55,7 +55,7 @@ Resimde gördüğünüz gibi, bizim varlığından bile haberimiz olmayan bir "A
 
 Uygulamanın güzellikleri saymakla bitmiyor. Ücretsiz pul kazanabileceğiniz bir başka yöntem ise başarımları gerçekleştirmek. Uygulamada birçok başarım bulunuyor. Bu başarımlar "Android'den Giriş Yap" başarımından başlayıp "1000 Adet Mektup Al/Gönder" başarımına kadar gidiyor! Bu başarımları yaptığınızda ise uygulama size bir bildirim atıyor ve yeni bir pulunuz oluyor. Örneğin, aşağıdaki resimde, benimle eşleşen kişilerin bulunduğu kıtalardan mektup aldığım için bana verdiği pullar bulunuyor. Dünyanın her kıtasından mektup alınca da başka bir pul veriyor.
 
-<smart-image src="https://i.imgur.com/YBckA94.jpeg" title="Başarımlardan kazanılan pullar menüsü"></smart-image>
+<smart-figure src="https://i.imgur.com/YBckA94.jpeg" caption="Başarımlardan kazanılan pullar menüsü"></smart-figure>
 
 ### Beğendiniz mi?
 

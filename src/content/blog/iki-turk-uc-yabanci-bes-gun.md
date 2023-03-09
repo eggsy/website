@@ -30,7 +30,7 @@ Uçakları indiğinde ve arkadaşımdan haber aldığımda pasaport kontrol sır
 
 Yemekleri ile ünlü olan Türk kültürü, bunu bilen arkadaşlarımız ve yoğun merakları onlara elimizden geldiğince fazla ve farklı tatlar denettirmemiz gerektiği anlamına geliyordu. Erasmus+ yaptığımız Makedonya'da da deniz olmadığı için arkadaşım deniz manzaralı bir yerde yemek istiyordu. Bu yüzden onu alıp sahil kenarında bir balık restoranına götürdük. Buraya ben de daha önce hiç gelmemiştim, ağabeyimin önerisiydi. Meze şeklinde kılıç balığından, ismini sayamadığım 5 çeşitten fazla balık tabağımızı bitirdikçe önümüze koyuluyordu. Böyle bir şey görmemiş olan arkadaşım bir yandan yemeğini yiyor, bir yandan ilk defa denediği şalgamı beğendiğini söylüyor, diğer yandan da ağabeyimle anlaşmaya çalışıyordu.
 
-<smart-image src="https://i.imgur.com/yJY5oIS.jpg" class="h-110" caption="Restoranın yemeklerine ait bir görsel."></smart-image>
+<smart-figure src="https://i.imgur.com/yJY5oIS.jpg" image-class="h-110" caption="Restoranın yemeklerine ait bir görsel."></smart-figure>
 
 Benimle kalan arkadaşımın Türkiye'nin yemekleri ile olan ilk teması bu balık restoranı oldu. Daha önce yemediği şeylerin olduğunu ve kesinlikle yemeklerin tadına bayıldığını söyledi. Ben de ilk defa denediğim için aynı şeyleri ben de söylemiştim.
 
@@ -42,7 +42,7 @@ Ona Türk kahvaltısı edilebileceğimiz bir yer önermesini istediğimde beni a
 
 Buluştuktan, masa ve sipariş sırası bekledikten sonra sonunda yemeklerimiz gelmişti. Tam anlamıyla bir serpme kahvaltı olduğu söylenemezdi fakat aylardır yediğimiz en Türk, en serpme, ve en kahvaltı buydu. Herkes çok beğendi. Yetmeyeceğini düşünmüş olsak bile herkes fazlasıyla doymuş, geriye yemek bile kalmıştı.
 
-<smart-image src="https://i.imgur.com/MMbh5NI.jpg" class="h-130" caption="Karaköy Güllüoğlu restoran."></smart-image>
+<smart-figure src="https://i.imgur.com/MMbh5NI.jpg" image-class="h-130" caption="Karaköy Güllüoğlu restoran."></smart-figure>
 
 Kahvaltıdan sonra direkt olarak Karaköy, Taksim ve Eminönü çevresini gezecektik. Burada her şey yürüme mesafesinde olduğu, bizim de yürümek ile herhangi bir sorunumuz olmadığı için herhangi bir masrafa girmeden birçok yeri yürüyerek, gezerek ve istediğimiz yerlere girerek geçirdik.
 
@@ -56,7 +56,7 @@ Sultanahmet ve Ayasofya'ya girerken kadınların başlarını kapatması gerekti
 
 Daha şimdiden İstanbul'a hayran kalmışlar ve esnafların, mağazaların, ~fiyatların~, kısacası genel olarak her şeyin şahaneliğinde kendilerini kaybetmişlerdi. Ayasofya'ya gittiğimizde ise benim de her girdiğimde gözlerimi alamadığım mimari yapısı, boyutu, hikayesi ve her şeyi bizi ve onları da etkilemişti. İbadet saati yaklaştığı için bir süre sonra çıkmak zorunda kaldık fakat herkes buraya hayran kalmıştı.
 
-<smart-image src="https://i.imgur.com/sjFuKp4.jpg" class="h-150" caption="Ayasofya Camii"></smart-image>
+<smart-figure src="https://i.imgur.com/sjFuKp4.jpg" image-class="h-150" caption="Ayasofya Camii"></smart-figure>
 
 Buradan çıktığımızda ise hava kararmaya başlamıştı. Çıkışta bulunan birkaç hediyelik eşyacıya göz atıp, mesir macunu satan bir esnaftan arkadaşlarımıza mesir macunu denettirip yolumuza devam ettik. Yolumuzun üstündeki Gülhane Parkı'na da girmek istedik fakat hava karardığı ve içeride gezilecek yerlerin birçoğunun kapalı olması dolayısıyla bunu başka bir güne bırakacaktık.
 
@@ -74,7 +74,7 @@ Bugünün buluşma noktası ise meşhur Kapalı Çarşı. Bizim buraya zamanınd
 
 Buradaki işimiz bittikten sonra diğer arkadaşlarımızda Kapalı Çarşı içerisinde buluşacağımız bir nokta belirlemek istedik. Arkadaşımın da güzel bir yerden Türk kahvesini denemesini istediğim için bir yere oturduk. Türk kahvesinin 30 TL olması ve para harcamamak istemem üzerine arkadaşım cömertlik yapıp benim için de bir tane söyledi. Oldukça yöresel ve güzel bir Türk kahvesi servisi almıştık.
 
-<smart-image src="https://i.imgur.com/Jaj3Noc.jpg" class="h-150" caption="Türk kahvesi, su ve lokum servisi."></smart-image>
+<smart-figure src="https://i.imgur.com/Jaj3Noc.jpg" image-class="h-150" caption="Türk kahvesi, su ve lokum servisi."></smart-figure>
 
 Kahvemiz bittikten sonra hâlâ vaktimiz olduğunu fark ettik ve buluşma noktasını kapalı çarşı içinde bildiğim bir dönerci olarak değiştirdik. Burada arkadaşım dönerin tadına bakacaktı. Her ne kadar kendi ülkesi Almanya'da da Türkiye'den göçmen birçok dönerci olsa da yerli dönerin de tadına bakmak istediği için burada hem lavaş, hem de tombik ekmek olarak adlandırdığımız yuvarlak ekmek arası et döner yedi. Açık ayranı da ilk defa burada denemişti. Oldukça hoşuna gittiğini söyledi, ben de biraz tadına baktığımda ona güzel olduğunu söyledim. Biz yemesekte yedikleri her şeyin kalitesini anlamak için Kalite Kontrol™️ görevini üstleniyorduk. Neyse ki gittiğimiz çoğu yer sosyete ve ortalamanın biraz üstü yerlerdi, bu yüzden yediğimiz ve içtiğimiz her şey leziz oluyordu.
 
@@ -82,13 +82,13 @@ Diğer arkadaşlarla buluşup Kapalı Çarşı ve Mısır Çarşısı tarafları
 
 Vapur ile muhteşem boğaz manzaralı 30 dakikalık yolumuzda arkadaşlarımıza martılara simit atmayı da öğretmiştik. Türkiyede martıların simitleri havada yakalama gibi bir yeteneklerinin olduğunu canlı olarak onlara kanıtladık. Tüm arkadaşlarımız çok eğlendi ve boğazın eşsiz manzarasında kendilerini kaybetti...
 
-<smart-image src="https://i.imgur.com/uWuxKfj.jpg"></smart-image>
+<smart-figure src="https://i.imgur.com/uWuxKfj.jpg"></smart-figure>
 
 Üsküdar'a vardığımızda oradan Çamlıca Kulesi'ni bulmamız zor olmadı, fakat, Çamlıca Kulesi'nden Çamlıca Kulesini bulmamız daha zor oldu. Kule dibimizde olmasına rağmen bir türlü girişini bulamıyor, yağmurlu ve kapalı bir günde çamurların arasından kulenin girişini arıyorduk. Anlaşılan kulenin kullanılmadığı için kapatılan arka girişine gelmiştik. Diğer tarafa geçmemiz gerekti. Uzun süren yolculuk sonucu havaalanı seviyesinde güvenlik kontrolünden, çanta kontrolünden geçtik ve içeri girebildik. Rezervasyon saatimiz çok az da olsa geçmişti. Girişi bulduğumuzda sanki 30 TL değil de, 3000 TL ödemişiz gibi hissetmiştik. Devasa bir lobi, masalarda oturan insanlar, kibar konuşması ile bizim gibi elinde hediyelik ve çay poşetleriyle gelmiş gençleri utandıran bir adam ve şahane görüntüsü ile gözlerimiz kamaşmıştı. Bir süredir burayı gitmeyi istiyordum, bugüne nasip olmuştu.
 
 <blog-image-container>
-  <smart-image src="https://i.imgur.com/swvvmmm.jpg" class="h-150" caption="Çamlıca Kulesi, yakından."></smart-image>
-  <smart-image src="https://i.imgur.com/LgACYl0.jpg" class="h-150" caption="Çamlıca kulesi, gece."></smart-image>
+  <smart-figure src="https://i.imgur.com/swvvmmm.jpg" image-class="h-150" caption="Çamlıca Kulesi, yakından."></smart-figure>
+  <smart-figure src="https://i.imgur.com/LgACYl0.jpg" image-class="h-150" caption="Çamlıca kulesi, gece."></smart-figure>
 </blog-image-container>
 
 Seyir terasından İstanbul'un her iki yakasını da muhteşem bir şekilde görebiliyorduk. Üstelik rezervasyonu ve yemek saatimizi şehri hem gündüz, hem de gece görebilecek şekilde ayarlamıştık. Yemekten sonra tekrar seyir terasını inip İstanbul'u bir de gece görecektik. Çok heyecanlıydık. Gündüz görüntüsü zaten harikulade idi, hepimiz hayran kalmıştık.
@@ -97,7 +97,7 @@ Yemekleri için aynı şeyi söyleyemediğime üzüldüm... Servis, garsonlar, h
 
 Çamlıca Kulesi'ni de aradan çıkardıktan sonra diğer hedefimiz Kadıköy'de daha önce gittiğim bir künefeciye gitmekti. Künefelerinin güzel olduğunu, yanında dondurma verdiklerini ve fiyatının uygun olduğunu biliyordum. Arkadaşlarımızdan bir tanesi daha önce Makedonya'da da künefenin tadına bakmış, fakat fazla beğenmediğini söylemişti. Buranın iddialı olduğunu ve tekrar denemesi gerektiğini söyledim. Onunla birlikte bir künefeyi yarı yarıya bölüştük. Mekanın iddiaları doğru ve ben de haklı çıktım, buranın künefesini sevmişti. Kaşar gibi tatlı denilince akla en son gelecek bir malzemeden yapıldığı için hâlâ garip buluyorlardı fakat diğer arkadaşlarımın çoktan favori tatlısı olmuştu bile künefe.
 
-<smart-image src="https://i.imgur.com/9U5mpD2.jpg" class="h-150"></smart-image>
+<smart-figure src="https://i.imgur.com/9U5mpD2.jpg" class="h-150"></smart-figure>
 
 Künefeciden çıktıktan sonra hemen yanındaki bir şekerci dükkanından salep almak istediler. Üsküdar'da vapurdan indikten sonra Çamlıca Kulesi'ndeki rezervasyonumuza hâlâ biraz süre olduğu için arkadaşlarımı Kız Kulesi'ne yakın civarlarda daha önce gittiğim bir kafeye götürmüş ve burada salep denemelerini önermiştim. Ne olduğunu anlatamamış olsam da sadece denemeleri gerektiği konusunda ısrarcı olmuştum. O an geldi ve denediklerinde hepsinin birden tepkisi (İngilizce okuyun) "Ooh!", "Yılbaşı, Noel gibi bir tadı var!" olmuştu. Salep favori içecekleri olmuştu. İşte bu yüzden Kadıköy'deki bu dükkandan da kendileri ve aileleri için bir kutu salep tozu satın aldılar. Bugünü de böyle kapatmıştık.
 
@@ -110,8 +110,8 @@ Yine bir buluşma planı yaptık. İlk defa bugün uyuya kalmış ve bir saat ka
 Girdiğimiz restoran İstiklal Caddesi'nde, bir apartmanın en üst katındaydı. Manzarası tam caddenin Taksim tarafına giderkenki kıvrımının oraya bakıyordu. Harika bir manzaraydı. Türkiye'den uzak olduğumuzda özlediğimiz Türk insanının ve esnafının sıcaklığını uzun zaman sonra tekrar hissetmeye başlamıştık, bu dükkandaki ağabey de arkadaşlarımın yabancı olduğunu öğrenince "O zaman içli köftemizin de tadına baksınlar, ben size birer tane getireceğim, buranın içli köftesi meşhurdur." diyerek mantı öncesi bize birer içli köfte verdi. Yanında çay, su, yine ücretsizdi, sunum çok başarılı, manzara zaten kendi başına bambaşkaydı.
 
 <blog-image-container>
-  <smart-image src="https://i.imgur.com/DNorEaW.jpg" class="h-160"></smart-image>
-  <smart-image src="https://i.imgur.com/0JArm2u.jpg" class="h-160"></smart-image>
+  <smart-figure src="https://i.imgur.com/DNorEaW.jpg" image-class="h-160"></smart-figure>
+  <smart-figure src="https://i.imgur.com/0JArm2u.jpg" image-class="h-160"></smart-figure>
 </blog-image-container>
 
 Harika iki lezzet daha denedikten sonra yine ilk gün yaptığımız gibi tramvay durağına doğru yürüdük ve turun saatine yetişmek için aceleyle ilk tramvaya bindik. Tur Sultanahmet'in orada başlayacaktı ve buradan camileri gezerek Mısır Çarşısına kadar devam edecekti. Tramvaydan inince sarı şemsiyeli birini bulmamız gerekiyordu. Neredeyse 15 dakika kadar gecikmiştik bu yüzden emin değildik yakalayabileceğimizden, fakat işte oradaydı. Yanında 5-6 kişi bulunan, sarı şemsiyeli bir tur rehberiydi bu. Yanına gittiğimizde tam zamanında geldiğimizden bahsetti ve kısa süre sonra tura başladık.
@@ -120,7 +120,7 @@ Böyle bir tura katılmanın iyi yanı, gezdiğiniz yerler hakkında birinci eld
 
 Diğer arkadaşlarım 2 saat daha sürecek olan turdayken biz Can ile kahve alıp Gülhane Parkında sohbet ediyorduk. Severim keratayı. Çok. Yaklaşık bir buçuk saat sonra turun bittiği Mısır Çarşısının oraya gelmiş ve arkadaşları aramaya koyulmuştum. İnternetleri ve çağrı hakları olmadıkları için onlara ulaşmam zordu fakat biraz zaman alacağını ve gecikebileceklerini düşündüğüm için zaten neredeyse 30 dakika geç gitmiştim buluşma noktasına, geç kaldığımı düşünüyordum. Fakat gittiğimde ortalıkta kimse yoktu. Onlara ulaşmam ve gelmelerini beklemem biraz sürdü. Buluştuktan sonra akşamki planımız diğer Türk arkadaşımın önerisiyle Ortaköy'e gidip oradaki camii ve köprü manzarası eşliğinde kumpir yemekti.
 
-<smart-image src="https://i.imgur.com/bAM725I.jpg" class="h-120"></smart-image>
+<smart-figure src="https://i.imgur.com/bAM725I.jpg" image-class="h-120"></smart-figure>
 
 Ortaköy'e vardığımızda arkadaşlara yol boyunca anlattığım eşsiz köprü manzarasını göstermekte heyecanlıydım. Vapurla geldiğimiz için zaten iner inmez köprü karşımızda kalıyordu. Çoktan gece olduğu için arkadaşlarımla geceleyin vapur yolculuğu da yapmış olmuştuk bu sayede. Oradaki meşhur Destan adlı restoranda kumpir yemeye oturduk. Yanına da salep istedik.
 
@@ -132,7 +132,7 @@ Artık işler yavaşlıyor, planlar ve gezilecek yerler bitiyordu. Şimdiden ark
 
 Perşembe günü bir yabancı arkadaşımız bizi terkedecekti, o yüzden bugün, o arkadaşla birlikte olacağımız son gündü. Bunun için de çok fazla bir plan yapamadık. Sabah buluşup kahvaltı edecek ve akşam vedalaşacaktık. Buluşmak için bugün ise Moda taraflarını seçtik. Orada güzel bir Big Chefs restoranı vardı, deniz manzaralı, mükemmel bir yerdi. Biz benim yanımda kalan arkadaşımla kahvaltımızı Köfteci Yusuf'da yapmıştık, diğerleriyle BC'de buluştuğumuzda da onlar kahvaltı yapıyorlardı. Tekrar bir Türk kahvaltısıydı bu, üstelik daha da iyisiydi. Onların kahvaltısından da biraz tırtıkladık ve oturmaya devam ettik.
 
-<smart-image src="https://i.imgur.com/uzHAsXW.jpg" class="h-140"></smart-image>
+<smart-figure src="https://i.imgur.com/uzHAsXW.jpg" image-class="h-140"></smart-figure>
 
 Bugünün akşamında ise benim Makedonya'dan birlikte geldiğim diğer bir Türk arkadaşımızla buluşup yabancı arkadaşlarımızla vedalaşacaktık. Kendisi de Makedonya'da tanıştığımız, İstanbul'lu, evli, çok değer verdiğimiz bir arkadaşımız. Bugün eşiyle birlikte bize katılarak son kez diğer arkadaşlara veda etmek istedi. Onlar da buralı oldukları için bizi bildikleri birkaç mekana götürdüler. Saray Muhallebicisi'nde bazılarımız daha önce denemedikleri, tavuk göğsü, muhallebi gibi tatlılar denedi. Tavuk göğsünü garip buldular, benim de favorim değildi zaten, ama muhallebisi lezizdi.
 
@@ -152,7 +152,7 @@ Bir Türk erkeğinin hayatta nadiren yapabileceği belki en eğlenceli oluş: Ya
 
 Bu plan sadece ben ve benim yanımda kalan arkadaşımı kapsadığı için pek ortak bir şey sayılmaz ve diğer arkadaşlarıma gezileri sonrası yaptığım ankette en çok neyi sevdiklerini sorduğumda sadece bu arkadaşımın hamama gittiği için hamamı seçtiği, diğerlerinin de gitme fırsatı olsaydı kesinlikle favori aktivitelerinin hamam olacağından emindim.
 
-<smart-image src="https://i.imgur.com/oXd3yBm.jpg"></smart-image>
+<smart-figure src="https://i.imgur.com/oXd3yBm.jpg"></smart-figure>
 
 Gittiğimiz hamamda, hamamın yanı sıra sauna, buhar odası, olimpik havuz ve jakuzi de bulunuyordu, ilk deneyim için gayet güzel bir yer denk gelmişti. Ben de yıllardır ilk defa hamama gidecektim. Arkadaşımdan daha çok heyecanlıydım belkide, beni neyin beklediğini biliyordum çünkü.
 
@@ -170,6 +170,6 @@ Ben ve diğer Türk arkadaşım için harika bir deneyim oldu, onlara elimizden 
 
 Arkadaşlarım Noel için ülkelerine döndüklerinden sonra onlara İstanbul gezileri ile ilgili bir anket hazırladım, ankette en sevdikleri yiyecekleri ve aktivitelerin ne olduğunu soruyordum. Anket sonuçlarına baktığımda ise hepsinin kedileri, Türk misafirperverliğini, yemekleri, kültürü ve manzaralarını sevdiğini gördüm. Denedikleri lezzetler arasında en çok beğendikleri şeyler, kumpir, salep, mantı ve künefe olmuştu. En sevdikleri aktiviteye geldiklerinde ise 4 seçenekten (alışveriş, vapur gezisi, hamam, yemek yemek) hepsinin farklı cevaplar verdiğini gördüm. Zaten hamam cevabını veren arkadaş benim yanımda kalandı. Diğer iki arkadaşım ise dışarıda yemek yemeyi ve vapur gezisini beğenmişti. Fakat en önemli soru, hangimizin yabancı arkadaşlarımızı daha iyi misafir ettiği sorusuydu. Bu soruda cevap basitti.
 
-<smart-image src="https://i.imgur.com/r4U0jaB.jpg" caption="Anket sorusu."></smart-image>
+<smart-figure src="https://i.imgur.com/r4U0jaB.jpg" caption="Anket sorusu."></smart-figure>
 
 Açık arayla Monke kazandı yarışmayı. Hiçbirimiz onun iyi değildik. Monke, hepimizi ezici üstünlükle yendi. Arkadaşlarımızın hepsi ona minnettar ayrıldı. Türkiye'ye kesinlikle bir gün tekrar döneceklerini belirttiler. Monke, bir kez daha kazandı ve kazandırdı.

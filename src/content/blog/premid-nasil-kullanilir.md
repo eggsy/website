@@ -34,7 +34,7 @@ Bu kısımda ise PreMiD'de bilinen bazı hataları ve bilmeniz gereken ayrıntı
 
 PreMiD uygulaması sadece eklenti ve Discord arasındaki haberleşmeyi aktaracağı için herhangi bir arayüze veya ayarlara sahip değildir. Eğer PreMiD'in simgesini görev çubuğunuzda görüyorsanız bu PreMiD'in çalıştığı anlamına gelir.
 
-<smart-image src="https://i.imgur.com/PQ0OXHL.gif" title="PreMiD'i görev çubuğunda gösteren resim"></smart-image>
+<smart-figure src="https://i.imgur.com/PQ0OXHL.gif" caption="PreMiD'i görev çubuğunda gösteren resim"></smart-figure>
 
 ### Profilimde herhangi bir şey görünmüyor?
 
@@ -42,9 +42,7 @@ Eğer PreMiD'i başarıyla kurduğunuza inanıyor, eklentinin üzerinde sarı bi
 
 <blog-notification type="warning">Eğer PreMiD'in çalışması için bu sayfada tarayıcınızı, oyununuzu veya kullandığınız programı eklerseniz, bu yaptığınız PreMiD'in çalışmasını engelleyecektir. Lütfen el ile bir şey eklemeyin, PreMiD çalıştığında sizin herhangi bir ayar yapmanıza gerek yoktur.</blog-notification>
 
-<div class="rounded bg-[#36393f]">
-  <smart-image src="https://i.imgur.com/PApLvyb.png" title="Kullanıcı ayarlarındaki Oyun Etkinliği sayfası"></smart-image>
-</div>
+<smart-figure src="https://i.imgur.com/PApLvyb.png" title="Kullanıcı ayarlarındaki Oyun Etkinliği sayfası"></smart-figure>
 
 ### Discord yönetici olarak mı çalışıyor?
 

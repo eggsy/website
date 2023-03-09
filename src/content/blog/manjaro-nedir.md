@@ -25,7 +25,7 @@ Türkiye'den de TÜBİTAK'ın geliştirdiği Linux dağıtımı olan Pardus, [De
 
 Masaüstü ortamları (ya da Desktop Environments), İngilizce'siyle DE olarak kısaltılır ve kullanılır. DE'ler bilgisayarınızı "grafiksel arayüz" ile kullanılmasını sağlayan ek yazılımlardır. Aslında her işletim sistemi bir komut sistemi üzerine çalışır ve gördüğünüz görüntü, programlar ve her şey, komutları gerçekleştirmek için sizlere aracı olan görsel ve işlevsel aletlerdir. Örneğin, ilk çıkan işletim sistemleri (MS-DOS gibi) hiçbir grafiksel arayüz ile gelmemiştir. Her şeyi komutlar ile halledersiniz. MS-DOS, aynı zamanda günümüzdeki Windows'un atası ve hâlâ bazı yükleme yerlerinde gereken gereçtir.
 
-<smart-image src="https://i.imgur.com/069umFN.png"></smart-image>
+<smart-figure src="https://i.imgur.com/069umFN.png"></smart-figure>
 
 Linux'un ise temelde hiçbir görsel arayüzü yoktur. Bu da insanların Discord botlarını barındırırken sunucularında Linux dağıtımı sistemleri kullanmalarının nedenlerinden birisidir çünkü her arayüz, çalışan başka bir işlem olduğu ve birçok şeyi işlediği için işlemci, ekran kartı ve RAM'inizden yer. Bu yüzden birçok geliştirici de aslında hiçbir zaman botlarını/sitelerini barındırdıkları sunucularda arayüz kullanmazlar. Linux'de her dağıtım arayüzsüz olarak var olmuş olsa bile sonradan üzerine eklenip uyarlanan arayüzler ile insanlara sunulmaktadır.
 
@@ -52,7 +52,7 @@ Ayrıca paket yöneticisi olan `pacman`'de en iyi paket yöneticilerinden birisi
 
 **AUR (Arch User Repository/Arch Kullanıcı Deposu)**, bilinen en iyi depolardan birisidir ve Arch Linux dağıtımları için tasarlanmıştır. Burada, resmî olarak Arch Linux'un ve geliştiricilerinin yayımlamadığı paketleri, kullanıcılar ve şirketler kendileri yayınlayabilir, güncellemelerini yükleyebilir ve paketleri için destek sağlayabilirler. Aklınıza gelebilecek neredeyse tüm Linux uygulamalarını AUR'da bulabilirsiniz. Çok geniş bir yelpazeye sahip olan bu depo sizi bir paketin kaynak kodlarını indirip ne yapacağınızı anlamaktan kurtarır ve kodları kendi ayarlayarak sizleri direkt olarak sonuca ulaştırır.
 
-<smart-image src="https://i.imgur.com/SqlIhEg.png"></smart-image>
+<smart-figure src="https://i.imgur.com/SqlIhEg.png"></smart-figure>
 
 Arch'ı kullanırken güncellemelere veda edin! Diğer sistemlerin ve dağıtımların aksine Arch ve çoğu Arch tabanlı Linux dağıtımları, sistem güncellemelerini direkt olarak paket yöneticisinden yapar, yerleştirir ve sisteminizi tamamen değiştirir. Bu sayede hiçbir şekilde internetten yeni bir dosya indirip tekrar kurulum yapmak zorunda kalmazsınız ve sisteminizde yüklü olan her şey ile beraber tüm sisteminizi güncelleştirebilirsiniz.
 
@@ -60,7 +60,7 @@ Arch'ı kullanırken güncellemelere veda edin! Diğer sistemlerin ve dağıtım
 
 Manjaro, yukarıda okuduğunuz her şeye erişebilir ve daha fazlasını da yapabilir. Manjaro, Arch tabanlı bir dağıtım olduğu için size her türlü özelleştirmeyi ve güzelliği sunabilir. Manjaro, aynı zamanda sizlere neredeyse tüm masaüstü ortamlarını kullanmanıza olanak sağlar. Bu sayede Arch'ı bir masaüstü ortamı ile kullanabilirsiniz. Manjaro, Octopi ve pacman ile sistem güncellemelerini hallederken yanında gelen varsayılan uygulamaların yanı sıra bunlara ek olarak sisteme kendilerinin dahil ettiği `mhwd` Manjaro Ayar Yönetimi gibi birçok araç ile gelir. **MHWD (Manjaro Hardware Detection)** bilgisayarınızın tüm donanımını tarar ve size en uygun sürücüleri listeler. Siz de bunların arasından seçim yapabilir veya MHWD'nin otomatik yükleme aracını kullanarak sisteminiz için en uygun sürücüleri yükleyebilirsiniz.
 
-<smart-image src="https://i.imgur.com/V88QfCu.png"></smart-image>
+<smart-figure src="https://i.imgur.com/V88QfCu.png"></smart-figure>
 
 Sürücü kısmına gelince neredeyse Linux, görebileceğiniz en kısıtlı seçeneklere sahipken bu dönemde Intel ve Nvidia kartları için Linux performansları optimize edilmiştir ancak hâlâ bir Windows cihazı kadar performanslı çalışmamaktadır. Manjaro, bunu da biraz olsun hafifletmiş ve sistemi donanım ile daha da bütünleştirerek daha iyi bir yazılım-donanım bağlantısı kurmayı başarmış. Oyun için Linux düşünüyorsanız, hiçbir dağıtım sizi bir Windows kadar tatmin etmeyecektir ancak geriye kalan her şeyi Linux dağıtımlarında bulabilir, bulamadığınız için de alternatiflere bakabilirsiniz.
 

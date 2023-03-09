@@ -15,7 +15,7 @@ Kapanalı bir buçuk yıl olan Discord botumun destek sunucusu, birkaç gün ön
 
 Sunucu, tam anlamıyla baştan aşağıya yenilendi. Yeni kurallar, yeni kanallar, yeni roller, yeni botlar ve yepyeni bir tema... Daha önce de dediğim gibi artık Discord sunucumda da yaptığım projeleri paylaşacağım. Bu yüzden sunucuya şu anda varolan tüm projelerim için bir kanal açtım ve bu kanalda projeler hakkında kısa bilgilere yer verdim. Proje hakkında herhangi bir güncelleme olduğunda da bu kanala bir yazı yazıyor ve sunucudakileri bilgilendiriyorum.
 
-<smart-image src="https://i.imgur.com/UnyWB7V.png"></smart-image>
+<smart-figure src="https://i.imgur.com/UnyWB7V.png"></smart-figure>
 
 Resimde gördüğünüz kanalların her birinde, yan tarafta gördüğünüz gibi açıklamalar, ve projeye ait bağlantıyı barındırıyor. Bu bağlantılar bazen (bu) siteme atıyor, bazense direkt olarak GitHub üzerindeki projenin kaynak koduna. Bunların yanı sıra da artık sunucuda şunları bulabileceksiniz:
 

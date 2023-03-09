@@ -27,18 +27,16 @@ is-inside.me, benim ve Tresmos'un ortak bir "eğlence" projesidir. Öyle ki anla
 Alt alan adlarının ne olacağını belirlemek tamamen sizlere kalmış. Eğer sitenin mevzusunu anladıysanız şimdi nasıl işlediğine geçelim.
 
 1. **Kayıt olun**: Sistemi kullanabilmek için öncelikle bir alt alan adına ve şifreye ihtiyacınız var. Bunu da saniyeler içerisinde yapabilirsiniz, şifreleriniz veritabanımızda şifrelenerek tamamen güvenli bir şekilde saklanacaktır. Bu yüzden hiçbir şekilde korkmanıza gerek yok. Eğer korkuyorsanız da şifrenizi rastgele bir şeyler yapabilirsiniz. Siteyi ziyaret etmek ve kayıt olmak için buraya tıklayabilirsiniz.
-  <smart-image src="https://i.imgur.com/7i8LVC6.png"></smart-image>
+   <smart-figure src="https://i.imgur.com/7i8LVC6.png"></smart-figure>
 
 2. Kontrol panelinden gerekli bilgileri alın Kayıt olduktan sonra sizi otomatik olarak kontrol paneline atacaktır. Bu sayfada aslında sistemin nasıl kullanılacağı belirtiliyor ancak sistem İngilizce olduğu için bu sayfayı yazmayı gerek gördüm.
-  <smart-image src="https://i.imgur.com/37q8Q4q.png"></smart-image>
-
-Resimde gösterilen yerlerden sizin kullanmanız için tek ihtiyacınız olan kısım "Yükleyici program" seçeneğinin hemen altında bulunan "Download" yazısı. Bu yazıya tıkladığınızda tarayıcınız, "is-inside.sxcu" adında bir dosya indirmeye başlayacaktır. Bu dosya, ShareX için özel olarak hazırlanmış ayar dosyasıdır.
+   <smart-figure src="https://i.imgur.com/37q8Q4q.png" caption="Resimde gösterilen yerlerden sizin kullanmanız için tek ihtiyacınız olan kısım 'Yükleyici program' seçeneğinin hemen altında bulunan 'Download' yazısı. Bu yazıya tıkladığınızda tarayıcınız, 'is-inside.sxcu' adında bir dosya indirmeye başlayacaktır. Bu dosya, ShareX için özel olarak hazırlanmış ayar dosyasıdır."></smart-figure>
 
 3. **Dosyayı aktifleştirme**: Dosyayı aktifleştirmek için sadece dosyayı açmanız ve gelen uyarıda evet seçeneğine basmanız yeterli olacaktır. Bundan sonra resim yüklerken resimleriniz otomatik olarak is-inside.me sitesine, seçtiğiniz alt alan adına yüklenecektir.
-  <smart-image src="https://i.imgur.com/9YO0YwU.png"></smart-image>
+   <smart-figure src="https://i.imgur.com/9YO0YwU.png"></smart-figure>
 
 4. **İlk yüklemenizi yapma**: Evet, artık her şey hazır, ayarlarınız içe aktarıldı ve yükleme yapmaya hazırsınız. Ancak bundan önce ShareX üzerinden birkaç ayara değiştirmeniz gerekiyor. Bu kısımda çok detaya girmeyeceğim, daha fazlasını kendiniz ShareX uygulamasını kurcalayarak bulabilir ve kafanıza göre ayarlayabilirsiniz. Aşağıdaki GIF'i izleyerek yükleme işleminin nasıl gerçekleştiğini görebilirsiniz.
-  <smart-image src="https://i.imgur.com/xawCPNF.gif"></smart-image>
+   <smart-figure src="https://i.imgur.com/xawCPNF.gif"></smart-figure>
 
 GIF'de gördüğünüz işlemlerden "Yakalama Sonrası" yapılacak seçeneklerin içerisinden "Resim düzenleyicide aç" seçeneğini de aktifleştirirseniz, yukarıdaki kontrol paneli resminde gördüğünüz gibi düzenlemeler yapabilir ve yükleyebilirsiniz.
 
