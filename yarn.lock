@@ -6331,6 +6331,11 @@ functions-have-names@^1.2.2:
   resolved "https://registry.yarnpkg.com/functions-have-names/-/functions-have-names-1.2.3.tgz#0404fe4ee2ba2f607f0e0ec3c80bae994133b834"
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
 
+fuse.js@^6.4.6:
+  version "6.6.2"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-6.6.2.tgz#fe463fed4b98c0226ac3da2856a415576dc9a111"
+  integrity sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==
+
 gaxios@^4.0.0:
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/gaxios/-/gaxios-4.3.3.tgz#d44bdefe52d34b6435cc41214fdb160b64abfc22"
@@ -12694,6 +12699,13 @@ vue-client-only@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.1.0.tgz#1a67a47b8ecacfa86d75830173fffee3bf8a4ee3"
   integrity sha512-vKl1skEKn8EK9f8P2ZzhRnuaRHLHrlt1sbRmazlvsx6EiC3A8oWF8YCBrMJzoN+W3OnElwIGbVjsx6/xelY1AA==
+
+vue-cmd-menu@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/vue-cmd-menu/-/vue-cmd-menu-0.1.9.tgz#fc6fdcddbc4db6ade4e0123da9abed3c3d8ddd33"
+  integrity sha512-IlTXVltqb0FRkh9Mx/zZ/Ej+uh32LHlGtfbA/5sCbQ0baZmu1e/aNIuqlu8SFIw82QobRzdDLQEdW/8veaQtog==
+  dependencies:
+    fuse.js "^6.4.6"
 
 vue-disqus@^4.0.1:
   version "4.0.1"
