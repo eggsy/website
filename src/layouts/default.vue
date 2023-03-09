@@ -21,12 +21,100 @@ export default Vue.extend({
     }
   },
   computed: {
-    /**
-     * Checks if current route is a blog route.
-     * @returns {boolean | undefined}
-     */
     routeIsBlog(): boolean | undefined {
       return this.$route.name?.includes("blog")
+    },
+    menuActions() {
+      return [
+        /* Navigation */
+        {
+          section: "Navigation",
+          text: "Home",
+          icon: "IconHome",
+          action: () => {
+            this.$router.push("/")
+          },
+        },
+        {
+          section: "Navigation",
+          text: "Blog",
+          icon: "IconDocument",
+          action: () => {
+            this.$router.push("/blog")
+          },
+        },
+        {
+          section: "Navigation",
+          text: "Donate",
+          icon: "IconDollar",
+          action: () => {
+            this.$router.push("/donate")
+          },
+        },
+        {
+          section: "Navigation",
+          text: "Daily Song",
+          icon: "IconMusicNote",
+          action: () => {
+            this.$router.push("/daily")
+          },
+        },
+
+        /* Me */
+        {
+          section: "Me",
+          text: "Repositories",
+          icon: "IconBranch",
+          action: () => {
+            this.$router.push("/me/repos")
+          },
+        },
+        {
+          section: "Me",
+          text: "Songs",
+          icon: "IconStar",
+          action: () => {
+            this.$router.push("/me/songs")
+          },
+        },
+        {
+          section: "Me",
+          text: "Contact",
+          icon: "IconInbox",
+          action: () => {
+            this.$router.push("/me/contact")
+          },
+        },
+
+        /* Quick Links */
+        {
+          section: "Quick Links",
+          text: "GitHub",
+          icon: "IconBrand:github",
+          action: () => {
+            window.open(this.$config.social.github, "_blank")?.focus()
+          },
+        },
+        {
+          section: "Quick Links",
+          text: "Twitter",
+          icon: "IconBrand:twitter",
+          action: () => {
+            window.open(this.$config.social.twitter, "_blank")?.focus()
+          },
+        },
+
+        /* Controls */
+        {
+          section: "Controls",
+          text: "Toggle Color Mode",
+          icon: "IconSun",
+          action: () => {
+            this.$colorMode.preference =
+              this.$colorMode.value === "dark" ? "light" : "dark"
+          },
+        },
+      ]
     },
   },
 })
@@ -55,7 +143,15 @@ export default Vue.extend({
     <div class="bg-indigo-500 w-full py-1 dark:bg-neutral-700" />
 
     <!-- Command Palette -->
-    <CommandPalette />
+    <CommandMenu :actions="menuActions" :theme="$colorMode.value">
+      <template v-slot:icon="{ icon }">
+        <component
+          :is="icon.split(':')[0]"
+          :brand="icon.split(':')[1]"
+          class="h-4 w-4"
+        />
+      </template>
+    </CommandMenu>
 
     <!-- Go to top button -->
     <GoTop />
