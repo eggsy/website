@@ -155,9 +155,9 @@ export default Vue.extend({
       :error="$fetchState.pending === false && $fetchState.error !== null"
     />
 
-    <div v-else class="space-x-6 pt-4">
-      <div class="mx-auto w-full" :class="post.header && 'space-y-10'">
-        <div class="min-h-16 relative">
+    <div v-else class="pt-4 space-x-6">
+      <div class="w-full mx-auto" :class="post.header && 'space-y-10'">
+        <div class="relative min-h-16">
           <SmartImage
             v-if="post.header"
             :src="post.header"
@@ -165,25 +165,25 @@ export default Vue.extend({
           />
 
           <div
-            class="flex flex-wrap space-x-2 text-white px-4 right-0 bottom-2 left-0 absolute items-center justify-center select-none whitespace-nowrap sm:justify-start"
+            class="absolute left-0 right-0 flex flex-wrap items-center justify-center px-4 space-x-2 text-white select-none bottom-2 whitespace-nowrap sm:justify-start"
           >
             <div
-              class="rounded-md flex space-x-1 py-1 items-center backdrop-filter backdrop-blur-lg"
+              class="flex items-center py-1 space-x-1 rounded-md backdrop-filter backdrop-blur-lg"
               :class="
                 !post.header
                   ? 'pl-0 pr-2 text-gray-500 dark:text-gray-400'
                   : 'px-2'
               "
             >
-              <IconClock class="h-4 w-4" />
+              <IconClock class="w-4 h-4" />
               <div>{{ getReadingTime }} dakika okuma</div>
             </div>
 
             <div
-              class="rounded-md flex space-x-1 py-1 px-2 items-center backdrop-filter backdrop-blur-lg"
+              class="flex items-center px-2 py-1 space-x-1 rounded-md backdrop-filter backdrop-blur-lg"
               :class="!post.header && 'text-gray-500 dark:text-gray-400'"
             >
-              <IconCalendar class="h-4 w-4" />
+              <IconCalendar class="w-4 h-4" />
               <div>{{ getReadableDate }}</div>
             </div>
           </div>
@@ -193,19 +193,21 @@ export default Vue.extend({
           <header class="space-y-4 text-center mb-12 sm:(text-left pr-16)">
             <div class="space-y-2">
               <h1
-                class="font-bold text-2xl text-gray-700 block sm:text-4xl dark:text-neutral-300"
+                class="block text-2xl font-bold text-black sm:text-4xl dark:text-white"
               >
                 {{ post.title }}
               </h1>
 
-              <p class="text-neutral-500">{{ post.description }}</p>
+              <p class="text-black/50 dark:text-white/50">
+                {{ post.description }}
+              </p>
             </div>
           </header>
 
           <div class="mt-4">
             <template v-if="!post.indicatorsHidden">
               <div
-                class="text-right z-10 -ml-20 top-4 sticky hidden float-left md:block"
+                class="sticky z-10 hidden float-left -ml-20 text-right top-4 md:block"
               >
                 <BlogShare
                   type="vertical"
@@ -215,7 +217,7 @@ export default Vue.extend({
               </div>
 
               <div
-                class="text-left -mr-14 top-4 z-10 sticky hidden float-right md:block"
+                class="sticky z-10 hidden float-right text-left -mr-14 top-4 md:block"
               >
                 <BlogReadingIndicator selector=".nuxt-content" />
               </div>
@@ -233,10 +235,10 @@ export default Vue.extend({
           :identifier="`/blog/gonderi/${post.slug}`"
           :slug="post.slug"
           lang="tr"
-          class="mt-10 px-4"
+          class="px-4 mt-10"
         />
 
-        <div class="space-y-12 mt-10 px-4">
+        <div class="px-4 mt-10 space-y-12">
           <!-- Related posts -->
           <div v-if="getRelatedPosts.length > 0" class="space-y-2">
             <Title :padding="false">Benzer İçerikler</Title>
