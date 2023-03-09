@@ -230,6 +230,7 @@ export default Vue.extend({
         </article>
 
         <Disqus
+          v-if="!$config.isDev"
           :title="post.title"
           :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
           :identifier="`/blog/gonderi/${post.slug}`"
