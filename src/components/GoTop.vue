@@ -47,7 +47,7 @@ export default Vue.extend({
     >
       <Button rounded elevated @click.native="goTop">
         <template #icon>
-          <IconChevron up class="h-5 w-5" />
+          <IconChevron up class="h-4 w-4" />
         </template>
       </Button>
 
