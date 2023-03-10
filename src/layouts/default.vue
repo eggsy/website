@@ -150,10 +150,7 @@ export default Vue.extend({
 
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-neutral-900">
-    <!-- Colored top bar -->
-    <div class="bg-indigo-500 w-full py-1 dark:bg-neutral-700" />
-
-    <Navbar class="pt-4" />
+    <Navbar class="pt-10" />
 
     <!-- Nuxt component -->
     <Nuxt
@@ -162,9 +159,6 @@ export default Vue.extend({
 
     <!-- Footer -->
     <Footer />
-
-    <!-- Colored bottom bar -->
-    <div class="bg-indigo-500 w-full py-1 dark:bg-neutral-700" />
 
     <!-- Command Palette -->
     <CommandMenu :actions="menuActions" :theme="$colorMode.value">
