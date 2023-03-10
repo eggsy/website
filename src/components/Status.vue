@@ -136,12 +136,8 @@ export default Vue.extend({
     "
     class="flex items-center space-x-2"
   >
-    <SkeletonLoader
-      class="w-5 h-5 bg-gray-200 dark:bg-neutral-700"
-      type="rounded"
-    />
-
-    <SkeletonLoader class="w-1/2 h-5 bg-gray-200 dark:bg-neutral-700" />
+    <SkeletonLoader class="w-5 h-5" type="rounded" />
+    <SkeletonLoader class="w-1/2 h-5" />
   </div>
 
   <div v-else class="flex items-center space-x-2 rounded-md text-neutral-500">
