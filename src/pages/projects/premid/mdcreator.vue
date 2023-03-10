@@ -1085,6 +1085,6 @@ pre[class*="language-"] {
 }
 
 .ring {
-  @apply ring-1 ring-black/10 dark:ring-white/10ƒ;
+  @apply ring-1 ring-black/10 dark:ring-white/10;
 }
 </style>
