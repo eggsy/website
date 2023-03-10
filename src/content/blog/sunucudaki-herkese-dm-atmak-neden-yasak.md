@@ -4,7 +4,6 @@ description: Evet, botlar kullanılarak bir veya botun olduğu tüm sunuculardak
 tags:
   - discord
 createdAt: 2020-01-09T01:01:31.423Z
-image: /assets/images/posts/discord-neden-yasak.jpg
 related:
   - botlastirilmis-kullanici-hesaplari-neden-yasak
   - renk-degistiren-roller-neden-yasak

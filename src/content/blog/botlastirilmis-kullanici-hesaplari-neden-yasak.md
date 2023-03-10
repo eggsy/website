@@ -4,7 +4,6 @@ description: Bu gönderi ile Discord hesaplarını "bot"a çeviren kullanıcıla
 tags:
   - discord
 createdAt: 2020-01-09T00:44:29.193Z
-image: /assets/images/posts/discord-neden-yasak.jpg
 related:
   - renk-degistiren-roller-neden-yasak
   - sunucudaki-herkese-dm-atmak-neden-yasak

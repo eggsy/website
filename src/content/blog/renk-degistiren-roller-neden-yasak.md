@@ -4,7 +4,6 @@ description: Bu gönderi ile Discord botlarında neden "sürekli renk değiştir
 tags:
   - discord
 createdAt: 2020-01-09T00:59:03.605Z
-image: /assets/images/posts/discord-neden-yasak.jpg
 related:
   - botlastirilmis-kullanici-hesaplari-neden-yasak
   - sunucudaki-herkese-dm-atmak-neden-yasak
