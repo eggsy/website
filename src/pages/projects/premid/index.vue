@@ -49,10 +49,12 @@ export default Vue.extend({
 <template>
   <div class="py-4">
     <div class="space-y-6 text-gray-500 sm:w-9/12 dark:text-neutral-600">
-      <header class="space-y-2 my-12 px-4">
-        <h1 class="text-gray-700 text-4xl dark:text-neutral-300">PreMiD</h1>
+      <header class="space-y-2 my-12">
+        <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
+          PreMiD
+        </h1>
 
-        <p>
+        <p class="text-black/50 dark:text-white/30">
           PreMiD is a simple, configurable utility that allows you to show what
           you're doing on the web in your Discord now playing status.
         </p>
@@ -65,7 +67,9 @@ export default Vue.extend({
           :title="page.title"
           :href="page.url"
         >
-          {{ page.description }}
+          <span class="text-black/50 dark:text-white/30">{{
+            page.description
+          }}</span>
         </Card>
       </section>
 
