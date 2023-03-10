@@ -66,17 +66,10 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="text-gray-500 dark:text-neutral-600">
-    <header class="space-y-2 my-12">
-      <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
-        Contact
-      </h1>
-
-      <p class="text-black/50 dark:text-white/30">
-        If you have any questions, feel free to contact me.
-      </p>
-    </header>
-
+  <PageLayout
+    title="Contact"
+    description="If you have any questions, feel free to contact me."
+  >
     <div class="grid gap-4 md:grid-cols-2">
       <Card
         v-for="(contact, index) in getLinks"
@@ -107,5 +100,5 @@ export default Vue.extend({
         Send me an email!
       </Card>
     </div>
-  </div>
+  </PageLayout>
 </template>

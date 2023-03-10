@@ -39,35 +39,27 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="space-y-6 py-6">
-    <div class="space-y-4 text-gray-500 dark:text-neutral-600">
-      <header class="space-y-2 my-12">
-        <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
-          Unblock Please
-        </h1>
+  <PageLayout
+    title="Unblock Please"
+    description="Free to use Chrome extension to unblock Imgur and Pastebin bans by
+          ISPs, countries, etc."
+    class="space-y-12"
+  >
+    <div class="flex gap-4">
+      <SmartImage
+        src="https://i.imgur.com/orrLJsI.png"
+        class="rounded-md h-32 w-32"
+      />
 
-        <p class="text-black/50 dark:text-white/30">
-          Free to use Chrome extension to unblock Imgur and Pastebin bans by
-          ISPs, countries, etc.
-        </p>
-      </header>
+      <SmartImage
+        src="https://i.imgur.com/46e28II.png"
+        class="rounded-md h-32 w-32"
+      />
 
-      <div class="flex gap-4">
-        <SmartImage
-          src="https://i.imgur.com/orrLJsI.png"
-          class="rounded-md h-32 w-32"
-        />
-
-        <SmartImage
-          src="https://i.imgur.com/46e28II.png"
-          class="rounded-md h-32 w-32"
-        />
-
-        <SmartImage
-          src="https://i.imgur.com/zwTlbxN.png"
-          class="rounded-md h-32 w-32 hidden sm:block"
-        />
-      </div>
+      <SmartImage
+        src="https://i.imgur.com/zwTlbxN.png"
+        class="rounded-md h-32 w-32 hidden sm:block"
+      />
     </div>
 
     <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0)">
@@ -83,5 +75,5 @@ export default Vue.extend({
         Source Code
       </Button>
     </div>
-  </div>
+  </PageLayout>
 </template>

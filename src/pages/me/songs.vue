@@ -68,27 +68,17 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="text-gray-500 dark:text-neutral-600">
-    <header class="space-y-2 my-12">
-      <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
-        Songs
-      </h1>
-
-      <p>
-        My latest activity on Last FM. Don't forget to check out my
-        <SmartLink href="/daily" class="underline"
-          >daily song suggestions</SmartLink
-        >
-        page as well!
-      </p>
-    </header>
-
+  <PageLayout
+    title="Songs"
+    description="My latest activity on Last FM. Check out the Daily Songs page for a fresh new recommendation!"
+    class="space-y-12"
+  >
     <LoadersSongs
       v-if="$fetchState.pending === true || $fetchState.error !== null"
     />
 
-    <main v-else class="space-y-20">
-      <div>
+    <template v-else>
+      <section>
         <Title class="mb-4">Details</Title>
 
         <div class="grid gap-x-0 gap-y-4 md:gap-x-12 md:grid-cols-2">
@@ -139,9 +129,9 @@ export default Vue.extend({
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div>
+      <section id="top-songs">
         <Title class="mb-4">Top Songs (last 7 days)</Title>
 
         <div class="grid gap-x-4 gap-y-2 md:grid-cols-2">
@@ -156,9 +146,9 @@ export default Vue.extend({
             :url="song.url"
           />
         </div>
-      </div>
+      </section>
 
-      <div>
+      <section id="top-artists">
         <Title class="mb-4">Top Artists (last 7 days)</Title>
 
         <div class="grid gap-x-4 gap-y-2 md:grid-cols-2">
@@ -171,9 +161,9 @@ export default Vue.extend({
             :url="artist.url"
           />
         </div>
-      </div>
+      </section>
 
-      <div>
+      <section id="recent">
         <Title class="mb-4">Recent Songs</Title>
 
         <div class="grid gap-x-4 gap-y-2 md:grid-cols-2">
@@ -187,7 +177,7 @@ export default Vue.extend({
             :url="song.url"
           />
         </div>
-      </div>
-    </main>
-  </div>
+      </section>
+    </template>
+  </PageLayout>
 </template>

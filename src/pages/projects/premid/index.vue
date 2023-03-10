@@ -47,44 +47,36 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="py-4">
-    <div class="space-y-6 text-gray-500 sm:w-9/12 dark:text-neutral-600">
-      <header class="space-y-2 my-12">
-        <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
-          PreMiD
-        </h1>
+  <PageLayout
+    title="PreMiD"
+    description="PreMiD is a simple, configurable utility that allows you to show what
+          you're doing on the web in your Discord now playing status."
+    class="space-y-12"
+  >
+    <section class="grid gap-4 sm:grid-cols-2">
+      <Card
+        v-for="(page, index) in pages"
+        :key="`page-${index}`"
+        :title="page.title"
+        :href="page.url"
+      >
+        <span class="text-black/50 dark:text-white/30">{{
+          page.description
+        }}</span>
+      </Card>
+    </section>
 
-        <p class="text-black/50 dark:text-white/30">
-          PreMiD is a simple, configurable utility that allows you to show what
-          you're doing on the web in your Discord now playing status.
-        </p>
-      </header>
+    <section class="space-y-4">
+      <Button href="https://premid.app" blank>
+        <template #icon>
+          <IconDev
+            brand="premid"
+            class="h-6 text-gray-700 w-6 dark:text-neutral-300"
+          />
+        </template>
 
-      <section class="grid gap-4 sm:grid-cols-2">
-        <Card
-          v-for="(page, index) in pages"
-          :key="`page-${index}`"
-          :title="page.title"
-          :href="page.url"
-        >
-          <span class="text-black/50 dark:text-white/30">{{
-            page.description
-          }}</span>
-        </Card>
-      </section>
-
-      <section class="space-y-4">
-        <Button href="https://premid.app" blank>
-          <template #icon>
-            <IconDev
-              brand="premid"
-              class="h-6 text-gray-700 w-6 dark:text-neutral-300"
-            />
-          </template>
-
-          Visit PreMiD
-        </Button>
-      </section>
-    </div>
-  </div>
+        Visit PreMiD
+      </Button>
+    </section>
+  </PageLayout>
 </template>

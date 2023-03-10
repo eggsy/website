@@ -101,25 +101,14 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="space-y-12">
-    <header class="space-y-2 my-12">
-      <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
-        Donate
-      </h1>
-
-      <p class="text-black/50 dark:text-white/30">
-        If you like my projects and/or what I do and you want to contribute,
-        make me happy, you can donate to me with the information on this page!
-        Thank you ♥
-      </p>
-
-      <p class="text-black/50 dark:text-white/30">
-        P.S. Use "<span class="border-b border-black/10 dark:border-white/10"
-          >Abdulbaki Dursun</span
-        >" as the name of your transactions.
-      </p>
-    </header>
-
+  <PageLayout
+    title="Donate"
+    :description="[
+      'If you like my projects and/or what I do and you want to contribute, make me happy, you can donate to me with the information on this page! Thank you ♥',
+      `P.S. Use 'Abdulbaki Dursun' as the name of your transactions.`,
+    ]"
+    class="space-y-12"
+  >
     <section class="space-y-4">
       <Title>Support Me On</Title>
 
@@ -208,5 +197,5 @@ export default Vue.extend({
         </div>
       </div>
     </section>
-  </div>
+  </PageLayout>
 </template>

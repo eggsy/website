@@ -45,45 +45,28 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="text-gray-500 dark:text-neutral-600">
-    <header class="space-y-2 my-12">
-      <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
-        Repositories
-      </h1>
+  <PageLayout title="Repositories" description="My public projects on GitHub.">
+    <div v-if="$fetchState.pending === true" class="grid gap-4 md:grid-cols-2">
+      <SkeletonLoader v-for="i in 9" :key="`skeleton-${i}`" type="repository" />
+    </div>
 
-      <p>My public projects on GitHub.</p>
-    </header>
-
-    <main>
-      <div
-        v-if="$fetchState.pending === true"
-        class="grid gap-4 md:grid-cols-2"
+    <div v-else class="grid gap-4 md:grid-cols-2">
+      <SmartLink
+        v-for="(repo, index) in repos"
+        :key="`repo-${index}`"
+        :href="repo.html_url"
+        blank
       >
-        <SkeletonLoader
-          v-for="i in 9"
-          :key="`skeleton-${i}`"
-          type="repository"
+        <CardRepository
+          :name="repo.name"
+          :language="repo.language"
+          :stars="repo.stargazers_count"
+          :description="repo.description"
+          :license="repo.license && repo.license.spdx_id"
+          :top="index === 0"
+          class="h-full"
         />
-      </div>
-
-      <div v-else class="grid gap-4 md:grid-cols-2">
-        <SmartLink
-          v-for="(repo, index) in repos"
-          :key="`repo-${index}`"
-          :href="repo.html_url"
-          blank
-        >
-          <CardRepository
-            :name="repo.name"
-            :language="repo.language"
-            :stars="repo.stargazers_count"
-            :description="repo.description"
-            :license="repo.license && repo.license.spdx_id"
-            :top="index === 0"
-            class="h-full"
-          />
-        </SmartLink>
-      </div>
-    </main>
-  </div>
+      </SmartLink>
+    </div>
+  </PageLayout>
 </template>
