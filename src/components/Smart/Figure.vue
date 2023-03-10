@@ -23,6 +23,11 @@ export default Vue.extend({
       required: false,
       default: null,
     },
+    border: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 })
 </script>
@@ -37,7 +42,10 @@ export default Vue.extend({
       draggable="false"
       fit="cover"
       class="object-cover w-full rounded-md"
-      :class="imageClass"
+      :class="[
+        imageClass,
+        border && 'border border-black/10 dark:border-white/10',
+      ]"
     />
 
     <figcaption v-if="caption" class="text-center">
