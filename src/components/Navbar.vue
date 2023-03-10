@@ -20,7 +20,7 @@ export default Vue.extend({
 
 <template>
   <nav class="w-full">
-    <div class="container mx-auto px-4 w-11/12 relative sm:w-9/12 md:w-7/12">
+    <div class="container mx-auto w-11/12 relative sm:w-9/12 md:w-7/12">
       <div class="flex items-center justify-between">
         <SmartLink :href="getTargetLink" class="flex-shrink-0 h-10 w-10">
           <SmartImage

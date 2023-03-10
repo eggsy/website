@@ -3,11 +3,6 @@ import Vue, { PropType } from "vue"
 
 export default Vue.extend({
   props: {
-    padding: {
-      type: Boolean,
-      required: false,
-      default: true,
-    },
     size: {
       type: String as PropType<"1" | "2" | "3" | "4" | "5">,
       required: false,
@@ -30,9 +25,8 @@ export default Vue.extend({
 <template>
   <component
     :is="!['sm', 'xs'].includes(size) ? `h${size}` : 'h3'"
-    class="text-lg text-gray-400 dark:text-neutral-700"
+    class="text-sm text-black/70 dark:text-white/50"
     :class="{
-      'px-4': padding === true,
       'text-2xl': size === '1',
       'text-xl': size === '2',
       'text-sm': size === 'sm',
