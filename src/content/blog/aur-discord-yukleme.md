@@ -6,7 +6,7 @@ tags:
   - linux
   - manjaro
   - arch
-createdAt: 2020-02-01T11:58:45.357Z
+createdAt: 2019-06-03T04:56:00.000Z
 related:
   - octopi-aur-destegi-nasil-aktiflestirilir
 ---

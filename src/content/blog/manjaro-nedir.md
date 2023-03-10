@@ -5,7 +5,7 @@ tags:
   - manjaro
   - linux
   - arch
-createdAt: 2020-01-09T01:35:56.645Z
+createdAt: 2019-06-03T18:08:00.000Z
 related:
   - octopi-aur-destegi-nasil-aktiflestirilir
   - aur-discord-yukleme

@@ -3,7 +3,7 @@ title: Botlaştırılmış Kullanıcı Hesapları Neden Yasak?
 description: Bu gönderi ile Discord hesaplarını "bot"a çeviren kullanıcıların neden bunu yapmaması gerektiğini ve bunun neden yasak olduğunu öğrenebilirsiniz.
 tags:
   - discord
-createdAt: 2020-01-09T00:44:29.193Z
+createdAt: 2018-09-26T18:34:00.000Z
 related:
   - renk-degistiren-roller-neden-yasak
   - sunucudaki-herkese-dm-atmak-neden-yasak

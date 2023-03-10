@@ -6,13 +6,12 @@ tags:
   - blog
   - site
   - haber
-createdAt: 2020-01-09T03:26:00.000Z
+createdAt: 2019-12-31T21:00:00.000Z
 related:
   - neler-donuyor
-  - nedir-bu-blog
 ---
 
-<blog-notification type="warning">Bu yazı, blogun yayınlanan ilk sürümünden olup, şu anki blog için geçerliliğini yitirmiş ve resimler hiçbir geçerli sistemi yansıtmamaktadır. Gönderiyi incelemek isteyenler inceleyebilir ancak gönderide gösterilen resimlerin geçerli hiçbir sayfayı yansıtmadığını lütfen unutmayın. Bu blog güncellemesi ile ilgili daha fazla bilgi almak için [bu sayfayı](/blog/blog-yenilendi) ziyaret edin.</blog-notification>
+<blog-notification type="warning">Bu yazı, blogun yayınlanan ilk sürümünden olup, şu anki blog için geçerliliğini yitirmiş ve resimler hiçbir geçerli sistemi yansıtmamaktadır. Gönderiyi incelemek isteyenler inceleyebilir ancak gönderide gösterilen resimlerin geçerli hiçbir sayfayı yansıtmadığını lütfen unutmayın.</blog-notification>
 
 [Bu yazımda](/blog/nedir-bu-blog) da bahsettiğim gibi blog, hiçbir hazır tasarım (Vuetify dışında), hazır kod veya hazır sistemler kullanılmadan, tamamiyle sıfırdan tasarlanmıştır. Bu gönderide okuyacağınız özelliklerin hiçbiri internetten alınmamış, sıfırdan yapılmıştır.
 

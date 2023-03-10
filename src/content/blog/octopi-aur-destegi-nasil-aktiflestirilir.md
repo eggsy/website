@@ -5,7 +5,7 @@ tags:
   - manjaro
   - linux
   - arch
-createdAt: 2020-01-09T01:57:28.803Z
+createdAt: 2019-06-03T04:46:00.000Z
 related:
   - aur-discord-yukleme
   - manjaro-nedir
