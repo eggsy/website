@@ -115,18 +115,14 @@ export default Vue.extend({
 
 <template>
   <div class="space-y-4 my-10">
-    <BlogNotification
-      v-if="isThereNoSongToday === true"
-      type="warning"
-      class="mx-4"
-    >
+    <BlogNotification v-if="isThereNoSongToday === true" type="warning">
       There's no song for today, check back later or wait for the next day until
       I find some time to add new songs! You can listen to the older ones if you
       wish to!
     </BlogNotification>
 
     <div class="space-y-12">
-      <div class="space-y-6 px-4 gap-6 grid-cols-2 md:space-y-0 md:grid">
+      <div class="space-y-6 gap-6 grid-cols-2 md:space-y-0 md:grid">
         <div class="space-y-4">
           <SkeletonLoader
             type="iframe"
@@ -139,9 +135,7 @@ export default Vue.extend({
         </div>
 
         <div class="space-y-2 w-full">
-          <div
-            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800/40"
-          >
+          <Card>
             <Title :padding="false"> Title </Title>
 
             <SkeletonLoader
@@ -152,11 +146,9 @@ export default Vue.extend({
             <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
               getSelectedTitle
             }}</span>
-          </div>
+          </Card>
 
-          <div
-            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800/40"
-          >
+          <Card>
             <Title :padding="false"> Artist </Title>
 
             <SkeletonLoader
@@ -167,11 +159,9 @@ export default Vue.extend({
             <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
               getSelectedSongMetadata.artist || "Unknown"
             }}</span>
-          </div>
+          </Card>
 
-          <div
-            class="rounded-md bg-gray-200/40 p-4 truncate dark:bg-neutral-800/40"
-          >
+          <Card>
             <Title :padding="false"> Date </Title>
 
             <SkeletonLoader
@@ -182,14 +172,14 @@ export default Vue.extend({
             <span v-else class="text-gray-700 truncate dark:text-gray-300">{{
               getSelectedDateTitle
             }}</span>
-          </div>
+          </Card>
         </div>
       </div>
 
       <div class="space-y-4">
         <Title>Older Songs</Title>
 
-        <div class="grid px-2 gap-2 sm:grid-cols-2 md:grid-cols-3">
+        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           <template v-if="$fetchState.pending === true">
             <SkeletonLoader
               v-for="item in 9"
@@ -200,7 +190,7 @@ export default Vue.extend({
 
           <div
             v-else-if="$fetchState.error"
-            class="text-gray-900 sm:col-span-2 md:col-span-3 dark:text-gray-100"
+            class="text-black/50 dark:text-white/30 sm:col-span-2 md:col-span-3"
           >
             Something went wrong while fetching songs from Firebase.
           </div>
