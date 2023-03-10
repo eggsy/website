@@ -134,6 +134,7 @@ export default Vue.extend({
       <article>
         <header class="space-y-8 leading-relaxed text-center mb-18">
           <NuxtImg
+            v-if="post.header"
             :src="post.header"
             class="h-30 w-full ring-1 dark:ring-white/10 ring-black/10 hover:object-bottom object-top duration-2000 transition-all object-cover rounded-lg"
             alt="Post header"
