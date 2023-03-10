@@ -345,7 +345,7 @@ export default Vue.extend({
         <div class="flex items-center gap-4 justify-between">
           <Title>Experience</Title>
           <button
-            class="text-gray-400 mr-4 text-sm hover:underline dark:text-neutral-700"
+            class="text-black/50 text-sm hover:underline dark:text-white/30"
             @click="showExtraExperience = !showExtraExperience"
           >
             {{ showExtraExperience ? "show less" : "show more" }}
@@ -359,6 +359,7 @@ export default Vue.extend({
             :key="`experience-job-${index}`"
             :title="experience.title"
             :url="experience.url"
+            :hidden-badge="experience.isHidden"
             :date="experience.date"
             :position="experience.position"
           />
@@ -369,7 +370,7 @@ export default Vue.extend({
         <div class="flex items-center gap-4 justify-between">
           <Title>Education</Title>
           <button
-            class="text-gray-400 mr-4 text-sm hover:underline dark:text-neutral-700"
+            class="text-black/50 text-sm hover:underline dark:text-white/30"
             @click="showExtraExperience = !showExtraExperience"
           >
             {{ showExtraExperience ? "show less" : "show more" }}
@@ -383,6 +384,7 @@ export default Vue.extend({
             :key="`experience-education-${index}`"
             :title="experience.title"
             :url="experience.url"
+            :hidden-badge="experience.isHidden"
             :date="experience.date"
             :position="experience.position"
           />
@@ -395,7 +397,9 @@ export default Vue.extend({
 
       <div class="flex flex-col space-y-6 mt-8">
         <section v-for="category in skills" :key="category.title">
-          <h5 class="text-sm uppercase text-black/50 pb-2 mb-4 border-b border-black/5 dark:(text-white/30 border-white/5)">
+          <h5
+            class="text-sm uppercase text-black/50 pb-2 mb-4 border-b border-black/5 dark:(text-white/30 border-white/5)"
+          >
             {{ category.title }}
           </h5>
 

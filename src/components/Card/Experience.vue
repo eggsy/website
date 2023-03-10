@@ -23,6 +23,11 @@ export default Vue.extend({
       required: false,
       default: null,
     },
+    hiddenBadge: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 })
 </script>
@@ -33,14 +38,16 @@ export default Vue.extend({
       <div class="flex space-x-2 items-center justify-between">
         <h3>{{ title }}</h3>
 
-        <span class="text-black/50 dark:text-white/50 text-sm">{{ date }}</span>
+        <span class="text-black/50 dark:text-white/30 text-sm">{{ date }}</span>
       </div>
 
       <div
         v-if="position"
-        class="truncate text-sm text-black/50 dark:text-white/50"
+        class="truncate text-sm text-black/50 dark:text-white/30"
+        :class="hiddenBadge && 'flex items-center justify-between'"
       >
         {{ position }}
+        <IconPlus v-if="hiddenBadge" class="h-4 w-4" />
       </div>
     </div>
   </SmartLink>
