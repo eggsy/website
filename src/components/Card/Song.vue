@@ -37,9 +37,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    class="rounded-lg cursor-pointer flex space-x-3 p-2 transition-colors focus-ring items-center select-none hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
-  >
+  <div class="rounded-lg cursor-pointer card-base flex flex-col space-y-2">
     <div class="rounded-md flex-shrink-0">
       <SmartImage
         :src="thumbnail"
@@ -51,22 +49,23 @@ export default Vue.extend({
     </div>
 
     <div class="space-y-1 truncate">
-      <h3
-        class="font-medium flex-shrink-0 leading-tight text-gray-700 truncate dark:text-neutral-300"
-      >
+      <h3 class="font-medium flex-shrink-0 leading-tight truncate">
         {{ title }}
       </h3>
 
-      <div class="flex space-x-1 items-center dark:text-neutral-600">
+      <div
+        class="flex space-x-1 text-sm items-center text-black/50 dark:text-white/30"
+      >
         <IconStar
           v-if="getDateText.startsWith('Today')"
-          class="flex-shrink-0 h-4 text-gray-900 w-4 dark:text-neutral-600"
+          class="flex-shrink-0 h-4 w-4"
         />
 
-        <span
-          class="flex-shrink-0 text-sm text-gray-600 dark:text-neutral-600"
-          >{{ getDateText }}</span
-        >
+        <IconCalendar class="h-4 w-4" />
+
+        <span>
+          {{ getDateText }}
+        </span>
       </div>
     </div>
   </div>

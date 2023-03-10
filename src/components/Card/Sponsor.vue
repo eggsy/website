@@ -22,7 +22,7 @@ export default Vue.extend({
 <template>
   <SmartLink
     :href="`https://github.com/${sponsor.login}`"
-    class="flex space-x-3 px-4 py-1.5 rounded-md transition-colors hover:bg-gray-200/40 dark:hover:bg-neutral-800/40 select-none items-center"
+    class="card-base rounded-lg flex flex-col gap-2"
     blank
   >
     <SmartImage
@@ -32,7 +32,7 @@ export default Vue.extend({
 
     <div class="flex overflow-x-hidden flex-col leading-tight">
       <span class="truncate">{{ sponsor.login }}</span>
-      <span class="text-sm opacity-50 truncate">
+      <span class="text-sm text-black/30 dark:text-white/30 truncate">
         {{ monthly ? "Monthly" : "One time" }}
       </span>
     </div>

@@ -38,14 +38,14 @@ export default Vue.extend({
   <SmartLink
     :href="url"
     :title="name"
-    class="rounded-md flex space-x-4 p-4 transition-colors focus-ring overflow-x-hidden items-center hover:bg-gray-100 dark:hover:bg-neutral-800"
+    class="rounded-lg flex items-center gap-4 card-base"
     :class="{
       'justify-between': plays !== null,
     }"
     blank
   >
     <div class="flex space-x-4 truncate items-center">
-      <div class="flex-shrink-0 h-16 w-16 relative">
+      <div class="flex-shrink-0 h-14 w-14 relative">
         <SmartImage :src="image" class="rounded-md" />
 
         <div
@@ -58,16 +58,21 @@ export default Vue.extend({
       </div>
 
       <div class="flex flex-col truncate">
-        <span class="text-neutral-700 truncate dark:text-neutral-400">{{
-          name
-        }}</span>
-        <span v-if="artist" class="text-xs truncate">by {{ artist }}</span>
+        <span class="truncate">
+          {{ name }}
+        </span>
+
+        <span
+          v-if="artist"
+          class="text-sm text-black/50 dark:text-white/30 truncate"
+          >by {{ artist }}</span
+        >
       </div>
     </div>
 
     <div
       v-if="plays"
-      class="rounded-full font-semibold flex-shrink-0 text-sm p-2"
+      class="rounded-md text-blue-600 bg-blue-600/10 ring-[0.5px] ring-blue-600/40 px-4 py-1 flex-shrink-0 text-xs"
     >
       {{ plays }} plays
     </div>

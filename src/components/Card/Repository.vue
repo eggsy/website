@@ -49,14 +49,14 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    class="rounded-lg cursor-pointer flex flex-col h-full p-4 transition-colors text-gray-500 justify-between focus-ring dark:text-neutral-500 hover:bg-gray-200/40 dark:hover:bg-neutral-800/40"
-  >
+  <div class="rounded-lg card-base">
     <div class="space-y-2">
       <div :class="top && 'flex justify-between space-x-2'">
-        <h3 class="text-gray-700 items-center truncate dark:text-neutral-400">
-          <span class="text-gray-400 dark:text-neutral-700">eggsy/</span
-          >{{ name }}
+        <h3
+          class="text-black/90 dark:text-white/90 items-center truncate space-x-1"
+        >
+          <span class="text-black/50 dark:text-white/30">eggsy/</span
+          ><span>{{ name }}</span>
         </h3>
 
         <IconStar
@@ -67,23 +67,30 @@ export default Vue.extend({
         />
       </div>
 
-      <p class="text-gray-500 line-clamp-2 dark:text-neutral-500">
+      <p class="text-black/50 dark:text-white/30 line-clamp-2">
         {{ description }}
       </p>
     </div>
 
     <div class="mt-4">
-      <div class="flex items-center justify-between">
+      <div
+        class="flex items-center justify-between text-black/50 dark:text-white/30"
+      >
         <span>Stars:</span>
         <span>{{ stars }}</span>
       </div>
 
-      <div class="flex items-center justify-between">
+      <div
+        class="flex items-center justify-between text-black/50 dark:text-white/30"
+      >
         <span>Language:</span>
         <IconDev :brand="getLanguageIcon" class="h-5 w-5" />
       </div>
 
-      <div v-if="license" class="flex items-center justify-between">
+      <div
+        v-if="license"
+        class="flex items-center justify-between text-black/50 dark:text-white/30"
+      >
         <span>License:</span>
         <span>{{ license }}</span>
       </div>

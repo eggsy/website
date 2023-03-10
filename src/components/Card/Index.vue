@@ -46,7 +46,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      classes: "rounded-md focus-ring overflow-x-hidden transition-colors",
+      classes: "rounded-md overflow-x-hidden transition-colors",
     }
   },
 })
@@ -56,13 +56,12 @@ export default Vue.extend({
   <component
     :is="href ? 'SmartLink' : 'div'"
     :href="href"
+    class="rounded-lg card-base"
     :class="{
       [classes]: true,
       'p-2': tight === true,
       'p-4': tight === false,
       'cursor-pointer': cursor === true,
-      'bg-gray-100 dark:bg-neutral-800/40': elevated === true,
-      'hover:bg-gray-100 dark:hover:bg-neutral-800/40': elevated === false,
       'items-center flex space-x-4': $slots.icon || $slots['icon-left'],
       'justify-between': $slots.icon && !$slots['icon-left'],
     }"
@@ -72,17 +71,14 @@ export default Vue.extend({
       <slot name="icon-left" />
     </div>
 
-    <div class="overflow-x-hidden">
-      <h2
-        v-if="title"
-        class="font-medium text-gray-700 truncate dark:text-neutral-100"
-      >
+    <div class="overflow-x-hidden leading-relaxed space-y-2">
+      <h2 v-if="title" class="font-medium text-black dark:text-white truncate">
         {{ title }}
       </h2>
 
       <p
         v-if="$slots.default"
-        class="text-neutral-500"
+        class="text-black/50 dark:text-white/50 text-sm"
         :class="truncate === true && 'line-clamp-2'"
       >
         <slot />

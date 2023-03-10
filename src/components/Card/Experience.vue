@@ -16,7 +16,7 @@ export default Vue.extend({
     date: {
       type: String,
       required: false,
-      default: "2020",
+      default: new Date().getFullYear(),
     },
     position: {
       type: String,
@@ -24,49 +24,24 @@ export default Vue.extend({
       default: null,
     },
   },
-  data() {
-    return {
-      hasBackground: false,
-    }
-  },
-  methods: {
-    toggleBackground() {
-      this.hasBackground = true
-
-      setTimeout(() => {
-        this.hasBackground = false
-      }, 500)
-    },
-  },
 })
 </script>
 
 <template>
-  <Transition
-    name="fade"
-    mode="out-in"
-    duration="125"
-    @enter="toggleBackground"
-  >
-    <div
-      class="px-4 text-gray-500 cursor-default hover:bg-gray-200 dark:hover:bg-neutral-800/40 rounded-lg transition-colors overflow-hidden dark:text-neutral-600"
-      :class="{
-        'bg-gray-200 dark:bg-neutral-800/40': hasBackground,
-      }"
-    >
+  <SmartLink :href="url" blank>
+    <div class="card-base leading-relaxed rounded-lg">
       <div class="flex space-x-2 items-center justify-between">
-        <SmartLink
-          :href="url"
-          class="text-gray-800 dark:text-neutral-200 hover:underline"
-          blank
-        >
-          <h3 class="text-lg">{{ title }}</h3>
-        </SmartLink>
+        <h3>{{ title }}</h3>
 
-        <span>{{ date }}</span>
+        <span class="text-black/50 dark:text-white/50 text-sm">{{ date }}</span>
       </div>
 
-      <div v-if="position" class="truncate">{{ position }}</div>
+      <div
+        v-if="position"
+        class="truncate text-sm text-black/50 dark:text-white/50"
+      >
+        {{ position }}
+      </div>
     </div>
-  </Transition>
+  </SmartLink>
 </template>

@@ -11,16 +11,12 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    class="rounded-md flex space-x-4 p-4 transition-colors focus-ring overflow-x-hidden items-center"
-  >
-    <div class="flex space-x-4 w-full items-center">
-      <SkeletonLoader class="rounded-md flex-shrink-0 h-16 w-16" />
+  <div class="rounded-md card-base flex space-x-4 w-full items-center">
+    <SkeletonLoader class="rounded-md flex-shrink-0 h-16 w-16" />
 
-      <div class="flex flex-col space-y-1 w-full">
-        <SkeletonLoader class="h-5" :class="getRandomItem" />
-        <SkeletonLoader class="h-5 w-1/3" />
-      </div>
+    <div class="flex flex-col space-y-2 w-full">
+      <SkeletonLoader class="h-5" :class="getRandomItem" />
+      <SkeletonLoader class="h-5 w-1/3" />
     </div>
   </div>
 </template>

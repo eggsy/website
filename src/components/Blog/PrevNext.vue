@@ -40,7 +40,7 @@ export default Vue.extend({
       <component
         :is="prev ? 'SmartLink' : 'div'"
         :href="prev && `/blog/${prev.slug}`"
-        class="rounded-lg border-[0.1px] p-4 bg-opacity-25 bg-neutral-300 border-neutral-200 dark:(bg-neutral-800/30 border-neutral-800) flex items-center space-x-2 transition-colors dark:text-white/80"
+        class="rounded-lg card-base flex items-center space-x-2"
         :class="
           !prev
             ? 'cursor-not-allowed'
@@ -56,7 +56,7 @@ export default Vue.extend({
       <component
         :is="next ? 'SmartLink' : 'div'"
         :href="next && `/blog/${next.slug}`"
-        class="rounded-lg border-[0.1px] p-4 bg-opacity-25 bg-neutral-300 border-neutral-200 dark:(bg-neutral-800/30 select-none border-neutral-800) justify-end flex items-center space-x-2 dark:text-white/80 transition-colors"
+        class="rounded-lg card-base flex items-center space-x-2 justify-end"
         :class="
           !next
             ? 'cursor-not-allowed'
