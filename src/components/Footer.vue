@@ -18,16 +18,17 @@ export default Vue.extend({
 
 <template>
   <div
-    class="bg-gray-200/50 w-full py-4 text-gray-900 dark:(bg-neutral-800 text-gray-200)"
+    class="bg-gray-100 text-sm w-full py-4 text-black/50 dark:(bg-white/5 text-white/30)"
   >
-    <div class="mx-auto px-4 w-11/12 sm:w-9/12 md:w-7/12">
+    <div class="mx-auto w-11/12 sm:w-9/12 md:w-7/12">
       <div class="space-y-4 text-center sm:(space-y-0 space-x-6 text-left)">
         <SmartLink
           href="https://github.com/eggsy/website"
-          class="text-center sm:truncate hover:underline"
+          class="text-center border-b border-transparent hover:border-black/10 dark:hover:border-white/10 transition-colors"
           blank
-          >{{ getLocalizedNotice }}</SmartLink
         >
+          {{ getLocalizedNotice }}
+        </SmartLink>
       </div>
     </div>
   </div>
