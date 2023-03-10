@@ -38,7 +38,7 @@ export default Vue.extend({
     details: {
       type: String,
       required: false,
-      default: "[ENTER SOMETHING]",
+      default: "",
     },
     buttons: {
       type: Array as PropType<{ label: string; url: string }[]>,
@@ -48,7 +48,7 @@ export default Vue.extend({
     state: {
       type: String,
       required: false,
-      default: "[ENTER SOMETHING]",
+      default: "",
     },
     customImageUrl: {
       type: Object as PropType<{ small: string; large: string }>,
@@ -120,8 +120,8 @@ export default Vue.extend({
       else if (smallImage && !smallImageText) small = "[EMPTY]"
 
       return {
-        details: details || "[ENTER SOMETHING]",
-        state: state || "[ENTER SOMETHING]",
+        details,
+        state,
         small,
       }
     },
