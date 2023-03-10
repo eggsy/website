@@ -88,10 +88,10 @@ export default Vue.extend({
       </p>
     </div>
 
-    <div class="rounded card-base gap-4 flex flex-col md:flex-row">
+    <div class="rounded card-base gap-6 flex flex-col md:flex-row">
       <SmartImage
         :src="`https://http.cat/${error.statusCode}.jpg`"
-        class="rounded w-full md:w-60"
+        class="rounded w-full md:w-80"
       />
 
       <div class="space-y-6 whitespace-normal">
