@@ -3,11 +3,6 @@ import Vue from "vue"
 
 export default Vue.extend({
   props: {
-    type: {
-      type: String,
-      required: false,
-      default: "horizontal",
-    },
     title: {
       type: String,
       required: true,
@@ -82,27 +77,22 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div
-    class="flex flex-wrap gap-2"
-    :class="{
-      'flex-col': type === 'vertical',
-    }"
-  >
+  <div class="flex flex-col items-center gap-2">
     <Button rounded @click.native="share('twitter')">
-      <IconBrand brand="twitter" class="text-[#1DA1F2]" />
+      <IconBrand brand="twitter" class="text-[#1DA1F2] h-6 w-6" />
     </Button>
 
     <Button rounded @click.native="share('telegram')">
-      <IconBrand brand="telegram" class="text-[#2EAADE]" />
+      <IconBrand brand="telegram" class="text-[#2EAADE] h-6 w-6" />
     </Button>
 
     <Button rounded @click.native="share('whatsapp')">
-      <IconBrand brand="whatsapp" class="text-[#25D366]" />
+      <IconBrand brand="whatsapp" class="text-[#25D366] h-6 w-6" />
     </Button>
 
     <Button rounded @click.native="share('url')">
-      <IconCheck v-if="copied === true" class="text-green-500" />
-      <IconLink v-else class="text-gray-800 dark:text-gray-200" />
+      <IconCheck v-if="copied === true" class="text-green-500 h-6 w-6" />
+      <IconLink v-else class="text-gray-800 dark:text-gray-200 h-6 w-6" />
     </Button>
 
     <input
