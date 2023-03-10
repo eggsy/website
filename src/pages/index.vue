@@ -60,7 +60,7 @@ export default Vue.extend({
             title: "Google Developer Student Clubs",
             url: "https://gdsc.community.dev/mus-alparslan-universitesi",
             position: "Core Team Member",
-            date: "2022-"
+            date: "2022-",
           },
           {
             title: "EskiYeni Academy Theater",
@@ -248,55 +248,36 @@ export default Vue.extend({
 <template>
   <div class="space-y-14 mb-10">
     <header
-      class="rounded-md flex flex-col-reverse my-16 mx-4 py-10 justify-between md:flex-row md:items-center"
+      class="rounded-md flex flex-col-reverse my-16 py-10 md:(flex-row items-center justify-between) justify-center"
     >
       <div class="md:w-8/12">
-        <div class="space-y-2">
-          <div
-            class="font-semibold text-xl text-neutral-700 md:text-3xl dark:text-neutral-200"
+        <div class="space-y-6">
+          <Status class="mt-4 flex justify-center md:justify-start" />
+
+          <h1
+            class="font-semibold text-center text-4xl md:(text-6xl text-left) text-black/90 leading-normal dark:text-white/90"
           >
-            <h1>Self taught</h1>
-            <h1>
-              <SmartLink
-                href="https://www.w3schools.com/whatis/whatis_fullstack_js.asp"
-                class="cursor-help border-b-2 border-blue-700 text-blue-700 dark:border-neutral-500 dark:text-neutral-500"
-                blank
-                >Full-stack</SmartLink
-              >
-              web developer
-            </h1>
-          </div>
+            Full-stack web developer
+          </h1>
 
-          <p class="text-neutral-500">
-            Hi there, my name is Abdulbaki, I am from Turkey and I am a self
-            taught web developer. I build complex web apps using frameworks such
-            as
-            <SmartLink href="https://vuejs.org/" class="description-link" blank
-              >Vue.js</SmartLink
-            >,
-            <SmartLink
-              href="https://reactjs.org/"
-              class="description-link"
-              blank
-              >React.js</SmartLink
+          <div
+            class="flex items-center justify-center md:justify-start gap-x-3 gap-y-2 flex-wrap"
+          >
+            <Button
+              v-for="item in ['TypeScript', 'Vue.js', 'React.js']"
+              :key="item"
+              class="inline-block"
             >
-            {{ "" }} and
-            <SmartLink
-              href="https://tailwindcss.com/"
-              class="description-link"
-              blank
-              >Tailwind CSS</SmartLink
-            >.
-          </p>
+              <IconDev :brand="item" class="h-5 w-5" />
+            </Button>
+          </div>
         </div>
-
-        <Status class="mt-4" />
       </div>
 
-      <div class="rounded-full mb-4 md:mb-0">
+      <div class="rounded-full mx-auto mb-4 md:mb-0">
         <SmartImage
           src="/assets/images/memoji.png"
-          class="rounded-full h-30 w-30 md:h-40 md:w-40"
+          class="rounded-full h-40 w-40"
         />
       </div>
     </header>
@@ -414,14 +395,12 @@ export default Vue.extend({
 
       <div class="flex flex-col space-y-6 mt-8">
         <section v-for="category in skills" :key="category.title">
-          <h5
-            class="border-b border-gray-400/10 dark:border-neutral-600/10 text-gray-400 dark:text-neutral-600/70 text-lg mx-4 mb-4 pb-2 font-medium"
-          >
+          <h5 class="text-sm uppercase text-black/50 pb-2 mb-4 border-b border-black/5 dark:(text-white/30 border-white/5)">
             {{ category.title }}
           </h5>
 
           <div
-            class="grid px-4 md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-x-2 gap-y-2"
+            class="grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-x-2 gap-y-2"
           >
             <CardSkill
               v-for="(skill, index) in category.items"
