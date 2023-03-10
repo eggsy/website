@@ -93,9 +93,10 @@ export default Vue.extend({
       </h1>
 
       <div class="space-y-3">
-        <div
+        <NuxtLink
           v-for="post in posts"
           :key="post.slug"
+          :to="`/blog/${post.slug}`"
           class="flex items-start gap-6 card-base rounded-lg"
         >
           <span
@@ -104,13 +105,12 @@ export default Vue.extend({
             {{ formatter.format(new Date(post.createdAt)) }}
           </span>
 
-          <nuxt-link
-            :to="`/blog/${post.slug}`"
-            class="text-blue-600 dark:text-blue-300 border-b border-transparent hover:border-current transition-colors font-medium leading-relaxed"
+          <span
+            class="text-blue-600 dark:text-blue-300 font-medium leading-relaxed"
           >
             {{ post.title }}
-          </nuxt-link>
-        </div>
+          </span>
+        </NuxtLink>
       </div>
     </section>
   </div>
