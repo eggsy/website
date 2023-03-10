@@ -78,7 +78,7 @@ export default Vue.extend({
 
       <p
         v-if="$slots.default"
-        class="text-black/50 dark:text-white/50 text-sm"
+        class="text-black/50 dark:text-white/30 text-sm"
         :class="truncate === true && 'line-clamp-2'"
       >
         <slot />
