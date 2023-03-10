@@ -35,14 +35,7 @@ export default Vue.extend({
       },
       category: {
         selected: "Select a category",
-        options: [
-          "Anime",
-          "Games",
-          "Music",
-          "Socials",
-          "Videos",
-          "Other",
-        ],
+        options: ["Anime", "Games", "Music", "Socials", "Videos", "Other"],
       },
       description: {
         inputs: {
@@ -509,10 +502,10 @@ export default Vue.extend({
 <template>
   <div class="pt-6">
     <div class="space-y-8">
-      <div class="py-8 px-4">
-        <Title size="2" :padding="false">Presence Metadata Creator</Title>
+      <div class="py-8">
+        <Title size="2">Presence Metadata Creator</Title>
 
-        <p>
+        <p class="mt-4">
           Create a metadata.json file for your amazing and new PreMiD service
           with an easy to use and free graphical user interface! Worry. You will
           still need to code the presence to get it working! Machines can't do
@@ -522,8 +515,8 @@ export default Vue.extend({
 
       <div class="space-y-12 mt-2">
         <!-- Author Information -->
-        <div class="px-4">
-          <Title :padding="false">Author Information</Title>
+        <div>
+          <Title>Author Information</Title>
 
           <div class="mt-1 grid gap-3 sm:grid-cols-2">
             <input
@@ -541,8 +534,8 @@ export default Vue.extend({
         </div>
 
         <!-- Service Information -->
-        <div class="px-4">
-          <Title :padding="false">Service Information</Title>
+        <div>
+          <Title>Service Information</Title>
 
           <div class="mt-1 grid gap-3 sm:grid-cols-2">
             <input
@@ -757,17 +750,17 @@ export default Vue.extend({
 
         <!-- Additional Settings -->
         <div class="space-y-8">
-          <div class="px-4">
-            <Title :padding="false">
+          <div>
+            <Title>
               Additional Settings
               <span
-                class="cursor-pointer font-normal text-sm hover:underline"
+                class="cursor-pointer font-normal text-xs hover:underline"
                 @click="additionalSettings = !additionalSettings"
-                >{{ additionalSettings ? "hide" : "show" }}</span
+                >－ {{ additionalSettings ? "hide" : "show" }}</span
               >
             </Title>
 
-            <p>
+            <p class="mt-4">
               Settings under this title are not necessary, only fill these if
               you know what you are doing, otherwise, you can just skip this
               section.
@@ -775,7 +768,7 @@ export default Vue.extend({
           </div>
 
           <transition name="fade" mode="out-in">
-            <div v-if="additionalSettings === true" class="space-y-6 mt-4 px-4">
+            <div v-if="additionalSettings === true" class="space-y-6 mt-4">
               <div class="grid gap-3 sm:grid-cols-2">
                 <input
                   v-model="service.regexp.url"
@@ -797,7 +790,6 @@ export default Vue.extend({
                     placement: 'top',
                   }"
                   block
-                  :elevated="service.iframe"
                   @click.native="service.iframe = !service.iframe"
                 >
                   {{ service.iframe ? "Disable" : "Enable" }} Iframe Support
@@ -987,24 +979,24 @@ export default Vue.extend({
     <transition name="slide-left" mode="out-in">
       <div
         v-show="resultWindow === true"
-        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-neutral-800"
+        class="min-h-full bg-gray-100 top-0 right-0 bottom-0 fixed overflow-y-auto scrollbar sm:(ml-auto shadow-md w-8/12) dark:bg-neutral-900"
       >
         <div class="space-y-8 p-2 sm:(py-10 px-8) sm:w-10/12">
-          <div class="space-y-1 px-4">
-            <Title :padding="false" class="flex space-x-2 items-center">
+          <div class="space-y-1">
+            <Title class="flex space-x-2 items-center">
               <IconCog class="h-5 w-5 no-style" />
               <span>Metadata Result</span>
             </Title>
 
-            <p class="text-gray-800 dark:text-gray-200">
+            <p class="!text-black/50 pt-4 block !dark:text-white/30">
               The result of your metadata.json, you can see your issues, and
               download your config from this window. Make sure to fill every and
               each required input correctly before doing anything!
             </p>
           </div>
 
-          <div class="space-y-1 px-4">
-            <Title :padding="false" class="flex space-x-2 items-center">
+          <div class="space-y-4">
+            <Title class="flex space-x-2 items-center">
               <IconExclamation class="h-5 w-5 no-style" />
               <span>Errors</span>
             </Title>
@@ -1013,20 +1005,20 @@ export default Vue.extend({
               No issues/errors found. You're good to go!
             </BlogNotification>
 
-            <div v-else class="grid gap-1 sm:grid-cols-2">
-              <BlogNotification
+            <div v-else class="grid gap-2 sm:grid-cols-2">
+              <Card
                 v-for="(error, index) of getMetadata.errors"
                 :key="`error-${index}`"
                 :class="{ 'col-span-2': getMetadata.errors.length === 1 }"
                 type="danger"
               >
-                {{ error }}
-              </BlogNotification>
+                🚨 {{ error }}
+              </Card>
             </div>
           </div>
 
-          <div class="space-y-1 px-4">
-            <Title :padding="false" class="flex space-x-2 items-center">
+          <div class="space-y-1">
+            <Title class="flex space-x-2 items-center">
               <IconFire class="h-5 w-5 no-style" />
               <span>Your Metadata File </span>
             </Title>
@@ -1038,32 +1030,27 @@ export default Vue.extend({
               v-html="getHighlightedJson"
             />
 
-            <span v-else class="text-gray-800 dark:text-gray-200">
+            <span v-else class="text-black/50 pt-4 block dark:text-white/30">
               You have to fix the errors before you can access the metadata
               JSON.
             </span>
           </div>
 
           <div class="space-y-2 sm:(flex space-y-0 space-x-4 items-center)">
-            <a
+            <Button
               v-if="getMetadata.error === false"
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300"
+              icon="IconInbox"
               download="metadata.json"
               :href="`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(getMetadata.result, null, 2)
               )}`"
             >
-              <IconInbox class="h-5 w-5 no-style" />
-              <span>Download</span>
-            </a>
+              Download
+            </Button>
 
-            <div
-              class="flex space-x-2 bg-gray-200 items-center justify-center control-button no-background sm:w-max dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-300"
-              @click="resultWindow = false"
-            >
-              <IconX class="h-5 w-5 no-style" />
+            <Button icon="IconX" @click.native="resultWindow = false">
               <span>Close</span>
-            </div>
+            </Button>
           </div>
         </div>
       </div>
@@ -1074,19 +1061,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 p,
 .span {
-  @apply text-gray-800 dark:text-gray-200;
-}
-
-.control-button {
-  @apply rounded py-2 px-4 transition-colors text-gray-900 select-none dark:text-gray-100;
-
-  &:not(.no-background) {
-    @apply bg-gray-100 dark:(bg-neutral-800 hover:bg-neutral-700) hover:bg-gray-200;
-  }
-
-  &:not(.cursor-not-allowed) {
-    @apply cursor-pointer;
-  }
+  @apply text-black/50 dark:text-white/30;
 }
 
 svg:not(.no-style) {
@@ -1094,26 +1069,22 @@ svg:not(.no-style) {
 }
 
 .input {
-  @apply py-2 px-4 dark:text-gray-200 focus:outline-none;
-
-  &:not(.no-bg) {
-    @apply bg-gray-200/40 dark:bg-neutral-700;
-  }
+  @apply bg-black/5 transition-colors dark:(bg-white/10 text-white/70 placeholder-white/30) text-black/70 text-sm px-4 py-2 placeholder-black/50 outline-none border border-transparent;
 
   &:not(.rounded-none) {
-    @apply rounded-md;
+    @apply rounded-lg;
   }
 
   &:not(.ring-0) {
-    @apply ring-offset-gray-100 ring-gray-200 ring-offset-2 dark:(ring-neutral-800 ring-offset-neutral-900) focus:ring-1;
+    @apply focus:border-black/10 dark:focus:border-white/10;
   }
 }
 
 pre[class*="language-"] {
-  @apply bg-neutral-900;
+  @apply bg-white/5 rounded-lg;
 }
 
 .ring {
-  @apply ring-1 ring-offset-2 ring-offset-gray-100 ring-gray-200 dark:(ring-neutral-800 ring-offset-neutral-900);
+  @apply ring-1 ring-black/10 dark:ring-white/10ƒ;
 }
 </style>
