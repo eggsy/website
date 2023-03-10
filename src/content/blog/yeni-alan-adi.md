@@ -8,7 +8,6 @@ tags:
 createdAt: 2020-07-22T14:03:24.368Z
 related:
   - neler-donuyor
-  - blog-yenilendi
 special: true
 ---
 

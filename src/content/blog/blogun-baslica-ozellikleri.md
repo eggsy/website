@@ -9,7 +9,6 @@ tags:
 createdAt: 2020-01-09T03:26:00.000Z
 related:
   - neler-donuyor
-  - blog-yenilendi
   - nedir-bu-blog
 ---
 
