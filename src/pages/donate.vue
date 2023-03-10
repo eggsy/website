@@ -101,114 +101,112 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="py-4">
-    <div class="space-y-12 text-gray-500 sm:w-9/12 dark:text-neutral-600">
-      <header class="space-y-2 my-12">
-        <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
-          Donate
-        </h1>
+  <div class="space-y-12">
+    <header class="space-y-2 my-12">
+      <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
+        Donate
+      </h1>
 
-        <p class="text-black/50 dark:text-white/30">
-          If you like my projects and/or what I do and you want to contribute,
-          make me happy, you can donate to me with the information on this page!
-          Thank you ♥
-        </p>
+      <p class="text-black/50 dark:text-white/30">
+        If you like my projects and/or what I do and you want to contribute,
+        make me happy, you can donate to me with the information on this page!
+        Thank you ♥
+      </p>
 
-        <p class="text-black/50 dark:text-white/30">
-          P.S. Use "<span class="border-b border-black/10 dark:border-white/10"
-            >Abdulbaki Dursun</span
-          >" as the name of your transactions.
-        </p>
-      </header>
+      <p class="text-black/50 dark:text-white/30">
+        P.S. Use "<span class="border-b border-black/10 dark:border-white/10"
+          >Abdulbaki Dursun</span
+        >" as the name of your transactions.
+      </p>
+    </header>
 
-      <section class="space-y-4">
-        <Title>Support Me On</Title>
+    <section class="space-y-4">
+      <Title>Support Me On</Title>
 
-        <div class="flex flex-wrap gap-x-4 gap-y-2">
-          <Button :href="getSponsorLinks.github" blank>
-            <template #icon>
-              <IconBrand brand="github" class="h-5 w-5" />
-            </template>
+      <div class="flex flex-wrap gap-x-4 gap-y-2">
+        <Button :href="getSponsorLinks.github" blank>
+          <template #icon>
+            <IconBrand brand="github" class="h-5 w-5" />
+          </template>
 
-            GitHub Sponsors
-          </Button>
-        </div>
-      </section>
+          GitHub Sponsors
+        </Button>
+      </div>
+    </section>
 
-      <section class="space-y-4">
-        <Title :padding="false">Sponsors</Title>
+    <section class="space-y-4">
+      <Title :padding="false">Sponsors</Title>
 
-        <div>
-          <transition name="fade" mode="out-in">
-            <SkeletonLoader
-              v-if="$fetchState.pending"
-              type="spinner"
-              class="w-full py-4"
+      <div>
+        <transition name="fade" mode="out-in">
+          <SkeletonLoader
+            v-if="$fetchState.pending"
+            type="spinner"
+            class="w-full py-4"
+          />
+
+          <p v-else-if="$fetchState.error !== null">An error occured.</p>
+          <p
+            v-else-if="
+              !$fetchState.pending &&
+              !$fetchState.error &&
+              sponsors.length === 0
+            "
+          >
+            No sponsors yet :(
+          </p>
+
+          <div v-else class="grid grid-cols-2 lg:grid-cols-4 gap-2">
+            <CardSponsor
+              v-for="(item, index) in getSortedSponsors.monthly"
+              :key="`sponsor-monthly-${index}`"
+              :sponsor="item.sponsor"
+              monthly
             />
 
-            <p v-else-if="$fetchState.error !== null">An error occured.</p>
-            <p
-              v-else-if="
-                !$fetchState.pending &&
-                !$fetchState.error &&
-                sponsors.length === 0
-              "
-            >
-              No sponsors yet :(
-            </p>
+            <CardSponsor
+              v-for="(item, index) in getSortedSponsors.oneTime"
+              :key="`sponsor-oneTime-${index}`"
+              :sponsor="item.sponsor"
+            />
+          </div>
+        </transition>
+      </div>
+    </section>
 
-            <div v-else class="grid grid-cols-2 lg:grid-cols-3 gap-2">
-              <CardSponsor
-                v-for="(item, index) in getSortedSponsors.monthly"
-                :key="`sponsor-monthly-${index}`"
-                :sponsor="item.sponsor"
-                monthly
-              />
+    <section class="space-y-4">
+      <Title>Bank Accounts</Title>
 
-              <CardSponsor
-                v-for="(item, index) in getSortedSponsors.oneTime"
-                :key="`sponsor-oneTime-${index}`"
-                :sponsor="item.sponsor"
-              />
-            </div>
-          </transition>
-        </div>
-      </section>
+      <div class="grid gap-4">
+        <div
+          v-for="(account, index) in accounts"
+          :key="`account-${index}`"
+          class="flex h-full space-x-4 items-center rounded-lg card-base"
+        >
+          <div class="rounded-lg">
+            <SmartImage :src="account.image" class="rounded-lg h-12 w-12" />
+          </div>
 
-      <section class="space-y-4">
-        <Title>Bank Accounts</Title>
+          <div class="rounded-tr rounded-br flex h-full">
+            <div>
+              <h3 class="font-medium text-lg">
+                {{ account.name }}
+              </h3>
 
-        <div class="grid gap-4">
-          <div
-            v-for="(account, index) in accounts"
-            :key="`account-${index}`"
-            class="flex h-full space-x-4 items-center rounded-lg card-base"
-          >
-            <div class="rounded-lg">
-              <SmartImage :src="account.image" class="rounded-lg h-12 w-12" />
-            </div>
-
-            <div class="rounded-tr rounded-br flex h-full">
-              <div>
-                <h3 class="font-medium text-lg">
-                  {{ account.name }}
-                </h3>
-
-                <span
-                  class="text-black/30 dark:text-white/30"
-                  :class="
-                    !account.revealed &&
-                    'hover:underline cursor-pointer select-none'
-                  "
-                  @click="account.revealed = true"
-                >
-                  {{ account.revealed ? account.iban : "Click to Reveal" }}
-                </span>
-              </div>
+              <span
+                class="text-black/30 dark:text-white/30"
+                :class="
+                  !account.revealed &&
+                  'hover:underline cursor-pointer select-none'
+                "
+                @click="account.revealed = true"
+              >
+                {{ account.revealed ? account.iban : "Click to Reveal" }}
+              </span>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>
 </template>
