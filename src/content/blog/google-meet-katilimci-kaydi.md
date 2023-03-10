@@ -5,7 +5,7 @@ header: https://i.imgur.com/RZsmW8C.jpg
 tags:
   - eğitim
   - meet
-createdAt: null
+createdAt: 2023-03-10T13:32:52.449Z
 ---
 
 Uzaktan eğitim döneminin tekrar başlaması üzerine on binlerce öğrenci ve öğretim görevlileri derslerine Google Meet, Zoom, Microsoft Teams gibi platformlar üzerinden devam etmeye başladı. Eğer siz de Google Meet'i bir toplantı yöneticisi olarak kullanıyorsanız ve eğer organizasyonunuz Google'ın Google Workspace Essentials, Business Plus, Enterprise Starter, Enterprise Essentials, Enterprise Standard, Enterprise Plus, Education Plus ve Teaching and Learning Upgrade paketlerinden birine sahip değilse katılımı izleyemediğinizi, ders kayıtları tutamadığınızı ve aynı zamanda katılımcıların listesine de erişemediğinizi fark etmişsinizdir. Bu duruma üçüncü parti araçlarla çözüm üretmek sandığınızdan çok daha basit, işte bu yazıda bunun nasıl olduğunu anlatacağım.
