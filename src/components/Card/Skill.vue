@@ -8,11 +8,6 @@ export default Vue.extend({
       required: true,
       default: "",
     },
-    color: {
-      type: String,
-      required: false,
-      default: "#00000010",
-    },
     image: {
       type: String,
       required: false,
@@ -39,8 +34,8 @@ export default Vue.extend({
       />
     </div>
 
-    <span class="flex-1 dark:text-neutral-500 truncate text-sm">{{
-      title
-    }}</span>
+    <span class="flex-1 truncate text-sm">
+      {{ title }}
+    </span>
   </div>
 </template>
