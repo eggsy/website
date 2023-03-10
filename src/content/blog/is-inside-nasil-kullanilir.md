@@ -8,8 +8,6 @@ createdAt: 2019-11-07T13:27:00.000Z
 
 <blog-notification type="danger">Bu proje, 3 yıllık hizmetinin ve onbinlerce dosyanın, hâtrı sayılır trafiğin ve kullanıcının ardından kapanma kararı almıştır. Bundan sonra yeni kullanıcı kabul etmeyecek ve yakında tarihe gömülecektir.</blog-notification>
 
-<blog-notification type="information">Bu yazı eski site ve eski blogdan kalmadır. Yenilenen sitemde is-inside.me'ye özel yaptığım sayfaya ulaşmak için [buraya](/projects/is-inside-me) tıklayabilirsiniz.</blog-notification>
-
 Öncelikle, ShareX'in ne olduğu hakkında kısa bir bilgi vereceğim, bu sayfanın amacı ShareX'in nasıl kullanılacağı değil, is-inside.me ayarlarını ShareX programına nasıl aktarılacağını göstermektedir. Eğer ShareX'in ne olduğunu zaten biliyorsanız bu kısmı atlayabilirsiniz.
 
 ShareX, sadece ekran görüntüsü almaya değil, ekran videosu çekmeye, dosya göndermeye, QR kod okumaya ve birçok araçlara sahip Windows programıdır. Evet, sadece Windows desteklemesiyle birlikte diğer işletim sistemlerinde alternatifleri olsa da hiçbiri ShareX'in yaptığı işlerin "tamamını" yapamıyor. Ancak ShareX, açık kaynak olduğu için bir gün elbet bir geliştirici uygulamanın Linux ve Mac sürümünü çıkartacağını düşünüyorum. Tabii bunun şimdiye kadar gerçekleşmediğini de var sayarsak sanırım ShareX özelliklerini bir süre daha sadece Windows üzerinde görmeye devam edeceğiz.
