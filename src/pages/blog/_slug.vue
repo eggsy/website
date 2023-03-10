@@ -45,7 +45,7 @@ export default Vue.extend({
     }
   },
   head() {
-    const post = this.post as Post
+    const post = this.post
     const { getTags } = this as {
       getTags: string[]
     }
@@ -107,42 +107,17 @@ export default Vue.extend({
     }
   },
   computed: {
-    /**
-     * Returns the tags of the current post, if there's none specified, returns an empty array instead.
-     * @returns {string[]} Array of tags.
-     */
     getTags(): string[] {
       return this.post?.tags || []
     },
-    /**
-     * Calculates the words and returns the potential maximum reading time.
-     * @returns {string} Reading time in minutes.
-     */
-    getReadingTime(): string {
+    getReadingTime() {
       return this.$getReadingTime(JSON.stringify(this.post.body))
     },
-    /**
-     * Returns the date as a readable string.
-     * @returns {string} Today, yesterday, x day before, x months before or DD/MM/YYYY.
-     */
-    getReadableDate(): string {
-      return this.$getReadableDate(this.post?.createdAt || new Date())
+    getReadableDate() {
+      return this.$getReadableDate(new Date(this.post?.createdAt))
     },
-    /**
-     * Returns the related posts, if there's no related post, returns an empty array instead.
-     * @returns {RelatedPost[]} Related posts' slugs.
-     */
     getRelatedPosts(): RelatedPost[] {
       return this.related || []
-    },
-    /**
-     * Returns the post image if explicitly set, if none, looks for a jpg under assets.
-     * @returns {string} The URL of the image.
-     */
-    getPostImage(): string {
-      return this.post?.image
-        ? `https://eggsy.xyz/${this.post?.image}`
-        : `https://eggsy.xyz/assets/images/posts/${this.post?.slug}.jpg`
     },
   },
 })
@@ -155,134 +130,109 @@ export default Vue.extend({
       :error="$fetchState.pending === false && $fetchState.error !== null"
     />
 
-    <div v-else class="pt-4 space-x-6">
-      <div class="w-full mx-auto" :class="post.header && 'space-y-10'">
-        <div class="relative min-h-16">
-          <SmartImage
-            v-if="post.header"
+    <div v-else class="pt-4 mt-10">
+      <article>
+        <header class="space-y-8 leading-relaxed text-center mb-18">
+          <NuxtImg
             :src="post.header"
-            class="h-60 -mx-[4.25vw] filter md:-mx-[20.75vw] dark:brightness-75"
+            class="h-30 w-full ring-1 dark:ring-white/10 ring-black/10 hover:object-bottom object-top duration-2000 transition-all object-cover rounded-lg"
+            alt="Post header"
           />
 
-          <div
-            class="absolute left-0 right-0 flex flex-wrap items-center justify-center px-4 space-x-2 text-white select-none bottom-2 whitespace-nowrap sm:justify-start"
-          >
+          <div class="space-y-4">
             <div
-              class="flex items-center py-1 space-x-1 rounded-md backdrop-filter backdrop-blur-lg"
-              :class="
-                !post.header
-                  ? 'pl-0 pr-2 text-gray-500 dark:text-gray-400'
-                  : 'px-2'
-              "
+              class="flex items-center justify-center gap-x-6 gap-y-2 flex-wrap dark:text-white/30 text-black/50 sm:text-sm"
             >
-              <IconClock class="w-4 h-4" />
-              <div>{{ getReadingTime }} dakika okuma</div>
+              <div class="flex items-center space-x-2">
+                <IconCalendar class="h-4 w-4" />
+                <span>{{ getReadableDate }}</span>
+              </div>
+
+              <div class="flex items-center space-x-2">
+                <IconTag class="h-4 w-4" />
+                <span>{{ getTags.join(" － ") }}</span>
+              </div>
+
+              <div class="flex items-center space-x-2">
+                <IconEye class="h-4 w-4" />
+                <span>{{ getReadingTime }} dakika okuma</span>
+              </div>
             </div>
 
-            <div
-              class="flex items-center px-2 py-1 space-x-1 rounded-md backdrop-filter backdrop-blur-lg"
-              :class="!post.header && 'text-gray-500 dark:text-gray-400'"
-            >
-              <IconCalendar class="w-4 h-4" />
-              <div>{{ getReadableDate }}</div>
-            </div>
-          </div>
-        </div>
-
-        <article class="px-4">
-          <header class="space-y-4 text-center mb-12 sm:(text-left pr-16)">
             <div class="space-y-2">
               <h1
-                class="block text-2xl font-bold text-black sm:text-4xl dark:text-white"
+                class="block text-2xl md:w-11/12 mx-auto font-bold text-black sm:text-4xl dark:text-white"
               >
                 {{ post.title }}
               </h1>
 
-              <p class="text-black/50 dark:text-white/50">
+              <p class="text-black/50 md:w-9/12 mx-auto dark:text-white/50">
                 {{ post.description }}
               </p>
             </div>
-          </header>
-
-          <div class="mt-4">
-            <template v-if="!post.indicatorsHidden">
-              <div
-                class="sticky z-10 hidden float-left -ml-20 text-right top-4 md:block"
-              >
-                <BlogShare
-                  type="vertical"
-                  :title="post.title"
-                  :path="$route.path"
-                />
-              </div>
-
-              <div
-                class="sticky z-10 hidden float-right text-left -mr-14 top-4 md:block"
-              >
-                <BlogReadingIndicator selector=".nuxt-content" />
-              </div>
-            </template>
-
-            <BlogTableOfContents :toc="post.toc" />
-
-            <NuxtContent :document="post" class="max-w-full prose prose-blue" />
           </div>
-        </article>
+        </header>
 
-        <Disqus
-          v-if="!$config.isDev"
-          :title="post.title"
-          :url="`https://eggsy.xyz/blog/gonderi/${post.slug}`"
-          :identifier="`/blog/gonderi/${post.slug}`"
-          :slug="post.slug"
-          lang="tr"
-          class="px-4 mt-10"
-        />
-
-        <div class="px-4 mt-10 space-y-12">
-          <!-- Related posts -->
-          <div v-if="getRelatedPosts.length > 0" class="space-y-2">
-            <Title :padding="false">Benzer İçerikler</Title>
-
-            <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-              <CardPost
-                v-for="(relatedPost, index) in getRelatedPosts"
-                :key="`related-${index}`"
-                :post="relatedPost"
+        <div class="mt-4">
+          <template v-if="!post.indicatorsHidden">
+            <div
+              class="sticky z-10 hidden float-left -ml-20 text-right top-4 md:block"
+            >
+              <BlogShare
+                type="vertical"
+                :title="post.title"
+                :path="$route.path"
               />
             </div>
+
+            <div
+              class="sticky z-10 hidden float-right text-left -mr-14 top-4 md:block"
+            >
+              <BlogReadingIndicator selector=".nuxt-content" />
+            </div>
+          </template>
+
+          <BlogTableOfContents :toc="post.toc" />
+
+          <NuxtContent :document="post" class="max-w-full prose prose-blue" />
+        </div>
+      </article>
+
+      <Disqus
+        v-if="!$config.isDev"
+        :title="post.title"
+        :url="`https://eggsy.xyz/blog/${post.slug}`"
+        :identifier="`/blog/${post.slug}`"
+        :slug="post.slug"
+        lang="tr"
+        class="mt-10"
+      />
+
+      <div class="mt-16 space-y-10">
+        <div v-if="getRelatedPosts.length > 0" class="space-y-2">
+          <h3 class="dark:text-white/30 text-black/50 text-sm">
+            Benzer Gönderiler
+          </h3>
+
+          <div v-if="getRelatedPosts.length" class="grid gap-4 sm:grid-cols-2">
+            <NuxtLink
+              v-for="(relatedPost, index) in getRelatedPosts"
+              :key="`related-${index}`"
+              :to="`/blog/${relatedPost.slug}`"
+              class="rounded-lg border-[0.1px] p-4 bg-opacity-25 bg-neutral-300 border-neutral-200 dark:(bg-neutral-800/30 border-neutral-800) flex items-center space-x-2 hover:bg-opacity-40 transition-colors dark:text-white/80 dark:hover:text-white transition-colors"
+            >
+              <IconDocument class="h-4 w-4" />
+              <span class="truncate">{{ relatedPost.title }}</span>
+            </NuxtLink>
           </div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="dark:text-white/30 text-black/50 text-sm">
+            Okumaya Devam Et
+          </h3>
 
           <BlogPrevNext :current-slug="post.slug" />
-
-          <!-- Share -->
-          <div class="space-y-2">
-            <Title :padding="false">Yazıyı paylaş</Title>
-
-            <BlogShare :title="post.title" :path="$route.path" />
-          </div>
-
-          <!-- Tags -->
-          <div v-if="getTags.length > 0" class="space-y-2">
-            <Title :padding="false" lang="tr">Etiketler</Title>
-
-            <div class="flex flex-wrap space-x-2">
-              <Button
-                v-for="(tag, index) in getTags"
-                :key="`tag-${index}`"
-                :href="{
-                  name: 'blog',
-                  query: {
-                    etiket: tag,
-                  },
-                }"
-                elevated
-                tight
-              >
-                {{ tag }}
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -290,22 +240,22 @@ export default Vue.extend({
 </template>
 
 <style lang="scss">
+.dark .nuxt-content-highlight {
+  box-shadow: 0 0 0 100vmax #1b1917;
+}
+
+.light .nuxt-content-highlight {
+  box-shadow: 0 0 0 100vmax #282c34;
+}
+
 .nuxt-content {
   .nuxt-content-highlight {
-    box-shadow: 0 0 0 100vmax #282c34;
     clip-path: inset(0 -100vmax);
-
-    @media (prefers-color-scheme: dark) {
-      box-shadow: 0 0 0 100vmax #1b1917;
-    }
 
     @apply mb-5 relative;
 
     .filename {
       @apply font-light mt-3 mr-3 text-xs right-0 text-white/50 z-10 absolute;
-
-      &:after {
-      }
     }
 
     pre {
@@ -318,7 +268,7 @@ export default Vue.extend({
   }
 
   video {
-    @apply rounded-lg
+    @apply rounded-lg;
   }
 
   kbd {
@@ -326,7 +276,7 @@ export default Vue.extend({
   }
 
   code {
-    @apply bg-blue-100 py-px px-1 text-blue-600 dark:(bg-blue-900 bg-opacity-50 text-blue-400);
+    @apply bg-blue-100 py-px px-1 text-blue-600 dark:bg-white/5;
 
     &::before,
     &::after {
