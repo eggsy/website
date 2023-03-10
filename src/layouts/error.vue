@@ -77,53 +77,52 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="space-y-4 py-8 px-4">
-    <div>
-      <h1 class="text-2xl text-gray-900 dark:text-gray-100">
-        Something bad happened...
+  <div class="space-y-4 py-8">
+    <div class="space-y-2">
+      <h1 class="text-black/90 dark:text-white/90 font-semibold text-2xl">
+        An error occured
       </h1>
 
-      <p class="text-lg text-gray-700 dark:text-gray-300">Maybe this'd help:</p>
+      <p class="text-lg text-black/50 dark:text-white/30">
+        Here are the details:
+      </p>
+    </div>
+
+    <div class="rounded card-base gap-4 flex flex-col md:flex-row">
+      <SmartImage
+        :src="`https://http.cat/${error.statusCode}.jpg`"
+        class="rounded w-full md:w-60"
+      />
+
+      <div class="space-y-6 whitespace-normal">
+        <div class="flex flex-col space-y-2">
+          <Title> Title </Title>
+          <span class="text-black/50 dark:text-white/30">{{
+            getErrorMeta.title
+          }}</span>
+        </div>
+
+        <div class="flex flex-col space-y-2">
+          <Title> Description </Title>
+          <span class="text-black/50 dark:text-white/30">{{
+            getErrorMeta.description
+          }}</span>
+        </div>
+
+        <div class="flex flex-col space-y-2">
+          <Title> Details </Title>
+          <pre class="whitespace-pre-wrap text-black/50 dark:text-white/30">{{
+            JSON.stringify(error, null, 2)
+          }}</pre>
+        </div>
+      </div>
     </div>
 
     <div
-      class="rounded space-y-4 bg-gray-200 p-4 items-center md:(flex space-y-0 space-x-4) dark:(bg-neutral-800 text-gray-200)"
+      class="flex items-center justify-between md:justify-start flex-wrap gap-4"
     >
-      <div>
-        <SmartImage
-          :src="`https://http.cat/${error.statusCode}.jpg`"
-          class="rounded md:h-50 md:w-50"
-        />
-      </div>
-
-      <div class="space-y-4 whitespace-normal">
-        <div class="flex flex-col">
-          <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
-          <code>{{ getErrorMeta.title }}</code>
-        </div>
-
-        <div class="flex flex-col">
-          <h3 class="font-semibold text-gray-800 dark:text-gray-200">
-            Description:
-          </h3>
-          <code>{{ getErrorMeta.description }}</code>
-        </div>
-
-        <div class="flex flex-col">
-          <h3 class="font-semibold text-gray-800 dark:text-gray-200">
-            Details:
-          </h3>
-          <code>{{ JSON.stringify(error) }}</code>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap space-x-2">
-      <button title="Click to go back" @click="$router.back()">Go Back</button>
-
-      <button title="Click to refresh the page" @click="refresh">
-        Refresh Page
-      </button>
+      <Button icon="IconBack" @click.native="$router.back()">Go Back</Button>
+      <Button icon="IconSync" @click.native="refresh">Refresh Page</Button>
     </div>
   </div>
 </template>
