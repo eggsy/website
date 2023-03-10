@@ -40,19 +40,19 @@ export default Vue.extend({
 
 <template>
   <div class="space-y-6 py-6">
-    <div class="space-y-4 text-gray-500 sm:w-9/12 dark:text-neutral-600">
-      <header class="space-y-2 my-12 px-4">
-        <h1 class="text-gray-700 text-4xl dark:text-neutral-300">
+    <div class="space-y-4 text-gray-500 dark:text-neutral-600">
+      <header class="space-y-2 my-12">
+        <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
           Unblock Please
         </h1>
 
-        <p>
+        <p class="text-black/50 dark:text-white/30">
           Free to use Chrome extension to unblock Imgur and Pastebin bans by
           ISPs, countries, etc.
         </p>
       </header>
 
-      <div class="flex px-4 gap-4">
+      <div class="flex gap-4">
         <SmartImage
           src="https://i.imgur.com/orrLJsI.png"
           class="rounded-md h-32 w-32"
@@ -72,7 +72,7 @@ export default Vue.extend({
 
     <div class="space-y-2 items-center sm:(flex space-x-2 space-y-0)">
       <Button :href="getLink.webstore" icon="IconInbox" blank>
-        <span>Install to Chrome</span>
+        Install to Chrome
       </Button>
 
       <Button :href="getLink.github" blank>
@@ -80,7 +80,7 @@ export default Vue.extend({
           <IconBrand brand="github" class="h-6 w-6" />
         </template>
 
-        <span>Source Code</span>
+        Source Code
       </Button>
     </div>
   </div>
