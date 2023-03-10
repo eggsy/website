@@ -37,6 +37,29 @@ export default {
         ],
       },
       {
+        name: "PreMiD",
+        description:
+          "A free, open-source, and community-driven rich presence system.",
+        image: "https://i.imgur.com/1Yc1HB0.png",
+        buttons: [
+          {
+            text: "Visit",
+            link: "https://premid.app",
+            icon: "IconLink",
+          },
+          {
+            text: "PreMiD Pages",
+            link: "/projects/premid",
+            icon: "IconLink",
+          },
+          {
+            text: "GitHub",
+            link: "https://github.com/PreMiD/PreMiD",
+            icon: "IconBrand:github",
+          },
+        ],
+      },
+      {
         name: "Discord Steam Verification",
         description:
           "A Discord bot to verify if a user owns a specific item on Steam and give them roles!",
@@ -154,7 +177,8 @@ export default {
       },
       {
         name: "Marmaris Palace Website",
-        description: "A website concept for a 5-star hotel in Marmaris, Türkiye.",
+        description:
+          "A website concept for a 5-star hotel in Marmaris, Türkiye.",
         image: "https://i.imgur.com/BJ2luOh.jpg",
         buttons: [
           {
@@ -233,12 +257,12 @@ export default {
           {{ project.description }}
         </p>
 
-        <div v-if="project.buttons" class="flex flex-wrap gap-x-4 gap-y-2">
+        <div v-if="project.buttons" class="flex flex-wrap gap-2">
           <Button
             v-for="(button, index) in project.buttons"
             :key="`button-${index}`"
             :href="button.link"
-            blank
+            :blank="!button.link.startsWith('/')"
           >
             <template #icon>
               <component
