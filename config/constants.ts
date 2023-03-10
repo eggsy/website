@@ -11,15 +11,4 @@ export default {
   sponsor: {
     github: "https://github.com/sponsors/eggsy",
   },
-  links: {
-    unblockPlease: {
-      webstore:
-        "https://chrome.google.com/webstore/detail/unblock-please/lpngbkmgnehdkkobdbieckjpphkohffd/",
-      github: "https://github.com/eggsy/unblock-please/",
-    },
-    isInsideMe: {
-      website: "https://is-inside.me/",
-      faq: "https://is-inside.me/faq/",
-    },
-  },
 }
