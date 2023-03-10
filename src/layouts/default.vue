@@ -11,6 +11,7 @@ export default Vue.extend({
       posts: [] as (Post[] & FetchReturn) | (Post[] & FetchReturn)[],
     }
   },
+  fetchOnServer: false,
   async fetch() {
     const posts = await this.$content("blog")
       .sortBy("createdAt", "desc")
@@ -52,6 +53,7 @@ export default Vue.extend({
         {
           section: "Navigation",
           text: "Blog",
+          tag: "Search a blog post",
           icon: "IconDocument",
           keybindings: ["b"],
           childActions: [
