@@ -114,7 +114,7 @@ export default Vue.extend({
       return this.$getReadingTime(JSON.stringify(this.post.body))
     },
     getReadableDate() {
-      return this.$getReadableDate(new Date(this.post?.createdAt))
+      return this.$getReadableDate(new Date(this.post?.createdAt || Date.now()))
     },
     getRelatedPosts(): RelatedPost[] {
       return this.related || []
