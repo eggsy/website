@@ -103,16 +103,18 @@ export default Vue.extend({
 <template>
   <div class="py-4">
     <div class="space-y-12 text-gray-500 sm:w-9/12 dark:text-neutral-600">
-      <header class="space-y-2 my-12 px-4">
-        <h1 class="text-gray-700 text-4xl dark:text-neutral-300">Donate</h1>
+      <header class="space-y-2 my-12">
+        <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
+          Donate
+        </h1>
 
-        <p>
+        <p class="text-black/50 dark:text-white/30">
           If you like my projects and/or what I do and you want to contribute,
           make me happy, you can donate to me with the information on this page!
           Thank you ♥
         </p>
 
-        <p class="text-xs">
+        <p class="text-black/50 dark:text-white/30">
           P.S. Use "<span class="border-b border-black/10 dark:border-white/10"
             >Abdulbaki Dursun</span
           >" as the name of your transactions.
@@ -122,22 +124,10 @@ export default Vue.extend({
       <section class="space-y-4">
         <Title>Support Me On</Title>
 
-        <div class="flex flex-wrap gap-x-4 gap-y-2 mx-4">
-          <Button
-            v-tippy="{
-              content: 'Preferred',
-              placement: 'bottom',
-            }"
-            variant="github"
-            class="w-full lg:w-max"
-            :href="getSponsorLinks.github"
-            blank
-          >
+        <div class="flex flex-wrap gap-x-4 gap-y-2">
+          <Button :href="getSponsorLinks.github" blank>
             <template #icon>
-              <IconBrand
-                brand="github"
-                class="h-7 text-black dark:text-white w-7"
-              />
+              <IconBrand brand="github" class="h-5 w-5" />
             </template>
 
             GitHub Sponsors
@@ -146,17 +136,7 @@ export default Vue.extend({
       </section>
 
       <section class="space-y-4">
-        <SmartLink
-          href="https://github.com/sponsors/eggsy"
-          class="flex space-x-2 justify-between mx-4 items-center"
-          blank
-        >
-          <Title :padding="false">Sponsors</Title>
-          <IconBrand
-            brand="github"
-            class="h-7 w-7 dark:hover:text-white hover:text-black transition-colors"
-          />
-        </SmartLink>
+        <Title :padding="false">Sponsors</Title>
 
         <div>
           <transition name="fade" mode="out-in">
@@ -198,39 +178,31 @@ export default Vue.extend({
       <section class="space-y-4">
         <Title>Bank Accounts</Title>
 
-        <div class="grid px-4 gap-4">
+        <div class="grid gap-4">
           <div
             v-for="(account, index) in accounts"
             :key="`account-${index}`"
-            class="flex h-full items-center"
+            class="flex h-full space-x-4 items-center rounded-lg card-base"
           >
-            <div class="rounded-l bg-gray-200/75 dark:bg-neutral-800/50">
-              <SmartImage :src="account.image" class="rounded-l h-24 w-24" />
+            <div class="rounded-lg">
+              <SmartImage :src="account.image" class="rounded-lg h-12 w-12" />
             </div>
 
-            <div
-              class="rounded-tr rounded-br flex h-full bg-gray-200/50 w-full pl-4 items-center dark:bg-neutral-800/75"
-            >
+            <div class="rounded-tr rounded-br flex h-full">
               <div>
-                <h3
-                  class="font-medium text-lg text-gray-900 dark:text-neutral-300"
-                >
+                <h3 class="font-medium text-lg">
                   {{ account.name }}
                 </h3>
 
                 <span
-                  v-if="account.revealed == true"
-                  class="text-gray-800 dark:text-neutral-500"
-                >
-                  {{ account.iban }}
-                </span>
-
-                <span
-                  v-else
-                  class="cursor-pointer text-gray-800 dark:text-neutral-500 hover:underline"
+                  class="text-black/30 dark:text-white/30"
+                  :class="
+                    !account.revealed &&
+                    'hover:underline cursor-pointer select-none'
+                  "
                   @click="account.revealed = true"
                 >
-                  Click to reveal
+                  {{ account.revealed ? account.iban : "Click to Reveal" }}
                 </span>
               </div>
             </div>
