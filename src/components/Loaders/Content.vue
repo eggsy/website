@@ -75,15 +75,17 @@ export default Vue.extend({
     </div>
   </div>
 
-  <div v-else class="space-y-4 px-4 pt-14">
-    <h1 class="font-semibold text-2xl text-gray-900 dark:text-gray-100">
+  <div v-else class="space-y-6 pt-14">
+    <h1 class="font-semibold text-2xl text-black/90 dark:text-white/90">
       Gönderi yüklenemedi.
     </h1>
 
-    <p class="text-gray-700 dark:text-gray-300">
+    <p class="text-black/50 dark:text-white/30">
       Aradığınız gönderinin blogumda olduğuna, adreste bir yanlışlık olmadığına
       emin olun. Arama özelliğini kullanarak gönderiyi aratabilir, anasayfaya
       dönerek diğer gönderilerime ulaşabilirsiniz.
     </p>
+
+    <Button icon="IconBack" @click.native="$router.back()">Geri Dön</Button>
   </div>
 </template>

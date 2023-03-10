@@ -46,8 +46,11 @@ export default Vue.extend({
 
 <template>
   <div class="text-gray-500 dark:text-neutral-600">
-    <header class="space-y-2 my-12 px-4">
-      <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Repositories</h1>
+    <header class="space-y-2 my-12">
+      <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
+        Repositories
+      </h1>
+
       <p>My public projects on GitHub.</p>
     </header>
 

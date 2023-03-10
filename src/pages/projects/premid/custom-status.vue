@@ -344,7 +344,7 @@ export default Vue.extend({
       {{ getPresenceData }}
     </div>
 
-    <div class="space-y-12 px-4">
+    <div class="space-y-12">
       <div class="space-y-4">
         <BlogNotification v-if="presence.installed === false" type="danger">
           You need to install the Custom Status presence from the PreMiD Store
@@ -514,7 +514,7 @@ export default Vue.extend({
           <div>
             <Title :padding="false"> Buttons </Title>
 
-            <p class="text-sm text-gray-400 dark:text-gray-300">
+            <p class="text-sm text-black/50 dark:text-white/30 mt-4">
               You can't click your own buttons from your Discord profile. If
               they appear here, they should also be working for others, blame
               Discord.
@@ -599,7 +599,7 @@ export default Vue.extend({
         <div>
           <Title :padding="false"> Consider Donating! </Title>
 
-          <p class="text-gray-700 dark:text-gray-200">
+          <p class="text-black/50 text-sm dark:text-white/30 mt-4">
             If you want to support my work and make me create better systems in
             the future, you can donate me through GitHub Sponsors, please visit
             <SmartLink
@@ -615,7 +615,7 @@ export default Vue.extend({
           <div>
             <Title :padding="false"> How does it work? </Title>
 
-            <p class="text-gray-700 dark:text-gray-200">
+            <p class="text-black/50 text-sm dark:text-white/30 mt-4">
               When you add our Presence from Presence Store which is on
               <SmartLink
                 href="https://premid.app/store/presences/Custom%20Status"
@@ -631,7 +631,7 @@ export default Vue.extend({
           <div>
             <Title :padding="false"> It's not showing anything!? </Title>
 
-            <p class="text-gray-700 dark:text-gray-200">
+            <p class="text-black/50 text-sm dark:text-white/30 mt-4">
               If the system isn't working or it isn't displaying anything on
               your profile, it's most likely about you. Please check
               <SmartLink
@@ -653,7 +653,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 input,
 select {
-  @apply rounded-md bg-gray-200/40 py-2 px-4 ring-gray-200 ring-offset-2 ring-offset-gray-100 dark:(bg-neutral-700 text-gray-200 ring-offset-neutral-900 ring-neutral-700) focus:outline-none focus:(ring-1);
+  @apply bg-black/5 transition-colors dark:(bg-white/10 text-white/70 placeholder-white/30 focus:border-white/10) text-black/70 text-sm rounded-lg px-4  py-2 placeholder-black/50 outline-none focus:border-black/10 border border-transparent;
 
   &[type="time"] {
     @apply py-px px-2;
@@ -661,18 +661,18 @@ select {
 }
 
 .timestamp {
-  @apply bg-white rounded-md text-center p-2 ring-1 ring-gray-200 ring-offset-gray-100 ring-offset-2 select-none dark:(bg-neutral-700 ring-neutral-700 ring-offset-neutral-900);
+  @apply bg-black/5 flex items-center space-x-2 justify-center transition-colors dark:(bg-white/10 text-white/70 placeholder-white/30 focus:border-white/10) text-black/70 text-sm rounded-lg px-4  py-2 placeholder-black/50 outline-none focus:border-black/10 border border-transparent;
 
   &:not(.cursor-default) {
     @apply cursor-pointer;
   }
 
   &:not(.active) {
-    @apply text-gray-700 dark:text-gray-200;
+    @apply text-black/50 dark:text-white/70;
   }
 
   &.active {
-    @apply bg-green-500 dark:bg-green-700;
+    @apply bg-green-500 dark:(bg-green-700) text-white/90 drop-shadow-md;
   }
 }
 

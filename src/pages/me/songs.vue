@@ -69,8 +69,11 @@ export default Vue.extend({
 
 <template>
   <div class="text-gray-500 dark:text-neutral-600">
-    <header class="space-y-2 my-12 px-4">
-      <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Songs</h1>
+    <header class="space-y-2 my-12">
+      <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
+        Songs
+      </h1>
+
       <p>
         My latest activity on Last FM. Don't forget to check out my
         <SmartLink href="/daily" class="underline"
@@ -88,7 +91,7 @@ export default Vue.extend({
       <div>
         <Title class="mb-4">Details</Title>
 
-        <div class="grid px-4 gap-x-0 gap-y-4 md:gap-x-12 md:grid-cols-2">
+        <div class="grid gap-x-0 gap-y-4 md:gap-x-12 md:grid-cols-2">
           <!-- Profile -->
           <div class="flex space-x-4 items-center justify-between">
             <span>Profile</span>
@@ -141,7 +144,7 @@ export default Vue.extend({
       <div>
         <Title class="mb-4">Top Songs (last 7 days)</Title>
 
-        <div class="grid gap-2 md:grid-cols-2">
+        <div class="grid gap-x-4 gap-y-2 md:grid-cols-2">
           <CardLastFm
             v-for="song of lastFm.topTracks"
             :key="song.name"
@@ -158,7 +161,7 @@ export default Vue.extend({
       <div>
         <Title class="mb-4">Top Artists (last 7 days)</Title>
 
-        <div class="grid gap-2 md:grid-cols-2">
+        <div class="grid gap-x-4 gap-y-2 md:grid-cols-2">
           <CardLastFm
             v-for="artist of lastFm.topArtists"
             :key="artist.name"
@@ -173,7 +176,7 @@ export default Vue.extend({
       <div>
         <Title class="mb-4">Recent Songs</Title>
 
-        <div class="grid gap-2 md:grid-cols-2">
+        <div class="grid gap-x-4 gap-y-2 md:grid-cols-2">
           <CardLastFm
             v-for="song of lastFm.recentTracks"
             :key="song.name"

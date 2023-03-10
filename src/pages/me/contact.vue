@@ -67,9 +67,14 @@ export default Vue.extend({
 
 <template>
   <div class="text-gray-500 dark:text-neutral-600">
-    <header class="space-y-2 my-12 px-4">
-      <h1 class="text-gray-900 text-4xl dark:text-neutral-300">Contact</h1>
-      <p>If you have any questions, feel free to contact me.</p>
+    <header class="space-y-2 my-12">
+      <h1 class="text-black/90 dark:text-white/90 text-4xl font-semibold">
+        Contact
+      </h1>
+
+      <p class="text-black/50 dark:text-white/30">
+        If you have any questions, feel free to contact me.
+      </p>
     </header>
 
     <div class="grid gap-4 md:grid-cols-2">
@@ -84,7 +89,9 @@ export default Vue.extend({
           <IconBrand :brand="contact.icon" class="h-8 w-8" />
         </template>
 
-        {{ contact.description }}
+        <span class="text-black/50 dark:text-white/30">{{
+          contact.description
+        }}</span>
       </Card>
 
       <Card
