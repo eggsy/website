@@ -75,6 +75,14 @@ export default Vue.extend({
         },
         {
           section: "Navigation",
+          text: "Projects",
+          icon: "IconCog",
+          action: () => {
+            this.$router.push("/projects")
+          },
+        },
+        {
+          section: "Navigation",
           text: "Donate",
           icon: "IconDollar",
           action: () => {
