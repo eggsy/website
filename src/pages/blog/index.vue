@@ -16,6 +16,7 @@ export default Vue.extend({
       posts: [] as (Post[] & FetchReturn) | (Post[] & FetchReturn)[],
     }
   },
+  fetchOnServer: false,
   async fetch() {
     const posts = await this.$content("blog")
       .sortBy("createdAt", "desc")
@@ -82,7 +83,9 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="pt-12 space-y-10">
+  <LoadersBlog v-if="$fetchState.pending || $fetchState.error !== null" />
+
+  <div v-else class="mt-12 space-y-10">
     <section
       v-for="[year, posts] in getYearGroupedPosts"
       :key="year"
