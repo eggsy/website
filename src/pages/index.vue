@@ -31,29 +31,6 @@ export default Vue.extend({
       showModal: false,
       showExtraExperience: false,
       repos: [] as Repository[],
-      projects: [
-        {
-          title: "PreMiD",
-          to: "/projects/premid",
-          description:
-            "Simple, configurable utility that allows you to show what you're doing on the web in your Discord now playing status.",
-          icon: "PreMiD",
-        },
-        {
-          title: "This Website",
-          to: "/",
-          description:
-            "My personal website, blog, goals, daily songs and much more!",
-          icon: "website",
-        },
-        {
-          title: "Unblock Please",
-          to: "/projects/unblock-please",
-          description:
-            "Unblock Imgur and Pastebin access using secure proxies!",
-          icon: "UnblockPlease",
-        },
-      ] as Project[],
       experiences: {
         jobs: [
           {
@@ -172,6 +149,12 @@ export default Vue.extend({
             href: "/blog",
           },
           {
+            title: "Projects",
+            description:
+              "My projects and contributions to the open-source community.",
+            href: "/projects",
+          },
+          {
             title: "Daily Songs",
             description:
               "Fresh, cool and great song recommendations from me each day!",
@@ -189,13 +172,13 @@ export default Vue.extend({
         {
           title: "Development",
           items: [
-            { title: "TypeScript", color: "#3178c620" },
-            { title: "Vue.js", color: "#42b88320" },
-            { title: "React.js", color: "#61dafb20" },
-            { title: "HTML5", color: "#e34c2610" },
-            { title: "Tailwind CSS", color: "#38b2ac20" },
-            { title: "Node.js", color: "#33993320" },
-            { title: "Sass", color: "#CF649A10" },
+            "TypeScript",
+            "Vue.js",
+            "React.js",
+            "HTML5",
+            "Tailwind CSS",
+            "Node.js",
+            "Sass",
           ],
         },
         {
@@ -204,16 +187,13 @@ export default Vue.extend({
             {
               title: "VS Code",
               iconPack: "IconBrand",
-              color: "#0165A920",
             },
             {
               title: "Raycast",
-              color: "#FF515A20",
               image: "https://i.imgur.com/NBc0C4j.png",
             },
             {
               title: "Figma",
-              color: "#F24E1E10",
             },
           ],
         },
@@ -222,17 +202,14 @@ export default Vue.extend({
           items: [
             {
               title: "GitHub",
-              color: "#e8eaea10",
               iconPack: "IconBrand",
             },
             {
               title: "Firebase",
-              color: "#FFCA2820",
             },
             {
               title: "Netlify",
               iconPack: "IconBrand",
-              color: "#00C7B720",
             },
           ],
         },
@@ -246,7 +223,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="space-y-14 mb-10">
+  <div class="space-y-24 mb-10">
     <header
       class="rounded-md flex flex-col-reverse my-16 py-10 md:(flex-row items-center justify-between) justify-center"
     >
@@ -282,7 +259,7 @@ export default Vue.extend({
       </div>
     </header>
 
-    <section id="pages" class="my-16">
+    <section id="pages">
       <Title>Pages</Title>
 
       <div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -297,7 +274,7 @@ export default Vue.extend({
       </div>
     </section>
 
-    <section id="me" class="my-16">
+    <section id="me">
       <Title>Me</Title>
 
       <div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -312,35 +289,7 @@ export default Vue.extend({
       </div>
     </section>
 
-    <section id="projects">
-      <Title>Projects I currently work on</Title>
-
-      <div class="mt-4 grid gap-2 md:(gap-4 grid-cols-2)">
-        <Card
-          v-for="(project, index) in projects"
-          :key="`project-${index}`"
-          :href="project.to || project.href"
-          :title="project.title"
-          :description="project.description"
-          :blank="!!project.href"
-          class="h-full"
-        >
-          {{ project.description }}
-
-          <template v-if="project.icon" #icon>
-            <IconDev
-              :brand="project.icon"
-              class="rounded-full bg-gray-100 h-14 p-2 text-neutral-500 w-14 dark:(bg-neutral-800 text-white)"
-            />
-          </template>
-        </Card>
-      </div>
-    </section>
-
-    <section
-      id="experiences"
-      class="mt-4 grid gap-6 sm:mt-6 md:(md:mt-10 gap-8 grid-cols-2)"
-    >
+    <section id="experiences" class="grid gap-x-8 gap-y-24 md:grid-cols-2">
       <div>
         <div class="flex items-center gap-4 justify-between">
           <Title>Experience</Title>
@@ -392,7 +341,7 @@ export default Vue.extend({
       </div>
     </section>
 
-    <section id="technologies" class="mt-6">
+    <section id="technologies">
       <Title>Technologies I use</Title>
 
       <div class="flex flex-col space-y-6 mt-8">
@@ -409,7 +358,7 @@ export default Vue.extend({
             <CardSkill
               v-for="(skill, index) in category.items"
               :key="`skill-${index}`"
-              v-bind="skill"
+              v-bind="typeof skill === 'object' ? skill : { title: skill }"
             />
           </div>
         </section>
