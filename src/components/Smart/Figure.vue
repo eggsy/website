@@ -28,6 +28,11 @@ export default Vue.extend({
       required: false,
       default: false,
     },
+    zoomable: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
 })
 </script>
@@ -46,6 +51,7 @@ export default Vue.extend({
         imageClass,
         border && 'border border-black/10 dark:border-white/10',
       ]"
+      :data-zoomable="zoomable"
     />
 
     <figcaption v-if="caption" class="text-center">
@@ -53,3 +59,13 @@ export default Vue.extend({
     </figcaption>
   </figure>
 </template>
+
+<style>
+.medium-zoom-overlay {
+  @apply z-40;
+}
+
+.medium-zoom-image.medium-zoom-image--opened {
+  @apply z-50;
+}
+</style>

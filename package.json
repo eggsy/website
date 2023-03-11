@@ -51,6 +51,7 @@
     "core-js": "^3.28.0",
     "firebase": "^9.17.1",
     "lastfm-typed": "^2.1.0",
+    "medium-zoom": "^1.0.8",
     "moment-timezone": "^0.5.41",
     "nuxt": "^2.16.1",
     "nuxt-vite": "^0.3.5",

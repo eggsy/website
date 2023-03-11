@@ -1,5 +1,6 @@
 <script lang="ts">
 import Vue from "vue"
+import mediumZoom from "medium-zoom"
 
 /* Interfaces */
 import type { Post } from "~/src/types/Post"
@@ -22,26 +23,28 @@ export default Vue.extend({
       this.$route.params.slug
     ).fetch()) as Post
 
-    if (!post) this.$router.push("/blog")
-    else {
-      this.post = post
+    if (!post) {
+      this.$router.push("/blog")
+      return
+    }
 
-      if (post.related && post.related?.length > 0) {
-        const array = []
+    this.post = post
 
-        for (const key of post.related) {
-          const { title }: any = await this.$content("blog", key)
-            .only(["title"])
-            .fetch()
+    if (post.related?.length) {
+      const array = []
 
-          array.push({
-            title,
-            slug: key,
-          })
-        }
+      for (const key of post.related) {
+        const { title }: any = await this.$content("blog", key)
+          .only(["title"])
+          .fetch()
 
-        this.related = array
+        array.push({
+          title,
+          slug: key,
+        })
       }
+
+      this.related = array
     }
   },
   head() {
@@ -106,6 +109,25 @@ export default Vue.extend({
       ),
     }
   },
+  watch: {
+    $fetchState: {
+      handler(state) {
+        if (state.pending === true || state.error !== null) return
+        this.applyMediumZoom()
+      },
+      deep: true,
+    },
+  },
+  methods: {
+    async applyMediumZoom() {
+      await this.$nextTick()
+
+      mediumZoom("[data-zoomable]", {
+        margin: 20,
+        background: "#00000090",
+      })
+    },
+  },
   computed: {
     getTags(): string[] {
       return this.post?.tags || []
@@ -124,7 +146,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <transition name="fade">
+  <Transition name="fade">
     <LoadersContent
       v-if="$fetchState.pending === true || $fetchState.error !== null"
       :error="$fetchState.pending === false && $fetchState.error !== null"
@@ -237,7 +259,7 @@ export default Vue.extend({
         </div>
       </div>
     </div>
-  </transition>
+  </Transition>
 </template>
 
 <style lang="scss">
