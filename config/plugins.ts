@@ -4,7 +4,6 @@ const Plugins: NuxtOptionsPlugin[] = [
   "@/plugins/Util",
   "@/plugins/Types",
   "@/plugins/Disqus",
-  "@/plugins/MomentTimezone",
   {
     src: "@/plugins/CmdK",
     mode: "client",
