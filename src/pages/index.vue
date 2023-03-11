@@ -29,7 +29,10 @@ export default Vue.extend({
   data() {
     return {
       showModal: false,
-      showExtraExperience: false,
+      showExtra: {
+        jobs: false,
+        education: false,
+      },
       repos: [] as Repository[],
       experiences: {
         jobs: [
@@ -301,17 +304,18 @@ export default Vue.extend({
         <div class="flex items-center gap-4 justify-between">
           <Title>Experience</Title>
           <button
+            type="button"
             class="text-black/50 text-sm hover:underline dark:text-white/30"
-            @click="showExtraExperience = !showExtraExperience"
+            @click="showExtra.jobs = !showExtra.jobs"
           >
-            {{ showExtraExperience ? "show less" : "show more" }}
+            {{ showExtra.jobs ? "show less" : "show more" }}
           </button>
         </div>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
             v-for="(experience, index) in experiences.jobs"
-            v-show="experience.isHidden ? showExtraExperience : true"
+            v-show="experience.isHidden ? showExtra.jobs : true"
             :key="`experience-job-${index}`"
             :title="experience.title"
             :url="experience.url"
@@ -326,17 +330,18 @@ export default Vue.extend({
         <div class="flex items-center gap-4 justify-between">
           <Title>Education</Title>
           <button
+            type="button"
             class="text-black/50 text-sm hover:underline dark:text-white/30"
-            @click="showExtraExperience = !showExtraExperience"
+            @click="showExtra.education = !showExtra.education"
           >
-            {{ showExtraExperience ? "show less" : "show more" }}
+            {{ showExtra.education ? "show less" : "show more" }}
           </button>
         </div>
 
         <div class="mt-4 grid gap-2">
           <CardExperience
             v-for="(experience, index) in experiences.education"
-            v-show="experience.isHidden ? showExtraExperience : true"
+            v-show="experience.isHidden ? showExtra.education : true"
             :key="`experience-education-${index}`"
             :title="experience.title"
             :url="experience.url"
