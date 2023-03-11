@@ -7,7 +7,6 @@ tags:
   - haber
   - site
 related:
-  - blog-yenilendi
   - vue-nuxt-nedir
 ---
 
