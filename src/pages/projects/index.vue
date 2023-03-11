@@ -19,14 +19,14 @@ export default {
         client: "Ankara Büyükşehir Belediyesi",
         name: "Plant App",
         description:
-          "An app to display plant information that will be placed on a local museum of plants",
+          "An app to display plant information that will be placed on a local museum of plants.",
         image: "https://i.imgur.com/PmmO69d.png",
       },
       {
         note: "Acquired!",
         name: "Discord Server Templates",
         description:
-          "A website to browse Discord server templates and create your own",
+          "A website to browse Discord server templates and create your own.",
         image: "https://i.imgur.com/m64yr7b.jpg",
         buttons: [
           {
@@ -75,7 +75,7 @@ export default {
       {
         name: "Unblock Please",
         description:
-          "Free to use Chrome extension to unblock Imgur and Pastebin bans",
+          "Free to use Chrome extension to unblock Imgur and Pastebin restrictions.",
         image: "https://i.imgur.com/w5wLpFS.jpg",
         buttons: [
           {
@@ -93,7 +93,7 @@ export default {
       {
         name: "Lanyard Visualizer",
         description:
-          "A web app to visualize your Discord status with Lanyard API",
+          "A web app to visualize your Discord status with Lanyard API.",
         image: "https://i.imgur.com/XMfWJlL.jpg",
         buttons: [
           {
@@ -140,9 +140,9 @@ export default {
         ],
       },
       {
-        name: "Family-Feud Game",
+        name: "Family Feud Game",
         description:
-          "An interactive browser game with real-time (v2) connection to play within your community!",
+          "An interactive browser game with real-time (v2) remote control to play within your community!",
         image: "https://i.imgur.com/1sQQPPH.png",
         buttons: [
           {
@@ -160,7 +160,7 @@ export default {
       {
         name: "Movie App",
         description:
-          "A movie app built with TMDb API, Next.js and Tailwind CSS.",
+          "A movie website/app concept built with TMDb API, Next.js and Tailwind CSS.",
         image: "https://i.imgur.com/EQfaqte.jpg",
         buttons: [
           {
@@ -194,6 +194,7 @@ export default {
         ],
       },
       {
+        note: "You are here!",
         name: "eggsy.xyz",
         description:
           "My personal website, built with Nuxt.js, Windi CSS and Firebase!",
