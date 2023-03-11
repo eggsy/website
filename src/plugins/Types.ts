@@ -1,5 +1,4 @@
 /* Import plugin types */
-import type { MomentTimezone } from "moment-timezone"
 import type { PrepareMetaProps, Meta } from "./Utils/prepareMeta"
 import type { Song } from "./Firebase"
 
@@ -13,8 +12,8 @@ declare module "vue/types/vue" {
       { title, description, url, image, keywords }: PrepareMetaProps,
       rest?: any[]
     ): Meta[]
-    $momentTz: MomentTimezone
     $getTurkeyTime(): Date
+    $applyMediumZoom(selector?: string): void
   }
 }
 
@@ -27,8 +26,8 @@ declare module "@nuxt/types" {
       { title, description, url, image, keywords }: PrepareMetaProps,
       rest?: any[]
     ): Meta[]
-    $momentTz: MomentTimezone
     $getTurkeyTime(): Date
+    $applyMediumZoom(selector: string): void
   }
 
   interface Context {
@@ -39,7 +38,7 @@ declare module "@nuxt/types" {
       { title, description, url, image, keywords }: PrepareMetaProps,
       rest?: any[]
     ): Meta[]
-    $momentTz: MomentTimezone
     $getTurkeyTime(): Date
+    $applyMediumZoom(selector: string): void
   }
 }
