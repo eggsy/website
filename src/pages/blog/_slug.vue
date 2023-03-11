@@ -263,8 +263,12 @@ export default Vue.extend({
 </template>
 
 <style lang="scss">
-.dark .nuxt-content-highlight {
-  box-shadow: 0 0 0 100vmax #1b1917;
+.dark .prose .nuxt-content-highlight {
+  box-shadow: 0 0 0 100vmax #262626;
+
+  pre {
+    @apply bg-neutral-800;
+  }
 }
 
 .light .nuxt-content-highlight {
