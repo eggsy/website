@@ -247,6 +247,13 @@ export default Vue.extend({
             >
               <IconDev :brand="item" class="h-5 w-5" />
             </Button>
+
+            <Button
+              v-tippy="{ content: 'More', placement: 'bottom' }"
+              href="#technologies"
+            >
+              <IconEllipsis class="h-5 w-5" />
+            </Button>
           </div>
         </div>
       </div>
