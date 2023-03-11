@@ -111,21 +111,12 @@ export default Vue.extend({
   },
   watch: {
     $fetchState: {
-      handler(state) {
+      async handler(state) {
         if (state.pending === true || state.error !== null) return
-        this.applyMediumZoom()
+        await this.$nextTick()
+        this.$applyMediumZoom()
       },
       deep: true,
-    },
-  },
-  methods: {
-    async applyMediumZoom() {
-      await this.$nextTick()
-
-      mediumZoom("[data-zoomable]", {
-        margin: 20,
-        background: "#00000090",
-      })
     },
   },
   computed: {

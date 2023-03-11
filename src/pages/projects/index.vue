@@ -209,6 +209,9 @@ export default {
       },
     ],
   }),
+  mounted() {
+    this.$applyMediumZoom()
+  },
 }
 </script>
 
