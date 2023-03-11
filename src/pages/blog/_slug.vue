@@ -1,6 +1,5 @@
 <script lang="ts">
 import Vue from "vue"
-import mediumZoom from "medium-zoom"
 
 /* Interfaces */
 import type { Post } from "~/src/types/Post"
