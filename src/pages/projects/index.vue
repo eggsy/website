@@ -23,6 +23,13 @@ export default {
         image: "https://i.imgur.com/PmmO69d.png",
       },
       {
+        client: "Historia Mall",
+        name: "Historia Floor Plan",
+        description:
+          "A floor plan kiosk app for Historia Shopping and Life Center in Fatih, Istanbul.",
+        image: "https://i.imgur.com/gwxvO4o.jpg",
+      },
+      {
         note: "Acquired!",
         name: "Discord Server Templates",
         description:
