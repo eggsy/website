@@ -217,11 +217,25 @@ export default Vue.extend({
           ],
         },
       ],
+      currentSection: null
     }
   },
   head: {
     title: "Home",
   },
+  methods: {
+    scrollToSection(id: string) {
+      const section = document.querySelector(id)
+
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" })
+        if (this.currentSection === id)
+          this.currentSection = null
+        // @ts-ignore-next-line
+        else this.currentSection = id
+      }
+    }
+  }
 })
 </script>
 
