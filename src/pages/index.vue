@@ -267,7 +267,7 @@ export default Vue.extend({
 
             <Button
               v-tippy="{ content: 'More', placement: 'bottom' }"
-              href="#technologies"
+              @click.native="scrollToSection('#technologies')"
             >
               <IconEllipsis class="h-5 w-5" />
             </Button>
