@@ -222,6 +222,18 @@ export default Vue.extend({
   head: {
     title: "Home",
   },
+  methods: {
+    async scrollToSection(id: string) {
+      if (this.$route.hash === id)
+        await this.$router.replace({
+          hash: "",
+        })
+
+      await this.$router.replace({
+        hash: id,
+      })
+    },
+  },
 })
 </script>
 
@@ -253,7 +265,7 @@ export default Vue.extend({
 
             <Button
               v-tippy="{ content: 'More', placement: 'bottom' }"
-              href="#technologies"
+              @click.native="scrollToSection('#technologies')"
             >
               <IconEllipsis class="h-5 w-5" />
             </Button>
