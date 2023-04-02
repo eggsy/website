@@ -217,25 +217,23 @@ export default Vue.extend({
           ],
         },
       ],
-      currentSection: null
     }
   },
   head: {
     title: "Home",
   },
   methods: {
-    scrollToSection(id: string) {
-      const section = document.querySelector(id)
+    async scrollToSection(id: string) {
+      if (this.$route.hash === id)
+        await this.$router.replace({
+          hash: "",
+        })
 
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" })
-        if (this.currentSection === id)
-          this.currentSection = null
-        // @ts-ignore-next-line
-        else this.currentSection = id
-      }
-    }
-  }
+      await this.$router.replace({
+        hash: id,
+      })
+    },
+  },
 })
 </script>
 
