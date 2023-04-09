@@ -91,7 +91,7 @@ export default Vue.extend({
     <div class="rounded card-base gap-6 flex flex-col md:flex-row">
       <SmartImage
         :src="`https://http.cat/${error.statusCode}.jpg`"
-        class="rounded w-full md:w-80"
+        class="rounded w-full md:w-80 flex-shrink-0"
       />
 
       <div class="space-y-6 whitespace-normal">
