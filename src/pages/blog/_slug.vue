@@ -148,38 +148,38 @@ export default Vue.extend({
           <NuxtImg
             v-if="post.header"
             :src="post.header"
-            class="h-30 w-full ring-1 dark:ring-white/10 ring-black/10 hover:object-bottom object-top duration-2000 transition-all object-cover rounded-lg"
+            class="object-cover object-top w-full transition-all rounded-lg h-30 ring-1 dark:ring-white/10 ring-black/10 hover:object-bottom duration-2000"
             alt="Post header"
           />
 
           <div class="space-y-4">
             <div
-              class="flex items-center justify-center gap-x-6 gap-y-2 flex-wrap dark:text-white/30 text-black/50 sm:text-sm"
+              class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 dark:text-white/30 text-black/50 sm:text-sm"
             >
               <div class="flex items-center space-x-2">
-                <IconCalendar class="h-4 w-4" />
+                <IconCalendar class="w-4 h-4" />
                 <span>{{ getReadableDate }}</span>
               </div>
 
               <div class="flex items-center space-x-2">
-                <IconTag class="h-4 w-4" />
+                <IconTag class="w-4 h-4" />
                 <span>{{ getTags.join(" － ") }}</span>
               </div>
 
               <div class="flex items-center space-x-2">
-                <IconEye class="h-4 w-4" />
+                <IconEye class="w-4 h-4" />
                 <span>{{ getReadingTime }} dakika okuma</span>
               </div>
             </div>
 
             <div class="space-y-2">
               <h1
-                class="block text-2xl md:w-11/12 mx-auto font-bold text-black sm:text-4xl dark:text-white"
+                class="block mx-auto text-2xl font-bold text-black md:w-11/12 sm:text-4xl dark:text-white"
               >
                 {{ post.title }}
               </h1>
 
-              <p class="text-black/50 md:w-9/12 mx-auto dark:text-white/50">
+              <p class="mx-auto text-black/50 md:w-9/12 dark:text-white/50">
                 {{ post.description }}
               </p>
             </div>
@@ -207,7 +207,10 @@ export default Vue.extend({
 
           <BlogTableOfContents :toc="post.toc" />
 
-          <NuxtContent :document="post" class="max-w-full prose prose-blue" />
+          <NuxtContent
+            :document="post"
+            class="max-w-full prose prose-black dark:prose-light"
+          />
         </div>
       </article>
 
@@ -223,7 +226,7 @@ export default Vue.extend({
 
       <div class="mt-16 space-y-10">
         <div v-if="getRelatedPosts.length > 0" class="space-y-2">
-          <h3 class="dark:text-white/30 text-black/50 text-sm">
+          <h3 class="text-sm dark:text-white/30 text-black/50">
             Benzer Gönderiler
           </h3>
 
@@ -234,14 +237,14 @@ export default Vue.extend({
               :to="`/blog/${relatedPost.slug}`"
               class="rounded-lg border-[0.1px] p-4 bg-opacity-25 bg-neutral-300 border-neutral-200 dark:(bg-neutral-800/30 border-neutral-800) flex items-center space-x-2 hover:bg-opacity-40 transition-colors dark:text-white/80 dark:hover:text-white transition-colors"
             >
-              <IconDocument class="h-4 w-4" />
+              <IconDocument class="w-4 h-4" />
               <span class="truncate">{{ relatedPost.title }}</span>
             </NuxtLink>
           </div>
         </div>
 
         <div class="space-y-2">
-          <h3 class="dark:text-white/30 text-black/50 text-sm">
+          <h3 class="text-sm dark:text-white/30 text-black/50">
             Okumaya Devam Et
           </h3>
 

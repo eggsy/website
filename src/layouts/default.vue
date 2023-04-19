@@ -163,7 +163,7 @@ export default Vue.extend({
     <Navbar class="pt-10" />
 
     <!-- Nuxt component -->
-    <main class="container mx-auto min-h-screen max-w-screen-lg pb-8">
+    <main class="container max-w-screen-lg min-h-screen pb-8 mx-auto">
       <Nuxt />
     </main>
 
@@ -176,7 +176,7 @@ export default Vue.extend({
         <component
           :is="icon.split(':')[0]"
           :brand="icon.split(':')[1]"
-          class="h-4 w-4"
+          class="w-4 h-4"
         />
       </template>
     </CommandMenu>
