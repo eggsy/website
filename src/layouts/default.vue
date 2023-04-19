@@ -163,7 +163,9 @@ export default Vue.extend({
     <Navbar class="pt-10" />
 
     <!-- Nuxt component -->
-    <Nuxt class="container mx-auto min-h-screen max-w-screen-lg pb-8" />
+    <main class="container mx-auto min-h-screen max-w-screen-lg pb-8">
+      <Nuxt />
+    </main>
 
     <!-- Footer -->
     <Footer />
