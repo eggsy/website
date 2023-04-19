@@ -20,7 +20,7 @@ export default Vue.extend({
 
 <template>
   <nav class="w-full">
-    <div class="container mx-auto w-11/12 relative sm:w-9/12 md:w-7/12">
+    <div class="container max-w-screen-lg mx-auto relative">
       <div class="flex items-center gap-6 justify-between">
         <SmartLink
           :href="getTargetLink"
