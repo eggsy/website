@@ -20,7 +20,7 @@ export default Vue.extend({
   <div
     class="bg-gray-100 text-sm w-full py-4 text-black/50 dark:(bg-white/5 text-white/30)"
   >
-    <div class="mx-auto max-w-screen-lg">
+    <div class="responsive-screen">
       <div class="space-y-4 text-center sm:(space-y-0 space-x-6 text-left)">
         <SmartLink
           href="https://github.com/eggsy/website"

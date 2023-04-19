@@ -29,6 +29,7 @@ export default defineConfig({
     },
   },
   shortcuts: {
+    "responsive-screen": "max-w-screen-lg mx-auto px-6 md:px-0",
     "focus-ring":
       "ring-offset-2 light:(ring-offset-gray-50 ring-gray-300) focus:outline-none focus:ring-1 dark:focus:(ring-offset-neutral-900 ring-neutral-800)",
     "card-base":
