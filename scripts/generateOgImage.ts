@@ -81,14 +81,14 @@ export const generateImage = async ({
               {
                 type: "h1",
                 props: {
-                  style: { fontSize: 70, fontWeight: 600, marginBottom: 0 },
+                  style: { fontSize: 60, fontWeight: 600, marginBottom: 0 },
                   children: title,
                 },
               },
               {
                 type: "p",
                 props: {
-                  style: { fontSize: 45, color: "rgba(0, 0, 0, 0.5)" },
+                  style: { fontSize: 35, color: "rgba(0, 0, 0, 0.5)" },
                   children: description,
                 },
               },
@@ -98,7 +98,7 @@ export const generateImage = async ({
                   style: {
                     display: "flex",
                     marginTop: 12,
-                    fontSize: 35,
+                    fontSize: 25,
                   },
                   children:
                     subtitles?.map((item, index) => ({
