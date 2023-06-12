@@ -37,6 +37,12 @@ export default Vue.extend({
       experiences: {
         jobs: [
           {
+            title: "Voco Inc.",
+            url: "https://vocoapp.com",
+            position: "Web Developer",
+            date: "2023-",
+          },
+          {
             title: "Google Developer Student Clubs",
             url: "https://gdsc.community.dev/mus-alparslan-universitesi",
             position: "Core Team Member",
