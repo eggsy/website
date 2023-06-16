@@ -145,10 +145,10 @@ export default Vue.extend({
     <div v-else class="pt-4 mt-10">
       <article>
         <header class="space-y-8 leading-relaxed text-center mb-18">
-          <NuxtImg
+          <img
             v-if="post.header"
             :src="post.header"
-            class="object-cover object-top w-full transition-all rounded-lg h-30 ring-1 dark:ring-white/10 ring-black/10 hover:object-bottom duration-2000"
+            class="object-cover object-top w-full transition-all rounded-lg h-30 ring-1 dark:ring-white/10 ring-black/10 hover:h-90 hover:object-center duration-1000"
             alt="Post header"
           />
 
