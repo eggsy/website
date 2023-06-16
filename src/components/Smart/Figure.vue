@@ -39,8 +39,7 @@ export default Vue.extend({
 
 <template>
   <figure class="w-full h-full overflow-hidden">
-    <component
-      :is="src.endsWith('.gif') ? 'img' : 'nuxt-img'"
+    <img
       :src="src"
       :alt="alt || caption || 'image'"
       loading="lazy"

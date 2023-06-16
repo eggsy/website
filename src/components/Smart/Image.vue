@@ -52,7 +52,7 @@ export default Vue.extend({
   data() {
     return {
       error: false,
-      loaded: false,
+      loaded: true,
     }
   },
   computed: {
@@ -61,28 +61,9 @@ export default Vue.extend({
      */
     getBackgroundUrl(): string {
       if (this.error === true || !this.src) return "/icon.png"
-      else if (this.optimize === false)
-        return this.getProxifiedImageUrl(this.src)
+      else if (this.optimize === false) return this.src
 
-      const { format, height, width, fit, src } = this
-
-      const options: {
-        format?: string
-        fit?: string
-        height?: number
-        width?: number
-      } = {}
-
-      if (format) options.format = format
-      if (fit) options.fit = fit
-      if (height) options.height = parseInt(height)
-      if (width) options.width = parseInt(width)
-
-      const proxiedImage = this.getProxifiedImageUrl(src)
-
-      if (this.$route.path === "/projects/premid/custom-status")
-        return proxiedImage
-      else return this.$img(proxiedImage, options)
+      return this.getProxifiedImageUrl(this.src)
     },
   },
   methods: {
@@ -123,7 +104,7 @@ export default Vue.extend({
     :failed-image-url="error && src"
   >
     <img
-      :src="getBackgroundUrl || src"
+      :src="getBackgroundUrl"
       :alt="alt || caption || title || 'image'"
       :width="width"
       :height="height"
