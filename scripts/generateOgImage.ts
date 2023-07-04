@@ -54,7 +54,8 @@ export const generateImage = async ({
           justifyContent: "flex-end",
           backgroundColor: "#fff",
           borderRadius: 24,
-          backgroundImage: "url(https://i.imgur.com/9CddUS8.png)",
+          backgroundImage:
+            "url(https://raw.githubusercontent.com/eggsy/website/main/src/static/assets/meta/images/post-background.png)",
         },
         children: {
           type: "div",
@@ -75,7 +76,7 @@ export const generateImage = async ({
                   width: 80,
                   style: {
                     marginBottom: 12,
-                  }
+                  },
                 },
               },
               {
