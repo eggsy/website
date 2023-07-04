@@ -13,6 +13,16 @@ export interface Meta {
   content: string
 }
 
+const defaultKeywords = [
+  "technology",
+  "turkish",
+  "developer",
+  "portfolio",
+  "vue",
+  "nuxt",
+  "tailwindcss",
+]
+
 /**
  * Simple meta tag provider that accepts some parameters and returns a whole meta.
  * @param {{
@@ -76,16 +86,6 @@ export default function prepareMeta(
         content: image,
       }
     )
-
-  const defaultKeywords = [
-    "technology",
-    "turkish",
-    "developer",
-    "portfolio",
-    "vue",
-    "nuxt",
-    "tailwindcss",
-  ]
 
   if (keywords)
     meta.push({
