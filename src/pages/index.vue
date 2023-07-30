@@ -62,7 +62,6 @@ export default Vue.extend({
           },
           {
             title: "IZM Game Studios",
-            url: "https://izmgamestudios.com",
             position: "Solution Partner",
             date: "2020-2021",
             isHidden: true,
