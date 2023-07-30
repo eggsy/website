@@ -49,8 +49,8 @@ export default Vue.extend({
             date: "2022-",
           },
           {
-            title: "EskiYeni Academy Theater",
-            url: "https://eskiyenitiyatro.com",
+            title: "KUKA Theater Associacion",
+            url: "https://kukasahne.com",
             position: "Web Developer & Social Media Manager",
             date: "2022-",
           },
