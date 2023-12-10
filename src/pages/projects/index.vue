@@ -16,6 +16,12 @@ export default {
   data: () => ({
     projects: [
       {
+        client: "Muş Alparslan University",
+        name: "MAUN Mobile",
+        description: "Mobile application for Mus Alparslan University.",
+        image: "https://i.imgur.com/4xRqunq.png",
+      },
+      {
         client: "Ankara Büyükşehir Belediyesi",
         name: "Plant App",
         description:
