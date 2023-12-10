@@ -40,19 +40,19 @@ export default Vue.extend({
             title: "Voco Inc.",
             url: "https://vocoapp.com",
             position: "Web Developer",
-            date: "2023-",
+            date: "2023-present",
           },
           {
             title: "Google Developer Student Clubs",
             url: "https://gdsc.community.dev/mus-alparslan-universitesi",
             position: "Core Team Member",
-            date: "2022-",
+            date: "2022-present",
           },
           {
-            title: "KUKA Theater Associacion",
+            title: "KUKA Theater Association",
             url: "https://kukasahne.com",
             position: "Web Developer & Social Media Manager",
-            date: "2022-",
+            date: "2022-2023",
           },
           {
             title: "Discord Templates",
@@ -105,7 +105,7 @@ export default Vue.extend({
             title: "Muş Alparslan University",
             url: "http://alparslan.edu.tr/",
             position: "English Language Teaching",
-            date: "2020-",
+            date: "2020-present",
           },
           {
             title: "Goce Delchev University",
