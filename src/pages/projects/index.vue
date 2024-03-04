@@ -16,6 +16,20 @@ export default {
   data: () => ({
     projects: [
       {
+        client: "Japan",
+        name: "SWY35 Message Board",
+        description:
+          "A private social media platform for SWY35 participants. Built with Next.js, Firebase and Tailwind CSS.",
+        image: "https://i.imgur.com/swrQwS1.png",
+        buttons: [
+          {
+            text: "Video",
+            link: "https://youtu.be/T8YuEpy3sxw",
+            icon: "IconPlay",
+          },
+        ],
+      },
+      {
         client: "Muş Alparslan University",
         name: "MAUN Mobile",
         description: "Mobile application for Mus Alparslan University.",
@@ -34,6 +48,20 @@ export default {
         description:
           "A floor plan kiosk app for Historia Shopping and Life Center in Fatih, Istanbul.",
         image: "https://i.imgur.com/gwxvO4o.jpg",
+      },
+      {
+        client: "GDSC Solution Challenge 2023",
+        name: "Recyling Platform",
+        description:
+          "A platform to help people recycle and be responsible consumers for the good of our environment.",
+        image: "https://i.imgur.com/K0UmgZw.jpeg",
+        buttons: [
+          {
+            text: "Visit",
+            link: "https://recycling.is-important.net/",
+            icon: "IconLink",
+          },
+        ],
       },
       {
         note: "Acquired!",
