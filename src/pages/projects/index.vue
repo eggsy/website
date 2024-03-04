@@ -168,14 +168,14 @@ export default {
         ],
       },
       {
-        client: "EskiYeni Akademi Tiyatrosu",
-        name: "EskiYeni Tiyatro Website",
+        client: "Kuka Sahne",
+        name: "Kuka Sahne Website",
         description: "A website for a local theatre company.",
-        image: "https://i.imgur.com/e09bbgr.jpg",
+        image: "https://i.imgur.com/uUb3Psk.jpeg",
         buttons: [
           {
             text: "Visit",
-            link: "https://eskiyenitiyatro.com",
+            link: "https://kukasahne.com",
             icon: "IconLink",
           },
         ],
