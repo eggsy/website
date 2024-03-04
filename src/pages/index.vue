@@ -248,14 +248,23 @@ export default Vue.extend({
       class="rounded-md flex flex-col-reverse my-16 py-10 md:(flex-row items-center justify-between) justify-center"
     >
       <div class="md:w-8/12">
-        <div class="space-y-6">
-          <Status class="mt-4 flex justify-center md:justify-start" />
+        <div class="space-y-8">
+          <div class="lg:space-y-4">
+            <h1
+              class="font-semibold text-center text-lg md:(text-xl text-left) text-black/50 dark:text-white/50"
+            >
+              Hi, I am
+              <span class="text-black/90 dark:text-white/90"
+                >Abdulbaki Dursun</span
+              >
+            </h1>
 
-          <h1
-            class="font-semibold text-center text-4xl md:(text-6xl text-left) text-black/90 leading-normal dark:text-white/90"
-          >
-            Full-stack web developer
-          </h1>
+            <h1
+              class="font-semibold text-center text-4xl md:(text-6xl text-left) text-black/90 leading-normal dark:text-white/90"
+            >
+              Full-stack web developer
+            </h1>
+          </div>
 
           <div
             class="flex items-center justify-center md:justify-start gap-x-3 gap-y-2 flex-wrap"
@@ -280,8 +289,8 @@ export default Vue.extend({
 
       <div class="rounded-full mx-auto mb-4 md:mb-0">
         <SmartImage
-          src="/assets/images/memoji.png"
-          class="rounded-full h-40 w-40"
+          src="/assets/images/picture.png"
+          class="rounded-full h-50 w-50"
         />
       </div>
     </header>
