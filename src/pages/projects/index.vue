@@ -34,6 +34,18 @@ export default {
         name: "MAUN Mobile",
         description: "Mobile application for Mus Alparslan University.",
         image: "https://i.imgur.com/4xRqunq.png",
+        buttons: [
+          {
+            text: "App Store",
+            link: "https://apps.apple.com/app/id6473739177",
+            icon: "IconLink",
+          },
+          {
+            text: "Play Store",
+            link: "https://play.google.com/store/apps/details?id=com.maun.mobile",
+            icon: "IconLink",
+          },
+        ],
       },
       {
         client: "Ankara Büyükşehir Belediyesi",
