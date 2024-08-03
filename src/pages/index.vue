@@ -37,16 +37,16 @@ export default Vue.extend({
       experiences: {
         jobs: [
           {
-            title: "Google Developer Student Clubs",
-            url: "https://gdsc.community.dev/mus-alparslan-universitesi",
-            position: "Core Team Member",
-            date: "2022-present",
-          },
-          {
             title: "Voco Inc.",
             url: "https://vocoapp.com",
             position: "Web Developer",
             date: "2023-2024",
+          },
+          {
+            title: "Google Developer Student Clubs",
+            url: "https://gdsc.community.dev/mus-alparslan-universitesi",
+            position: "Core Team Member",
+            date: "2022-2024",
           },
           {
             title: "KUKA Theater Association",
@@ -105,7 +105,7 @@ export default Vue.extend({
             title: "Muş Alparslan University",
             url: "http://alparslan.edu.tr/",
             position: "English Language Teaching",
-            date: "2020-present",
+            date: "2020-2024",
           },
           {
             title: "Goce Delchev University",
