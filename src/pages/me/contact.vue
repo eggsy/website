@@ -36,7 +36,6 @@ export default Vue.extend({
         discord: "Join my Discord server!",
         twitter: "Follow me on Twitter!",
         github: "Follow me on GitHub!",
-        instagram: "Follow me on Instagram!",
         trello: "View my Trello board!",
         linkedIn: "Connect with me on LinkedIn!",
       }

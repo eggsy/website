@@ -28,6 +28,7 @@ interface ExperienceObject {
 export default Vue.extend({
   data() {
     return {
+      animateText: false,
       showModal: false,
       showExtra: {
         jobs: false,
@@ -36,6 +37,12 @@ export default Vue.extend({
       repos: [] as Repository[],
       experiences: {
         jobs: [
+          {
+            title: "Turkish Airlines",
+            url: "https://www.turkishairlines.com",
+            position: "Cabin Attendant",
+            date: "2024-Present",
+          },
           {
             title: "Voco Inc.",
             url: "https://vocoapp.com",
@@ -47,12 +54,14 @@ export default Vue.extend({
             url: "https://gdsc.community.dev/mus-alparslan-universitesi",
             position: "Core Team Member",
             date: "2022-2024",
+            isHidden: true,
           },
           {
             title: "KUKA Theater Association",
             url: "https://kukasahne.com",
             position: "Web Developer & Social Media Manager",
             date: "2022-2023",
+            isHidden: true,
           },
           {
             title: "Discord Templates",
@@ -238,60 +247,97 @@ export default Vue.extend({
         hash: id,
       })
     },
+    textAnimationInit() {
+      setTimeout(() => {
+        this.animateText = true
+      }, 300)
+    },
   },
 })
 </script>
 
 <template>
   <div class="space-y-24 mb-10">
-    <header
-      class="rounded-md flex flex-col-reverse my-16 py-10 md:(flex-row items-center justify-between) justify-center"
-    >
-      <div class="md:w-8/12">
-        <div class="space-y-8">
-          <div class="lg:space-y-4">
-            <h1
-              class="font-semibold text-center text-lg md:(text-xl text-left) text-black/50 dark:text-white/50"
-            >
-              Hi, I am
-              <span class="text-black/90 dark:text-white/90"
-                >Abdulbaki Dursun</span
+    <header class="my-16 py-10 space-y-8">
+      <div
+        class="flex flex-col-reverse md:(flex-row items-center justify-between) justify-center"
+      >
+        <div class="md:w-8/12">
+          <div class="space-y-8">
+            <div class="space-y-4">
+              <h1
+                class="font-semibold text-center text-lg md:(text-xl text-left) text-black/50 dark:text-white/50"
               >
-            </h1>
+                Hi, I am
+                <span class="text-black/90 dark:text-white/90"
+                  >Abdulbaki Dursun</span
+                >
+              </h1>
 
-            <h1
-              class="font-semibold text-center text-4xl md:(text-6xl text-left) text-black/90 leading-normal dark:text-white/90"
-            >
-              Full-stack web developer
-            </h1>
+              <h1
+                class="font-semibold text-center text-4xl md:(text-6xl text-left) text-black/90 dark:text-white/90"
+              >
+                <RoughNotation
+                  is-show
+                  type="strike-through"
+                  multiline
+                  @init="textAnimationInit"
+                >
+                  <span
+                    class="transition-opacity duration-1000"
+                    :class="animateText && 'opacity-30'"
+                  >
+                    Full-stack web developer
+                  </span>
+                </RoughNotation>
+              </h1>
+
+              <h3
+                class="font-semibold justify-center text-xl items-center transition-opacity duration-1000 flex gap-2 text-center md:(text-2xl text-left justify-start) text-[#fde047] dark:text-dark-200"
+                :class="animateText ? 'opacity-100' : 'opacity-30'"
+              >
+                <div
+                  class="flex flex-col items-end text-[10px] text-black/50 dark:text-white/50"
+                >
+                  <span>curr</span>
+                  <span>ently</span>
+                </div>
+
+                <RoughNotation :is-show="animateText" type="highlight">
+                  <span class="text-black/90 dark:text-white/90 px-2">
+                    Cabin Attendant
+                  </span>
+                </RoughNotation>
+              </h3>
+            </div>
           </div>
+        </div>
 
-          <div
-            class="flex items-center justify-center md:justify-start gap-x-3 gap-y-2 flex-wrap"
-          >
-            <Button
-              v-for="item in ['TypeScript', 'Vue.js', 'React.js']"
-              :key="item"
-              class="inline-block"
-            >
-              <IconDev :brand="item" class="h-5 w-5" />
-            </Button>
-
-            <Button
-              v-tippy="{ content: 'More', placement: 'bottom' }"
-              @click.native="scrollToSection('#technologies')"
-            >
-              <IconEllipsis class="h-5 w-5" />
-            </Button>
-          </div>
+        <div class="rounded-full mx-auto mb-4 md:mb-0">
+          <SmartImage
+            src="/assets/images/picture.png"
+            class="rounded-full h-50 w-50"
+          />
         </div>
       </div>
 
-      <div class="rounded-full mx-auto mb-4 md:mb-0">
-        <SmartImage
-          src="/assets/images/picture.png"
-          class="rounded-full h-50 w-50"
-        />
+      <div
+        class="flex items-center justify-center md:justify-start gap-x-3 gap-y-2 flex-wrap"
+      >
+        <Button
+          v-for="item in ['TypeScript', 'Vue.js', 'React.js']"
+          :key="item"
+          class="inline-block"
+        >
+          <IconDev :brand="item" class="h-5 w-5" />
+        </Button>
+
+        <Button
+          v-tippy="{ content: 'More', placement: 'bottom' }"
+          @click.native="scrollToSection('#technologies')"
+        >
+          <IconEllipsis class="h-5 w-5" />
+        </Button>
       </div>
     </header>
 

@@ -9,6 +9,10 @@ const Plugins: NuxtOptionsPlugin[] = [
     mode: "client",
   },
   {
+    src: "@/plugins/Notation",
+    mode: "client",
+  },
+  {
     src: "@/plugins/Lanyard",
     mode: "client",
   },
