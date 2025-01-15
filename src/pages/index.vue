@@ -50,18 +50,20 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="min-h-[calc(100vh-11rem)] flex items-center justify-center">
-    <div class="container mx-auto px-4 flex items-center gap-8">
+  <div
+    class="min-h-[calc(100vh-11rem)] flex flex-col my-24 md:my-0 items-center justify-center container mx-auto px-4"
+  >
+    <div class="flex items-center gap-8">
       <div
         class="hidden dark:block absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-3"
       >
         <SquaresBackground direction="diagonal" :speed="0.3" :sqaure-size="5" />
       </div>
 
-      <div class="flex flex-col gap-4 w-2/12 z-10">
+      <div class="hidden md:flex flex-col gap-4 w-2/12 z-10">
         <Card
           v-for="(card, index) in cards.slice(0, 3)"
-          :key="`card-m-${index}`"
+          :key="`card-ml-${index}`"
           :title="card.title"
           :href="card.href"
           class="w-28 flex items-center justify-center transform hover:scale-105 transition-all !dark:bg-[#1B1B1B] !dark:hover:bg-[#1D1D1D]"
@@ -142,10 +144,10 @@ export default Vue.extend({
         </div>
       </header>
 
-      <div class="flex flex-col gap-4 w-2/12 z-10">
+      <div class="hidden md:flex flex-col gap-4 w-2/12 z-10">
         <Card
           v-for="(card, index) in cards.slice(3, 6)"
-          :key="`card-m-${index}`"
+          :key="`card-mr-${index}`"
           :title="card.title"
           :href="card.href"
           class="w-28 flex items-center justify-center transform hover:scale-105 transition-all !dark:bg-[#1B1B1B] !dark:hover:bg-[#1D1D1D]"
@@ -174,6 +176,31 @@ export default Vue.extend({
           </template>
         </Card>
       </div>
+    </div>
+
+    <div class="grid md:hidden grid-cols-2 gap-4 w-full mt-24 z-10">
+      <Card
+        v-for="(card, index) in cards"
+        :key="`card-m-${index}`"
+        :title="card.title"
+        :href="card.href"
+        class="w-full flex items-center justify-center !dark:bg-[#1B1B1B] !dark:hover:bg-[#1D1D1D]"
+      >
+        <template #title>
+          <div class="flex flex-col gap-2 items-center">
+            <component v-if="card.icon" :is="card.icon" class="h-8 w-8" />
+
+            <component
+              v-else-if="card.iconPack"
+              :is="card.iconPack"
+              v-bind="card"
+              class="h-8 w-8"
+            />
+
+            {{ card.title }}
+          </div>
+        </template>
+      </Card>
     </div>
   </div>
 </template>
