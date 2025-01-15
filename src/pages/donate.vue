@@ -9,14 +9,6 @@ export default Vue.extend({
   data() {
     return {
       sponsors: [] as ISponsor[],
-      accounts: [
-        {
-          image: "https://i.imgur.com/cxiXNEb.jpg",
-          name: "Papara",
-          iban: "8664721806",
-          revealed: false,
-        },
-      ],
     }
   },
   fetchOnServer: false,
@@ -79,10 +71,7 @@ export default Vue.extend({
 <template>
   <PageLayout
     title="Donate"
-    :description="[
-      'If you like my projects and/or what I do and you want to contribute, make me happy, you can donate to me with the information on this page! Thank you ♥',
-      `P.S. Use 'Abdulbaki Dursun' as the name of your transactions.`,
-    ]"
+    description="If you like my projects and/or what I do and you want to contribute, make me happy, you can donate to me with the information on this page! Thank you ♥"
     class="space-y-12"
   >
     <section class="space-y-4">
@@ -107,7 +96,7 @@ export default Vue.extend({
           <SkeletonLoader
             v-if="$fetchState.pending"
             type="spinner"
-            class="w-full py-4"
+            class="w-full md:(w-max py-0) py-4"
           />
 
           <p v-else-if="$fetchState.error !== null">An error occured.</p>
@@ -136,41 +125,6 @@ export default Vue.extend({
             />
           </div>
         </transition>
-      </div>
-    </section>
-
-    <section class="space-y-4">
-      <Title>Bank Accounts</Title>
-
-      <div class="grid gap-4">
-        <div
-          v-for="(account, index) in accounts"
-          :key="`account-${index}`"
-          class="flex h-full space-x-4 items-center rounded-lg card-base"
-        >
-          <div class="rounded-lg">
-            <SmartImage :src="account.image" class="rounded-lg h-12 w-12" />
-          </div>
-
-          <div class="rounded-tr rounded-br flex h-full">
-            <div>
-              <h3 class="font-medium text-lg">
-                {{ account.name }}
-              </h3>
-
-              <span
-                class="text-black/30 dark:text-white/30"
-                :class="
-                  !account.revealed &&
-                  'hover:underline cursor-pointer select-none'
-                "
-                @click="account.revealed = true"
-              >
-                {{ account.revealed ? account.iban : "Click to Reveal" }}
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </PageLayout>

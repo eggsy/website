@@ -72,7 +72,20 @@ export default Vue.extend({
     </div>
 
     <div class="overflow-x-hidden leading-relaxed space-y-2">
-      <h2 v-if="title" class="font-medium text-black dark:text-white truncate">
+      <h2
+        v-if="$slots.title"
+        class="font-medium text-black dark:text-white truncate"
+      >
+        <slot
+          name="title"
+          class="font-medium text-black dark:text-white truncate"
+        />
+      </h2>
+
+      <h2
+        v-else-if="title"
+        class="font-medium text-black dark:text-white truncate"
+      >
         {{ title }}
       </h2>
 

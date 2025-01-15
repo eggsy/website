@@ -12,12 +12,7 @@ export default Vue.extend({
   },
   fetchOnServer: false,
   async fetch() {
-    const filter = [
-      "eggsy",
-      "DBM",
-      "eggsywashere.github.io",
-      "bu-saatte-cekilir-mi",
-    ]
+    const filter = ["eggsy", "DBM", "eggsywashere.github.io"]
 
     const repos: Repository[] = (
       await this.$axios.get(
