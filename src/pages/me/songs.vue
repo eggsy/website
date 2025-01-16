@@ -140,7 +140,6 @@ export default Vue.extend({
             :key="song.name"
             :name="song.name"
             :artist="song.artist"
-            :image="song.image"
             :now-playing="song.nowPlaying"
             :plays="song.plays"
             :url="song.url"
@@ -157,7 +156,6 @@ export default Vue.extend({
             :key="artist.name"
             :name="artist.name"
             :plays="artist.plays"
-            :image="artist.image"
             :url="artist.url"
           />
         </div>

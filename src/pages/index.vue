@@ -51,11 +51,11 @@ export default Vue.extend({
 
 <template>
   <div
-    class="min-h-[calc(100vh-11rem)] flex flex-col my-24 md:my-0 items-center justify-center container mx-auto px-4"
+    class="min-h-[calc(100vh-11rem)] flex flex-col my-24 md:my-0 items-center justify-center container mx-auto"
   >
     <div class="flex items-center gap-8">
       <div
-        class="hidden dark:block absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-3"
+        class="hidden dark:block absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-4"
       >
         <SquaresBackground direction="diagonal" :speed="0.3" :sqaure-size="5" />
       </div>

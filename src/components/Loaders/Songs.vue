@@ -39,7 +39,7 @@
       <Title class="mb-4">Top Songs (last 7 days)</Title>
 
       <div class="grid gap-2 md:grid-cols-2">
-        <SkeletonLoader v-for="top in 6" :key="top" type="lastfm" />
+        <SkeletonLoader v-for="top in 6" :key="top" class="h-18 w-full" />
       </div>
     </div>
 
@@ -47,7 +47,7 @@
       <Title class="mb-4">Top Artists (last 7 days)</Title>
 
       <div class="grid gap-2 md:grid-cols-2">
-        <SkeletonLoader v-for="top in 4" :key="top" type="lastfm" />
+        <SkeletonLoader v-for="top in 4" :key="top" class="h-12 w-full" />
       </div>
     </div>
 

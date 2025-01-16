@@ -18,7 +18,7 @@ export default Vue.extend({
     },
     image: {
       type: String,
-      required: true,
+      required: false,
     },
     nowPlaying: {
       type: Boolean,
@@ -45,7 +45,7 @@ export default Vue.extend({
     blank
   >
     <div class="flex space-x-4 truncate items-center">
-      <div class="flex-shrink-0 h-14 w-14 relative">
+      <div v-if="image" class="flex-shrink-0 h-14 w-14 relative">
         <SmartImage :src="image" class="rounded-md" />
 
         <div
@@ -53,7 +53,7 @@ export default Vue.extend({
           title="Playing now..."
           class="rounded-md flex bg-black/75 inset-0 items-center justify-center absolute"
         >
-          <IconPlay class="h-6 text-neutral-300 w-6" />
+          <IconAnimatedSong class="h-6 text-neutral-300" />
         </div>
       </div>
 

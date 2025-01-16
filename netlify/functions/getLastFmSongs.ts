@@ -5,6 +5,38 @@ import LastFMTyped from "lastfm-typed"
 const LASTFM_API_KEY = process.env.LASTFM_API_KEY
 const username = "eggsywashere"
 
+// Map track function
+const mapTrack = (track: any) => {
+  const artist =
+    typeof track.artist === "string" ? track.artist : track.artist.name
+
+  const object: any = {
+    artist,
+    name: track.name,
+    image: track.image.find((image: any) => image.size === "large")?.url,
+    url: track.url,
+    date: track.date?.uts,
+    nowPlaying: track.nowplaying,
+  }
+
+  if (track.playcount) object.plays = track.playcount
+
+  return object
+}
+
+// Map artist function
+const mapArtist = (artist: any) => {
+  const object: any = {
+    name: artist.name,
+    image: artist.image.find((image: any) => image.size === "large")?.url,
+    url: artist.url,
+  }
+
+  if (artist.playcount) object.plays = artist.playcount
+
+  return object
+}
+
 const handler: Handler = async () => {
   if (!LASTFM_API_KEY)
     return {
@@ -21,43 +53,13 @@ const handler: Handler = async () => {
       await lastFm.user.getRecentTracks(username, { limit: 15 }),
     ]
 
+    console.log(topTracks.tracks[0].image)
+
     // Origin for CORS
     const origin =
       process.env.NODE_ENV === "production"
         ? "https://eggsy.xyz"
         : "http://localhost:3000"
-
-    // Map track function
-    const mapTrack = (track: any) => {
-      const artist =
-        typeof track.artist === "string" ? track.artist : track.artist.name
-
-      const object: any = {
-        artist,
-        name: track.name,
-        image: track.image.find((image: any) => image.size === "large")?.url,
-        url: track.url,
-        date: track.date?.uts,
-        nowPlaying: track.nowplaying,
-      }
-
-      if (track.playcount) object.plays = track.playcount
-
-      return object
-    }
-
-    // Map artist function
-    const mapArtist = (artist: any) => {
-      const object: any = {
-        name: artist.name,
-        image: artist.image.find((image: any) => image.size === "large")?.url,
-        url: artist.url,
-      }
-
-      if (artist.playcount) object.plays = artist.playcount
-
-      return object
-    }
 
     // Formatted user info
     const formattedUserInfo = {
