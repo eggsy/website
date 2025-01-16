@@ -20,7 +20,6 @@
       /* Nuxt types */
       "@nuxt/types",
       "@nuxt/content",
-      "@nuxtjs/firebase",
       "@nuxtjs/axios",
       "@nuxtjs/moment",
       "nuxt-windicss",
