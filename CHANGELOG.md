@@ -1,5 +1,13 @@
 <h1 align="center">eggsy.xyz Changelog</h1>
 
+## ⚠️ 7.0.0
+
+Complete rewrite in Nuxt 3, updating all the modules and converting all code from Vue 2 to Vue 3.
+
+**⚠️ Breaking Changes:**
+
+- ❌ Daily songs page integration as well as Firebase related stuff are removed.
+
 ## 6.0.0
 
 Modernized layouts, pages, components, deleted bunch of unnecessary complications, simplified blog pages and revamped colors.

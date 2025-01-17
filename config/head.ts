@@ -1,11 +1,9 @@
-import { NuxtOptionsHead } from "@nuxt/types/config/head"
-
 /* Define constants */
 const image = "https://eggsy.xyz/icon.png"
 const description =
   "Young JavaScript developer from Turkey, interested in languages, gaming, and programming, trying to improve his JavaScript skills!"
 
-const Head: NuxtOptionsHead = {
+const head = {
   title: "eggsy.xyz",
   meta: [
     { charset: "utf-8" },
@@ -93,4 +91,4 @@ const Head: NuxtOptionsHead = {
   ],
 }
 
-export default Head
+export default head

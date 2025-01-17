@@ -2,12 +2,9 @@ import satori from "satori"
 import { readFileSync } from "fs"
 import sharp from "sharp"
 
-// Polyfill
-import "isomorphic-unfetch"
-
 // Fonts
-const Inter = readFileSync("./src/assets/fonts/Inter-Regular.ttf")
-const InterBold = readFileSync("./src/assets/fonts/Inter-Bold.ttf")
+const Inter = readFileSync("./assets/fonts/Inter-Regular.ttf")
+const InterBold = readFileSync("./assets/fonts/Inter-Bold.ttf")
 
 interface IMetaImage {
   title: string
@@ -16,24 +13,24 @@ interface IMetaImage {
 }
 
 const emojis = [
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f4ab.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f636.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f44f.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f973.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/2728.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/2709.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/2600.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f30d.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f4a5.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f525.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f929.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/26a1.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/231b.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/2b50.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f4eb.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f4a1.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f4ad.png",
-  "https://twemoji.maxcdn.com/v/latest/72x72/1f389.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ab.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f636.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f44f.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f973.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2728.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2709.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2600.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f30d.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a5.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f525.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f929.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/26a1.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/231b.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2b50.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4eb.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a1.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ad.png",
+  "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f389.png",
 ]
 
 export const generateImage = async ({
@@ -139,7 +136,7 @@ export const generateImage = async ({
           style: "normal",
         },
       ],
-    }
+    },
   )
 
   const png = await sharp(Buffer.from(svg)).png().toBuffer()

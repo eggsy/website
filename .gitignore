@@ -95,3 +95,5 @@ sw.*
 # Others
 .yarn
 .netlify
+.output
+.data

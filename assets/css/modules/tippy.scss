@@ -1,0 +1,55 @@
+/**
+  Vue Tippy Discord-like design.
+  Author: Voknehzyr (@voknehzyr)
+*/
+
+.tippy-box[data-theme~="discord"] {
+  background-color: black;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.tippy-box[data-inertia][data-state="visible"] {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tippy-box[data-placement^="top"][data-animation="discord-anim"] {
+  transform-origin: center !important;
+
+  &[data-state="hidden"] {
+    opacity: 0;
+    transform: scale(0.9) translateY(-11px);
+  }
+
+  &[data-state="visible"] {
+    transform: scale(1) translateY(-11px);
+  }
+}
+
+.tippy-box[data-placement^="bottom"][data-animation="discord-anim"] {
+  &[data-state="hidden"] {
+    opacity: 0;
+    transform: scale(0.9) translateY(11px);
+  }
+
+  &[data-state="visible"] {
+    transform: scale(1) translateY(11px);
+  }
+}
+
+.tippy-box[data-placement^="top"][data-theme~="discord"] .tippy-arrow {
+  border-top-color: black;
+  filter: drop-shadow(0 2px 16px 0 rgba(0, 0, 0, 0.5));
+}
+
+.tippy-box[data-placement^="bottom"][data-theme~="discord"] .tippy-arrow {
+  border-bottom-color: black;
+  filter: drop-shadow(0 2px 16px 0 rgba(0, 0, 0, 0.5));
+}
+
+.tippy-box[data-theme~="discord"] .tippy-content {
+  padding: 4px 8px;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  font-size: 0.965em;
+}

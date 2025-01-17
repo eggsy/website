@@ -1,63 +1,128 @@
-// Types
-import type { NuxtConfig } from "@nuxt/types"
+import { defineNuxtConfig } from "nuxt/config"
 
 // Base config
-import buildModules from "./config/buildModules"
-import components from "./config/components"
-import generate from "./config/generate"
-import css from "./config/css"
 import head from "./config/head"
-import loading from "./config/loading"
-import modules from "./config/modules"
-import plugins from "./config/plugins"
-import publicRuntimeConfig from "./config/publicRuntimeConfig"
-
-// Specific module options
-import vite from "./config/modules/vite"
-import feed from "./config/modules/feed"
 
 // Hooks
 import { generateDone } from "./hooks/generate/done"
 
-// Constants
-const isDev = process.env.NODE_ENV === "development"
+export default defineNuxtConfig({
+  app: {
+    head,
+    pageTransition: { name: "fade", mode: "out-in" },
+  },
 
-const Config: NuxtConfig = {
-  // Constant options
-  rootDir: "./",
-  srcDir: "src",
-  target: "static",
+  css: ["~/assets/css/main.scss"],
 
-  /*
-    Disabling server-side rendering on development mode because
-    Vite module currently doesn't work when SSR is enabled. This
-    might cause some issues and/or hydration errors but will be
-    effective enough to help you develop easier.
-  */
-  ssr: !isDev,
+  modules: [
+    "@vite-pwa/nuxt",
+    "@nuxtjs/color-mode",
+    "@nuxt/icon",
+    "@nuxt/content",
+    [
+      "@nuxtjs/sitemap",
+      {
+        disableNuxtContentIntegration: true,
+      },
+    ],
+    [
+      "@nuxtjs/robots",
+      {
+        disableNuxtContentIntegration: true,
+      },
+    ],
+    [
+      "@nuxtjs/google-fonts",
+      {
+        display: "swap",
+        families: {
+          Inter: [400, 500, 600, 700],
+        },
+      },
+    ],
+    [
+      "@nuxtjs/tailwindcss",
+      {
+        viewer: false,
+        config: "~/tailwind.config.ts",
+      },
+    ],
+    [
+      "nuxt-disqus",
+      {
+        shortname: "eggsy-xyz",
+      },
+    ],
+    [
+      "nuxt-gtag",
+      {
+        enabled: process.env.NODE_ENV === "production",
+        id: process.env.GOOGLE_ANALYTICS_ID,
+      },
+    ],
+  ],
 
-  // Imported options
-  head,
-  loading,
-  buildModules,
-  components,
-  generate,
-  css,
-  modules,
-  plugins,
-  publicRuntimeConfig,
-
-  hooks: {
-    generate: {
-      async done(generator) {
-        await generateDone(generator)
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          themes: ["vitesse-dark", "vitesse-light"],
+          theme: {
+            default: "vitesse-dark",
+            light: "vitesse-light",
+            dark: "vitesse-dark",
+          },
+        },
+        toc: {
+          depth: 5,
+        },
+        rehypePlugins: {
+          "rehype-external-links": {
+            target: "_blank",
+            rel: "noreferrer noopener",
+          },
+          "rehype-autolink-headings": {
+            behavior: "append",
+          },
+        },
       },
     },
   },
 
-  // Modules
-  vite,
-  feed,
-}
+  site: {
+    url: "https://eggsy.xyz",
+    name: "eggsy.xyz",
+  },
 
-export default Config
+  pwa: {
+    manifest: {
+      name: "eggsy.xyz",
+      short_name: "eggsy.xyz",
+      theme_color: "#f56565",
+      lang: "en",
+    },
+  },
+
+  runtimeConfig: {
+    public: {
+      social: {
+        twitter: "https://twitter.com/eggsydev/",
+        github: "https://github.com/eggsy/",
+        linkedIn: "https://linkedin.com/in/abdulbaki-dursun",
+        email: "eggsydev@gmail.com",
+      },
+      sponsor: {
+        github: "https://github.com/sponsors/eggsy",
+      },
+      isDev: process.env.NODE_ENV === "development",
+    },
+  },
+
+  hooks: {
+    "build:done": async () => {
+      if (process.env.NODE_ENV === "production") await generateDone()
+    },
+  },
+
+  compatibilityDate: "2025-01-16",
+})
