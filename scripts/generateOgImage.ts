@@ -52,7 +52,7 @@ export const generateImage = async ({
           backgroundColor: "#fff",
           borderRadius: 24,
           backgroundImage:
-            "url(https://raw.githubusercontent.com/eggsy/website/main/src/static/assets/meta/images/post-background.png)",
+            "url(https://raw.githubusercontent.com/eggsy/website/refs/heads/main/public/assets/meta/images/post-background.png)",
         },
         children: {
           type: "div",
