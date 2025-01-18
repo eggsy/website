@@ -1,4 +1,5 @@
 import type { ApiResponse, Artist, Track, User } from "~/types/Response/lastfm"
+import type { Config, Handler } from "@netlify/functions"
 
 const LASTFM_API_KEY = process.env.LASTFM_API_KEY
 const username = "eggsywashere"
@@ -47,10 +48,11 @@ const mapArtist = (artist: Artist) => {
   return object
 }
 
-export default defineEventHandler(async () => {
+export const handler: Handler = async () => {
   if (!LASTFM_API_KEY)
     return {
       statusCode: 401,
+      body: JSON.stringify({ error: "API key not found" }),
     }
 
   try {
@@ -94,18 +96,27 @@ export default defineEventHandler(async () => {
 
     // Return
     return {
-      user: formattedUserInfo,
-      recentTracks: recentTracks?.track?.map(mapTrack) || [],
-      topTracks: topTracks?.track?.map(mapTrack) || [],
-      topArtists: topArtists?.artist?.map(mapArtist) || [],
+      statusCode: 200,
+      body: JSON.stringify({
+        user: formattedUserInfo,
+        recentTracks: recentTracks?.track?.map(mapTrack) || [],
+        topTracks: topTracks?.track?.map(mapTrack) || [],
+        topArtists: topArtists?.artist?.map(mapArtist) || [],
+      }),
     }
   } catch (error: any) {
     console.log(error)
 
     return {
-      error: true,
       statusCode: error.statusCode || 500,
-      message: error.message,
+      body: JSON.stringify({
+        error: true,
+        message: error.message,
+      }),
     }
   }
-})
+}
+
+export const config: Config = {
+  path: "/api/lastfm",
+}

@@ -82,7 +82,7 @@ const getSortedSponsors = computed(() => {
         <transition name="fade" mode="out-in">
           <Icon
             v-if="status === 'pending'"
-            name="svg-spinners:dots"
+            name="svg-spinners:90-ring-with-bg"
             class="w-full md:w-max md:py-0 py-4"
           />
 
