@@ -3,14 +3,14 @@ import type { Repository } from "~/types/Response/GitHub"
 
 const { $prepareMeta } = useNuxtApp()
 
-const { data: repos, pending } = await useAsyncData(
+const { data: repos, status } = await useLazyAsyncData(
   "repos",
   async () => {
     const filter = ["eggsy", "DBM", "eggsywashere.github.io"]
 
-    const repos: Repository[] = await fetch(
+    const repos = await $fetch<Repository[]>(
       "https://api.github.com/users/eggsy/repos?per_page=100",
-    ).then((res) => res.json())
+    )
 
     return repos
       ?.filter((repo) => repo.fork === false && !filter.includes(repo.name))
@@ -32,7 +32,7 @@ useHead({
 
 <template>
   <PageLayout title="Repositories" description="My public projects on GitHub.">
-    <div v-if="pending" class="grid gap-4 md:grid-cols-2">
+    <div v-if="status === 'pending'" class="grid gap-4 md:grid-cols-2">
       <SkeletonLoader v-for="i in 9" :key="`skeleton-${i}`" type="repository" />
     </div>
 

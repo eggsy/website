@@ -26,9 +26,9 @@ const titles = {
 }
 
 const icons = {
-  twitter: "line-md:twitter-filled",
-  github: "line-md:github",
-  linkedIn: "line-md:linkedin",
+  twitter: "mdi:twitter",
+  github: "mdi:github",
+  linkedIn: "mdi:linkedin",
 }
 
 const getLinks = computed(() => {
@@ -83,7 +83,7 @@ onMounted(() => {
         :utm="false"
       >
         <template #icon>
-          <Icon name="line-md:at" class="h-8 w-8" />
+          <Icon name="mdi:at" class="h-8 w-8" />
         </template>
 
         Send me an email!

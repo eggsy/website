@@ -3,32 +3,32 @@ const cards = [
   {
     title: "Blog",
     href: "/blog",
-    icon: "line-md:file-document",
+    icon: "mdi:file-document",
   },
   {
     title: "Projects",
     href: "/projects",
-    icon: "line-md:cog",
+    icon: "mdi:cog",
   },
   {
     title: "Donate",
     href: "/donate",
-    icon: "line-md:heart-twotone-half-filled",
+    icon: "mdi:heart",
   },
   {
     title: "Repos",
     href: "/me/repos",
-    icon: "line-md:github",
+    icon: "mdi:github",
   },
   {
     title: "Songs",
     href: "/me/songs",
-    icon: "line-md:volume-high-filled",
+    icon: "mdi:volume-high",
   },
   {
     title: "Contact",
     href: "/me/contact",
-    icon: "line-md:at",
+    icon: "mdi:at",
   },
 ]
 

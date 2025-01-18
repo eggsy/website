@@ -10,19 +10,16 @@ const props = withDefaults(
     speed?: number
     borderColor?: string
     squareSize?: number
-    hoverFillColor?: string
   }>(),
   {
     direction: "diagonal",
     speed: 0.5,
     borderColor: "#999",
     squareSize: 40,
-    hoverFillColor: "#222",
   },
 )
 
 const gridOffset = ref({ x: 0, y: 0 })
-const hoveredSquare = ref<{ x: number; y: number } | null>(null)
 const requestRef = ref<number | null>(0)
 const numSquaresX = ref(0)
 const numSquaresY = ref(0)
@@ -39,18 +36,13 @@ onMounted(() => {
   resizeCanvas()
 
   window.addEventListener("resize", resizeCanvas)
-  canvas.value.addEventListener("mousemove", handleMouseMove)
-  canvas.value.addEventListener("mouseleave", handleMouseLeave)
 
   requestRef.value = requestAnimationFrame(updateAnimation)
 })
 
 onUnmounted(() => {
   window.removeEventListener("resize", resizeCanvas)
-  if (canvas.value) {
-    canvas.value.removeEventListener("mousemove", handleMouseMove)
-    canvas.value.removeEventListener("mouseleave", handleMouseLeave)
-  }
+
   if (requestRef.value) cancelAnimationFrame(requestRef.value)
 })
 
@@ -86,15 +78,6 @@ const drawGrid = () => {
     ) {
       const squareX = x - (gridOffset.value.x % props.squareSize)
       const squareY = y - (gridOffset.value.y % props.squareSize)
-
-      if (
-        hoveredSquare.value &&
-        Math.floor((x - startX) / props.squareSize) === hoveredSquare.value.x &&
-        Math.floor((y - startY) / props.squareSize) === hoveredSquare.value.y
-      ) {
-        context.fillStyle = props.hoverFillColor
-        context.fillRect(squareX, squareY, props.squareSize, props.squareSize)
-      }
 
       context.strokeStyle = props.borderColor
       context.strokeRect(squareX, squareY, props.squareSize, props.squareSize)
@@ -151,32 +134,6 @@ const updateAnimation = () => {
 
   drawGrid()
   requestRef.value = requestAnimationFrame(updateAnimation)
-}
-
-const handleMouseMove = (event: MouseEvent) => {
-  if (!canvas.value) return
-
-  const rect = canvas.value.getBoundingClientRect()
-  const mouseX = event.clientX - rect.left
-  const mouseY = event.clientY - rect.top
-
-  const startX =
-    Math.floor(gridOffset.value.x / props.squareSize) * props.squareSize
-  const startY =
-    Math.floor(gridOffset.value.y / props.squareSize) * props.squareSize
-
-  const hoveredSquareX = Math.floor(
-    (mouseX + gridOffset.value.x - startX) / props.squareSize,
-  )
-  const hoveredSquareY = Math.floor(
-    (mouseY + gridOffset.value.y - startY) / props.squareSize,
-  )
-
-  hoveredSquare.value = { x: hoveredSquareX, y: hoveredSquareY }
-}
-
-const handleMouseLeave = () => {
-  hoveredSquare.value = null
 }
 </script>
 

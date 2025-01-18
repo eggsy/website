@@ -37,7 +37,9 @@ const {
   data: lastFm,
   status,
   error,
-} = await useAsyncData<LastFmResponse>("lastfm", () => $fetch("/api/lastfm"))
+} = await useLazyAsyncData<LastFmResponse>("lastfm", () =>
+  $fetch("/api/lastfm"),
+)
 
 useHead({
   title: "Songs",

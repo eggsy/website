@@ -3,14 +3,14 @@ interface Props {
   error?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   error: false,
 })
 </script>
 
 <template>
   <!-- Loader -->
-  <div v-if="error === false" class="w-full pt-14">
+  <div v-if="error === false" class="w-full pt-28">
     <section class="space-y-8">
       <div class="space-y-4">
         <!-- Reading time & date  -->
@@ -28,11 +28,11 @@ const props = withDefaults(defineProps<Props>(), {
 
         <!-- Title -->
         <div
-          class="bg-black/10 h-10 mx-auto w-full animate-pulse sm:w-8/12 dark:bg-white/5"
+          class="bg-black/10 h-10 w-full animate-pulse sm:w-8/12 dark:bg-white/5"
         />
 
         <!-- Content -->
-        <div class="flex flex-col space-y-2 items-center justify-center">
+        <div class="flex flex-col space-y-2">
           <div
             class="bg-black/10 h-4 w-full animate-pulse sm:w-8/12 dark:bg-white/5"
           />
@@ -44,12 +44,12 @@ const props = withDefaults(defineProps<Props>(), {
     </section>
 
     <!-- Content -->
-    <div class="space-y-10 mt-10 w-full">
+    <div class="space-y-10 mt-20 w-full">
       <div class="space-y-1">
         <div
           v-for="_ in 6"
           :key="_"
-          class="bg-black/10 h-4 animate-pulse dark:bg-white/5"
+          class="bg-black/10 h-5 animate-pulse dark:bg-white/5"
           :class="_ !== 6 ? 'w-full' : 'w-8/12'"
         />
       </div>
@@ -58,7 +58,7 @@ const props = withDefaults(defineProps<Props>(), {
         <div
           v-for="_ in 4"
           :key="_"
-          class="bg-black/10 h-4 animate-pulse dark:bg-white/5"
+          class="bg-black/10 h-5 animate-pulse dark:bg-white/5"
           :class="_ !== 4 ? 'w-full' : 'w-1/2'"
         />
       </div>
@@ -67,7 +67,7 @@ const props = withDefaults(defineProps<Props>(), {
         <div
           v-for="_ in 24"
           :key="_"
-          class="bg-black/10 h-4 animate-pulse dark:bg-white/5"
+          class="bg-black/10 h-5 animate-pulse dark:bg-white/5"
           :class="_ !== 24 ? 'w-full' : 'w-1/2'"
         />
       </div>

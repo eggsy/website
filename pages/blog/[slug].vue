@@ -7,7 +7,7 @@ const {
   data: post,
   status,
   error,
-} = await useAsyncData(route.path, () =>
+} = await useLazyAsyncData(route.path, () =>
   queryCollection("posts").path(route.path).first(),
 )
 
@@ -47,7 +47,7 @@ useHead(() => {
 
   const tags = getTags.value?.join(", ") || title
   const href = `https://eggsy.xyz${route?.path}`
-  const image = `/og-images/${post.value?.path.split("/")[1]}.png`
+  const image = `https://eggsy.xyz/og-images/${post.value?.path.split("/")[2]}.png`
 
   return {
     bodyAttrs: {
@@ -186,7 +186,7 @@ watchEffect(async () => {
         <DisqusComments
           v-if="!$config.public.isDev"
           :title="post.title"
-          :slug="post.path.split('/')[1]"
+          :slug="post.path.split('/')[2]"
           :url="`https://eggsy.xyz/${post.path}`"
           :identifier="post.path"
           lang="tr"

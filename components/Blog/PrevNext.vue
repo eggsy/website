@@ -7,7 +7,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { data: surroundPosts, status } = await useAsyncData(
+const { data: surroundPosts, status } = await useLazyAsyncData(
   `${props.path}-surround`,
   () => {
     return queryCollectionItemSurroundings("posts", props.path).order(

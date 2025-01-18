@@ -7,7 +7,7 @@ const {
   status,
   error,
   data: sponsors,
-} = await useAsyncData<ISponsor[]>("sponsors", () =>
+} = await useLazyAsyncData<ISponsor[]>("sponsors", () =>
   $fetch("https://raw.githubusercontent.com/eggsy/.github/main/sponsors.json", {
     responseType: "json",
   }),
