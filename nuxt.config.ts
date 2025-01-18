@@ -107,7 +107,7 @@ export default defineNuxtConfig({
       description:
         "Professional JavaScript developer from Turkey specializing in React.js, Vue.js, TypeScript, Node.js, and Flutter. Passionate about crafting innovative software solutions and continuously improving programming skills.",
       lang: "en",
-      screenshots: [
+      icons: [
         {
           src: "/icon.png",
           sizes: "512x512",
