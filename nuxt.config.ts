@@ -4,7 +4,8 @@ import { defineNuxtConfig } from "nuxt/config"
 import head from "./config/head"
 
 // Hooks
-import { generateDone } from "./hooks/generate/done"
+import { generateOgImages } from "./hooks/generateOgImages"
+import { getBlogPosts } from "./hooks/scripts/getBlogPosts"
 
 export default defineNuxtConfig({
   app: {
@@ -19,12 +20,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxt/icon",
     "@nuxt/content",
-    [
-      "@nuxtjs/sitemap",
-      {
-        disableNuxtContentIntegration: true,
-      },
-    ],
+    "@nuxtjs/sitemap",
     [
       "@nuxtjs/robots",
       {
@@ -89,6 +85,11 @@ export default defineNuxtConfig({
     },
   },
 
+  sitemap: {
+    exclude: ["/api/content/posts/database.sql"],
+    urls: getBlogPosts().map((post) => `https://eggsy.xyz/blog/${post.slug}`),
+  },
+
   site: {
     url: "https://eggsy.xyz",
     name: "eggsy.xyz",
@@ -128,8 +129,8 @@ export default defineNuxtConfig({
   },
 
   hooks: {
-    "build:done": async () => {
-      if (process.env.NODE_ENV === "production") await generateDone()
+    "nitro:build:public-assets": async () => {
+      if (process.env.NODE_ENV === "production") await generateOgImages()
     },
   },
 
