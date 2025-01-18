@@ -11,7 +11,7 @@ const {
   queryCollection("posts").path(route.path).first(),
 )
 
-const { data: relatedPosts } = await useAsyncData(
+const { data: relatedPosts } = await useLazyAsyncData(
   `${route.path}-related`,
   async () => {
     if (!post.value) return

@@ -1,7 +1,7 @@
 /* Define constants */
 const image = "https://eggsy.xyz/icon.png"
 const description =
-  "Young JavaScript developer from Turkey, interested in languages, gaming, and programming, trying to improve his JavaScript skills!"
+  "Professional JavaScript developer from Turkey specializing in React.js, Vue.js, TypeScript, Node.js, and Flutter. Passionate about crafting innovative software solutions and continuously improving programming skills."
 
 const head = {
   title: "eggsy.xyz",

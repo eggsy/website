@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const route = useRoute()
 const { $prepareMeta } = useNuxtApp()
 
 const formatter = new Intl.DateTimeFormat("tr-TR", {
@@ -7,9 +6,7 @@ const formatter = new Intl.DateTimeFormat("tr-TR", {
   day: "numeric",
 })
 
-const query = ref(route.query)
-
-const { data: posts, status } = await useAsyncData("posts", () =>
+const { data: posts, status } = await useLazyAsyncData("posts", () =>
   queryCollection("posts")
     .select("title", "createdAt", "path")
     .order("createdAt", "DESC")
@@ -50,52 +47,45 @@ const getYearGroupedPosts = computed(() => {
 
   return sortedByYears
 })
-
-watch(
-  () => route.query,
-  () => {
-    query.value = route.query
-  },
-)
-
-onMounted(() => {
-  query.value = route.query
-})
 </script>
 
 <template>
-  <LoadersBlog v-if="status === 'pending'" />
+  <div>
+    <Transition name="fade" mode="out-in">
+      <LoadersBlog v-if="status === 'pending'" />
 
-  <div v-else class="mt-12 space-y-10">
-    <section
-      v-for="[year, posts] in getYearGroupedPosts"
-      :key="year"
-      class="space-y-4"
-    >
-      <h1 class="text-3xl font-bold text-black/90 dark:text-white/90">
-        {{ year }}
-      </h1>
-
-      <div class="space-y-3">
-        <NuxtLink
-          v-for="post in posts"
-          :key="post.path"
-          :to="post.path"
-          class="flex items-start gap-6 card-base rounded-lg"
+      <div v-else class="mt-12 space-y-10">
+        <section
+          v-for="[year, posts] in getYearGroupedPosts"
+          :key="year"
+          class="space-y-4"
         >
-          <span
-            class="w-[20%] text-black/50 dark:text-white/50 md:w-1/12 flex-shrink-0"
-          >
-            {{ formatter.format(new Date(post.createdAt)) }}
-          </span>
+          <h1 class="text-3xl font-bold text-black/90 dark:text-white/90">
+            {{ year }}
+          </h1>
 
-          <span
-            class="text-blue-600 dark:text-blue-300 font-medium leading-relaxed"
-          >
-            {{ post.title }}
-          </span>
-        </NuxtLink>
+          <div class="space-y-3">
+            <NuxtLink
+              v-for="post in posts"
+              :key="post.path"
+              :to="post.path"
+              class="flex items-start gap-6 card-base rounded-lg"
+            >
+              <span
+                class="w-[20%] text-black/50 dark:text-white/50 md:w-1/12 flex-shrink-0"
+              >
+                {{ formatter.format(new Date(post.createdAt)) }}
+              </span>
+
+              <span
+                class="text-blue-600 dark:text-blue-300 font-medium leading-relaxed"
+              >
+                {{ post.title }}
+              </span>
+            </NuxtLink>
+          </div>
+        </section>
       </div>
-    </section>
+    </Transition>
   </div>
 </template>

@@ -99,7 +99,16 @@ export default defineNuxtConfig({
       name: "eggsy.xyz",
       short_name: "eggsy.xyz",
       theme_color: "#f56565",
+      description:
+        "Professional JavaScript developer from Turkey specializing in React.js, Vue.js, TypeScript, Node.js, and Flutter. Passionate about crafting innovative software solutions and continuously improving programming skills.",
       lang: "en",
+      screenshots: [
+        {
+          src: "/icon.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+      ],
     },
   },
 

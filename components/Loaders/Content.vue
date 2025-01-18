@@ -12,14 +12,9 @@ const props = withDefaults(defineProps<Props>(), {
   <!-- Loader -->
   <div v-if="error === false" class="w-full pt-14">
     <section class="space-y-8">
-      <!-- Header -->
-      <div
-        class="bg-black/10 h-30 rounded-lg animate-pulse w-full dark:bg-white/5"
-      />
-
       <div class="space-y-4">
         <!-- Reading time & date  -->
-        <div class="flex space-x-2 justify-center">
+        <div class="flex space-x-2 justify-left">
           <div
             class="bg-black/10 h-4 animate-pulse w-1/4 sm:w-1/6 dark:bg-white/5"
           />
