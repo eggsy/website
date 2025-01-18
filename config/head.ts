@@ -82,12 +82,6 @@ const head = {
       type: "image/x-icon",
       href: "https://eggsy.xyz/assets/icons/icon.ico",
     },
-    {
-      rel: "search",
-      type: "application/opensearchdescription+xml",
-      title: "EGGSY's Blog",
-      href: "https://eggsy.xyz/opensearch.xml",
-    },
   ],
 }
 

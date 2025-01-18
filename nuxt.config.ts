@@ -8,6 +8,10 @@ import { generateOgImages } from "./hooks/generateOgImages"
 import { getBlogPosts } from "./hooks/scripts/getBlogPosts"
 
 export default defineNuxtConfig({
+  nitro: {
+    preset: "netlify",
+  },
+
   app: {
     head,
     pageTransition: { name: "fade", mode: "out-in" },
@@ -129,7 +133,7 @@ export default defineNuxtConfig({
   },
 
   hooks: {
-    "nitro:build:public-assets": async () => {
+    "nitro:build:before": async () => {
       if (process.env.NODE_ENV === "production") await generateOgImages()
     },
   },

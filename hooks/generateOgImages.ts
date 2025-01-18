@@ -15,7 +15,7 @@ const formatter = new Intl.DateTimeFormat("tr-TR", {
 })
 
 export const generateOgImages = async () => {
-  const folderPath = join(process.cwd(), ".output", "public", "og-images")
+  const folderPath = join(process.cwd(), "public", "og-images")
 
   const posts = getBlogPosts({
     withBody: true,
