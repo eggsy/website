@@ -48,12 +48,14 @@ const mapArtist = (artist: Artist) => {
   return object
 }
 
-export const handler: Handler = async () => {
+export default async () => {
   if (!LASTFM_API_KEY)
-    return {
-      statusCode: 401,
-      body: JSON.stringify({ error: "API key not found" }),
-    }
+    return new Response(JSON.stringify({ error: "API key not found" }), {
+      status: 401,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
 
   try {
     const [
@@ -85,7 +87,6 @@ export const handler: Handler = async () => {
       ),
     ]
 
-    // Formatted user info
     const formattedUserInfo = {
       name: user.name,
       image: user.image.find((image) => image.size === "large")?.["#text"],
@@ -94,26 +95,35 @@ export const handler: Handler = async () => {
       registered: parseInt(user.registered.unixtime),
     }
 
-    // Return
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
+    return new Response(
+      JSON.stringify({
         user: formattedUserInfo,
         recentTracks: recentTracks?.track?.map(mapTrack) || [],
         topTracks: topTracks?.track?.map(mapTrack) || [],
         topArtists: topArtists?.artist?.map(mapArtist) || [],
       }),
-    }
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    )
   } catch (error: any) {
     console.log(error)
 
-    return {
-      statusCode: error.statusCode || 500,
-      body: JSON.stringify({
+    return new Response(
+      JSON.stringify({
         error: true,
         message: error.message,
       }),
-    }
+      {
+        status: error.statusCode || 500,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    )
   }
 }
 
