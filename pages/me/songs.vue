@@ -39,7 +39,10 @@ const {
   error,
 } = await useLazyAsyncData<LastFmResponse>(
   "lastfm",
-  () => $fetch("/api/lastfm"),
+  () =>
+    $fetch("/api/lastfm", {
+      responseType: "json",
+    }),
   {
     server: false,
   },
@@ -50,7 +53,7 @@ useHead({
   meta: $prepareMeta({
     title: "Songs",
     description:
-      "Songs that I recently listened and the songs that I listened most as well as some more information from Last.fm, all of that information is on this page!",
+      "Songs that I recently listened and the songs that I listened most as well as some more information from Last.fm.",
   }),
 })
 </script>
@@ -61,7 +64,7 @@ useHead({
     description="My latest activity on Last FM. Check out the Daily Songs page for a fresh new recommendation!"
     class="space-y-12"
   >
-    <LoadersSongs v-if="true || status === 'pending' || error !== null" />
+    <LoadersSongs v-if="status === 'pending' || error !== null" />
 
     <template v-else-if="lastFm">
       <section>
