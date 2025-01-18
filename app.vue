@@ -26,7 +26,6 @@ useHead(() => {
 
     <!-- Nuxt component -->
     <main class="responsive-screen min-h-screen pb-8">
-      <NuxtLoadingIndicator />
       <NuxtPage />
     </main>
 
@@ -38,5 +37,9 @@ useHead(() => {
 
     <!-- Sponsor Popup -->
     <SponsorPopup />
+
+    <!-- Other Components -->
+    <VitePwaManifest />
+    <NuxtLoadingIndicator />
   </div>
 </template>

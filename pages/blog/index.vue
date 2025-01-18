@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { Post } from "~/types/Post"
-
 const route = useRoute()
 const { $prepareMeta } = useNuxtApp()
 
@@ -11,12 +9,12 @@ const formatter = new Intl.DateTimeFormat("tr-TR", {
 
 const query = ref(route.query)
 
-const { data: posts, status } = await useAsyncData<Post[]>("posts", () => {
-  return queryCollection("posts")
+const { data: posts, status } = await useAsyncData("posts", () =>
+  queryCollection("posts")
     .select("title", "createdAt", "path")
     .order("createdAt", "DESC")
-    .all()
-})
+    .all(),
+)
 
 useHead({
   title: "Blog",
@@ -28,7 +26,7 @@ useHead({
 })
 
 const getYearGroupedPosts = computed(() => {
-  const yearsOfPosts = new Map() as Map<number, Post[]>
+  const yearsOfPosts = new Map() as Map<number, typeof posts.value>
 
   if (!posts.value) return new Map()
 
@@ -37,14 +35,14 @@ const getYearGroupedPosts = computed(() => {
     const year = new Date(post.createdAt).getFullYear()
 
     if (yearsOfPosts.has(year)) {
-      yearsOfPosts.get(year)?.push(post as Post)
+      yearsOfPosts.get(year)?.push(post)
     } else {
-      yearsOfPosts.set(year, [post as Post])
+      yearsOfPosts.set(year, [post])
     }
   }
 
   const years = [...yearsOfPosts.keys()].sort((a, b) => b - a)
-  const sortedByYears = new Map() as Map<number, Post[]>
+  const sortedByYears = new Map() as Map<number, typeof posts.value>
 
   for (const year of years) {
     sortedByYears.set(year, yearsOfPosts.get(year)!)

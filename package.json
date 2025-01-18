@@ -67,6 +67,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.0.7",
     "@vite-pwa/nuxt": "0.10.6",
+    "consola": "^3.4.0",
     "dotenv": "^16.4.7",
     "front-matter": "^4.0.2",
     "isomorphic-unfetch": "^4.0.2",
