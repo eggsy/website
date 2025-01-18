@@ -7,10 +7,18 @@ const {
   status,
   error,
   data: sponsors,
-} = await useLazyAsyncData<ISponsor[]>("sponsors", () =>
-  $fetch("https://raw.githubusercontent.com/eggsy/.github/main/sponsors.json", {
-    responseType: "json",
-  }),
+} = await useLazyAsyncData<ISponsor[]>(
+  "sponsors",
+  () =>
+    $fetch(
+      "https://raw.githubusercontent.com/eggsy/.github/main/sponsors.json",
+      {
+        responseType: "json",
+      },
+    ),
+  {
+    server: false,
+  },
 )
 
 useHead({

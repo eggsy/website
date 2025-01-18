@@ -37,8 +37,12 @@ const {
   data: lastFm,
   status,
   error,
-} = await useLazyAsyncData<LastFmResponse>("lastfm", () =>
-  $fetch("/api/lastfm"),
+} = await useLazyAsyncData<LastFmResponse>(
+  "lastfm",
+  () => $fetch("/api/lastfm"),
+  {
+    server: false,
+  },
 )
 
 useHead({
@@ -57,7 +61,7 @@ useHead({
     description="My latest activity on Last FM. Check out the Daily Songs page for a fresh new recommendation!"
     class="space-y-12"
   >
-    <LoadersSongs v-if="status === 'pending' || error !== null" />
+    <LoadersSongs v-if="true || status === 'pending' || error !== null" />
 
     <template v-else-if="lastFm">
       <section>

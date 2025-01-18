@@ -39,7 +39,11 @@
       <PageTitle class="mb-4">Top Songs (last 7 days)</PageTitle>
 
       <div class="grid gap-2 md:grid-cols-2">
-        <SkeletonLoader v-for="top in 6" :key="top" class="h-18 w-full" />
+        <SkeletonLoader
+          v-for="i in 6"
+          :key="`topsongs-${i}`"
+          class="h-16 w-full"
+        />
       </div>
     </div>
 
@@ -47,7 +51,11 @@
       <PageTitle class="mb-4">Top Artists (last 7 days)</PageTitle>
 
       <div class="grid gap-2 md:grid-cols-2">
-        <SkeletonLoader v-for="top in 4" :key="top" class="h-12 w-full" />
+        <SkeletonLoader
+          v-for="i in 4"
+          ::key="`topartists-${i}`"
+          class="h-12 w-full"
+        />
       </div>
     </div>
 
@@ -55,7 +63,11 @@
       <PageTitle class="mb-4">Recent Songs</PageTitle>
 
       <div class="grid gap-2 md:grid-cols-2">
-        <SkeletonLoader v-for="recent in 15" :key="recent" type="lastfm" />
+        <SkeletonLoader
+          v-for="i in 15"
+          :key="`recentsongs-${i}`"
+          type="lastfm"
+        />
       </div>
     </div>
   </main>
