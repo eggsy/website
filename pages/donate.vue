@@ -79,11 +79,11 @@ const getSortedSponsors = computed(() => {
       <PageTitle :padding="false">Sponsors</PageTitle>
 
       <div>
-        <transition name="fade" mode="out-in">
+        <Transition name="fade" mode="out-in">
           <Icon
             v-if="status === 'pending'"
             name="svg-spinners:90-ring-with-bg"
-            class="w-full md:w-max md:py-0 py-4"
+            class="w-5 h-5"
           />
 
           <p v-else-if="error">An error occured.</p>
@@ -107,7 +107,7 @@ const getSortedSponsors = computed(() => {
               :sponsor="item.sponsor"
             />
           </div>
-        </transition>
+        </Transition>
       </div>
     </section>
   </PageLayout>

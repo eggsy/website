@@ -38,7 +38,7 @@ You need to install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com
     - With pnpm: `pnpm generate` (or `pnpm build`)
     - With NPM: `npm run generate` or (`npm run build`)
 
-If you are wondering about **how to host it on free/paid static hosting services** like (Netlify, Vercel etc.), you can refer to [Nuxt.js docs](https://nuxtjs.org/deployments/netlify/). My project is hosted on [Netlify](https://netlify.com).
+If you are wondering about **how to host it on free/paid static hosting services** like (Netlify, Vercel etc.), you can refer to [Nuxt.js docs](https://nuxt.com/deploy).
 
 ### 💖 Sponsors
 

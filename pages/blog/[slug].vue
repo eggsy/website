@@ -106,7 +106,7 @@ watchEffect(async () => {
   if (status.value !== "success" || typeof window === "undefined") return
 
   await nextTick()
-  $applyMediumZoom()
+  $applyMediumZoom("img")
 })
 </script>
 

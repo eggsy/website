@@ -3,32 +3,32 @@ const cards = [
   {
     title: "Blog",
     href: "/blog",
-    icon: "mdi:file-document",
+    icon: "line-md:document-list",
   },
   {
     title: "Projects",
     href: "/projects",
-    icon: "mdi:cog",
+    icon: "line-md:cog",
   },
   {
     title: "Donate",
     href: "/donate",
-    icon: "mdi:heart",
+    icon: "line-md:heart-filled-half",
   },
   {
     title: "Repos",
     href: "/me/repos",
-    icon: "mdi:github",
+    icon: "line-md:github",
   },
   {
     title: "Songs",
     href: "/me/songs",
-    icon: "mdi:volume-high",
+    icon: "line-md:volume-high-filled",
   },
   {
     title: "Contact",
     href: "/me/contact",
-    icon: "mdi:at",
+    icon: "line-md:at",
   },
 ]
 
@@ -39,13 +39,17 @@ useHead({
 
 <template>
   <div
-    class="min-h-[calc(100vh-11rem)] flex flex-col my-24 md:my-0 items-center justify-center container mx-auto"
+    class="md:min-h-[calc(100vh-11rem)] flex flex-col my-24 md:my-0 items-center justify-center container mx-auto"
   >
     <div class="flex items-center gap-8">
       <div
         class="hidden dark:block absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-5"
       >
-        <SquaresBackground direction="diagonal" :speed="0.3" :sqaure-size="5" />
+        <SquaresBackground
+          :speed="0.3"
+          :sqaure-size="5"
+          class="w-full h-full"
+        />
       </div>
 
       <div class="hidden md:flex flex-col gap-4 w-2/12 z-10">
@@ -162,15 +166,7 @@ useHead({
       >
         <template #title>
           <div class="flex flex-col gap-2 items-center">
-            <component v-if="card.icon" :is="card.icon" class="h-8 w-8" />
-
-            <component
-              v-else-if="card.iconPack"
-              :is="card.iconPack"
-              v-bind="card"
-              class="h-8 w-8"
-            />
-
+            <Icon :name="card.icon" class="h-8 w-8" />
             {{ card.title }}
           </div>
         </template>

@@ -40,7 +40,7 @@ const next = computed(() => surroundPosts.value?.[1] || null)
         <Icon name="heroicons:chevron-left" class="h-4 w-4 flex-shrink-0" />
 
         <span v-if="prev" class="truncate">{{ prev.title }}</span>
-        <span v-else class="truncate">Eski Gönderi Yok</span>
+        <span v-else class="truncate">Daha Yeni Gönderi Yok</span>
       </Component>
 
       <Component
@@ -54,7 +54,7 @@ const next = computed(() => surroundPosts.value?.[1] || null)
         ]"
       >
         <span v-if="next" class="truncate">{{ next.title }}</span>
-        <span v-else class="truncate">Yeni Gönderi Yok</span>
+        <span v-else class="truncate">Daha Eski Gönderi Yok</span>
 
         <Icon name="heroicons:chevron-right" class="h-4 w-4 flex-shrink-0" />
       </Component>

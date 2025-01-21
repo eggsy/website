@@ -2,17 +2,13 @@
 // Source: https://www.reactbits.dev/backgrounds/squares
 // converted to Vue
 
-const attrs = useAttrs()
-
 const props = withDefaults(
   defineProps<{
-    direction?: "right" | "left" | "up" | "down" | "diagonal"
     speed?: number
     borderColor?: string
     squareSize?: number
   }>(),
   {
-    direction: "diagonal",
     speed: 0.5,
     borderColor: "#999",
     squareSize: 40,
@@ -36,13 +32,11 @@ onMounted(() => {
   resizeCanvas()
 
   window.addEventListener("resize", resizeCanvas)
-
   requestRef.value = requestAnimationFrame(updateAnimation)
 })
 
 onUnmounted(() => {
   window.removeEventListener("resize", resizeCanvas)
-
   if (requestRef.value) cancelAnimationFrame(requestRef.value)
 })
 
@@ -92,6 +86,7 @@ const drawGrid = () => {
     canvas.value.height / 2,
     Math.sqrt(canvas.value.width ** 2 + canvas.value.height ** 2) / 2,
   )
+
   gradient.addColorStop(0, "rgba(0, 0, 0, 0)")
   gradient.addColorStop(1, "#171717")
 
@@ -101,36 +96,11 @@ const drawGrid = () => {
 
 const updateAnimation = () => {
   const effectiveSpeed = Math.max(props.speed, 0.1)
-  switch (props.direction) {
-    case "right":
-      gridOffset.value.x =
-        (gridOffset.value.x - effectiveSpeed + props.squareSize) %
-        props.squareSize
-      break
-    case "left":
-      gridOffset.value.x =
-        (gridOffset.value.x + effectiveSpeed + props.squareSize) %
-        props.squareSize
-      break
-    case "up":
-      gridOffset.value.y =
-        (gridOffset.value.y + effectiveSpeed + props.squareSize) %
-        props.squareSize
-      break
-    case "down":
-      gridOffset.value.y =
-        (gridOffset.value.y - effectiveSpeed + props.squareSize) %
-        props.squareSize
-      break
-    case "diagonal":
-      gridOffset.value.x =
-        (gridOffset.value.x - effectiveSpeed + props.squareSize) %
-        props.squareSize
-      gridOffset.value.y =
-        (gridOffset.value.y - effectiveSpeed + props.squareSize) %
-        props.squareSize
-      break
-  }
+
+  gridOffset.value.x =
+    (gridOffset.value.x - effectiveSpeed + props.squareSize) % props.squareSize
+  gridOffset.value.y =
+    (gridOffset.value.y - effectiveSpeed + props.squareSize) % props.squareSize
 
   drawGrid()
   requestRef.value = requestAnimationFrame(updateAnimation)
@@ -138,9 +108,5 @@ const updateAnimation = () => {
 </script>
 
 <template>
-  <canvas
-    v-bind="{ ...attrs }"
-    ref="canvas"
-    class="w-full h-full border-none block"
-  />
+  <canvas ref="canvas" class="w-full h-full border-none block" />
 </template>
