@@ -97,3 +97,4 @@ sw.*
 .netlify
 .output
 public/og-images
+.data
