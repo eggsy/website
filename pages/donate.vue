@@ -65,7 +65,11 @@ const getSortedSponsors = computed(() => {
       <PageTitle>Support Me On</PageTitle>
 
       <div class="flex flex-wrap gap-x-4 gap-y-2">
-        <Button :href="$config.public.sponsor.github" blank>
+        <Button
+          v-if="$config.public?.sponsor?.github"
+          :href="$config.public.sponsor.github"
+          blank
+        >
           <template #icon>
             <Icon name="mdi:github" class="h-5 w-5" />
           </template>

@@ -117,7 +117,7 @@ useHead({
               { name: 'Node.js', icon: 'devicon:nodejs' },
             ]"
             v-tippy="{ content: item.name, placement: 'bottom' }"
-            :key="item.name"
+            :key="`skill-icon-${item.name}`"
             :name="item.icon"
             :class="{
               'h-[22px] w-[22px]': item.name === 'Node.js',
@@ -163,6 +163,9 @@ useHead({
         :title="card.title"
         :href="card.href"
         class="w-full flex items-center justify-center dark:!bg-[#1B1B1B] dark:hover:!bg-[#1D1D1D]"
+        :style="{
+          aspectRatio: '1/1',
+        }"
       >
         <template #title>
           <div class="flex flex-col gap-2 items-center">
