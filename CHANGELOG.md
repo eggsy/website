@@ -7,6 +7,7 @@ Complete rewrite in Nuxt 3, updating all the modules and converting all code fro
 **⚠️ Breaking Changes:**
 
 - ❌ Daily songs page integration as well as Firebase related stuff are removed.
+- ❌ Moved from Windi CSS to Tailwind CSS.
 
 ## 6.0.0
 

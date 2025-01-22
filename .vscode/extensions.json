@@ -3,7 +3,6 @@
     "johnsoncodehk.volar",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "voorjaar.windicss-intellisense",
     "editorconfig.editorconfig"
   ]
 }

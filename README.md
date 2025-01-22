@@ -10,7 +10,7 @@
   <img src="https://app.codacy.com/project/badge/Grade/ff917529015742d3a3c3eda2674162de" alt="Codacy code quality" />
 </p>
 
-My personal portfolio website, built with Nuxt.js, Windi CSS, and TypeScript.
+My personal portfolio website, built with Nuxt.js, Tailwind CSS, and TypeScript.
 
 ### ✨ Features
 
