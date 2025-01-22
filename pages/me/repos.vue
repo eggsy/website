@@ -25,7 +25,7 @@ useHead({
   title: "GitHub Repositories",
   meta: $prepareMeta({
     title: "GitHub Repositories",
-    description: "My public projects hosted on GitHub.",
+    description: "My open-source projects' GitHub repositories.",
   }),
 })
 </script>

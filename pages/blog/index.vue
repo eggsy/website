@@ -18,7 +18,7 @@ useHead({
   meta: $prepareMeta({
     title: "EGGSY's Blog",
     description:
-      "EGGSY'nin günlük hayattan, tecrübelerinden bahsettiği, göstermek veya anlatmak istediği şeyleri daha düzenli ve profesyonel bir şekilde tuttuğu blog sayfası.",
+      "Yazılım, teknoloji, günlük hayat ve maceralarımla ilgili yazdığım yazılar.",
   }),
 })
 

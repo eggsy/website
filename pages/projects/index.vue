@@ -17,7 +17,7 @@ interface Project {
 }
 
 const title = "Projects"
-const description = "Check out my projects and see what I can build for you!"
+const description = "Projects I built as a freelance developer, or for clients."
 
 useHead({
   title,

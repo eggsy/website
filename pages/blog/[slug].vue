@@ -42,8 +42,7 @@ const getReadingTime = computed(() => {
 useHead(() => {
   const title = post.value?.title
   const description =
-    post.value?.description ||
-    "EGGSY'nin blogunda bu yazıyı okumaya davet edildin."
+    post.value?.description || "Blogumda bu yazıyı okumaya davet edildin."
 
   const tags = getTags.value?.join(", ") || title
   const href = `https://eggsy.xyz${route?.path}`

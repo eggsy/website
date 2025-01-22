@@ -15,7 +15,7 @@ useHead({
   meta: $prepareMeta({
     title: "Contact",
     description:
-      "Need to get in touch with me? Have any questions? Want to join my Discord server? Click here!",
+      "Get in touch with me via my social media accounts and e-mail address!",
   }),
 })
 

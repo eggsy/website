@@ -53,7 +53,7 @@ useHead({
   meta: $prepareMeta({
     title: "Songs",
     description:
-      "Songs that I recently listened and the songs that I listened most as well as some more information from Last.fm.",
+      "Songs that I recently listened and the songs that I listened most.",
   }),
 })
 </script>
@@ -61,7 +61,7 @@ useHead({
 <template>
   <PageLayout
     title="Songs"
-    description="My latest activity on Last FM. Check out the Daily Songs page for a fresh new recommendation!"
+    description="My latest listening activity on Last FM."
     class="space-y-12"
   >
     <LoadersSongs v-if="status === 'pending' || error !== null" />

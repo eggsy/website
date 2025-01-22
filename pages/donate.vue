@@ -26,7 +26,7 @@ useHead({
   meta: $prepareMeta({
     title: "Donate",
     description:
-      "Like my projects? You can donate to me to boost my performance and help me create more, better projects in the future!",
+      "Sponsor to me to boost my performance and help me create more, better projects in the future!",
     keywords: "donate",
     url: "https://eggsy.xyz/donate",
   }),
