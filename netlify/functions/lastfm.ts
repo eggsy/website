@@ -1,5 +1,5 @@
 import type { ApiResponse, Artist, Track, User } from "~/types/Response/lastfm"
-import type { Config, Handler } from "@netlify/functions"
+import type { Config } from "@netlify/functions"
 
 const LASTFM_API_KEY = process.env.LASTFM_API_KEY
 const username = "eggsywashere"
@@ -82,7 +82,7 @@ export default async () => {
       await api<ApiResponse<"recenttracks", "track", Track[]>>(
         "user.getrecenttracks",
         {
-          limit: 15,
+          limit: 14,
         },
       ),
     ]
