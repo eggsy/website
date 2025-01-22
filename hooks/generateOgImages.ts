@@ -23,6 +23,11 @@ export const generateOgImages = async () => {
 
   consola.info(`Generating OG images for ${posts.length} posts.`)
 
+  if (!existsSync(folderPath))
+    mkdirSync(folderPath, {
+      recursive: true,
+    })
+
   for (const post of posts) {
     const readingTime = getReadingTime(JSON.stringify(post.body))
     const postDate = formatter
@@ -35,11 +40,6 @@ export const generateOgImages = async () => {
       description: post.description,
       subtitles: [postDate, `${readingTime} dakika okuma`, `#${post.tags[0]}`],
     })
-
-    if (!existsSync(folderPath))
-      mkdirSync(folderPath, {
-        recursive: true,
-      })
 
     writeFileSync(join(folderPath, `./${post.slug}.png`), metaImage)
   }
