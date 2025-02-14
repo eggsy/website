@@ -16,7 +16,7 @@ const props = withDefaults(
 )
 
 const gridOffset = ref({ x: 0, y: 0 })
-const requestRef = ref<number | null>(0)
+const requestRef = ref<number | null>(null)
 const numSquaresX = ref(0)
 const numSquaresY = ref(0)
 const canvas = ref<HTMLCanvasElement>()
@@ -84,7 +84,7 @@ const drawGrid = () => {
     0,
     canvas.value.width / 2,
     canvas.value.height / 2,
-    Math.sqrt(canvas.value.width ** 2 + canvas.value.height ** 2) / 2,
+    Math.hypot(canvas.value.width / 2, canvas.value.height / 2),
   )
 
   gradient.addColorStop(0, "rgba(0, 0, 0, 0)")
