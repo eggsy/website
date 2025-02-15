@@ -43,11 +43,11 @@ useHead({
   >
     <div class="flex items-center gap-8">
       <div
-        class="absolute inset-0 pointer-events-none overflow-hidden z-50 opacity-5"
+        class="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-5"
       >
         <SquaresBackground
           :speed="0.3"
-          :squareSize="40"
+          :square-size="40"
           class="w-full h-full"
         />
       </div>
